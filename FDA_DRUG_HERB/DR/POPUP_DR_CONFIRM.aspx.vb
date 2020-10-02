@@ -91,7 +91,7 @@ Public Class POPUP_DR_CONFIRM
     Sub show_btn(ByVal IDA As String)
         Dim dao As New DAO_DRUG.ClsDBdrrqt
         dao.GetDataby_IDA(IDA)
-        If Request.QueryString("status") = "8" Then
+        If Request.QueryString("status") >= 2 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -181,7 +181,7 @@ Public Class POPUP_DR_CONFIRM
                         'AddLogStatus(3, _process, _CLS.CITIZEN_ID, _IDA)
                         If type_id = "141" Or type_id = "142" Or type_id = "143" Or type_id = "144" Or type_id = "145" Or type_id = "146" Or type_id = "147" Or type_id = "148" _
                             Or type_id = "791" Or type_id = "790" Or type_id = "190" Or type_id = "191" Or type_id = "192" Or type_id = "193" Or type_id = "194" Or type_id = "195" _
-                            Or type_id = "196" Or type_id = "197" Or type_id = "198" Or type_id = "199" Then
+                            Or type_id = "196" Or type_id = "197" Or type_id = "198" Or type_id = "199" Or type_id = "5149" Then
                             dao.fields.STATUS_ID = 3
                             AddLogStatus(3, _process, _CLS.CITIZEN_ID, _IDA)
                         End If
@@ -195,7 +195,7 @@ Public Class POPUP_DR_CONFIRM
                         End Try
                         If type_id = "141" Or type_id = "142" Or type_id = "143" Or type_id = "144" Or type_id = "145" Or type_id = "146" Or type_id = "147" Or type_id = "148" _
                             Or type_id = "791" Or type_id = "790" Or type_id = "190" Or type_id = "191" Or type_id = "192" Or type_id = "193" Or type_id = "194" Or type_id = "195" _
-                            Or type_id = "196" Or type_id = "197" Or type_id = "198" Or type_id = "199" Then
+                            Or type_id = "196" Or type_id = "197" Or type_id = "198" Or type_id = "199" Or type_id = "5149" Then
                             dao.fields.STATUS_ID = 3
                             AddLogStatus(3, _process, _CLS.CITIZEN_ID, _IDA)
                         Else
@@ -254,7 +254,7 @@ Public Class POPUP_DR_CONFIRM
                     'dao.update()
                     'AddLogStatus(2, _process, _CLS.CITIZEN_ID, _IDA)
                     'alert("ท่านยืนคำขอแล้ว")
-                    Response.Redirect("POPUP_DR_ACCEPT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+                    Response.Redirect("POPUP_DR_ACCEPT.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&staff=" & Request.QueryString("staff"))
                 Else
 
                     Response.Write("<script type='text/javascript'>window.parent.alert('โปรดเลือกกระบวนงานที่ท่านต้องการยื่น');</script> ")
@@ -1355,8 +1355,8 @@ Public Class POPUP_DR_CONFIRM
         '
         If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
             If tamrap_id <> 0 Then
-                lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"
-                hl_reader.NavigateUrl = "https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+                lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+                hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
             Else
                 lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status") & "' ></iframe>"
                 hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename & "&status=" & Request.QueryString("status")  ' Link เปิดไฟล์ตัวใหญ่
@@ -1365,15 +1365,15 @@ Public Class POPUP_DR_CONFIRM
         Else
             If tamrap_id <> 0 Then
                 If Request.QueryString("status") = 1 Or Request.QueryString("status") = "2" Then
-                    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"
-                    hl_reader.NavigateUrl = "https://medicina.fda.moph.go.th/FDA_DRUG_DEMO/PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+                    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+                    hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
                 Else
-                    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename & "' ></iframe>"
-                    hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+                    lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+                    hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
                 End If
             Else
                 lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-                hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+                hl_reader.NavigateUrl = "../PDF/FRM_PDF.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
             End If
 
         End If

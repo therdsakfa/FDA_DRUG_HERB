@@ -57,7 +57,7 @@
 					<div class="media-body">
 						<h1>
                            <%-- <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>--%>
-                            <asp:Label ID="Label1" runat="server" Text="ยา" />
+                            <asp:Label ID="Label1" runat="server" Text="สมุนไพร" />
                             </h1>
 						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>
 					</div>

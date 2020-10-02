@@ -40,7 +40,7 @@
 			<section id="header">
 				<div class="wrap-header">
 					<div class="list-left">
-						<div class="menu"></div><a class="logo-site" href="./"><img src="../Images/layout/logo.svg"></a><span class="text-e">ระบบยา</span>
+						<div class="menu"></div><a class="logo-site" href="./"><img src="../Images/layout/logo.svg"></a><span class="text-e">ระบบสมุนไพร</span>
 					</div>
                     <%--<div class="list-sub-menu">
                     <div class="sub-menu">

@@ -389,7 +389,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.167/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx")>  _
         Public ReadOnly Property FDA_DRUG_HERB_WS_DRUG_WS_DRUG() As String
             Get
                 Return CType(Me("FDA_DRUG_HERB_WS_DRUG_WS_DRUG"),String)
@@ -523,6 +523,16 @@ Namespace My
         Public ReadOnly Property FDA_DRUG_HERB_WS_UPDATE_C_DEMO_Service1() As String
             Get
                 Return CType(Me("FDA_DRUG_HERB_WS_UPDATE_C_DEMO_Service1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://164.115.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx")>  _
+        Public ReadOnly Property FDA_DRUG_HERB_WS_DRUG_126_WS_DRUG() As String
+            Get
+                Return CType(Me("FDA_DRUG_HERB_WS_DRUG_126_WS_DRUG"),String)
             End Get
         End Property
     End Class

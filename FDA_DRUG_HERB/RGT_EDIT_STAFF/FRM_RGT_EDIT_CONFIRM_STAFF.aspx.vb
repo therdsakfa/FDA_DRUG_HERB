@@ -290,7 +290,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         End Try
 
         Try
-            dao_drrgt.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+            dao_drrgt.GetDataby_NEWCODE(Request.QueryString("Newcode"))
         Catch ex As Exception
 
         End Try
@@ -584,12 +584,12 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+        Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
 
 
         dao.GetDatabyIDA(_IDA)
         dao_lcn.GetDataby_IDA(dao.fields.LCN_IDA)
-        dao_drrgt.GetDataby_IDA(dao.fields.FK_IDA)
+        dao_drrgt.GetDataby_NEWCODE(Request.QueryString("Newcode"))
         Dim cls_regis As New CLASS_GEN_XML.EDIT_DRRGT(_CLS.CITIZEN_ID, dao_lcn.fields.lcnsid, dao.fields.lcnno, dao_lcn.fields.lcntpcd, dao_lcn.fields.pvncd, dao.fields.FK_IDA)
 
         Dim class_xml As New CLASS_EDIT_DRRGT
@@ -809,8 +809,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             'result = "APPROVE"
             'ws_drug.Timeout = 8000
             Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
-            Dim dao_rg2 As New DAO_DRUG.ClsDBdrrgt
-            dao_rg2.GetDataby_IDA(dao.fields.FK_IDA)
+            Dim dao_rg2 As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            dao_rg2.GetDataby_NEWCODE(Request.QueryString("Newcode"))
             'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
 
             KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA, _
@@ -870,7 +870,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
         Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-
+        'Dim dao_rg2 As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'dao_rg2.GetDataby_NEWCODE(Request.QueryString("Newcode"))
 
         dao.GetDatabyIDA(_IDA)
         dao_lcn.GetDataby_IDA(dao.fields.LCN_IDA)
@@ -1397,7 +1398,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim rcvno_auto As String = ""
         Dim PACK_SIZE As String = ""
         Dim DRUG_STRENGTH As String = ""
-        Dim tr_id As Integer = 0
+        Dim tr_id As String = 0
         Dim IDA_regist As Integer = 0
         Dim lcnsid As Integer = 0
         Dim lcntpcd As String = ""
@@ -1815,7 +1816,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Try
             ' Response.Redirect("https://medicina.fda.moph.go.th/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY)
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('https://medicina.fda.moph.go.th/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY & "'); ", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('http://164.115.28.167/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY & "'); ", True)
         Catch ex As Exception
 
         End Try

@@ -1538,7 +1538,7 @@ Public Class WS_DRUG_XML
         Dim TABEAN_TYPE1 As String = ""
         Dim TABEAN_TYPE2 As String = ""
         Dim LCNTPCD_GROUP As String = ""
-        Dim TR_ID As Integer
+        Dim tr_id As String
         Dim class_xml As New CLASS_DR
         If STATUS_ID = "8" Then
             Dim dao As New DAO_DRUG.ClsDBdrrgt

@@ -63,7 +63,7 @@
 					<!-- For Mobile -->
 					<span class="circle"  style="background: #8CB343"></span>
 					<div class="media-body">
-						<h1><asp:Label ID="Label1" runat="server" Text="ยา"></asp:Label></h1>
+						<h1><asp:Label ID="Label1" runat="server" Text="สมุนไพร"></asp:Label></h1>
 						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>
 					</div>
 				</div>

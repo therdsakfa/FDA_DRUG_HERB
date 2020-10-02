@@ -627,6 +627,7 @@
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
+    <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
     <Content Include="PDF.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
     <Content Include="TERM_TO_USE\FRM_TERM_TO_USE_MAIN.aspx" />
@@ -791,15 +792,21 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\WS_CREATE_XML\WS_INSERT_XML_DRUG.disco" />
-    <Content Include="Web References\WS_DRUG\Reference.map">
+    <None Include="Web References\WS_DRUG\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_DRUG\WS_DRUG.disco" />
+    <Content Include="Web References\WS_DRUG_126\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
-    <None Include="Web References\WS_DRUG\WS_DRUG.disco" />
+    <None Include="Web References\WS_DRUG_126\WS_DRUG.disco" />
     <Content Include="Web References\WS_DRUG_LOG_DR\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
+    <None Include="Web References\WS_DRUG_126\WS_DRUG.wsdl" />
     <None Include="Web References\WS_DRUG_LOG_DR\WS_DRUG.disco" />
     <Content Include="Web References\WS_ERROR_CENTERS\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -4944,6 +4951,13 @@
       <DependentUpon>FRM_STAFF_LCN_LOCATION_INSERT_AND_UPDATE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_PAY_NOTE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_PAY_NOTE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_PHR_EDIT.aspx.designer.vb">
       <DependentUpon>FRM_STAFF_LCN_PHR_EDIT.aspx</DependentUpon>
     </Compile>
@@ -6926,6 +6940,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_DRUG_126\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_DRUG_LOG_DR\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7234,10 +7253,10 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_DRUG_LOG_DR_WS_DRUG</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx">
+    <WebReferenceUrl Include="http://10.111.28.167/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_DRUG\</RelPath>
-      <UpdateFromURL>http://164.115.28.107/WS_DRUG_UPDATE_LCN/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
+      <UpdateFromURL>http://10.111.28.167/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -7365,6 +7384,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_REQUEST_NO_SV_REQUEST_NO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.115.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_DRUG_126\</RelPath>
+      <UpdateFromURL>http://164.115.28.129/WS_DRUG_UPDATE_LCN_126/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_WS_DRUG_126_WS_DRUG</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.115.28.129/WS_QR_CODE/WS_QR_CODE.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

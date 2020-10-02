@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MAIN_STAFF_MAIN.master.vb" Inherits="FDA_BOOKING.MAIN_STAFF_MAIN" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MAIN_STAFF_MAIN.master.vb" Inherits="FDA_DRUG_HERB.MAIN_STAFF_MAIN" %>
 
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>

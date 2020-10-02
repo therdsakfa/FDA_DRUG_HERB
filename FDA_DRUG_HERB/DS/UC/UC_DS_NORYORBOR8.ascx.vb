@@ -8,7 +8,7 @@ Imports Telerik.Web.UI
 Public Class UC_DS_NORYORBOR8
     Inherits System.Web.UI.UserControl
     Private _CLS As CLS_SESSION
-    Public _process As String = "1704"
+    Public _process As String '= "1704"
     Private _lct_ida As String
     Private _lcn_ida As String
     Private _main_ida As String
@@ -18,6 +18,57 @@ Public Class UC_DS_NORYORBOR8
 
 
     Sub RunSession()
+        'Try
+        '    If Session("CLS") Is Nothing Then
+        '        Response.Redirect("http://privus.fda.moph.go.th/")
+        '    Else
+        '        _CLS = Session("CLS")
+        '        Try
+        '            _process = Request.QueryString("process_id")
+        '        Catch ex As Exception
+
+        '        End Try
+        '        _lcn_ida = Request("lcn_ida").ToString()
+        '        '_lcn_ida = 41017
+        '        _main_ida = Request("main_ida").ToString()
+        '        main_ida = CInt(_main_ida)
+        '        Try
+        '            _write_at = Request("write_at").ToString()
+        '        Catch ex As Exception
+        '        End Try
+        '        Try
+        '            _phesaj = Request("phesaj").ToString()
+        '        Catch ex As Exception
+        '        End Try
+        '        ' _process = Request.QueryString("")
+        '        _lcn_ida = Request("lcn_ida").ToString()
+        '        Dim dao As New DAO_DRUG.ClsDBdalcn
+        '        dao.GetDataby_IDA(_lcn_ida)
+        '        If dao.fields.lcntpcd.Contains("ผย") Then
+        '            _process = "1701"
+        '            If dao.fields.lcntpcd.Contains("ผยบ") Then
+        '                _process = "1703"
+
+        '                If Request.QueryString("tt") <> "" Then
+        '                    _process = "1706"
+        '                End If
+        '            End If
+
+        '        ElseIf dao.fields.lcntpcd.Contains("นย") Then
+        '            _process = "1702"
+        '            If dao.fields.lcntpcd.Contains("นยบ") Then
+        '                _process = "1704"
+
+        '                If Request.QueryString("tt") <> "" Then
+        '                    _process = "1707"
+        '                End If
+        '            End If
+        '        End If
+        '    End If
+
+        'Catch ex As Exception
+        '    Response.Redirect("http://privus.fda.moph.go.th/")
+        'End Try
         Try
             If Session("CLS") Is Nothing Then
                 Response.Redirect("http://privus.fda.moph.go.th/")
@@ -35,6 +86,11 @@ Public Class UC_DS_NORYORBOR8
                     _phesaj = Request("phesaj").ToString()
                 Catch ex As Exception
                 End Try
+                Try
+                    _process = Request.QueryString("process_id")
+                Catch ex As Exception
+
+                End Try
             End If
 
         Catch ex As Exception
@@ -42,7 +98,11 @@ Public Class UC_DS_NORYORBOR8
         End Try
         Dim cls_session As New CLS_SESSION
         cls_session.IDA = _main_ida
-        cls_session.PVCODE = "9"
+        If Request.QueryString("tt") <> "" Then
+            cls_session.PVCODE = "12"
+        Else
+            cls_session.PVCODE = "9"
+        End If
         Session.Add("product_id", cls_session)
     End Sub
 
@@ -54,6 +114,15 @@ Public Class UC_DS_NORYORBOR8
             bind_ddl_unit()
             'load_ddl()
             set_label()
+            If Request.QueryString("tt") <> "" Then
+                txt_WRITE_AT.Text = "ออกโดยระบบอิเล็กทรอนิกส์"
+            End If
+            If Request.QueryString("tt") <> "" Then
+                btn_save.Text = "บันทึก ยบ.8"
+                btn_package.Visible = False
+                btn_add.Visible = False
+                txt_WRITE_AT.Enabled = True
+            End If
         End If
     End Sub
     'Public Sub load_ddl() 'เลือกเลขที่บัญชีรายการยา
@@ -350,6 +419,10 @@ Public Class UC_DS_NORYORBOR8
         sum()
     End Sub
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        Dim i As Integer = 0
+        Dim dao_package As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
+
+        i = dao_package.CountDataby_FK_IDA(_main_ida)
         If main_ida = 0 Then
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกเลขบัญชีรายการยา');", True)
         ElseIf txt_WRITE_AT.Text = "" Then
@@ -358,6 +431,8 @@ Public Class UC_DS_NORYORBOR8
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกผู้มีหน้าที่ปฏิบัติการ');", True)
             'ElseIf txt_imp.Text = "" Then
             '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาบันทึกผลิตภัณฑ์ที่ต้องการนำเข้า');", True)
+        ElseIf i = 0 Then
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกเพิ่มขนาดบรรจุ');", True)
         Else
             Dim save As New DAO_DRUG.ClsDBdrsamp
             'chk_package() 'อัพเดท checkbox ใน radgrid
@@ -413,7 +488,16 @@ Public Class UC_DS_NORYORBOR8
             save.fields.phr_fk = ddl_phesaj.SelectedValue
             save.fields.CUSTOMER_CITIZEN_SUBMIT = _CLS.CITIZEN_ID
             save.fields.CUSTOMER_CITIZEN_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
-            save.insert()
+            save.fields.process_id = _process
+            'save.insert()
+            If qty = 0 Then
+                save.update()
+            Else
+                save.fields.QUANTITY = qty
+                save.fields.QUANTITY_UNIT = dao_pac.fields.SMALL_UNIT
+                save.insert()
+            End If
+
             save.GetDataby_PRODUCT_ID_IDA(dao_pac.fields.FK_IDA)
             'dao_pac.fields.DRSAMP_IDA = save.fields.IDA
             dao_pac.update()
@@ -485,7 +569,7 @@ Public Class UC_DS_NORYORBOR8
         Dim dao As New DAO_DRUG.ClsDBDRUG_REGISTRATION
         dao.GetDataby_IDA(main_ida)
         Dim dao_drsamp As New DAO_DRUG.ClsDBdrsamp
-        dao_drsamp.GetDataby_PRODUCT_ID_IDA(dao.fields.IDA)
+        dao_drsamp.GetDataby_PRODUCT_ID_IDA(main_ida)
         Dim dao_dalcn As New DAO_DRUG.ClsDBdalcn
         dao_dalcn.GetDataby_IDA(dao.fields.FK_IDA)
 
@@ -494,14 +578,25 @@ Public Class UC_DS_NORYORBOR8
         dao_drsamp.fields.WRITE_DATE = DateAdd(DateInterval.Year, 543, write_date)
         cls_xml.drsamp = dao_drsamp.fields  'ใบ
         cls_xml.regis = dao.fields
-        cls_xml.DT_SHOW.DT1 = bao.SP_DRUG_REGISTRATION(dao.fields.IDA) 'บัญชีรายการยา
-        cls_xml.DT_SHOW.DT2 = bao.SP_DALCN_BY_IDA_FOR_NYM(dao.fields.FK_IDA) 'เลขที่ใบอนุญาต
-        cls_xml.DT_SHOW.DT3 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(dao.fields.IDA) 'ตัวยาสำคัญ
-        cls_xml.DT_SHOW.DT4 = bao.SP_DRSAMP_BY_PRODUCT_ID_FOR_NYM(dao.fields.IDA) 'ขนาดบรรจุ
-        cls_xml.DT_SHOW.DT5 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(dao.fields.IDA) 'ขนาดบรรจุ
+        cls_xml.DT_SHOW.DT1 = bao.SP_DRUG_REGISTRATION(main_ida) 'บัญชีรายการยา
+        cls_xml.DT_SHOW.DT2 = bao.SP_DALCN_BY_IDA_FOR_NYM(_lcn_ida) 'เลขที่ใบอนุญาต
+        cls_xml.DT_SHOW.DT3 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(main_ida) 'ตัวยาสำคัญ
+        cls_xml.DT_SHOW.DT4 = bao.SP_DRSAMP_BY_PRODUCT_ID_FOR_NYM(main_ida) 'ขนาดบรรจุ
+        cls_xml.DT_SHOW.DT5 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(main_ida) 'ขนาดบรรจุ
         Try
-            cls_xml.DT_SHOW.DT6 = bao.SP_regis(dao.fields.IDA)
-            cls_xml.DT_SHOW.DT9 = bao.SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA(dao.fields.IDA)
+            cls_xml.DRUG_COLOR = dao.fields.DRUG_COLOR
+        Catch ex As Exception
+
+        End Try
+        Try
+            'PACK_SIZE = dao_pid.fields.PACKAGE_DETAIL 'dt_pack(0)("contain_detail")
+            cls_xml.PACK_SIZE = dao.fields.PACKAGE_DETAIL
+        Catch ex As Exception
+
+        End Try
+        Try
+            cls_xml.DT_SHOW.DT6 = bao.SP_regis(main_ida)
+            cls_xml.DT_SHOW.DT9 = bao.SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA(main_ida)
         Catch ex As Exception
 
         End Try
@@ -517,19 +612,20 @@ Public Class UC_DS_NORYORBOR8
 
         End Try
 
-        cls_xml.DT_SHOW.DT7 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(dao.fields.IDA) 'ดึงตัวยาสำคัญ multi
+        cls_xml.DT_SHOW.DT7 = bao.SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA(main_ida) 'ดึงตัวยาสำคัญ multi
         cls_xml.DT_SHOW.DT7.TableName = "SP_PRODUCT_ID_CHEMICAL_FK_IDA"
-        cls_xml.DT_SHOW.DT8 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(dao.fields.IDA)    'ขนาดบรรจุ multi
+        cls_xml.DT_SHOW.DT8 = bao.SP_DRSAMP_PACKAGE_DETAIL_CHK_BY_FK_IDA(main_ida)    'ขนาดบรรจุ multi
         cls_xml.DT_SHOW.DT10 = bao_show.SP_MAINPERSON_CTZNO(_CLS.CITIZEN_ID) 'ผู้ยื่น
+        cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA) 'ผู้ดำเนิน
         Try
-            cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA) 'ผู้ดำเนิน
-            cls_xml.DT_SHOW.DT20 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_BY_FK_IDA_NEW(dao.fields.IDA) 'สารสำคัญ/ส่วนประกอบ(รวม)
+
+            cls_xml.DT_SHOW.DT20 = bao_show.SP_DRUG_REGISTRATION_DETAIL_CAS_BY_FK_IDA_NEW(main_ida) 'สารสำคัญ/ส่วนประกอบ(รวม)
             cls_xml.DT_SHOW.DT20.TableName = "SP_DRRGT_DETAIL_CAS_BY_FK_IDA"
         Catch ex As Exception
 
         End Try
         Dim dao_pac As New DAO_DRUG.TB_DRUG_REGISTRATION_PACKAGE_DETAIL
-        dao_pac.GetDataby_FK_IDA(dao.fields.IDA)
+        dao_pac.GetDataby_FK_IDA(main_ida)
         Dim sum As String = ""
 
         For Each dao_pac.fields In dao_pac.datas
@@ -568,7 +664,36 @@ Public Class UC_DS_NORYORBOR8
         ElseIf get_session.PVCODE = "10" Then
             file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYOR8(VEJAI).pdf" '"C:\path\DRUG\PDF_TEMPLATE\PDF_DRUG_PORYOR8.pdf"
             process = "1705"
+        ElseIf get_session.PVCODE = "11" Then
+            file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYORBOR8_HERB_AUTO.pdf"
+            process = "1706"
+        ElseIf get_session.PVCODE = "12" Then
+            file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYORBOR8_HERB_AUTO.pdf" '"PDF_TEMPLATE\PDF_DRUG_NORYORBOR8.pdf"
+            process = "1707"
         End If
+
+        'If _process = "1701" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYOR8.pdf"
+        '    process = "1701"
+        'ElseIf _process = "1702" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_NORYOR8.pdf"
+        '    process = "1702"
+        'ElseIf _process = "1703" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYORBOR8.pdf"
+        '    process = "1703"
+        'ElseIf _process = "1704" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_NORYORBOR8.pdf"
+        '    process = "1704"
+        'ElseIf _process = "1705" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYOR8(VEJAI).pdf" '"C:\path\DRUG\PDF_TEMPLATE\PDF_DRUG_PORYOR8.pdf"
+        '    process = "1705"
+        'ElseIf _process = "1706" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYORBOR8_HERB_AUTO.pdf"
+        '    process = "1706"
+        'ElseIf _process = "1707" Then
+        '    file_template = paths & "PDF_TEMPLATE\PDF_DRUG_PORYORBOR8_HERB_AUTO.pdf" '"PDF_TEMPLATE\PDF_DRUG_NORYORBOR8.pdf"
+        '    process = "1707"
+        'End If
 
         Dim path_XML As String = paths & "XML_TRADER_DOWNLOAD\" & "DA-" & process & "-" & dao.fields.RCVNO_DISPLAY + ".xml"
         Dim file_PDF As String = paths & "PDF_TRADER_DOWNLOAD\" & "DA-" & process & "-" & dao.fields.RCVNO_DISPLAY + ".pdf"

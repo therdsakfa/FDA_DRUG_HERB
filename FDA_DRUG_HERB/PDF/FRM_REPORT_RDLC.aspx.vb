@@ -49,7 +49,7 @@ Public Class FRM_REPORT_RDLC
         Dim util As New cls_utility.Report_Utility
         util.report = ReportViewer1
         util.configWidthHeight(width:=1000)
-        Dim tr_id As Integer = 0
+        Dim tr_id As String = 0
         
         If Request.QueryString("STATUS_ID") = "8" Then
             Try
@@ -70,20 +70,34 @@ Public Class FRM_REPORT_RDLC
             Catch ex As Exception
 
             End Try
-            'dt_drug_general = bao_master_2.SP_drug_general(Request.QueryString("IDA")) 'SP_drug_general_sai
-            'dt_formula = bao_master_2.SP_drug_formula_rg(Request.QueryString("IDA")) 'SP_drug_formula_rg_by_Newcode
-            'dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_PRODUCER_ALL_BY_NEWCODE
-            'dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_ATC_DETAIL_BY_Newcode
-            'dt_animal = bao_show.SP_dramldrg_BY_FK_IDA(Request.QueryString("IDA")) 'SP_dramldrg_BY_newcode
-            'dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_KEEP_DRUG_BY_newcode
-            'dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
-            dt_drug_general = bao_master_2.SP_drug_general_sai(Request.QueryString("IDA")) '
-            dt_formula = bao_master_2.SP_drug_formula_rg_by_Newcode(Request.QueryString("NEWCODE")) '
-            dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(Request.QueryString("NEWCODE")) '
-            dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_Newcode(Request.QueryString("NEWCODE")) '
-            dt_animal = bao_show.SP_dramldrg_BY_newcode(Request.QueryString("NEWCODE")) '
-            dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_newcode(Request.QueryString("NEWCODE")) '
+            dt_drug_general = bao_master_2.SP_drug_general(Request.QueryString("IDA")) 'SP_drug_general_sai
+            dt_formula = bao_master_2.SP_drug_formula_rg(Request.QueryString("IDA")) 'SP_drug_formula_rg_by_Newcode
+            dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_PRODUCER_ALL_BY_NEWCODE
+            dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_ATC_DETAIL_BY_Newcode
+            dt_animal = bao_show.SP_dramldrg_BY_FK_IDA(Request.QueryString("IDA")) 'SP_dramldrg_BY_newcode
+            dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_KEEP_DRUG_BY_newcode
             dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
+
+
+            '---------------------------
+            'dt_drug_general = bao_master_2.SP_drug_general_sai(Request.QueryString("IDA")) '
+            'dt_formula = bao_master_2.SP_drug_formula_rg_by_Newcode(Request.QueryString("NEWCODE")) '
+            'dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(Request.QueryString("NEWCODE")) '
+            'dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_Newcode(Request.QueryString("NEWCODE")) '
+            'dt_animal = bao_show.SP_dramldrg_BY_newcode(Request.QueryString("NEWCODE")) '
+            'dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_newcode(Request.QueryString("NEWCODE")) '
+            'dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
+
+            '---------------------------
+
+
+
+
+
+
+
+
+
             ' dt_export = bao_master_2.SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE(Request.QueryString("NEWCODE"))
         Else
             Try
@@ -184,7 +198,7 @@ Public Class FRM_REPORT_RDLC
         Dim util As New cls_utility.Report_Utility
         util.report = ReportViewer1
         util.configWidthHeight(width:=1000)
-        Dim tr_id As Integer = 0
+        Dim tr_id As String = 0
         Try
             Dim dao_rgt As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao_rgt.GetDataby_IDA(Request.QueryString("IDA"))

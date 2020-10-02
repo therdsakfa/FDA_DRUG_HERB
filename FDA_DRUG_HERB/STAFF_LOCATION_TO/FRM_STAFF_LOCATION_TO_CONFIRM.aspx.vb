@@ -60,7 +60,7 @@ Public Class FRM_STAFF_LOCATION_TO_CONFIRM
       
 
         'Dim IDA As Integer = dao_la.fields.IDA
-        Dim TR_ID As Integer = dao_la.fields.TR_ID
+        Dim tr_id As String = dao_la.fields.TR_ID
         Dim LCNSID As String = dao_la.fields.lcnsid
         ' Dim CITIZEN_ID_AUTHORIZE As String = _XML_CITIZEN_ID_AUTHORIZE
         Dim CITIZEN_ID As String = dao_up.fields.CITIEZEN_ID
