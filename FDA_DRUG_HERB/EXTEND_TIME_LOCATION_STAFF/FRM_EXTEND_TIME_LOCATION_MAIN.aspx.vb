@@ -38,7 +38,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN
                 'CITIZEN_AUTHORIZE = CITIZEN_AUTHORIZE.DecodeBase64
             End If
             If lcntpcd_old <> "" Then
-                lcntpcd_old = lcntpcd_old.DecodeBase64
+                'lcntpcd_old = lcntpcd_old.DecodeBase64
             End If
             '_lcn_ida = Request.QueryString("lcn_ida")
             'str_ID = Request.QueryString("str_ID")

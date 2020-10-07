@@ -97,7 +97,7 @@ Public Class WebForm35
     Public Sub set_hide(ByVal IDA As String)
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(IDA)
-        If dao.fields.STATUS_ID >= 8 Then
+        If dao.fields.STATUS_ID = 8 Then
             btn_confirm.Enabled = False
             btn_cancel.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -173,7 +173,7 @@ Public Class WebForm35
 
 
         lcntypecd = dao.fields.lcntpcd.ToString()
-        lcntypecd = lcntypecd.Change_lcntpcd()
+        lcntypecd = Chn_lcntpcd(dao.fields.lcntpcd)
         lcnno_num = dao.fields.lcnno.ToString().Trim().Substring(2, 5)
         If _CLS.PVCODE = 10 Then
             If lcntypecd = "1" Then
@@ -438,14 +438,15 @@ Public Class WebForm35
         Dim dao As New DAO_DRUG.ClsDBdalcn
         dao.GetDataby_IDA(_IDA)
 
-        If dao.fields.STATUS_ID <= 2 Or dao.fields.STATUS_ID = 11 Then
+        If dao.fields.STATUS_ID <= 2 Then
             int_group_ddl = 1
-        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
+        ElseIf dao.fields.STATUS_ID = 11 Then
             int_group_ddl = 2
-        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+        ElseIf dao.fields.STATUS_ID > 2 And dao.fields.STATUS_ID < 6 Then
             int_group_ddl = 3
+        ElseIf dao.fields.STATUS_ID >= 6 And dao.fields.STATUS_ID < 11 Then
+            int_group_ddl = 4
         End If
-
 
 
         bao.SP_MAS_STATUS_STAFF_BY_GROUP_DDL(2, int_group_ddl)
@@ -588,7 +589,7 @@ Public Class WebForm35
         Catch ex As Exception
 
         End Try
-        lcntpcd = lcntpcd.Change_lcntpcd()
+        lcntpcd = Chn_lcntpcd(lcntpcd)
         Dim cls_dalcn As New CLASS_GEN_XML.DALCN(_CLS.CITIZEN_ID, dao.fields.lcnsid, lcnno:=lcnno_auto, lcntpcd:=lcntpcd, pvncd:=pvncd, CHK_SELL_TYPE:=dao.fields.CHK_SELL_TYPE)
 
         Dim class_xml As New CLASS_DALCN
@@ -1387,7 +1388,7 @@ Public Class WebForm35
         'Dim img_byte As String = Cls_qr.QR_CODE_IMG(url2)
 
 
-        lcntype = lcntype.Change_lcntpcd()
+        lcntype = Chn_lcntpcd(lcntype)
         Dim YEAR As String = dao_up.fields.YEAR
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim template_id As Integer = 0

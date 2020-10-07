@@ -191,7 +191,9 @@
         ddl_amphr.DataTextField = "thaamphrnm"
         ddl_amphr.DataValueField = "amphrcd"
         ddl_amphr.DataBind()
-        ddl_amphr.DropDownInsertDataFirstRow("-----รายชื่ออำเภอ-----", "0")
+        Dim item As New ListItem("-----รายชื่ออำเภอ-----", "0")
+        ddl_amphr.Items.Insert(0, item)
+        'ddl_amphr.DropDownInsertDataFirstRow("-----รายชื่ออำเภอ-----", "0")
     End Sub
     Sub thmblcd()      'เป็นการนำข้อมูลในตารางใส่ DropDown  ข้อมูลตำบล
         Dim dao_loca_addr As New DAO_CPN.TB_LOCATION_ADDRESS
@@ -201,7 +203,9 @@
         ddl_thumbol.DataTextField = "thathmblnm"
         ddl_thumbol.DataValueField = "thmblcd"
         ddl_thumbol.DataBind()
-        ddl_thumbol.DropDownInsertDataFirstRow("-----รายชื่อตำบล-----", "0")
+        'ddl_thumbol.DropDownInsertDataFirstRow("-----รายชื่อตำบล-----", "0")
+        Dim item As New ListItem("-----รายชื่อตำบล-----", "0")
+        ddl_amphr.Items.Insert(0, item)
     End Sub
     Protected Sub ddl_chngwt_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_chngwt.SelectedIndexChanged
 

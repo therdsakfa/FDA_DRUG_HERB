@@ -15,7 +15,7 @@
             _process = Request.QueryString("process")
             u1 = Request.QueryString("u1")  'เรียก Process ที่เราเรียก
             If u1 <> "" Then
-                u1 = u1.DecodeBase64()
+                ' u1 = u1.DecodeBase64()
             End If
             '_lcn_ida = Request.QueryString("lcn_ida")
             'str_ID = Request.QueryString("str_ID")

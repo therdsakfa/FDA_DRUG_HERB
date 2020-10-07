@@ -135,7 +135,8 @@ Public Class POPUP_EDIT_LCN_STAFF_CONFIRM
 
 
         'lcntypecd = dao.fields.lcntpcd.ToString()
-        lcntypecd = lcntypecd.Change_lcntpcd()
+        lcntypecd = Chn_lcntpcd(dao.fields.PROCESS_ID)
+
         'lcnno_num = dao.fields.lcnno.ToString().Trim().Substring(2, 5)
         If _CLS.PVCODE = 10 Then
             If lcntypecd = "1" Then

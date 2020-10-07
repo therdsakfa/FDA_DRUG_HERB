@@ -851,7 +851,7 @@ Public Class WS_DRUG_XML
         Catch ex As Exception
 
         End Try
-        lcntpcd = lcntpcd.Change_lcntpcd()
+        lcntpcd = Chn_lcntpcd(lcntpcd)
         Dim cls_dalcn As New CLASS_GEN_XML.DALCN(CITIZEN_ID, dao.fields.lcnsid, lcnno:=lcnno_auto, lcntpcd:=lcntpcd, pvncd:=pvncd, CHK_SELL_TYPE:=dao.fields.CHK_SELL_TYPE)
 
         Dim class_xml As New CLASS_DALCN
@@ -1035,7 +1035,7 @@ Public Class WS_DRUG_XML
         Catch ex As Exception
 
         End Try
-        lcntype = lcntype.Change_lcntpcd()
+        lcntype = Chn_lcntpcd(lcntpcd)
         Dim YEAR As String = dao_up.fields.YEAR
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim template_id As Integer = 0

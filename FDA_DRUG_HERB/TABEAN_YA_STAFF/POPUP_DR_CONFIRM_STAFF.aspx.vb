@@ -1185,7 +1185,16 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         Try
             dao_lcn.GetDataby_IDA(FK_LCN_IDA)
+        Catch ex As Exception
+
+        End Try
+        Try
             lcntpcd = dao_lcn.fields.lcntpcd
+
+        Catch ex As Exception
+
+        End Try
+        Try
             pvnabbr = dao_lcn.fields.pvnabbr
         Catch ex As Exception
 

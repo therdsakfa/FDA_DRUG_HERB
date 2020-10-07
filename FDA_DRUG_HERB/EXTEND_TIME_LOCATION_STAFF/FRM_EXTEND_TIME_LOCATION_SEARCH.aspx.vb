@@ -96,12 +96,13 @@ Public Class FRM_EXTEND_TIME_LOCATION_SEARCH1
             u1 = item("Newcode_not").Text
             CITIZEN_AUTHORIZE = item("CITIZEN_AUTHORIZE").Text
             If e.CommandName = "sel" Then
-                
-                u1 = u1.EncodeBase64
-                lcntpcd = lcntpcd.EncodeBase64
-                lcnno = lcnno.EncodeBase64
-                CITIZEN_AUTHORIZE = CITIZEN_AUTHORIZE.EncodeBase64
-                lcntpcd_old = lcntpcd_old.EncodeBase64
+
+                'u1 = u1.EncodeBase64
+                'lcntpcd = lcntpcd.EncodeBase64
+                'lcnno = lcnno.EncodeBase64
+                'CITIZEN_AUTHORIZE = CITIZEN_AUTHORIZE.EncodeBase64
+                'lcntpcd_old = lcntpcd_old.EncodeBase64
+
                 Response.Redirect("FRM_EXTEND_TIME_LOCATION_MAIN.aspx?u1=" & u1 & "&lcncode=" & lcntpcd & "&lcn=" & lcnno & "&type=" & item("type_table").Text & "&c=" & CITIZEN_AUTHORIZE & "&lcncode_o=" & lcntpcd_old)
                 'Dim id_r As String = item("IDA").Text
                 'Dim url2 As String = "../FRM_EXTEND_TIME_LOCATION_MAIN.aspx?id_r=" & id_r
@@ -113,16 +114,16 @@ Public Class FRM_EXTEND_TIME_LOCATION_SEARCH1
             ElseIf e.CommandName = "save" Then
                 'Dim u1 As String
                 u1 = item("Newcode_not").Text
-                u1 = u1.EncodeBase64
+                'u1 = u1.EncodeBase64
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_EXTEND_TIME_LOCATION_SAVE.aspx?u1=" & u1 & "'); ", True)
                 'Response.Redirect("FRM_REPORT_ADDRESS.aspx?u1=" & u1)
             ElseIf e.CommandName = "print" Then
                 u1 = item("Newcode_not").Text
-                u1 = u1.EncodeBase64
-                lcntpcd = lcntpcd.EncodeBase64
-                lcnno = lcnno.EncodeBase64
-                CITIZEN_AUTHORIZE = CITIZEN_AUTHORIZE.EncodeBase64
-                lcntpcd_old = lcntpcd_old.EncodeBase64
+                'u1 = u1.EncodeBase64
+                'lcntpcd = lcntpcd.EncodeBase64
+                'lcnno = lcnno.EncodeBase64
+                'CITIZEN_AUTHORIZE = CITIZEN_AUTHORIZE.EncodeBase64
+                'lcntpcd_old = lcntpcd_old.EncodeBase64
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('FRM_REPORT_ADDRESS.aspx?u1=" & u1 & "&lcncode=" & lcntpcd & "&lcn=" & lcnno & "&type=" & item("type_table").Text & "&c=" & CITIZEN_AUTHORIZE & "&lcncode_o=" & lcntpcd_old & "'); ", True)
                 'Response.Redirect("FRM_REPORT_ADDRESS.aspx?u1=" & u1)
             End If

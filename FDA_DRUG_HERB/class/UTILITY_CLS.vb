@@ -380,8 +380,34 @@ Public Module UTILITY_CLS
         Return strModified
     End Function
 
-    <System.Runtime.CompilerServices.Extension> _
-    Function Change_lcntpcd(ByVal lcntpcd As String) As String
+    <System.Runtime.CompilerServices.Extension>
+    Public Function Change_lcntpcd(ByRef lcntpcd As String) As String
+        Dim Return_txt As String = ""
+        If lcntpcd = "03" Then
+            Return_txt = "ขจ"
+        ElseIf lcntpcd = "04" Then
+            Return_txt = "ขนจ"
+        ElseIf lcntpcd = "05" Then
+            Return_txt = "นจ"
+        ElseIf lcntpcd = "06" Then
+            Return_txt = "สวจ"
+        ElseIf lcntpcd = "02" Then
+            Return_txt = "ผจ"
+        ElseIf lcntpcd = "12" Then
+            Return_txt = "ผยส"
+        ElseIf lcntpcd = "13" Then
+            Return_txt = "จยส"
+        ElseIf lcntpcd = "14" Then
+            Return_txt = "นยส"
+        ElseIf lcntpcd = "15" Then
+            Return_txt = "สยส"
+        Else
+            Return_txt = lcntpcd
+        End If
+        Return Return_txt
+    End Function
+    <System.Runtime.CompilerServices.Extension>
+    Public Function Chn_lcntpcd(ByVal lcntpcd As String) As String
         Dim Return_txt As String = ""
         If lcntpcd = "03" Then
             Return_txt = "ขจ"
@@ -413,12 +439,16 @@ Public Module UTILITY_CLS
         txt = System.Text.Encoding.UTF8.GetString(ede_byte)
         Return txt
     End Function
-    <System.Runtime.CompilerServices.Extension()> _
+    <System.Runtime.CompilerServices.Extension()>
     Public Sub DropDownInsertDataFirstRow(ByRef Dropdown As DropDownList, ByVal Text As String, ByVal Value As String)
         Dropdown.Items.Insert(0, New ListItem(Text, Value))
         Dropdown.SelectedIndex = 0
     End Sub
-
+    <System.Runtime.CompilerServices.Extension()>
+    Sub DropDownInsertDataFirstRow2(ByRef Dropdown As DropDownList, ByVal Text As String, ByVal Value As String)
+        Dropdown.Items.Insert(0, New ListItem(Text, Value))
+        Dropdown.SelectedIndex = 0
+    End Sub
     <System.Runtime.CompilerServices.Extension> _
     Function NumEng2Thai(strEng As String) As String
         Dim strThai As String = ""
