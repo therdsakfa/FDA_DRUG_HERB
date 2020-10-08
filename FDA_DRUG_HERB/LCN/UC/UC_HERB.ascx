@@ -142,7 +142,7 @@
             <h4> ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร</h4>
            &ensp;&ensp;&ensp;๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ<asp:TextBox ID="TextBox19" runat="server"></asp:TextBox><br />&ensp;
             ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่<asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>หรือ<br />&ensp;
-           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุติ<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox><br />&ensp;
+           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox><br />&ensp;
            สาขา<asp:TextBox ID="TextBox22" runat="server"></asp:TextBox><br />&ensp;
            &ensp;&ensp;๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร<br />&ensp;
            <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
