@@ -14,6 +14,51 @@ Option Explicit On
 Partial Public Class UC_HERB
 
     '''<summary>
+    '''checkbox2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox2 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox3 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox4 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox5 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox6 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -167,6 +212,15 @@ Partial Public Class UC_HERB
     Protected WithEvents Label17 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''checkbox7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox7 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''TextBox1 control.
     '''</summary>
     '''<remarks>
@@ -255,6 +309,15 @@ Partial Public Class UC_HERB
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''checkbox8 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox8 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''TextBox11 control.
@@ -833,13 +896,13 @@ Partial Public Class UC_HERB
     Protected WithEvents Label73 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''TextBox19 control.
+    '''DropDownList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox19 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''TextBox20 control.
@@ -885,4 +948,31 @@ Partial Public Class UC_HERB
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TextBox24 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''checkbox9 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox9 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox10 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox10 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''checkbox11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents checkbox11 As Global.System.Web.UI.WebControls.CheckBox
 End Class
