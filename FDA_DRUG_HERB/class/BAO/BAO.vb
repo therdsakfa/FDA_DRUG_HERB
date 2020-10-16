@@ -5780,9 +5780,10 @@ Namespace BAO
 
             Dim ws2 As New WS_Taxno_TaxnoAuthorize.WebService1
             Try
-                Dim ws_taxno = ws2.getProfile_byidentify(CITIZEN_ID_AUTHORIZE)
+                'Dim ws_taxno = ws2.getProfile_byidentify(CITIZEN_ID_AUTHORIZE)
 
-                Dim fullname As String = ws_taxno.SYSLCNSNMs.thanm & " " & ws_taxno.SYSLCNSNMs.thalnm
+                'Dim fullname As String = ws_taxno.SYSLCNSNMs.thanm & " " & ws_taxno.SYSLCNSNMs.thalnm
+                Dim fullname As String = dao_sysnmperson.fields.thanm & " " & dao_sysnmperson.fields.thalnm
                 _CLS.THANM_CUSTOMER = fullname
             Catch ex As Exception
 

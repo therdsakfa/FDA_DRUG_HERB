@@ -186,7 +186,7 @@
         Catch ex As Exception
 
         End Try
-        If lcntpcd.Contains("บ") Then
+        If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
             grptpcd = 2
         Else
             grptpcd = 1

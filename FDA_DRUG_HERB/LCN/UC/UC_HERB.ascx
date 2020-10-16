@@ -26,22 +26,22 @@
         </div>
         <div>
              <h4>๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>
-            &ensp;<b>ข้าพเจ้า</b>(ชื่อบุคคล/นิติบุคคล)<asp:Label ID="Label1" runat="server" Text=".........................."></asp:Label><br />&ensp;
-            อายุ<asp:Label ID="Label2" runat="server" Text="........................"></asp:Label>ปี สัญชาติ<asp:Label ID="Label3" runat="server" Text="........................."></asp:Label><br />&ensp;
-            เลขประจำตัวประชาชน<asp:Label ID="Label4" runat="server" Text="................"></asp:Label><br />&ensp;
-            หรือเลขทะเบียนนิติบุคคล<asp:Label ID="Label5" runat="server" Text="....................."></asp:Label><br />&ensp;
-            ที่อยู่เลขที่<asp:Label ID="Label6" runat="server" Text="......................"></asp:Label><br />&ensp;
-            หมู่บ้าน/อาคาร<asp:Label ID="Label7" runat="server" Text="..................."></asp:Label>
-            หมู่ที่<asp:Label ID="Label8" runat="server" Text=".................."></asp:Label>
-            ตรอก/ซอย<asp:Label ID="Label9" runat="server" Text="..............."></asp:Label>
-            ถนน<asp:Label ID="Label10" runat="server" Text="....................."></asp:Label><br />&ensp;
-            ตำบล/แขวง<asp:Label ID="Label11" runat="server" Text=".................."></asp:Label>
-            อำเภอ/เขต<asp:Label ID="Label12" runat="server" Text="...................."></asp:Label><br />&ensp;
-            จังหวัด<asp:Label ID="Label13" runat="server" Text="........................."></asp:Label>
-            รหัสไปรษณีย์<asp:Label ID="Label14" runat="server" Text="......................"></asp:Label>
-            โทรสาร<asp:Label ID="Label15" runat="server" Text="........................"></asp:Label><br />&ensp;
-            โทรศัพท์<asp:Label ID="Label16" runat="server" Text="........................."></asp:Label>
-            E-mail<asp:Label ID="Label17" runat="server" Text="........................."></asp:Label>
+            &ensp;<b>ข้าพเจ้า</b>(ชื่อบุคคล/นิติบุคคล)&ensp;<asp:Label ID="lbl_lcn_name" runat="server" Text=""></asp:Label><br />&ensp;
+            อายุ&ensp;<asp:Label ID="lbl_lcn_ages" runat="server" Text=""></asp:Label>&ensp;ปี สัญชาติ&ensp;<asp:Label ID="lbl_lcn_nation" runat="server" Text=""></asp:Label><br />&ensp;
+            เลขประจำตัวประชาชน&ensp;<asp:Label ID="lbl_lcn_iden" runat="server" Text=""></asp:Label><br />&ensp;
+            หรือเลขทะเบียนนิติบุคคล&ensp;<asp:Label ID="lbl_lcn_iden2" runat="server" Text=""></asp:Label><br />&ensp;
+            ที่อยู่เลขที่&ensp;<asp:Label ID="lbl_lcn_addr" runat="server" Text=""></asp:Label><br />&ensp;
+            หมู่บ้าน/อาคาร&ensp;<asp:Label ID="lbl_lcn_building" runat="server" Text=""></asp:Label>
+            หมู่ที่&ensp;<asp:Label ID="lbl_lcn_mu" runat="server" Text=""></asp:Label>
+              ตรอก/ซอย&ensp;<asp:Label ID="lbl_lcn_soi" runat="server" Text=""></asp:Label>
+              ถนน&ensp;<asp:Label ID="lbl_lcn_road" runat="server" Text=""></asp:Label><br />&ensp;
+            ตำบล/แขวง&ensp;<asp:Label ID="lbl_lcn_tambol" runat="server" Text=""></asp:Label>
+              อำเภอ/เขต&ensp;<asp:Label ID="lbl_lcn_amphor" runat="server" Text=""></asp:Label><br />&ensp;
+            จังหวัด&ensp;<asp:Label ID="lbl_lcn_changwat" runat="server" Text=""></asp:Label>
+              รหัสไปรษณีย์&ensp;<asp:Label ID="lbl_lcn_zipcode" runat="server" Text=""></asp:Label>
+            โทรสาร&ensp;<asp:Label ID="lbl_lcn_fax" runat="server" Text=""></asp:Label><br />&ensp;
+            โทรศัพท์&ensp;<asp:Label ID="lbl_lcn_tel" runat="server" Text=""></asp:Label>
+              E-mail&ensp;<asp:Label ID="lbl_lcn_email" runat="server" Text=""></asp:Label>
         </div>
        <div>
            <h4> กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4>

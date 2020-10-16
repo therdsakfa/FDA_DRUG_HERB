@@ -57,9 +57,9 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
 
             End Try
 
-            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And dao_dal.fields.lcntpcd.Contains("บ") = False Then
+            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And (dao_dal.fields.lcntpcd.Contains("บ") Or dao_dal.fields.lcntpcd.Contains("สม")) = False Then
                 TreeView1.Nodes.Add(t_node)
-            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And dao_dal.fields.lcntpcd.Contains("บ") Then
+            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And (dao_dal.fields.lcntpcd.Contains("บ") Or dao_dal.fields.lcntpcd.Contains("สม")) Then
                 TreeView1.Nodes.Add(t_node)
             Else
                 If (dao.fields.PROCESS_ID <> "130003" And dao.fields.PROCESS_ID <> "130004" And dao.fields.PROCESS_ID <> "130001" And dao.fields.PROCESS_ID <> "130002") Then
@@ -137,9 +137,9 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
 
             End Try
 
-            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And dao_dal.fields.lcntpcd.Contains("บ") = False Then
+            If (dao.fields.PROCESS_ID = "130001" Or dao.fields.PROCESS_ID = "130002") And (dao_dal.fields.lcntpcd.Contains("บ") Or dao_dal.fields.lcntpcd.Contains("สม")) = False Then
                 t_node.Add(t_node2)
-            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And dao_dal.fields.lcntpcd.Contains("บ") Then
+            ElseIf (dao.fields.PROCESS_ID = "130003" Or dao.fields.PROCESS_ID = "130004") And (dao_dal.fields.lcntpcd.Contains("บ") Or dao_dal.fields.lcntpcd.Contains("สม")) Then
                 t_node.Add(t_node2)
             Else
                 If (dao.fields.PROCESS_ID <> "130003" And dao.fields.PROCESS_ID <> "130004" And dao.fields.PROCESS_ID <> "130001" And dao.fields.PROCESS_ID <> "130002") Then
