@@ -7,21 +7,19 @@
             <h3 style="text-align:center;">คำขอรับใบอนูญาต<br />
              ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร<br /></h3>
             <h4 style="text-align:center;"> คำขอใบอนุญาติ
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                <label for="vehicle1"> ผลิตผลิตภัณฆ์สมุนไพร</label><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                <input type="checkbox" id="vehicle2" name="vehicle1" value="Bike">
-                <label for="vehicle1"> นำเข้าผลิตภัณฆ์สมุนไพร</label><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                <input type="checkbox" id="vehicle3" name="vehicle1" value="Bike">
-                <label for="vehicle1"> ขายผลิตภัณฆ์สมุนไพร</label><br></h4>
+                <asp:CheckBox ID="checkbox2" text ="ผลิตผลิตภัณฆ์สมุนไพร " runat="server" />
+                <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                <asp:CheckBox ID="checkbox3" text ="นำเข้าผลิตภัณฆ์สมุนไพร " runat="server" />
+                <br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                <asp:CheckBox ID="checkbox4" text ="ขายผลิตภัณฆ์สมุนไพร " runat="server" /></h4>
         </div>
             <div>
+                
             </div>
         <div>
             <h4 style="text-align:center;">เลือก
-                <input type="checkbox" id="vehicle4" name="vehicle1" value="Bike">
-                <label for="vehicle1"> ไทย</label>
-                <input type="checkbox" id="vehicle5" name="vehicle1" value="Bike">
-                <label for="vehicle1"> ต่างด้าว</label><br>
+                <asp:CheckBox ID="checkbox5" text ="ไทย " runat="server" />
+                <asp:CheckBox ID="checkbox6" text ="ต่างด้าว " runat="server" /><br>
             </h4>
         </div>
         <div>
@@ -45,8 +43,7 @@
         </div>
        <div>
            <h4> กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4>
-           &ensp;<input type="checkbox" id="vehicle6" name="vehicle1" value="Bike">
-           <label for="vehicle1"> บุคคลธรรมดา</label><br />&ensp;
+           &ensp;<asp:CheckBox ID="checkbox7" text ="บุคคลธรรมดา " runat="server" /><br />&ensp;
            หนังสือเดินทางเลขที่<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
            วันหมดอายุ<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />&ensp;
            ใบสำคัญที่อยู่เลขที่<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -58,8 +55,7 @@
            ออกให้ ณ วันที่<asp:TextBox ID="TextBox8" runat="server"></asp:TextBox><br />&ensp;
            หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox><br />&ensp;
            ออกให้ ณ วันที่<asp:TextBox ID="TextBox10" runat="server"></asp:TextBox><br />&ensp;
-           <input type="checkbox" id="vehicle7" name="vehicle1" value="Bike">
-           <label for="vehicle1"> นิติบุคคลต่างด้าว</label><br />&ensp;
+           <asp:CheckBox ID="checkbox8" text ="นิติบุคคลต่างด้าว " runat="server" /><br />&ensp;
            ใบอนุญาตประกอบธุรกิจตามบัญชีสาม(๑๔)หรือ(๑๕)ตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าว<br />&ensp;
            เลขที่<asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
            ออกให้ ณ วันที่<asp:TextBox ID="TextBox12" runat="server"></asp:TextBox><br />&ensp;
@@ -140,19 +136,18 @@
        </div>
        <div>
             <h4> ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร</h4>
-           &ensp;&ensp;&ensp;๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ<asp:TextBox ID="TextBox19" runat="server"></asp:TextBox><br />&ensp;
+           &ensp;&ensp;&ensp;๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ<asp:DropDownList ID="DropDownList1"  runat="server">
+            </asp:DropDownList><br />&ensp;
             ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่<asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>หรือ<br />&ensp;
-           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุติ<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox><br />&ensp;
+           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox><br />&ensp;
            สาขา<asp:TextBox ID="TextBox22" runat="server"></asp:TextBox><br />&ensp;
            &ensp;&ensp;๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร<br />&ensp;
            <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
            วันที่อบรม<asp:TextBox ID="TextBox24" runat="server"></asp:TextBox><br />&ensp;
-           เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม<input type="checkbox" id="vehicle10" name="vehicle1" value="Bike">
-                <label for="vehicle1"> มาตรา ๓๑</label>
-                <input type="checkbox" id="vehicle11" name="vehicle1" value="Bike">
-                <label for="vehicle1"> มาตรา ๓๒</label>
-                <input type="checkbox" id="vehicle12" name="vehicle1" value="Bike">
-                <label for="vehicle1"> มาตรา ๓๓</label>
+           เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม
+           <asp:CheckBox ID="checkbox9" text ="มาตรา ๓๑ " runat="server" />&ensp;
+           <asp:CheckBox ID="checkbox10" text ="มาตรา ๓๒ " runat="server" />&ensp;
+           <asp:CheckBox ID="checkbox11" text ="มาตรา ๓๓ " runat="server" />&ensp;
            แห่ง พ.ร.บ.ผลิตภัณฆ์สมุนไพร พ.ศ.๒๕๖๒
        </div>
        
