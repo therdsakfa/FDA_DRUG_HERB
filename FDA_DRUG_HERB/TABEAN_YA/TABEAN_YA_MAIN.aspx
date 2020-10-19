@@ -435,6 +435,9 @@
                        <telerik:GridBoundColumn DataField="trans_code" FilterControlAltText="Filter trans_code column"
                            HeaderText="รหัสการดำเนินการ" SortExpression="trans_code" UniqueName="trans_code">
                        </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="Newcode_U" FilterControlAltText="Filter Newcode_U column" HeaderText="Newcode_U"
+                           SortExpression="Newcode_U" UniqueName="Newcode_U" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
                        <%--<telerik:GridBoundColumn DataField="REMARK" FilterControlAltText="Filter REMARK column"
                            HeaderText="เหตุผลการคืนคำขอ" SortExpression="REMARK" UniqueName="REMARK">
                        </telerik:GridBoundColumn>--%>

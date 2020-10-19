@@ -147,9 +147,6 @@
                        <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="Newcode_U" FilterControlAltText="Filter Newcode_U column" HeaderText="Newcode_U"
-                           SortExpression="Newcode_U" UniqueName="Newcode_U" Display="false" AllowFiltering="true">
-                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="STATUS_ID" DataType="System.Int32" FilterControlAltText="Filter STATUS_ID column" HeaderText="STATUS_ID"
                            SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>

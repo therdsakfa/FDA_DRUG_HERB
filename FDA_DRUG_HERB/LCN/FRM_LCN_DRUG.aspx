@@ -123,6 +123,10 @@
                                            </td>
                                            <td>
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
+                                               
+                                           </td>
+                                           <td>
+                                               <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอแบบใหม่" CssClass="btn-lg" />
                                            </td>
                                        </tr>
                                    </table>

@@ -633,7 +633,10 @@
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
+    <Content Include="LCN\POPUP_LCN_ADD.aspx" />
     <Content Include="LCN\UC\UC_HERB.ascx" />
+    <Content Include="LCN\UC\UC_HERB_KEEP.ascx" />
+    <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
     <Content Include="PDF.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
@@ -4720,6 +4723,13 @@
       <DependentUpon>FRM_LCN_NCT_TEMP_MAIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD.aspx.vb">
+      <DependentUpon>POPUP_LCN_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="LCN\POPUP_LCN_DOWNLOAD_DRUG.aspx.designer.vb">
       <DependentUpon>POPUP_LCN_DOWNLOAD_DRUG.aspx</DependentUpon>
     </Compile>
@@ -4802,6 +4812,20 @@
     </Compile>
     <Compile Include="LCN\UC\UC_HERB.ascx.vb">
       <DependentUpon>UC_HERB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\UC\UC_HERB_KEEP.ascx.designer.vb">
+      <DependentUpon>UC_HERB_KEEP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\UC\UC_HERB_KEEP.ascx.vb">
+      <DependentUpon>UC_HERB_KEEP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\UC\UC_HERB_PHESAJ.ascx.designer.vb">
+      <DependentUpon>UC_HERB_PHESAJ.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\UC\UC_HERB_PHESAJ.ascx.vb">
+      <DependentUpon>UC_HERB_PHESAJ.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_IMPORT\FRM_LCN_IMPORT_CONFIRM_DRUG.aspx.designer.vb">

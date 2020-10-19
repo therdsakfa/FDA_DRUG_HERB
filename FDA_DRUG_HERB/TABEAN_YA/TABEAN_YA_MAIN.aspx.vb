@@ -721,7 +721,7 @@ Public Class TABEAN_YA_MAIN
                 If dao.fields.STATUS_ID <> 8 And dao.fields.STATUS_ID < 10 Then
                     url = "../TABEAN_YA_STAFF/POPUP_DR_STAFF_RECEIVE_PAPER.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process
                 Else
-                    url = "../DR/POPUP_DR_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&status=" & dao.fields.STATUS_ID  '& "&staff=1"
+                    url = "../DR/POPUP_DR_CONFIRM.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&status=" & dao.fields.STATUS_ID    '& "&staff=1"
                 End If
 
             Else
@@ -792,7 +792,7 @@ Public Class TABEAN_YA_MAIN
                     If item("STATUS_ID").Text <> 8 And item("STATUS_ID").Text < 10 Then
                         url = "../TABEAN_YA_STAFF/POPUP_DR_STAFF_RECEIVE_PAPER.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process
                     Else
-                        url = "../DR/POPUP_DR_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process & "&status=" & item("STATUS_ID").Text & "&STATUS_ID=" & item("STATUS_ID").Text  '& "&staff=1"
+                        url = "../DR/POPUP_DR_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process & "&status=" & item("STATUS_ID").Text & "&STATUS_ID=" & item("STATUS_ID").Text & "&newcode=" & item("Newcode_U").Text  '& "&staff=1"
                     End If
 
                 Else

@@ -539,4 +539,17 @@ Public Class FRM_LCN_DRUG
         Response.Close()
         Response.End()
     End Sub
+
+    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        If txt_bsn.Text = "" Then
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเลขบัตรผู้ดำเนินกิจการ');", True)
+        Else
+            If Request.QueryString("staff") = "" Then
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_ADD.aspx?type_id=" & _process & "&process=" & _process & "&lct_ida=" & _lct_ida & "&bsn=" & txt_bsn.Text & "');", True)
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_ADD.aspx?type_id=" & _process & "&process=" & _process & "&lct_ida=" & _lct_ida & "&bsn=" & txt_bsn.Text & "&staff=1');", True)
+            End If
+        End If
+
+    End Sub
 End Class

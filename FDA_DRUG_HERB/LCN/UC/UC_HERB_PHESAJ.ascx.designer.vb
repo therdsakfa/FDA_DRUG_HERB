@@ -11,113 +11,113 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_LCN_DRUG
+Partial Public Class UC_HERB_PHESAJ
     
     '''<summary>
-    '''UC_INFMT control.
+    '''txt_PHR_CTZNO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_INFMT As Global.FDA_DRUG_HERB.UC_INFMT
+    Protected WithEvents txt_PHR_CTZNO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lbl_name_2 control.
+    '''btn_search control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name_2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''lbl_name control.
+    '''txt_PHR_NAME control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_PHR_NAME As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''txt_bsn control.
+    '''DropDownList1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_bsn As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''btn_download control.
+    '''TextBox20 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_download As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox20 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_upload control.
+    '''TextBox21 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox21 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_add control.
+    '''TextBox22 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_add As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox22 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btn_reload control.
+    '''TextBox23 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btn_reload As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox23 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Button1 control.
+    '''TextBox24 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents TextBox24 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''lbl_remark control.
+    '''rdl_mastra control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_remark As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents rdl_mastra As Global.System.Web.UI.WebControls.RadioButtonList
     
     '''<summary>
-    '''GV_lcnno control.
+    '''btn_save control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GV_lcnno As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''hl_pay control.
+    '''rgphr control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hl_pay As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents rgphr As Global.Telerik.Web.UI.RadGrid
 End Class

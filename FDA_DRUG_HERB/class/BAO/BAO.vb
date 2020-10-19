@@ -63,6 +63,13 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_Lisense_Name_and_Addr(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_Lisense_Name_and_Addr @identify= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SELECT_TEMP_DH() As DataTable
             Dim sql As String = "select * from [dbo].[TEMP_DH]"
             Dim dta As New DataTable
