@@ -29,7 +29,7 @@ Public Class FRM_TABEAN_SEARCH
 
             End Try
             Dim dao As New DAO_DRUG.ClsDBdrrgt
-            dao.GetDataby_IDA(IDA)
+            dao.GetDataby_4key(item("rgtno").Text, item("drgtpcd").Text, item("rgttpcd").Text, item("pvncd").Text)
             Try
                 STATUS_ID = dao.fields.STATUS_ID
             Catch ex As Exception
@@ -41,20 +41,25 @@ Public Class FRM_TABEAN_SEARCH
             Catch ex As Exception
 
             End Try
+
             If e.CommandName = "sel" Then
                 
                
 
                 Dim _process_id As String = ""
                 Try
-                    _process_id = dao.fields.PROCESS_ID
+                    _process_id = "1400001" 'dao.fields.PROCESS_ID
+                Catch ex As Exception
+
+                End Try
+                Try
+                    IDA = dao.fields.ida
                 Catch ex As Exception
 
                 End Try
 
-                
                 lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/POPUP_DR_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process_id & "&STATUS_ID=" & STATUS_ID & "&status=" & STATUS_ID & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/POPUP_DR_CONFIRM_STAFF.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & _process_id & "&newcode=" & item("Newcode_U").Text & "&STATUS_ID=8" & "&status=8" & "');", True)
             ElseIf e.CommandName = "add" Then
                 lbl_titlename.Text = "แก้ไขข้อมูลส่วนที่ 2"
                 If Request.QueryString("e") <> "" Then

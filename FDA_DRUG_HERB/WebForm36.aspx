@@ -9,6 +9,9 @@
 <%@ Register src="TABEAN_YA/UC_BC/UC_general_BC.ascx" tagname="UC_general_BC" tagprefix="uc1" %>
 
 
+<%@ Register src="LCN/UC/UC_HERB.ascx" tagname="UC_HERB" tagprefix="uc2" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -245,7 +248,8 @@
             <asp:Button ID="Button4" runat="server" Text="Button" style="height: 26px" />
         </p>
         <p>
-            &nbsp;</p>
+            </p>
+        <uc2:UC_HERB ID="UC_HERB1" runat="server" />
         <p>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>

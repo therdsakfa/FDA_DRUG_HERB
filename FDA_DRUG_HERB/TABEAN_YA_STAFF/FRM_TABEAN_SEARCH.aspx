@@ -147,6 +147,24 @@
                        <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="Newcode_U" FilterControlAltText="Filter Newcode_U column" HeaderText="Newcode_U"
+                           SortExpression="Newcode_U" UniqueName="Newcode_U" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="STATUS_ID" DataType="System.Int32" FilterControlAltText="Filter STATUS_ID column" HeaderText="STATUS_ID"
+                           SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="rgtno"  FilterControlAltText="Filter rgtno column" HeaderText="rgtno"
+                           SortExpression="rgtno" UniqueName="rgtno" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="drgtpcd" FilterControlAltText="Filter drgtpcd column" HeaderText="drgtpcd"
+                           SortExpression="drgtpcd" UniqueName="drgtpcd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="rgttpcd" FilterControlAltText="Filter rgttpcd column" HeaderText="rgttpcd"
+                           SortExpression="rgttpcd" UniqueName="rgttpcd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
+                       <telerik:GridBoundColumn DataField="pvncd"  FilterControlAltText="Filter pvncd column" HeaderText="pvncd"
+                           SortExpression="pvncd" UniqueName="pvncd" Display="false" AllowFiltering="true">
+                       </telerik:GridBoundColumn>
                        
                        <telerik:GridBoundColumn DataField="Newcode_U" FilterControlAltText="Filter Newcode_U column" HeaderText="Newcode_U"
                            SortExpression="Newcode_U" UniqueName="Newcode_U" Display="false" AllowFiltering="true">

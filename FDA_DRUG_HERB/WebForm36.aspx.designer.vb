@@ -509,6 +509,15 @@ Partial Public Class WebForm36
     Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''UC_HERB1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_HERB1 As Global.FDA_DRUG_HERB.UC_HERB
+    
+    '''<summary>
     '''TextBox2 control.
     '''</summary>
     '''<remarks>

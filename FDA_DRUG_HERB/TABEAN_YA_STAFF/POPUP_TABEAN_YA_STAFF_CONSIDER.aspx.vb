@@ -194,12 +194,12 @@
         Catch ex As Exception
 
         End Try
-        If lcntpcd.Contains("บ") Then
+        If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
             grptpcd = 2
         Else
             grptpcd = 1
         End If
-        If lcntpcd.Contains("นย") Then
+        If lcntpcd.Contains("นย") Or lcntpcd.Contains("นส") Then
             subtpcd = 3
         End If
         Dim sql_where As String = ""

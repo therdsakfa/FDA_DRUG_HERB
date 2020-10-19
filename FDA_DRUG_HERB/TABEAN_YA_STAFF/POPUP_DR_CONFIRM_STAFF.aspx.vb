@@ -9,11 +9,17 @@ Public Class POPUP_DR_CONFIRM_STAFF
     Private _CLS As New CLS_SESSION
     Private _ProcessID As String
     Private _YEARS As String
+    Dim newcode As String = ""
     Dim _group As Integer = 0
     Sub RunSession()
         Try
+            newcode = Request.QueryString("newcode")
+        Catch ex As Exception
+
+        End Try
+        Try
             _ProcessID = Request.QueryString("process")
-           
+
         Catch ex As Exception
 
         End Try
@@ -34,7 +40,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Try
-           
+
             _CLS = Session("CLS")
 
         Catch ex As Exception
@@ -51,19 +57,19 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
 
-            Dim newcode As String = ""
-            Try
-                dao_copy.GetDataby_IDA_drrgt(_IDA)
-                newcode = dao_copy.fields.Newcode_U
-            Catch ex As Exception
 
-            End Try
+            'Try
+            '    dao_copy.GetDataby_IDA_drrgt(_IDA)
+            '    newcode = dao_copy.fields.Newcode_U
+            'Catch ex As Exception
 
-            'If Request.QueryString("STATUS_ID") = "8" Then
-            '    BindData_PDF_SAI(newcode)
-            'Else
-            BindData_PDF()
-            'End If
+            'End Try
+
+            If Request.QueryString("STATUS_ID") = "8" Then
+                BindData_PDF_SAI(newcode)
+            Else
+                BindData_PDF()
+            End If
 
 
             Bind_ddl_Status_staff()
@@ -914,7 +920,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
             End Try
             Try
-                If dao.fields.lcntpcd.Contains("ผย") Then
+                If dao.fields.lcntpcd.Contains("ผย") Or dao.fields.lcntpcd.Contains("ผส") Then
                     LCNTPCD_GROUP = "2"
                 Else
                     LCNTPCD_GROUP = "1"
@@ -1245,7 +1251,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim head_type As String = ""
         Try
             head_type = ""
-            If lcntpcd.Contains("บ") Then
+            If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
                 head_type = "โบราณ"
             Else
                 head_type = "ปัจจุบัน"
@@ -2004,7 +2010,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
         dao_e.GetDataby_u1_frn_no(newcode)
         Dim dao As New DAO_DRUG.ClsDBdrrgt
-        dao.GetDataby_IDA(_IDA)
+        ' dao.GetDataby_IDA(_IDA)
+        dao.GetDataby_4key(dao_e.fields.rgtno, dao_e.fields.drgtpcd, dao_e.fields.rgttpcd, dao_e.fields.pvncd)
         Dim dao2 As New DAO_DRUG.ClsDBdrrqt
         Try
             class_xml.drrgts = dao.fields
@@ -2033,7 +2040,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Try
-            If dao.fields.lcntpcd.Contains("ผย") Then
+            If dao_e.fields.lcntpcd.Contains("ผย") Or dao_e.fields.lcntpcd.Contains("ผส") Then
                 LCNTPCD_GROUP = "2"
             Else
                 LCNTPCD_GROUP = "1"
@@ -2043,7 +2050,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         End Try
         lcnno = dao_e.fields.lcnno
         Try
-            If dao_e.fields.lcntpcd.Contains("ผยบ") Or dao_e.fields.lcntpcd.Contains("นยบ") Then
+            If dao_e.fields.lcntpcd.Contains("ผยบ") Or dao_e.fields.lcntpcd.Contains("นยบ") Or dao_e.fields.lcntpcd.Contains("ผสม") Or dao_e.fields.lcntpcd.Contains("นสม") Then
                 TABEAN_TYPE1 = "1"
                 'cls_xml.TABEAN_TYPE2 = "2"
             Else
@@ -2165,14 +2172,14 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Dim cls As New CLASS_GEN_XML.DR(_CLS.CITIZEN_ID, lcnsid, dao_lcn.fields.lcnno, pvncd, dao_lcn.fields.IDA)
-        Dim _process As Integer = 0
-        Try
-            Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-            dao_tr.GetDataby_IDA(tr_id)
-            _process = dao_tr.fields.PROCESS_ID
-        Catch ex As Exception
+        'Dim _process As Integer = 0
+        'Try
+        '    Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        '    dao_tr.GetDataby_IDA(tr_id)
+        '    _process = dao_tr.fields.PROCESS_ID
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
 
         Try
@@ -2205,7 +2212,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim head_type As String = ""
         Try
             head_type = ""
-            If lcntpcd.Contains("บ") Then
+            If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
                 head_type = "โบราณ"
             Else
                 head_type = "ปัจจุบัน"
@@ -2417,7 +2424,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
         class_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
         class_xml.DT_SHOW.DT23 = bao_show.SP_drrgt_cas(_IDA)
         class_xml.DT_SHOW.DT23.TableName = "SP_regis"
-        class_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(_IDA, 9, LCNTPCD_GROUP)
+        class_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(dao.fields.IDA, 9, LCNTPCD_GROUP)
         class_xml.DT_SHOW.DT21.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER"
         class_xml.DT_SHOW.DT23 = bao_show.SP_DRRGT_CAS_EQTO(_IDA)
         class_xml.DT_SHOW.DT23.TableName = "SP_regis"
@@ -2560,8 +2567,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
 
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & NAME_TEMPLATE 'dao_pdftemplate.fields.PDF_TEMPLATE
-        Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _process, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
-        Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _process, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
+        Dim filename As String = paths & PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, _YEARS, _TR_ID) ' dao_pdftemplate.fields.PDF_OUTPUT
+        Dim Path_XML As String = paths & XML_PATH & "\" & NAME_XML("DA", _ProcessID, _YEARS, _TR_ID) 'dao_pdftemplate.fields.XML_PATH
         Try
             Dim url As String = ""
             ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
@@ -2576,7 +2583,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         p_dr = class_xml
-        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _process, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
         lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"

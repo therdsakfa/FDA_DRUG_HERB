@@ -703,7 +703,7 @@ Public Class POPUP_DR_CONFIRM
         Dim head_type As String = ""
         Try
             head_type = ""
-            If lcntpcd.Contains("บ") Then
+            If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
                 head_type = "โบราณ"
             Else
                 head_type = "ปัจจุบัน"
