@@ -20,7 +20,7 @@ Public Class WS_ACCEPT_RGT_AUTO
         Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
 
         dao.GetDataby_IDA(FK_DRRQT)
-        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        'dao_up.GetDataby_IDA(dao.fields.TR_ID)
         Dim rgttpcd As String = ""
         If dao.fields.lcntpcd.Contains("ผย") Or dao.fields.lcntpcd.Contains("ผส") Then
             rgttpcd = "G"

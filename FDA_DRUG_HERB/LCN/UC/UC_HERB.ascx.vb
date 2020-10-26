@@ -39,11 +39,11 @@
             _pvncd = 10
         End Try
     End Sub
-    Sub Set_Label()
+    Sub Set_Label(ByVal CITIZEN_ID_AUTHORIZE As String)
         Dim bao_show As New BAO_SHOW
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt_lcn As New DataTable
-        dt_lcn = bao.SP_Lisense_Name_and_Addr(_CLS.CITIZEN_ID_AUTHORIZE) ' bao_show.SP_LOCATION_BSN_BY_LCN_IDA(_IDA) 'ผู้ดำเนิน
+        dt_lcn = bao.SP_Lisense_Name_and_Addr(CITIZEN_ID_AUTHORIZE) ' bao_show.SP_LOCATION_BSN_BY_LCN_IDA(_IDA) 'ผู้ดำเนิน
         '
         For Each dr As DataRow In dt_lcn.Rows
             Try
@@ -404,5 +404,56 @@
         dao.fields.LOCATION_ADDRESS_IDENTIFY = dao_location_address.fields.IDENTIFY
         dao.fields.LOCATION_ADDRESS_REMARK = dao_location_address.fields.REMARK
 
+    End Sub
+    Sub setdata_frgn_data(ByRef dao As DAO_DRUG.TB_DALCN_FRGN_DATA)
+        With dao.fields
+            Try
+                .BS_DATE = CDate(txt_BS_DATE.Text)
+            Catch ex As Exception
+
+            End Try
+            Try
+                .BS_DATE1 = CDate(txt_BS_DATE1.Text)
+            Catch ex As Exception
+
+            End Try
+            .BS_NO = txt_BS_NO.Text
+            .BS_NO1 = txt_BS_NO1.Text
+            Try
+                .DOC_DATE = CDate(txt_DOC_DATE.Text)
+            Catch ex As Exception
+
+            End Try
+            .DOC_NO = txt_DOC_NO.Text
+            Try
+                .FRGN_DATE = CDate(txt_FRGN_DATE.Text)
+            Catch ex As Exception
+
+            End Try
+            .FRGN_NO = txt_FRGN_NO.Text
+            .FRGN_NO1 = txt_FRGN_NO1.Text
+            Try
+                .PASSPORT_EXPDATE = CDate(txt_PASSPORT_EXPDATE.Text)
+            Catch ex As Exception
+
+            End Try
+            .PASSPORT_NO = txt_PASSPORT_NO.Text
+            Try
+                If cb_Personal_Type1.Checked = True Then
+                    .PERSONAL_TYPE = 1
+                ElseIf cb_Personal_Type2.Checked = True Then
+                    .PERSONAL_TYPE = 2
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
+                .WORK_LICENSE_EXPDATE = CDate(txt_WORK_LICENSE_EXPDATE.Text)
+            Catch ex As Exception
+
+            End Try
+            .WORK_LICENSE_NO = txt_WORK_LICENSE_NO.Text
+
+        End With
     End Sub
 End Class

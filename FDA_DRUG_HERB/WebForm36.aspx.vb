@@ -16,9 +16,11 @@ Public Class WebForm36
         asas = CDate("2020-03-23").ToLongDateString()
 
 
-
+        UC_TABLE_DRUG_GROUP_CHANGE_HERB1.bind_type(65019)
+        UC_TABLE_DRUG_GROUP_CHANGE_HERB1.bind_table(65019)
 
         If Not IsPostBack Then
+
             'UC_general_BC1.bind_dactg()
             'UC_general_BC1.bind_ddl_bio_unit()
             'UC_general_BC1.bind_ddl_packaging()
@@ -2769,5 +2771,9 @@ Public Class WebForm36
         ws.GETDATE_WORKING(CDate("2020-08-31"), True, 20, True, date_result, True)
         numday = date_result.ToLongDateString()
 
+    End Sub
+
+    Protected Sub btn_save_group_Click(sender As Object, e As EventArgs) Handles btn_save_group.Click
+        UC_TABLE_DRUG_GROUP_CHANGE_HERB1.save_data(65019)
     End Sub
 End Class

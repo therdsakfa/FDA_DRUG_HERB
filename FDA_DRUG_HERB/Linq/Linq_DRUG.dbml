@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG" Class="Linq_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.132;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.168;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.RECIVE" Member="RECIVEs">
     <Type Name="RECIVE">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6721,6 +6721,60 @@
       <Column Name="sunitcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FK_SET" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="EACH_TXT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_DRUG_GROUP_HERB" Member="MAS_DRUG_GROUP_HERBs">
+    <Type Name="MAS_DRUG_GROUP_HERB">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COL1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COL2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE_SHOW" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HEADER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FLOORS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TABS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HEAD_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_DRUG_GROUP_HERB_NO3" Member="MAS_DRUG_GROUP_HERB_NO3s">
+    <Type Name="MAS_DRUG_GROUP_HERB_NO3">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL" Member="DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs">
+    <Type Name="DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCN_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COL1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL6_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_FRGN_DATA" Member="DALCN_FRGN_DATAs">
+    <Type Name="DALCN_FRGN_DATA">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSPORT_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PASSPORT_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BS_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

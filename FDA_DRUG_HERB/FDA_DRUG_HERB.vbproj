@@ -634,9 +634,11 @@
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
     <Content Include="LCN\POPUP_LCN_ADD.aspx" />
+    <Content Include="LCN\POPUP_LCN_DRUG_GROUP_HERB.aspx" />
     <Content Include="LCN\UC\UC_HERB.ascx" />
     <Content Include="LCN\UC\UC_HERB_KEEP.ascx" />
     <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
+    <Content Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
     <Content Include="PDF.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
@@ -4737,6 +4739,13 @@
       <DependentUpon>POPUP_LCN_DOWNLOAD_DRUG.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN\POPUP_LCN_DRUG_GROUP_HERB.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_DRUG_GROUP_HERB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_DRUG_GROUP_HERB.aspx.vb">
+      <DependentUpon>POPUP_LCN_DRUG_GROUP_HERB.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="LCN\POPUP_LCN_NCT_TEMP_CONFIRM.aspx.designer.vb">
       <DependentUpon>POPUP_LCN_NCT_TEMP_CONFIRM.aspx</DependentUpon>
     </Compile>
@@ -4826,6 +4835,13 @@
     </Compile>
     <Compile Include="LCN\UC\UC_HERB_PHESAJ.ascx.vb">
       <DependentUpon>UC_HERB_PHESAJ.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx.designer.vb">
+      <DependentUpon>UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx.vb">
+      <DependentUpon>UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_IMPORT\FRM_LCN_IMPORT_CONFIRM_DRUG.aspx.designer.vb">

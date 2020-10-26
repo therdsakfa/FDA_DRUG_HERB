@@ -194,130 +194,130 @@ Partial Public Class UC_HERB
     Protected WithEvents lbl_lcn_email As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''checkbox7 control.
+    '''cb_Personal_Type1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents checkbox7 As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents cb_Personal_Type1 As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''TextBox1 control.
+    '''txt_PASSPORT_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_PASSPORT_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox2 control.
+    '''txt_PASSPORT_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox3 control.
+    '''txt_DOC_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_DOC_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox4 control.
+    '''txt_DOC_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox4 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_DOC_DATE As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox5 control.
+    '''txt_WORK_LICENSE_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox5 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox6 control.
+    '''txt_WORK_LICENSE_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox6 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox7 control.
+    '''txt_BS_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox7 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_BS_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox8 control.
+    '''txt_BS_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox8 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_BS_DATE As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox9 control.
+    '''txt_FRGN_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox9 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_FRGN_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox10 control.
+    '''txt_FRGN_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox10 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_FRGN_DATE As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''checkbox8 control.
+    '''cb_Personal_Type2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents checkbox8 As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents cb_Personal_Type2 As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''TextBox11 control.
+    '''txt_BS_NO1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_BS_NO1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox12 control.
+    '''txt_BS_DATE1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox12 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_BS_DATE1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''TextBox13 control.
@@ -329,13 +329,13 @@ Partial Public Class UC_HERB
     Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox14 control.
+    '''txt_FRGN_NO1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox14 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_FRGN_NO1 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''lbl_BSN_THAIFULLNAME control.

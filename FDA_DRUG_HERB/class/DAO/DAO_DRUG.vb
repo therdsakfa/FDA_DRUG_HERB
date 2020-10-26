@@ -13843,6 +13843,177 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+
+    Public Class TB_MAS_DRUG_GROUP_HERB
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_DRUG_GROUP_HERB
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.MAS_DRUG_GROUP_HERBs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub insert()
+            db.MAS_DRUG_GROUP_HERBs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.MAS_DRUG_GROUP_HERBs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.MAS_DRUG_GROUP_HERBs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_By_IDA(ByVal IDA As Integer)
+            datas = (From p In db.MAS_DRUG_GROUP_HERBs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL
+        Inherits MAINCONTEXT 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL
+
+        Public Sub insert()
+            db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub GetDataby_FKLCN_AND_FK_IDA(ByVal FK_LCN As Integer, ByVal FK_IDA As Integer)
+
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Where p.FK_IDA = FK_IDA And p.LCN_IDA = FK_LCN Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_FKIDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Where p.LCN_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_LCN_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Where p.LCN_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Function count_drug_group(ByVal FK_LCN_IDA As Integer) As Boolean
+            Dim bool As Boolean = False
+            Dim i As Integer = 0
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Where p.LCN_IDA = FK_LCN_IDA Select p)
+            For Each Me.fields In datas
+                i += 1
+            Next
+            If i > 0 Then
+                bool = True
+            End If
+            Return bool
+        End Function
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataALL()
+
+            datas = (From p In db.DALCN_IMPORT_DRUG_GROUP_HERB_DETAILs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+
+    Public Class TB_MAS_DRUG_GROUP_HERB_NO3
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_DRUG_GROUP_HERB_NO3
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.MAS_DRUG_GROUP_HERB_NO3s Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub insert()
+            db.MAS_DRUG_GROUP_HERB_NO3s.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.MAS_DRUG_GROUP_HERB_NO3s.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.MAS_DRUG_GROUP_HERB_NO3s Select p Order By p.SEQ)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_By_IDA(ByVal IDA As Integer)
+            datas = (From p In db.MAS_DRUG_GROUP_HERB_NO3s Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    '
+    Public Class TB_DALCN_FRGN_DATA
+        Inherits MAINCONTEXT
+
+        Public fields As New DALCN_FRGN_DATA
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DALCN_FRGN_DATAs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub insert()
+            db.DALCN_FRGN_DATAs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_FRGN_DATAs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_FRGN_DATAs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_By_IDA(ByVal IDA As Integer)
+            datas = (From p In db.DALCN_FRGN_DATAs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 End Namespace
 
 

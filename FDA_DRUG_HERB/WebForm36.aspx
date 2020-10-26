@@ -12,6 +12,9 @@
 <%@ Register src="LCN/UC/UC_HERB.ascx" tagname="UC_HERB" tagprefix="uc2" %>
 
 
+<%@ Register src="LCN/UC/UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" tagname="UC_TABLE_DRUG_GROUP_CHANGE_HERB" tagprefix="uc3" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -249,7 +252,6 @@
         </p>
         <p>
             </p>
-        <uc2:UC_HERB ID="UC_HERB1" runat="server" />
         <p>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -267,7 +269,10 @@
             <asp:Button ID="Button9" runat="server" Text="Button" />
         </p>
         <p>
-            &nbsp;</p>
+            <a/>
+            <asp:Button ID="btn_save_group" runat="server" Text="save group" />
+            </a></p>
+        <uc3:UC_TABLE_DRUG_GROUP_CHANGE_HERB ID="UC_TABLE_DRUG_GROUP_CHANGE_HERB1" runat="server" />
         <p>
             &nbsp;</p>
 

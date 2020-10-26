@@ -208,7 +208,8 @@ Public Class FRM_LCN_DRUG
                 Else
                     btn_Select.Style.Add("display", "block")
                 End If
-
+            ElseIf _process = "120" Or _process = "121" Or _process = "122" Then
+                btn_Select.Style.Add("display", "block")
             ElseIf _process = "101" Then
                 Dim dao_ky As New DAO_DRUG.ClsDBdalcn
                 dao_ky.GetDataby_IDA(id)
@@ -333,7 +334,11 @@ Public Class FRM_LCN_DRUG
             Catch ex As Exception
 
             End Try
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
+            If _process = "120" Or _process = "121" Or _process = "122" Then
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "POPUP_LCN_DRUG_GROUP_HERB.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
+            End If
         ElseIf e.CommandName = "sell" Then
             dao.GetDataby_IDA(str_ID)
             Dim tr_id As String = 0

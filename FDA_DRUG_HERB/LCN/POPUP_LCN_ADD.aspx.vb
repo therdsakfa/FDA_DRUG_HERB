@@ -26,11 +26,11 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         RunSession()
-        UC_HERB.Set_Label()
-        If Not IsPostBack Then
-          
 
-        If Request.QueryString("IDA") <> "" Then
+        If Not IsPostBack Then
+            UC_HERB.Set_Label(_CLS.CITIZEN_ID_AUTHORIZE)
+
+            If Request.QueryString("IDA") <> "" Then
                 Panel1.Style.Add("display", "block")
                 Panel2.Style.Add("display", "block")
                 btn_save.Style.Add("display", "none")
@@ -59,8 +59,14 @@
             Dim dao_dal As New DAO_DRUG.ClsDBdalcn
             UC_HERB.setdata(dao_dal, TR_ID)
             dao_dal.insert()
-            Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
-            Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & IDA)
+
+            Dim dao_frgn As New DAO_DRUG.TB_DALCN_FRGN_DATA
+            UC_HERB.setdata_frgn_data(dao_frgn)
+            dao_frgn.fields.FK_IDA = dao_dal.fields.IDA
+            dao_frgn.insert()
+
+            'Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
+            Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&IDA=" & IDA)
         End If
 
     End Sub

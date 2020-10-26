@@ -509,15 +509,6 @@ Partial Public Class WebForm36
     Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''UC_HERB1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UC_HERB1 As Global.FDA_DRUG_HERB.UC_HERB
-    
-    '''<summary>
     '''TextBox2 control.
     '''</summary>
     '''<remarks>
@@ -606,6 +597,24 @@ Partial Public Class WebForm36
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button9 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btn_save_group control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save_group As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''UC_TABLE_DRUG_GROUP_CHANGE_HERB1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_TABLE_DRUG_GROUP_CHANGE_HERB1 As Global.FDA_DRUG_HERB.UC_TABLE_DRUG_GROUP_CHANGE_HERB
     
     '''<summary>
     '''Txt_Remark control.
