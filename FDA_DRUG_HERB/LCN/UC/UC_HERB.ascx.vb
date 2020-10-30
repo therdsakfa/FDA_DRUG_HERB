@@ -417,8 +417,17 @@
             Catch ex As Exception
 
             End Try
-            .BS_NO = txt_BS_NO.Text
-            .BS_NO1 = txt_BS_NO1.Text
+            Try
+                .BS_NO = txt_BS_NO.Text
+            Catch ex As Exception
+
+            End Try
+            Try
+                .BS_NO1 = txt_BS_NO1.Text
+            Catch ex As Exception
+
+            End Try
+
             Try
                 .DOC_DATE = CDate(txt_DOC_DATE.Text)
             Catch ex As Exception

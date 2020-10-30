@@ -1537,6 +1537,13 @@ Namespace BAO
             Return dta
         End Function
         '
+        Public Function SP_DRRGT_RGTNO_DISPLAY_BY_4key(ByVal rgtno As String, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal pvncd As String) As DataTable
+            Dim sql As String = "exec SP_DRRGT_RGTNO_DISPLAY_BY_4key @rgtno='" & rgtno & "', @rgttpcd='" & rgttpcd & "', @drgtpcd='" & drgtpcd & "' , @pvncd='" & pvncd & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_RGTNO_DISPLAY_BY_4key"
+            Return dta
+        End Function
         Public Function SP_DRRQT_RGTNO_DISPLAY_BY_IDA(ByVal ida As Integer) As DataTable
             Dim sql As String = "exec SP_DRRQT_RGTNO_DISPLAY_BY_IDA @ida=" & ida
             Dim dta As New DataTable

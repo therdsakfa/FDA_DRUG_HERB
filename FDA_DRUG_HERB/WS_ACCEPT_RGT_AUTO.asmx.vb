@@ -49,6 +49,14 @@ Public Class WS_ACCEPT_RGT_AUTO
                 'insert_tabean_auto(FK_DRRQT)
                 Dim bao_insert As New BAO.ClsDBSqlcommand
                 bao_insert.insert_tabean_sub(FK_DRRQT)
+
+                Try
+                    Dim ws_drug As New WS_DRUG.WS_DRUG
+                    ws_drug.DRUG_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
+                Catch ex As Exception
+
+                End Try
+
             End If
            
         Else
@@ -67,6 +75,13 @@ Public Class WS_ACCEPT_RGT_AUTO
                 ' insert_tabean_auto(FK_DRRQT)
                 Dim bao_insert As New BAO.ClsDBSqlcommand
                 bao_insert.insert_tabean_sub(FK_DRRQT)
+
+                Try
+                    Dim ws_drug As New WS_DRUG.WS_DRUG
+                    ws_drug.DRUG_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
+                Catch ex As Exception
+
+                End Try
             End If
         End If
         Return result

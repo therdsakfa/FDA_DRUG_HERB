@@ -22,7 +22,7 @@ Public Class UC_TABLE_DRUG_GROUP_CHANGE_HERB
     Sub bind_type(ByVal IDA As Integer)
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Try
-            dao.GetDataby_IDA(Request.QueryString("IDA"))
+            dao.GetDataby_IDA(Request.QueryString("ida"))
             If dao.fields.lcntpcd = "ขสม" Then
                 rdl_drug_type.SelectedValue = "1"
             ElseIf dao.fields.lcntpcd = "นสม" Then

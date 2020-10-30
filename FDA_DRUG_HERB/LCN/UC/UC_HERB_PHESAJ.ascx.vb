@@ -94,11 +94,11 @@ Public Class UC_HERB_PHESAJ
     Private Sub rgphr_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgphr.NeedDataSource
         Dim bao As New BAO_MASTER
         Dim dt As New DataTable
-        Try
-            dt = bao.SP_DALCN_PHR_BY_FK_IDA_2(Request.QueryString("IDA"))
-        Catch ex As Exception
-            'FRM_STAFF_LCN_PHR_EDIT.aspx
-        End Try
+        If Request.QueryString("ida") <> "" Then
+            dt = bao.SP_DALCN_PHR_BY_FK_IDA_2(Request.QueryString("ida"))
+        End If
+
+
         If dt.Rows.Count > 0 Then
             rgphr.DataSource = dt
         End If

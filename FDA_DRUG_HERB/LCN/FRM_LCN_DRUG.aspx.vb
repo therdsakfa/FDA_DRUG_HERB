@@ -209,7 +209,7 @@ Public Class FRM_LCN_DRUG
                     btn_Select.Style.Add("display", "block")
                 End If
             ElseIf _process = "120" Or _process = "121" Or _process = "122" Then
-                btn_Select.Style.Add("display", "block")
+                btn_drug_group.Style.Add("display", "block")
             ElseIf _process = "101" Then
                 Dim dao_ky As New DAO_DRUG.ClsDBdalcn
                 dao_ky.GetDataby_IDA(id)

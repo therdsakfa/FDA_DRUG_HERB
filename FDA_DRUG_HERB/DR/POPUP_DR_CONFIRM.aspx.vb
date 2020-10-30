@@ -67,11 +67,11 @@ Public Class POPUP_DR_CONFIRM
         If Not IsPostBack Then
             'BindData_PDF()
             Try
-                If Request.QueryString("STATUS_ID") = "8" Then
-                    BindData_PDF_SAI(newcode)
-                Else
-                    BindData_PDF()
-                End If
+                'If Request.QueryString("STATUS_ID") = "8" Then
+                '    BindData_PDF_SAI(newcode)
+                'Else
+                BindData_PDF()
+                'End If
             Catch ex As Exception
                 Response.Redirect("https://privus.fda.moph.go.th/")
             End Try
@@ -398,6 +398,7 @@ Public Class POPUP_DR_CONFIRM
         Dim rgtno_format As String = ""
         Dim rgtno_auto As String = ""
         Dim rgttpcd As String = ""
+        Dim drgtpcd As String = ""
         Dim drug_name As String = ""
         Dim drug_name_th As String = ""
         Dim drug_name_eng As String = ""
@@ -440,7 +441,7 @@ Public Class POPUP_DR_CONFIRM
 
             End Try
             Try
-                If dao.fields.lcntpcd.Contains("ผย") Then
+                If dao.fields.lcntpcd.Contains("ผย") Or dao.fields.lcntpcd.Contains("ผส") Then
                     LCNTPCD_GROUP = "2"
                 Else
                     LCNTPCD_GROUP = "1"
@@ -463,6 +464,11 @@ Public Class POPUP_DR_CONFIRM
             DRUG_STRENGTH = dao.fields.DRUG_STRENGTH
             Try
                 rgttpcd = dao.fields.rgttpcd
+            Catch ex As Exception
+
+            End Try
+            Try
+                drgtpcd = dao.fields.drgtpcd
             Catch ex As Exception
 
             End Try
@@ -568,7 +574,7 @@ Public Class POPUP_DR_CONFIRM
 
             End Try
             Try
-                If dao.fields.lcntpcd.Contains("ผย") Then
+                If dao.fields.lcntpcd.Contains("ผย") Or dao.fields.lcntpcd.Contains("ผส") Then
                     LCNTPCD_GROUP = "2"
                 Else
                     LCNTPCD_GROUP = "1"
@@ -588,6 +594,11 @@ Public Class POPUP_DR_CONFIRM
                 pvncd = dao.fields.pvncd
             Catch ex As Exception
                 pvncd = ""
+            End Try
+            Try
+                drgtpcd = dao.fields.drgtpcd
+            Catch ex As Exception
+
             End Try
             DRUG_STRENGTH = dao.fields.DRUG_STRENGTH
             Try
@@ -1013,7 +1024,8 @@ Public Class POPUP_DR_CONFIRM
         If STATUS_ID = 8 Then
             Dim dt_rgtno As New DataTable
             Dim bao_rgtno As New BAO.ClsDBSqlcommand
-            dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(_IDA)
+            'dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(_IDA)
+            dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_4key(rgtno, rgttpcd, drgtpcd, pvncd)
             Try
                 rgtno_format = dt_rgtno(0)("rgtno_display")
             Catch ex As Exception

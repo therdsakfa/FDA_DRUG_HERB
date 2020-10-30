@@ -18,7 +18,30 @@ Public Class UC_HERB_KEEP
 
         If Not IsPostBack Then
             set_data()
+            set_ddl_place()
         End If
+    End Sub
+    Sub set_ddl_place()
+        Dim iden As String = ""
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_IDA(Request.QueryString("ida"))
+        Try
+            iden = dao.fields.CITIZEN_ID_AUTHORIZE
+        Catch ex As Exception
+
+        End Try
+        Dim dt As New DataTable
+        Dim bao As New BAO_SHOW
+        dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, _CLS.CITIZEN_ID_AUTHORIZE)
+
+
+            ddl_placename.DataSource = dt
+        ddl_placename.DataValueField = "IDA"
+        ddl_placename.DataTextField = "thanameplace"
+        ddl_placename.DataBind()
+
+        Dim item As New ListItem("", "")
+        ddl_placename.Items.Insert(0, item)
     End Sub
     Sub set_data()
         hf_place.Value = ddl_placename.SelectedValue
