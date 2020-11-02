@@ -937,6 +937,31 @@ Public Class FRM_LCN_CONFIRM_DRUG
         class_xml.LCNNO_SHOW = NumEng2Thai(lcnno_format)
         class_xml.SHOW_LCNNO = NumEng2Thai(lcnno_text)
         Try
+            If dao.fields.lcntpcd = "ขสม" Then
+                class_xml.LCN_TYPE = "ขาย"
+            ElseIf dao.fields.lcntpcd = "ผสม" Then
+                class_xml.LCN_TYPE = "ผลิต"
+            ElseIf dao.fields.lcntpcd = "นสม" Then
+                class_xml.LCN_TYPE = "นำเข้า"
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            Dim dao_pph As New DAO_DRUG.ClsDBDALCN_PHR
+            dao_pph.GetDataby_FK_IDA(_IDA)
+            If dao_pph.fields.PHR_LAW_SECTION = "1" Then
+                class_xml.MASTRA = "มาตรา ๓๑"
+            ElseIf dao_pph.fields.PHR_LAW_SECTION = "2" Then
+                class_xml.MASTRA = "มาตรา ๓๒"
+            ElseIf dao_pph.fields.PHR_LAW_SECTION = "3" Then
+                class_xml.MASTRA = "มาตรา ๓๓"
+            End If
+        Catch ex As Exception
+
+        End Try
+        Try
 
             class_xml.COUNT_PHESAJ1 = dao_PHR2.CountDataby_FK_IDA_and_Type(_IDA, 1)
         Catch ex As Exception

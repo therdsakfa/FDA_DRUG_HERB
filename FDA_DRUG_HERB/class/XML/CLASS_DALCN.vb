@@ -426,6 +426,38 @@
                 _syslctaddr_thasoi = value
             End Set
         End Property
+
+        Private _LCN_TYPE As String
+        Public Property LCN_TYPE() As String
+            Get
+                Return _LCN_TYPE
+            End Get
+            Set(ByVal value As String)
+                _LCN_TYPE = value
+            End Set
+        End Property
+
+        Private _MASTRA As String
+        Public Property MASTRA() As String
+            Get
+                Return _MASTRA
+            End Get
+            Set(ByVal value As String)
+                _MASTRA = value
+            End Set
+        End Property
+
+        Private _DRUG_GROUP_TYPE As String
+        Public Property DRUG_GROUP_TYPE() As String
+            Get
+                Return _DRUG_GROUP_TYPE
+            End Get
+            Set(ByVal value As String)
+                _DRUG_GROUP_TYPE = value
+            End Set
+        End Property
+
+
 #End Region
 
     End Class

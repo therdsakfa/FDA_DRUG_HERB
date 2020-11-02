@@ -288,6 +288,23 @@
     End Function
     Sub setdata(ByRef dao As DAO_DRUG.ClsDBdalcn, ByVal TR_ID As Integer)
         With dao.fields
+
+            .GIVE_PASSPORT_NO = txt_GIVE_PASSPORT_NO.Text
+            Try
+                .GIVE_PASSPORT_EXPDATE = rdp_GIVE_PASSPORT_EXPDATE.SelectedDate
+            Catch ex As Exception
+
+            End Try
+            Try
+                .GIVE_WORK_LICENSE_NO = txt_GIVE_WORK_LICENSE_NO.Text
+            Catch ex As Exception
+
+            End Try
+            Try
+                .GIVE_WORK_LICENSE_EXPDATE = rdp_GIVE_WORK_LICENSE_EXPDATE.SelectedDate
+            Catch ex As Exception
+
+            End Try
             .TR_ID = TR_ID
             .FK_IDA = Request.QueryString("lct_ida")
             .CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -464,5 +481,47 @@
             .WORK_LICENSE_NO = txt_WORK_LICENSE_NO.Text
 
         End With
+    End Sub
+
+    Sub set_date_current_addr(ByRef dao As DAO_DRUG.TB_DALCN_CURRENT_ADDRESS)
+        With dao.fields
+            .amphrcd = ddl_amphor.SelectedValue
+            .chngwtcd = ddl_Province.SelectedValue
+            .email = txt_c_email.Text
+            .fax = txt_c_fax.Text
+            '.FK_IDA = 
+            .tel = txt_c_tel.Text
+            .thaaddr = txt_c_thaaddr.Text
+            .thabuilding = txt_c_thabuilding.Text
+            .thamu = txt_c_thamu.Text
+            .thanameplace = ""
+            .tharoad = txt_c_tharoad.Text
+            .tharoom = ""
+            .thasoi = txt_c_thasoi.Text
+            .thmblcd = ddl_tambol.SelectedValue
+            .zipcode = txt_c_zipcode.Text
+        End With
+    End Sub
+    Public Sub load_ddl_chwt()
+        Dim bao As New BAO_SHOW
+        Dim dt As DataTable = bao.SP_SP_SYSCHNGWT()
+
+        ddl_Province.DataSource = dt
+        ddl_Province.DataBind()
+    End Sub
+    Public Sub load_ddl_amp()
+
+        Dim bao As New BAO_SHOW
+        Dim dt As New DataTable
+        dt = bao.SP_SYSAMPHR_BY_CHNGWTCD(ddl_Province.SelectedValue)
+        ddl_amphor.DataSource = dt
+        ddl_amphor.DataBind()
+    End Sub
+    Public Sub load_ddl_thambol()
+        Dim bao As New BAO_SHOW
+        Dim dt As New DataTable
+        dt = bao.SP_SYSTHMBL_BY_CHNGWTCD_AND_AMPHRCD(ddl_Province.SelectedValue, ddl_amphor.SelectedValue)
+        ddl_tambol.DataSource = dt
+        ddl_tambol.DataBind()
     End Sub
 End Class

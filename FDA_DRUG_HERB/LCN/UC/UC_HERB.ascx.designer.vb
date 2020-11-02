@@ -482,148 +482,148 @@ Partial Public Class UC_HERB
     Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Label34 control.
+    '''txt_c_thaaddr control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label34 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_thaaddr As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label35 control.
+    '''txt_c_thabuilding control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label35 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_thabuilding As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label36 control.
+    '''txt_c_thamu control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label36 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_thamu As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label37 control.
+    '''txt_c_thasoi control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label37 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_thasoi As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label38 control.
+    '''txt_c_tharoad control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label38 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_tharoad As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label39 control.
+    '''ddl_tambol control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label39 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddl_tambol As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Label40 control.
+    '''ddl_amphor control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label40 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddl_amphor As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Label41 control.
+    '''ddl_Province control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label41 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddl_Province As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Label42 control.
+    '''txt_c_zipcode control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label42 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_zipcode As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label43 control.
+    '''txt_c_fax control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label43 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_fax As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label44 control.
+    '''txt_c_tel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label44 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_tel As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label45 control.
+    '''txt_c_email control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label45 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txt_c_email As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox15 control.
+    '''txt_GIVE_PASSPORT_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox15 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_GIVE_PASSPORT_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox16 control.
+    '''rdp_GIVE_PASSPORT_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox16 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents rdp_GIVE_PASSPORT_EXPDATE As Global.Telerik.Web.UI.RadDatePicker
     
     '''<summary>
-    '''TextBox17 control.
+    '''txt_GIVE_WORK_LICENSE_NO control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox17 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_GIVE_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''TextBox18 control.
+    '''rdp_GIVE_WORK_LICENSE_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox18 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents rdp_GIVE_WORK_LICENSE_EXPDATE As Global.Telerik.Web.UI.RadDatePicker
     
     '''<summary>
     '''lbl_lct_thanameplace control.

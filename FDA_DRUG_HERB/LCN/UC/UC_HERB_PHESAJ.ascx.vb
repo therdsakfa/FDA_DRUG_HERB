@@ -6,7 +6,25 @@ Public Class UC_HERB_PHESAJ
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
+    Sub bind_ddl_phr_type()
+        Try
+            Dim dao As New DAO_DRUG.ClsDBdaphrcd
+            dao.GetDataAll()
+            ddl_phr_type.DataSource = dao.datas
+            ddl_phr_type.DataValueField = "TYPE_ID"
+            ddl_phr_type.DataTextField = "TYPE_PHR_HERB"
+            ddl_phr_type.DataBind()
 
+            Dim item As New ListItem
+            item.Text = "--กรุณาเลือก--"
+            item.Value = "0"
+            ddl_phr_type.Items.Insert(0, item)
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim CITIZEN_ID_AUTHORIZE As String = ""
         Try
@@ -39,6 +57,7 @@ Public Class UC_HERB_PHESAJ
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
         set_data(dao)
+        dao.fields.FK_IDA = Request.QueryString("ida")
         dao.insert()
 
         Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
@@ -51,26 +70,35 @@ Public Class UC_HERB_PHESAJ
             '.PHR_LEVEL = txt_PHR_LEVEL.Text
             '.PHR_PREFIX_ID = ddl_prefix.SelectedValue
             '.PHR_PREFIX_NAME = ddl_prefix.SelectedItem.Text
-            '.PHR_CTZNO = txt_PHR_CTZNO.Text
-            '.PHR_TEXT_NUM = txt_PHR_TEXT_NUM.Text
-            '.PHR_TEXT_WORK_TIME = txt_PHR_TEXT_WORK_TIME.Text
-            '.PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text
-            'Try
-            '    .PHR_LAW_SECTION = ddl_law.SelectedValue
-            'Catch ex As Exception
+            .PHR_CTZNO = txt_PHR_CTZNO.Text
+            .PHR_TEXT_NUM = txt_PHR_TEXT_NUM.Text
+            .PHR_TEXT_WORK_TIME = txt_PHR_TEXT_WORK_TIME.Text
+            .PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text
+            Try
+                .PHR_LAW_SECTION = rdl_mastra.SelectedValue
+            Catch ex As Exception
 
-            'End Try
+            End Try
+            Try
+                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
+            Catch ex As Exception
 
+            End Try
+            Try
+                .NAME_SIMINAR = txt_NAME_SIMINAR.Text
+            Catch ex As Exception
+
+            End Try
             'Try
             '    .PHR_JOB_TYPE = ddl_job.SelectedValue
             'Catch ex As Exception
 
             'End Try
-            'Try
-            '    .PERSONAL_TYPE = ddl_worker_type.SelectedValue 'rdl_per_type.SelectedValue
-            'Catch ex As Exception
+            Try
+                .PERSONAL_TYPE = ddl_phr_type.SelectedValue 'rdl_per_type.SelectedValue
+            Catch ex As Exception
 
-            'End Try
+            End Try
             'Try
             '    If ddl_worker_type.SelectedValue = "12" Or ddl_worker_type.SelectedValue = "15" Then
             '        .PHR_MEDICAL_TYPE = 3

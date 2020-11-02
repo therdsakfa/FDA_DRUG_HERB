@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_HERB.ascx.vb" Inherits="FDA_DRUG_HERB.UC_HERB" %>
 
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
 <div>
    <form name="form" method="post" align="center;">
 
@@ -406,14 +408,15 @@
                        อยู่เลขที่</td>
                    <td>
 
-                       <asp:Label ID="Label34" runat="server" Text=""></asp:Label>
+                       <asp:TextBox ID="txt_c_thaaddr" runat="server"></asp:TextBox>
                    </td>
                     <td>
 
            หมู่บ้าน/อาคาร</td>
                    <td>
 
-                       <asp:Label ID="Label35" runat="server" Text=""></asp:Label></td>
+                       <asp:TextBox ID="txt_c_thabuilding" runat="server"></asp:TextBox>
+                   </td>
                </tr>
                <tr>
                    <td>
@@ -421,14 +424,14 @@
                        หมู่ที่</td>
                    <td>
 
-                       <asp:Label ID="Label36" runat="server" Text=""></asp:Label>
+                       <asp:TextBox ID="txt_c_thamu" runat="server"></asp:TextBox>
                    </td>
                     <td>
 
            ตรอก/ซอย</td>
                    <td>
 
-                       <asp:Label ID="Label37" runat="server" Text=""></asp:Label>
+                       <asp:TextBox ID="txt_c_thasoi" runat="server"></asp:TextBox>
                    </td>
                </tr>
                <tr>
@@ -437,7 +440,8 @@
            ถนน</td>
                    <td>
 
-                       <asp:Label ID="Label38" runat="server" Text=""></asp:Label></td>
+                       <asp:TextBox ID="txt_c_tharoad" runat="server"></asp:TextBox>
+                   </td>
                     <td>
 
                         &nbsp;</td>
@@ -451,14 +455,17 @@
                        ตำบล/แขวง</td>
                    <td>
 
-                       <asp:Label ID="Label39" runat="server" Text=""></asp:Label>
+            <asp:DropDownList ID="ddl_tambol" runat="server" AutoPostBack="True" DataTextField="thathmblnm" DataValueField="thmblcd">
+            </asp:DropDownList>
                    </td>
                     <td>
 
            อำเภอ/เขต</td>
                    <td>
 
-                       <asp:Label ID="Label40" runat="server" Text=""></asp:Label></td>
+            <asp:DropDownList ID="ddl_amphor" runat="server" AutoPostBack="True" DataTextField="thaamphrnm" DataValueField="amphrcd">
+            </asp:DropDownList>
+                   </td>
                </tr>
                <tr>
                    <td>
@@ -466,14 +473,14 @@
                        จังหวัด</td>
                    <td>
 
-                       <asp:Label ID="Label41" runat="server" Text=""></asp:Label>
+            <asp:DropDownList ID="ddl_Province" runat="server" AutoPostBack="True" DataTextField="thachngwtnm" DataValueField="chngwtcd"></asp:DropDownList>
                    </td>
                     <td>
 
            รหัสไปรษณีย์</td>
                    <td>
 
-                       <asp:Label ID="Label42" runat="server" Text=""></asp:Label>
+                       <asp:TextBox ID="txt_c_zipcode" runat="server"></asp:TextBox>
                    </td>
                </tr>
                <tr>
@@ -482,13 +489,14 @@
            โทรสาร</td>
                    <td>
 
-                       <asp:Label ID="Label43" runat="server" Text=""></asp:Label></td>
+                       <asp:TextBox ID="txt_c_fax" runat="server"></asp:TextBox>
+                   </td>
                     <td>
 
                         โทรศัพท์</td>
                    <td>
 
-                       <asp:Label ID="Label44" runat="server" Text=""></asp:Label>
+                       <asp:TextBox ID="txt_c_tel" runat="server"></asp:TextBox>
                    </td>
                </tr>
                <tr>
@@ -497,7 +505,8 @@
            E-mail</td>
                    <td>
 
-                       <asp:Label ID="Label45" runat="server" Text=""></asp:Label></td>
+                       <asp:TextBox ID="txt_c_email" runat="server"></asp:TextBox>
+                   </td>
                     <td>
 
                         &nbsp;</td>
@@ -510,11 +519,14 @@
 
        </div>
        <div>
-           <h4>กรณีผู้ไดด้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
-           หนังสือเดินทางเลขที่<asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
-           วันหมดอายุ<asp:TextBox ID="TextBox16" runat="server"></asp:TextBox><br />&ensp;
-           ใบอนุญาตทำงานเลขที่<asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
-           วันหมดอายุ<asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
+           <h4>กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
+           หนังสือเดินทางเลขที่<asp:TextBox ID="txt_GIVE_PASSPORT_NO" runat="server"></asp:TextBox>
+           วันหมดอายุ<telerik:RadDatePicker ID="rdp_GIVE_PASSPORT_EXPDATE" Runat="server">
+           </telerik:RadDatePicker>
+           <br />&ensp;
+           ใบอนุญาตทำงานเลขที่<asp:TextBox ID="txt_GIVE_WORK_LICENSE_NO" runat="server"></asp:TextBox>
+           วันหมดอายุ<telerik:RadDatePicker ID="rdp_GIVE_WORK_LICENSE_EXPDATE" Runat="server">
+           </telerik:RadDatePicker>
        </div>
        <div>
            <h4>๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร</h4>&ensp;

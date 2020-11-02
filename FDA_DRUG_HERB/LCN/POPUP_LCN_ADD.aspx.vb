@@ -29,6 +29,9 @@
 
         If Not IsPostBack Then
             UC_HERB.Set_Label(_CLS.CITIZEN_ID_AUTHORIZE)
+            UC_HERB.load_ddl_chwt()
+            UC_HERB.load_ddl_amp()
+            UC_HERB.load_ddl_thambol()
 
             If Request.QueryString("ida") <> "" Then
                 Panel1.Style.Add("display", "block")

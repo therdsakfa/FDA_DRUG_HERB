@@ -7,14 +7,19 @@
 &nbsp;<asp:Button ID="btn_search" runat="server" Text="ค้นหา" />
             <br />
            &ensp;&ensp;&ensp;๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ<asp:TextBox ID="txt_PHR_NAME" runat="server"></asp:TextBox>
-            <asp:DropDownList ID="DropDownList1"  runat="server">
+            <asp:DropDownList ID="ddl_phr_type"  runat="server">
             </asp:DropDownList><br />&ensp;
-            ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่<asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>หรือ<br />&ensp;
-           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ<asp:TextBox ID="TextBox21" runat="server"></asp:TextBox><br />&ensp;
-           สาขา<asp:TextBox ID="TextBox22" runat="server"></asp:TextBox><br />&ensp;
+            ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่<asp:TextBox ID="txt_PHR_TEXT_NUM" runat="server"></asp:TextBox>หรือ<br />&ensp;
+           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ<asp:TextBox ID="txt_STUDY_LEVEL" runat="server"></asp:TextBox><br />&ensp;
+           สาขา<asp:TextBox ID="txt_PHR_VETERINARY_FIELD" runat="server"></asp:TextBox><br />&ensp;
            &ensp;&ensp;๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร<br />&ensp;
-           <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
-           วันที่อบรม<asp:TextBox ID="TextBox24" runat="server"></asp:TextBox><br />&ensp;
+           <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
+           วันที่อบรม<telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server">
+            </telerik:RadDatePicker>
+            <br />
+            เวลาทำการ
+            <asp:TextBox ID="txt_PHR_TEXT_WORK_TIME" runat="server"></asp:TextBox>
+            <br />&ensp;
     <table>
         <tr>
             <td>

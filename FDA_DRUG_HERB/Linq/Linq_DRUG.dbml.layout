@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75, 113.25" name="Linq_DRUG">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75, 116" name="Linq_DRUG">
   <DataContextMoniker Name="/Linq_DRUGDataContext" />
   <nestedChildShapes>
     <classShape Id="a478b3b7-1139-4770-921d-532ae1e62b1d" absoluteBounds="0.75, 0.75, 2, 3.5016097005208326">
@@ -1808,12 +1808,6 @@
         <elementListCompartment Id="8594c565-aa7d-4403-8fc5-d3fee416eb35" absoluteBounds="66.765, 54.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c3e74bcf-86db-4068-a4b1-26d5b2e67702" absoluteBounds="66.75, 56.75, 2, 56.1922021484375">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/dalcn" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bb8896b2-ee48-4cc6-a1ab-e3d2bd9bd2e9" absoluteBounds="66.765, 57.21, 1.9700000000000002, 55.6322021484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e771426b-3f84-4ae0-9019-f528be8a5c51" absoluteBounds="60.75, 67.75, 2, 18.885724283854159">
       <DataClassMoniker Name="/Linq_DRUGDataContext/drrqt" />
       <nestedChildShapes>
@@ -1988,12 +1982,6 @@
         <elementListCompartment Id="40340e3b-fd08-4093-bc91-4b7014acb29c" absoluteBounds="51.765, 72.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="99619ab0-dd34-426f-b983-652a0da13864" absoluteBounds="54.75, 71.75, 2, 8.50144694010416">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_PHR" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4e5610b8-d634-4b1e-9d28-84123df07930" absoluteBounds="54.765, 72.21, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="4c902549-67fb-4a96-aa42-362ecce29a06" absoluteBounds="72.75, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/Linq_DRUGDataContext/CER_EXTEND_CASCHEMICAL" />
       <nestedChildShapes>
@@ -2096,10 +2084,34 @@
         <elementListCompartment Id="3975a4ab-9922-42d2-8ca6-d845d886c0f1" absoluteBounds="4.89, 7.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d2cd954d-de6a-4000-83be-6a8c4a73821c" absoluteBounds="4.25, 3.875, 2, 3.8862125651041666">
+    <classShape Id="d2cd954d-de6a-4000-83be-6a8c4a73821c" isExpanded="false" absoluteBounds="3.25, 3.5, 2, 0.45">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_FRGN_DATA" />
       <nestedChildShapes>
-        <elementListCompartment Id="1f6e7c91-7b60-4ce9-9b86-40d477279076" absoluteBounds="4.265, 4.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f6e7c91-7b60-4ce9-9b86-40d477279076" absoluteBounds="3.2649999999999997, 3.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c920e5b3-0388-449c-86e3-36bf48de75ce" isExpanded="false" absoluteBounds="6.5, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_TYPE_PHR_HERB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8398231e-9022-485b-8e99-b5fba312337e" absoluteBounds="6.515, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6717c024-f5e8-41e3-9f93-5f9ae7cd6895" absoluteBounds="52, 74.75, 2, 9.0783512369791648">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_PHR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1eddae9-6ced-47f6-ae48-c8360d07c99d" absoluteBounds="52.015, 75.21, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="125d9a10-a3c0-4503-a13c-1dc59670d1d9" isExpanded="false" absoluteBounds="3.25, 4, 2, 0.45">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_CURRENT_ADDRESS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af4f3115-979c-4e1b-be4f-806271f9f20a" absoluteBounds="3.2649999999999997, 4.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa3dcd86-8329-47b6-ab2b-5d8b675d05d3" absoluteBounds="67.25, 58, 2, 57.730613606770831">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/dalcn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90080fc0-1fd5-4175-9508-ba1e7082a8d6" absoluteBounds="67.265, 58.46, 1.9700000000000002, 57.170613606770829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
