@@ -446,6 +446,15 @@
                 _MASTRA = value
             End Set
         End Property
+        Private _MASTRA_NO As String
+        Public Property MASTRA_NO() As String
+            Get
+                Return _MASTRA_NO
+            End Get
+            Set(ByVal value As String)
+                _MASTRA_NO = value
+            End Set
+        End Property
 
         Private _DRUG_GROUP_TYPE As String
         Public Property DRUG_GROUP_TYPE() As String
@@ -457,7 +466,15 @@
             End Set
         End Property
 
-
+        Private _LCN_TYPE_ID As String
+        Public Property LCN_TYPE_ID() As String
+            Get
+                Return _LCN_TYPE_ID
+            End Get
+            Set(ByVal value As String)
+                _LCN_TYPE_ID = value
+            End Set
+        End Property
 #End Region
 
     End Class

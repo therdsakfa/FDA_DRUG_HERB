@@ -939,10 +939,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Try
             If dao.fields.lcntpcd = "ขสม" Then
                 class_xml.LCN_TYPE = "ขาย"
+                class_xml.LCN_TYPE_ID = "3"
             ElseIf dao.fields.lcntpcd = "ผสม" Then
                 class_xml.LCN_TYPE = "ผลิต"
+                class_xml.LCN_TYPE_ID = "1"
             ElseIf dao.fields.lcntpcd = "นสม" Then
                 class_xml.LCN_TYPE = "นำเข้า"
+                class_xml.LCN_TYPE_ID = "2"
             End If
         Catch ex As Exception
 
@@ -953,10 +956,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
             dao_pph.GetDataby_FK_IDA(_IDA)
             If dao_pph.fields.PHR_LAW_SECTION = "1" Then
                 class_xml.MASTRA = "มาตรา ๓๑"
+                class_xml.MASTRA_NO = "๓๑"
             ElseIf dao_pph.fields.PHR_LAW_SECTION = "2" Then
                 class_xml.MASTRA = "มาตรา ๓๒"
+                class_xml.MASTRA_NO = "๓๒"
             ElseIf dao_pph.fields.PHR_LAW_SECTION = "3" Then
                 class_xml.MASTRA = "มาตรา ๓๓"
+                class_xml.MASTRA_NO = "๓๓"
             End If
         Catch ex As Exception
 
