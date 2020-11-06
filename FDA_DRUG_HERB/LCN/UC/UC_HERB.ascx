@@ -2,6 +2,12 @@
 
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
+<style type="text/css">
+    .auto-style1 {
+        width: 678px;
+    }
+</style>
+
 <div>
    <form name="form" method="post" align="center;">
 
@@ -17,21 +23,28 @@
                 </asp:RadioButtonList>
                 </center>
 
-
             </h4>
         </div>
-            <div>
-                
-            </div>
-        <div>
-            <h4 style="text-align:center;">เลือก
-                <asp:CheckBox ID="checkbox5" text ="ไทย " runat="server" />
-                <asp:CheckBox ID="checkbox6" text ="ต่างด้าว " runat="server" /><br>
-            </h4>
+   
+        <div><center>
+            <table>
+                <td>
+                    เลือก
+                </td>
+                <td>
+                <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="1">ไทย</asp:ListItem>
+                    <asp:ListItem Value="2">ต่างด้าว</asp:ListItem>
+                </asp:RadioButtonList> 
+                </td>
+            </table>
+                               
+             </center>                   
+            
         </div>
         <div>
              <h4>๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>
-            <table>
+            <table class="auto-style1">
                 <tr>
                     <td>
                         ข้าพเจ้า (ชื่อบุคคล/นิติบุคคล)
@@ -55,7 +68,7 @@
                     <td>
                         เลขประจำตัวประชาชน </td>
                     <td>
-                        <asp:Label ID="lbl_lcn_iden" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbl_lcn_iden" runat="server" EnableTheming="True" Width="80%"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -520,13 +533,44 @@
        </div>
        <div>
            <h4>กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
-           หนังสือเดินทางเลขที่<asp:TextBox ID="txt_GIVE_PASSPORT_NO" runat="server"></asp:TextBox>
-           วันหมดอายุ<telerik:RadDatePicker ID="rdp_GIVE_PASSPORT_EXPDATE" Runat="server">
-           </telerik:RadDatePicker>
+           <table>
+               <tr>
+                   <td>
+                       หนังสือเดินทางเลขที่
+                   </td>
+                   <td>
+                        <asp:TextBox ID="txt_GIVE_PASSPORT_NO" runat="server"></asp:TextBox>
+                   </td>
+                   <td>
+                        วันหมดอายุ
+                   </td>
+                   <td>
+                        <telerik:RadDatePicker ID="rdp_GIVE_PASSPORT_EXPDATE" Runat="server"></telerik:RadDatePicker>
+                   </td>
+               </tr>
+               <tr>
+                   
+               </tr>
+               <tr>
+                   <td>
+                       ใบอนุญาตทำงานเลขที่
+                   </td>
+                   <td>
+                         <asp:TextBox ID="txt_GIVE_WORK_LICENSE_NO" runat="server"></asp:TextBox>
+                   </td>
+                   <td>
+                        วันหมดอายุ
+                   </td>
+                   <td>
+                       <telerik:RadDatePicker ID="rdp_GIVE_WORK_LICENSE_EXPDATE" Runat="server"></telerik:RadDatePicker>
+                   </td>
+               </tr>
+           </table>
+           
+           
            <br />&ensp;
-           ใบอนุญาตทำงานเลขที่<asp:TextBox ID="txt_GIVE_WORK_LICENSE_NO" runat="server"></asp:TextBox>
-           วันหมดอายุ<telerik:RadDatePicker ID="rdp_GIVE_WORK_LICENSE_EXPDATE" Runat="server">
-           </telerik:RadDatePicker>
+          
+           
        </div>
        <div>
            <h4>๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร</h4>&ensp;
