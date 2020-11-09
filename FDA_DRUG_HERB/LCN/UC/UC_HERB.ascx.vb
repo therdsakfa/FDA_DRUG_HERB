@@ -524,4 +524,13 @@
         ddl_tambol.DataSource = dt
         ddl_tambol.DataBind()
     End Sub
+
+    Private Sub ddl_Province_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_Province.SelectedIndexChanged
+        load_ddl_amp()
+        load_ddl_thambol()
+    End Sub
+
+    Private Sub ddl_amphor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_amphor.SelectedIndexChanged
+        load_ddl_thambol()
+    End Sub
 End Class

@@ -241,4 +241,21 @@ Public Class UC_HERB_KEEP
             RadGrid2.DataSource = dt
         End If
     End Sub
+
+    Private Sub ddl_placename_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_placename.SelectedIndexChanged
+        bind_addr
+    End Sub
+
+    Sub bind_addr()
+        Dim bao As New BAO_MASTER
+        Dim dt As New DataTable
+        Try
+            dt = bao.SP_CUSTOMER_LCT_BY_LCT_IDA(ddl_placename.SelectedValue)
+            For Each dr As DataRow In dt.Rows
+                lbl_location_new.Text = dr("fulladdr")
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
