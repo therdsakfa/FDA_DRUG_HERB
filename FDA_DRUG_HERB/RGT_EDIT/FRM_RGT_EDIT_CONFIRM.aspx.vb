@@ -48,7 +48,8 @@ Public Class FRM_RGT_EDIT_CONFIRM
 
             bind_ddl_rqt()
             show_btn(_IDA)
-            UC_GRID_ATTACH.load_gv(_TR_ID)
+            UC_GRID_ATTACH.load_gv_V2(_TR_ID, _ProcessID)
+
             If Request.QueryString("staff") <> "" Then
                 If Request.QueryString("staff") <> _CLS.CITIZEN_ID_AUTHORIZE Then
                     AddLogMultiTab(_CLS.CITIZEN_ID, Request.QueryString("staff"), 0, HttpContext.Current.Request.Url.AbsoluteUri)
@@ -211,7 +212,8 @@ Public Class FRM_RGT_EDIT_CONFIRM
         'dao_drrgt.GetDataby_IDA(dao.fields.FK_IDA)
 
         Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
-        dao_sc.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+        ' dao_sc.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
+        dao_sc.GetDataby_NEWCODE(Request.QueryString("newcode"))
         Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
         Try
             dao_lcn_e.GetDataby_u1(dao_sc.fields.Newcode_not)
@@ -397,7 +399,8 @@ Public Class FRM_RGT_EDIT_CONFIRM
         Dim bao_rgtno As New BAO.ClsDBSqlcommand
         dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(dao.fields.FK_IDA)
         Try
-            rgtno_format = dt_rgtno(0)("rgtno_display")
+            'rgtno_format = dt_rgtno(0)("rgtno_display")
+            rgtno_format = dao_sc.fields.register
         Catch ex As Exception
 
         End Try

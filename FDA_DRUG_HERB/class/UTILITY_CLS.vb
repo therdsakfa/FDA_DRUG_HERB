@@ -249,7 +249,7 @@ Public Module UTILITY_CLS
         'QRCode qrCode = new QRCode(qrCodeData);
         Dim qrc As New QRCoder.QRCode(qrCode)
         Dim b64 As String = ""
-        Dim bit As New System.Drawing.Bitmap("D:\FDA\FDA.png")
+        Dim bit As New System.Drawing.Bitmap("C:\FDA\FDA.png")
         'Using bitMap As Bitmap = qrc.GetGraphic(20)
         Using bitMap As Bitmap = qrc.GetGraphic(20, System.Drawing.Color.Black, System.Drawing.Color.White, bit, drawQuietZones:=False)
             Using ms As New MemoryStream()
