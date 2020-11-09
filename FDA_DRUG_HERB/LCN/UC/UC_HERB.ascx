@@ -612,7 +612,7 @@
 
        </div>
        <div>
-           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
            <table>
                <tr>
