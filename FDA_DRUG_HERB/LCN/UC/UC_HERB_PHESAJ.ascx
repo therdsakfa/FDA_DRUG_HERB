@@ -1,25 +1,91 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_HERB_PHESAJ.ascx.vb" Inherits="FDA_DRUG_HERB.UC_HERB_PHESAJ" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<style type="text/css">
+    .auto-style1 {
+        height: 29px;
+    }
+</style>
 <div>
             <h4> ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร</h4>
-            บัตรประชาชน
-            <asp:TextBox ID="txt_PHR_CTZNO" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="btn_search" runat="server" Text="ค้นหา" />
-            <br />
-           &ensp;&ensp;&ensp;๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ<asp:TextBox ID="txt_PHR_NAME" runat="server"></asp:TextBox>
-            <asp:DropDownList ID="ddl_phr_type"  runat="server">
-            </asp:DropDownList><br />&ensp;
-            ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่<asp:TextBox ID="txt_PHR_TEXT_NUM" runat="server"></asp:TextBox>หรือ<br />&ensp;
-           กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ<asp:TextBox ID="txt_STUDY_LEVEL" runat="server"></asp:TextBox><br />&ensp;
-           สาขา<asp:TextBox ID="txt_PHR_VETERINARY_FIELD" runat="server"></asp:TextBox><br />&ensp;
-           &ensp;&ensp;๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร<br />&ensp;
-           <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
-           วันที่อบรม<telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server">
-            </telerik:RadDatePicker>
-            <br />
-            เวลาทำการ
-            <asp:TextBox ID="txt_PHR_TEXT_WORK_TIME" runat="server"></asp:TextBox>
-            <br />&ensp;
+            
+            <table>
+                <tr>
+                    <td>
+                        บัตรประชาชน
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_CTZNO" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                       <asp:Button ID="btn_search" runat="server" Text="ค้นหา" /> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;
+                        ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_NAME" runat="server"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:DropDownList ID="ddl_phr_type"  runat="server"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                      <td>
+                        ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_TEXT_NUM" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        หรือ
+                    </td>
+                </tr>
+                <tr>
+                      <td>
+                        กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ
+                    </td>
+                    <td>
+                         <asp:TextBox ID="txt_STUDY_LEVEL" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                      <td>
+                        สาขา
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_VETERINARY_FIELD" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                      <td colspan="3">&nbsp;
+                            ๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร
+                    </td>                  
+                </tr>
+                <tr> 
+                    <td>
+                        <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
+                    </td>
+                      <td>
+                        วันที่อบรม
+                    </td>
+                    <td>
+                        <telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server"> </telerik:RadDatePicker>
+                    </td>
+                </tr>
+                <tr>
+                      <td>
+                        เวลาทำการ
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_TEXT_WORK_TIME" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
     <table>
         <tr>
             <td>

@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UC_HERB_PHESAJ
-    
+
     '''<summary>
     '''txt_PHR_CTZNO control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_CTZNO As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''btn_search control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_search As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''txt_PHR_NAME control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_NAME As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_phr_type control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_phr_type As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''txt_PHR_TEXT_NUM control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_TEXT_NUM As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_STUDY_LEVEL control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_STUDY_LEVEL As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_PHR_VETERINARY_FIELD control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_VETERINARY_FIELD As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_NAME_SIMINAR control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_NAME_SIMINAR As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''rdp_SIMINAR_DATE control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdp_SIMINAR_DATE As Global.Telerik.Web.UI.RadDatePicker
-    
+
     '''<summary>
     '''txt_PHR_TEXT_WORK_TIME control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_TEXT_WORK_TIME As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''rdl_mastra control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_mastra As Global.System.Web.UI.WebControls.RadioButtonList
-    
+
     '''<summary>
     '''btn_save control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''rgphr control.
     '''</summary>
