@@ -4,7 +4,10 @@
 
 <style type="text/css">
     .auto-style1 {
-        width: 678px;
+        width: 839px;
+    }
+    .auto-style3 {
+        width: 85px;
     }
 </style>
 
@@ -43,9 +46,12 @@
             
         </div>
         <div>
-             <h4>๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>
+             <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+                 ๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>
             <table class="auto-style1">
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         ข้าพเจ้า (ชื่อบุคคล/นิติบุคคล)
                     </td>
@@ -53,9 +59,11 @@
 <asp:Label ID="lbl_lcn_name" runat="server" Text=""></asp:Label>
                     </td>
                     <td></td>
-                    <td></td>
+                    
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         อายุ </td>
                     <td>
@@ -65,6 +73,8 @@
                     <td><asp:Label ID="lbl_lcn_nation" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         เลขประจำตัวประชาชน </td>
                     <td>
@@ -74,6 +84,8 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         หรือเลขทะเบียนนิติบุคคล</td>
                     <td>
@@ -83,6 +95,8 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         ที่อยู่เลขที่</td>
                     <td>
@@ -92,6 +106,8 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         หมู่บ้าน/อาคาร</td>
                     <td>
@@ -102,6 +118,8 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                          ตรอก/ซอย</td>
                     <td>
@@ -111,6 +129,8 @@
                     <td><asp:Label ID="lbl_lcn_road" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         ตำบล/แขวง </td>
                     <td>
@@ -120,6 +140,8 @@
                     <td><asp:Label ID="lbl_lcn_amphor" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         จังหวัด</td>
                     <td>
@@ -130,6 +152,8 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         โทรสาร</td>
                     <td>
@@ -140,6 +164,8 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style3">
+                    </td>
                     <td>
                         E-mail </td>
                     <td>
@@ -151,15 +177,18 @@
             </table>
             &ensp;&ensp;</div>
        <div>
-           <h4> กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4>
+           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+               กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4>
            <table>
                <tr>
+                   <td class="auto-style3"></td>
                    <td><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" /></td>
                    <td></td>
                    <td></td>
                    <td></td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>หนังสือเดินทางเลขที่</td>
                    <td><asp:TextBox ID="txt_PASSPORT_NO" runat="server"></asp:TextBox>
                    </td>
@@ -170,6 +199,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>ใบสำคัญที่อยู่เลขที่</td>
                    <td><asp:TextBox ID="txt_DOC_NO" runat="server"></asp:TextBox>
                    </td>
@@ -180,6 +210,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>ใบอนุญาตทำงานเลขที่</td>
                    <td><asp:TextBox ID="txt_WORK_LICENSE_NO" runat="server"></asp:TextBox>
                    </td>
@@ -190,9 +221,11 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td colspan="4">หรือใบอนุญาาตประกอบธุรกิจตามบัญชีสาม(๑๖)หรือ(๑๕)ตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าว</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>เลขที่</td>
                    <td><asp:TextBox ID="txt_BS_NO" runat="server"></asp:TextBox>
                    </td>
@@ -203,11 +236,13 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td colspan="2">หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
                    <td><asp:TextBox ID="txt_FRGN_NO" runat="server"></asp:TextBox></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
                    <td><%--<asp:TextBox ID="txt_FRGN_DATE" runat="server"></asp:TextBox>--%>
                        <telerik:RadDatePicker ID="RDP_FRGN_DATE" Runat="server">
@@ -217,6 +252,7 @@
                    <td>&nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
            <asp:CheckBox ID="cb_Personal_Type2" text ="นิติบุคคลต่างด้าว " runat="server" /></td>
                    <td>&nbsp;</td>
@@ -224,9 +260,11 @@
                    <td>&nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td colspan="4">ใบอนุญาตประกอบธุรกิจตามบัญชีสาม(๑๔)หรือ(๑๕)ตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าว</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>เลขที่</td>
                    <td><asp:TextBox ID="txt_BS_NO1" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                    </td>
@@ -237,11 +275,13 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td colspan="2">หนังสือรับรองตาามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
                    <td><asp:TextBox ID="TextBox13" runat="server"></asp:TextBox></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
                    <td><%--<asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>--%>
                        <telerik:RadDatePicker ID="RDP_FRGN_NO1" Runat="server">
@@ -254,9 +294,11 @@
 
        </div>
        <div>
-           <h4>๒. &ensp;ข้อมูลผู้ได้รับมอบหมายหรือแต่งตั้งให้ดำเนินการหรือดำเนินกิจการหรือดำเนนินกิจการเกี่ยวกับใบอนุญาต</h4>
+           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+               ๒. &ensp;ข้อมูลผู้ได้รับมอบหมายหรือแต่งตั้งให้ดำเนินการหรือดำเนินกิจการหรือดำเนนินกิจการเกี่ยวกับใบอนุญาต</h4>
            <table>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        ชื่อผู้ดำเนินการ</td>
@@ -273,6 +315,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        อายุ</td>
@@ -290,6 +333,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            เลขประจำตัวประชาชน</td>
@@ -304,6 +348,7 @@
                        &nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        ที่อยู่ตามทะเบียนบ้าน อยู่เลขที่</td>
@@ -321,6 +366,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        หมู่ที่</td>
@@ -338,6 +384,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            ถนน</td>
@@ -352,6 +399,7 @@
                        &nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        ตำบล/แขวง</td>
@@ -369,6 +417,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        จังหวัด</td>
@@ -386,6 +435,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            โทรสาร</td>
@@ -402,6 +452,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            E-mail</td>
@@ -416,6 +467,7 @@
                        &nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        &nbsp;ที่อยู่ที่สามารถติดต่อได้<input type="checkbox" id="vehicle8" name="vehicle1" value="Bike">
@@ -431,11 +483,13 @@
                        &nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td colspan="4">
 
                        (เฉพาะที่อยู่ไม่ใช้ที่อยู่เดียวกันกับทะเบียนบ้าน)</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        อยู่เลขที่</td>
@@ -452,6 +506,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        หมู่ที่</td>
@@ -468,6 +523,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            ถนน</td>
@@ -483,6 +539,7 @@
                        &nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        ตำบล/แขวง</td>
@@ -501,6 +558,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
                        จังหวัด</td>
@@ -517,6 +575,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            โทรสาร</td>
@@ -533,6 +592,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
 
            E-mail</td>
@@ -552,9 +612,11 @@
 
        </div>
        <div>
-           <h4>กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
+           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+               กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
            <table>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
                        หนังสือเดินทางเลขที่
                    </td>
@@ -569,6 +631,7 @@
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
                        ใบอนุญาตทำงานเลขที่
                    </td>
@@ -590,54 +653,64 @@
            
        </div>
        <div>
-           <h4>๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร</h4>&ensp;
+           <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+               ๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร</h4>&ensp;
 
            <table>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>
                <b>สถานที่ประกอบธุรกิจชื่อ</b></td>
                    <td><asp:Label ID="lbl_lct_thanameplace" runat="server" Text=""></asp:Label></td>
                    <td></td><td></td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>เลขรหัสประจำบ้าน</td>
                    <td><asp:Label ID="lbl_lct_HOUSENO" runat="server" Text=""></asp:Label>
                    </td><td></td><td></td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>อยู่เลขที่</td>
                    <td><asp:Label ID="lbl_lct_thaaddr" runat="server" Text=""></asp:Label>
                    </td><td>หมู่บ้าน/อาคาร</td><td><asp:Label ID="lbl_lct_thabuilding" runat="server" Text=""></asp:Label></td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>หมู่ที่</td>
                    <td><asp:Label ID="lbl_lct_thamu" runat="server" Text=""></asp:Label>
                    </td><td>ตรอก/ซอย</td><td><asp:Label ID="lbl_lct_thasoi" runat="server" Text=""></asp:Label>
                    </td>
                </tr>
                <tr>
+                   <td></td>
                    <td>&nbsp;ถนน</td>
                    <td><asp:Label ID="lbl_lct_tharoad" runat="server" Text=""></asp:Label>
                    </td><td>&nbsp;</td><td>&nbsp;</td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>ตำบล/แขวง</td>
                    <td><asp:Label ID="lbl_lct_thathmblnm" runat="server" Text=""></asp:Label>
                    </td><td>&nbsp;อำเภอ/เขต</td><td><asp:Label ID="lbl_lct_thaamphrnm" runat="server" Text=""></asp:Label></td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>จังหวัด</td>
                    <td><asp:Label ID="lbl_lct_thachngwtnm" runat="server" Text=""></asp:Label>
                    </td><td>รหัสไปรษณีย์</td><td><asp:Label ID="lbl_lct_zipcode" runat="server" Text=""></asp:Label>
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>โทรสาร</td>
                    <td><asp:Label ID="lbl_lct_fax" runat="server" Text=""></asp:Label>
                    </td><td>โทรศัพท์</td><td><asp:Label ID="lbl_lct_tel" runat="server" Text=""></asp:Label>
                    </td>
                </tr>
                <tr>
+                   <td class="auto-style3"></td>
                    <td>E-mail</td>
                    <td><asp:Label ID="Label59" runat="server" Text=""></asp:Label>
                    </td><td>&nbsp;</td><td>&nbsp;</td>
