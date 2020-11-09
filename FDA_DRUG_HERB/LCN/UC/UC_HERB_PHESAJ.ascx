@@ -1,15 +1,18 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_HERB_PHESAJ.ascx.vb" Inherits="FDA_DRUG_HERB.UC_HERB_PHESAJ" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <style type="text/css">
-    .auto-style1 {
-        height: 29px;
+    .auto-style2 {
+        width: 85px;
     }
 </style>
 <div>
-            <h4> ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร</h4>
+            <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
+                ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร
+            </h4>
             
             <table>
                 <tr>
+                    <td class="auto-style2"></td>
                     <td>
                         บัตรประชาชน
                     </td>
@@ -21,6 +24,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                     <td>&nbsp;
                         ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
                     </td>
@@ -32,6 +36,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                       <td>
                         ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่
                     </td>
@@ -43,6 +48,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                       <td>
                         กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ
                     </td>
@@ -52,6 +58,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                       <td>
                         สาขา
                     </td>
@@ -61,11 +68,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                       <td colspan="3">&nbsp;
                             ๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร
                     </td>                  
                 </tr>
-                <tr> 
+                <tr>
+                    <td class="auto-style2"></td>
                     <td>
                         <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
                     </td>
@@ -77,6 +86,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2"></td>
                       <td>
                         เวลาทำการ
                     </td>
@@ -88,11 +98,12 @@
             </table>
     <table>
         <tr>
+            <td class="auto-style2"></td>
             <td>
- เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม
+                เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม
             </td>
             <td>
-<asp:RadioButtonList ID="rdl_mastra" runat="server" RepeatDirection="Horizontal">
+                <asp:RadioButtonList ID="rdl_mastra" runat="server" RepeatDirection="Horizontal">
                 <asp:ListItem Value="1">มาตรา ๓๑</asp:ListItem>
                 <asp:ListItem Value="2">มาตรา ๓๒</asp:ListItem>
                 <asp:ListItem Value="3">มาตรา ๓๓</asp:ListItem>
@@ -107,7 +118,7 @@
              <br />
 
     <asp:Button ID="btn_save" runat="server" Text="เพิ่มผุ้มีหน้าที่ปฎิบัติการ" />
-    <telerik:RadGrid ID="rgphr" runat="server">
+    <telerik:RadGrid ID="rgphr" runat="server" Width ="90%">
                        <MasterTableView AutoGenerateColumns="False" DataKeyNames="PHR_IDA" NoMasterRecordsText="ไม่พบข้อมูล">
                            <Columns>
                         

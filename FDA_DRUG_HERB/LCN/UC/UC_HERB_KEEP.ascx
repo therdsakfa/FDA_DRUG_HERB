@@ -1,11 +1,35 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_HERB_KEEP.ascx.vb" Inherits="FDA_DRUG_HERB.UC_HERB_KEEP" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+<style type="text/css">
+    .auto-style1 {
+        width: 85px;
+    }
+</style>
 <div>
-     สถานที่เก็บรักษาผลิตภัณฆ์สมุนไพร (ถ้ามี) ชื่อ 
-    <asp:DropDownList ID="ddl_placename" runat="server" Width="300px" AutoPostBack="True">
-                </asp:DropDownList>
-     <br />&ensp;
-    ที่อยู่  <asp:Label ID="lbl_location_new" runat="server" Text="-"></asp:Label>
+    <table>
+        <tr>
+            <td class="auto-style1"></td>
+            <td colspan="5">
+                สถานที่เก็บรักษาผลิตภัณฆ์สมุนไพร (ถ้ามี) ชื่อ
+            </td>
+            <td>
+                    <asp:DropDownList ID="ddl_placename" runat="server" Width="300px" AutoPostBack="True"> </asp:DropDownList>     
+            </td>
+        
+        </tr>
+            <td class="auto-style1"></td>
+            <td>
+                ที่อยู่
+            </td>
+            
+            <td>
+                <asp:Label ID="lbl_location_new" runat="server" Text="-"></asp:Label>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+    </table>
+     
 
            <%--เลขรหัสประจำบ้าน<asp:Label ID="Label61" runat="server" Text=".............."></asp:Label>
            อยู่เลขที่<asp:Label ID="Label62" runat="server" Text=".............."></asp:Label>
