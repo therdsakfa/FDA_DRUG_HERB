@@ -164,21 +164,30 @@
                    <td><asp:TextBox ID="txt_PASSPORT_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>วันหมดอายุ</td>
-                   <td><asp:TextBox ID="txt_PASSPORT_EXPDATE" runat="server"></asp:TextBox></td>
+                   <td>
+                       <telerik:RadDatePicker ID="RDP_PASSPORT_EXPDATE" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                </tr>
                <tr>
                    <td>ใบสำคัญที่อยู่เลขที่</td>
                    <td><asp:TextBox ID="txt_DOC_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><asp:TextBox ID="txt_DOC_DATE" runat="server"></asp:TextBox></td>
+                   <td>
+                       <telerik:RadDatePicker ID="RDP_DOC_DATE" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                </tr>
                <tr>
                    <td>ใบอนุญาตทำงานเลขที่</td>
                    <td><asp:TextBox ID="txt_WORK_LICENSE_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>วันหมดอายุ</td>
-                   <td><asp:TextBox ID="txt_WORK_LICENSE_EXPDATE" runat="server"></asp:TextBox></td>
+                   <td>
+                       <telerik:RadDatePicker ID="RDP_WORK_LICENSE_EXPDATE" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                </tr>
                <tr>
                    <td colspan="4">หรือใบอนุญาาตประกอบธุรกิจตามบัญชีสาม(๑๖)หรือ(๑๕)ตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าว</td>
@@ -188,7 +197,10 @@
                    <td><asp:TextBox ID="txt_BS_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><asp:TextBox ID="txt_BS_DATE" runat="server"></asp:TextBox></td>
+                   <td><%--<asp:TextBox ID="txt" runat="server"></asp:TextBox>--%>
+                       <telerik:RadDatePicker ID="RDP_BS_DATE" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                </tr>
                <tr>
                    <td colspan="2">หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
@@ -197,7 +209,10 @@
                </tr>
                <tr>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><asp:TextBox ID="txt_FRGN_DATE" runat="server"></asp:TextBox></td>
+                   <td><%--<asp:TextBox ID="txt_FRGN_DATE" runat="server"></asp:TextBox>--%>
+                       <telerik:RadDatePicker ID="RDP_FRGN_DATE" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>
                </tr>
@@ -216,7 +231,10 @@
                    <td><asp:TextBox ID="txt_BS_NO1" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><asp:TextBox ID="txt_BS_DATE1" runat="server"></asp:TextBox></td>
+                   <td><%--<asp:TextBox ID="txt_BS_DATE1" runat="server"></asp:TextBox>--%>
+                       <telerik:RadDatePicker ID="RDP_BS_DATE1" Runat="server">
+                       </telerik:RadDatePicker>
+                   </td>
                </tr>
                <tr>
                    <td colspan="2">หนังสือรับรองตาามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
@@ -225,7 +243,9 @@
                </tr>
                <tr>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>
+                   <td><%--<asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>--%>
+                       <telerik:RadDatePicker ID="RDP_FRGN_NO1" Runat="server">
+                       </telerik:RadDatePicker>
                    </td>
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>
@@ -547,9 +567,6 @@
                    <td>
                         <telerik:RadDatePicker ID="rdp_GIVE_PASSPORT_EXPDATE" Runat="server"></telerik:RadDatePicker>
                    </td>
-               </tr>
-               <tr>
-                   
                </tr>
                <tr>
                    <td>

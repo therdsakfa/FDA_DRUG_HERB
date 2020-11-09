@@ -203,13 +203,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_PASSPORT_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_PASSPORT_EXPDATE control.
+    '''RDP_PASSPORT_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_PASSPORT_EXPDATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''txt_DOC_NO control.
@@ -221,13 +221,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_DOC_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_DOC_DATE control.
+    '''RDP_DOC_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_DOC_DATE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_DOC_DATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''txt_WORK_LICENSE_NO control.
@@ -239,13 +239,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_WORK_LICENSE_EXPDATE control.
+    '''RDP_WORK_LICENSE_EXPDATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_WORK_LICENSE_EXPDATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''txt_BS_NO control.
@@ -257,13 +257,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_BS_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_BS_DATE control.
+    '''RDP_BS_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_BS_DATE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_BS_DATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''txt_FRGN_NO control.
@@ -275,13 +275,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_FRGN_NO As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_FRGN_DATE control.
+    '''RDP_FRGN_DATE control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_FRGN_DATE As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_FRGN_DATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''cb_Personal_Type2 control.
@@ -302,13 +302,13 @@ Partial Public Class UC_HERB
     Protected WithEvents txt_BS_NO1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_BS_DATE1 control.
+    '''RDP_BS_DATE1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_BS_DATE1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_BS_DATE1 As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''TextBox13 control.
@@ -320,13 +320,13 @@ Partial Public Class UC_HERB
     Protected WithEvents TextBox13 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txt_FRGN_NO1 control.
+    '''RDP_FRGN_NO1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txt_FRGN_NO1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_FRGN_NO1 As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''lbl_BSN_THAIFULLNAME control.

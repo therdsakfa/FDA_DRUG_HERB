@@ -425,12 +425,12 @@
     Sub setdata_frgn_data(ByRef dao As DAO_DRUG.TB_DALCN_FRGN_DATA)
         With dao.fields
             Try
-                .BS_DATE = CDate(txt_BS_DATE.Text)
+                .BS_DATE = CDate(RDP_BS_DATE.SelectedDate)
             Catch ex As Exception
 
             End Try
             Try
-                .BS_DATE1 = CDate(txt_BS_DATE1.Text)
+                .BS_DATE1 = CDate(RDP_BS_DATE1.SelectedDate)
             Catch ex As Exception
 
             End Try
@@ -446,20 +446,20 @@
             End Try
 
             Try
-                .DOC_DATE = CDate(txt_DOC_DATE.Text)
+                .DOC_DATE = CDate(RDP_DOC_DATE.SelectedDate)
             Catch ex As Exception
 
             End Try
             .DOC_NO = txt_DOC_NO.Text
             Try
-                .FRGN_DATE = CDate(txt_FRGN_DATE.Text)
+                .FRGN_DATE = CDate(RDP_FRGN_DATE.SelectedDate)
             Catch ex As Exception
 
             End Try
             .FRGN_NO = txt_FRGN_NO.Text
-            .FRGN_NO1 = txt_FRGN_NO1.Text
+            .FRGN_NO1 = RDP_FRGN_NO1.SelectedDate
             Try
-                .PASSPORT_EXPDATE = CDate(txt_PASSPORT_EXPDATE.Text)
+                .PASSPORT_EXPDATE = CDate(RDP_PASSPORT_EXPDATE.SelectedDate)
             Catch ex As Exception
 
             End Try
@@ -474,7 +474,7 @@
 
             End Try
             Try
-                .WORK_LICENSE_EXPDATE = CDate(txt_WORK_LICENSE_EXPDATE.Text)
+                .WORK_LICENSE_EXPDATE = CDate(RDP_WORK_LICENSE_EXPDATE.SelectedDate)
             Catch ex As Exception
 
             End Try
