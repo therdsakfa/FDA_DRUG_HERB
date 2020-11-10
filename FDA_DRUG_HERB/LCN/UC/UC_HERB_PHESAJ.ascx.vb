@@ -8,7 +8,7 @@ Public Class UC_HERB_PHESAJ
     End Sub
     Sub bind_ddl_phr_type()
         Try
-            Dim dao As New DAO_DRUG.ClsDBdaphrcd
+            Dim dao As New DAO_DRUG.TB_MAS_TYPE_PHR_HERB
             dao.GetDataAll()
             ddl_phr_type.DataSource = dao.datas
             ddl_phr_type.DataValueField = "TYPE_ID"

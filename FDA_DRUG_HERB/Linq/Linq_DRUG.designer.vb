@@ -2077,12 +2077,6 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteDALCN_IMPORT_DRUG_GROUP_HERB_DETAIL(instance As DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL)
     End Sub
-  Partial Private Sub InsertDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
-    End Sub
-  Partial Private Sub UpdateDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
-    End Sub
-  Partial Private Sub DeleteDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
-    End Sub
   Partial Private Sub InsertMAS_TYPE_PHR_HERB(instance As MAS_TYPE_PHR_HERB)
     End Sub
   Partial Private Sub UpdateMAS_TYPE_PHR_HERB(instance As MAS_TYPE_PHR_HERB)
@@ -2100,6 +2094,12 @@ Partial Public Class Linq_DRUGDataContext
   Partial Private Sub Updatedalcn(instance As dalcn)
     End Sub
   Partial Private Sub Deletedalcn(instance As dalcn)
+    End Sub
+  Partial Private Sub InsertDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
+    End Sub
+  Partial Private Sub UpdateDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
+    End Sub
+  Partial Private Sub DeleteDALCN_FRGN_DATA(instance As DALCN_FRGN_DATA)
     End Sub
   #End Region
 	
@@ -4210,12 +4210,6 @@ Partial Public Class Linq_DRUGDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property DALCN_FRGN_DATAs() As System.Data.Linq.Table(Of DALCN_FRGN_DATA)
-		Get
-			Return Me.GetTable(Of DALCN_FRGN_DATA)
-		End Get
-	End Property
-	
 	Public ReadOnly Property MAS_TYPE_PHR_HERBs() As System.Data.Linq.Table(Of MAS_TYPE_PHR_HERB)
 		Get
 			Return Me.GetTable(Of MAS_TYPE_PHR_HERB)
@@ -4237,6 +4231,12 @@ Partial Public Class Linq_DRUGDataContext
 	Public ReadOnly Property dalcns() As System.Data.Linq.Table(Of dalcn)
 		Get
 			Return Me.GetTable(Of dalcn)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DALCN_FRGN_DATAs() As System.Data.Linq.Table(Of DALCN_FRGN_DATA)
+		Get
+			Return Me.GetTable(Of DALCN_FRGN_DATA)
 		End Get
 	End Property
 End Class
@@ -128054,398 +128054,6 @@ Partial Public Class DALCN_IMPORT_DRUG_GROUP_HERB_DETAIL
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DALCN_FRGN_DATA")>  _
-Partial Public Class DALCN_FRGN_DATA
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _IDA As Integer
-	
-	Private _PERSONAL_TYPE As String
-	
-	Private _PASSPORT_NO As String
-	
-	Private _PASSPORT_EXPDATE As System.Nullable(Of Date)
-	
-	Private _DOC_NO As String
-	
-	Private _WORK_LICENSE_NO As String
-	
-	Private _WORK_LICENSE_EXPDATE As System.Nullable(Of Date)
-	
-	Private _BS_NO As String
-	
-	Private _BS_DATE As System.Nullable(Of Date)
-	
-	Private _FRGN_NO As String
-	
-	Private _BS_NO1 As String
-	
-	Private _BS_DATE1 As System.Nullable(Of Date)
-	
-	Private _FRGN_NO1 As String
-	
-	Private _FK_IDA As System.Nullable(Of Integer)
-	
-	Private _DOC_DATE As System.Nullable(Of Date)
-	
-	Private _FRGN_DATE As System.Nullable(Of Date)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDAChanged()
-    End Sub
-    Partial Private Sub OnPERSONAL_TYPEChanging(value As String)
-    End Sub
-    Partial Private Sub OnPERSONAL_TYPEChanged()
-    End Sub
-    Partial Private Sub OnPASSPORT_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnPASSPORT_NOChanged()
-    End Sub
-    Partial Private Sub OnPASSPORT_EXPDATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnPASSPORT_EXPDATEChanged()
-    End Sub
-    Partial Private Sub OnDOC_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnDOC_NOChanged()
-    End Sub
-    Partial Private Sub OnWORK_LICENSE_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnWORK_LICENSE_NOChanged()
-    End Sub
-    Partial Private Sub OnWORK_LICENSE_EXPDATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnWORK_LICENSE_EXPDATEChanged()
-    End Sub
-    Partial Private Sub OnBS_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnBS_NOChanged()
-    End Sub
-    Partial Private Sub OnBS_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnBS_DATEChanged()
-    End Sub
-    Partial Private Sub OnFRGN_NOChanging(value As String)
-    End Sub
-    Partial Private Sub OnFRGN_NOChanged()
-    End Sub
-    Partial Private Sub OnBS_NO1Changing(value As String)
-    End Sub
-    Partial Private Sub OnBS_NO1Changed()
-    End Sub
-    Partial Private Sub OnBS_DATE1Changing(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnBS_DATE1Changed()
-    End Sub
-    Partial Private Sub OnFRGN_NO1Changing(value As String)
-    End Sub
-    Partial Private Sub OnFRGN_NO1Changed()
-    End Sub
-    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnFK_IDAChanged()
-    End Sub
-    Partial Private Sub OnDOC_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDOC_DATEChanged()
-    End Sub
-    Partial Private Sub OnFRGN_DATEChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnFRGN_DATEChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property IDA() As Integer
-		Get
-			Return Me._IDA
-		End Get
-		Set
-			If ((Me._IDA = value)  _
-						= false) Then
-				Me.OnIDAChanging(value)
-				Me.SendPropertyChanging
-				Me._IDA = value
-				Me.SendPropertyChanged("IDA")
-				Me.OnIDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PERSONAL_TYPE", DbType:="NVarChar(50)")>  _
-	Public Property PERSONAL_TYPE() As String
-		Get
-			Return Me._PERSONAL_TYPE
-		End Get
-		Set
-			If (String.Equals(Me._PERSONAL_TYPE, value) = false) Then
-				Me.OnPERSONAL_TYPEChanging(value)
-				Me.SendPropertyChanging
-				Me._PERSONAL_TYPE = value
-				Me.SendPropertyChanged("PERSONAL_TYPE")
-				Me.OnPERSONAL_TYPEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSPORT_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property PASSPORT_NO() As String
-		Get
-			Return Me._PASSPORT_NO
-		End Get
-		Set
-			If (String.Equals(Me._PASSPORT_NO, value) = false) Then
-				Me.OnPASSPORT_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._PASSPORT_NO = value
-				Me.SendPropertyChanged("PASSPORT_NO")
-				Me.OnPASSPORT_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSPORT_EXPDATE", DbType:="DateTime")>  _
-	Public Property PASSPORT_EXPDATE() As System.Nullable(Of Date)
-		Get
-			Return Me._PASSPORT_EXPDATE
-		End Get
-		Set
-			If (Me._PASSPORT_EXPDATE.Equals(value) = false) Then
-				Me.OnPASSPORT_EXPDATEChanging(value)
-				Me.SendPropertyChanging
-				Me._PASSPORT_EXPDATE = value
-				Me.SendPropertyChanged("PASSPORT_EXPDATE")
-				Me.OnPASSPORT_EXPDATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOC_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property DOC_NO() As String
-		Get
-			Return Me._DOC_NO
-		End Get
-		Set
-			If (String.Equals(Me._DOC_NO, value) = false) Then
-				Me.OnDOC_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._DOC_NO = value
-				Me.SendPropertyChanged("DOC_NO")
-				Me.OnDOC_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WORK_LICENSE_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property WORK_LICENSE_NO() As String
-		Get
-			Return Me._WORK_LICENSE_NO
-		End Get
-		Set
-			If (String.Equals(Me._WORK_LICENSE_NO, value) = false) Then
-				Me.OnWORK_LICENSE_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._WORK_LICENSE_NO = value
-				Me.SendPropertyChanged("WORK_LICENSE_NO")
-				Me.OnWORK_LICENSE_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WORK_LICENSE_EXPDATE", DbType:="DateTime")>  _
-	Public Property WORK_LICENSE_EXPDATE() As System.Nullable(Of Date)
-		Get
-			Return Me._WORK_LICENSE_EXPDATE
-		End Get
-		Set
-			If (Me._WORK_LICENSE_EXPDATE.Equals(value) = false) Then
-				Me.OnWORK_LICENSE_EXPDATEChanging(value)
-				Me.SendPropertyChanging
-				Me._WORK_LICENSE_EXPDATE = value
-				Me.SendPropertyChanged("WORK_LICENSE_EXPDATE")
-				Me.OnWORK_LICENSE_EXPDATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property BS_NO() As String
-		Get
-			Return Me._BS_NO
-		End Get
-		Set
-			If (String.Equals(Me._BS_NO, value) = false) Then
-				Me.OnBS_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._BS_NO = value
-				Me.SendPropertyChanged("BS_NO")
-				Me.OnBS_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_DATE", DbType:="DateTime")>  _
-	Public Property BS_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._BS_DATE
-		End Get
-		Set
-			If (Me._BS_DATE.Equals(value) = false) Then
-				Me.OnBS_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._BS_DATE = value
-				Me.SendPropertyChanged("BS_DATE")
-				Me.OnBS_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_NO", DbType:="NVarChar(MAX)")>  _
-	Public Property FRGN_NO() As String
-		Get
-			Return Me._FRGN_NO
-		End Get
-		Set
-			If (String.Equals(Me._FRGN_NO, value) = false) Then
-				Me.OnFRGN_NOChanging(value)
-				Me.SendPropertyChanging
-				Me._FRGN_NO = value
-				Me.SendPropertyChanged("FRGN_NO")
-				Me.OnFRGN_NOChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_NO1", DbType:="NVarChar(MAX)")>  _
-	Public Property BS_NO1() As String
-		Get
-			Return Me._BS_NO1
-		End Get
-		Set
-			If (String.Equals(Me._BS_NO1, value) = false) Then
-				Me.OnBS_NO1Changing(value)
-				Me.SendPropertyChanging
-				Me._BS_NO1 = value
-				Me.SendPropertyChanged("BS_NO1")
-				Me.OnBS_NO1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_DATE1", DbType:="DateTime")>  _
-	Public Property BS_DATE1() As System.Nullable(Of Date)
-		Get
-			Return Me._BS_DATE1
-		End Get
-		Set
-			If (Me._BS_DATE1.Equals(value) = false) Then
-				Me.OnBS_DATE1Changing(value)
-				Me.SendPropertyChanging
-				Me._BS_DATE1 = value
-				Me.SendPropertyChanged("BS_DATE1")
-				Me.OnBS_DATE1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_NO1", DbType:="NVarChar(MAX)")>  _
-	Public Property FRGN_NO1() As String
-		Get
-			Return Me._FRGN_NO1
-		End Get
-		Set
-			If (String.Equals(Me._FRGN_NO1, value) = false) Then
-				Me.OnFRGN_NO1Changing(value)
-				Me.SendPropertyChanging
-				Me._FRGN_NO1 = value
-				Me.SendPropertyChanged("FRGN_NO1")
-				Me.OnFRGN_NO1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
-	Public Property FK_IDA() As System.Nullable(Of Integer)
-		Get
-			Return Me._FK_IDA
-		End Get
-		Set
-			If (Me._FK_IDA.Equals(value) = false) Then
-				Me.OnFK_IDAChanging(value)
-				Me.SendPropertyChanging
-				Me._FK_IDA = value
-				Me.SendPropertyChanged("FK_IDA")
-				Me.OnFK_IDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOC_DATE", DbType:="DateTime")>  _
-	Public Property DOC_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._DOC_DATE
-		End Get
-		Set
-			If (Me._DOC_DATE.Equals(value) = false) Then
-				Me.OnDOC_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._DOC_DATE = value
-				Me.SendPropertyChanged("DOC_DATE")
-				Me.OnDOC_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_DATE", DbType:="DateTime")>  _
-	Public Property FRGN_DATE() As System.Nullable(Of Date)
-		Get
-			Return Me._FRGN_DATE
-		End Get
-		Set
-			If (Me._FRGN_DATE.Equals(value) = false) Then
-				Me.OnFRGN_DATEChanging(value)
-				Me.SendPropertyChanging
-				Me._FRGN_DATE = value
-				Me.SendPropertyChanged("FRGN_DATE")
-				Me.OnFRGN_DATEChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_TYPE_PHR_HERB")>  _
 Partial Public Class MAS_TYPE_PHR_HERB
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -136328,6 +135936,420 @@ Partial Public Class dalcn
 				Me._MARTTRA_NO3 = value
 				Me.SendPropertyChanged("MARTTRA_NO3")
 				Me.OnMARTTRA_NO3Changed
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DALCN_FRGN_DATA")>  _
+Partial Public Class DALCN_FRGN_DATA
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _PERSONAL_TYPE As String
+	
+	Private _PASSPORT_NO As String
+	
+	Private _PASSPORT_EXPDATE As System.Nullable(Of Date)
+	
+	Private _DOC_NO As String
+	
+	Private _WORK_LICENSE_NO As String
+	
+	Private _WORK_LICENSE_EXPDATE As System.Nullable(Of Date)
+	
+	Private _BS_NO As String
+	
+	Private _BS_DATE As System.Nullable(Of Date)
+	
+	Private _FRGN_NO As String
+	
+	Private _BS_NO1 As String
+	
+	Private _BS_DATE1 As System.Nullable(Of Date)
+	
+	Private _FRGN_NO1 As String
+	
+	Private _FK_IDA As System.Nullable(Of Integer)
+	
+	Private _DOC_DATE As System.Nullable(Of Date)
+	
+	Private _FRGN_DATE As System.Nullable(Of Date)
+	
+	Private _FRGN_DATE1 As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnPERSONAL_TYPEChanging(value As String)
+    End Sub
+    Partial Private Sub OnPERSONAL_TYPEChanged()
+    End Sub
+    Partial Private Sub OnPASSPORT_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnPASSPORT_NOChanged()
+    End Sub
+    Partial Private Sub OnPASSPORT_EXPDATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnPASSPORT_EXPDATEChanged()
+    End Sub
+    Partial Private Sub OnDOC_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnDOC_NOChanged()
+    End Sub
+    Partial Private Sub OnWORK_LICENSE_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnWORK_LICENSE_NOChanged()
+    End Sub
+    Partial Private Sub OnWORK_LICENSE_EXPDATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnWORK_LICENSE_EXPDATEChanged()
+    End Sub
+    Partial Private Sub OnBS_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnBS_NOChanged()
+    End Sub
+    Partial Private Sub OnBS_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnBS_DATEChanged()
+    End Sub
+    Partial Private Sub OnFRGN_NOChanging(value As String)
+    End Sub
+    Partial Private Sub OnFRGN_NOChanged()
+    End Sub
+    Partial Private Sub OnBS_NO1Changing(value As String)
+    End Sub
+    Partial Private Sub OnBS_NO1Changed()
+    End Sub
+    Partial Private Sub OnBS_DATE1Changing(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnBS_DATE1Changed()
+    End Sub
+    Partial Private Sub OnFRGN_NO1Changing(value As String)
+    End Sub
+    Partial Private Sub OnFRGN_NO1Changed()
+    End Sub
+    Partial Private Sub OnFK_IDAChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFK_IDAChanged()
+    End Sub
+    Partial Private Sub OnDOC_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDOC_DATEChanged()
+    End Sub
+    Partial Private Sub OnFRGN_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnFRGN_DATEChanged()
+    End Sub
+    Partial Private Sub OnFRGN_DATE1Changing(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnFRGN_DATE1Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PERSONAL_TYPE", DbType:="NVarChar(50)")>  _
+	Public Property PERSONAL_TYPE() As String
+		Get
+			Return Me._PERSONAL_TYPE
+		End Get
+		Set
+			If (String.Equals(Me._PERSONAL_TYPE, value) = false) Then
+				Me.OnPERSONAL_TYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._PERSONAL_TYPE = value
+				Me.SendPropertyChanged("PERSONAL_TYPE")
+				Me.OnPERSONAL_TYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSPORT_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property PASSPORT_NO() As String
+		Get
+			Return Me._PASSPORT_NO
+		End Get
+		Set
+			If (String.Equals(Me._PASSPORT_NO, value) = false) Then
+				Me.OnPASSPORT_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._PASSPORT_NO = value
+				Me.SendPropertyChanged("PASSPORT_NO")
+				Me.OnPASSPORT_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSPORT_EXPDATE", DbType:="DateTime")>  _
+	Public Property PASSPORT_EXPDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._PASSPORT_EXPDATE
+		End Get
+		Set
+			If (Me._PASSPORT_EXPDATE.Equals(value) = false) Then
+				Me.OnPASSPORT_EXPDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._PASSPORT_EXPDATE = value
+				Me.SendPropertyChanged("PASSPORT_EXPDATE")
+				Me.OnPASSPORT_EXPDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOC_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property DOC_NO() As String
+		Get
+			Return Me._DOC_NO
+		End Get
+		Set
+			If (String.Equals(Me._DOC_NO, value) = false) Then
+				Me.OnDOC_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._DOC_NO = value
+				Me.SendPropertyChanged("DOC_NO")
+				Me.OnDOC_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WORK_LICENSE_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property WORK_LICENSE_NO() As String
+		Get
+			Return Me._WORK_LICENSE_NO
+		End Get
+		Set
+			If (String.Equals(Me._WORK_LICENSE_NO, value) = false) Then
+				Me.OnWORK_LICENSE_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._WORK_LICENSE_NO = value
+				Me.SendPropertyChanged("WORK_LICENSE_NO")
+				Me.OnWORK_LICENSE_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WORK_LICENSE_EXPDATE", DbType:="DateTime")>  _
+	Public Property WORK_LICENSE_EXPDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._WORK_LICENSE_EXPDATE
+		End Get
+		Set
+			If (Me._WORK_LICENSE_EXPDATE.Equals(value) = false) Then
+				Me.OnWORK_LICENSE_EXPDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._WORK_LICENSE_EXPDATE = value
+				Me.SendPropertyChanged("WORK_LICENSE_EXPDATE")
+				Me.OnWORK_LICENSE_EXPDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property BS_NO() As String
+		Get
+			Return Me._BS_NO
+		End Get
+		Set
+			If (String.Equals(Me._BS_NO, value) = false) Then
+				Me.OnBS_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._BS_NO = value
+				Me.SendPropertyChanged("BS_NO")
+				Me.OnBS_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_DATE", DbType:="DateTime")>  _
+	Public Property BS_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._BS_DATE
+		End Get
+		Set
+			If (Me._BS_DATE.Equals(value) = false) Then
+				Me.OnBS_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._BS_DATE = value
+				Me.SendPropertyChanged("BS_DATE")
+				Me.OnBS_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_NO", DbType:="NVarChar(MAX)")>  _
+	Public Property FRGN_NO() As String
+		Get
+			Return Me._FRGN_NO
+		End Get
+		Set
+			If (String.Equals(Me._FRGN_NO, value) = false) Then
+				Me.OnFRGN_NOChanging(value)
+				Me.SendPropertyChanging
+				Me._FRGN_NO = value
+				Me.SendPropertyChanged("FRGN_NO")
+				Me.OnFRGN_NOChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_NO1", DbType:="NVarChar(MAX)")>  _
+	Public Property BS_NO1() As String
+		Get
+			Return Me._BS_NO1
+		End Get
+		Set
+			If (String.Equals(Me._BS_NO1, value) = false) Then
+				Me.OnBS_NO1Changing(value)
+				Me.SendPropertyChanging
+				Me._BS_NO1 = value
+				Me.SendPropertyChanged("BS_NO1")
+				Me.OnBS_NO1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BS_DATE1", DbType:="DateTime")>  _
+	Public Property BS_DATE1() As System.Nullable(Of Date)
+		Get
+			Return Me._BS_DATE1
+		End Get
+		Set
+			If (Me._BS_DATE1.Equals(value) = false) Then
+				Me.OnBS_DATE1Changing(value)
+				Me.SendPropertyChanging
+				Me._BS_DATE1 = value
+				Me.SendPropertyChanged("BS_DATE1")
+				Me.OnBS_DATE1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_NO1", DbType:="NVarChar(MAX)")>  _
+	Public Property FRGN_NO1() As String
+		Get
+			Return Me._FRGN_NO1
+		End Get
+		Set
+			If (String.Equals(Me._FRGN_NO1, value) = false) Then
+				Me.OnFRGN_NO1Changing(value)
+				Me.SendPropertyChanging
+				Me._FRGN_NO1 = value
+				Me.SendPropertyChanged("FRGN_NO1")
+				Me.OnFRGN_NO1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FK_IDA", DbType:="Int")>  _
+	Public Property FK_IDA() As System.Nullable(Of Integer)
+		Get
+			Return Me._FK_IDA
+		End Get
+		Set
+			If (Me._FK_IDA.Equals(value) = false) Then
+				Me.OnFK_IDAChanging(value)
+				Me.SendPropertyChanging
+				Me._FK_IDA = value
+				Me.SendPropertyChanged("FK_IDA")
+				Me.OnFK_IDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOC_DATE", DbType:="DateTime")>  _
+	Public Property DOC_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._DOC_DATE
+		End Get
+		Set
+			If (Me._DOC_DATE.Equals(value) = false) Then
+				Me.OnDOC_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._DOC_DATE = value
+				Me.SendPropertyChanged("DOC_DATE")
+				Me.OnDOC_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_DATE", DbType:="DateTime")>  _
+	Public Property FRGN_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._FRGN_DATE
+		End Get
+		Set
+			If (Me._FRGN_DATE.Equals(value) = false) Then
+				Me.OnFRGN_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._FRGN_DATE = value
+				Me.SendPropertyChanged("FRGN_DATE")
+				Me.OnFRGN_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FRGN_DATE1", DbType:="DateTime")>  _
+	Public Property FRGN_DATE1() As System.Nullable(Of Date)
+		Get
+			Return Me._FRGN_DATE1
+		End Get
+		Set
+			If (Me._FRGN_DATE1.Equals(value) = false) Then
+				Me.OnFRGN_DATE1Changing(value)
+				Me.SendPropertyChanging
+				Me._FRGN_DATE1 = value
+				Me.SendPropertyChanged("FRGN_DATE1")
+				Me.OnFRGN_DATE1Changed
 			End If
 		End Set
 	End Property

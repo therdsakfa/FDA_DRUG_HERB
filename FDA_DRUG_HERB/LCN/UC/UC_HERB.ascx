@@ -171,8 +171,10 @@
                     <td>
                         <asp:Label ID="lbl_lcn_email" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>เวลาทำการรวมของร้าน&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="txt_da_opentime" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
             </table>
             &ensp;&ensp;</div>
@@ -277,14 +279,14 @@
                <tr>
                    <td class="auto-style3"></td>
                    <td colspan="2">หนังสือรับรองตาามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
-                   <td><asp:TextBox ID="TextBox13" runat="server"></asp:TextBox></td>
+                   <td><asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
                    <td><%--<asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>--%>
-                       <telerik:RadDatePicker ID="RDP_FRGN_NO1" Runat="server">
+                       <telerik:RadDatePicker ID="RDP_FRGN_DATE1" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
                    <td>&nbsp;</td>
