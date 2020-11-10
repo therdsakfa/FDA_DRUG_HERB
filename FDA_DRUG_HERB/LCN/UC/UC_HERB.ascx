@@ -472,7 +472,7 @@
                    <td class="auto-style3"></td>
                    <td>
 
-                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<input type="checkbox" id="vehicle8" name="vehicle1" value="Bike">
+                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<asp:CheckBox ID="cb_addr" runat="server" value ="1"/><%--<input type="checkbox" id="" name="vehicle1" value="Bike">--%>
            <label for="vehicle1"> </label></td>
                    <td>
 
@@ -497,7 +497,7 @@
                        อยู่เลขที่</td>
                    <td>
 
-                       <asp:TextBox ID="txt_c_thaaddr" runat="server"></asp:TextBox>
+                       <asp:TextBox ID="txt_c_thaaddr" runat="server" AutoPostBack="True"></asp:TextBox>
                    </td>
                     <td>
 

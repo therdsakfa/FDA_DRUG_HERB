@@ -494,7 +494,11 @@
 
             End Try
             .WORK_LICENSE_NO = txt_WORK_LICENSE_NO.Text
-
+            Try
+                .PASSPORT_EXPDATE = CDate(RDP_PASSPORT_EXPDATE.SelectedDate)
+            Catch ex As Exception
+            End Try
+            'cb_addr_CheckedChanged(1)
         End With
     End Sub
 
@@ -716,6 +720,7 @@
             .thasoi = txt_c_thasoi.Text
             .thmblcd = ddl_tambol.SelectedValue
             .zipcode = txt_c_zipcode.Text
+
         End With
     End Sub
     Public Sub load_ddl_chwt()
@@ -748,5 +753,26 @@
 
     Private Sub ddl_amphor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_amphor.SelectedIndexChanged
         load_ddl_thambol()
+    End Sub
+
+    Protected Sub cb_addr_CheckedChanged(sender As Object, e As EventArgs) Handles cb_addr.CheckedChanged
+        Try
+            If cb_addr.Checked = True Then
+                txt_c_thaaddr.Text = lbl_BSN_ADDR.Text
+                txt_c_thabuilding.Text = lbl_BSN_BUILDING.Text
+                txt_c_thamu.Text = lbl_BSN_MOO.Text
+                txt_c_thasoi.Text = lbl_BSN_SOI.Text
+                txt_c_tharoad.Text = lbl_BSN_ROAD.Text
+                ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
+                ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
+                ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
+                txt_c_zipcode.Text = lbl_BSN_ZIPCODE.Text
+                txt_c_fax.Text = lbl_BSN_FAX.Text
+                txt_c_tel.Text = lbl_BSN_TEL.Text
+                txt_c_email.Text = Label33.Text
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
