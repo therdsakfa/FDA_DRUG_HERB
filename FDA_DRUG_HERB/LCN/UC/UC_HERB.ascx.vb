@@ -46,6 +46,11 @@
         dt_lcn = bao.SP_Lisense_Name_and_Addr(CITIZEN_ID_AUTHORIZE) ' bao_show.SP_LOCATION_BSN_BY_LCN_IDA(_IDA) 'ผู้ดำเนิน
         '
         For Each dr As DataRow In dt_lcn.Rows
+            'Try
+            '    txt_da_opentime.Text = dr("thaaddr")
+            'Catch ex As Exception
+
+            'End Try
             Try
                 lbl_lcn_addr.Text = dr("thaaddr")
             Catch ex As Exception
@@ -305,6 +310,11 @@
             Catch ex As Exception
 
             End Try
+            Try
+                .opentime = txt_da_opentime.Text
+            Catch ex As Exception
+
+            End Try
             .TR_ID = TR_ID
             .FK_IDA = Request.QueryString("lct_ida")
             .CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -457,7 +467,12 @@
 
             End Try
             .FRGN_NO = txt_FRGN_NO.Text
-            .FRGN_NO1 = RDP_FRGN_NO1.SelectedDate
+            Try
+                .FRGN_DATE1 = RDP_FRGN_DATE1.SelectedDate
+            Catch ex As Exception
+
+            End Try
+
             Try
                 .PASSPORT_EXPDATE = CDate(RDP_PASSPORT_EXPDATE.SelectedDate)
             Catch ex As Exception
@@ -487,6 +502,207 @@
         End With
     End Sub
 
+    Sub insert_bsn(ByVal FK_IDA As String)
+        Dim bao_show11 As New BAO_SHOW
+        Dim dt_bsn As DataTable = bao_show11.SP_LOCATION_BSN_BY_IDENTIFY(Request.QueryString("bsn"))
+        For Each dr As DataRow In dt_bsn.Rows
+            Dim dao_bsn As New DAO_DRUG.TB_DALCN_LOCATION_BSN
+            Try
+                dao_bsn.fields.BSN_THAIFULLNAME = dr("BSN_THAIFULLNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_IDENTIFY = dr("BSN_IDENTIFY")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ADDR = dr("BSN_ADDR")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_SOI = dr("BSN_SOI")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ROAD = dr("BSN_ROAD")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_MOO = dr("BSN_MOO")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_THMBL_NAME = dr("BSN_THMBL_NAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_AMPHR_NAME = dr("BSN_AMPHR_NAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_CHWNGNAME = dr("BSN_CHWNGNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_TELEPHONE = dr("BSN_TELEPHONE")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_FAX = dr("BSN_FAX")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_THAINAME = dr("BSN_THAINAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_THAILASTNAME = dr("BSN_THAILASTNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_PREFIXENGCD = dr("BSN_PREFIXENGCD")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGNAME = dr("BSN_ENGNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGLASTNAME = dr("BSN_ENGLASTNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGFULLNAME = dr("BSN_ENGFULLNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.CHANGWAT_ID = dr("CHANGWAT_ID")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.AMPHR_ID = dr("AMPHR_ID")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.TUMBON_ID = dr("TUMBON_ID")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_FLOOR = dr("BSN_FLOOR")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_BUILDING = dr("BSN_BUILDING")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ZIPCODE = dr("BSN_ZIPCODE")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.CREATE_DATE = dr("CREATE_DATE")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.DOWN_ID = dr("DOWN_ID")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.CITIZEN_ID = dr("CITIZEN_ID")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.XMLNAME = dr("XMLNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.NATIONALITY = dr("NATIONALITY")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_HOUSENO = dr("BSN_HOUSENO")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGADDR = dr("BSN_ENGADDR")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGMU = dr("BSN_ENGMU")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGSOI = dr("BSN_ENGSOI")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_ENGROAD = dr("BSN_ENGROAD")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_CHWNG_ENGNAME = dr("BSN_CHWNG_ENGNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_AMPHR_ENGNAME = dr("BSN_AMPHR_ENGNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_THMBL_ENGNAME = dr("BSN_THMBL_ENGNAME")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.BSN_NATIONALITY_CD = dr("BSN_NATIONALITY_CD")
+            Catch ex As Exception
+
+            End Try
+            Try
+                dao_bsn.fields.AGE = dr("AGE")
+            Catch ex As Exception
+
+            End Try
+            dao_bsn.fields.LCN_IDA = FK_IDA
+            dao_bsn.fields.FK_IDA = FK_IDA
+            dao_bsn.insert()
+        Next
+
+    End Sub
     Sub set_date_current_addr(ByRef dao As DAO_DRUG.TB_DALCN_CURRENT_ADDRESS)
         With dao.fields
             .amphrcd = ddl_amphor.SelectedValue

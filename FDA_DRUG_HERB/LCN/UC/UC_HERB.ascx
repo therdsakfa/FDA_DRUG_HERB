@@ -9,18 +9,6 @@
     .auto-style3 {
         width: 85px;
     }
-    .auto-style4 {
-        width: 10px;
-    }
-    .auto-style5 {
-        width: 15px;
-    }
-    .auto-style6 {
-        width: 191px;
-    }
-    .auto-style7 {
-        width: 115px;
-    }
 </style>
 
 <div>
@@ -44,13 +32,12 @@
         <div><center>
             <table>
                 <td>
-                    <h4>เลือก</h4>
+                    เลือก
                 </td>
-                <td class="auto-style5"></td>
                 <td>
                 <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="1">&ensp;ไทย&ensp;</asp:ListItem>
-                    <asp:ListItem Value="2">&ensp;ต่างด้าว</asp:ListItem>
+                    <asp:ListItem Value="1">ไทย</asp:ListItem>
+                    <asp:ListItem Value="2">ต่างด้าว</asp:ListItem>
                 </asp:RadioButtonList> 
                 </td>
             </table>
@@ -58,7 +45,6 @@
              </center>                   
             
         </div>
-       <div></div>
         <div>
              <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
                  ๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>
@@ -185,8 +171,10 @@
                     <td>
                         <asp:Label ID="lbl_lcn_email" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>เวลาทำการรวมของร้าน&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="txt_da_opentime" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
             </table>
             &ensp;&ensp;</div>
@@ -199,7 +187,6 @@
                    <td><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" /></td>
                    <td></td>
                    <td></td>
-                   <td class="auto-style4"></td>
                    <td></td>
                </tr>
                <tr>
@@ -208,7 +195,6 @@
                    <td><asp:TextBox ID="txt_PASSPORT_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>วันหมดอายุ</td>
-                   <td class="auto-style4"></td>
                    <td>
                        <telerik:RadDatePicker ID="RDP_PASSPORT_EXPDATE" Runat="server">
                        </telerik:RadDatePicker>
@@ -220,7 +206,6 @@
                    <td><asp:TextBox ID="txt_DOC_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td class="auto-style4"></td>
                    <td>
                        <telerik:RadDatePicker ID="RDP_DOC_DATE" Runat="server">
                        </telerik:RadDatePicker>
@@ -232,7 +217,6 @@
                    <td><asp:TextBox ID="txt_WORK_LICENSE_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>วันหมดอายุ</td>
-                   <td class="auto-style4"></td>
                    <td>
                        <telerik:RadDatePicker ID="RDP_WORK_LICENSE_EXPDATE" Runat="server">
                        </telerik:RadDatePicker>
@@ -248,7 +232,6 @@
                    <td><asp:TextBox ID="txt_BS_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td class="auto-style4"></td>
                    <td><%--<asp:TextBox ID="txt" runat="server"></asp:TextBox>--%>
                        <telerik:RadDatePicker ID="RDP_BS_DATE" Runat="server">
                        </telerik:RadDatePicker>
@@ -258,7 +241,6 @@
                    <td class="auto-style3"></td>
                    <td colspan="2">หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
                    <td><asp:TextBox ID="txt_FRGN_NO" runat="server"></asp:TextBox></td>
-                   <td class="auto-style4"></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
@@ -268,8 +250,7 @@
                        <telerik:RadDatePicker ID="RDP_FRGN_DATE" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
-                   <td></td>
-                   <td class="auto-style4">&nbsp;</td>
+                   <td>&nbsp;</td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
@@ -278,7 +259,6 @@
            <asp:CheckBox ID="cb_Personal_Type2" text ="นิติบุคคลต่างด้าว " runat="server" /></td>
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>
-                   <td class="auto-style4"></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
@@ -291,7 +271,6 @@
                    <td><asp:TextBox ID="txt_BS_NO1" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td class="auto-style4"></td>
                    <td><%--<asp:TextBox ID="txt_BS_DATE1" runat="server"></asp:TextBox>--%>
                        <telerik:RadDatePicker ID="RDP_BS_DATE1" Runat="server">
                        </telerik:RadDatePicker>
@@ -300,19 +279,17 @@
                <tr>
                    <td class="auto-style3"></td>
                    <td colspan="2">หนังสือรับรองตาามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
-                   <td><asp:TextBox ID="TextBox13" runat="server"></asp:TextBox></td>
-                   <td class="auto-style4"></td>
+                   <td><asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
                    <td><%--<asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>--%>
-                       <telerik:RadDatePicker ID="RDP_FRGN_NO1" Runat="server">
+                       <telerik:RadDatePicker ID="RDP_FRGN_DATE1" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
-                   <td></td>
-                   <td class="auto-style4">&nbsp;</td>
+                   <td>&nbsp;</td>
                    <td>&nbsp;</td>
                </tr>
            </table>
@@ -642,13 +619,13 @@
            <table>
                <tr>
                    <td class="auto-style3"></td>
-                   <td class="auto-style6">
+                   <td>
                        หนังสือเดินทางเลขที่
                    </td>
                    <td>
                         <asp:TextBox ID="txt_GIVE_PASSPORT_NO" runat="server"></asp:TextBox>
                    </td>
-                   <td class="auto-style7">
+                   <td>
                         วันหมดอายุ
                    </td>
                    <td>
@@ -657,13 +634,13 @@
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td class="auto-style6">
+                   <td>
                        ใบอนุญาตทำงานเลขที่
                    </td>
                    <td>
                          <asp:TextBox ID="txt_GIVE_WORK_LICENSE_NO" runat="server"></asp:TextBox>
                    </td>
-                   <td class="auto-style7">
+                   <td>
                         วันหมดอายุ
                    </td>
                    <td>

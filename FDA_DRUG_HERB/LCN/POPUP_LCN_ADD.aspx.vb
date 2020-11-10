@@ -33,6 +33,8 @@
             UC_HERB.load_ddl_amp()
             UC_HERB.load_ddl_thambol()
 
+            UC_HERB_PHESAJ.bind_ddl_phr_type()
+
             If Request.QueryString("ida") <> "" Then
                 Panel1.Style.Add("display", "block")
                 Panel2.Style.Add("display", "block")
@@ -70,6 +72,8 @@
             UC_HERB.setdata_frgn_data(dao_frgn)
             dao_frgn.fields.FK_IDA = dao_dal.fields.IDA
             dao_frgn.insert()
+
+            UC_HERB.insert_bsn(IDA)
 
             'Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&ida=" & IDA)
