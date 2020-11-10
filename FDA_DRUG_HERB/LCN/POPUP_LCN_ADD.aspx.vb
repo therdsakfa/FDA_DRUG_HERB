@@ -8,7 +8,7 @@
     Sub runQuery()
         _type_id = Request.QueryString("type_id")
         _ProcessID = Request.QueryString("process")
-        _IDA = Request.QueryString("IDA")
+        _IDA = Request.QueryString("ida")
 
     End Sub
     Sub RunSession()
