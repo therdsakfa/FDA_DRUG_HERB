@@ -473,6 +473,15 @@ Partial Public Class UC_HERB
     Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''cb_addr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cb_addr As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''txt_c_thaaddr control.
     '''</summary>
     '''<remarks>
