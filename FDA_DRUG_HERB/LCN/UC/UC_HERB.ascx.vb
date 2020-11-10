@@ -763,6 +763,7 @@
             txt_c_thamu.Text = lbl_BSN_MOO.Text
             txt_c_thasoi.Text = lbl_BSN_SOI.Text
             txt_c_tharoad.Text = lbl_BSN_ROAD.Text
+            load_ddl_chwt()
             ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
             load_ddl_amp()
             ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
