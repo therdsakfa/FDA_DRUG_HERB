@@ -765,9 +765,9 @@
             txt_c_tharoad.Text = lbl_BSN_ROAD.Text
             ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
             load_ddl_amp()
-            ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
-            load_ddl_thambol()
             ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
+            load_ddl_thambol()
+            ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
             txt_c_zipcode.Text = lbl_BSN_ZIPCODE.Text
             txt_c_fax.Text = lbl_BSN_FAX.Text
             txt_c_tel.Text = lbl_BSN_TEL.Text
