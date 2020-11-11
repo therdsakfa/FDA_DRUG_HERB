@@ -73,7 +73,16 @@ Public Class UC_HERB_PHESAJ
             .PHR_CTZNO = txt_PHR_CTZNO.Text
             .PHR_TEXT_NUM = txt_PHR_TEXT_NUM.Text
             .PHR_TEXT_WORK_TIME = txt_PHR_TEXT_WORK_TIME.Text
-            .PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text
+            If ddl_phr_type.SelectedValue = "0" Then
+                .STUDY_LEVEL = txt_STUDY_LEVEL.Text
+            Else
+                .STUDY_LEVEL = ddl_phr_type.SelectedItem.Text
+            End If
+            Try
+                .PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text
+            Catch ex As Exception
+
+            End Try
             Try
                 .PHR_LAW_SECTION = rdl_mastra.SelectedValue
             Catch ex As Exception
