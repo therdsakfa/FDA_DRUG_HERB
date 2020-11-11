@@ -491,7 +491,7 @@
                    <td class="auto-style3"></td>
                    <td>
 
-                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<asp:CheckBox ID="cb_addr" runat="server" />
+                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<asp:CheckBox ID="cb_addr" runat="server" AutoPostBack="True" />
            <label for="vehicle1"> </label></td>
                    <td>
 
