@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class UC_HERB_KEEP
-    
+
     '''<summary>
     '''ddl_placename control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class UC_HERB_KEEP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_placename As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''cb_location control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cb_location As Global.System.Web.UI.WebControls.CheckBox
+
     '''<summary>
     '''lbl_location_new control.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class UC_HERB_KEEP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_location_new As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''hf_place control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class UC_HERB_KEEP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hf_place As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''btn_save control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class UC_HERB_KEEP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''RadGrid2 control.
     '''</summary>

@@ -4,11 +4,14 @@ Public Class UC_HERB_KEEP
     Inherits System.Web.UI.UserControl
     Private _CLS As New CLS_SESSION
     Private _ProcessID As String
+    Private _lct_ida As String = ""
     Private _YEARS As String
+
 
     Sub RunQuery()
         Try
             _CLS = Session("CLS")
+            _lct_ida = Request.QueryString("lct_ida")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -35,13 +38,14 @@ Public Class UC_HERB_KEEP
         dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, _CLS.CITIZEN_ID_AUTHORIZE)
 
 
-            ddl_placename.DataSource = dt
+        ddl_placename.DataSource = dt
         ddl_placename.DataValueField = "IDA"
         ddl_placename.DataTextField = "thanameplace"
         ddl_placename.DataBind()
 
         Dim item As New ListItem("", "")
         ddl_placename.Items.Insert(0, item)
+
     End Sub
     Sub set_data()
         hf_place.Value = ddl_placename.SelectedValue
@@ -68,12 +72,15 @@ Public Class UC_HERB_KEEP
             'If dao_keep.fields.IDA <> 0 Then
             '    dao_keep.delete()
             'End If
-            Dim _IDA_lo As String = ""
-            Try
-                _IDA_lo = ddl_placename.SelectedValue
-            Catch ex As Exception
 
-            End Try
+            Dim _IDA_lo As String = ""
+            If ddl_placename.SelectedValue <> Nothing Then
+                _IDA_lo = ddl_placename.SelectedValue
+            Else
+                _IDA_lo = _lct_ida
+            End If
+
+
             If _IDA_lo = "0" Then
                 _IDA_lo = "89791"
             ElseIf _IDA_lo = "" Then
@@ -226,7 +233,20 @@ Public Class UC_HERB_KEEP
 
         End Try
     End Sub
+    Private Sub RadGrid2_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles RadGrid2.ItemCommand
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+            Dim _ida As String = item("IDA").Text
+            Dim dao_DALCN_DETAIL_LOCATION_KEEP As New DAO_DRUG.TB_DALCN_DETAIL_LOCATION_KEEP
+            If e.CommandName = "_del" Then
+                'Response.Write("<script type='text/javascript'>window.parent.alert('ยืนยันการลบ');</script> ")
+                dao_DALCN_DETAIL_LOCATION_KEEP.GetDataby_IDA(_ida)
+                dao_DALCN_DETAIL_LOCATION_KEEP.delete()
+                RadGrid2.Rebind()
 
+            End If
+        End If
+    End Sub
     Private Sub RadGrid2_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid2.NeedDataSource
         Dim bao_mas As New BAO_MASTER
         Dim dt As New DataTable
@@ -250,6 +270,7 @@ Public Class UC_HERB_KEEP
         Dim bao As New BAO_MASTER
         Dim dt As New DataTable
         Try
+
             dt = bao.SP_CUSTOMER_LCT_BY_LCT_IDA(ddl_placename.SelectedValue)
             For Each dr As DataRow In dt.Rows
                 lbl_location_new.Text = dr("fulladdr")
@@ -257,5 +278,21 @@ Public Class UC_HERB_KEEP
         Catch ex As Exception
 
         End Try
+        cb_location.Checked = False
+    End Sub
+
+    Protected Sub cb_location_CheckedChanged(sender As Object, e As EventArgs) Handles cb_location.CheckedChanged
+        Dim bao_show As New BAO_SHOW
+        Dim dt As New DataTable
+        If cb_location.Checked = True Then
+            dt = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(_lct_ida)
+            For Each dr As DataRow In dt.Rows
+                lbl_location_new.Text = dr("fulladdr")
+            Next
+        End If
+        ddl_placename.SelectedValue = Nothing
+    End Sub
+    Private Sub alert(ByVal text As String)
+        Response.Write("<script type='text/javascript'>alert('" + text + "');parent.close_modal();</script> ")
     End Sub
 End Class

@@ -4,6 +4,9 @@
     .auto-style1 {
         width: 85px;
     }
+    .auto-style2 {
+        width: 41px;
+    }
 </style>
 <div>
     <table>
@@ -15,19 +18,23 @@
             <td>
                     <asp:DropDownList ID="ddl_placename" runat="server" Width="300px" AutoPostBack="True"> </asp:DropDownList>     
             </td>
+            <td>
+                ใช้ที่เก็บเดียวกับที่ตั้ง
+                <asp:CheckBox ID="cb_location" runat="server" AutoPostBack="True" />
+            </td>
         
         </tr>
             <td class="auto-style1"></td>
-            <td>
+            <td class="auto-style2">
                 ที่อยู่
             </td>
             
-            <td>
+            <td colspan="5">
                 <asp:Label ID="lbl_location_new" runat="server" Text="-"></asp:Label>
             </td>
             <td></td>
-            <td></td>
-            <td></td>
+            <%--<td></td>
+            <td></td>--%>
     </table>
      
 
@@ -121,6 +128,11 @@
             SortExpression="lctcd" UniqueName="lctcd" Display="false">
       
         </telerik:GridBoundColumn>
+        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_del"
+            CommandName="_del" Text="ลบ" ConfirmText="ยืนยันการลบข้อมูล">
+            
+            <HeaderStyle Width="70px" />
+        </telerik:GridButtonColumn>
        
     </Columns>
 

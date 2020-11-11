@@ -4786,6 +4786,19 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetData_by_LOCATION_ADDRESS_rcvno(ByVal LOCATION_ADDRESS_rcvno As String)
+
+            datas = (From p In db.DALCN_DETAIL_LOCATION_KEEPs Where p.LOCATION_ADDRESS_rcvno = LOCATION_ADDRESS_rcvno Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_by_LOCATION_ADDRESS_IDA(ByVal LOCATION_ADDRESS_IDA As String)
+
+            datas = (From p In db.DALCN_DETAIL_LOCATION_KEEPs Where p.LOCATION_ADDRESS_IDA = LOCATION_ADDRESS_IDA Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
         '
         Public Sub GetDataby_IDA(ByVal IDA As String)
 
