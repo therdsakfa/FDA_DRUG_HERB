@@ -134,8 +134,8 @@
                                <telerik:GridBoundColumn DataField="PHR_TEXT_WORK_TIME" FilterControlAltText="Filter PHR_TEXT_WORK_TIME column"
                                    HeaderText="เวลาทำการ" SortExpression="PHR_TEXT_WORK_TIME" UniqueName="PHR_TEXT_WORK_TIME" >
                                </telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn DataField="functnm" FilterControlAltText="Filter functnm column"
-                                   HeaderText="หน้าที่" SortExpression="functnm" UniqueName="functnm" >
+                                <telerik:GridBoundColumn DataField="STUDY_LEVEL" FilterControlAltText="Filter STUDY_LEVEL column"
+                                   HeaderText="คุณวุฒิ" SortExpression="STUDY_LEVEL" UniqueName="STUDY_LEVEL" >
                                </telerik:GridBoundColumn>
                                <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="edt"
                                    CommandName="edt" Text="แก้ไข">
