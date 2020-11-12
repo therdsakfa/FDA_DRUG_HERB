@@ -203,6 +203,15 @@ Partial Public Class UC_HERB
     Protected WithEvents TB_Personal As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
+    '''TB_Personal_Type1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TB_Personal_Type1 As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
     '''cb_Personal_Type1 control.
     '''</summary>
     '''<remarks>
@@ -300,6 +309,15 @@ Partial Public Class UC_HERB
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RDP_FRGN_DATE As Global.Telerik.Web.UI.RadDatePicker
+
+    '''<summary>
+    '''TB_Personal_Type2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TB_Personal_Type2 As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
     '''cb_Personal_Type2 control.

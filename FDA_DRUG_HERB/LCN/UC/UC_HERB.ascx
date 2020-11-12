@@ -60,7 +60,7 @@
                         เลือก &ensp;
                     </td>
                     <td>
-                    <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal" AutoPostBack="True">
+                    <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" >
                         <asp:ListItem Value="1">&ensp;ไทย&ensp;</asp:ListItem>
                         <asp:ListItem Value="2">&ensp;ต่างด้าว&ensp;</asp:ListItem>
                     </asp:RadioButtonList> 
@@ -205,19 +205,22 @@
             </table>
             &ensp;&ensp;</div>
        <div>
-           
            <table id="TB_Personal" runat="server">
                <tr>
-                   <td></td>
+                   <td class="auto-style3"></td>
                    <td colspan="8"><h4>
                กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4></td>                
                </tr>
+           </table>
+           
+           <table id="TB_Personal_Type1" runat="server">
+               
                <tr>
                    <td colspan="8"></td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" /></td>
+                   <td><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" AutoPostBack="True"/></td>
                    <td></td>
                    <td></td>
                    <td>&nbsp;</td>
@@ -286,10 +289,12 @@
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>
                </tr>
+               </table>
+           <table id="TB_Personal_Type2" runat="server">
                <tr>
                    <td class="auto-style3"></td>
                    <td>
-           <asp:CheckBox ID="cb_Personal_Type2" text ="นิติบุคคลต่างด้าว " runat="server" /></td>
+           <asp:CheckBox ID="cb_Personal_Type2" text ="นิติบุคคลต่างด้าว " runat="server" AutoPostBack="True" /></td>
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>
                    <td>&nbsp;</td>

@@ -797,8 +797,30 @@
     Protected Sub rdl_sanchaat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rdl_sanchaat.SelectedIndexChanged
         If rdl_sanchaat.SelectedItem.Value = 2 Then
             TB_Personal.Visible = True
+            TB_Personal_Type1.Visible = True
+            TB_Personal_Type2.Visible = True
         Else
             TB_Personal.Visible = False
+            TB_Personal_Type1.Visible = False
+            TB_Personal_Type2.Visible = False
+        End If
+    End Sub
+
+    Protected Sub cb_Personal_Type1_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Personal_Type1.CheckedChanged
+        If cb_Personal_Type1.Checked = True Then
+            TB_Personal_Type2.Visible = False
+        Else
+            TB_Personal_Type2.Visible = True
+
+        End If
+    End Sub
+
+    Protected Sub cb_Personal_Type2_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Personal_Type2.CheckedChanged
+        If cb_Personal_Type2.Checked = True Then
+            TB_Personal_Type1.Visible = False
+        Else
+            TB_Personal_Type1.Visible = True
+
         End If
     End Sub
 End Class
