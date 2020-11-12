@@ -27,13 +27,6 @@
         width: 185px;
         height: 35px;
     }
-    .auto-style12 {
-        width: 85px;
-        height: 30px;
-    }
-    .auto-style13 {
-        height: 30px;
-    }
 </style>
 
 <div>
@@ -498,7 +491,7 @@
                    <td class="auto-style3"></td>
                    <td>
 
-                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<asp:CheckBox ID="cb_addr" runat="server" AutoPostBack="True" value="1" />
+                       &nbsp;ที่อยู่ที่สามารถติดต่อได้<asp:CheckBox ID="cb_addr" runat="server" /><%--<input type="checkbox" id="" name="vehicle1" value="Bike">--%>
            <label for="vehicle1"> </label></td>
                    <td>
 
@@ -644,38 +637,32 @@
                กรณีผู้ได้รับมอบหมายหรือแต่งตั้งให้กำหนดกิจการเป็นบุคคลต่างด้าว ระบุ</h4>&ensp;
            <table>
                <tr>
-                   <td class="auto-style12"></td>
-                   <td class="auto-style13">
+                   <td class="auto-style3"></td>
+                   <td>
                        หนังสือเดินทางเลขที่
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                         <asp:TextBox ID="txt_GIVE_PASSPORT_NO" runat="server"></asp:TextBox>
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                         วันหมดอายุ
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                         <telerik:RadDatePicker ID="rdp_GIVE_PASSPORT_EXPDATE" Runat="server"></telerik:RadDatePicker>
                    </td>
                </tr>
                <tr>
-                   <td class="auto-style12"></td>
-                   <td class="auto-style13">
+                   <td class="auto-style3"></td>
+                   <td>
                        ใบอนุญาตทำงานเลขที่
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                          <asp:TextBox ID="txt_GIVE_WORK_LICENSE_NO" runat="server"></asp:TextBox>
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                         วันหมดอายุ
                    </td>
-                   <td class="auto-style13">&ensp;</td>
-                   <td class="auto-style13">
+                   <td>
                        <telerik:RadDatePicker ID="rdp_GIVE_WORK_LICENSE_EXPDATE" Runat="server"></telerik:RadDatePicker>
                    </td>
                </tr>
