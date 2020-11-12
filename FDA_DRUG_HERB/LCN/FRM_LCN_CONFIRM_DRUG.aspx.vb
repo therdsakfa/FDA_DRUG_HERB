@@ -1038,6 +1038,44 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
             End If
         End If
+
+        If IsNothing(dao.fields.expdate) = False Then
+            Dim expdate As Date
+            If Date.TryParse(dao.fields.expdate, expdate) = True Then
+                class_xml.SHOW_EXPDATE_DAY = NumEng2Thai(expdate.Day)
+                class_xml.SHOW_EXPDATE_MONTH = expdate.ToString("MMMM")
+                class_xml.SHOW_EXPDATE_YEAR = NumEng2Thai(con_year(expdate.Year))
+
+
+                class_xml.EXPDAY = NumEng2Thai(expdate.Day.ToString())
+                class_xml.EXPMONTH = expdate.ToString("MMMM")
+                class_xml.EXPYEAR = NumEng2Thai(con_year(expdate.Year))
+                'Try
+                '    class_xml.EXP_YEAR = dao.fields.expyear 'con_year(appdate.Year)
+                'Catch ex As Exception
+                '    class_xml.EXP_YEAR = con_year(appdate.Year)
+                'End Try
+                Dim expyear As Integer = 0
+                Try
+                    expyear = dao.fields.expyear
+                    If expyear <> 0 Then
+                        If expyear < 2500 Then
+                            expyear += 543
+                        End If
+                    End If
+                Catch ex As Exception
+
+                End Try
+                If expyear = 0 Then
+                    expyear = con_year(expdate.Year)
+                End If
+                class_xml.EXP_YEAR = NumEng2Thai(expyear)
+
+            End If
+        End If
+
+
+
         '-------------------เก่า------------------
         'For Each dao_PHR.fields In dao_PHR.datas
         '    Dim cls_DALCN_PHR As New DALCN_PHR

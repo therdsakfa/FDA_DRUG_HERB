@@ -475,6 +475,38 @@
                 _LCN_TYPE_ID = value
             End Set
         End Property
+
+        Private _EXPDAY As String
+        Public Property EXPDAY() As String
+            Get
+                Return _EXPDAY
+            End Get
+            Set(ByVal value As String)
+                _EXPDAY = value
+            End Set
+        End Property
+
+        Private _EXPMONTH As String
+        Public Property EXPMONTH() As String
+            Get
+                Return _EXPMONTH
+            End Get
+            Set(ByVal value As String)
+                _EXPMONTH = value
+            End Set
+        End Property
+
+        Private _EXPYEAR As String
+        Public Property EXPYEAR() As String
+            Get
+                Return _EXPYEAR
+            End Get
+            Set(ByVal value As String)
+                _EXPYEAR = value
+            End Set
+        End Property
+
+
 #End Region
 
     End Class
