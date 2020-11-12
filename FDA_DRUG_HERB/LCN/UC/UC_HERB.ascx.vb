@@ -757,7 +757,7 @@
 
     Protected Sub cb_addr_CheckedChanged(sender As Object, e As EventArgs) Handles cb_addr.CheckedChanged
 
-        If cb_addr.Checked Then
+        If cb_addr.Checked = True Then
             txt_c_thaaddr.Text = lbl_BSN_ADDR.Text
             txt_c_thabuilding.Text = lbl_BSN_BUILDING.Text
             txt_c_thamu.Text = lbl_BSN_MOO.Text
@@ -769,10 +769,27 @@
             ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
             load_ddl_thambol()
             ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
+
             txt_c_zipcode.Text = lbl_BSN_ZIPCODE.Text
             txt_c_fax.Text = lbl_BSN_FAX.Text
             txt_c_tel.Text = lbl_BSN_TEL.Text
             txt_c_email.Text = Label33.Text
+        Else
+            txt_c_thaaddr.Text = Nothing
+            txt_c_thabuilding.Text = Nothing
+            txt_c_thamu.Text = Nothing
+            txt_c_thasoi.Text = Nothing
+            txt_c_tharoad.Text = Nothing
+            load_ddl_chwt()
+            load_ddl_amp()
+            load_ddl_thambol()
+            'ddl_tambol.SelectedItem.Text = "-"
+            'ddl_tambol.SelectedItem.Text = Nothing
+            txt_c_zipcode.Text = Nothing
+            txt_c_fax.Text = Nothing
+            txt_c_tel.Text = Nothing
+            txt_c_email.Text = Nothing
+
         End If
 
     End Sub
