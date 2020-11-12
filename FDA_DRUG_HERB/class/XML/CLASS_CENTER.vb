@@ -313,4 +313,35 @@
             _PHR_COUNT = value
         End Set
     End Property
+    Private _SHOW_EXPDATE_DAY As String
+    Public Property SHOW_EXPDATE_DAY() As String
+        Get
+            Return _SHOW_EXPDATE_DAY
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_DAY = value
+        End Set
+    End Property
+
+    Private _SHOW_EXPDATE_MONTH As String
+    Public Property SHOW_EXPDATE_MONTH() As String
+        Get
+            Return _SHOW_EXPDATE_MONTH
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_MONTH = value
+        End Set
+    End Property
+
+    Private _SHOW_EXPDATE_YEAR As String
+    Public Property SHOW_EXPDATE_YEAR() As String
+        Get
+            Return _SHOW_EXPDATE_YEAR
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_YEAR = value
+        End Set
+    End Property
+
+
 End Class
