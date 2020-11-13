@@ -362,7 +362,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
         End Try
         Try
-            If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Then
+            If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Or dao.fields.lcntpcd.Contains("ผสม") Or dao.fields.lcntpcd.Contains("นสม") Then
                 LCN_TYPE = "2"
             Else
                 LCN_TYPE = "1"
@@ -371,7 +371,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
         End Try
         Try
-            If dao.fields.lcntpcd.Contains("ผย") Then
+            If dao.fields.lcntpcd.Contains("ผย") Or dao.fields.lcntpcd.Contains("ผส") Then
                 LCNTPCD_GROUP = "2"
             Else
                 LCNTPCD_GROUP = "1"
@@ -465,7 +465,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim bao_rgtno As New BAO.ClsDBSqlcommand
         dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(dao.fields.FK_IDA)
         Try
-            rgtno_format = dt_rgtno(0)("rgtno_display")
+            rgtno_format = dao_drrgt.fields.register  ' dt_rgtno(0)("rgtno_display")
         Catch ex As Exception
 
         End Try
@@ -521,7 +521,7 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             Dim dt_temp As New DataTable
             dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn.fields.IDA_dalcn) 'ผู้ดำเนิน
 
-            class_xml.BSN_THAIFULLNAME = dt_temp(0)("BSN_THAIFULLNAME")
+            class_xml.BSN_THAIFULLNAME = dao_lcn.fields.grannm_lo  'dt_temp(0)("BSN_THAIFULLNAME")
             'class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
         Catch ex As Exception
 

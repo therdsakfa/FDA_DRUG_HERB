@@ -156,11 +156,11 @@ Public Class FRM_RGT_EDIT_MAIN
         cls_xml = cls.gen_xml()                                                                               'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
         Dim lct_ida As Integer = 0
 
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-        dao_drrgt.GetDataby_IDA(_rgt_ida)
+        'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+        'dao_drrgt.GetDataby_IDA(_rgt_ida)
 
         Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
-        dao_sc.GetDataby_IDA_drrgt(_rgt_ida)
+        dao_sc.GetDataby_NEWCODE(Request.QueryString("newcode"))
         Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
         Try
             dao_lcn_e.GetDataby_u1(dao_sc.fields.Newcode_not)
@@ -171,7 +171,7 @@ Public Class FRM_RGT_EDIT_MAIN
 
         Dim dao As New DAO_DRUG.ClsDBdalcn
         Try
-            dao.GetDataby_IDA(dao_drrgt.fields.FK_LCN_IDA)
+            dao.GetDataby_pvncd_lcnno_lcntpcd(dao_lcn_e.fields.pvncd, dao_lcn_e.fields.lcnno, dao_lcn_e.fields.lcntpcd)
         Catch ex As Exception
 
         End Try
@@ -193,12 +193,12 @@ Public Class FRM_RGT_EDIT_MAIN
         Dim rcvno_auto As String = ""
         Dim lcnsid As String = ""
         Try
-            rcvno_auto = dao_drrgt.fields.rcvno
+            rcvno_auto = dao_sc.fields.rcvno
         Catch ex As Exception
 
         End Try
         Try
-            rgttpcd = dao_drrgt.fields.rgttpcd
+            rgttpcd = dao_sc.fields.rgttpcd
         Catch ex As Exception
 
         End Try
@@ -208,12 +208,12 @@ Public Class FRM_RGT_EDIT_MAIN
 
         End Try
         Try
-            lcnno = dao_drrgt.fields.lcnno
+            lcnno = dao_sc.fields.lcnno
         Catch ex As Exception
 
         End Try
         Try
-            rgtno = dao_drrgt.fields.rgtno
+            rgtno = dao_sc.fields.rgtno
         Catch ex As Exception
 
         End Try
@@ -223,17 +223,17 @@ Public Class FRM_RGT_EDIT_MAIN
 
         End Try
         Try
-            pvnabbr = dao_drrgt.fields.pvnabbr
+            pvnabbr = dao_sc.fields.pvnabbr
         Catch ex As Exception
 
         End Try
         Try
-            drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
+            drug_name = dao_sc.fields.thadrgnm & " / " & dao_sc.fields.engdrgnm
         Catch ex As Exception
 
         End Try
         Try
-            If dao_lcn_e.fields.lcntpcd.Contains("ผยบ") Or dao_lcn_e.fields.lcntpcd.Contains("นยบ") Then
+            If dao_lcn_e.fields.lcntpcd.Contains("ผสม") Or dao_lcn_e.fields.lcntpcd.Contains("นสม") Or dao_lcn_e.fields.lcntpcd.Contains("ผยบ") Or dao_lcn_e.fields.lcntpcd.Contains("นยบ") Then
                 LCN_TYPE = "2"
             Else
                 LCN_TYPE = "1"
@@ -242,7 +242,7 @@ Public Class FRM_RGT_EDIT_MAIN
 
         End Try
         Try
-            If dao_lcn_e.fields.lcntpcd.Contains("ผย") Then
+            If dao_lcn_e.fields.lcntpcd.Contains("ผส") Then
                 LCNTPCD_GROUP = "2"
             Else
                 LCNTPCD_GROUP = "1"
@@ -287,7 +287,7 @@ Public Class FRM_RGT_EDIT_MAIN
         Dim bao_rgtno As New BAO.ClsDBSqlcommand
         dt_rgtno = bao_rgtno.SP_DRRGT_RGTNO_DISPLAY_BY_IDA(_rgt_ida)
         Try
-            rgtno_format = dt_rgtno(0)("rgtno_display")
+            rgtno_format = dao_sc.fields.register  ' dt_rgtno(0)("rgtno_display")
         Catch ex As Exception
 
         End Try
@@ -304,8 +304,8 @@ Public Class FRM_RGT_EDIT_MAIN
         cls_xml.APP_TYPE3 = ""
         cls_xml.APP_TYPE3_PURPOSE = ""
         cls_xml.DRUG_NAME = drug_name
-        cls_xml.OLD_NAME_TH = dao_drrgt.fields.thadrgnm
-        cls_xml.OLD_NAME_EN = dao_drrgt.fields.engdrgnm
+        cls_xml.OLD_NAME_TH = dao_sc.fields.thadrgnm
+        cls_xml.OLD_NAME_EN = dao_sc.fields.engdrgnm
         Try
             cls_xml.PHR_IDENTIFY = rcb_phr_name.SelectedValue
             cls_xml.PHR_NAME = rcb_phr_name.SelectedItem.Text
@@ -316,7 +316,7 @@ Public Class FRM_RGT_EDIT_MAIN
 
         Dim UNIT_NAME As String = ""
         Dim dao_package As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
-        dao_package.GetDataby_FKIDA(dao_drrgt.fields.IDA)
+        dao_package.GetDataby_FKIDA(dao_sc.fields.IDA_drrgt)
         Dim dao_unit As New DAO_DRUG.TB_DRUG_UNIT 'ตารางเก็บหน่วยขนาดบรรจุ
         Try
             dao_unit.GetDataby_sunitcd(dao_package.fields.SMALL_UNIT)
@@ -351,9 +351,9 @@ Public Class FRM_RGT_EDIT_MAIN
 
         Try
             Dim dt_temp As New DataTable
-            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
+            dt_temp = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn_e.fields.IDA_dalcn) 'ผู้ดำเนิน
 
-            cls_xml.BSN_THAIFULLNAME = dt_temp(0)("BSN_THAIFULLNAME")
+            cls_xml.BSN_THAIFULLNAME = dao_lcn_e.fields.grannm_lo 'dt_temp(0)("BSN_THAIFULLNAME")
             'class_xml.DT_SHOW.DT14.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
         Catch ex As Exception
             cls_xml.BSN_THAIFULLNAME = ""

@@ -212,11 +212,11 @@
                กรณีผู้ขออนนุญาตเป็นบุคคลต่างด้าว ระบุ</h4></td>                
                </tr>
            </table>
-           
-           <table id="TB_Personal_Type1" runat="server">
+           <asp:Panel ID="TB_Personal_Type1" runat="server">
+<table runat="server">
                
                <tr>
-                   <td colspan="8"></td>
+                   <td colspan="5"></td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
@@ -290,7 +290,9 @@
                    <td>&nbsp;</td>
                </tr>
                </table>
-           <table id="TB_Personal_Type2" runat="server">
+           </asp:Panel>
+           <asp:Panel ID="TB_Personal_Type2" runat="server">
+<table  runat="server">
                <tr>
                    <td class="auto-style3"></td>
                    <td>
@@ -331,6 +333,8 @@
                    <td>&nbsp;</td>
                </tr>
            </table>
+           </asp:Panel>
+           
 
        </div>
        <div>
