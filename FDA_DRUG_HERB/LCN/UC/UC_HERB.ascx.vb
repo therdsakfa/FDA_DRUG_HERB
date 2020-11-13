@@ -795,7 +795,7 @@
     End Sub
 
     Protected Sub rdl_sanchaat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rdl_sanchaat.SelectedIndexChanged
-        If rdl_sanchaat.SelectedItem.Value = 2 Then
+        If rdl_sanchaat.SelectedValue = 2 Then
             TB_Personal.Visible = True
             TB_Personal_Type1.Visible = True
             TB_Personal_Type2.Visible = True

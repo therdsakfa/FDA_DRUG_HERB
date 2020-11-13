@@ -25,7 +25,7 @@
                     <asp:DropDownList ID="ddl_placename" runat="server" Width="300px" AutoPostBack="True"> </asp:DropDownList>     
             </td>
             <td class="auto-style3">&ensp;
-                ใช้ที่สถานที่เก็บเดียวกันกับสถานที่ตตั้ง
+                ใช้ที่สถานที่เก็บเดียวกันกับสถานที่ตั้ง
                 <asp:CheckBox ID="cb_location" runat="server" AutoPostBack="True" />
             </td>
         
