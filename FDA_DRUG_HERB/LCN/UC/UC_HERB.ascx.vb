@@ -91,11 +91,11 @@
             Catch ex As Exception
 
             End Try
-            Try
-                lbl_lcn_iden2.Text = dr("identify")
-            Catch ex As Exception
+            'Try
+            '    lbl_lcn_iden2.Text = dr("identify")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             Try
                 lbl_lcn_mu.Text = dr("mu")
             Catch ex As Exception
