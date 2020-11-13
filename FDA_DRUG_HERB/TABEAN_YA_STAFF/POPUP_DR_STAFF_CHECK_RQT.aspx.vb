@@ -191,7 +191,7 @@
         Else
             grptpcd = 1
         End If
-        If lcntpcd.Contains("นย") Then
+        If lcntpcd.Contains("นย") Or lcntpcd.Contains("นส") Then
             subtpcd = 3
         End If
         Dim sql_where As String = ""
