@@ -6171,7 +6171,36 @@ Namespace BAO
 
             Return str_no
         End Function
+        Function GEN_LCNNO_NEW(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal LCNNO As String,
+                        ByVal FORMAT As String, ByVal GROUP_NO As String, ByVal REF_IDA As String, ByVal DESCRIPTION As String) As String
+            Dim int_no As Integer
+            Dim dao As New DAO_DRUG.clsDBGEN_NO_03
+            dao.GetDataby_GEN(YEAR, PVCODE, TYPE, LCNNO, FORMAT, GROUP_NO, REF_IDA, DESCRIPTION)
+            If IsNothing(dao.fields.GENNO) = True Then
+                int_no = 0
+            Else
+                int_no = dao.fields.GENNO
+            End If
 
+            int_no = int_no + 1
+            Dim str_no As String = int_no.ToString()
+            'str_no = String.Format("{0:00000}", int_no.ToString("00000"))
+            str_no = YEAR.Substring(2, 2) & str_no
+
+            Dim dao2 As New DAO_DRUG.clsDBGEN_NO_01
+            dao2.fields.YEAR = YEAR
+            dao2.fields.PVCODE = PVCODE
+            dao2.fields.TYPE = TYPE
+            dao2.fields.LCNNO = LCNNO
+            dao2.fields.FORMAT = FORMAT
+            dao2.fields.GROUP_NO = GROUP_NO
+            dao2.fields.REF_IDA = REF_IDA
+            dao2.fields.DESCRIPTION = str_no
+            dao2.fields.GENNO = int_no
+            dao2.insert()
+
+            Return str_no
+        End Function
         ''' <summary>
         '''  GENNO_NO_02
         ''' </summary>
