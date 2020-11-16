@@ -34,6 +34,21 @@
     .auto-style13 {
         height: 30px;
     }
+    .auto-style14 {
+        width: 85px;
+        height: 29px;
+    }
+    .auto-style15 {
+        height: 29px;
+    }
+    .auto-style16 {
+        width: 261px;
+        height: 29px;
+    }
+    .auto-style17 {
+        width: 185px;
+        height: 29px;
+    }
 </style>
 
 <div>
@@ -128,29 +143,39 @@
                     <td>
                         <asp:Label ID="lbl_lcn_addr" runat="server" Text=""></asp:Label>
                     </td>
-                    <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5">ชั้นที่</td>
+                    <td><asp:Label ID="lbl_lcn_floor" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
+                    <td class="auto-style14">
                     </td>
-                    <td class="auto-style4">
+                    <td class="auto-style15">
+                        ห้องเลขที่
+                    </td>
+                    <td class="auto-style15">
+                        <asp:Label ID="lbl_lcn_room" runat="server" Text=""></asp:Label>
+                    </td>
+                    <td class="auto-style16">
                         หมู่บ้าน/อาคาร</td>
-                    <td>
+                    <td class="auto-style15">
                         <asp:Label ID="lbl_lcn_building" runat="server" Text=""></asp:Label>
                     </td>
-                    <td class="auto-style5">หมู่ที่</td>
-                    <td><asp:Label ID="lbl_lcn_mu" runat="server" Text=""></asp:Label>
-                    </td>
+                    
                 </tr>
                 <tr>
-                    <td class="auto-style3">
+                    <td></td>
+                    <td class="auto-style17">หมู่ที่</td>
+                    <td class="auto-style15"><asp:Label ID="lbl_lcn_mu" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style4">
                          ตรอก/ซอย</td>
                     <td>
                         <asp:Label ID="lbl_lcn_soi" runat="server" Text=""></asp:Label>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                    </td>                                     
                     <td class="auto-style5">ถนน </td>
                     <td><asp:Label ID="lbl_lcn_road" runat="server" Text=""></asp:Label></td>
                 </tr>
@@ -397,10 +422,18 @@
 
                        ที่อยู่ตามทะเบียนบ้าน อยู่เลขที่</td>
                    <td>
-
                        <asp:Label ID="lbl_BSN_ADDR" runat="server" Text=""></asp:Label>
                    </td>
-                    <td>
+                    <td>ชั้นที่</td>
+                   <td><asp:Label ID="lbl_BSN_FLOOR" runat="server" Text=""></asp:Label></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td>ห้องเลขที่</td>
+                   <td>
+                       <asp:Label ID="lbl_BSN_ROOM" runat="server" Text=""></asp:Label>
+                   </td>
+                   <td>
 
            หมู่บ้าน/อาคาร</td>
                    <td>
@@ -538,10 +571,20 @@
 
                        อยู่เลขที่</td>
                    <td>
-
                        <asp:TextBox ID="txt_c_thaaddr" runat="server" AutoPostBack="True"></asp:TextBox>
                    </td>
+                   <td>ชั้นที่</td>
+                   <td>
+                       <asp:TextBox ID="txt_c_floor" runat="server" AutoPostBack="True"></asp:TextBox>
+                   </td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td>ห้องเลขที่</td>
                     <td>
+                       <asp:TextBox ID="txt_c_room" runat="server" AutoPostBack="True"></asp:TextBox>
+                   </td>
+                   <td>
 
            หมู่บ้าน/อาคาร</td>
                    <td>
@@ -551,6 +594,7 @@
                </tr>
                <tr>
                    <td class="auto-style3"></td>
+                   
                    <td>
 
                        หมู่ที่</td>
@@ -568,6 +612,7 @@
                </tr>
                <tr>
                    <td class="auto-style3"></td>
+                   
                    <td>
 
            ถนน</td>

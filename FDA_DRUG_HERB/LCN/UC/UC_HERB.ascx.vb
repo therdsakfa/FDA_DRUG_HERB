@@ -57,6 +57,16 @@
 
             End Try
             Try
+                lbl_lcn_floor.Text = dr("floor")
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_lcn_room.Text = dr("room")
+            Catch ex As Exception
+
+            End Try
+            Try
                 lbl_lcn_ages.Text = dr("age")
             Catch ex As Exception
 
@@ -144,6 +154,16 @@
         For Each dr As DataRow In dt_bsn.Rows
             Try
                 lbl_BSN_ADDR.Text = dr("BSN_ADDR")
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_BSN_ROOM.Text = dr("BSN_ROOM")
             Catch ex As Exception
 
             End Try
@@ -712,11 +732,12 @@
             '.FK_IDA = 
             .tel = txt_c_tel.Text
             .thaaddr = txt_c_thaaddr.Text
+            .thafloor = txt_c_floor.Text
             .thabuilding = txt_c_thabuilding.Text
             .thamu = txt_c_thamu.Text
             .thanameplace = ""
             .tharoad = txt_c_tharoad.Text
-            .tharoom = ""
+            .tharoom = txt_c_room.Text
             .thasoi = txt_c_thasoi.Text
             .thmblcd = ddl_tambol.SelectedValue
             .zipcode = txt_c_zipcode.Text
@@ -759,6 +780,8 @@
 
         If cb_addr.Checked = True Then
             txt_c_thaaddr.Text = lbl_BSN_ADDR.Text
+            txt_c_floor.Text = lbl_BSN_FLOOR.Text
+            txt_c_room.Text = lbl_BSN_ROOM.Text
             txt_c_thabuilding.Text = lbl_BSN_BUILDING.Text
             txt_c_thamu.Text = lbl_BSN_MOO.Text
             txt_c_thasoi.Text = lbl_BSN_SOI.Text
