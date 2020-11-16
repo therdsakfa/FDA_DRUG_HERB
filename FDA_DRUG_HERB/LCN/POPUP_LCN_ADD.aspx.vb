@@ -65,6 +65,7 @@
             UC_HERB.setdata(dao_dal, TR_ID)
             dao_dal.fields.STATUS_ID = 1
             dao_dal.fields.PROCESS_ID = Request.QueryString("process")
+            dao_dal.fields.REVOCATION = "999"
             dao_dal.insert()
             IDA = dao_dal.fields.IDA
 

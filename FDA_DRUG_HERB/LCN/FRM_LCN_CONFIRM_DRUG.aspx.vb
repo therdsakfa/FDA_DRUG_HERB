@@ -852,15 +852,29 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
         dao_main.GetDataby_IDA(MAIN_LCN_IDA)
         Try
-            If Len(lcnno_auto) > 0 Then
+            If dao.fields.REVOCATION Is Nothing Then
+                If Len(lcnno_auto) > 0 Then
 
-                If Right(Left(lcnno_auto, 3), 1) = "5" Then
-                    lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
-                Else
-                    lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                    If Right(Left(lcnno_auto, 3), 1) = "5" Then
+                        lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                    Else
+                        lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                    End If
+                    'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
                 End If
-                'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+            Else
+
+                Dim _type_da As String = ""
+                If dao.fields.PROCESS_ID = "120" Then
+                    _type_da = "3"
+                ElseIf dao.fields.PROCESS_ID = "121" Then
+                    _type_da = "2"
+                ElseIf dao.fields.PROCESS_ID = "122" Then
+                    _type_da = "1"
+                End If
+                lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
             End If
+
         Catch ex As Exception
 
         End Try

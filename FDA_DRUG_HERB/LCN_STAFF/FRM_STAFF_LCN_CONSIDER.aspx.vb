@@ -70,6 +70,14 @@
             Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
             Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
+            Dim _type_da As String = ""
+            If dao.fields.PROCESS_ID = "120" Then
+                _type_da = "3"
+            ElseIf dao.fields.PROCESS_ID = "121" Then
+                _type_da = "2"
+            ElseIf dao.fields.PROCESS_ID = "122" Then
+                _type_da = "1"
+            End If
 
             '--------------------------------
             Dim chw As String = ""
@@ -83,14 +91,20 @@
             Dim bao2 As New BAO.GenNumber
             Dim LCNNO As Integer
             LCNNO = bao2.GEN_NO_01(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
-            dao.fields.lcnno = LCNNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year), LCNNO)
 
-            If chw <> "" Then
-                dao.fields.LCNNO_DISPLAY = chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
-
-            Else
-                dao.fields.LCNNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            Dim _year As Integer = con_year(Date.Now.Year)
+            If _year < 2500 Then
+                _year += 543
             End If
+
+            dao.fields.lcnno = LCNNO
+
+            'If chw <> "" Then
+            dao.fields.LCNNO_DISPLAY = _CLS.PVCODE & "-" & _type_da & "-" & Left(LCNNO, 2) & "-" & Right(LCNNO, Len(LCNNO) - 2)  'chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+
+            'Else
+            '    dao.fields.LCNNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            'End If
             '---------------------------------------
 
             dao.fields.remark = Txt_Remark.Text
@@ -117,13 +131,22 @@
                 Catch ex As Exception
 
                 End Try
+
+                Try
+                    If dao.fields.PROCESS_ID = "120" Or dao.fields.PROCESS_ID = "121" Or dao.fields.PROCESS_ID = "122" Then
+                        dao.fields.expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, appdate))
+                    End If
+
+                Catch ex As Exception
+
+                End Try
             End If
 
-            Try
-                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " อยู่ระหว่างดำเนินการพิจารณา")
-            Catch ex As Exception
+            'Try
+            '    send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " อยู่ระหว่างดำเนินการพิจารณา")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
             dao.update()
 
