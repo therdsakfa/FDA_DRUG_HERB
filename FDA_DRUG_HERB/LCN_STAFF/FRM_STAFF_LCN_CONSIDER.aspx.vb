@@ -90,7 +90,7 @@
             End Try
             Dim bao2 As New BAO.GenNumber
             Dim LCNNO As Integer
-            LCNNO = bao2.GEN_NO_01(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
+            LCNNO = bao2.GEN_LCNNO_NEW(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
 
             Dim _year As Integer = con_year(Date.Now.Year)
             If _year < 2500 Then

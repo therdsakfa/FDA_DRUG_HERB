@@ -852,7 +852,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
         dao_main.GetDataby_IDA(MAIN_LCN_IDA)
         Try
-            If dao.fields.REVOCATION Is Nothing Then
+            If dao.fields.REVOCATION Is Nothing Or Trim(dao.fields.REVOCATION) = "" Then
                 If Len(lcnno_auto) > 0 Then
 
                     If Right(Left(lcnno_auto, 3), 1) = "5" Then

@@ -1119,7 +1119,7 @@ Public Class WebForm35
 
         'End Try
         Try
-            If dao.fields.REVOCATION Is Nothing Then
+            If dao.fields.REVOCATION Is Nothing Or Trim(dao.fields.REVOCATION) = "" Then
                 If Len(lcnno_auto) > 0 Then
 
                     If Right(Left(lcnno_auto, 3), 1) = "5" Then

@@ -6187,7 +6187,7 @@ Namespace BAO
             'str_no = String.Format("{0:00000}", int_no.ToString("00000"))
             str_no = YEAR.Substring(2, 2) & str_no
 
-            Dim dao2 As New DAO_DRUG.clsDBGEN_NO_01
+            Dim dao2 As New DAO_DRUG.clsDBGEN_NO_03
             dao2.fields.YEAR = YEAR
             dao2.fields.PVCODE = PVCODE
             dao2.fields.TYPE = TYPE

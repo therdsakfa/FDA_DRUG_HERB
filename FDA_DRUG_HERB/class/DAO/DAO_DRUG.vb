@@ -2933,12 +2933,21 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        'Public Sub GetDataby_GEN(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal LCNNO As String,
+        '                ByVal FORMAT As String, ByVal GROUP_NO As String, ByVal REF_IDA As String, ByVal DESCRIPTION As String)
+        '    datas = (From p In db.GEN_NO_03s Where p.IDA = YEAR And p.TYPE = TYPE Order By p.IDA Descending Select p)
+        '    For Each Me.fields In datas
+        '    Next
+        'End Sub
         Public Sub GetDataby_GEN(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal LCNNO As String,
                         ByVal FORMAT As String, ByVal GROUP_NO As String, ByVal REF_IDA As String, ByVal DESCRIPTION As String)
-            datas = (From p In db.GEN_NO_03s Where p.IDA = YEAR Order By p.IDA Descending Select p)
+            'datas = (From p In db.GEN_NO_01s Where p.IDA = YEAR Order By p.IDA Descending Select p)
+            datas = (From p In db.GEN_NO_03s Where p.PVCODE = PVCODE And p.YEAR = YEAR And p.TYPE = TYPE Order By CInt(p.GENNO) Descending Select p).Take(1)
             For Each Me.fields In datas
             Next
         End Sub
+
+
         Public Sub GetDataby_GEN2(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal LCNNO As String,
                         ByVal FORMAT As String, ByVal GROUP_NO As String, ByVal REF_IDA As String, ByVal DESCRIPTION As String)
             'datas = (From p In db.GEN_NO_02s Where p.IDA = YEAR Order By p.IDA Descending Select p)
