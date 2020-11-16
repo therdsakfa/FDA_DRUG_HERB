@@ -32,15 +32,6 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''lr_preview control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
     '''btn_confirm control.
     '''</summary>
     '''<remarks>

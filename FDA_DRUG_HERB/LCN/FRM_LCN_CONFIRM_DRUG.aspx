@@ -80,8 +80,69 @@
 
                 <%--<uc1:UC_CONFIRM ID="UC_CONFIRM1" runat="server" />--%>
                 <div >
-                     <asp:Literal ID="lr_preview" runat="server" ></asp:Literal>
-    </div>
+    <style type="text/css">
+    .auto-style3 {
+        width: 85px;
+    }
+    .auto-style4 {
+        width: 261px;
+    }
+    .auto-style5 {
+        width: 185px;
+}
+    .auto-style6 {
+        width: 85px;
+        height: 35px;
+    }
+    .auto-style7 {
+        width: 261px;
+        height: 35px;
+    }
+    .auto-style8 {
+        height: 35px;
+    }
+    .auto-style9 {
+        width: 185px;
+        height: 35px;
+    }
+    .auto-style12 {
+        width: 85px;
+        height: 30px;
+    }
+    .auto-style13 {
+        height: 30px;
+    }
+    .auto-style14 {
+        width: 85px;
+        height: 29px;
+    }
+    .auto-style15 {
+        height: 29px;
+    }
+    .auto-style16 {
+        width: 261px;
+        height: 29px;
+    }
+    .auto-style17 {
+        width: 185px;
+        height: 29px;
+    }
+        .auto-style1 {
+        width: 85px;
+        height: 30px;
+    }
+    .auto-style2 {
+        width: 41px;
+        height: 30px;
+    }
+    .auto-style3 {
+        height: 30px;
+    }
+</style>
+
+
+
+                </div>
             </td>
              <td style="padding-left:10%;height:50%;">
 
@@ -111,3 +172,4 @@
         </table> 
     
 </asp:Content>
+
