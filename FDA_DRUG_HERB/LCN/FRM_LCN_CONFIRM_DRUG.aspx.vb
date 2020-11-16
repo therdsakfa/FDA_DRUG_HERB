@@ -29,7 +29,12 @@ Public Class FRM_LCN_CONFIRM_DRUG
         '    b64 = Session("b64")
         'End If
         If Not IsPostBack Then
-            'BindData_PDF()
+            Dim dao As New DAO_DRUG.ClsDBdalcn
+            dao.GetDataby_IDA(_IDA)
+            If dao.fields.STATUS_ID >= 8 Then
+                BindData_PDF()
+            End If
+
             show_btn(_IDA)
             UC_GRID_PHARMACIST.load_gv(_IDA)
             UC_GRID_ATTACH.load_gv(_TR_ID)

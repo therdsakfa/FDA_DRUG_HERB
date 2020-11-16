@@ -35,7 +35,13 @@ Public Class WebForm35
             HiddenField2.Value = 0
 
             Try
-                BindData_PDF()
+                'BindData_PDF()
+
+                Dim dao1 As New DAO_DRUG.ClsDBdalcn
+                dao1.GetDataby_IDA(_IDA)
+                If dao1.fields.STATUS_ID >= 8 Then
+                    BindData_PDF()
+                End If
             Catch ex As Exception
                 Response.Redirect("https://privus.fda.moph.go.th/")
             End Try
