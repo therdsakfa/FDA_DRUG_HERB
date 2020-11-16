@@ -66,6 +66,14 @@
             dao_dal.fields.STATUS_ID = 1
             dao_dal.fields.PROCESS_ID = Request.QueryString("process")
             dao_dal.fields.REVOCATION = "999"
+            dao_dal.fields.lcnno = 0
+            dao_dal.fields.rcvno = 0
+            Try
+                dao_dal.fields.lcnsid = _CLS.LCNSID_CUSTOMER
+            Catch ex As Exception
+                dao_dal.fields.lcnsid = 0
+            End Try
+
             dao_dal.insert()
             IDA = dao_dal.fields.IDA
 
