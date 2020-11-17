@@ -40,6 +40,9 @@ Public Class FRM_LCN_CONFIRM_DRUG
             dao.GetDataby_IDA(_IDA)
             If dao.fields.STATUS_ID >= 8 Then
                 BindData_PDF()
+                Panel1.Style.Add("display", "none")
+            Else
+                Panel1.Style.Add("display", "block")
             End If
 
             show_btn(_IDA)
@@ -1732,22 +1735,40 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         'End If
 
-        'Dim paths As String = bao._PATH_DEFAULT
-        'Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim paths As String = bao._PATH_DEFAULT
+        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
 
-        'Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        'Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
-        ''load_PDF(filename)
-        'LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
+        'load_PDF(filename)
+
+        'Try
+        Dim url As String = ""
+        ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
+        url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
+        'Else
+        '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
+        'End If
+
+        'Dim url As String 
+        class_xml.QR_CODE = QR_CODE_IMG(url)
+        'Catch ex As Exception
+
+        'End Try
 
 
-        'lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
-        'hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+        p_dalcn = class_xml
+
+        LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, _ProcessID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
 
 
-        'HiddenField1.Value = filename
-        '_CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        '_CLS.PDFNAME = filename
+        lr_preview.Text = "<iframe id='iframe1'  style='height:800px;width:100%;' src='../PDF/FRM_PDF.aspx?FileName=" & filename & "' ></iframe>"
+        hl_reader.NavigateUrl = "../PDF/FRM_PDF_VIEW.aspx?FileName=" & filename ' Link เปิดไฟล์ตัวใหญ่
+
+
+        HiddenField1.Value = filename
+        _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        _CLS.PDFNAME = filename
         '    show_btn() 'ตรวจสอบปุ่ม
     End Sub
     Private Sub load_pdf(ByVal FilePath As String)

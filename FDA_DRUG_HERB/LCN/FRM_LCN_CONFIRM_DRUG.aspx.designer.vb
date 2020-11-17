@@ -32,6 +32,15 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
     
     '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
     '''rdl_lcn_type control.
     '''</summary>
     '''<remarks>
@@ -768,6 +777,15 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_mastra As Global.System.Web.UI.WebControls.RadioButtonList
+    
+    '''<summary>
+    '''lr_preview control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
     '''btn_confirm control.

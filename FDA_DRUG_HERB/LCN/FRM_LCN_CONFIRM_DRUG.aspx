@@ -141,7 +141,8 @@
 </style>
 
             <div>
-   <form name="form" method="post" align="center;">
+                <asp:Panel ID="Panel1" runat="server">
+<form name="form" method="post" align="center;" id="smp1">
 
          <div>
             <h3 style="text-align:center;">คำขอรับใบอนูญาต<br />
@@ -154,21 +155,22 @@
                     <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
                 </asp:RadioButtonList>
                 </center>
+                <h4></h4>
             </h4>
         </div>
    
         <div>
             <center>
                 <table>
-                    <td>
-                        เลือก &ensp;
-                    </td>
-                    <td>
-                    <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal" Enabled="False" >
-                        <asp:ListItem Value="1">&ensp;ไทย&ensp;</asp:ListItem>
-                        <asp:ListItem Value="2">&ensp;ต่างด้าว&ensp;</asp:ListItem>
-                    </asp:RadioButtonList> 
-                    </td>
+                    <tr>
+                        <td>เลือก   </td>
+                        <td>
+                            <asp:RadioButtonList ID="rdl_sanchaat" runat="server" Enabled="False" RepeatDirection="Horizontal">
+                                <asp:ListItem Value="1"> ไทย </asp:ListItem>
+                                <asp:ListItem Value="2"> ต่างด้าว </asp:ListItem>
+                            </asp:RadioButtonList>
+                        </td>
+                    </tr>
                 </table>                               
              </center>                   
             
@@ -970,6 +972,9 @@
            </div>         
        </div>    
     </form>
+                </asp:Panel>
+   
+               <asp:Literal ID="lr_preview" runat="server" ></asp:Literal>
             </div>
             </td>
              <td style="padding-left:10%;height:50%;">

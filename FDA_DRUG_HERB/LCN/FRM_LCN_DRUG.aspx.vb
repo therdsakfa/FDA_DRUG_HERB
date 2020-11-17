@@ -48,7 +48,7 @@ Public Class FRM_LCN_DRUG
             load_lbl_name()         'ให้รันฟังก์ชั่นลำดับที่ 4
             load_HL()
 
-            
+
         End If
         UC_INFMT.Shows(_lct_ida)
     End Sub
@@ -169,7 +169,7 @@ Public Class FRM_LCN_DRUG
     Sub get_pvncd()
         '  _pvncd = Personal_Province(_CLS.CITIZEN_ID, _CLS.Groups)
         Try
-            _pvncd = Personal_Province_NEW(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE, _CLS.Groups)
+            _pvncd = Personal_Province_NEW(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE, _CLS.GROUPS)
             If _pvncd = 0 Then
                 _pvncd = _CLS.PVCODE
             End If
