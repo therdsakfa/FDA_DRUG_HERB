@@ -302,7 +302,7 @@ Public Class FRM_LCN_DRUG
             Catch ex As Exception
 
             End Try
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & _process & "&process=" & _process & "&lct_ida=" & _lct_ida & "&bsn=" & txt_bsn.Text & "');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "&lct_ida=" & _lct_ida & "&bsn=" & txt_bsn.Text & "');", True)
 
         ElseIf e.CommandName = "leaves" Then
             dao.GetDataby_IDA(str_ID)

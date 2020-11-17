@@ -577,7 +577,13 @@ Public Class WebForm35
 
         End Try
         lcntpcd = Chn_lcntpcd(lcntpcd)
-        Dim cls_dalcn As New CLASS_GEN_XML.DALCN(_CLS.CITIZEN_ID, dao.fields.lcnsid, lcnno:=lcnno_auto, lcntpcd:=lcntpcd, pvncd:=pvncd, CHK_SELL_TYPE:=dao.fields.CHK_SELL_TYPE)
+        Dim lcnsid_da As Integer = 0
+        Try
+            lcnsid_da = dao.fields.lcnsid
+        Catch ex As Exception
+
+        End Try
+        Dim cls_dalcn As New CLASS_GEN_XML.DALCN(_CLS.CITIZEN_ID, lcnsid_da, lcnno:=lcnno_auto, lcntpcd:=lcntpcd, pvncd:=pvncd, CHK_SELL_TYPE:=dao.fields.CHK_SELL_TYPE)
 
         Dim class_xml As New CLASS_DALCN
         Dim bao_show As New BAO_SHOW
@@ -1548,26 +1554,26 @@ Public Class WebForm35
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
 
 
-        Try
-            Dim url As String = ""
+        'Try
+        Dim url As String = ""
             ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
             url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
-            'Else
-            '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
-            'End If
+        'Else
+        '    url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF_VIEW.aspx?filename=" & filename
+        'End If
 
-            'Dim url As String 
-            class_xml.QR_CODE = QR_CODE_IMG(url)
-        Catch ex As Exception
+        'Dim url As String 
+        class_xml.QR_CODE = QR_CODE_IMG(url)
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
 
         p_dalcn = class_xml
 
 
-        Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
-        p_dalcn2 = p_dalcn
+        'Dim p_dalcn2 As New XML_CENTER.CLASS_DALCN
+        'p_dalcn2 = p_dalcn
 
         LOAD_XML_PDF(Path_XML, PDF_TEMPLATE, PROCESS_ID, filename) 'ระบบจะทำการตรวจสอบ Template  และจะทำการสร้าง XML เอง AUTO
         'load_pdf(filename)

@@ -15,9 +15,21 @@ Public Class FRM_LCN_CONFIRM_DRUG
     Private b64 As String
     Sub RunQuery()
         Try
-            _ProcessID = Request.QueryString("Process")
+            _ProcessID = Request.QueryString("process")
+        Catch ex As Exception
+
+        End Try
+        Try
             _IDA = Request.QueryString("IDA")
+        Catch ex As Exception
+
+        End Try
+        Try
             _TR_ID = Request.QueryString("TR_ID")
+        Catch ex As Exception
+
+        End Try
+        Try
             _CLS = Session("CLS")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
@@ -1512,8 +1524,14 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         Dim statusId As Integer = dao.fields.STATUS_ID
         Dim lcntype As String = dao.fields.lcntpcd
-        Dim PROCESS_ID As String = dao_up.fields.PROCESS_ID
-        Dim YEAR As String = dao_up.fields.YEAR
+        'Dim PROCESS_ID As String = dao.fields.PROCESS_ID
+        Dim YEAR As String = "0"
+        Try
+            YEAR = dao_up.fields.YEAR
+        Catch ex As Exception
+
+        End Try
+
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         'If statusId = 8 Then
@@ -1564,10 +1582,10 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 End Try
 
                 If template_id = 2 Then
-                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(_ProcessID, lcntype, statusId, 0, _group:=9)
                 Else
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
-                    dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(PROCESS_ID, statusId, 0, 0)
+                    dao_pdftemplate.GetDataby_TEMPLAETE_and_P_ID_and_STATUS_and_PREVIEW_AND_GROUP(_ProcessID, statusId, 0, 0)
                 End If
                 'Else
                 '    dao_pdftemplate.GetDataby_TEMPLAETE_and_GROUP(PROCESS_ID, lcntype, statusId, Group, 0)
@@ -1582,14 +1600,14 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 End Try
                 If template_id = 2 Then
                     If statusId = 6 Then
-                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, lcntype, statusId, 0, _group:=9)
                     Else
-                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=9)
+                        dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, lcntype, statusId, 0, _group:=9)
                         'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                     End If
 
                 Else
-                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, lcntype, statusId, 0, _group:=0)
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, lcntype, statusId, 0, _group:=0)
                     'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                 End If
 
@@ -1608,14 +1626,14 @@ Public Class FRM_LCN_CONFIRM_DRUG
             End Try
             If template_id = 2 Then
                 'If statusId = 6 Then
-                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, 0, _group:=0)
+                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(_ProcessID, lcntype, statusId, 0, _group:=0)
                 'Else
                 'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
                 'End If
 
             Else
                 'dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
-                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(PROCESS_ID, lcntype, statusId, PREVIEW:=0, _group:=0)
+                dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2(_ProcessID, lcntype, statusId, PREVIEW:=0, _group:=0)
             End If
             '    Else
             '    dao_pdftemplate.GetDataby_TEMPLAETE(PROCESS_ID, lcntype, statusId, 0)
@@ -1629,13 +1647,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim paths As String = bao._PATH_DEFAULT
         Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
 
-        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
-        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
+        Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", _ProcessID, YEAR, _TR_ID)
+        Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", _ProcessID, YEAR, _TR_ID)
         'load_PDF(filename)
 
 
-        Try
-            Dim url As String = ""
+        'Try
+        Dim url As String = ""
             ' If Request.QueryString("status") = 8 Or Request.QueryString("status") = 14 Then
             url = Request.Url.GetLeftPart(UriPartial.Authority) & Request.ApplicationPath & "/PDF/FRM_PDF.aspx?filename=" & filename
             'Else
@@ -1644,12 +1662,12 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
             'Dim url As String 
             class_xml.QR_CODE = QR_CODE_IMG(url)
-        Catch ex As Exception
+            'Catch ex As Exception
 
-        End Try
+            'End Try
 
 
-        p_dalcn = class_xml
+            p_dalcn = class_xml
 
         ' p_dalcn2 = p_dalcn
 
@@ -1662,7 +1680,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
 
         HiddenField1.Value = filename
-        _CLS.FILENAME_PDF = NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+        _CLS.FILENAME_PDF = NAME_PDF("DA", _ProcessID, YEAR, _TR_ID)
         _CLS.PDFNAME = filename
         'show_btn() 'ตรวจสอบปุ่ม
     End Sub

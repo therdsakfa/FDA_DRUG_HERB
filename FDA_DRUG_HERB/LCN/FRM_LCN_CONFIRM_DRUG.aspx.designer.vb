@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_LCN_CONFIRM_DRUG
-
+    
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-
+    
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,16 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-
+    
+    '''<summary>
+    '''lr_preview control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
+    
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>
@@ -75,7 +84,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG_HERB.UC_GRID_ATTACH
-
+    
     '''<summary>
     '''UC_GRID_PHARMACIST control.
     '''</summary>
