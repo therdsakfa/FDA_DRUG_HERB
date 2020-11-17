@@ -127,11 +127,7 @@
         width: 185px;
         height: 29px;
     }
-        .auto-style1 {
-        width: 85px;
-        height: 30px;
-    }
-    .auto-style2 {
+        .auto-style2 {
         width: 41px;
         height: 30px;
     }
@@ -154,7 +150,7 @@
                     <asp:ListItem Value="2">นำเข้าผลิตภัณฆ์สมุนไพร</asp:ListItem>
                     <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
                 </asp:RadioButtonList>
-                </center>
+                   &nbsp;</center>
                 <h4></h4>
                 <h4></h4>
                 <h4></h4>
