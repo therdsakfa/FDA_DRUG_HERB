@@ -12,6 +12,7 @@ Public Class FRM_LCN_DRUG
     Private _type As String
     Private _process_for As String
     Private _pvncd As Integer
+    Private _iden As String
     ''' <summary>
     ''' ฟังก์ชันเรียกใช้ Session
     ''' </summary>
@@ -23,6 +24,7 @@ Public Class FRM_LCN_DRUG
             _lct_ida = Request.QueryString("lct_ida")
             _type = Request.QueryString("type")
             _process_for = Request.QueryString("process_for")
+            _iden = Request.QueryString("identify")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
@@ -293,6 +295,10 @@ Public Class FRM_LCN_DRUG
         Dim int_index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim str_ID As String = GV_lcnno.DataKeys.Item(int_index)("IDA").ToString()
         Dim dao As New DAO_DRUG.ClsDBdalcn
+        'Dim bao_show As New BAO_SHOW
+        'Dim _bao As New BAO.ClsDBSqlcommand
+        'Dim dt_lcn As New DataTable
+        'dt_lcn = _bao.SP_Lisense_Name_and_Addr(_iden)
 
         If e.CommandName = "sel" Then
             dao.GetDataby_IDA(str_ID)
@@ -302,7 +308,7 @@ Public Class FRM_LCN_DRUG
             Catch ex As Exception
 
             End Try
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & _process & "&process=" & _process & "&lct_ida=" & _lct_ida & "&bsn=" & txt_bsn.Text & "');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&Process=" & _process & "&lct_ida=" & _lct_ida & "&identify=" & _iden & "');", True)
 
         ElseIf e.CommandName = "leaves" Then
             dao.GetDataby_IDA(str_ID)

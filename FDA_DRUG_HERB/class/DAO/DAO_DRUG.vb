@@ -14010,6 +14010,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.DALCN_FRGN_DATAs Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
 
         Public Sub insert()
             db.DALCN_FRGN_DATAs.InsertOnSubmit(fields)

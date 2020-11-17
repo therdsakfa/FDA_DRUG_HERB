@@ -238,7 +238,7 @@
                </tr>
            </table>
            <asp:Panel ID="TB_Personal_Type1" runat="server">
-<table runat="server">
+        <table runat="server">
                
                <tr>
                    <td colspan="5"></td>
@@ -293,7 +293,7 @@
                    <td><asp:TextBox ID="txt_BS_NO" runat="server"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><%--<asp:TextBox ID="txt" runat="server"></asp:TextBox>--%>
+                   <td>
                        <telerik:RadDatePicker ID="RDP_BS_DATE" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
@@ -307,7 +307,7 @@
                <tr>
                    <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><%--<asp:TextBox ID="txt_FRGN_DATE" runat="server"></asp:TextBox>--%>
+                   <td>
                        <telerik:RadDatePicker ID="RDP_FRGN_DATE" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
@@ -317,7 +317,7 @@
                </table>
            </asp:Panel>
            <asp:Panel ID="TB_Personal_Type2" runat="server">
-<table  runat="server">
+    <table  runat="server">
                <tr>
                    <td class="auto-style3"></td>
                    <td>
@@ -336,7 +336,7 @@
                    <td><asp:TextBox ID="txt_BS_NO1" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                    </td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><%--<asp:TextBox ID="txt_BS_DATE1" runat="server"></asp:TextBox>--%>
+                   <td>
                        <telerik:RadDatePicker ID="RDP_BS_DATE1" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
@@ -350,7 +350,7 @@
                <tr>
                    <td class="auto-style3"></td>
                    <td>ออกให้ ณ วันที่</td>
-                   <td><%--<asp:TextBox ID="txt_FRGN_NO1" runat="server"></asp:TextBox>--%>
+                   <td>
                        <telerik:RadDatePicker ID="RDP_FRGN_DATE1" Runat="server">
                        </telerik:RadDatePicker>
                    </td>
