@@ -82,7 +82,14 @@
             dao_frgn.fields.FK_IDA = dao_dal.fields.IDA
             dao_frgn.insert()
 
+            Dim dao_curent As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
+            UC_HERB.set_date_current_addr(dao_curent)
+            dao_curent.fields.FK_IDA = dao_dal.fields.IDA
+            dao_curent.insert()
+
+
             UC_HERB.insert_bsn(IDA)
+
 
             'Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&ida=" & IDA)

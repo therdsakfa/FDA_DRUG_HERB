@@ -41,6 +41,780 @@ Partial Public Class WebForm35
     Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''rdl_lcn_type control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_lcn_type As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''rdl_sanchaat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_sanchaat As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''lbl_lcn_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_name As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_ages control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_ages As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_nation control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_nation As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_iden control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_iden As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_iden2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_iden2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_addr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_addr As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_floor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_floor As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_room control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_room As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_building control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_building As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_mu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_mu As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_soi control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_soi As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_road control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_road As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_tambol control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_tambol As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_amphor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_amphor As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_changwat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_changwat As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_zipcode control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_zipcode As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_fax control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_fax As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_tel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_tel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lcn_email control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lcn_email As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_da_opentime control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_da_opentime As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TB_Personal control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TB_Personal As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''TB_Personal_Type1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TB_Personal_Type1 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''cb_Personal_Type1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cb_Personal_Type1 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''lbl_PASSPORT_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PASSPORT_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_PASSPORT_EXPDATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_DOC_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_DOC_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_DOC_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_DOC_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_WORK_LICENSE_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_WORK_LICENSE_EXPDATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BS_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BS_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TB_Personal_Type2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TB_Personal_Type2 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''cb_Personal_Type2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cb_Personal_Type2 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''lbl_BS_NO1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_NO1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BS_DATE1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_DATE1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_NO1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_NO1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_DATE1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_DATE1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BSN_THAIFULLNAME control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BSN_THAIFULLNAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BSN_AGE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BSN_AGE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label20 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BSN_IDENTIFY control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BSN_IDENTIFY As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_thaaddr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_thaaddr As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_floor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_floor As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_room control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_room As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_thabuilding control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_thabuilding As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_thamu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_thamu As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_thasoi control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_thasoi As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_tharoad control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_tharoad As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_tambol control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_tambol As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_amphor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_amphor As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_Province control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_Province As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_zipcode control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_zipcode As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_fax control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_fax As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_tel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_tel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_c_email control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_c_email As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_GIVE_PASSPORT_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_GIVE_PASSPORT_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_GIVE_PASSPORT_EXPDATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_GIVE_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_GIVE_WORK_LICENSE_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_GIVE_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_GIVE_WORK_LICENSE_EXPDATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_GIVE_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thanameplace control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thanameplace As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_HOUSENO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_HOUSENO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thaaddr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thaaddr As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thabuilding control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thabuilding As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thamu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thamu As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thasoi control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thasoi As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_tharoad control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_tharoad As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thathmblnm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thathmblnm As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thaamphrnm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thaamphrnm As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_thachngwtnm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_thachngwtnm As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_zipcode control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_zipcode As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_fax control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_fax As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_lct_tel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_lct_tel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label59 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label59 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_PHR_NAME control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PHR_NAME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_phr_type control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_phr_type As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_PHR_TEXT_NUM control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PHR_TEXT_NUM As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_STUDY_LEVEL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_STUDY_LEVEL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_PHR_VETERINARY_FIELD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PHR_VETERINARY_FIELD As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_NAME_SIMINAR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_NAME_SIMINAR As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_SIMINAR_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_SIMINAR_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_PHR_TEXT_WORK_TIME control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PHR_TEXT_WORK_TIME As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''rdl_mastra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_mastra As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
     '''lr_preview control.
     '''</summary>
     '''<remarks>

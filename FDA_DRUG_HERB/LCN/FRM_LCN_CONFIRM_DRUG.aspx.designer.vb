@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class FRM_LCN_CONFIRM_DRUG
-    
+
     '''<summary>
     '''hl_reader control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents hl_reader As Global.System.Web.UI.WebControls.HyperLink
-    
+
     '''<summary>
     '''HiddenField1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
-    
+
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''rdl_lcn_type control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_lcn_type As Global.System.Web.UI.WebControls.RadioButtonList
-    
+
     '''<summary>
     '''rdl_sanchaat control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_sanchaat As Global.System.Web.UI.WebControls.RadioButtonList
-    
+
     '''<summary>
     '''lbl_lcn_name control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_name As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_ages control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_ages As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_nation control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_nation As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_iden control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_iden As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_iden2 control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_iden2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_addr control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_addr As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_floor control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_floor As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_room control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_room As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_building control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_building As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_mu control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_mu As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_soi control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_soi As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_road control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_road As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_tambol control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_tambol As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_amphor control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_amphor As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_changwat control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_changwat As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_zipcode control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_zipcode As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_fax control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_fax As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_tel control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_tel As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lcn_email control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lcn_email As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_da_opentime control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_da_opentime As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TB_Personal control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TB_Personal As Global.System.Web.UI.HtmlControls.HtmlTable
-    
+
     '''<summary>
     '''TB_Personal_Type1 control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TB_Personal_Type1 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''cb_Personal_Type1 control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cb_Personal_Type1 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''lbl_PASSPORT_NO control.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PASSPORT_NO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_PASSPORT_EXPDATE control.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_DOC_NO control.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_DOC_NO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_DOC_DATE control.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_DOC_DATE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_WORK_LICENSE_NO control.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_WORK_LICENSE_EXPDATE control.
     '''</summary>
@@ -318,7 +318,43 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.Label
-    
+
+    '''<summary>
+    '''lbl_BS_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_BS_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_BS_DATE As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_NO As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_FRGN_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_FRGN_DATE As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''TB_Personal_Type2 control.
     '''</summary>
@@ -327,7 +363,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TB_Personal_Type2 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''cb_Personal_Type2 control.
     '''</summary>
@@ -336,7 +372,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cb_Personal_Type2 As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''lbl_BS_NO1 control.
     '''</summary>
@@ -345,7 +381,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_BS_NO1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_BS_DATE1 control.
     '''</summary>
@@ -354,7 +390,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_BS_DATE1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_FRGN_NO1 control.
     '''</summary>
@@ -363,7 +399,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_FRGN_NO1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_FRGN_DATE1 control.
     '''</summary>
@@ -372,7 +408,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_FRGN_DATE1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_BSN_THAIFULLNAME control.
     '''</summary>
@@ -381,7 +417,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_BSN_THAIFULLNAME As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_BSN_AGE control.
     '''</summary>
@@ -390,7 +426,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_BSN_AGE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label20 control.
     '''</summary>
@@ -399,7 +435,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_BSN_IDENTIFY control.
     '''</summary>
@@ -408,133 +444,133 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_BSN_IDENTIFY As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
-    '''lbl_BSN_ADDR control.
+    '''lbl_c_thaaddr control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_ADDR As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_thaaddr As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_FLOOR control.
+    '''lbl_c_floor control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_FLOOR As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_floor As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_ROOM control.
+    '''lbl_c_room control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_ROOM As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_room As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_BUILDING control.
+    '''lbl_c_thabuilding control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_BUILDING As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_thabuilding As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_MOO control.
+    '''lbl_c_thamu control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_MOO As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_thamu As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_SOI control.
+    '''lbl_c_thasoi control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_SOI As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_thasoi As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_ROAD control.
+    '''lbl_c_tharoad control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_ROAD As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_tharoad As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_THMBL_NAME control.
+    '''lbl_tambol control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_THMBL_NAME As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_tambol As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_AMPHR_NAME control.
+    '''lbl_amphor control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_AMPHR_NAME As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_amphor As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_thachngwtnm control.
+    '''lbl_Province control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_thachngwtnm As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_Province As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_ZIPCODE control.
+    '''lbl_c_zipcode control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_ZIPCODE As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_zipcode As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_FAX control.
+    '''lbl_c_fax control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_FAX As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_fax As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''lbl_BSN_TEL control.
+    '''lbl_c_tel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_BSN_TEL As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_tel As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
-    '''Label33 control.
+    '''lbl_c_email control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents lbl_c_email As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''lbl_GIVE_PASSPORT_NO control.
     '''</summary>
@@ -543,7 +579,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_GIVE_PASSPORT_NO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_GIVE_PASSPORT_EXPDATE control.
     '''</summary>
@@ -552,7 +588,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_GIVE_PASSPORT_EXPDATE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_GIVE_WORK_LICENSE_NO control.
     '''</summary>
@@ -561,7 +597,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_GIVE_WORK_LICENSE_NO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_GIVE_WORK_LICENSE_EXPDATE control.
     '''</summary>
@@ -570,7 +606,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_GIVE_WORK_LICENSE_EXPDATE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thanameplace control.
     '''</summary>
@@ -579,7 +615,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thanameplace As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_HOUSENO control.
     '''</summary>
@@ -588,7 +624,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_HOUSENO As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thaaddr control.
     '''</summary>
@@ -597,7 +633,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thaaddr As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thabuilding control.
     '''</summary>
@@ -606,7 +642,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thabuilding As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thamu control.
     '''</summary>
@@ -615,7 +651,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thamu As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thasoi control.
     '''</summary>
@@ -624,7 +660,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thasoi As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_tharoad control.
     '''</summary>
@@ -633,7 +669,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_tharoad As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thathmblnm control.
     '''</summary>
@@ -642,7 +678,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thathmblnm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thaamphrnm control.
     '''</summary>
@@ -651,7 +687,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thaamphrnm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_thachngwtnm control.
     '''</summary>
@@ -660,7 +696,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_thachngwtnm As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_zipcode control.
     '''</summary>
@@ -669,7 +705,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_zipcode As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_fax control.
     '''</summary>
@@ -678,7 +714,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_fax As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_lct_tel control.
     '''</summary>
@@ -687,7 +723,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_lct_tel As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label59 control.
     '''</summary>
@@ -696,7 +732,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label59 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_PHR_NAME control.
     '''</summary>
@@ -705,7 +741,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PHR_NAME As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_phr_type control.
     '''</summary>
@@ -714,7 +750,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_phr_type As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_PHR_TEXT_NUM control.
     '''</summary>
@@ -723,7 +759,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PHR_TEXT_NUM As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_STUDY_LEVEL control.
     '''</summary>
@@ -732,7 +768,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_STUDY_LEVEL As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_PHR_VETERINARY_FIELD control.
     '''</summary>
@@ -741,7 +777,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PHR_VETERINARY_FIELD As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_NAME_SIMINAR control.
     '''</summary>
@@ -750,7 +786,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_NAME_SIMINAR As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_SIMINAR_DATE control.
     '''</summary>
@@ -759,7 +795,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_SIMINAR_DATE As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lbl_PHR_TEXT_WORK_TIME control.
     '''</summary>
@@ -768,7 +804,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_PHR_TEXT_WORK_TIME As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''rdl_mastra control.
     '''</summary>
@@ -777,7 +813,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents rdl_mastra As Global.System.Web.UI.WebControls.RadioButtonList
-    
+
     '''<summary>
     '''lr_preview control.
     '''</summary>
@@ -786,7 +822,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lr_preview As Global.System.Web.UI.WebControls.Literal
-    
+
     '''<summary>
     '''btn_confirm control.
     '''</summary>
@@ -795,7 +831,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_confirm As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_cancel control.
     '''</summary>
@@ -804,7 +840,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_load control.
     '''</summary>
@@ -813,7 +849,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_load0 control.
     '''</summary>
@@ -822,7 +858,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_load0 As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''UC_GRID_ATTACH control.
     '''</summary>
@@ -831,7 +867,7 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_GRID_ATTACH As Global.FDA_DRUG_HERB.UC_GRID_ATTACH
-    
+
     '''<summary>
     '''UC_GRID_PHARMACIST control.
     '''</summary>

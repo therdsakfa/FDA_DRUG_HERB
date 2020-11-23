@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_PHR_ADD.ascx.vb" Inherits="FDA_DRUG_HERB.UC_PHR_ADD" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 
 <table class="table">
     <tr>
@@ -48,6 +49,14 @@
             <asp:TextBox ID="txt_PHR_TEXT_NUM" runat="server" Width="200px" CssClass="input-sm"></asp:TextBox>
         </td>
     </tr>
+    <tr>
+        <td align="right">
+             กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ
+        </td>
+        <td>
+             <asp:TextBox ID="txt_STUDY_LEVEL" runat="server"></asp:TextBox>
+        </td>
+    </tr>
     <%--<tr>
         <td align="right">
             <asp:Label ID="lbl_lcn_type" runat="server" Text=""></asp:Label>
@@ -70,7 +79,7 @@
             <asp:TextBox ID="txt_PHR_TEXT_JOB" runat="server" Width="200px"></asp:TextBox>
         </td>
     </tr>
-    <tr>
+    <%--<tr>
         <td align="right">
             ช่องติ๊กที่ปรากฎในใบอนุญาต(กรณีขย.2 และ ขย.3)</td>
         <td>
@@ -80,7 +89,7 @@
                 <asp:ListItem Value="3">ผู้ได้รับมอบหมายการอบรมมาตรา 48</asp:ListItem>
             </asp:DropDownList>
         </td>
-    </tr>
+    </tr>--%>
     <tr>
         <td align="right">เวลาปฏิบัติการ :</td>
         <td >
@@ -98,10 +107,58 @@
         <td >
             <asp:DropDownList ID="ddl_law" runat="server">
                 <asp:ListItem Value=""></asp:ListItem>
-                <asp:ListItem Value="1">มาตรา 68</asp:ListItem>
-                <asp:ListItem Value="2">มาตรา 69</asp:ListItem>
-                <asp:ListItem Value="3">มาตรา 70</asp:ListItem>
+                <asp:ListItem Value="1">มาตรา 31</asp:ListItem>
+                <asp:ListItem Value="2">มาตรา 32</asp:ListItem>
+                <asp:ListItem Value="3">มาตรา 33</asp:ListItem>
             </asp:DropDownList>
         </td>
+        
     </tr>
+    <tr>      
+        <td align="right">
+            ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร
+        </td>
+        <td>
+            <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
+        </td>     
+    </tr>
+    <tr>
+        <td align="right">
+                วันที่อบรม
+        </td>
+         <td>
+            <telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server"> </telerik:RadDatePicker>
+        </td>
+    </tr>
+<%--    <tr>
+         <td align="right">
+            เวลาทำการ
+         </td>
+        <td>
+              <asp:TextBox ID="txt_PHR_TEXT_WORK_TIME1" runat="server"></asp:TextBox>
+        </td>
+    </tr>--%>
+    
+    <asp:Button ID="btn_save" runat="server" Text="เพิ่มการอบรม" />
+    <telerik:RadGrid ID="rgphr" runat="server" Width ="90%" >
+                       <MasterTableView AutoGenerateColumns="False" DataKeyNames="PHR_IDA" NoMasterRecordsText="ไม่พบข้อมูล">
+                           <Columns>
+                        
+                               <telerik:GridBoundColumn DataField="PHR_IDA" FilterControlAltText="Filter PHR_IDA column"
+                                   HeaderText="PHR_IDA" SortExpression="PHR_IDA" UniqueName="PHR_IDA" Display="false">
+                               </telerik:GridBoundColumn>
+                               <telerik:GridBoundColumn DataField="PHR_TEXT_WORK_TIME" FilterControlAltText="Filter PHR_TEXT_WORK_TIME column"
+                                   HeaderText="วันที่อบรม" SortExpression="PHR_TEXT_WORK_TIME" UniqueName="PHR_TEXT_WORK_TIME" >
+                               </telerik:GridBoundColumn>
+                               <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="edt"
+                                   CommandName="edt" Text="แก้ไข">
+                                   <HeaderStyle Width="70px" />
+                               </telerik:GridButtonColumn>
+                               <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="r_del" ItemStyle-Width="15%"
+                                   CommandName="r_del" Text="ลบข้อมูลถาวร" ConfirmText="คุณต้องการลบผู้ปฏิบัติการหรือไม่">
+                                   <HeaderStyle Width="70px" />
+                               </telerik:GridButtonColumn>
+                           </Columns>
+                       </MasterTableView>
+                   </telerik:RadGrid>
 </table>

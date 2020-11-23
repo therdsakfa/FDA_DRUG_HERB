@@ -6475,28 +6475,6 @@
       <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DALCN_CURRENT_ADDRESS" Member="DALCN_CURRENT_ADDRESSes">
-    <Type Name="DALCN_CURRENT_ADDRESS">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="fda.dalcn" Member="dalcns">
     <Type Name="dalcn">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6816,6 +6794,28 @@
       <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="FRGN_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_CURRENT_ADDRESS" Member="DALCN_CURRENT_ADDRESSes">
+    <Type Name="DALCN_CURRENT_ADDRESS">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

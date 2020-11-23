@@ -92,47 +92,35 @@
 }
     .auto-style6 {
         width: 85px;
-        height: 35px;
     }
     .auto-style7 {
         width: 261px;
-        height: 35px;
     }
     .auto-style8 {
-        height: 35px;
     }
     .auto-style9 {
         width: 185px;
-        height: 35px;
     }
     .auto-style12 {
         width: 85px;
-        height: 30px;
     }
     .auto-style13 {
-        height: 30px;
     }
     .auto-style14 {
         width: 85px;
-        height: 29px;
     }
     .auto-style15 {
-        height: 29px;
     }
     .auto-style16 {
         width: 261px;
-        height: 29px;
     }
     .auto-style17 {
         width: 185px;
-        height: 29px;
     }
         .auto-style2 {
         width: 41px;
-        height: 30px;
     }
     .auto-style3 {
-        height: 30px;
     }
 </style>
 
@@ -151,6 +139,11 @@
                     <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
                 </asp:RadioButtonList>
                    &nbsp;</center>
+                <h4></h4>
+                <h4></h4>
+                <h4></h4>
+                <h4></h4>
+                <h4></h4>
                 <h4></h4>
                 <h4></h4>
                 <h4></h4>
@@ -370,6 +363,35 @@
                        <asp:Label ID="lbl_WORK_LICENSE_EXPDATE" runat="server" Text=""></asp:Label>
                    </td>
               </tr>
+                <tr>
+                   <td class="auto-style3"></td>
+                   <td colspan="4">หรือใบอนุญาาตประกอบธุรกิจตามบัญชีสาม(๑๖)หรือ(๑๕)ตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าว</td>
+               </tr>
+               <tr>
+                   <td class="auto-style3"></td>
+                   <td>เลขที่</td>
+                   <td><asp:label ID="lbl_BS_NO" runat="server"></asp:label>
+                   </td>
+                   <td>ออกให้ ณ วันที่</td>
+                   <td>
+                       <asp:Label ID="lbl_BS_DATE" runat="server" Text=""></asp:Label>
+                   </td>
+               </tr>
+               <tr>
+                   <td class="auto-style3"></td>
+                   <td colspan="2">หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
+                   <td><asp:Label ID="lbl_FRGN_NO" runat="server"></asp:Label></td>
+                   <td>&nbsp;</td>
+               </tr>
+               <tr>
+                   <td class="auto-style3"></td>
+                   <td>ออกให้ ณ วันที่</td>
+                   <td>
+                       <asp:Label ID="lbl_FRGN_DATE" runat="server" Text=""></asp:Label>
+                   </td>
+                   <td>&nbsp;</td>
+                   <td>&nbsp;</td>
+               </tr>
              </table>
                </asp:Panel>
            <asp:Panel ID="TB_Personal_Type2" runat="server">
@@ -473,49 +495,56 @@
                    <td>
 
                        ที่อยู่ตามทะเบียนบ้าน อยู่เลขที่</td>
-                   <td>
-                       <asp:Label ID="lbl_BSN_ADDR" runat="server" Text=""></asp:Label>
+                    <td>
+                       <asp:Label ID="lbl_c_thaaddr" runat="server" AutoPostBack="True"></asp:Label>
                    </td>
-                    <td>ชั้นที่</td>
-                   <td><asp:Label ID="lbl_BSN_FLOOR" runat="server" Text=""></asp:Label></td>
+                   <td>ชั้นที่</td>
+                   <td>
+                       <asp:Label ID="lbl_c_floor" runat="server" AutoPostBack="True"></asp:Label>
+                   </td>
                </tr>
                <tr>
                    <td></td>
                    <td>ห้องเลขที่</td>
-                   <td>
-                       <asp:Label ID="lbl_BSN_ROOM" runat="server" Text=""></asp:Label>
+                    <td>
+                       <asp:Label ID="lbl_c_room" runat="server" AutoPostBack="True"></asp:Label>
                    </td>
                    <td>
-                         หมู่บ้าน/อาคาร</td>
+
+           หมู่บ้าน/อาคาร</td>
                    <td>
-                       <asp:Label ID="lbl_BSN_BUILDING" runat="server" Text=""></asp:Label>
+
+                       <asp:Label ID="lbl_c_thabuilding" runat="server"></asp:Label>
                    </td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
+                   
                    <td>
 
                        หมู่ที่</td>
                    <td>
 
-                       <asp:Label ID="lbl_BSN_MOO" runat="server" Text=""></asp:Label>
+                       <asp:label ID="lbl_c_thamu" runat="server"></asp:label>
                    </td>
                     <td>
 
            ตรอก/ซอย</td>
                    <td>
 
-                       <asp:Label ID="lbl_BSN_SOI" runat="server" Text=""></asp:Label>
-
+                       <asp:Label ID="lbl_c_thasoi" runat="server"></asp:Label>
                    </td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
+                   
                    <td>
 
            ถนน</td>
                    <td>
-                       <asp:Label ID="lbl_BSN_ROAD" runat="server" Text=""></asp:Label></td>
+
+                       <asp:Label ID="lbl_c_tharoad" runat="server"></asp:Label>
+                   </td>
                     <td>
 
                         &nbsp;</td>
@@ -529,16 +558,13 @@
 
                        ตำบล/แขวง</td>
                    <td>
-
-                       <asp:Label ID="lbl_BSN_THMBL_NAME" runat="server" Text=""></asp:Label>
+                         <asp:Label ID="lbl_tambol" runat="server"></asp:Label>
                    </td>
                     <td>
 
            อำเภอ/เขต</td>
                    <td>
-
-                       <asp:Label ID="lbl_BSN_AMPHR_NAME" runat="server" Text=""></asp:Label>
-
+                       <asp:Label ID="lbl_amphor" runat="server"></asp:Label>
                    </td>
                </tr>
                <tr>
@@ -547,16 +573,14 @@
 
                        จังหวัด</td>
                    <td>
-
-                       <asp:Label ID="lbl_thachngwtnm" runat="server" Text=""></asp:Label>
+                       <asp:Label ID="lbl_Province" runat="server"></asp:Label>
                    </td>
                     <td>
 
            รหัสไปรษณีย์</td>
                    <td>
 
-                       <asp:Label ID="lbl_BSN_ZIPCODE" runat="server" Text=""></asp:Label>
-
+                       <asp:Label ID="lbl_c_zipcode" runat="server"></asp:Label>
                    </td>
                </tr>
                <tr>
@@ -566,14 +590,14 @@
            โทรสาร</td>
                    <td>
 
-                       <asp:Label ID="lbl_BSN_FAX" runat="server" Text=""></asp:Label></td>
+                       <asp:label ID="lbl_c_fax" runat="server"></asp:label>
+                   </td>
                     <td>
 
                         โทรศัพท์</td>
                    <td>
 
-                       <asp:Label ID="lbl_BSN_TEL" runat="server" Text=""></asp:Label>
-
+                       <asp:label ID="lbl_c_tel" runat="server"></asp:label>
                    </td>
                </tr>
                <tr>
@@ -583,7 +607,8 @@
            E-mail</td>
                    <td>
 
-                       <asp:Label ID="Label33" runat="server" Text=""></asp:Label></td>
+                       <asp:Label ID="lbl_c_email" runat="server"></asp:Label>
+                   </td>
                     <td>
 
                         &nbsp;</td>

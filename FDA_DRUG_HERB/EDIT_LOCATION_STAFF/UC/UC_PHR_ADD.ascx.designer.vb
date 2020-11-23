@@ -77,6 +77,15 @@ Partial Public Class UC_PHR_ADD
     Protected WithEvents txt_PHR_TEXT_NUM As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txt_STUDY_LEVEL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_STUDY_LEVEL As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''txt_PHR_VETERINARY_FIELD control.
     '''</summary>
     '''<remarks>
@@ -93,15 +102,6 @@ Partial Public Class UC_PHR_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_PHR_TEXT_JOB As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''ddl_PHR_MEDICAL_TYPE control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_PHR_MEDICAL_TYPE As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''txt_PHR_TEXT_WORK_TIME control.
@@ -129,4 +129,40 @@ Partial Public Class UC_PHR_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_law As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txt_NAME_SIMINAR control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_NAME_SIMINAR As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rdp_SIMINAR_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdp_SIMINAR_DATE As Global.Telerik.Web.UI.RadDatePicker
+
+    '''<summary>
+    '''btn_save control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''rgphr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rgphr As Global.Telerik.Web.UI.RadGrid
 End Class

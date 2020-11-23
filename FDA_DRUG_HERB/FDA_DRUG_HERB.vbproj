@@ -5096,6 +5096,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Linq_DRUG.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\Linq_DRUG.vb">
+      <DependentUpon>Linq_DRUG.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\LINQ_FDA_XML_DRUG_ESUB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

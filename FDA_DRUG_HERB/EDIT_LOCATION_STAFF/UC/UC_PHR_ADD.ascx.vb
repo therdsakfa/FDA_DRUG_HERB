@@ -21,11 +21,11 @@
     End Sub
     Sub bind_ddl_work_type()
         Try
-            Dim dao As New DAO_DRUG.ClsDBdaphrcd
+            Dim dao As New DAO_DRUG.TB_MAS_TYPE_PHR_HERB
             dao.GetDataAll()
             ddl_worker_type.DataSource = dao.datas
-            ddl_worker_type.DataValueField = "phrcd"
-            ddl_worker_type.DataTextField = "phrnm"
+            ddl_worker_type.DataValueField = "TYPE_ID"
+            ddl_worker_type.DataTextField = "TYPE_PHR_HERB"
             ddl_worker_type.DataBind()
 
             Dim item As New ListItem
@@ -101,11 +101,11 @@
             Catch ex As Exception
 
             End Try
-            Try
-                .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
-            Catch ex As Exception
+            'Try
+            '    .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         End With
     End Sub
     Public Sub get_data(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR)
@@ -131,6 +131,7 @@
             txt_PHR_CTZNO.Text = .PHR_CTZNO
             txt_PHR_TEXT_NUM.Text = .PHR_TEXT_NUM
             txt_PHR_TEXT_WORK_TIME.Text = .PHR_TEXT_WORK_TIME
+            txt_STUDY_LEVEL.Text = .STUDY_LEVEL
             Try
                 'rdl_per_type.SelectedValue = .PERSONAL_TYPE
                 ddl_worker_type.DropDownSelectData(.PERSONAL_TYPE)
@@ -142,11 +143,11 @@
             Catch ex As Exception
 
             End Try
-            Try
-                ddl_PHR_MEDICAL_TYPE.DropDownSelectData(.PHR_MEDICAL_TYPE)
-            Catch ex As Exception
+            'Try
+            '    ddl_PHR_MEDICAL_TYPE.DropDownSelectData(.PHR_MEDICAL_TYPE)
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         End With
     End Sub
     Public Sub set_data_his(ByRef dao_hs As DAO_DRUG.TB_DALCN_PHR_HISTORY, dao As DAO_DRUG.ClsDBDALCN_PHR)
