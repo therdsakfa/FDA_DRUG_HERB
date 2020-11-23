@@ -119,7 +119,7 @@
             ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร
         </td>
         <td>
-            <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
+           <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
         </td>     
     </tr>
     <tr>
@@ -128,8 +128,12 @@
         </td>
          <td>
             <telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server"> </telerik:RadDatePicker>
+              <asp:Button ID="btn_save" runat="server" Text="เพิ่มหลักสูตรอบรม" />
         </td>
-    </tr>
+        
+        </tr>
+  
+            
 <%--    <tr>
          <td align="right">
             เวลาทำการ
@@ -139,26 +143,29 @@
         </td>
     </tr>--%>
     
-    <asp:Button ID="btn_save" runat="server" Text="เพิ่มการอบรม" />
-    <telerik:RadGrid ID="rgphr" runat="server" Width ="90%" >
+    
+   
+</table>
+ <telerik:RadGrid ID="rgns" runat="server" Width ="60%" >
                        <MasterTableView AutoGenerateColumns="False" DataKeyNames="PHR_IDA" NoMasterRecordsText="ไม่พบข้อมูล">
                            <Columns>
-                        
                                <telerik:GridBoundColumn DataField="PHR_IDA" FilterControlAltText="Filter PHR_IDA column"
                                    HeaderText="PHR_IDA" SortExpression="PHR_IDA" UniqueName="PHR_IDA" Display="false">
                                </telerik:GridBoundColumn>
-                               <telerik:GridBoundColumn DataField="PHR_TEXT_WORK_TIME" FilterControlAltText="Filter PHR_TEXT_WORK_TIME column"
-                                   HeaderText="วันที่อบรม" SortExpression="PHR_TEXT_WORK_TIME" UniqueName="PHR_TEXT_WORK_TIME" >
+                               <telerik:GridBoundColumn DataField="NAME_SIMINAR" FilterControlAltText="Filter NAME_SIMINAR column"
+                                   HeaderText="ชื่อหลักสูตร" SortExpression="NAME_SIMINAR" UniqueName="NAME_SIMINAR" >
                                </telerik:GridBoundColumn>
-                               <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="edt"
+                               <telerik:GridBoundColumn DataField="SIMINAR_DATE" FilterControlAltText="Filter SIMINAR_DATE column"
+                                   HeaderText="วันที่อบรม" SortExpression="SIMINAR_DATE" UniqueName="SIMINAR_DATE" >
+                               </telerik:GridBoundColumn>
+                               <%--<telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="edt"
                                    CommandName="edt" Text="แก้ไข">
                                    <HeaderStyle Width="70px" />
-                               </telerik:GridButtonColumn>
+                               </telerik:GridButtonColumn>--%>
                                <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="r_del" ItemStyle-Width="15%"
                                    CommandName="r_del" Text="ลบข้อมูลถาวร" ConfirmText="คุณต้องการลบผู้ปฏิบัติการหรือไม่">
                                    <HeaderStyle Width="70px" />
                                </telerik:GridButtonColumn>
                            </Columns>
                        </MasterTableView>
-                   </telerik:RadGrid>
-</table>
+ </telerik:RadGrid>

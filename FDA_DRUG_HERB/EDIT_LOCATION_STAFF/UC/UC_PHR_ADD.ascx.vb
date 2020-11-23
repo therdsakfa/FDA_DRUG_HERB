@@ -1,4 +1,5 @@
-﻿Public Class UC_PHR_ADD
+﻿Imports Telerik.Web.UI
+Public Class UC_PHR_ADD
     Inherits System.Web.UI.UserControl
     Public PHR_NAME As String = ""
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -101,11 +102,21 @@
             Catch ex As Exception
 
             End Try
+            Try
+                .NAME_SIMINAR = txt_NAME_SIMINAR.Text
+            Catch ex As Exception
+
+            End Try
             'Try
             '    .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
             'Catch ex As Exception
 
             'End Try
+            Try
+                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
+            Catch ex As Exception
+
+            End Try
         End With
     End Sub
     Public Sub get_data(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR)
@@ -148,6 +159,11 @@
             'Catch ex As Exception
 
             'End Try
+            Try
+                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
+            Catch ex As Exception
+
+            End Try
         End With
     End Sub
     Public Sub set_data_his(ByRef dao_hs As DAO_DRUG.TB_DALCN_PHR_HISTORY, dao As DAO_DRUG.ClsDBDALCN_PHR)
@@ -224,6 +240,41 @@
             Catch ex As Exception
 
             End Try
+        End If
+    End Sub
+    Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        set_data(dao)
+        dao.fields.FK_IDA = Request.QueryString("ida")
+        dao.insert()
+
+        Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
+        rgns.Rebind()
+    End Sub
+    Private Sub rgns_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgns.NeedDataSource
+        Dim bao As New BAO_MASTER
+        Dim dt As New DataTable
+        If Request.QueryString("ida") <> "" Then
+            dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("ida"))
+        End If
+
+
+        If dt.Rows.Count > 0 Then
+            rgns.DataSource = dt
+        End If
+    End Sub
+    Private Sub rgns_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles rgns.ItemCommand
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+            Dim _ida As String = item("PHR_IDA").Text
+            Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+            If e.CommandName = "r_del" Then
+                'Response.Write("<script type='text/javascript'>window.parent.alert('ยืนยันการลบ');</script> ")
+                dao.GetDataby_IDA(_ida)
+                dao.delete()
+                rgns.Rebind()
+
+            End If
         End If
     End Sub
 End Class

@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class FRM_STAFF_LCN_PHR_INSERT
 
     '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''UC_PHR_ADD1 control.
     '''</summary>
     '''<remarks>

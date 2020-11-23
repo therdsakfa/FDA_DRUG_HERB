@@ -158,11 +158,11 @@ Partial Public Class UC_PHR_ADD
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''rgphr control.
+    '''rgns control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rgphr As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents rgns As Global.Telerik.Web.UI.RadGrid
 End Class
