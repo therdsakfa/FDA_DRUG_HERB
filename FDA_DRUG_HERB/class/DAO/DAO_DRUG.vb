@@ -14115,6 +14115,11 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetData_By_FK_IDA(ByVal IDA As Integer)
+            datas = (From p In db.DALCN_CURRENT_ADDRESSes Where p.FK_IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
 End Namespace
 

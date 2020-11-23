@@ -1,4 +1,5 @@
-﻿Public Class UC_PHR_ADD
+﻿Imports Telerik.Web.UI
+Public Class UC_PHR_ADD
     Inherits System.Web.UI.UserControl
     Public PHR_NAME As String = ""
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -21,11 +22,11 @@
     End Sub
     Sub bind_ddl_work_type()
         Try
-            Dim dao As New DAO_DRUG.ClsDBdaphrcd
+            Dim dao As New DAO_DRUG.TB_MAS_TYPE_PHR_HERB
             dao.GetDataAll()
             ddl_worker_type.DataSource = dao.datas
-            ddl_worker_type.DataValueField = "phrcd"
-            ddl_worker_type.DataTextField = "phrnm"
+            ddl_worker_type.DataValueField = "TYPE_ID"
+            ddl_worker_type.DataTextField = "TYPE_PHR_HERB"
             ddl_worker_type.DataBind()
 
             Dim item As New ListItem
@@ -102,7 +103,17 @@
 
             End Try
             Try
-                .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
+                .NAME_SIMINAR = txt_NAME_SIMINAR.Text
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
+            'Catch ex As Exception
+
+            'End Try
+            Try
+                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
             Catch ex As Exception
 
             End Try
@@ -131,6 +142,7 @@
             txt_PHR_CTZNO.Text = .PHR_CTZNO
             txt_PHR_TEXT_NUM.Text = .PHR_TEXT_NUM
             txt_PHR_TEXT_WORK_TIME.Text = .PHR_TEXT_WORK_TIME
+            txt_STUDY_LEVEL.Text = .STUDY_LEVEL
             Try
                 'rdl_per_type.SelectedValue = .PERSONAL_TYPE
                 ddl_worker_type.DropDownSelectData(.PERSONAL_TYPE)
@@ -142,8 +154,13 @@
             Catch ex As Exception
 
             End Try
+            'Try
+            '    ddl_PHR_MEDICAL_TYPE.DropDownSelectData(.PHR_MEDICAL_TYPE)
+            'Catch ex As Exception
+
+            'End Try
             Try
-                ddl_PHR_MEDICAL_TYPE.DropDownSelectData(.PHR_MEDICAL_TYPE)
+                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
             Catch ex As Exception
 
             End Try
@@ -223,6 +240,41 @@
             Catch ex As Exception
 
             End Try
+        End If
+    End Sub
+    Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        set_data(dao)
+        dao.fields.FK_IDA = Request.QueryString("ida")
+        dao.insert()
+
+        Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
+        rgns.Rebind()
+    End Sub
+    Private Sub rgns_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgns.NeedDataSource
+        Dim bao As New BAO_MASTER
+        Dim dt As New DataTable
+        If Request.QueryString("ida") <> "" Then
+            dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("ida"))
+        End If
+
+
+        If dt.Rows.Count > 0 Then
+            rgns.DataSource = dt
+        End If
+    End Sub
+    Private Sub rgns_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles rgns.ItemCommand
+        If TypeOf e.Item Is GridDataItem Then
+            Dim item As GridDataItem = e.Item
+            Dim _ida As String = item("PHR_IDA").Text
+            Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+            If e.CommandName = "r_del" Then
+                'Response.Write("<script type='text/javascript'>window.parent.alert('ยืนยันการลบ');</script> ")
+                dao.GetDataby_IDA(_ida)
+                dao.delete()
+                rgns.Rebind()
+
+            End If
         End If
     End Sub
 End Class

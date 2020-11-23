@@ -35,6 +35,8 @@ Public Class FRM_LCN_CONFIRM_DRUG
         'End If
         Set_Label(_iden)
         setdata_frgn_data()
+        setdata_current_data()
+        setdata_DALCN()
         If Not IsPostBack Then
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(_IDA)
@@ -54,6 +56,19 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
                 End If
             End If
+            Try
+                If Not IsPostBack Then
+                    If _ProcessID = "122" Then
+                        rdl_lcn_type.SelectedValue = "1"
+                    ElseIf _ProcessID = "121" Then
+                        rdl_lcn_type.SelectedValue = "2"
+                    ElseIf _ProcessID = "120" Then
+                        rdl_lcn_type.SelectedValue = "3"
+                    End If
+                End If
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
     Sub get_pvncd()
@@ -181,86 +196,86 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim dt_bsn As New DataTable
         dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
         For Each dr As DataRow In dt_bsn.Rows
-            Try
-                lbl_BSN_ADDR.Text = dr("BSN_ADDR")
-            Catch ex As Exception
+            'Try
+            '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_ROOM.Text = dr("BSN_ROOM")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_ROOM.Text = dr("BSN_ROOM")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             Try
                 lbl_BSN_AGE.Text = dr("AGE")
             Catch ex As Exception
 
             End Try
-            Try
-                lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
-            Catch ex As Exception
+            'Try
+            '    lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_FAX.Text = dr("BSN_FAX")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_FAX.Text = dr("BSN_FAX")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             Try
                 lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
             Catch ex As Exception
 
             End Try
-            Try
-                lbl_BSN_MOO.Text = dr("BSN_MOO")
-            Catch ex As Exception
+            'Try
+            '    lbl_BSN_MOO.Text = dr("BSN_MOO")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_ROAD.Text = dr("BSN_ROAD")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_ROAD.Text = dr("BSN_ROAD")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_SOI.Text = dr("BSN_SOI")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_SOI.Text = dr("BSN_SOI")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_TEL.Text = dr("BSN_TEL")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_TEL.Text = dr("BSN_TEL")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             Try
                 lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
             Catch ex As Exception
 
             End Try
-            Try
-                lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
-            Catch ex As Exception
+            'Try
+            '    lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
+            'Catch ex As Exception
 
-            End Try
-            Try
-                lbl_thachngwtnm.Text = dr("thachngwtnm")
-            Catch ex As Exception
+            'End Try
+            'Try
+            '    lbl_thachngwtnm.Text = dr("thachngwtnm")
+            'Catch ex As Exception
 
-            End Try
+            'End Try
         Next
 
         Dim dt_lct As New DataTable
@@ -334,7 +349,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Next
         Dim dt_lcp As New DataTable
         Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
-        dao_phr.GetDataby_CTZNO(_iden)
+        dao_phr.GetDataby_IDA(_IDA)
         Try
             lbl_PHR_NAME.Text = dao_phr.fields.PHR_NAME
         Catch ex As Exception
@@ -370,12 +385,102 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Catch ex As Exception
 
         End Try
-        'lbl_phr_type.Text = 
+        Try
+            rdl_mastra.SelectedValue = dao_phr.fields.PHR_LAW_SECTION
+        Catch ex As Exception
+
+        End Try
 
 
 
+    End Sub
+    Sub setdata_DALCN()
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_IDA(_IDA)
+        Try
+            lbl_GIVE_PASSPORT_NO.Text = dao.fields.GIVE_PASSPORT_NO
+        Catch ex As Exception
 
-        'Next
+        End Try
+        Try
+            lbl_GIVE_PASSPORT_EXPDATE.Text = dao.fields.GIVE_PASSPORT_EXPDATE
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_GIVE_WORK_LICENSE_NO.Text = dao.fields.GIVE_WORK_LICENSE_NO
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_GIVE_WORK_LICENSE_EXPDATE.Text = dao.fields.GIVE_WORK_LICENSE_EXPDATE
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub setdata_current_data()
+        Dim dao As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
+        dao.GetData_By_FK_IDA(_IDA)
+        Try
+            lbl_c_thaaddr.Text = dao.fields.thaaddr
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_floor.Text = dao.fields.thafloor
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_room.Text = dao.fields.tharoom
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_thabuilding.Text = dao.fields.thabuilding
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_thamu.Text = dao.fields.thamu
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_thasoi.Text = dao.fields.thasoi
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_tharoad.Text = dao.fields.tharoad
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_tambol.Text = dao.fields.thmblcd
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_amphor.Text = dao.fields.amphrcd
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_Province.Text = dao.fields.chngwtcd
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_zipcode.Text = dao.fields.zipcode
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_c_email.Text = dao.fields.email
+        Catch ex As Exception
+
+        End Try
 
 
     End Sub
@@ -429,6 +534,46 @@ Public Class FRM_LCN_CONFIRM_DRUG
         End Try
         Try
             lbl_FRGN_DATE1.Text = dao.fields.FRGN_DATE1
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_BS_NO.Text = dao.fields.BS_NO
+        Catch ex As Exception
+
+
+        End Try
+        Try
+            lbl_BS_DATE.Text = dao.fields.BS_DATE
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_FRGN_DATE.Text = dao.fields.FRGN_DATE
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_FRGN_NO.Text = dao.fields.FRGN_NO
+        Catch ex As Exception
+
+        End Try
+        Try
+            cb_Personal_Type1.TabIndex = dao.fields.PERSONAL_TYPE
+        Catch ex As Exception
+
+        End Try
+        Try
+            cb_Personal_Type2.TabIndex = dao.fields.PERSONAL_TYPE
+        Catch ex As Exception
+
+        End Try
+        Try
+            If cb_Personal_Type1.TabIndex = 1 Then
+                cb_Personal_Type1.Checked = True
+            ElseIf cb_Personal_Type2.TabIndex = 2 Then
+                cb_Personal_Type2.Checked = True
+            End If
         Catch ex As Exception
 
         End Try

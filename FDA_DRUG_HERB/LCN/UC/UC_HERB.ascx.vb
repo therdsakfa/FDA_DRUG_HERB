@@ -313,7 +313,7 @@
     End Function
     Sub setdata(ByRef dao As DAO_DRUG.ClsDBdalcn, ByVal TR_ID As Integer)
         With dao.fields
-
+            
             .GIVE_PASSPORT_NO = txt_GIVE_PASSPORT_NO.Text
             Try
                 .GIVE_PASSPORT_EXPDATE = rdp_GIVE_PASSPORT_EXPDATE.SelectedDate
@@ -787,11 +787,14 @@
             txt_c_thasoi.Text = lbl_BSN_SOI.Text
             txt_c_tharoad.Text = lbl_BSN_ROAD.Text
             load_ddl_chwt()
-            ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
+            ddl_Province.Items.FindByText(lbl_thachngwtnm.Text).Selected = True
+            'ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
             load_ddl_amp()
-            ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
+            ddl_amphor.Items.FindByText(lbl_BSN_AMPHR_NAME.Text).Selected = True
+            'ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
             load_ddl_thambol()
-            ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
+            ddl_tambol.Items.FindByText(lbl_BSN_THMBL_NAME.Text).Selected = True
+            'ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
 
             txt_c_zipcode.Text = lbl_BSN_ZIPCODE.Text
             txt_c_fax.Text = lbl_BSN_FAX.Text

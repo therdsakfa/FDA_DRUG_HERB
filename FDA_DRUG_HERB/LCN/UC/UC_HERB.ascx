@@ -571,18 +571,18 @@
 
                        อยู่เลขที่</td>
                    <td>
-                       <asp:TextBox ID="txt_c_thaaddr" runat="server" AutoPostBack="True"></asp:TextBox>
+                       <asp:TextBox ID="txt_c_thaaddr" runat="server" ></asp:TextBox>
                    </td>
                    <td>ชั้นที่</td>
                    <td>
-                       <asp:TextBox ID="txt_c_floor" runat="server" AutoPostBack="True"></asp:TextBox>
+                       <asp:TextBox ID="txt_c_floor" runat="server" ></asp:TextBox>
                    </td>
                </tr>
                <tr>
                    <td></td>
                    <td>ห้องเลขที่</td>
                     <td>
-                       <asp:TextBox ID="txt_c_room" runat="server" AutoPostBack="True"></asp:TextBox>
+                       <asp:TextBox ID="txt_c_room" runat="server"></asp:TextBox>
                    </td>
                    <td>
 

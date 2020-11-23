@@ -134,11 +134,18 @@ Public Class FRM_LCN_DRUG1
             Dim item As GridDataItem = e.Item
 
             Dim IDA As Integer = 0
+            Dim identify As String
+            Dim location_ida As String
             Try
                 IDA = item("IDA").Text
             Catch ex As Exception
 
             End Try
+            'Try
+            '    identify = item("house_no").Text
+            'Catch ex As Exception
+
+            'End Try
 
             If e.CommandName = "sel" Then
                 Dim dao As New DAO_DRUG.ClsDBdalcn
@@ -146,13 +153,15 @@ Public Class FRM_LCN_DRUG1
                 Dim tr_id As String = 0
                 Try
                     tr_id = dao.fields.TR_ID
+                    identify = dao.fields.CITIZEN_ID_AUTHORIZE
+                    location_ida = dao.fields.LOCATION_ADDRESS_IDA
                 Catch ex As Exception
 
                 End Try
-
+                Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao.fields.PROCESS_ID & "&identify=" & identify & "&lct_ida=" & location_ida & "');", True)
             End If
 
         End If

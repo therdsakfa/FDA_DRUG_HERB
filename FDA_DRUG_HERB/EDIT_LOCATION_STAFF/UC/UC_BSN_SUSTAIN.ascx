@@ -2,8 +2,8 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Panel ID="Panel4" runat="server">
     <asp:RadioButtonList ID="rdl_type" runat="server" RepeatDirection="Horizontal" AutoPostBack="True">
-        <asp:ListItem Value="1" Selected="True">สืบสิทธิ์</asp:ListItem>
-        <asp:ListItem Value="2">โอนกิจการ</asp:ListItem>
+        <asp:ListItem Value="1" Selected="True">สืบสิทธิ์&nbsp;&nbsp;</asp:ListItem>
+        <asp:ListItem Value="2">โอนกิจการ&nbsp;</asp:ListItem>
     </asp:RadioButtonList>
 <%--    <asp:CheckBoxList ID="cbl_change" runat="server" RepeatDirection="Horizontal" AutoPostBack="True">
         <asp:ListItem Value="1">เปลี่ยนผู้รับอนุญาต</asp:ListItem>
@@ -11,9 +11,9 @@
         <asp:ListItem Value="3">เปลี่ยนผู้ดำเนินกิจการ</asp:ListItem>
     </asp:CheckBoxList>--%>
     <asp:RadioButtonList ID="rdl_change" runat="server" RepeatDirection="Horizontal" AutoPostBack="True">
-        <asp:ListItem Value="1">เปลี่ยนผู้รับอนุญาต</asp:ListItem>
-        <asp:ListItem Value="2">เปลี่ยนสถานที่ตั้ง</asp:ListItem>
-        <asp:ListItem Value="3">เปลี่ยนผู้ดำเนินกิจการ</asp:ListItem>
+        <asp:ListItem Value="1">เปลี่ยนผู้รับอนุญาต&nbsp;&nbsp;</asp:ListItem>
+        <asp:ListItem Value="2">เปลี่ยนสถานที่ตั้ง&nbsp;&nbsp;</asp:ListItem>
+        <asp:ListItem Value="3">เปลี่ยนผู้ดำเนินกิจการ(นิติบุคคล)</asp:ListItem>
     </asp:RadioButtonList>
 </asp:Panel>
 <asp:Panel ID="Panel1" runat="server" GroupingText="เปลี่ยนผู้รับอนุญาต" style="display:none;">
