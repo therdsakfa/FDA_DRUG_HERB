@@ -2776,4 +2776,32 @@ Public Class WebForm36
     Protected Sub btn_save_group_Click(sender As Object, e As EventArgs) Handles btn_save_group.Click
         UC_TABLE_DRUG_GROUP_CHANGE_HERB1.save_data(65019)
     End Sub
+
+    Protected Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+
+        Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+        dao_pro.GetDataby_FK_IDA(100109)
+        For Each dao_pro.fields In dao_pro.datas
+            Dim dao_rgt_pro As New DAO_DRUG.TB_DRRGT_PRODUCER
+            With dao_rgt_pro.fields
+                .addr_ida = dao_pro.fields.addr_ida
+                .drgtpcd = dao_pro.fields.drgtpcd
+                '.FK_IDA = IDA_rgt
+                .FK_PRODUCER = dao_pro.fields.FK_PRODUCER
+                .frgncd = dao_pro.fields.frgncd
+                .frgnlctcd = dao_pro.fields.frgnlctcd
+                .funccd = dao_pro.fields.funccd
+                .lcnno = dao_pro.fields.lcnno
+                .lcntpcd = dao_pro.fields.lcntpcd
+                .PRODUCER_WORK_TYPE = dao_pro.fields.PRODUCER_WORK_TYPE
+                .pvncd = dao_pro.fields.pvncd
+                .rcvno = dao_pro.fields.rcvno
+                .REFERENCE_GMP = dao_pro.fields.REFERENCE_GMP
+                .rgtno = dao_pro.fields.rgtno
+                .rgttpcd = dao_pro.fields.rgttpcd
+                .TR_ID = dao_pro.fields.TR_ID
+            End With
+            'dao_rgt_pro.insert()
+        Next
+    End Sub
 End Class
