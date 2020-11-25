@@ -42,6 +42,7 @@
         <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
         <asp:Button ID="btn_gen_dh" runat="server" Text="GEN_DH" style="height: 26px" />
         <asp:Button ID="Button30" runat="server" Text="test_date" />
+        <asp:Button ID="Button31" runat="server" Text="Button" />
     <h2>
         บันทึกข้อมูลวันที่ขอตรวจ
         <telerik:RadScriptManager ID="RadScriptManager1" Runat="server">
