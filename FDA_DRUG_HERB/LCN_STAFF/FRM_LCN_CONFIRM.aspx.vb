@@ -587,12 +587,38 @@ Public Class WebForm35
 
         End Try
         Try
-            cb_Personal_Type1.Text = dao.fields.PERSONAL_TYPE
+            cb_Personal_Type1.TabIndex = dao.fields.PERSONAL_TYPE
         Catch ex As Exception
 
         End Try
         Try
-            cb_Personal_Type2.Text = dao.fields.PERSONAL_TYPE
+            cb_Personal_Type2.TabIndex = dao.fields.PERSONAL_TYPE
+        Catch ex As Exception
+
+        End Try
+        Try
+            rdl_sanchaat.SelectedValue = dao.fields.PERSONAL_TYPE_MENU
+            If rdl_sanchaat.SelectedValue = 1 Then
+                TB_Personal_Type1.Visible = False
+                TB_Personal_Type2.Visible = False
+                TB_Personal.Visible = False
+            ElseIf rdl_sanchaat.SelectedValue = 2 Then
+                TB_Personal_Type1.Visible = True
+                TB_Personal_Type2.Visible = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            If cb_Personal_Type1.TabIndex = 1 Then
+                cb_Personal_Type1.Checked = True
+                TB_Personal_Type2.Visible = False
+            ElseIf cb_Personal_Type2.TabIndex = 2 Then
+                cb_Personal_Type2.Checked = True
+                TB_Personal_Type1.Visible = False
+            End If
         Catch ex As Exception
 
         End Try

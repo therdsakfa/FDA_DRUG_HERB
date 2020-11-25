@@ -377,7 +377,7 @@
             Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกข้อมูลเรียบร้อยแล้ว');parent.close_modal();</script> ")
         End If
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
     End Sub
 
     Private Sub ddl_placename_sel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_placename_sel.SelectedIndexChanged
@@ -473,7 +473,7 @@
     Private Sub btn_save_sel_Click(sender As Object, e As EventArgs) Handles btn_save_sel.Click
         save()
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
     End Sub
 
     Private Sub rdl_choose_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rdl_choose.SelectedIndexChanged

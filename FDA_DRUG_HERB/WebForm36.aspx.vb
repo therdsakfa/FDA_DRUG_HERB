@@ -2453,7 +2453,7 @@ Public Class WebForm36
     Protected Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
         Dim ws_drug1 As New WS_DRUG.WS_DRUG
         ws_drug1.Timeout = 50000
-        ws_drug1.DRUG_INSERT_DR(txt_pvncd.Text, txt_rgttpcd.Text, txt_drgtpcd.Text, txt_rgtno.Text, "อนุมัติทะเบียน", "1710500118665", "DRUG")
+        ws_drug1.HERB_INSERT_DR(txt_pvncd.Text, txt_rgttpcd.Text, txt_drgtpcd.Text, txt_rgtno.Text, "อนุมัติทะเบียน", "1710500118665", "DRUG")
     End Sub
 
     Protected Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
@@ -2474,12 +2474,12 @@ Public Class WebForm36
         Dim bao As New BAO.ClsDBSqlcommand
 
         If txt_dh_ida.Text <> "" Then
-            ws_update.DRUG_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
+            ws_update.HERB_INSERT_DR15(txt_dh_ida.Text, "1710500118665")
         Else
             Dim dt As New DataTable
             dt = bao.SELECT_TEMP_DH()
             For Each dr As DataRow In dt.Rows
-                ws_update.DRUG_INSERT_DR15(dr("IDA"), "1710500118665")
+                ws_update.HERB_INSERT_DR15(dr("IDA"), "1710500118665")
             Next
         End If
 
@@ -2497,7 +2497,7 @@ Public Class WebForm36
         Dim ws_update As New WS_DRUG.WS_DRUG
         ws_update.Timeout = 180000
         'ws_update.DRUG_UPDATE_LICEN(dr("IDA_dalcn"), "1710500118665")
-        ws_update.DRUG_UPDATE_LICEN(TextBox10.Text, "1710500118665")
+        ws_update.HERB_UPDATE_LICEN(TextBox10.Text, "1710500118665")
         ' Next
 
     End Sub
@@ -2509,14 +2509,14 @@ Public Class WebForm36
         Dim dt_iso As New DataTable
         dt_iso = bao_iso.Query_get_data_lcn_no_sai()
         For Each dr As DataRow In dt_iso.Rows
-            ws_update.DRUG_INSERT_LICEN(dr("IDA"), "1710500118665")
+            ws_update.HERB_INSERT_LICEN(dr("IDA"), "1710500118665")
         Next
 
     End Sub
 
     Protected Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_INSERT_DR15(52482, "1710500118665")
+        ws_update.HERB_INSERT_DR15(52482, "1710500118665")
     End Sub
 
     Protected Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click

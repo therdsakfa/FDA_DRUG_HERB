@@ -61,7 +61,7 @@ Public Class WS_GEN_DH_NO
                     dao.update()
                     Try
                         Dim ws_update As New WS_DRUG.WS_DRUG
-                        ws_update.DRUG_INSERT_DR15(IDA, "1710500118665")
+                        ws_update.HERB_INSERT_DR15(IDA, "1710500118665")
                     Catch ex As Exception
 
                     End Try

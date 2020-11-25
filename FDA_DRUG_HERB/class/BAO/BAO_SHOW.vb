@@ -1540,6 +1540,24 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
         Return dt
     End Function
+    Public Function SP_LOCATION_BSN_BY_FK_IDA(ByVal IDA As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_BSN_BY_FK_IDA @FK_IDA = '" & IDA & "'"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_LOCATION_BSN_BY_LOCATION_ADDRESS_IDA"
+        Return dt
+    End Function
     '
     Public Function SP_LOCATION_BSN_BY_LCN_IDA(ByVal lcnida As Integer) As DataTable
         Dim clsds As New ClassDataset

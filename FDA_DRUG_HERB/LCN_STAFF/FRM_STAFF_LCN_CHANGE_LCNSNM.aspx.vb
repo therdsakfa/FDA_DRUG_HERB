@@ -77,7 +77,7 @@
                     dao.fields.CITIZEN_ID_AUTHORIZE = txt_ctzid_lcn.Text
                     dao.update()
                     Dim ws_update As New WS_DRUG.WS_DRUG
-                    ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                    ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
                     KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้รับอนุญาต", _CLS.CITIZEN_ID)
                 Else

@@ -288,7 +288,7 @@
 
         Try
             Dim ws_drug As New WS_DRUG.WS_DRUG
-            ws_drug.DRUG_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
+            ws_drug.HERB_INSERT_DR(dao_rqt.fields.pvncd, dao_rqt.fields.rgttpcd, dao_rqt.fields.drgtpcd, dao_rqt.fields.rgtno, "อนุมัติทะเบียน", _CLS.CITIZEN_ID, "DRUG")
         Catch ex As Exception
 
         End Try

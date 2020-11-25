@@ -16,7 +16,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
     End Sub
     Sub Run_Service(ByVal IDA As Integer)
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.DRUG_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
+        ws_update.HERB_UPDATE_LICEN(IDA, _CLS.CITIZEN_ID)
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
@@ -550,7 +550,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
                         End Try
                         Dim ws_update As New WS_DRUG.WS_DRUG
-                        ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                        ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                         rg_bsn.Rebind()
                         Try
                             Shows(Request.QueryString("IDA"))
@@ -624,7 +624,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
                 KEEP_LOGS_EDIT(Request.QueryString("IDA"), "อัพเดตข้อมูลผู้รับอนุญาต - " & dao.fields.CITIZEN_ID_AUTHORIZE, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
                 Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                 rglcnname.Rebind()
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('อัพเดทข้อมูลเรียบร้อยแล้ว');", True)
             End If
@@ -653,7 +653,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
             Dim dao_his As New DAO_DRUG.TB_DALCN_PHR_HISTORY
             If e.CommandName = "edt" Then
                 lbl_title.Text = "แก้ไขข้อมูลผู้มีหน้าที่ปฏิบัติการ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_STAFF_LCN_PHR_EDIT.aspx?phr=" & item("PHR_IDA").Text & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_STAFF_LCN_PHR_EDIT.aspx?phr=" & item("PHR_IDA").Text & "&ida= " & Request.QueryString("IDA") & "');", True)
             ElseIf e.CommandName = "r_del" Then
                 Dim name_del As String
                 Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
@@ -662,7 +662,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
                 dao.delete()
 
                 Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                'ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
                 KEEP_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ลบเรียบร้อยแล้ว');", True)
 
@@ -801,6 +802,14 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
     Private Sub btn_phr_add_Click(sender As Object, e As EventArgs) Handles btn_phr_add.Click
         lbl_title.Text = "บันทึกข้อมูลผู้ปฏิบัติงาน"
+        'Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        'dao.GetDataby_IDA(Request.QueryString("IDA"))
+        'Dim phr_ida As String = 0
+        'Try
+        '    phr_ida = dao.fields.PHR_IDA
+        'Catch ex As Exception
+
+        'End Try
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('FRM_STAFF_LCN_PHR_INSERT.aspx?ida=" & Request.QueryString("IDA") & "');", True)
     End Sub
     Public Sub set_data_dalcn(ByRef dao As DAO_DRUG.ClsDBdalcn, ByVal bsn_iden As String)

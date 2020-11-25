@@ -6775,27 +6775,6 @@
       <Column Name="MARTTRA_NO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DALCN_FRGN_DATA" Member="DALCN_FRGN_DATAs">
-    <Type Name="DALCN_FRGN_DATA">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PASSPORT_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PASSPORT_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DOC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="WORK_LICENSE_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="WORK_LICENSE_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="BS_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DALCN_CURRENT_ADDRESS" Member="DALCN_CURRENT_ADDRESSes">
     <Type Name="DALCN_CURRENT_ADDRESS">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6816,6 +6795,38 @@
       <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_PHR_TRAINING" Member="DALCN_PHR_TRAININGs">
+    <Type Name="DALCN_PHR_TRAINING">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_SIMINAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phr_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_FRGN_DATA" Member="DALCN_FRGN_DATAs">
+    <Type Name="DALCN_FRGN_DATA">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSPORT_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PASSPORT_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BS_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE_MENU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

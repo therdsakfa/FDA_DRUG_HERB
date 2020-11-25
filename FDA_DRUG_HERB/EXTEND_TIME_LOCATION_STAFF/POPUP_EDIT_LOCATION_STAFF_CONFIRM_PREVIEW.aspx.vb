@@ -351,7 +351,7 @@ Public Class POPUP_STAFF_EDIT_LOCATION_CONFIRM_PREVIEW
 
                 Try
                     Dim ws_update As New WS_DRUG.WS_DRUG
-                    ws_update.DRUG_UPDATE_LICEN(dao_dal.fields.IDA, _CLS.CITIZEN_ID)
+                    ws_update.HERB_UPDATE_LICEN(dao_dal.fields.IDA, _CLS.CITIZEN_ID)
                 Catch ex As Exception
 
                 End Try

@@ -2380,6 +2380,64 @@ Namespace DAO_DRUG
             Return i
         End Function
     End Class
+    Public Class ClsDBDALCN_PHR_TRAINING
+        Inherits MAINCONTEXT
+
+        Public fields As New DALCN_PHR_TRAINING
+
+        Private _Details As New List(Of DALCN_PHR_TRAINING)
+        Public Property Details() As List(Of DALCN_PHR_TRAINING)
+            Get
+                Return _Details
+            End Get
+            Set(ByVal value As List(Of DALCN_PHR_TRAINING))
+                _Details = value
+            End Set
+        End Property
+        Public Sub AddDetails()
+            Details.Add(fields)
+            fields = New DALCN_PHR_TRAINING
+        End Sub
+        Public Sub insert()
+            db.DALCN_PHR_TRAININGs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_PHR_TRAININGs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_PHR_TRAININGs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.DALCN_PHR_TRAININGs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+
+        Public Sub GetDataby_FK_IDA(ByVal FK_IDA As Integer)
+
+            datas = (From p In db.DALCN_PHR_TRAININGs Where p.FK_IDA = FK_IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_PHR_IDA(ByVal phr_ida As Integer)
+
+            datas = (From p In db.DALCN_PHR_TRAININGs Where p.phr_IDA = phr_ida Select p)
+            For Each Me.fields In datas
+                AddDetails()
+            Next
+        End Sub
+    End Class
 
 
 

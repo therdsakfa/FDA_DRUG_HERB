@@ -147,10 +147,10 @@
    
 </table>
  <telerik:RadGrid ID="rgns" runat="server" Width ="60%" >
-                       <MasterTableView AutoGenerateColumns="False" DataKeyNames="PHR_IDA" NoMasterRecordsText="ไม่พบข้อมูล">
+                       <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA" NoMasterRecordsText="ไม่พบข้อมูล">
                            <Columns>
-                               <telerik:GridBoundColumn DataField="PHR_IDA" FilterControlAltText="Filter PHR_IDA column"
-                                   HeaderText="PHR_IDA" SortExpression="PHR_IDA" UniqueName="PHR_IDA" Display="false">
+                               <telerik:GridBoundColumn DataField="IDA" FilterControlAltText="Filter IDA column"
+                                   HeaderText="IDA" SortExpression="IDA" UniqueName="IDA" Display="false">
                                </telerik:GridBoundColumn>
                                <telerik:GridBoundColumn DataField="NAME_SIMINAR" FilterControlAltText="Filter NAME_SIMINAR column"
                                    HeaderText="ชื่อหลักสูตร" SortExpression="NAME_SIMINAR" UniqueName="NAME_SIMINAR" >
@@ -163,7 +163,7 @@
                                    <HeaderStyle Width="70px" />
                                </telerik:GridButtonColumn>--%>
                                <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="r_del" ItemStyle-Width="15%"
-                                   CommandName="r_del" Text="ลบข้อมูลถาวร" ConfirmText="คุณต้องการลบผู้ปฏิบัติการหรือไม่">
+                                   CommandName="r_del" Text="ลบข้อมูลถาวร" ConfirmText="คุณต้องการลบหลักสูตรการอบรมหรือไม่">
                                    <HeaderStyle Width="70px" />
                                </telerik:GridButtonColumn>
                            </Columns>

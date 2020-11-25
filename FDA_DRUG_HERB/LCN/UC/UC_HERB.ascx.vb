@@ -509,6 +509,15 @@
 
             End Try
             Try
+                If rdl_sanchaat.SelectedValue = 1 Then
+                    .PERSONAL_TYPE_MENU = 1
+                ElseIf rdl_sanchaat.SelectedValue = 2 Then
+                    .PERSONAL_TYPE_MENU = 2
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
                 .WORK_LICENSE_EXPDATE = CDate(RDP_WORK_LICENSE_EXPDATE.SelectedDate)
             Catch ex As Exception
 

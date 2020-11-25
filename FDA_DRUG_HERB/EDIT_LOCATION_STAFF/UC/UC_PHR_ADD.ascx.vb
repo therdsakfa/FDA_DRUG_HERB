@@ -102,6 +102,11 @@ Public Class UC_PHR_ADD
             Catch ex As Exception
 
             End Try
+
+        End With
+    End Sub
+    Private Sub set_data_siminar(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR_TRAINING)
+        With dao.fields
             Try
                 .NAME_SIMINAR = txt_NAME_SIMINAR.Text
             Catch ex As Exception
@@ -118,6 +123,7 @@ Public Class UC_PHR_ADD
 
             End Try
         End With
+
     End Sub
     Public Sub get_data(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR)
         With dao.fields
@@ -242,34 +248,64 @@ Public Class UC_PHR_ADD
             End Try
         End If
     End Sub
+
+    Shared DALCN_PHR_TRAINING As New DALCN_PHR_TRAINING
+    Shared List_DALCN As New List(Of DALCN_PHR_TRAINING)
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-        set_data(dao)
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+        set_data_siminar(dao)
         dao.fields.FK_IDA = Request.QueryString("ida")
-        dao.insert()
+        dao.fields.phr_IDA = Request.QueryString("phr")
+        'dao.insert()
+        DALCN_PHR_TRAINING = dao.fields
 
         Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
         rgns.Rebind()
     End Sub
+
+    Public Function GET_DATA_LIST_DALCN() As Object
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+        'Dim SYSTEM_ID = MODEL_APP.AUTHEN_INFORMATION.SYSTEM_PROD
+        dao.GetDataby_PHR_IDA(Convert.ToInt32(Request.QueryString("phr")))
+        Return dao.Details
+    End Function
     Private Sub rgns_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgns.NeedDataSource
         Dim bao As New BAO_MASTER
         Dim dt As New DataTable
-        If Request.QueryString("ida") <> "" Then
-            dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("ida"))
+        If Request.QueryString("phr") <> "" Then
+            dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("phr"))
         End If
+        Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+        Dim chk_list As New List(Of DALCN_PHR_TRAINING)
+        chk_list = GET_DATA_LIST_DALCN()
+        List_DALCN.Clear()
 
-
-        If dt.Rows.Count > 0 Then
-            rgns.DataSource = dt
+        If chk_list.Count <> 0 And List_DALCN.Count <> 0 Then
+            List_DALCN = chk_list
+            rgns.DataSource = chk_list
+        ElseIf Request.QueryString("phr") <> "" Then
+            List_DALCN.Add(DALCN_PHR_TRAINING)
+            rgns.DataSource = List_DALCN
+            Session("Lst_DALCN") = List_DALCN
+        ElseIf DALCN_PHR_TRAINING IsNot Nothing Then
+            List_DALCN.Add(DALCN_PHR_TRAINING)
+            rgns.DataSource = List_DALCN
+            Session("Lst_DALCN") = List_DALCN
+        Else
+            rgns.DataSource = List_DALCN
+            Session("Lst_DALCN") = List_DALCN
         End If
+        ''
+        'If dt.Rows.Count > 0 Then
+        '    rgns.DataSource = dt
+        'End If
     End Sub
     Private Sub rgns_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles rgns.ItemCommand
         If TypeOf e.Item Is GridDataItem Then
             Dim item As GridDataItem = e.Item
-            Dim _ida As String = item("PHR_IDA").Text
-            Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+            Dim _ida As String = item("IDA").Text
+            Dim dao As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
             If e.CommandName = "r_del" Then
-                'Response.Write("<script type='text/javascript'>window.parent.alert('ยืนยันการลบ');</script> ")
                 dao.GetDataby_IDA(_ida)
                 dao.delete()
                 rgns.Rebind()

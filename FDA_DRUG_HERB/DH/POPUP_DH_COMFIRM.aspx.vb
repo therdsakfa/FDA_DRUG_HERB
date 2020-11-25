@@ -162,7 +162,7 @@ Public Class POPUP_DH_COMFIRM
                 dao.update()
 
                 Dim ws_update As New WS_DRUG.WS_DRUG
-                ws_update.DRUG_INSERT_DR15(_IDA, _CLS.CITIZEN_ID_AUTHORIZE)
+                ws_update.HERB_INSERT_DR15(_IDA, _CLS.CITIZEN_ID_AUTHORIZE)
 
                 AddLogStatus(8, _process, _CLS.CITIZEN_ID, _IDA)
                 alert("ยื่นคำขอเรียบร้อยแล้ว เลขจดแจ้ง 15 หลักคือ คือ " & run_number)

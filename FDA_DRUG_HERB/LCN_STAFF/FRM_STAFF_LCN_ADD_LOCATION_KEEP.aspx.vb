@@ -225,7 +225,7 @@
 
                     KEEP_LOGS_EDIT(Request.QueryString("ida"), "เพิ่มสถานที่เก็บใหม่", _CLS.CITIZEN_ID)
                     Dim ws_update As New WS_DRUG.WS_DRUG
-                    ws_update.DRUG_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+                    ws_update.HERB_UPDATE_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
 
                     Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกข้อมูลเรียบร้อยแล้ว');parent.close_modal();</script> ")
                 End If

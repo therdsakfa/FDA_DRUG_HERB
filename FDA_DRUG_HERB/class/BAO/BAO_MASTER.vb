@@ -943,9 +943,29 @@
     End Function
     Public Function SP_DALCN_PHR_BY_FK_IDA_3(ByVal IDA As Integer) As DataTable
         Dim clsds As New ClassDataset
-        Dim sql As String = "exec SP_DALCN_PHR_BY_FK_IDA_3 @IDA =  " & IDA
+        Dim sql As String = "exec SP_DALCN_PHR_BY_FK_IDA_3 @IDA = " & IDA
         Dim dt As New DataTable
         dt.TableName = "SP_DALCN_PHR_BY_FK_IDA_3"
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+                'dt.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+            'dt.Clear()
+        End If
+        Return dt
+    End Function
+    Public Function SP_DALCN_PHR_BY_FK_IDA_4(ByVal IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DALCN_PHR_BY_FK_IDA_4 @IDA = " & IDA
+        Dim dt As New DataTable
+        dt.TableName = "SP_DALCN_PHR_BY_FK_IDA_4"
         Try
             dt = clsds.dsQueryselect(sql, conn).Tables(0)
             If dt.Rows.Count() = 0 Then

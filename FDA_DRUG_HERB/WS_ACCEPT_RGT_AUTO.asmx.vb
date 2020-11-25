@@ -52,7 +52,7 @@ Public Class WS_ACCEPT_RGT_AUTO
 
                 Try
                     Dim ws_drug As New WS_DRUG.WS_DRUG
-                    ws_drug.DRUG_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
+                    ws_drug.HERB_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
                 Catch ex As Exception
 
                 End Try
@@ -78,7 +78,7 @@ Public Class WS_ACCEPT_RGT_AUTO
 
                 Try
                     Dim ws_drug As New WS_DRUG.WS_DRUG
-                    ws_drug.DRUG_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
+                    ws_drug.HERB_INSERT_DR(dao.fields.pvncd, rgttpcd, dao.fields.drgtpcd, RGTNO, "อนุมัติทะเบียน", "AUTO", "HERB")
                 Catch ex As Exception
 
                 End Try

@@ -15,7 +15,8 @@
         RunQuery()
         If Not IsPostBack Then
             Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-            dao.GetDataby_IDA(Request.QueryString("phr"))
+            'dao.GetDataby_IDA(Request.QueryString("phr"))
+            dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
             UC_PHR_ADD1.bind_ddl_prefix()
             UC_PHR_ADD1.bind_ddl_job()
             UC_PHR_ADD1.bind_ddl_work_type()
@@ -37,7 +38,7 @@
         'dao_hs.insert()
         Try
             Dim ws_update As New WS_DRUG.WS_DRUG
-            ws_update.DRUG_UPDATE_LICEN(dao.fields.FK_IDA, _CLS.CITIZEN_ID)
+            ws_update.HERB_UPDATE_LICEN(dao.fields.FK_IDA, _CLS.CITIZEN_ID)
         Catch ex As Exception
 
         End Try

@@ -2102,16 +2102,22 @@
         <elementListCompartment Id="90080fc0-1fd5-4175-9508-ba1e7082a8d6" absoluteBounds="67.265, 58.46, 1.9700000000000002, 57.170613606770829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="324f850f-524e-4daa-ab95-b8a97bcda554" absoluteBounds="5, 3.75, 2, 4.0785139973958326">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_FRGN_DATA" />
-      <nestedChildShapes>
-        <elementListCompartment Id="170cee8d-b889-4ef2-a9a4-0a45c7110751" absoluteBounds="5.015, 4.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="179b1110-d017-4b00-832e-d1ba4a1a645a" absoluteBounds="3.25, 10.125, 2, 4.2708154296875">
       <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_CURRENT_ADDRESS" />
       <nestedChildShapes>
         <elementListCompartment Id="bbaa830c-86d7-4e04-89a1-612793a022da" absoluteBounds="3.2649999999999997, 10.585, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27dba376-d358-4372-90d9-4d693f3aa264" absoluteBounds="0.75, 23, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_PHR_TRAINING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2467dec-1ae4-4ff3-8b51-bb9605ee8757" absoluteBounds="0.76499999999999968, 23.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd3de592-b579-4984-93d3-980904167580" absoluteBounds="5.375, 4.25, 2, 4.2708154296875">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/DALCN_FRGN_DATA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1cc2cde-0c0a-49b8-bc89-cce5ffa0f9b2" absoluteBounds="5.39, 4.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

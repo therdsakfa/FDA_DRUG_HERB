@@ -433,7 +433,7 @@ Public Class UC_SUB_DRUG_ANIMAL
             dao.fields.stpdrg = str
             dao.update()
             Dim ws_drug As New WS_DRUG.WS_DRUG
-            ws_drug.DRUG_UPDATE_DR(dao_r.fields.pvncd, dao_r.fields.rgttpcd, dao_r.fields.drgtpcd, dao_r.fields.rgtno, "แก้ไขส่วนบริโภค", _CLS.CITIZEN_ID, "DRUG")
+            ws_drug.HERB_UPDATE_DR(dao_r.fields.pvncd, dao_r.fields.rgttpcd, dao_r.fields.drgtpcd, dao_r.fields.rgtno, "แก้ไขส่วนบริโภค", _CLS.CITIZEN_ID, "DRUG")
             alert("แก้ไขข้อมูลเรียบร้อย")
             KEEP_LOGS_TABEAN_EDIT(Request.QueryString("IDA"), "แก้ไขส่วนบริโภค", _CLS.CITIZEN_ID)
         Else
