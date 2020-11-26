@@ -757,8 +757,6 @@
     Public Sub load_ddl_chwt()
         Dim bao As New BAO_SHOW
         Dim dt As DataTable = bao.SP_SP_SYSCHNGWT()
-        ddl_Province.DataTextField = "thachngwtnm"
-        ''ddl_Province.DataValueField = "IDA"
         ddl_Province.DataSource = dt
 
         ddl_Province.DataBind()
@@ -768,7 +766,6 @@
         Dim bao As New BAO_SHOW
         Dim dt As New DataTable
         dt = bao.SP_SYSAMPHR_BY_CHNGWTCD(ddl_Province.SelectedValue)
-        ddl_amphor.DataTextField = "thaamphrnm"
 
         ddl_amphor.DataSource = dt
         ddl_amphor.DataBind()
@@ -777,9 +774,6 @@
         Dim bao As New BAO_SHOW
         Dim dt As New DataTable
         dt = bao.SP_SYSTHMBL_BY_CHNGWTCD_AND_AMPHRCD(ddl_Province.SelectedValue, ddl_amphor.SelectedValue)
-        ddl_tambol.DataTextField = "thathmblnm"
-
-        ddl_tambol.DataValueField = "thathmblnm"
         ddl_tambol.DataSource = dt
         ddl_tambol.DataBind()
     End Sub
