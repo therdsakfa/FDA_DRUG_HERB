@@ -2,9 +2,32 @@
 
 Public Class UC_HERB_PHESAJ
     Inherits System.Web.UI.UserControl
+    Private _CLS As New CLS_SESSION
+    Private _ProcessID As Integer
+    Sub RunSession()
+        _ProcessID = Request.QueryString("process")
+        Try
+            If Session("CLS") Is Nothing Then
+                Response.Redirect("http://privus.fda.moph.go.th/")
+            Else
+                _CLS = Session("CLS")
+            End If
+        Catch ex As Exception
+            Response.Redirect("http://privus.fda.moph.go.th/")
+        End Try
+    End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        RunSession()
+        If Not IsPostBack Then
+            If _ProcessID = "122" Then
+                rdl_mastra.SelectedValue = "1"
+            ElseIf _ProcessID = "121" Then
+                rdl_mastra.SelectedValue = "2"
+            ElseIf _ProcessID = "120" Then
+                rdl_mastra.SelectedValue = "3"
+            End If
+        End If
     End Sub
     Sub bind_ddl_phr_type()
         Try

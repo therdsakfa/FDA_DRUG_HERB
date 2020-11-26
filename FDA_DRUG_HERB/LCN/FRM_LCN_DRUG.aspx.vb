@@ -368,20 +368,20 @@ Public Class FRM_LCN_DRUG
         load_GV_lcnno()                             'เรียกฟังก์ชั่น  load_GV_lcnno   มาใช้งาน
     End Sub
 
-    Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
-        If txt_bsn.Text = "" Then
-            alert("กรุณากรอกเลขบัตรผู้ดำเนินกิจการ")
-        Else
-            If String.IsNullOrEmpty(_process) = False Then  'ถ้าให้ค่า _process เป็นค่าว่าง จะไม่เป็นความจริง
-                Bind_PDF()                                  'เรียกฟังก์ชั่น  Bind_PDF มาใช้งาน
-            Else
-                alert("กรุณาเลือกประเภทใบอนุญาตก่อนทำการดาวน์โหลด")  'ถ้าค่าว่างจะ ERROR
-            End If
-        End If
+    'Protected Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
+    '    If txt_bsn.Text = "" Then
+    '        alert("กรุณากรอกเลขบัตรผู้ดำเนินกิจการ")
+    '    Else
+    '        If String.IsNullOrEmpty(_process) = False Then  'ถ้าให้ค่า _process เป็นค่าว่าง จะไม่เป็นความจริง
+    '            Bind_PDF()                                  'เรียกฟังก์ชั่น  Bind_PDF มาใช้งาน
+    '        Else
+    '            alert("กรุณาเลือกประเภทใบอนุญาตก่อนทำการดาวน์โหลด")  'ถ้าค่าว่างจะ ERROR
+    '        End If
+    '    End If
 
 
 
-    End Sub
+    'End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>alert('" + text + "');</script> ") 'จาวาคำสั่ง Alert
     End Sub

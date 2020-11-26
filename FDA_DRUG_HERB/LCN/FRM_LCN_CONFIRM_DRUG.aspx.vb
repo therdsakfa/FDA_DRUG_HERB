@@ -421,6 +421,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
     Sub setdata_current_data()
         Dim dao As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
         dao.GetData_By_FK_IDA(_IDA)
+        Dim dao_amper As New DAO_CPN.clsDBsysamphr
+        dao_amper.GetData_by_chngwtcd_amphrcd(dao.fields.chngwtcd, dao.fields.amphrcd)
+        Dim dao_province As New DAO_CPN.clsDBsyschngwt
+        dao_province.GetData_by_chngwtcd(dao.fields.chngwtcd)
+        Dim dao_thambol As New DAO_CPN.clsDBsysthmbl
+        dao_thambol.GetData_by_chngwtcd_amphrcd_thmblcd(dao.fields.chngwtcd, dao.fields.amphrcd, dao.fields.thmblcd)
+
         Try
             lbl_c_thaaddr.Text = dao.fields.thaaddr
         Catch ex As Exception
@@ -456,21 +463,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Catch ex As Exception
 
         End Try
-        Try
-            lbl_tambol.Text = dao.fields.thmblcd
-        Catch ex As Exception
 
-        End Try
-        Try
-            lbl_amphor.Text = dao.fields.amphrcd
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_Province.Text = dao.fields.chngwtcd
-        Catch ex As Exception
-
-        End Try
         Try
             lbl_c_zipcode.Text = dao.fields.zipcode
         Catch ex As Exception
@@ -481,9 +474,29 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Catch ex As Exception
 
         End Try
+        Try
+            lbl_tambol.Text = dao_thambol.fields.thathmblnm
+        Catch ex As Exception
 
+        End Try
+        Try
+            lbl_amphor.Text = dao_amper.fields.thaamphrnm
+        Catch ex As Exception
+
+        End Try
+        Try
+            lbl_Province.Text = dao_province.fields.thachngwtnm
+        Catch ex As Exception
+
+        End Try
 
     End Sub
+
+    'Sub setdata_systhmbl()
+    '    Dim dao As New DAO_CPN.clsDBsyschngwt
+    '    dao.GetData_by_chngwtcd()
+
+    'End Sub
     Sub setdata_frgn_data()
         Dim dao As New DAO_DRUG.TB_DALCN_FRGN_DATA
         dao.GetDataby_FK_IDA(_IDA)
