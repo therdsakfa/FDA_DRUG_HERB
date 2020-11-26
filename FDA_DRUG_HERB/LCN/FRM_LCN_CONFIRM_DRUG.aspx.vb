@@ -40,7 +40,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         If Not IsPostBack Then
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(_IDA)
-            If dao.fields.STATUS_ID >= 8 Then
+            If dao.fields.STATUS_ID >= 8 And dao.fields.STATUS_ID <> 11 Then
                 BindData_PDF()
                 Panel1.Style.Add("display", "none")
             Else
