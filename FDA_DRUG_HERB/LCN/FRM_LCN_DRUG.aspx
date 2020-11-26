@@ -110,17 +110,17 @@
      <div class="panel" style="text-align:left ;width:100%">
          <div class="panel-heading panel-title" style="height:70px" > 
             
-             <div  class="col-lg-4 col-md-4"><h4> ใบอนุญาต<asp:Label ID="lbl_name_2" runat="server"  Text=""></asp:Label><asp:Label ID="lbl_name" runat="server"  Text=""></asp:Label> </h4> </div>
-                          <div  class="col-lg-8 col-md-8">
-                               <p style="text-align:right;padding-right:5%;">
+             <div  class="col-lg-3 col-md-3"><h4> ใบอนุญาต<asp:Label ID="lbl_name_2" runat="server"  Text=""></asp:Label><asp:Label ID="lbl_name" runat="server"  Text=""></asp:Label> </h4> </div>
+                          <div  class="col-lg-9 col-md-9">
+                               <p style="text-align:right;padding-right:3%;">
                                    <table width="100%">
                                        <tr>
                                            <td>เลขบัตรผู้ดำเนินฯ</td>
                                            <td><asp:TextBox ID="txt_bsn" runat="server"></asp:TextBox>
                                            </td>
-                                           <td align="right">
+                                           <%--<td align="right">
                                                <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" CssClass="btn-lg" />&nbsp;&nbsp;
-                                           </td>
+                                           </td>--%>
                                            <td>
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
                                                

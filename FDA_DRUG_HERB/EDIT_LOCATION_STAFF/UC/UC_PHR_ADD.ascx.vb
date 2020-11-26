@@ -278,7 +278,7 @@ Public Class UC_PHR_ADD
         Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
         Dim chk_list As New List(Of DALCN_PHR_TRAINING)
         chk_list = GET_DATA_LIST_DALCN()
-        List_DALCN.Clear()
+        'List_DALCN.Clear()
 
         If chk_list.Count <> 0 And List_DALCN.Count <> 0 Then
             List_DALCN = chk_list
@@ -287,11 +287,13 @@ Public Class UC_PHR_ADD
             List_DALCN.Add(DALCN_PHR_TRAINING)
             rgns.DataSource = List_DALCN
             Session("Lst_DALCN") = List_DALCN
-        ElseIf DALCN_PHR_TRAINING IsNot Nothing Then
-            List_DALCN.Add(DALCN_PHR_TRAINING)
-            rgns.DataSource = List_DALCN
-            Session("Lst_DALCN") = List_DALCN
+            'ElseIf DALCN_PHR_TRAINING IsNot Nothing Then
+            '    List_DALCN.Add(DALCN_PHR_TRAINING)
+            '    rgns.DataSource = List_DALCN
+            '    Session("Lst_DALCN") = List_DALCN
+
         Else
+            List_DALCN.Add(DALCN_PHR_TRAINING)
             rgns.DataSource = List_DALCN
             Session("Lst_DALCN") = List_DALCN
         End If
