@@ -289,7 +289,7 @@ Public Class FRM_DH_MAIN
             End Try
             Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&ida_location=" & ida_loca
 
-            'btn_pay.PostBackUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+            'btn_pay.PostBackUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
             If Request.QueryString("staff") <> "" Then
                 urls &= "&staff=1&identify=" & Request.QueryString("identify")
             End If
@@ -397,7 +397,7 @@ Public Class FRM_DH_MAIN
                 End Try
                 Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&ida_location=" & ida_loca
 
-                'btn_pay.PostBackUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+                'btn_pay.PostBackUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
                 If Request.QueryString("staff") <> "" Then
                     urls &= "&staff=1&identify=" & Request.QueryString("identify")
                 End If
