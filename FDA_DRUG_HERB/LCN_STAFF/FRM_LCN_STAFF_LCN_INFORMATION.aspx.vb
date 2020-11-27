@@ -117,6 +117,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
 
             End Try
 
+            rgphr.DataBind()
 
         End If
     End Sub

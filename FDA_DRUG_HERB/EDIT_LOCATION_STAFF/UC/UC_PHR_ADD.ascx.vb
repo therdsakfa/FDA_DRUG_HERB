@@ -5,6 +5,8 @@ Public Class UC_PHR_ADD
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             'set_data_sakha()
+            rgns.Rebind()
+            Clear()
         End If
     End Sub
     Sub bind_lcn_type()
@@ -170,6 +172,9 @@ Public Class UC_PHR_ADD
             Catch ex As Exception
 
             End Try
+
+            rgns.DataBind()
+
         End With
     End Sub
     Public Sub set_data_his(ByRef dao_hs As DAO_DRUG.TB_DALCN_PHR_HISTORY, dao As DAO_DRUG.ClsDBDALCN_PHR)
@@ -298,9 +303,9 @@ Public Class UC_PHR_ADD
             Session("Lst_DALCN") = List_DALCN
         End If
         ''
-        'If dt.Rows.Count > 0 Then
-        '    rgns.DataSource = dt
-        'End If
+        If dt.Rows.Count > 0 Then
+            rgns.DataSource = dt
+        End If
     End Sub
     Private Sub rgns_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles rgns.ItemCommand
         If TypeOf e.Item Is GridDataItem Then
@@ -315,4 +320,11 @@ Public Class UC_PHR_ADD
             End If
         End If
     End Sub
+
+    Public Sub Clear()
+        List_DALCN.Clear()
+        Session.Remove("Lst_DALCN")
+        rgns.Rebind()
+    End Sub
+
 End Class

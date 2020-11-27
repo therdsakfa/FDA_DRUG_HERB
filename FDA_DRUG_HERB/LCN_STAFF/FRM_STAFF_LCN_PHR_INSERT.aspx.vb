@@ -19,8 +19,11 @@
             UC_PHR_ADD1.bind_ddl_work_type()
             UC_PHR_ADD1.bind_lcn_type()
             UC_PHR_ADD1.set_data_sakha()
+
         End If
     End Sub
+
+
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
 
@@ -52,8 +55,11 @@
                 dao_drug.update()
             End If
         Next
-        List_DALCN.Clear()
-
+        UC_PHR_ADD1.Clear()
+        'List_DALCN.Clear()
+        'Session.Clear()
+        'Session.Abandon()
+        'Session.RemoveAll()
 
         Dim ws_update As New WS_DRUG.WS_DRUG
         ws_update.HERB_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
@@ -61,4 +67,10 @@
         KEEP_LOGS_EDIT(Request.QueryString("ida"), "บันทึกผู้ปฏิบัติการ " & UC_PHR_ADD1.Get_Name_In(), _CLS.CITIZEN_ID)
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
     End Sub
+
+    Protected Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        UC_PHR_ADD1.Clear()
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
+    End Sub
+
 End Class
