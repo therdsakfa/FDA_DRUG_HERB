@@ -308,7 +308,7 @@ Public Class FRM_LCN_DRUG
             Catch ex As Exception
 
             End Try
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&Process=" & _process & "&lct_ida=" & _lct_ida & "&identify=" & _iden & "');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "FRM_LCN_CONFIRM_DRUG.aspx?IDA=" & str_ID & "&TR_ID=" & tr_id & "&Process=" & _process & "&lct_ida=" & _lct_ida & "&identify=" & _iden & _lct_ida & "&bsn=" & txt_bsn.Text & "');", True)
 
         ElseIf e.CommandName = "leaves" Then
             dao.GetDataby_IDA(str_ID)
@@ -527,14 +527,14 @@ Public Class FRM_LCN_DRUG
     End Sub
 
 
-    Protected Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
-        If Request.QueryString("staff") = "" Then
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_UPLOAD_ATTACH.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _lct_ida & "');", True)
-        Else
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_UPLOAD_ATTACH.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _lct_ida & "&staff=1');", True)
-        End If
+    'Protected Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
+    '    If Request.QueryString("staff") = "" Then
+    '        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_UPLOAD_ATTACH.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _lct_ida & "');", True)
+    '    Else
+    '        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_LCN_UPLOAD_ATTACH.aspx?type_id=" & _process & "&process=" & _process & "&IDA=" & _lct_ida & "&staff=1');", True)
+    '    End If
 
-    End Sub
+    'End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LoadPdf()
     End Sub

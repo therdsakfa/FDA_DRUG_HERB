@@ -130,6 +130,24 @@ Public Class BAO_SHOW
         dt.TableName = "SP_DRUG_GROUP_LCN_HERB"
         Return dt
     End Function
+    Public Function SP_DRUG_GROUP_LCN_HERB2(ByVal lcn_ida As Integer, ByVal type_lcn As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB2 @lcn_ida= " & lcn_ida & " ,@type_lcn=" & type_lcn
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_DRUG_GROUP_LCN_HERB"
+        Return dt
+    End Function
     Public Function SP_DRRGT_EDIT_REQUEST_PACKAGE_DETAIL_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_EDIT_REQUEST_PACKAGE_DETAIL_BY_FK_IDA @FK_IDA= " & FK_IDA
         Dim dta As New DataTable

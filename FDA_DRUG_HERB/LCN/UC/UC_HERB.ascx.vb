@@ -527,6 +527,16 @@
                 .PASSPORT_EXPDATE = CDate(RDP_PASSPORT_EXPDATE.SelectedDate)
             Catch ex As Exception
             End Try
+            Try
+                If cb_addr.Checked = True Then
+                    .addr_status = 1
+                Else
+                    .addr_status = 0
+                End If
+            Catch ex As Exception
+
+            End Try
+
             'cb_addr_CheckedChanged(1)
         End With
     End Sub

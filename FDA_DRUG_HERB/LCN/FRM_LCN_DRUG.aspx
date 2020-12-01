@@ -121,10 +121,10 @@
                                            <%--<td align="right">
                                                <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" CssClass="btn-lg" />&nbsp;&nbsp;
                                            </td>--%>
-                                           <td>
+                                          <%-- <td>
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
                                                
-                                           </td>
+                                           </td>--%>
                                            <td>
                                                <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอแบบใหม่" CssClass="btn-lg" />
                                            </td>

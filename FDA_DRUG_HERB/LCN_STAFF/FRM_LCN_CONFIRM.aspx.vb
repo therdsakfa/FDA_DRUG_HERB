@@ -51,7 +51,7 @@ Public Class WebForm35
 
                 Dim dao1 As New DAO_DRUG.ClsDBdalcn
                 dao1.GetDataby_IDA(_IDA)
-                If dao1.fields.STATUS_ID >= 8 Then
+                If dao1.fields.STATUS_ID >= 8 And dao1.fields.STATUS_ID <> 11 Then
                     BindData_PDF()
                 End If
             Catch ex As Exception
@@ -222,90 +222,7 @@ Public Class WebForm35
 
 
 
-        Dim dt_bsn As New DataTable
-        dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
-        For Each dr As DataRow In dt_bsn.Rows
-            'Try
-            '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
-            'Catch ex As Exception
 
-            'End Try
-            'Try
-            '    lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_ROOM.Text = dr("BSN_ROOM")
-            'Catch ex As Exception
-
-            'End Try
-            Try
-                lbl_BSN_AGE.Text = dr("AGE")
-            Catch ex As Exception
-
-            End Try
-            'Try
-            '    lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_FAX.Text = dr("BSN_FAX")
-            'Catch ex As Exception
-
-            'End Try
-            Try
-                lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
-            Catch ex As Exception
-
-            End Try
-            'Try
-            '    lbl_BSN_MOO.Text = dr("BSN_MOO")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_ROAD.Text = dr("BSN_ROAD")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_SOI.Text = dr("BSN_SOI")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_TEL.Text = dr("BSN_TEL")
-            'Catch ex As Exception
-
-            'End Try
-            Try
-                lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
-            Catch ex As Exception
-
-            End Try
-            'Try
-            '    lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_thachngwtnm.Text = dr("thachngwtnm")
-            'Catch ex As Exception
-
-            'End Try
-        Next
 
         Dim dt_lct As New DataTable
         dt_lct = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(_lct_ida)
@@ -422,6 +339,92 @@ Public Class WebForm35
 
 
     End Sub
+
+    Sub set_data_DALCN()
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_FK_IDA(_IDA)
+        'Try
+        '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
+        'Catch ex As Exception
+
+        'End Try
+        'Try
+        '    lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
+        'Catch ex As Exception
+
+        'End Try
+        'Try
+        '    lbl_BSN_ROOM.Text = dr("BSN_ROOM")
+        'Catch ex As Exception
+
+        'End Try
+        Try
+            lbl_BSN_AGE.Text = dao.fields.AGE
+        Catch ex As Exception
+
+            End Try
+            'Try
+            '    lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_FAX.Text = dr("BSN_FAX")
+            'Catch ex As Exception
+
+            'End Try
+            Try
+            lbl_BSN_IDENTIFY.Text = dao.fields.IDENTIFY
+        Catch ex As Exception
+
+            End Try
+            'Try
+            '    lbl_BSN_MOO.Text = dr("BSN_MOO")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_ROAD.Text = dr("BSN_ROAD")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_SOI.Text = dr("BSN_SOI")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_TEL.Text = dr("BSN_TEL")
+            'Catch ex As Exception
+
+            'End Try
+            Try
+            lbl_BSN_THAIFULLNAME.Text = dao.fields.BSN_THAIFULLNAME
+        Catch ex As Exception
+
+            End Try
+        'Try
+        '    lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
+        'Catch ex As Exception
+
+        'End Try
+        'Try
+        '    lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
+        'Catch ex As Exception
+
+        'End Try
+        'Try
+        '    lbl_thachngwtnm.Text = dr("thachngwtnm")
+        'Catch ex As Exception
+
+        'End Try
+    End Sub
+
     Sub setdata_current_data()
         Dim dao As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
         dao.GetData_By_FK_IDA(_IDA)

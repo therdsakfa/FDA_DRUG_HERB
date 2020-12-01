@@ -50,15 +50,6 @@ Partial Public Class FRM_LCN_DRUG
     Protected WithEvents txt_bsn As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btn_upload control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_upload As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btn_add control.
     '''</summary>
     '''<remarks>
