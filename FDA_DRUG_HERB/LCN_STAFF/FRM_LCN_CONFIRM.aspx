@@ -150,42 +150,63 @@
         <tr>
             <td rowspan="2" style="width:70%;">
             <div>
-                 <div>
-            <h3 style="text-align:center;">คำขอรับใบอนูญาต<br />
-             ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร<br /></h3>
-            <h4 style="text-align:center;"> คำขอใบอนุญาต
-               <center>
-                <asp:RadioButtonList ID="rdl_lcn_type" runat="server" Enabled="False">
+                 <div class ="row">
+               <div class ="col-md-12"  style="text-align:center;">
+                   <h1>
+                       คำขอรับใบอนูญาต
+                   </h1>
+               </div>
+           </div>
+   <div class ="row">
+               <div class = "col-md-12" style="text-align:center;">
+                   <label>
+                       ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร                     
+                   </label>
+               </div>
+
+           </div>
+
+           <div class ="row">
+               <div class = "col-md-12" style="text-align:center;">
+                   <label>
+                       คำขอใบอนุญาต                    
+                   </label>
+               </div>
+
+           </div>
+     <div class ="row">                            
+               <div class = "col-md-12" style="text-align:left"> <center>
+                   <asp:RadioButtonList ID="rdl_lcn_type" runat="server" Enabled="False">
                     <asp:ListItem Value="1">ผลิตผลิตภัณฆ์สมุนไพร</asp:ListItem>
                     <asp:ListItem Value="2">นำเข้าผลิตภัณฆ์สมุนไพร</asp:ListItem>
                     <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
-                </asp:RadioButtonList>
-                   &nbsp;</center>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-                <h4></h4>
-            </h4>
-        </div>
-   
-        <div>
+                </asp:RadioButtonList></center>
+               </div>
+               
+           </div>
+       <br />
+                <div>
             <center>
-                <table>
-                    <tr>
-                        <td>เลือก   </td>
-                        <td>
-                            <asp:RadioButtonList ID="rdl_sanchaat" runat="server" Enabled="False" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="1"> ไทย </asp:ListItem>
-                                <asp:ListItem Value="2"> ต่างด้าว </asp:ListItem>
-                            </asp:RadioButtonList>
-                        </td>
-                    </tr>
-                </table>                               
-             </center>                   
-            
+            <table>
+                <tr>
+                <td>
+                    เลือก &ensp;&ensp;
+                </td>
+                <td>
+                
+               <asp:RadioButtonList ID="rdl_sanchaat" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Enabled="False" >
+                        <asp:ListItem Value="1">&ensp;ไทย&ensp;</asp:ListItem>
+                        <asp:ListItem Value="2">&ensp;ต่างด้าว&ensp;</asp:ListItem>
+                    </asp:RadioButtonList> 
+               
+              
+                </td>
+             </tr>
+            </table>                                       
+            </center>
+
         </div>
-       <div></div>
+        <br />
         <div>
              <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
                  ๑. &ensp;ข้อมูลผู้ขออนุญาต</h4>

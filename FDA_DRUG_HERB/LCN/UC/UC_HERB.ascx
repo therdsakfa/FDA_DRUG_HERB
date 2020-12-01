@@ -66,13 +66,12 @@
            <div class ="row">
                <div class = "col-md-12" style="text-align:center;">
                    <label>
-                       ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร
-                      
+                       ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร                     
                    </label>
                </div>
 
            </div>
-           <br />
+
            <div class ="row">
                <div class = "col-md-12" style="text-align:center;">
                    <label>
@@ -81,19 +80,16 @@
                </div>
 
            </div>
-           <br />
-           <div class ="row">
-               <%--<div class="col-md-12" style="text-align:right">
-               </div>  --%>       
-               <center>
-               <div class = "col-md-12" style="text-align:center">
+ 
+           <div class ="row">                            
+               <div class = "col-md-12" style="text-align:left"> <center>
                    <asp:RadioButtonList ID="rdl_lcn_type" runat="server">
                     <asp:ListItem Value="1">ผลิตผลิตภัณฆ์สมุนไพร</asp:ListItem>
                     <asp:ListItem Value="2">นำเข้าผลิตภัณฆ์สมุนไพร</asp:ListItem>
                     <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
-                </asp:RadioButtonList>
+                </asp:RadioButtonList></center>
                </div>
-               </center>
+               
            </div>
        <br />
         <div>
@@ -101,7 +97,7 @@
             <table>
                 <tr>
                 <td>
-                    เลือก
+                    เลือก &ensp;&ensp;
                 </td>
                 <td>
                 

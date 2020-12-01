@@ -87,7 +87,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt_lcn As New DataTable
         dt_lcn = bao.SP_Lisense_Name_and_Addr(_iden) ' bao_show.SP_LOCATION_BSN_BY_LCN_IDA(_IDA) 'ผู้ดำเนิน
-        '
+
         For Each dr As DataRow In dt_lcn.Rows
             'Try
             '    txt_da_opentime.Text = dr("thaaddr")
@@ -194,8 +194,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
 
         Dim dt_bsn As New DataTable
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+        'dao.GetDataby_IDA(_IDA)
         dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
         For Each dr As DataRow In dt_bsn.Rows
+
             'Try
             '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
             'Catch ex As Exception
@@ -425,6 +428,8 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim bao_show As New BAO_SHOW
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt_bsn As New DataTable
+        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+        dao_lcn.GetDataby_IDA(_IDA)
         dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
 
         Dim dao_frgn As New DAO_DRUG.TB_DALCN_FRGN_DATA
@@ -467,11 +472,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 'Catch ex As Exception
 
                 'End Try
-                Try
-                    lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
-                Catch ex As Exception
+                'Try
+                '    lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
+                'Catch ex As Exception
 
-                End Try
+                'End Try
                 Try
                     lbl_c_thamu.Text = dr("BSN_MOO")
                 Catch ex As Exception
@@ -492,11 +497,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 'Catch ex As Exception
 
                 'End Try
-                Try
-                    lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
-                Catch ex As Exception
+                'Try
+                '    lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
+                'Catch ex As Exception
 
-                End Try
+                'End Try
                 Try
                     lbl_tambol.Text = dr("BSN_THMBL_NAME")
                 Catch ex As Exception
@@ -988,16 +993,16 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(FK_IDA) 'bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(FK_IDA) 'ข้อมูลสถานที่จำลอง
         'class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
-        If _ProcessID = 122 Then
-            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
-        ElseIf _ProcessID = 121 Then
-            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
-        ElseIf _ProcessID = 123 Then
-            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
-        End If
+        'If _ProcessID = 122 Then
+        '    class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA2(_IDA)
+        'ElseIf _ProcessID = 121 Then
+        class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
+            'ElseIf _ProcessID = 123 Then
+            '    class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA2(_IDA)
+            'End If
 
 
-        Dim tt As Integer = 0
+            Dim tt As Integer = 0
         If dao.fields.lcntpcd.Contains("ผ") Then
             tt = 1
         Else

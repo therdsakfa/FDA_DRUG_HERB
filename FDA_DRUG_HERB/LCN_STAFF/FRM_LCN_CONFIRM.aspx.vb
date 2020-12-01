@@ -73,7 +73,7 @@ Public Class WebForm35
 
             End Try
             Try
-               
+
                 Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
                 dao_up.GetDataby_IDA(dao.fields.TR_ID)
                 If dao_up.fields.PROCESS_ID = "106" Then
@@ -116,7 +116,7 @@ Public Class WebForm35
         Dim bao As New BAO.ClsDBSqlcommand
         Dim dt_lcn As New DataTable
         dt_lcn = bao.SP_Lisense_Name_and_Addr(_iden) ' bao_show.SP_LOCATION_BSN_BY_LCN_IDA(_IDA) 'ผู้ดำเนิน
-        '
+
         For Each dr As DataRow In dt_lcn.Rows
             'Try
             '    txt_da_opentime.Text = dr("thaaddr")
@@ -222,10 +222,96 @@ Public Class WebForm35
 
 
 
+        Dim dt_bsn As New DataTable
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+        'dao.GetDataby_IDA(_IDA)
+        dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
+        For Each dr As DataRow In dt_bsn.Rows
 
+            'Try
+            '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_ROOM.Text = dr("BSN_ROOM")
+            'Catch ex As Exception
+
+            'End Try
+            Try
+                lbl_BSN_AGE.Text = dr("AGE")
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_FAX.Text = dr("BSN_FAX")
+            'Catch ex As Exception
+
+            'End Try
+            Try
+                lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    lbl_BSN_MOO.Text = dr("BSN_MOO")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_ROAD.Text = dr("BSN_ROAD")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_SOI.Text = dr("BSN_SOI")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_TEL.Text = dr("BSN_TEL")
+            'Catch ex As Exception
+
+            'End Try
+            Try
+                lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
+            'Catch ex As Exception
+
+            'End Try
+            'Try
+            '    lbl_thachngwtnm.Text = dr("thachngwtnm")
+            'Catch ex As Exception
+
+            'End Try
+        Next
 
         Dim dt_lct As New DataTable
-        dt_lct = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(_lct_ida)
+        dt_lct = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(Request.QueryString("lct_ida"))
         For Each dr As DataRow In dt_lct.Rows
             Try
                 lbl_lct_HOUSENO.Text = dr("HOUSENO")
@@ -295,7 +381,7 @@ Public Class WebForm35
         Next
         Dim dt_lcp As New DataTable
         Dim dao_phr As New DAO_DRUG.ClsDBDALCN_PHR
-        dao_phr.GetDataby_IDA(_IDA)
+        dao_phr.GetDataby_FK_IDA(_IDA)
         Try
             lbl_PHR_NAME.Text = dao_phr.fields.PHR_NAME
         Catch ex As Exception
@@ -338,157 +424,6 @@ Public Class WebForm35
         End Try
 
 
-    End Sub
-
-    Sub set_data_DALCN()
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        dao.GetDataby_FK_IDA(_IDA)
-        'Try
-        '    lbl_BSN_ADDR.Text = dr("BSN_ADDR")
-        'Catch ex As Exception
-
-        'End Try
-        'Try
-        '    lbl_BSN_FLOOR.Text = dr("BSN_FLOOR")
-        'Catch ex As Exception
-
-        'End Try
-        'Try
-        '    lbl_BSN_ROOM.Text = dr("BSN_ROOM")
-        'Catch ex As Exception
-
-        'End Try
-        Try
-            lbl_BSN_AGE.Text = dao.fields.AGE
-        Catch ex As Exception
-
-            End Try
-            'Try
-            '    lbl_BSN_AMPHR_NAME.Text = dr("BSN_AMPHR_NAME")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_BUILDING.Text = dr("BSN_BUILDING")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_FAX.Text = dr("BSN_FAX")
-            'Catch ex As Exception
-
-            'End Try
-            Try
-            lbl_BSN_IDENTIFY.Text = dao.fields.IDENTIFY
-        Catch ex As Exception
-
-            End Try
-            'Try
-            '    lbl_BSN_MOO.Text = dr("BSN_MOO")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_ROAD.Text = dr("BSN_ROAD")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_SOI.Text = dr("BSN_SOI")
-            'Catch ex As Exception
-
-            'End Try
-            'Try
-            '    lbl_BSN_TEL.Text = dr("BSN_TEL")
-            'Catch ex As Exception
-
-            'End Try
-            Try
-            lbl_BSN_THAIFULLNAME.Text = dao.fields.BSN_THAIFULLNAME
-        Catch ex As Exception
-
-            End Try
-        'Try
-        '    lbl_BSN_THMBL_NAME.Text = dr("BSN_THMBL_NAME")
-        'Catch ex As Exception
-
-        'End Try
-        'Try
-        '    lbl_BSN_ZIPCODE.Text = dr("BSN_ZIPCODE")
-        'Catch ex As Exception
-
-        'End Try
-        'Try
-        '    lbl_thachngwtnm.Text = dr("thachngwtnm")
-        'Catch ex As Exception
-
-        'End Try
-    End Sub
-
-    Sub setdata_current_data()
-        Dim dao As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
-        dao.GetData_By_FK_IDA(_IDA)
-        Try
-            lbl_c_thaaddr.Text = dao.fields.thaaddr
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_floor.Text = dao.fields.thafloor
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_room.Text = dao.fields.tharoom
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_thabuilding.Text = dao.fields.thabuilding
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_thamu.Text = dao.fields.thamu
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_thasoi.Text = dao.fields.thasoi
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_tharoad.Text = dao.fields.tharoad
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_tambol.Text = dao.fields.thmblcd
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_amphor.Text = dao.fields.amphrcd
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_Province.Text = dao.fields.chngwtcd
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_zipcode.Text = dao.fields.zipcode
-        Catch ex As Exception
-
-        End Try
-        Try
-            lbl_c_email.Text = dao.fields.email
-        Catch ex As Exception
-
-        End Try
-
 
     End Sub
     Sub setdata_DALCN()
@@ -515,6 +450,221 @@ Public Class WebForm35
 
         End Try
     End Sub
+    Sub setdata_current_data()
+        Dim dao As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
+        dao.GetData_By_FK_IDA(_IDA)
+
+        Dim bao_show As New BAO_SHOW
+        Dim bao As New BAO.ClsDBSqlcommand
+        Dim dt_bsn As New DataTable
+        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+        dao_lcn.GetDataby_IDA(_IDA)
+        dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
+
+        Dim dao_frgn As New DAO_DRUG.TB_DALCN_FRGN_DATA
+        dao_frgn.GetDataby_FK_IDA(_IDA)
+        If dao_frgn.fields.addr_status Is Nothing Then
+            dt_bsn = bao_show.SP_LOCATION_BSN_BY_IDENTIFY(_iden)
+            For Each dr As DataRow In dt_bsn.Rows
+                Try
+                    lbl_c_thaaddr.Text = dr("BSN_ADDR")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_floor.Text = dr("BSN_FLOOR")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_room.Text = dr("BSN_ROOM")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_BSN_AGE.Text = dr("AGE")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_amphor.Text = dr("BSN_AMPHR_NAME")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_thabuilding.Text = dr("BSN_BUILDING")
+                Catch ex As Exception
+
+                End Try
+                'Try
+                '    txt_c_fax.Text = dr("BSN_FAX")
+                'Catch ex As Exception
+
+                'End Try
+                'Try
+                '    lbl_BSN_IDENTIFY.Text = dr("BSN_IDENTIFY")
+                'Catch ex As Exception
+
+                'End Try
+                Try
+                    lbl_c_thamu.Text = dr("BSN_MOO")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_tharoad.Text = dr("BSN_ROAD")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_thasoi.Text = dr("BSN_SOI")
+                Catch ex As Exception
+
+                End Try
+                'Try
+                '    txt_c_tel.Text = dr("BSN_TEL")
+                'Catch ex As Exception
+
+                'End Try
+                'Try
+                '    lbl_BSN_THAIFULLNAME.Text = dr("BSN_THAIFULLNAME")
+                'Catch ex As Exception
+
+                'End Try
+                Try
+                    lbl_tambol.Text = dr("BSN_THMBL_NAME")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_c_zipcode.Text = dr("BSN_ZIPCODE")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    lbl_Province.Text = dr("thachngwtnm")
+                Catch ex As Exception
+
+                End Try
+            Next
+
+
+        ElseIf dao_frgn.fields.addr_status IsNot Nothing Then
+
+            Try
+                lbl_c_thaaddr.Text = dao.fields.thaaddr
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_floor.Text = dao.fields.thafloor
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_room.Text = dao.fields.tharoom
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_thabuilding.Text = dao.fields.thabuilding
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_thamu.Text = dao.fields.thamu
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_thasoi.Text = dao.fields.thasoi
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_tharoad.Text = dao.fields.tharoad
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                lbl_c_zipcode.Text = dao.fields.zipcode
+            Catch ex As Exception
+
+            End Try
+            Try
+                lbl_c_email.Text = dao.fields.email
+            Catch ex As Exception
+
+            End Try
+            If dao.fields.thmblcd IsNot Nothing Then
+                Dim dao_thambol As New DAO_CPN.clsDBsysthmbl
+                dao_thambol.GetData_by_chngwtcd_amphrcd_thmblcd(dao.fields.chngwtcd, dao.fields.amphrcd, dao.fields.thmblcd)
+                Try
+                    lbl_tambol.Text = dao_thambol.fields.thathmblnm
+                Catch ex As Exception
+
+                End Try
+            ElseIf dao.fields.thmblcd Is Nothing Then
+                For Each dr As DataRow In dt_bsn.Rows
+                    Try
+                        lbl_tambol.Text = dr("BSN_THMBL_NAME")
+                    Catch ex As Exception
+
+                    End Try
+                Next
+
+            End If
+
+            If dao.fields.amphrcd IsNot Nothing Then
+                Dim dao_amper As New DAO_CPN.clsDBsysamphr
+                dao_amper.GetData_by_chngwtcd_amphrcd(dao.fields.chngwtcd, dao.fields.amphrcd)
+                Try
+                    lbl_amphor.Text = dao_amper.fields.thaamphrnm
+
+                Catch ex As Exception
+
+                End Try
+            ElseIf dao.fields.amphrcd Is Nothing Then
+                For Each dr As DataRow In dt_bsn.Rows
+                    Try
+                        lbl_amphor.Text = dr("BSN_AMPHR_NAME")
+                    Catch ex As Exception
+
+                    End Try
+                Next
+            End If
+
+            If dao.fields.chngwtcd IsNot Nothing Then
+                Dim dao_province As New DAO_CPN.clsDBsyschngwt
+                dao_province.GetData_by_chngwtcd(dao.fields.chngwtcd)
+                Try
+                    lbl_Province.Text = dao_province.fields.thachngwtnm
+                Catch ex As Exception
+
+                End Try
+            ElseIf dao.fields.chngwtcd Is Nothing Then
+                For Each dr As DataRow In dt_bsn.Rows
+                    Try
+                        lbl_Province.Text = dr("thachngwtnm")
+                    Catch ex As Exception
+
+                    End Try
+                Next
+            End If
+        End If
+
+
+
+
+
+    End Sub
+
+    'Sub setdata_systhmbl()
+    '    Dim dao As New DAO_CPN.clsDBsyschngwt
+    '    dao.GetData_by_chngwtcd()
+
+    'End Sub
     Sub setdata_frgn_data()
         Dim dao As New DAO_DRUG.TB_DALCN_FRGN_DATA
         dao.GetDataby_FK_IDA(_IDA)

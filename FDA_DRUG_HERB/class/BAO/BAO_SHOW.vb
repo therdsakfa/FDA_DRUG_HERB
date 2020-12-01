@@ -1330,6 +1330,20 @@ Public Class BAO_SHOW
         dt.TableName = "SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY"
         Return dt
     End Function
+    Public Function SP_LOCATION_BSN_BY_IDENTIFY_AND_SYSLCNSID(ByVal identify As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_BSN_BY_IDENTIFY_AND_SYSLCNSID  @iden= '" & identify & "'"
+        ' Dim sql As String = "exec SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY @lcnsid=" & "0" & " ,@identify=" & "0"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+        Catch ex As Exception
+
+        End Try
+
+        dt.TableName = "SP_LOCATION_BSN_BY_IDENTIFY_AND_SYSLCNSID"
+        Return dt
+    End Function
     '
     ''' <summary>
     ''' สถานที่จำลอง
