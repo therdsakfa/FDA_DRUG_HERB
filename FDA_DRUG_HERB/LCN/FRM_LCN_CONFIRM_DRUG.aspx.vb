@@ -988,7 +988,14 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_MUTI_LOCATION(FK_IDA) 'bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(FK_IDA) 'ข้อมูลสถานที่จำลอง
         'class_xml.DT_SHOW.DT9 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
-        class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
+        If _ProcessID = 122 Then
+            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
+        ElseIf _ProcessID = 121 Then
+            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
+        ElseIf _ProcessID = 123 Then
+            class_xml.DT_SHOW.DT24 = bao_show.SP_DRUG_GROUP_BY_LCN_IDA(_IDA)
+        End If
+
 
         Dim tt As Integer = 0
         If dao.fields.lcntpcd.Contains("ผ") Then

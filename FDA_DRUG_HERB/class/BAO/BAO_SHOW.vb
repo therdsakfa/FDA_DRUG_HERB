@@ -112,6 +112,13 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRUG_GROUP_BY_LCN_IDA"
         Return dta
     End Function
+    Public Function SP_DRUG_GROUP_BY_LCN_IDA2(ByVal lcn_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_DRUG_GROUP_BY_LCN_IDA2 @LCN_IDA=" & lcn_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DRUG_GROUP_BY_LCN_IDA2"
+        Return dta
+    End Function
     Public Function SP_DRUG_GROUP_LCN_HERB(ByVal lcn_ida As Integer, ByVal type_lcn As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB @lcn_ida= " & lcn_ida & " ,@type_lcn=" & type_lcn
