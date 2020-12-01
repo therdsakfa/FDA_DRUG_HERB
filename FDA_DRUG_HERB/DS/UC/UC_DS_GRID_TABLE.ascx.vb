@@ -67,12 +67,12 @@ Public Class UC_DS_GRID_TABLE
         Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
         dao_p.GetDataby_Process_ID(_process)
         'If dao_p.fields.PROCESS_DESCRIPTION.Contains("DEMO") Then
-        '    hl_pay.NavigateUrl = "https://platba.fda.moph.go.th/FDA_FEE_DEMO/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+        '    hl_pay.NavigateUrl = "https://platba.fda.moph.go.th/FDA_FEE_DEMO/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
         '    If Request.QueryString("staff") <> "" Then
         '        hl_pay.NavigateUrl &= "&staff=1&identify=" & Request.QueryString("identify")
         '    End If
         'Else
-        hl_pay.NavigateUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+        hl_pay.NavigateUrl = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
             If Request.QueryString("staff") <> "" Then
                 hl_pay.NavigateUrl &= "&staff=1&identify=" & Request.QueryString("identify")
             End If

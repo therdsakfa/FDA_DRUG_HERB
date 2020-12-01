@@ -520,12 +520,12 @@ Public Class TABEAN_YA_MAIN
         dao_p.GetDataby_Process_ID(_process)
         Try
             If dao_p.fields.PROCESS_DESCRIPTION.Contains("DEMO") Then
-                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE_DEMO/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE_DEMO/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
                 If Request.QueryString("staff") = 1 Then
                     hl_pay.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
                 End If
             Else
-                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug"
+                hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
                 If Request.QueryString("staff") = 1 Then
                     hl_pay.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
                 End If

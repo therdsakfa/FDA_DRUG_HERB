@@ -57,7 +57,7 @@ Public Class FRM_LCN_DRUG
         If Request.QueryString("staff") <> "" Then
             urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=staffdrug"
         Else
-            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=drug"
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=herb"
         End If
 
         hl_pay.NavigateUrl = urls
