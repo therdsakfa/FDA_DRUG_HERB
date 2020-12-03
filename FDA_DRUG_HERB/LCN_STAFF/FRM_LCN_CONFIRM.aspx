@@ -149,7 +149,9 @@
     <table style="width:100%;height:500px;">
         <tr>
             <td rowspan="2" style="width:70%;">
-            <div>
+             <div style="border:groove;border-color:gainsboro;" >
+                <asp:Panel ID="Panel1" runat="server">
+                <form name="form" method="post" align="center;" id="smp1">
                  <div class ="row">
                <div class ="col-md-12"  style="text-align:center;">
                    <h1>

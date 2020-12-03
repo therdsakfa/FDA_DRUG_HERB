@@ -79,7 +79,7 @@
             <td rowspan="2" style="width:70%;">
 
                 <%--<uc1:UC_CONFIRM ID="UC_CONFIRM1" runat="server" />--%>
-                <div>
+    
      <style type="text/css">
     .auto-style3 {
         width: 85px;
@@ -98,9 +98,6 @@
         width: 261px;
         height: 35px;
     }
-    .auto-style8 {
-        height: 35px;
-    }
     .auto-style9 {
         width: 185px;
         height: 35px;
@@ -114,18 +111,11 @@
     }
     .auto-style14 {
         width: 85px;
-        height: 29px;
-    }
-    .auto-style15 {
-        height: 29px;
+        height: 30px;
     }
     .auto-style16 {
-        width: 261px;
-        height: 29px;
-    }
-    .auto-style17 {
-        width: 185px;
-        height: 29px;
+        width: 260px;
+        height: 30px;
     }
         .auto-style2 {
         width: 41px;
@@ -134,9 +124,10 @@
     .auto-style3 {
         height: 30px;
     }
-</style>
+  
+     </style>
 
-            <div style="border:groove;border-color:gainsboro;">
+            <div style="border:groove;border-color:gainsboro;" >
                 <asp:Panel ID="Panel1" runat="server">
 <form name="form" method="post" align="center;" id="smp1">
 
@@ -207,110 +198,110 @@
                     <td class="auto-style7">
                         ข้าพเจ้า (ชื่อบุคคล/นิติบุคคล)
                     </td>
-                    <td class="auto-style8">
+                    <td class="auto-style18">
                         <asp:Label ID="lbl_lcn_name" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
-                    <td class="auto-style8">               
+                    <td class="auto-style18">               
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         อายุ </td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_ages" runat="server" Text=""></asp:Label> ปี
                     </td>
                     <td class="auto-style5">สัญชาติ&ensp;</td>
-                    <td><asp:Label ID="lbl_lcn_nation" runat="server" Text=""></asp:Label></td>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_nation" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         เลขประจำตัวประชาชน </td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_iden" runat="server" EnableTheming="True" Width="80%"></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         หรือเลขทะเบียนนิติบุคคล</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_iden2" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         ที่อยู่เลขที่</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_addr" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">ชั้นที่</td>
-                    <td><asp:Label ID="lbl_lcn_floor" runat="server" Text=""></asp:Label></td>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_floor" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style14">
                     </td>
-                    <td class="auto-style15">
+                    <td class="auto-style16">
                         ห้องเลขที่
                     </td>
-                    <td class="auto-style15">
+                    <td class="auto-style20">
                         <asp:Label ID="lbl_lcn_room" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style16">
                         หมู่บ้าน/อาคาร</td>
-                    <td class="auto-style15">
+                    <td class="auto-style20">
                         <asp:Label ID="lbl_lcn_building" runat="server" Text=""></asp:Label>
                     </td>
                     
                 </tr>
                 <tr>
                     <td></td>
-                    <td class="auto-style17">หมู่ที่</td>
-                    <td class="auto-style15"><asp:Label ID="lbl_lcn_mu" runat="server" Text=""></asp:Label>
+                    <td class="auto-style16">หมู่ที่</td>
+                    <td class="auto-style20"><asp:Label ID="lbl_lcn_mu" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style4">
                          ตรอก/ซอย</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_soi" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>                                     
-                    <td class="auto-style5">ถนน </td>
-                    <td><asp:Label ID="lbl_lcn_road" runat="server" Text=""></asp:Label></td>
+                    <td class="auto-style4">ถนน </td>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_road" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         ตำบล/แขวง </td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_tambol" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">อำเภอ/เขต</td>
-                    <td><asp:Label ID="lbl_lcn_amphor" runat="server" Text=""></asp:Label></td>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_amphor" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                     </td>
                     <td class="auto-style4">
                         จังหวัด</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_changwat" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">รหัสไปรษณีย์</td>
-                    <td><asp:Label ID="lbl_lcn_zipcode" runat="server" Text=""></asp:Label>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_zipcode" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -318,11 +309,11 @@
                     </td>
                     <td class="auto-style4">
                         โทรสาร</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_fax" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">&nbsp;โทรศัพท์ </td>
-                    <td><asp:Label ID="lbl_lcn_tel" runat="server" Text=""></asp:Label>
+                    <td class="auto-style19"><asp:Label ID="lbl_lcn_tel" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -330,11 +321,11 @@
                     </td>
                     <td class="auto-style4">
                         E-mail </td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_lcn_email" runat="server" Text=""></asp:Label>
                     </td>
                     <td class="auto-style5">เวลาทำการรวมของร้าน&nbsp;</td>
-                    <td>
+                    <td class="auto-style19">
                         <asp:Label ID="lbl_da_opentime" runat="server"></asp:Label>
                     </td>
                 </tr>
@@ -356,37 +347,37 @@
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" Enabled="False"/></td>
+                   <td class="auto-style21"><asp:CheckBox ID="cb_Personal_Type1" text ="บุคคลธรรมดา " runat="server" Enabled="False"/></td>
                    <td></td>
-                   <td></td>
+                   <td class="auto-style22"></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td>หนังสือเดินทางเลขที่</td>
+                   <td class="auto-style21">หนังสือเดินทางเลขที่</td>
                    <td><asp:Label ID="lbl_PASSPORT_NO" runat="server"></asp:Label>
                    </td>
-                   <td>วันหมดอายุ</td>
+                   <td class="auto-style22">วันหมดอายุ</td>
                    <td>
                        <asp:Label ID="lbl_PASSPORT_EXPDATE" runat="server" Text=""></asp:Label>
                    </td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td>ใบสำคัญที่อยู่เลขที่</td>
+                   <td class="auto-style21">ใบสำคัญที่อยู่เลขที่</td>
                    <td><asp:Label ID="lbl_DOC_NO" runat="server"></asp:Label>
                    </td>
-                   <td>ออกให้ ณ วันที่</td>
+                   <td class="auto-style22">ออกให้ ณ วันที่</td>
                    <td>
                        <asp:Label ID="lbl_DOC_DATE" runat="server" Text=""></asp:Label>
                    </td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td>ใบอนุญาตทำงานเลขที่</td>
+                   <td class="auto-style21">ใบอนุญาตทำงานเลขที่</td>
                    <td><asp:label ID="lbl_WORK_LICENSE_NO" runat="server"></asp:label>
                    </td>
-                   <td>วันหมดอายุ</td>
+                   <td class="auto-style22">วันหมดอายุ</td>
                    <td>
                        <asp:Label ID="lbl_WORK_LICENSE_EXPDATE" runat="server" Text=""></asp:Label>
                    </td>
@@ -397,10 +388,10 @@
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td>เลขที่</td>
+                   <td class="auto-style21">เลขที่</td>
                    <td><asp:label ID="lbl_BS_NO" runat="server"></asp:label>
                    </td>
-                   <td>ออกให้ ณ วันที่</td>
+                   <td class="auto-style22">ออกให้ ณ วันที่</td>
                    <td>
                        <asp:Label ID="lbl_BS_DATE" runat="server" Text=""></asp:Label>
                    </td>
@@ -408,16 +399,16 @@
                <tr>
                    <td class="auto-style3"></td>
                    <td colspan="2">หรือหนังสือรับรองตามกฎหมายว่าด้วยการประกอบธุรกิจของคนต่างด้าวเลขที่</td>
-                   <td><asp:Label ID="lbl_FRGN_NO" runat="server"></asp:Label></td>
+                   <td class="auto-style22"><asp:Label ID="lbl_FRGN_NO" runat="server"></asp:Label></td>
                    <td>&nbsp;</td>
                </tr>
                <tr>
                    <td class="auto-style3"></td>
-                   <td>ออกให้ ณ วันที่</td>
+                   <td class="auto-style21">ออกให้ ณ วันที่</td>
                    <td>
                        <asp:Label ID="lbl_FRGN_DATE" runat="server" Text=""></asp:Label>
                    </td>
-                   <td>&nbsp;</td>
+                   <td class="auto-style22">&nbsp;</td>
                    <td>&nbsp;</td>
                </tr>
              </table>

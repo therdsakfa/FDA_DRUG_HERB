@@ -53,6 +53,9 @@ Public Class WebForm35
                 dao1.GetDataby_IDA(_IDA)
                 If dao1.fields.STATUS_ID >= 8 And dao1.fields.STATUS_ID <> 11 Then
                     BindData_PDF()
+                    Panel1.Style.Add("display", "none")
+                Else
+                    Panel1.Style.Add("display", "block")
                 End If
             Catch ex As Exception
                 Response.Redirect("https://privus.fda.moph.go.th/")

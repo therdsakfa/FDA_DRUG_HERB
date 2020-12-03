@@ -41,6 +41,15 @@ Partial Public Class WebForm35
     Protected WithEvents HiddenField2 As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''rdl_lcn_type control.
     '''</summary>
     '''<remarks>

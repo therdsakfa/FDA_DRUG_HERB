@@ -8,6 +8,14 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            font-size: 18px;
+            line-height: 1.33;
+            border-radius: 6px;
+            padding: 10px 16px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -110,14 +118,17 @@
      <div class="panel" style="text-align:left ;width:100%">
          <div class="panel-heading panel-title" style="height:70px" > 
             
-             <div  class="col-lg-3 col-md-3"><h4> ใบอนุญาต<asp:Label ID="lbl_name_2" runat="server"  Text=""></asp:Label><asp:Label ID="lbl_name" runat="server"  Text=""></asp:Label> </h4> </div>
-                          <div  class="col-lg-9 col-md-9">
-                               <p style="text-align:right;padding-right:3%;">
-                                   <table width="100%">
-                                       <tr>
-                                           <td>เลขบัตรผู้ดำเนินฯ</td>
-                                           <td><asp:TextBox ID="txt_bsn" runat="server"></asp:TextBox>
-                                           </td>
+             <div  class="col-lg-3 col-md-3"><h4> ใบอนุญาต<asp:Label ID="lbl_name_2" runat="server"  Text=""></asp:Label><asp:Label ID="lbl_name" runat="server"  Text="">
+              </asp:Label> </h4> </div>
+             <div class="col-lg-3 col-md-3" style="margin-top:10px">
+                 <p style="text-align:right;padding-right:3%;">
+                    เลขบัตรผู้ดำเนินฯ
+                 </p>
+             </div>
+           
+             <div class="col-lg-3 col-md-3" style="margin-top:10px" >    
+                  <asp:TextBox ID="txt_bsn" runat="server"></asp:TextBox>
+              </div>                          
                                            <%--<td align="right">
                                                <asp:Button ID="btn_download" runat="server" Text="ดาวน์โหลดคำขอ" CssClass="btn-lg" />&nbsp;&nbsp;
                                            </td>--%>
@@ -125,15 +136,12 @@
                                                <asp:Button ID="btn_upload" runat="server" Text="อัพโหลดคำขอ" CssClass="btn-lg" />
                                                
                                            </td>--%>
-                                           <td>
-                                               <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอแบบใหม่" CssClass="btn-lg" />
-                                           </td>
-                                       </tr>
-                                   </table>
-                                     <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
-                                     <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />
-        </p>
-                          </div>
+             <div class="col-lg-3 col-md-3">
+                 <asp:Button ID="btn_add" runat="server" Text="เพิ่มคำขอแบบใหม่" CssClass="auto-style1" Height="45px" Width="200px" />                              
+                 <asp:Button ID="btn_reload" runat="server" Text="" style="display:none;"  />
+                 <asp:Button ID="Button1" runat="server" Text="" style="display:none;"  />
+     
+             </div>
 
          </div>
     
