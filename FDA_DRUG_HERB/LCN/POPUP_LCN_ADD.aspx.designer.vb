@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class POPUP_LCN_ADD
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''UC_HERB control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_HERB As Global.FDA_DRUG_HERB.UC_HERB
-    
+
     '''<summary>
     '''btn_save control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''Panel1 control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''UC_HERB_KEEP control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents UC_HERB_KEEP As Global.FDA_DRUG_HERB.UC_HERB_KEEP
-    
+
     '''<summary>
     '''Panel2 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class POPUP_LCN_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
-    
+
     '''<summary>
     '''UC_HERB_PHESAJ control.
     '''</summary>

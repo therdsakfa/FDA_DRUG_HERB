@@ -12,7 +12,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <uc1:UC_HERB runat="server" ID="UC_HERB" /> 
-                                               <asp:Button ID="btn_save" runat="server" Text="บันทึกข้อมูลส่วนที่ 1" CssClass="btn-lg" OnClientClick="confirm('ต้องการบันทึกหรือไม่');" />
+                                               <asp:Button ID="btn_save" runat="server" Text="บันทึกข้อมูลส่วนที่ 1" CssClass="btn-lg" OnClientClick="confirm('ต้องการบันทึกหรือไม่');" /> 
                                                <br />
     <br />
     <br />

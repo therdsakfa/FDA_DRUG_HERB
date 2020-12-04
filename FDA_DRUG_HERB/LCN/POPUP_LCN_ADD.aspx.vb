@@ -23,7 +23,7 @@
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
     End Sub
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         RunSession()
 
@@ -48,7 +48,7 @@
         End If
     End Sub
 
-    Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If Request.QueryString("ida") = "" Then
             Dim IDA As Integer = 0
             Dim bao As New BAO.AppSettings
@@ -95,5 +95,53 @@
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&ida=" & IDA)
         End If
 
+    End Sub
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Request.QueryString("lct_ida") = "" Then
+            Dim IDA As Integer = 0
+            Dim bao As New BAO.AppSettings
+            bao.RunAppSettings()
+
+
+            Dim TR_ID As String = ""
+            Dim bao_tran As New BAO_TRANSECTION
+            bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
+            bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
+
+            TR_ID = bao_tran.insert_transection(_ProcessID)
+            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+            UC_HERB.setdata(dao_dal, TR_ID)
+            dao_dal.fields.STATUS_ID = 1
+            dao_dal.fields.PROCESS_ID = Request.QueryString("process")
+            dao_dal.fields.REVOCATION = "999"
+            dao_dal.fields.lcnno = 0
+            dao_dal.fields.rcvno = 0
+            Try
+                dao_dal.fields.lcnsid = _CLS.LCNSID_CUSTOMER
+            Catch ex As Exception
+                dao_dal.fields.lcnsid = 0
+            End Try
+
+            dao_dal.insert()
+            IDA = dao_dal.fields.IDA
+
+            Dim dao_frgn As New DAO_DRUG.TB_DALCN_FRGN_DATA
+            UC_HERB.setdata_frgn_data(dao_frgn)
+            dao_frgn.fields.FK_IDA = dao_dal.fields.IDA
+            dao_frgn.insert()
+
+            Dim dao_curent As New DAO_DRUG.TB_DALCN_CURRENT_ADDRESS
+            UC_HERB.set_date_current_addr(dao_curent)
+            dao_curent.fields.FK_IDA = dao_dal.fields.IDA
+            dao_curent.insert()
+
+
+            UC_HERB.insert_bsn(IDA)
+
+
+            'Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
+            Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&ida=" & IDA)
+        End If
     End Sub
 End Class

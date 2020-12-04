@@ -624,10 +624,12 @@
     <Content Include="DESIGN\Scripts\dataTables.bootstrap.js" />
     <Content Include="DESIGN\Scripts\jquery-1.4.2.min.js" />
     <Content Include="DESIGN\Scripts\jquery-1.7.2.js" />
+    <Content Include="LCN\POPUP_LCN_ADD_2.aspx" />
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
     <Content Include="LCN\POPUP_LCN_ADD.aspx" />
+    <Content Include="LCN\POPUP_LCN_ADD_3.aspx" />
     <Content Include="LCN\POPUP_LCN_DRUG_GROUP_HERB.aspx" />
     <Content Include="LCN\UC\UC_HERB.ascx" />
     <Content Include="LCN\UC\UC_HERB_KEEP.ascx" />
@@ -3802,6 +3804,13 @@
       <DependentUpon>POPUP_EDIT_COUNT_LIST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD_2.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_ADD_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD_2.aspx.vb">
+      <DependentUpon>POPUP_LCN_ADD_2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EDIT_LOCATION_STAFF\POPUP_PHR_HISTORY.aspx.designer.vb">
       <DependentUpon>POPUP_PHR_HISTORY.aspx</DependentUpon>
     </Compile>
@@ -4724,6 +4733,13 @@
     </Compile>
     <Compile Include="LCN\POPUP_LCN_ADD.aspx.vb">
       <DependentUpon>POPUP_LCN_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD_3.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_ADD_3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\POPUP_LCN_ADD_3.aspx.vb">
+      <DependentUpon>POPUP_LCN_ADD_3.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN\POPUP_LCN_DOWNLOAD_DRUG.aspx.designer.vb">
