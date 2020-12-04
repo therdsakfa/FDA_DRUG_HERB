@@ -113,12 +113,8 @@
             </center>
 
         </div>
-        <br />
-       
+       <br /> 
        <br />
-    
-        
-          
 
        <div>
              <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
@@ -845,8 +841,7 @@
                    <td><asp:Label ID="Label59" runat="server" Text=""></asp:Label>
                    </td><td>&nbsp;</td><td>&nbsp;</td>
                </tr>
-           </table>
-           <div></div>         
+           </table>     
        </div>
 
        
