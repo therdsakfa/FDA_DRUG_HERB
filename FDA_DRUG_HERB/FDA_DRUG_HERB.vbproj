@@ -634,6 +634,11 @@
     <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
     <Content Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
+    <Content Include="Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="Microsoft.ReportViewer.WebForms.xml" />
     <Content Include="PDF.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
     <Content Include="TERM_TO_USE\FRM_TERM_TO_USE_MAIN.aspx" />
