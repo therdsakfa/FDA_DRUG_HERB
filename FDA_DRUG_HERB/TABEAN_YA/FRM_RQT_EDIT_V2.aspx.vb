@@ -420,7 +420,7 @@ Public Class FRM_RQT_EDIT_V2
         Dim urls As String = ""
         Try
             _CLS.CITIZEN_ID_AUTHORIZE = dao.fields.CITIZEN_ID_AUTHORIZE
-            urls = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug&identify=" & dao.fields.CITIZEN_ID_AUTHORIZE
+            urls = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & dao.fields.CITIZEN_ID_AUTHORIZE
             Session("CLS") = _CLS
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('" & urls & "'); ", True)
 
