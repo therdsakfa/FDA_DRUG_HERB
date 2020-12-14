@@ -20,7 +20,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        
-   <script type="text/javascript" >
+    <script type="text/javascript" >
        $(document).ready(function () {
            $(window).load(function () {
                $.ajax({
@@ -77,8 +77,7 @@
            alert('Download Success');
            Loaddata();
        }
-        </script> 
-     <style type="text/css">
+        </script><style type="text/css">
     .auto-style3 {
         width: 85px;
     }
@@ -132,8 +131,7 @@
     .auto-style3 {
         height: 30px;
     }
-</style>
-  <div id="spinner" style=" background-color:transparent;display:none; " >
+</style><div id="spinner" style=" background-color:transparent;display:none; " >
   <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
                 
 </div>
