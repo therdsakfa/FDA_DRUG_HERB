@@ -55,7 +55,7 @@ Public Class FRM_LCN_DRUG
     Private Sub load_HL()
         Dim urls As String = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN
         If Request.QueryString("staff") <> "" Then
-            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=staffdrug"
+            urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=staffherb"
         Else
             urls &= "&staff=1&identify=" & Request.QueryString("identify") & "&system=herb"
         End If

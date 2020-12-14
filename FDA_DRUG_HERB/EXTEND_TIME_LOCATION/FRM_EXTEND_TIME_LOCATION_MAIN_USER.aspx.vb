@@ -167,7 +167,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
 
         'hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb"
         If Request.QueryString("staff") <> "" Then
-            hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug&identify=" & _identify
+            hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & _identify
             'hl_pay.NavigateUrl &= "&staff=1&identify=" & Request.QueryString("identify")
         Else
             hl_pay.NavigateUrl = "https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=drug&identify=" & _identify
@@ -489,7 +489,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN_USER
         ElseIf e.CommandName = "_pay" Then
 
             If _staff <> "" Then
-                Response.Write("<script>window.open ('https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffdrug&identify=" & _identify & "','_blank');</script>")
+                Response.Write("<script>window.open ('https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & _identify & "','_blank');</script>")
             Else
                 Response.Write("<script>window.open ('https://platba.FDA.MOPH.GO.TH/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=herb" & "','_blank');</script>")
             End If
