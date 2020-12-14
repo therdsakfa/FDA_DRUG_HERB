@@ -10,9 +10,9 @@ Public Class UC_PHR_ADD
         End If
     End Sub
     Sub bind_lcn_type()
-        Dim dao As New DAO_DRUG.ClsDBdaphrcd
+        Dim dao As New DAO_DRUG.TB_MAS_TYPE_PHR_HERB
         Try
-            dao.GetData_by_phrcd(ddl_worker_type.SelectedValue)
+            dao.GetData_by_TYPE_ID(ddl_worker_type.SelectedValue)
             'lbl_lcn_type.Text = dao.fields.lcndtlnm
         Catch ex As Exception
 

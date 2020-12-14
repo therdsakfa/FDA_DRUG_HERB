@@ -14136,6 +14136,11 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetData_by_TYPE_ID(ByVal TYPE_ID As Integer)
+            datas = (From p In db.MAS_TYPE_PHR_HERBs Where p.TYPE_ID = TYPE_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
 
     Public Class TB_DALCN_CURRENT_ADDRESS
