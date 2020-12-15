@@ -119,20 +119,28 @@ Public Class POPUP_DR_UPLOAD
 
         If Request.QueryString("tt") <> "" Then
             If Request.QueryString("tt") = "2" Then
-                If cb_herbal.Checked = True Then
-                    If ddl_yor8.SelectedValue <> "0" Then
-                        If CHK_ATTACH_PDF() = 0 Then
-                            upload_a()
+                If FileUpload1.HasFile Then
+                    If cb_herbal.Checked = True Then
+                        If ddl_yor8.SelectedValue <> "0" Then
+                            If CHK_ATTACH_PDF() = 0 Then
+                                If CHK_ATTACH_PDF_file() = 5 Then
+                                    upload_a()
+                                Else
+                                    Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาแนบไฟล์แนบในรูปแบบ PDF');</script> ")
+                                End If
+                            Else
+                                Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาแนบไฟล์ในรูปแบบ PDF');</script> ")
+                            End If
+
                         Else
-                            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาแนบไฟล์ในรูปแบบ PDF');</script> ")
+                            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาเลือกเลขดำเนินการ ยบ.8/ชื่อผลิตภัณฑ์');</script> ")
                         End If
 
                     Else
-                        Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาเลือกเลขดำเนินการ ยบ.8/ชื่อผลิตภัณฑ์');</script> ")
+                        Response.Write("<script type='text/javascript'>window.parent.alert('ท่านยังไม่ได้คลิกยืนยันเงื่อนไข');</script> ")
                     End If
-
                 Else
-                    Response.Write("<script type='text/javascript'>window.parent.alert('ท่านยังไม่ได้คลิกยืนยันเงื่อนไข');</script> ")
+                    Response.Write("<script type='text/javascript'>window.parent.alert('กรุณาแนบไฟล์ในรูปแบบ PDF');</script> ")
                 End If
             ElseIf Request.QueryString("tt") = "1" Then
                 If CHK_ATTACH_PDF() = 0 Then
@@ -157,6 +165,15 @@ Public Class POPUP_DR_UPLOAD
         i += uc_upload_5.CHK_Extension()
         i += uc_upload_6.CHK_Extension()
         i += uc_upload_8.CHK_Extension()
+        Return i
+    End Function
+    Function CHK_ATTACH_PDF_file() As Integer
+        Dim i As Integer = 0
+        i += uc_upload_1.CHK_upload_file()
+        i += uc_upload_2.CHK_upload_file()
+        i += uc_upload_5.CHK_upload_file()
+        i += uc_upload_6.CHK_upload_file()
+        i += uc_upload_8.CHK_upload_file()
         Return i
     End Function
     Sub upload_a()

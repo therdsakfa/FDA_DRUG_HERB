@@ -1298,7 +1298,11 @@ Public Class WebForm35
         Else
             tt = 2
         End If
-        class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN_HERB(_IDA, tt)
+        If tt = 1 Then
+            class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN_HERB(_IDA, tt)
+        Else
+            class_xml.DT_SHOW.DT19 = bao_show.SP_DRUG_GROUP_LCN_HERB2(_IDA, tt)
+        End If
 
         Dim dt9 As New DataTable
 

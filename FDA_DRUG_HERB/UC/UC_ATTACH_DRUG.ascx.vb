@@ -52,6 +52,14 @@
         End If
         Return i
     End Function
+    Function CHK_upload_file() As Integer
+        Dim aa As String = System.IO.Path.GetExtension(FileUpload1.FileName)
+        Dim i As Integer = 0
+        If FileUpload1.HasFile Then
+            i += 1
+        End If
+        Return i
+    End Function
     Sub ATTACH1(ByVal transection As String, ByVal PROCESS_ID As String, ByVal year As String, ByVal type As String) 'ปรับ เพิ่มtype
         If FileUpload1.HasFile Then 'เช็คว่ามีการเบราไฟล์แล้ว
             Dim bao As New BAO.AppSettings
