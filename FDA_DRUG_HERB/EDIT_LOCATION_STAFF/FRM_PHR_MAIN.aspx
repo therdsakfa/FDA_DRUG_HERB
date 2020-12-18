@@ -8,7 +8,6 @@
     <script type="text/javascript" >
 
 
-
         $(document).ready(function () {
 
 
@@ -54,7 +53,7 @@
             $('#spinner').fadeOut('slow');
             $('#ContentPlaceHolder1_Button1').click();
         }
-        </script> 
+    </script> 
     <div id="spinner" style="background-color: transparent;display:none;">
         <img src="../imgs/spinner.gif" alt="Loading" style="position: absolute; top: 120px; left: 293px; height: 185px; width: 207px;" />
     </div>
