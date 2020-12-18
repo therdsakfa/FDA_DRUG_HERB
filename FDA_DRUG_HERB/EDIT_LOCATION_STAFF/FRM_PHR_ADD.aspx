@@ -13,6 +13,8 @@
          </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div class="panel" style="width:100%">
 
         <div class="panel-heading panel-title">

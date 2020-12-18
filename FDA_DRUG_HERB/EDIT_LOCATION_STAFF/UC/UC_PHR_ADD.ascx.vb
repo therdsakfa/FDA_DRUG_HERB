@@ -167,15 +167,35 @@ Public Class UC_PHR_ADD
             'Catch ex As Exception
 
             'End Try
-            Try
-                .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
-            Catch ex As Exception
+            'Try
+            '    .SIMINAR_DATE = rdp_SIMINAR_DATE.SelectedDate
+            'Catch ex As Exception
 
-            End Try
+            'End Try
 
             rgns.DataBind()
 
         End With
+    End Sub
+    Private Sub get_data_siminar(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR_TRAINING)
+        With dao.fields
+            Try
+                txt_NAME_SIMINAR.Text = .NAME_SIMINAR
+            Catch ex As Exception
+
+            End Try
+            'Try
+            '    .PHR_MEDICAL_TYPE = ddl_PHR_MEDICAL_TYPE.SelectedValue
+            'Catch ex As Exception
+
+            'End Try
+            Try
+                rdp_SIMINAR_DATE.SelectedDate = .SIMINAR_DATE
+            Catch ex As Exception
+
+            End Try
+        End With
+
     End Sub
     Public Sub set_data_his(ByRef dao_hs As DAO_DRUG.TB_DALCN_PHR_HISTORY, dao As DAO_DRUG.ClsDBDALCN_PHR)
         With dao_hs.fields

@@ -33,8 +33,23 @@
         'Dim dao_hs As New DAO_DRUG.TB_DALCN_PHR_HISTORY
         'UC_PHR_ADD1.set_data_his(dao_hs, dao)
         UC_PHR_ADD1.set_data(dao)
-
         dao.update()
+
+        Dim List_DALCN As New List(Of DALCN_PHR_TRAINING)
+        List_DALCN = Session("Lst_DALCN")
+        Dim a As String = ""
+        Dim c_num As Integer = List_DALCN.Count
+        For Each item In List_DALCN
+            Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+            dao_drug.GetDataby_IDA(item.IDA)
+            dao_drug.fields.NAME_SIMINAR = item.NAME_SIMINAR
+            dao_drug.fields.SIMINAR_DATE = item.SIMINAR_DATE
+            dao_drug.fields.FK_IDA = dao.fields.FK_IDA
+            dao_drug.fields.phr_IDA = dao.fields.PHR_IDA
+            dao_drug.update()
+        Next
+        UC_PHR_ADD1.Clear()
+
         'dao_hs.insert()
         Try
             Dim ws_update As New WS_DRUG.WS_DRUG
@@ -45,5 +60,9 @@
 
 
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('แก้ไขเรียบร้อย');parent.close_modal();", True)
+    End Sub
+    Protected Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
+        UC_PHR_ADD1.Clear()
+        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
     End Sub
 End Class
