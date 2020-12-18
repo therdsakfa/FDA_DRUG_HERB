@@ -79,8 +79,8 @@ Module Cls_untility
     ''' <param name="year"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Function con_year(year) As String
-        Dim int_year As Integer = Integer.Parse(year)
+    Function con_year(ByVal _year As String)
+        Dim int_year As Integer = Convert.ToInt32(_year)
         If int_year <= 2500 Then
             int_year += 543
         End If

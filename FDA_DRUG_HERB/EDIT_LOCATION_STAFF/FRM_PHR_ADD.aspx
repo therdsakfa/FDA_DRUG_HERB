@@ -18,7 +18,7 @@
     <div class="panel" style="width:100%">
 
         <div class="panel-heading panel-title">
-                <h1>ข้อมูลผู้ปฏิบัติงาน</h1>
+                <h1>ข้อมูลผู้ปฏิบัติงาน</h1>   
             </div>
     <table style="width:100%;" class="table">
         <tr>
