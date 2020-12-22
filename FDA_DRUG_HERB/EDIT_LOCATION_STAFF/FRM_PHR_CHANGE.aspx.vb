@@ -82,7 +82,7 @@
 
 
         End With
-        dao_hs.insert()
+        dao_hs.update()
 
         Run_Service_LCN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
