@@ -17,6 +17,10 @@
         RunSession()
         If Not IsPostBack Then
             UC_PHR_ADD1.bind_ddl_prefix()
+            UC_PHR_ADD1.bind_ddl_job()
+            UC_PHR_ADD1.bind_ddl_work_type()
+            UC_PHR_ADD1.bind_ddl_job()
+            UC_PHR_ADD1.set_data_sakha()
             Try
                 Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
                 dao.GetDataby_IDA(Request.QueryString("ida"))
