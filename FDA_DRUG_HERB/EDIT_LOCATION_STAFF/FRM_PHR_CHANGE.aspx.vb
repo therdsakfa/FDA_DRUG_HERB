@@ -23,7 +23,7 @@
             UC_PHR_ADD1.set_data_sakha()
             Try
                 Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-                dao.GetDataby_IDA(Request.QueryString(""))
+                dao.GetDataby_IDA(Request.QueryString("old"))
                 lb_old_phr.Text = dao.fields.PHR_SURNAME
             Catch ex As Exception
 
@@ -43,12 +43,13 @@
         'dao.update()
         'dao_hs.insert()
         Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        dao.GetDataby_IDA(Request.QueryString("old"))
         UC_PHR_ADD1.set_data(dao)
-        dao.fields.FK_IDA = Request.QueryString("old")
+        dao.fields.FK_IDA = Request.QueryString("ida")
         dao.update()
 
         Dim dao_old As New DAO_DRUG.ClsDBDALCN_PHR
-        dao_old.GetDataby_IDA(Request.QueryString("ida"))
+        dao_old.GetDataby_IDA(Request.QueryString("old"))
 
         Dim dao_hs As New DAO_DRUG.TB_DALCN_PHR_HISTORY
         With dao_hs.fields
@@ -91,7 +92,7 @@
 
 
         End With
-        dao_hs.update()
+        dao_hs.insert()
 
         Run_Service_LCN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
