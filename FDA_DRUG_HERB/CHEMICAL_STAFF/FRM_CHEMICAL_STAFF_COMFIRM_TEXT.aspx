@@ -195,6 +195,12 @@
                                 </asp:DropDownList>
                             </td>
                         </tr>--%>
+                         <%--<tr>
+                            <td>dv</td>
+                            <td>
+                                <asp:TextBox ID="txt_dv" runat="server" CssClass="input-sm" Width="300px"></asp:TextBox>
+                            </td>
+                        </tr>--%>
                         <tr>
                             <td>เป็นสารในทะเบียน</td>
                             <td>

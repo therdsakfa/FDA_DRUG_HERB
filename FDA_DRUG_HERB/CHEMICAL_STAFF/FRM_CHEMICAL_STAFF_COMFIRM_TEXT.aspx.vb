@@ -167,6 +167,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
         Else
             Dim statusID As Integer = ddl_cnsdcd.SelectedItem.Value
             Dim bao As New BAO.GenNumber
+            Dim digit As String = "03"
 
             Dim rcvno As String = bao.GEN_NO_05(con_year(Date.Now.Year()), _CLS.PVCODE, 19, _CLS.LCNNO, "", 0, _IDA, "")
             Dim rcv_format As String = bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), rcvno)
@@ -213,7 +214,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
                 dao.fields.syn = txt_syn.Text
                 dao.fields.aori = ddl_aori.SelectedValue
                 'dao.fields.cas_number = txt_cas_number.Text
-
+                dao.fields.add_digit = digit
                 dao.fields.cas_type = Nothing
                 dao.fields.iowa = txt_iowanm.Text
                 dao.fields.iowanm = txt_iowanm.Text
@@ -222,7 +223,7 @@ Public Class FRM_CHEMICAL_STAFF_COMFIRM_TEXT
                 dao.fields.MODERN_TRADITION = ddl_Modern_drug.SelectedValue
                 dao.fields.cas_number = txt_Cas_number.Text
                 Try
-                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text
+                    dao.fields.iowa = txt_iowacd.Text & txt_runno.Text & txt_salt.Text & txt_syn.Text & digit
                 Catch ex As Exception
 
                 End Try
