@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75, 116" name="Linq_DRUG">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75.5, 116" name="Linq_DRUG">
   <DataContextMoniker Name="/Linq_DRUGDataContext" />
   <nestedChildShapes>
     <classShape Id="a478b3b7-1139-4770-921d-532ae1e62b1d" absoluteBounds="0.75, 0.75, 2, 3.5016097005208326">
@@ -2108,16 +2108,16 @@
         <elementListCompartment Id="048d5a7d-66ca-4542-a414-b1f572444178" absoluteBounds="42.515, 43.21, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="66360167-8231-4340-8f26-626f25215756" absoluteBounds="72.625, 45.75, 2, 2.5401025390625">
-      <DataClassMoniker Name="/Linq_DRUGDataContext/driowa" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a2b1dd9c-04b2-4522-8b17-35fd867c2782" absoluteBounds="72.64, 46.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="d41d262e-ac0a-4b34-b0fc-0940d396cf60" absoluteBounds="4.125, 43.875, 2, 5.6169254557291657">
       <DataClassMoniker Name="/Linq_DRUGDataContext/MAS_CHEMICAL" />
       <nestedChildShapes>
         <elementListCompartment Id="fd4c3e5a-6757-4c39-b148-6cd7dda9299b" absoluteBounds="4.1400000000000006, 44.335, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc0cd190-a3a0-4385-9fef-bae42f8b65d8" absoluteBounds="73.25, 45.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/driowa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1080859-439a-4b8a-b6c9-2479cd07535d" absoluteBounds="73.265, 45.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

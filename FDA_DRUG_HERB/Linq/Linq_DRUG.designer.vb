@@ -2101,17 +2101,17 @@ Partial Public Class Linq_DRUGDataContext
     End Sub
   Partial Private Sub DeleteCHEMICAL_REQUEST(instance As CHEMICAL_REQUEST)
     End Sub
-  Partial Private Sub Insertdriowa(instance As driowa)
-    End Sub
-  Partial Private Sub Updatedriowa(instance As driowa)
-    End Sub
-  Partial Private Sub Deletedriowa(instance As driowa)
-    End Sub
   Partial Private Sub InsertMAS_CHEMICAL(instance As MAS_CHEMICAL)
     End Sub
   Partial Private Sub UpdateMAS_CHEMICAL(instance As MAS_CHEMICAL)
     End Sub
   Partial Private Sub DeleteMAS_CHEMICAL(instance As MAS_CHEMICAL)
+    End Sub
+  Partial Private Sub Insertdriowa(instance As driowa)
+    End Sub
+  Partial Private Sub Updatedriowa(instance As driowa)
+    End Sub
+  Partial Private Sub Deletedriowa(instance As driowa)
     End Sub
   #End Region
 	
@@ -4246,15 +4246,15 @@ Partial Public Class Linq_DRUGDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property driowas() As System.Data.Linq.Table(Of driowa)
-		Get
-			Return Me.GetTable(Of driowa)
-		End Get
-	End Property
-	
 	Public ReadOnly Property MAS_CHEMICALs() As System.Data.Linq.Table(Of MAS_CHEMICAL)
 		Get
 			Return Me.GetTable(Of MAS_CHEMICAL)
+		End Get
+	End Property
+	
+	Public ReadOnly Property driowas() As System.Data.Linq.Table(Of driowa)
+		Get
+			Return Me.GetTable(Of driowa)
 		End Get
 	End Property
 End Class
@@ -136086,244 +136086,6 @@ Partial Public Class CHEMICAL_REQUEST
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.driowa")>  _
-Partial Public Class driowa
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _IDA As Integer
-	
-	Private _iowacd As String
-	
-	Private _iowanm As String
-	
-	Private _iowa As String
-	
-	Private _run As String
-	
-	Private _salt As String
-	
-	Private _syn As String
-	
-	Private _IS_CANCEL As String
-	
-	Private _add_digit As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnIDAChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnIDAChanged()
-    End Sub
-    Partial Private Sub OniowacdChanging(value As String)
-    End Sub
-    Partial Private Sub OniowacdChanged()
-    End Sub
-    Partial Private Sub OniowanmChanging(value As String)
-    End Sub
-    Partial Private Sub OniowanmChanged()
-    End Sub
-    Partial Private Sub OniowaChanging(value As String)
-    End Sub
-    Partial Private Sub OniowaChanged()
-    End Sub
-    Partial Private Sub OnrunChanging(value As String)
-    End Sub
-    Partial Private Sub OnrunChanged()
-    End Sub
-    Partial Private Sub OnsaltChanging(value As String)
-    End Sub
-    Partial Private Sub OnsaltChanged()
-    End Sub
-    Partial Private Sub OnsynChanging(value As String)
-    End Sub
-    Partial Private Sub OnsynChanged()
-    End Sub
-    Partial Private Sub OnIS_CANCELChanging(value As String)
-    End Sub
-    Partial Private Sub OnIS_CANCELChanged()
-    End Sub
-    Partial Private Sub Onadd_digitChanging(value As String)
-    End Sub
-    Partial Private Sub Onadd_digitChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property IDA() As Integer
-		Get
-			Return Me._IDA
-		End Get
-		Set
-			If ((Me._IDA = value)  _
-						= false) Then
-				Me.OnIDAChanging(value)
-				Me.SendPropertyChanging
-				Me._IDA = value
-				Me.SendPropertyChanged("IDA")
-				Me.OnIDAChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowacd", DbType:="VarChar(16) NOT NULL", CanBeNull:=false)>  _
-	Public Property iowacd() As String
-		Get
-			Return Me._iowacd
-		End Get
-		Set
-			If (String.Equals(Me._iowacd, value) = false) Then
-				Me.OniowacdChanging(value)
-				Me.SendPropertyChanging
-				Me._iowacd = value
-				Me.SendPropertyChanged("iowacd")
-				Me.OniowacdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowanm", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
-	Public Property iowanm() As String
-		Get
-			Return Me._iowanm
-		End Get
-		Set
-			If (String.Equals(Me._iowanm, value) = false) Then
-				Me.OniowanmChanging(value)
-				Me.SendPropertyChanging
-				Me._iowanm = value
-				Me.SendPropertyChanged("iowanm")
-				Me.OniowanmChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowa", DbType:="VarChar(6) NOT NULL", CanBeNull:=false)>  _
-	Public Property iowa() As String
-		Get
-			Return Me._iowa
-		End Get
-		Set
-			If (String.Equals(Me._iowa, value) = false) Then
-				Me.OniowaChanging(value)
-				Me.SendPropertyChanging
-				Me._iowa = value
-				Me.SendPropertyChanged("iowa")
-				Me.OniowaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_run", DbType:="VarChar(5) NOT NULL", CanBeNull:=false)>  _
-	Public Property run() As String
-		Get
-			Return Me._run
-		End Get
-		Set
-			If (String.Equals(Me._run, value) = false) Then
-				Me.OnrunChanging(value)
-				Me.SendPropertyChanging
-				Me._run = value
-				Me.SendPropertyChanged("run")
-				Me.OnrunChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_salt", DbType:="VarChar(3) NOT NULL", CanBeNull:=false)>  _
-	Public Property salt() As String
-		Get
-			Return Me._salt
-		End Get
-		Set
-			If (String.Equals(Me._salt, value) = false) Then
-				Me.OnsaltChanging(value)
-				Me.SendPropertyChanging
-				Me._salt = value
-				Me.SendPropertyChanged("salt")
-				Me.OnsaltChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_syn", DbType:="VarChar(2) NOT NULL", CanBeNull:=false)>  _
-	Public Property syn() As String
-		Get
-			Return Me._syn
-		End Get
-		Set
-			If (String.Equals(Me._syn, value) = false) Then
-				Me.OnsynChanging(value)
-				Me.SendPropertyChanging
-				Me._syn = value
-				Me.SendPropertyChanged("syn")
-				Me.OnsynChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IS_CANCEL", DbType:="NVarChar(50)")>  _
-	Public Property IS_CANCEL() As String
-		Get
-			Return Me._IS_CANCEL
-		End Get
-		Set
-			If (String.Equals(Me._IS_CANCEL, value) = false) Then
-				Me.OnIS_CANCELChanging(value)
-				Me.SendPropertyChanging
-				Me._IS_CANCEL = value
-				Me.SendPropertyChanged("IS_CANCEL")
-				Me.OnIS_CANCELChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_add_digit", DbType:="NVarChar(MAX)")>  _
-	Public Property add_digit() As String
-		Get
-			Return Me._add_digit
-		End Get
-		Set
-			If (String.Equals(Me._add_digit, value) = false) Then
-				Me.Onadd_digitChanging(value)
-				Me.SendPropertyChanging
-				Me._add_digit = value
-				Me.SendPropertyChanged("add_digit")
-				Me.Onadd_digitChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MAS_CHEMICAL")>  _
 Partial Public Class MAS_CHEMICAL
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -136875,6 +136637,244 @@ Partial Public Class MAS_CHEMICAL
 				Me._INN_TH = value
 				Me.SendPropertyChanged("INN_TH")
 				Me.OnINN_THChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_add_digit", DbType:="NVarChar(MAX)")>  _
+	Public Property add_digit() As String
+		Get
+			Return Me._add_digit
+		End Get
+		Set
+			If (String.Equals(Me._add_digit, value) = false) Then
+				Me.Onadd_digitChanging(value)
+				Me.SendPropertyChanging
+				Me._add_digit = value
+				Me.SendPropertyChanged("add_digit")
+				Me.Onadd_digitChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.driowa")>  _
+Partial Public Class driowa
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _iowacd As String
+	
+	Private _iowanm As String
+	
+	Private _iowa As String
+	
+	Private _run As String
+	
+	Private _salt As String
+	
+	Private _syn As String
+	
+	Private _IS_CANCEL As String
+	
+	Private _add_digit As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OniowacdChanging(value As String)
+    End Sub
+    Partial Private Sub OniowacdChanged()
+    End Sub
+    Partial Private Sub OniowanmChanging(value As String)
+    End Sub
+    Partial Private Sub OniowanmChanged()
+    End Sub
+    Partial Private Sub OniowaChanging(value As String)
+    End Sub
+    Partial Private Sub OniowaChanged()
+    End Sub
+    Partial Private Sub OnrunChanging(value As String)
+    End Sub
+    Partial Private Sub OnrunChanged()
+    End Sub
+    Partial Private Sub OnsaltChanging(value As String)
+    End Sub
+    Partial Private Sub OnsaltChanged()
+    End Sub
+    Partial Private Sub OnsynChanging(value As String)
+    End Sub
+    Partial Private Sub OnsynChanged()
+    End Sub
+    Partial Private Sub OnIS_CANCELChanging(value As String)
+    End Sub
+    Partial Private Sub OnIS_CANCELChanged()
+    End Sub
+    Partial Private Sub Onadd_digitChanging(value As String)
+    End Sub
+    Partial Private Sub Onadd_digitChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowacd", DbType:="VarChar(16) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowacd() As String
+		Get
+			Return Me._iowacd
+		End Get
+		Set
+			If (String.Equals(Me._iowacd, value) = false) Then
+				Me.OniowacdChanging(value)
+				Me.SendPropertyChanging
+				Me._iowacd = value
+				Me.SendPropertyChanged("iowacd")
+				Me.OniowacdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowanm", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowanm() As String
+		Get
+			Return Me._iowanm
+		End Get
+		Set
+			If (String.Equals(Me._iowanm, value) = false) Then
+				Me.OniowanmChanging(value)
+				Me.SendPropertyChanging
+				Me._iowanm = value
+				Me.SendPropertyChanged("iowanm")
+				Me.OniowanmChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_iowa", DbType:="VarChar(6) NOT NULL", CanBeNull:=false)>  _
+	Public Property iowa() As String
+		Get
+			Return Me._iowa
+		End Get
+		Set
+			If (String.Equals(Me._iowa, value) = false) Then
+				Me.OniowaChanging(value)
+				Me.SendPropertyChanging
+				Me._iowa = value
+				Me.SendPropertyChanged("iowa")
+				Me.OniowaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_run", DbType:="VarChar(5) NOT NULL", CanBeNull:=false)>  _
+	Public Property run() As String
+		Get
+			Return Me._run
+		End Get
+		Set
+			If (String.Equals(Me._run, value) = false) Then
+				Me.OnrunChanging(value)
+				Me.SendPropertyChanging
+				Me._run = value
+				Me.SendPropertyChanged("run")
+				Me.OnrunChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_salt", DbType:="VarChar(3) NOT NULL", CanBeNull:=false)>  _
+	Public Property salt() As String
+		Get
+			Return Me._salt
+		End Get
+		Set
+			If (String.Equals(Me._salt, value) = false) Then
+				Me.OnsaltChanging(value)
+				Me.SendPropertyChanging
+				Me._salt = value
+				Me.SendPropertyChanged("salt")
+				Me.OnsaltChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_syn", DbType:="VarChar(2) NOT NULL", CanBeNull:=false)>  _
+	Public Property syn() As String
+		Get
+			Return Me._syn
+		End Get
+		Set
+			If (String.Equals(Me._syn, value) = false) Then
+				Me.OnsynChanging(value)
+				Me.SendPropertyChanging
+				Me._syn = value
+				Me.SendPropertyChanged("syn")
+				Me.OnsynChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IS_CANCEL", DbType:="NVarChar(50)")>  _
+	Public Property IS_CANCEL() As String
+		Get
+			Return Me._IS_CANCEL
+		End Get
+		Set
+			If (String.Equals(Me._IS_CANCEL, value) = false) Then
+				Me.OnIS_CANCELChanging(value)
+				Me.SendPropertyChanging
+				Me._IS_CANCEL = value
+				Me.SendPropertyChanged("IS_CANCEL")
+				Me.OnIS_CANCELChanged
 			End If
 		End Set
 	End Property
