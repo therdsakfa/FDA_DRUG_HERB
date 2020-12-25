@@ -110,6 +110,9 @@
                 <asp:ListItem Value="1">มาตรา 31</asp:ListItem>
                 <asp:ListItem Value="2">มาตรา 32</asp:ListItem>
                 <asp:ListItem Value="3">มาตรา 33</asp:ListItem>
+                <asp:ListItem Value="4">มาตรา 68</asp:ListItem>
+                <asp:ListItem Value="5">มาตรา 69</asp:ListItem>
+                <asp:ListItem Value="6">มาตรา 70</asp:ListItem>
             </asp:DropDownList>
         </td>
         
