@@ -31,7 +31,7 @@
                     <tr>
                         <td>รูปแบบยา</td>
                         <td>
-                            <telerik:RadComboBox ID="rcb_gr_group" runat="server" Height="300px" Width="305"  DataValueField="IDA" DataTextField="thadsgnm" 
+                            <telerik:RadComboBox ID="rcb_gr_group" runat="server" Height="300px" Width="305"  DataValueField="dsgcd" DataTextField="thadsgnm" 
                         EmptyMessage="กรุณาเลือกรูปแบบยา" MarkFirstMatch="true">
                         
                     </telerik:RadComboBox>
