@@ -35,20 +35,23 @@
         UC_PHR_ADD1.set_data(dao)
         dao.update()
 
-        Dim List_DALCN As New List(Of DALCN_PHR_TRAINING)
-        List_DALCN = Session("Lst_DALCN")
-        Dim a As String = ""
-        Dim c_num As Integer = List_DALCN.Count
-        For Each item In List_DALCN
-            Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
-            dao_drug.GetDataby_IDA(item.IDA)
-            dao_drug.fields.NAME_SIMINAR = item.NAME_SIMINAR
-            dao_drug.fields.SIMINAR_DATE = item.SIMINAR_DATE
-            dao_drug.fields.FK_IDA = dao.fields.FK_IDA
-            dao_drug.fields.phr_IDA = dao.fields.PHR_IDA
-            dao_drug.update()
-        Next
-        UC_PHR_ADD1.Clear()
+        'Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+        'dao_drug.GetDataby_IDA(Request.QueryString("phr"))
+        'dao_drug.update()
+        'Dim List_DALCN As New List(Of DALCN_PHR_TRAINING)
+        'List_DALCN = Session("Lst_DALCN")
+        'Dim a As String = ""
+        ''Dim c_num As Integer = List_DALCN.Count
+        'For Each item In List_DALCN
+        '    Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
+        '    dao_drug.GetDataby_IDA(item.IDA)
+        '    dao_drug.fields.NAME_SIMINAR = item.NAME_SIMINAR
+        '    dao_drug.fields.SIMINAR_DATE = item.SIMINAR_DATE
+        '    dao_drug.fields.FK_IDA = dao.fields.FK_IDA
+        '    dao_drug.fields.phr_IDA = dao.fields.PHR_IDA
+        '    dao_drug.update()
+        'Next
+        'UC_PHR_ADD1.Clear()
 
         'dao_hs.insert()
         Try

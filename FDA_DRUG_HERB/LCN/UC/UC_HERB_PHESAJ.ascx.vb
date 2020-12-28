@@ -100,6 +100,7 @@ Public Class UC_HERB_PHESAJ
                 .STUDY_LEVEL = txt_STUDY_LEVEL.Text
             Else
                 .STUDY_LEVEL = ddl_phr_type.SelectedItem.Text
+                .PHR_JOB_TYPE = ddl_phr_type.SelectedValue
             End If
             Try
                 .PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text
