@@ -95,15 +95,6 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     Protected WithEvents lbl_lcn_iden As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lbl_lcn_iden2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbl_lcn_iden2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''lbl_lcn_addr control.
     '''</summary>
     '''<remarks>

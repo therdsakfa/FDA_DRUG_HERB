@@ -134,6 +134,7 @@ Namespace BAO
 
             Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
             With dao_drrgt.fields
+                .PACKAGE_DETAIL = dao.fields.PACKAGE_DETAIL
                 .accttp = dao.fields.accttp
                 .appdate = dao.fields.appdate
                 .CHK_LCN_SUBTYPE1 = dao.fields.CHK_LCN_SUBTYPE1
@@ -7394,7 +7395,7 @@ Namespace BAO
                         Dim ws_c As New WS_UPDATE_C.Service1
                         'Dim ws_c As New WS_UPDATE_C_DEMO.Service1
                         Try
-                            result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(r_no)
+                            'result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(r_no)
                             'result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(txt_r_no.Text)
                         Catch ex As Exception
 

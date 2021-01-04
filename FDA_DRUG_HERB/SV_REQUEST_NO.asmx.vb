@@ -152,7 +152,7 @@ Public Class SV_REQUEST_NO
                     Dim ws_c As New WS_UPDATE_C.Service1
                     'Dim ws_c As New WS_UPDATE_C_DEMO.Service1
                     Try
-                        result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(r_no)
+                        'result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(r_no)
                         'result_c = ws_c.UPDATE_STATUS_BOOKING_DRUG(txt_r_no.Text)
                     Catch ex As Exception
 
