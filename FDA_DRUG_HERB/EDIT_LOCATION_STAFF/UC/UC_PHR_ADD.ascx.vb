@@ -87,6 +87,12 @@ Public Class UC_PHR_ADD
             Catch ex As Exception
 
             End Try
+            If ddl_worker_type.SelectedValue = "0" Then
+                .STUDY_LEVEL = txt_STUDY_LEVEL.Text
+            Else
+                .STUDY_LEVEL = ddl_worker_type.SelectedItem.Text
+                .PHR_JOB_TYPE = ddl_worker_type.SelectedValue
+            End If
             Try
                 .PERSONAL_TYPE = ddl_worker_type.SelectedValue 'rdl_per_type.SelectedValue
             Catch ex As Exception
