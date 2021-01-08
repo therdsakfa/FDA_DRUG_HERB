@@ -24,7 +24,7 @@
             End If
             Dim lt_str As String = ""
             If _CLS.SYSTEM_ID = "8738" Or _CLS.SYSTEM_ID = "8734" Then
-                '              <div class="nav-catagory"  style="background: #ffed33">
+                '              <div class="nav-catagory"  style="background: #63320e">
                 '	<div class="inner">
                 '		<h3></h3>
                 '	</div>
@@ -33,7 +33,7 @@
                 lt_str &= " <div class='inner'> <h3></h3></div> </div>"
                 lt_nav_catagory.Text = lt_str
             Else
-                lt_str = "<div class='nav-catagory'  style='background: #ffed33'>"
+                lt_str = "<div class='nav-catagory'  style='background: #63320e'>"
                 lt_str &= " <div class='inner'> <h3></h3></div> </div>"
                 lt_nav_catagory.Text = lt_str
             End If

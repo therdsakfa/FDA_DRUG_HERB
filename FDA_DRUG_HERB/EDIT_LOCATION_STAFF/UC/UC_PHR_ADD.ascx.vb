@@ -303,9 +303,10 @@ Public Class UC_PHR_ADD
     Private Sub rgns_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgns.NeedDataSource
         Dim bao As New BAO_MASTER
         Dim dt As New DataTable
-        If Request.QueryString("phr") <> "" Then
-            dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("phr"))
-        End If
+        'If Request.QueryString("phr") <> "" Then
+        '    dt = bao.SP_DALCN_PHR_BY_FK_IDA_3(Request.QueryString("phr"))
+
+        'End If
         Dim dao_drug As New DAO_DRUG.ClsDBDALCN_PHR_TRAINING
         Dim chk_list As New List(Of DALCN_PHR_TRAINING)
         chk_list = GET_DATA_LIST_DALCN()
@@ -313,11 +314,15 @@ Public Class UC_PHR_ADD
 
         If chk_list.Count <> 0 And List_DALCN.Count <> 0 Then
             List_DALCN = chk_list
+            List_DALCN.Add(DALCN_PHR_TRAINING)
+            Session("Lst_DALCN") = List_DALCN
             rgns.DataSource = chk_list
         ElseIf Request.QueryString("phr") <> "" Then
+            List_DALCN = chk_list
             List_DALCN.Add(DALCN_PHR_TRAINING)
             rgns.DataSource = List_DALCN
             Session("Lst_DALCN") = List_DALCN
+            rgns.DataSource = chk_list
             'ElseIf DALCN_PHR_TRAINING IsNot Nothing Then
             '    List_DALCN.Add(DALCN_PHR_TRAINING)
             '    rgns.DataSource = List_DALCN
@@ -330,7 +335,8 @@ Public Class UC_PHR_ADD
         End If
         ''
         If dt.Rows.Count > 0 Then
-            rgns.DataSource = dt
+            rgns.DataSource = chk_list
+
         End If
     End Sub
     Private Sub rgns_ItemCommand(sender As Object, e As Telerik.Web.UI.GridCommandEventArgs) Handles rgns.ItemCommand

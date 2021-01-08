@@ -60,7 +60,7 @@
      <link href="../css/Custom.css" rel="stylesheet" />
 
 	<div class="wrapper two">
-		<header class="header"  style="background: #8CB343">
+		<header class="header"  style="background: #63320e">
 			<div class="inner">
 				<a href="" class="logo">
 					<img src="../assets/images/logo.png" alt="Logo" />
@@ -71,9 +71,9 @@
 						<img src="../imgs/logo@2x.png" alt="Logo" />
 					</a>
 					<!-- For Mobile -->
-					<span class="circle"  style="background: #8CB343"></span>
+					<span class="circle"  style="background: #63320e"></span>
 					<div class="media-body">
-						<h1>ระบบทะเบียนตำรับยา</h1>
+						<h1>ระบบทะเบียนสมุนไพร</h1>
 						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>
 					</div>
 				</div>
@@ -114,7 +114,7 @@
 				</ul>
 			</div>
 		</nav>
-		<%--<div class="nav-catagory"  style="background: #ffed33">
+		<%--<div class="nav-catagory"  style="background: #63320e">
 			<div class="inner">
 				<h3></h3>
 			</div>
