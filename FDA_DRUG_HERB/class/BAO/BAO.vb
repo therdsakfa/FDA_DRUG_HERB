@@ -127,7 +127,57 @@ Namespace BAO
             Return i
         End Function
 
+        Public Sub insert_tabean_sub_packet_detail(ByVal FK_IDA As Integer)
+            Dim dao As New DAO_DRUG.ClsDBdrrqt
+            dao.GetDataby_IDA(FK_IDA)
 
+            Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+            dao_drrgt.GetDataby_FK_DRRQT(FK_IDA)
+            Dim IDA_rgt As Integer = dao_drrgt.fields.IDA
+            With dao_drrgt.fields
+                .PACKAGE_DETAIL = dao.fields.PACKAGE_DETAIL
+                .DRUG_COLOR = dao.fields.DRUG_COLOR
+            End With
+            dao_drrgt.update()
+
+            Dim dao_pack As New DAO_DRUG.TB_DRRQT_PACKAGE_DETAIL
+            dao_pack.GetDataby_FKIDA(FK_IDA)
+            For Each dao_pack.fields In dao_pack.datas
+                Dim dao_rgt_pack As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
+
+                With dao_rgt_pack.fields
+                    .PACKAGE_NAME = dao_pack.fields.PACKAGE_NAME
+                    .SUM = dao_pack.fields.SUM
+                    .IM_QTY = dao_pack.fields.IM_QTY
+                    .IM_DETAIL = dao_pack.fields.IM_DETAIL
+                    .DATE_ADD = dao_pack.fields.DATE_ADD
+                    .BIG_AMOUNT = dao_pack.fields.BIG_AMOUNT
+
+                    .BARCODE = dao_pack.fields.BARCODE
+                    .BIG_UNIT = dao_pack.fields.BIG_UNIT
+                    .CHECK_PACKAGE = dao_pack.fields.CHECK_PACKAGE
+                    .FK_IDA = IDA_rgt
+                    .MEDIUM_AMOUNT = dao_pack.fields.MEDIUM_AMOUNT
+                    .MEDIUM_UNIT = dao_pack.fields.MEDIUM_UNIT
+                    .SMALL_AMOUNT = dao_pack.fields.SMALL_AMOUNT
+                    .SMALL_UNIT = dao_pack.fields.SMALL_UNIT
+                End With
+                dao_rgt_pack.insert()
+            Next
+
+
+
+
+
+            'Dim bao_insert_addr As New BAO.ClsDBSqlcommand
+            'Dim dt As New DataTable
+            'Try
+            '    dt = bao_insert_addr.SP_DRRGT_ADDR_INSERT(IDA_rgt)
+            'Catch ex As Exception
+
+            'End Try
+
+        End Sub
         Public Sub insert_tabean_sub(ByVal FK_IDA As Integer)
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             dao.GetDataby_IDA(FK_IDA)
@@ -135,6 +185,7 @@ Namespace BAO
             Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
             With dao_drrgt.fields
                 .PACKAGE_DETAIL = dao.fields.PACKAGE_DETAIL
+                .DRUG_COLOR = dao.fields.DRUG_COLOR
                 .accttp = dao.fields.accttp
                 .appdate = dao.fields.appdate
                 .CHK_LCN_SUBTYPE1 = dao.fields.CHK_LCN_SUBTYPE1
@@ -392,6 +443,13 @@ Namespace BAO
                     .MEDIUM_UNIT = dao_pack.fields.MEDIUM_UNIT
                     .SMALL_AMOUNT = dao_pack.fields.SMALL_AMOUNT
                     .SMALL_UNIT = dao_pack.fields.SMALL_UNIT
+
+                    .PACKAGE_NAME = dao_pack.fields.PACKAGE_NAME
+                    .SUM = dao_pack.fields.SUM
+                    .IM_QTY = dao_pack.fields.IM_QTY
+                    .IM_DETAIL = dao_pack.fields.IM_DETAIL
+                    .DATE_ADD = dao_pack.fields.DATE_ADD
+                    .BIG_AMOUNT = dao_pack.fields.BIG_AMOUNT
                 End With
                 dao_rgt_pack.insert()
             Next
