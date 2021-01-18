@@ -32,7 +32,7 @@
         KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้ปฏิบัติการจาก " & dao.fields.PHR_NAME & " เป็น " & UC_PHR_ADD1.PHR_NAME, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
         'Dim dao_hs As New DAO_DRUG.TB_DALCN_PHR_HISTORY
         'UC_PHR_ADD1.set_data_his(dao_hs, dao)
-        'UC_PHR_ADD1.set_data(dao)
+        UC_PHR_ADD1.set_data(dao)
         dao.update()
 
         Dim List_DALCN As New List(Of DALCN_PHR_TRAINING)
