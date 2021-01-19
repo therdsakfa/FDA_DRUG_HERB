@@ -1736,6 +1736,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_TR_ID(ByVal IDA As Integer)
+
+            datas = (From p In db.dalcns Where p.TR_ID = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_IDA_STATUS(ByVal IDA As Integer)
 
             datas = (From p In db.dalcns Where p.IDA = IDA And p.cnccscd Is Nothing Select p)

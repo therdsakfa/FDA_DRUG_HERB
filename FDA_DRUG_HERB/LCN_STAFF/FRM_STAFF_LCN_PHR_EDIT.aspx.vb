@@ -15,8 +15,8 @@
         RunQuery()
         If Not IsPostBack Then
             Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-            'dao.GetDataby_IDA(Request.QueryString("phr"))
-            dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
+            dao.GetDataby_IDA(Request.QueryString("phr"))
+            'dao.GetDataby_FK_IDA(Request.QueryString("IDA"))
             UC_PHR_ADD1.bind_ddl_prefix()
             UC_PHR_ADD1.bind_ddl_job()
             UC_PHR_ADD1.bind_ddl_work_type()
@@ -30,9 +30,9 @@
         dao.GetDataby_IDA(Request.QueryString("phr"))
         UC_PHR_ADD1.get_PHR_NAME()
         KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้ปฏิบัติการจาก " & dao.fields.PHR_NAME & " เป็น " & UC_PHR_ADD1.PHR_NAME, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
-        'Dim dao_hs As New DAO_DRUG.TB_DALCN_PHR_HISTORY
-        'UC_PHR_ADD1.set_data_his(dao_hs, dao)
-        'UC_PHR_ADD1.set_data(dao)
+        Dim dao_hs As New DAO_DRUG.TB_DALCN_PHR_HISTORY
+        UC_PHR_ADD1.set_data_his(dao_hs, dao)
+        UC_PHR_ADD1.set_data(dao)
         dao.update()
 
         Dim List_DALCN As New List(Of DALCN_PHR_TRAINING)

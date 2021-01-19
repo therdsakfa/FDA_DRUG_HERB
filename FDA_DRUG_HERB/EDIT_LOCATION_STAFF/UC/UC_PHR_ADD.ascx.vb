@@ -91,7 +91,7 @@ Public Class UC_PHR_ADD
                 .STUDY_LEVEL = txt_STUDY_LEVEL.Text
             Else
                 .STUDY_LEVEL = ddl_worker_type.SelectedItem.Text
-                .PHR_JOB_TYPE = ddl_worker_type.SelectedValue
+                '.PHR_JOB_TYPE = ddl_worker_type.SelectedValue
             End If
             Try
                 .PERSONAL_TYPE = ddl_worker_type.SelectedValue 'rdl_per_type.SelectedValue
