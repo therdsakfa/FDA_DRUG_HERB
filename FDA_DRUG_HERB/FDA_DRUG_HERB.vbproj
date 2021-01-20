@@ -633,7 +633,7 @@
     <Content Include="LCN\UC\UC_HERB_KEEP.ascx" />
     <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
     <Content Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
-    <Content Include="LCN_STAFF\FRM_STAFF_LCN_EDIT.aspx" />
+    <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
     <Content Include="PDF.aspx" />
@@ -4939,6 +4939,13 @@
       <DependentUpon>FRM_SEARCH_ATTACH.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_ADD_LOCATION.aspx.designer.vb">
       <DependentUpon>FRM_STAFF_LCN_ADD_LOCATION.aspx</DependentUpon>
     </Compile>
@@ -4987,13 +4994,6 @@
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_CONSIDER_UPDATE.aspx.vb">
       <DependentUpon>FRM_STAFF_LCN_CONSIDER_UPDATE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_EDIT.aspx.designer.vb">
-      <DependentUpon>FRM_STAFF_LCN_EDIT.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_EDIT.aspx.vb">
-      <DependentUpon>FRM_STAFF_LCN_EDIT.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx.designer.vb">
       <DependentUpon>POPUP_STAFF_LCN_EDIT.aspx</DependentUpon>

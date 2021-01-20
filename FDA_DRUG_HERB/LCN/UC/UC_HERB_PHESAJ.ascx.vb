@@ -99,8 +99,13 @@ Public Class UC_HERB_PHESAJ
             If ddl_phr_type.SelectedValue = "0" Then
                 .STUDY_LEVEL = txt_STUDY_LEVEL.Text
             Else
-                .STUDY_LEVEL = ddl_phr_type.SelectedItem.Text
-                .PHR_JOB_TYPE = ddl_phr_type.SelectedValue
+                Try
+                    .STUDY_LEVEL = ddl_phr_type.SelectedItem.Text
+                    .PHR_JOB_TYPE = ddl_phr_type.SelectedValue
+                Catch ex As Exception
+
+                End Try
+
             End If
             Try
                 .PHR_VETERINARY_FIELD = txt_PHR_VETERINARY_FIELD.Text

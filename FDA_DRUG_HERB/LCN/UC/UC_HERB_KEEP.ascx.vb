@@ -35,7 +35,7 @@ Public Class UC_HERB_KEEP
         End Try
         Dim dt As New DataTable
         Dim bao As New BAO_SHOW
-        dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, _CLS.CITIZEN_ID_AUTHORIZE)
+        dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(2, iden)
 
 
         ddl_placename.DataSource = dt

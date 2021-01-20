@@ -11,10 +11,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
+    <div></div>
+    <div></div>
+    <div>
+        <uc1:UC_HERB_KEEP runat="server" ID="UC_HERB_KEEP" />
+        <uc1:UC_HERB_PHESAJ runat="server" ID="UC_HERB_PHESAJ" />
+        <asp:Panel ID="Panel1" runat="server" style="display:none;">
+            <uc1:UC_TABLE_DRUG_GROUP_CHANGE_HERB runat="server" ID="UC_TABLE_DRUG_GROUP_CHANGE_HERB" />
+        </asp:Panel>
 
-    <uc1:UC_HERB_KEEP runat="server" ID="UC_HERB_KEEP" />
-    <uc1:UC_HERB_PHESAJ runat="server" ID="UC_HERB_PHESAJ" />
-    <asp:Panel ID="Panel1" runat="server" style="display:none;">
-        <uc1:UC_TABLE_DRUG_GROUP_CHANGE_HERB runat="server" ID="UC_TABLE_DRUG_GROUP_CHANGE_HERB" />
-    </asp:Panel>
+    </div>
 </asp:Content>
