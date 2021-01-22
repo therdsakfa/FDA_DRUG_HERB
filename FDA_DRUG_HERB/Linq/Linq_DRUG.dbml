@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG" Class="Linq_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.168;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG_DEMO" Class="Linq_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.168;Initial Catalog=LGT_DRUG_DEMO;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.RECIVE" Member="RECIVEs">
     <Type Name="RECIVE">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6331,6 +6331,211 @@
       <Column Name="TYPE_PHR_HERB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DALCN_CURRENT_ADDRESS" Member="DALCN_CURRENT_ADDRESSes">
+    <Type Name="DALCN_CURRENT_ADDRESS">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_PHR_TRAINING" Member="DALCN_PHR_TRAININGs">
+    <Type Name="DALCN_PHR_TRAINING">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME_SIMINAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phr_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_PHR" Member="DALCN_PHRs">
+    <Type Name="DALCN_PHR">
+      <Column Name="PHR_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PHR_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CTZNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_LEVEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TRANSECTION_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CTZNO_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_STATUS_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CHK_JOB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_JOB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CHK_NUM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_NUM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_DAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_MOUTH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_YEAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_EXP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CHK_NOT_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CHK_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_WORK_OFFICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_TEXT_WORK_TIME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_JOB_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHR_PREFIX_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_PREFIX_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_VETERINARY_FIELD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_MEDICAL_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_CERTIFICATE_TRAINING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PHR_LAW_SECTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION_IDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="phrcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="phrid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="phr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INACTIVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STUDY_LEVEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NAME_SIMINAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="addr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DALCN_FRGN_DATA" Member="DALCN_FRGN_DATAs">
+    <Type Name="DALCN_FRGN_DATA">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSPORT_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PASSPORT_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WORK_LICENSE_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BS_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BS_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FRGN_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE_MENU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="addr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHEMICAL_REQUEST" Member="CHEMICAL_REQUESTs">
+    <Type Name="CHEMICAL_REQUEST">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iowanm" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="iowacd" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="runno" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="salt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="syn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aori" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cas_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="look_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cas_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="iowa" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USE_FUNTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RCVNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PVNCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RCV_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MIX_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MODERN_TRADITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="REGIS_STATUS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USE_PROHIBIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GENUS_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAIN_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUB_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHEM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BIO_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GENE_MOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXTRACT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXTRACT_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GENUS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SPECIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STRAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="G_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iowanm_eng" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SCIENTIFIC_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NATIONAL_CD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_PROCESSING" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESSING_DES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BRAND_LABEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EXTRACT_OTHER2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPTION_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_ATC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ATC_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INN_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="add_digit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_CHEMICAL" Member="MAS_CHEMICALs">
+    <Type Name="MAS_CHEMICAL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iowanm" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="iowacd" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="runno" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="salt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="syn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="aori" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cas_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="look_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cas_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="iowa" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USE_PROHIBIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MIX_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MODERN_TRADITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="REGIS_STATUS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PRIVUS_SUBSTANCE_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="use_in_15dgt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ATC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MANUFACTURE_STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Version_update" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IMPORT_REGIST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INN_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="add_digit" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.driowa" Member="driowas">
+    <Type Name="driowa">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iowacd" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="add_digit" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="fda.dalcn" Member="dalcns">
     <Type Name="dalcn">
       <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -6629,211 +6834,7 @@
       <Column Name="MARTTRA_NO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MARTTRA_NO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MARTTRA_NO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DALCN_CURRENT_ADDRESS" Member="DALCN_CURRENT_ADDRESSes">
-    <Type Name="DALCN_CURRENT_ADDRESS">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thaaddr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thamu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thafloor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thasoi" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thabuilding" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tharoad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="zipcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="tel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Mobile" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="fax" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="thanameplace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="thmblcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="amphrcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DALCN_PHR_TRAINING" Member="DALCN_PHR_TRAININGs">
-    <Type Name="DALCN_PHR_TRAINING">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NAME_SIMINAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="phr_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DALCN_PHR" Member="DALCN_PHRs">
-    <Type Name="DALCN_PHR">
-      <Column Name="PHR_IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PHR_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CTZNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_LEVEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TRANSECTION_ID_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CTZNO_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_STATUS_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CHK_JOB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_JOB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CHK_NUM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_NUM" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_DAY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_MOUTH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_YEAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_EXP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CHK_NOT_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CHK_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_WORK_OFFICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_TEXT_WORK_TIME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_JOB_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PHR_PREFIX_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_PREFIX_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_VETERINARY_FIELD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_MEDICAL_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_CERTIFICATE_TRAINING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PHR_LAW_SECTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="POSITION_IDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IS_ACTIVE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="pvncd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcntpcd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="lcnno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="phrcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="phrid" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="phr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="INACTIVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="STUDY_LEVEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NAME_SIMINAR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SIMINAR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="addr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DALCN_FRGN_DATA" Member="DALCN_FRGN_DATAs">
-    <Type Name="DALCN_FRGN_DATA">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PASSPORT_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PASSPORT_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DOC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="WORK_LICENSE_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="WORK_LICENSE_EXPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="BS_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BS_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_NO1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FRGN_DATE1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="PERSONAL_TYPE_MENU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="addr_status" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CHEMICAL_REQUEST" Member="CHEMICAL_REQUESTs">
-    <Type Name="CHEMICAL_REQUEST">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iowanm" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="iowacd" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="runno" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="salt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="syn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="aori" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cas_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="look_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cas_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="iowa" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="USE_FUNTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="RCVNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PVNCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RCV_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MIX_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="MODERN_TRADITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="REGIS_STATUS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="USE_PROHIBIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="GENUS_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAIN_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SUB_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CHEM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BIO_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GENE_MOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EXTRACT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EXTRACT_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="GENUS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SPECIES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="STRAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="G_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="iowanm_eng" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="SCIENTIFIC_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NATIONAL_CD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IS_PROCESSING" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROCESSING_DES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BRAND_LABEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="EXTRACT_OTHER2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DESCRIPTION_OTHER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IS_ATC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ATC_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="INN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="REMARK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CITIZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="INN_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="add_digit" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MAS_CHEMICAL" Member="MAS_CHEMICALs">
-    <Type Name="MAS_CHEMICAL">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iowanm" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="iowacd" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="runno" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="salt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="syn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="aori" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cas_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="look_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cas_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="iowa" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="USE_PROHIBIT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="MIX_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="MODERN_TRADITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="REGIS_STATUS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PRIVUS_SUBSTANCE_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="use_in_15dgt" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="INN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ATC" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="MANUFACTURE_STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Version_update" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="IMPORT_REGIST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="INN_TH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="add_digit" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.driowa" Member="driowas">
-    <Type Name="driowa">
-      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iowacd" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
-      <Column Name="iowanm" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="iowa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="run" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="salt" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="syn" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="IS_CANCEL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="add_digit" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LCNNO_DISPLAY_NEW" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

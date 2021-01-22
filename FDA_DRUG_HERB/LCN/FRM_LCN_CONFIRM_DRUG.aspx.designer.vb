@@ -725,6 +725,15 @@ Partial Public Class FRM_LCN_CONFIRM_DRUG
     Protected WithEvents Label59 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lbl_PHR_prefix control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_PHR_prefix As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lbl_PHR_NAME control.
     '''</summary>
     '''<remarks>

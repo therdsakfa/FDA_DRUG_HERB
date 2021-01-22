@@ -32,7 +32,7 @@
             UC_HERB.load_ddl_chwt()
             UC_HERB.load_ddl_amp()
             UC_HERB.load_ddl_thambol()
-
+            UC_HERB_PHESAJ.bind_ddl_prefix()
             UC_HERB_PHESAJ.bind_ddl_phr_type()
 
             If Request.QueryString("ida") <> "" Then

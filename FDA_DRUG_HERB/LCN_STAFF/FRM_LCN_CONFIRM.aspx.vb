@@ -1852,7 +1852,13 @@ Public Class WebForm35
                 ElseIf dao.fields.PROCESS_ID = "122" Then
                     _type_da = "1"
                 End If
-                lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+
+                If Not dao.fields.LCNNO_DISPLAY_NEW Is Nothing Then
+                    lcnno_format = dao.fields.LCNNO_DISPLAY_NEW
+                Else
+                    lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                End If
+
             End If
 
         Catch ex As Exception

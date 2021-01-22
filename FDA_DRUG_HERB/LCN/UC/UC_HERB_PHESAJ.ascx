@@ -25,6 +25,15 @@
                 </tr>
                 <tr>
                     <td class="auto-style2"></td>
+                    <td>
+                        คำนำหน้าชื่อ 
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddl_prefix" runat="server"  DataTextField ="thanm" DataValueField="prefixcd"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2"></td>
                     <td>&nbsp;
                         ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
                     </td>

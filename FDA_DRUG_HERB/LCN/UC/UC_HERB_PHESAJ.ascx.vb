@@ -86,13 +86,20 @@ Public Class UC_HERB_PHESAJ
         Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
         rgphr.Rebind()
     End Sub
+    Public Sub bind_ddl_prefix()
+        Dim bao As New BAO_SHOW
+        Dim dt As DataTable = bao.SP_SYSPREFIX_DDL()
+
+        ddl_prefix.DataSource = dt
+        ddl_prefix.DataBind()
+    End Sub
 
     Public Sub set_data(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR)
         With dao.fields
             .PHR_NAME = txt_PHR_NAME.Text
             '.PHR_LEVEL = txt_PHR_LEVEL.Text
-            '.PHR_PREFIX_ID = ddl_prefix.SelectedValue
-            '.PHR_PREFIX_NAME = ddl_prefix.SelectedItem.Text
+            .PHR_PREFIX_ID = ddl_prefix.SelectedValue
+            .PHR_PREFIX_NAME = ddl_prefix.SelectedItem.Text
             .PHR_CTZNO = txt_PHR_CTZNO.Text
             .PHR_TEXT_NUM = txt_PHR_TEXT_NUM.Text
             .PHR_TEXT_WORK_TIME = txt_PHR_TEXT_WORK_TIME.Text

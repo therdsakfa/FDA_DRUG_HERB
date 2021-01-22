@@ -109,7 +109,7 @@
                 </td>
             </tr>--%>
             <tr>
-                <td>เเลขที่ใบอนุญาตสถานที่</td>
+                <td>เลขที่ใบอนุญาตสถานที่</td>
                 <td Width="70%">
                                 <asp:TextBox ID="txt_lcnno_no" runat="server" CssClass="input-lg" Width="70%"></asp:TextBox>
                 &nbsp;(ตัวอย่าง กท 1/2555)</td>
@@ -191,7 +191,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                         <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_add"
-                           CommandName="add" Text="เพิ่มข้อมูล">
+                           CommandName="add" Text="เพิ่มข้อมูลที่เก็บ/ผู้มีหน้าที่ปฎิบัติการ">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_drug_group"
@@ -208,7 +208,7 @@
 
                        <ItemStyle Width="10%"></ItemStyle>
                    </asp:TemplateField>--%>
-                       <%--<telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
+                      <%-- <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
                            CommandName="_edit" Text="แก้ไขการเสนอลงนาม">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>--%>

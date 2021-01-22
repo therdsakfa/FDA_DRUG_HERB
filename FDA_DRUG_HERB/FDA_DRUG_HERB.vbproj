@@ -636,6 +636,8 @@
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
+    <Content Include="LCN_STAFF\UC\UC_LCN_HERB.ascx" />
+    <Content Include="LCN_STAFF\UC\UC_LCN_HERB_PHESAJ.ascx" />
     <Content Include="PDF.aspx" />
     <Content Include="PULL_Q_TO_G%28PACKET DETAIL%29\PULL_PACKET_DETAIL.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
@@ -5091,6 +5093,20 @@
     </Compile>
     <Compile Include="LCN_STAFF\FRM_UPLOAD_ATTACH2.aspx.vb">
       <DependentUpon>FRM_UPLOAD_ATTACH2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\UC\UC_LCN_HERB.ascx.designer.vb">
+      <DependentUpon>UC_LCN_HERB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\UC\UC_LCN_HERB.ascx.vb">
+      <DependentUpon>UC_LCN_HERB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\UC\UC_LCN_HERB_PHESAJ.ascx.designer.vb">
+      <DependentUpon>UC_LCN_HERB_PHESAJ.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\UC\UC_LCN_HERB_PHESAJ.ascx.vb">
+      <DependentUpon>UC_LCN_HERB_PHESAJ.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Linq\LINQ_BOOKING.designer.vb">

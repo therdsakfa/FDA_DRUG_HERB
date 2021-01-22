@@ -359,6 +359,11 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         End Try
         Try
+            lbl_PHR_prefix.Text = dao_phr.fields.PHR_PREFIX_NAME
+        Catch ex As Exception
+
+        End Try
+        Try
             lbl_PHR_TEXT_NUM.Text = dao_phr.fields.PHR_TEXT_NUM
         Catch ex As Exception
 
@@ -1610,7 +1615,13 @@ Public Class FRM_LCN_CONFIRM_DRUG
                 ElseIf dao.fields.PROCESS_ID = "122" Then
                     _type_da = "1"
                 End If
-                lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+
+                If Not dao.fields.LCNNO_DISPLAY_NEW Is Nothing Then
+                    lcnno_format = dao.fields.LCNNO_DISPLAY_NEW
+                Else
+                    lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                End If
+
             End If
 
         Catch ex As Exception

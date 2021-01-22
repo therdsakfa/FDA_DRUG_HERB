@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class UC_HERB_PHESAJ
+Partial Public Class UC_LCN_HERB_PHESAJ
 
     '''<summary>
     '''txt_PHR_CTZNO control.
@@ -129,6 +129,15 @@ Partial Public Class UC_HERB_PHESAJ
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_edit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''rgphr control.

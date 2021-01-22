@@ -11,50 +11,59 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_LCN_EDIT
+Partial Public Class UC_LCN_HERB
 
     '''<summary>
-    '''ScriptManager1 control.
+    '''ddl_placename control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    Protected WithEvents ddl_placename As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''UC_LCN_HERB control.
+    '''cb_location control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_LCN_HERB As Global.FDA_DRUG_HERB.UC_LCN_HERB
+    Protected WithEvents cb_location As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''UC_LCN_HERB_PHESAJ control.
+    '''lbl_location_new control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_LCN_HERB_PHESAJ As Global.FDA_DRUG_HERB.UC_LCN_HERB_PHESAJ
+    Protected WithEvents lbl_location_new As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Panel1 control.
+    '''hf_place control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents hf_place As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''UC_TABLE_DRUG_GROUP_CHANGE_HERB control.
+    '''btn_save control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_TABLE_DRUG_GROUP_CHANGE_HERB As Global.FDA_DRUG_HERB.UC_TABLE_DRUG_GROUP_CHANGE_HERB
+    Protected WithEvents btn_save As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''RadGrid2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadGrid2 As Global.Telerik.Web.UI.RadGrid
 End Class

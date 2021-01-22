@@ -34,7 +34,9 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
 
-            UC_HERB_PHESAJ.bind_ddl_phr_type()
+            UC_LCN_HERB_PHESAJ.bind_lcn_type()
+            UC_LCN_HERB_PHESAJ.bind_ddl_prefix()
+            UC_LCN_HERB_PHESAJ.bind_ddl_phr_type()
             'If Request.QueryString("ida") <> "" Then
             '    Panel1.Style.Add("display", "block")
             'Else
