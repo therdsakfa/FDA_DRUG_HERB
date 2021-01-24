@@ -3,6 +3,7 @@ Public Class UC_LCN_HERB_PHESAJ
     Inherits System.Web.UI.UserControl
     Private _CLS As New CLS_SESSION
     Private _ProcessID As Integer
+    Public PHR_NAME As String = ""
     Sub RunSession()
         _ProcessID = Request.QueryString("process")
         Try
@@ -35,6 +36,9 @@ Public Class UC_LCN_HERB_PHESAJ
         '    'Get_data(dao)
         '    Set_Hide()
         'End If
+    End Sub
+    Sub get_PHR_NAME()
+        PHR_NAME = txt_PHR_NAME.Text
     End Sub
     Sub bind_lcn_type()
         Dim dao As New DAO_DRUG.TB_MAS_TYPE_PHR_HERB
@@ -265,10 +269,14 @@ Public Class UC_LCN_HERB_PHESAJ
             Dim item As GridDataItem = e.Item
             Dim _ida As String = item("PHR_IDA").Text
             Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+            Dim name_del As String
             If e.CommandName = "r_del" Then
                 dao.GetDataby_IDA(_ida)
+                name_del = dao.fields.PHR_NAME
                 dao.delete()
                 rgphr.Rebind()
+
+                KEEP_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
             ElseIf e.CommandName = "edt" Then
                 ' Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&phr_ida=" & _ida)
                 dao.GetDataby_IDA(_ida)
@@ -312,6 +320,7 @@ Public Class UC_LCN_HERB_PHESAJ
             rgphr.Rebind()
             CLEAR_DATA()
 
+            KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้ปฏิบัติการจาก " & dao.fields.PHR_NAME & " เป็น " & PHR_NAME, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
         Else
             Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script> ")
         End If
