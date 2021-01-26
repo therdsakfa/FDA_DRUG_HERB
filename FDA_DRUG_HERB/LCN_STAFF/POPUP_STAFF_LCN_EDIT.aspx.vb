@@ -1,12 +1,12 @@
 ﻿Public Class POPUP_STAFF_LCN_EDIT
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION
-    Private _ProcessID As String
+    Public _ProcessID As String
     Private _lct_ida As String = ""
     Private _YEARS As String
     Private _type_id As String
     Private _IDA As String
-    Private PHR_IDA As String
+    Public phr_ida As String
 
     Sub RunQuery()
         Try
@@ -16,7 +16,7 @@
             _ProcessID = Request.QueryString("process")
             _IDA = Request.QueryString("ida")
             _ProcessID = Request.QueryString("process")
-            PHR_IDA = Request.QueryString("PHR_IDA")
+            phr_ida = Request.QueryString("PHR_IDA")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -34,12 +34,14 @@
         End Try
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunQuery()
         If Not IsPostBack Then
             Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-            dao.GetDataby_IDA(PHR_IDA)
+            dao.GetDataby_IDA(phr_ida)
             UC_LCN_HERBB_PHESAJ_EDIT.bind_lcn_type()
             UC_LCN_HERBB_PHESAJ_EDIT.bind_ddl_prefix()
             UC_LCN_HERBB_PHESAJ_EDIT.bind_ddl_phr_type()
+            UC_LCN_HERBB_PHESAJ_EDIT.select_mastra(_ProcessID)
             UC_LCN_HERBB_PHESAJ_EDIT.Get_data(dao)
         End If
     End Sub

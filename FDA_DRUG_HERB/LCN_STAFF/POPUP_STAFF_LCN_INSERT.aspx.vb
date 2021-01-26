@@ -32,6 +32,7 @@
         End Try
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        RunQuery()
         If Not IsPostBack Then
 
             UC_LCN_HERB_PHESAJ.bind_lcn_type()

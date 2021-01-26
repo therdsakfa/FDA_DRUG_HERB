@@ -23,16 +23,16 @@ Public Class UC_LCN__HERBB_PHESAJ_EDIT
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
-        If Not IsPostBack Then
-            If _ProcessID = "122" Then
-                rdl_mastra.SelectedValue = "1"
-            ElseIf _ProcessID = "121" Then
-                rdl_mastra.SelectedValue = "2"
-            ElseIf _ProcessID = "120" Then
-                rdl_mastra.SelectedValue = "3"
-            End If
+        'If Not IsPostBack Then
+        '    If _ProcessID = "122" Then
+        '        rdl_mastra.SelectedValue = "1"
+        '    ElseIf _ProcessID = "121" Then
+        '        rdl_mastra.SelectedValue = "2"
+        '    ElseIf _ProcessID = "120" Then
+        '        rdl_mastra.SelectedValue = "3"
+        '    End If
 
-        End If
+        'End If
         'Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
         'dao.GetDataby_IDA(Request.QueryString("PHR_IDA"))
         'Get_data(dao)
@@ -55,6 +55,18 @@ Public Class UC_LCN__HERBB_PHESAJ_EDIT
 
         End Try
 
+    End Sub
+    Sub select_mastra(ByVal _ProcessID As String)
+        If Not IsPostBack Then
+            If _ProcessID = "122" Then
+                rdl_mastra.SelectedValue = "1"
+            ElseIf _ProcessID = "121" Then
+                rdl_mastra.SelectedValue = "2"
+            ElseIf _ProcessID = "120" Then
+                rdl_mastra.SelectedValue = "3"
+            End If
+
+        End If
     End Sub
     Sub bind_ddl_phr_type()
         Try

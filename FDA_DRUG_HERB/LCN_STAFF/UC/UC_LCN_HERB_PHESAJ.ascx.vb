@@ -280,7 +280,7 @@ Public Class UC_LCN_HERB_PHESAJ
 
                 KEEP_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
             ElseIf e.CommandName = "edt" Then
-                Response.Redirect("../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?IDA=" & IDA & "&PHR_IDA=" & _ida & "&process" & _ProcessID)
+                Response.Redirect("../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?IDA=" & IDA & "&PHR_IDA=" & _ida & "&process=" & _ProcessID)
                 'url = "../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?IDA=" & IDA
                 'Response.Redirect(url)
                 'Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&phr_ida=" & _ida)

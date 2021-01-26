@@ -227,6 +227,8 @@ Public Class UC_LCN_HERB
 
                 RadGrid2.Rebind()
                 Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกข้อมูลเรียบร้อยแล้ว');</script> ")
+
+                KEEP_LOCATION_LOGS_EDIT(Request.QueryString("ida"), "เพิ่มข้อมูลสถาที่ " & dao_DALCN_DETAIL_LOCATION_KEEP.fields.LOCATION_ADDRESS_thaamphrnm, _CLS.CITIZEN_ID)
             End If
         Catch ex As Exception
 
@@ -245,7 +247,7 @@ Public Class UC_LCN_HERB
                 dao_DALCN_DETAIL_LOCATION_KEEP.delete()
                 RadGrid2.Rebind()
 
-                KEEP_LOCATION_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
+                KEEP_LOCATION_LOGS_EDIT(Request.QueryString("ida"), "ลบข้อมูลสถาที่ " & name_del, _CLS.CITIZEN_ID)
             End If
         End If
     End Sub
