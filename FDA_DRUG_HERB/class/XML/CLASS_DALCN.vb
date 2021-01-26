@@ -239,6 +239,16 @@
             End Set
         End Property
 
+        Private _LCNNO_SHOW_NEW As String
+        Public Property LCNNO_SHOW_NEW() As String
+            Get
+                Return _LCNNO_SHOW_NEW
+            End Get
+            Set(ByVal value As String)
+                _LCNNO_SHOW_NEW = value
+            End Set
+        End Property
+
         Private _RCVDAY As String
         Public Property RCVDAY() As String
             Get

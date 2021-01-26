@@ -1237,6 +1237,7 @@ Public Class WebForm35
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
         Dim lcnno_format As String = ""
+        Dim lcnno_format_NEW As String = ""
         Dim pvncd As String = ""
         Try
             lcnno_text = dao.fields.LCNNO_MANUAL
@@ -1842,11 +1843,17 @@ Public Class WebForm35
 
                     If Right(Left(lcnno_auto, 3), 1) = "5" Then
                         lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                        'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                     Else
+                        'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                         lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
                     End If
                     'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+
                 End If
+
+                lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
+
             Else
 
                 Dim _type_da As String = ""
@@ -1859,7 +1866,7 @@ Public Class WebForm35
                 End If
 
                 If Not dao.fields.LCNNO_DISPLAY_NEW Is Nothing Then
-                    lcnno_format = dao.fields.LCNNO_DISPLAY_NEW
+                    lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                 Else
                     lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 End If
@@ -1917,7 +1924,9 @@ Public Class WebForm35
         Dim dao_main As New DAO_DRUG.ClsDBdalcn
         dao_main.GetDataby_IDA(MAIN_LCN_IDA)
         ' If MAIN_LCN_IDA = 0 Then
+
         class_xml.LCNNO_SHOW = NumEng2Thai(lcnno_format)
+        class_xml.LCNNO_SHOW_NEW = NumEng2Thai(lcnno_format_NEW)
         class_xml.SHOW_LCNNO = NumEng2Thai(lcnno_text)
 
         Try
