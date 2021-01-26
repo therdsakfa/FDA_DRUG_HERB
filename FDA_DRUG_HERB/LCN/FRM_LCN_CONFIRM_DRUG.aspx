@@ -1106,12 +1106,9 @@
                                             <td class="auto-style2"></td>
                                             <td>&nbsp;
                         ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
-                                            </td>
+                                            </td>                                           
                                             <td>
-                                                <asp:Label ID="lbl_PHR_prefix" runat="server"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lbl_PHR_NAME" runat="server"></asp:Label>
+                                                <asp:Label ID="lbl_PHR_prefix" runat="server"></asp:Label><asp:Label ID="lbl_PHR_NAME" runat="server"></asp:Label>
                                             </td>
                                             <td>
                                                 <asp:Label ID="lbl_phr_type" runat="server"></asp:Label>

@@ -943,7 +943,7 @@
                         ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
                     </td>
                     <td>
-                        <asp:label ID="lbl_PHR_NAME" runat="server"></asp:label>
+                        <asp:Label ID="lbl_PHR_prefix" runat="server"></asp:Label><asp:label ID="lbl_PHR_NAME" runat="server"></asp:label>
                     </td> 
                     <td>
                         <asp:Label ID="lbl_phr_type"  runat="server"></asp:Label>
