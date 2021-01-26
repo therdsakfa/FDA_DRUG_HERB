@@ -237,12 +237,15 @@ Public Class UC_LCN_HERB
             Dim item As GridDataItem = e.Item
             Dim _ida As String = item("IDA").Text
             Dim dao_DALCN_DETAIL_LOCATION_KEEP As New DAO_DRUG.TB_DALCN_DETAIL_LOCATION_KEEP
+            Dim name_del As String
             If e.CommandName = "_del" Then
                 'Response.Write("<script type='text/javascript'>window.parent.alert('ยืนยันการลบ');</script> ")
                 dao_DALCN_DETAIL_LOCATION_KEEP.GetDataby_IDA(_ida)
+                name_del = dao_DALCN_DETAIL_LOCATION_KEEP.fields.LOCATION_ADDRESS_thaamphrnm
                 dao_DALCN_DETAIL_LOCATION_KEEP.delete()
                 RadGrid2.Rebind()
 
+                KEEP_LOCATION_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
             End If
         End If
     End Sub

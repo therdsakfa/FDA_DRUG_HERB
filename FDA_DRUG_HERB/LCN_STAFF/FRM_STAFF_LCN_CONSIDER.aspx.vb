@@ -90,6 +90,7 @@
             End Try
             Dim bao2 As New BAO.GenNumber
             Dim LCNNO As Integer
+            Dim LCNNO_V2 As Integer
             LCNNO = bao2.GEN_LCNNO_NEW(con_year(Date.Now.Year), _CLS.PVCODE, GROUP_NUMBER, PROCESS_ID, 0, 0, _IDA, "")
 
             Dim _year As Integer = con_year(Date.Now.Year)
@@ -97,7 +98,9 @@
                 _year += 543
             End If
 
-            dao.fields.lcnno = con_year(Date.Now.Year).Substring(2, 2) & LCNNO
+            LCNNO_V2 = con_year(Date.Now.Year).Substring(2, 2) & LCNNO
+            'Convert.ToInt32(LCNNO_V2)
+            dao.fields.lcnno = LCNNO_V2
 
             'If chw <> "" Then
             'dao.fields.LCNNO_DISPLAY = _CLS.PVCODE & "-" & _type_da & "-" & Left(LCNNO, 2) & "-" & Right(LCNNO, Len(LCNNO) - 2)  'chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"

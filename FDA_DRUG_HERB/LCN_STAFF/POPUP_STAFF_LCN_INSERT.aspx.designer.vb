@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class POPUP_STAFF_LCN_EDIT
+Partial Public Class FRM_STAFF_LCN_INSERT
 
     '''<summary>
     '''ScriptManager1 control.
@@ -32,11 +32,11 @@ Partial Public Class POPUP_STAFF_LCN_EDIT
     Protected WithEvents UC_LCN_HERB As Global.FDA_DRUG_HERB.UC_LCN_HERB
 
     '''<summary>
-    '''UC_LCN_HERBB_PHESAJ_EDIT control.
+    '''UC_LCN_HERB_PHESAJ control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents UC_LCN_HERBB_PHESAJ_EDIT As Global.FDA_DRUG_HERB.UC_LCN__HERBB_PHESAJ_EDIT
+    Protected WithEvents UC_LCN_HERB_PHESAJ As Global.FDA_DRUG_HERB.UC_LCN_HERB_PHESAJ
 End Class

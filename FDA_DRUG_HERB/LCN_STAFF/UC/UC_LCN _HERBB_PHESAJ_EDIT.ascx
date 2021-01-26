@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_LCN_HERB_PHESAJ.ascx.vb" Inherits="FDA_DRUG_HERB.UC_LCN_HERB_PHESAJ" %>
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UC_LCN _HERBB_PHESAJ_EDIT.ascx.vb" Inherits="FDA_DRUG_HERB.UC_LCN__HERBB_PHESAJ_EDIT" %>
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <style type="text/css">
     .auto-style2 {
@@ -31,7 +31,7 @@
             คำนำหน้า
         </div>
          <div class="col-lg-3">
-            <asp:DropDownList ID="ddl_prefix" runat="server" AutoPostBack="True" DataTextField ="thanm" DataValueField="prefixcd"></asp:DropDownList>
+            <asp:DropDownList ID="ddl_prefix" runat="server" DataTextField ="thanm" DataValueField="prefixcd"></asp:DropDownList>
         </div>       
         <div class="col-lg-9"></div>
     </div>
@@ -124,6 +124,92 @@
         <div class="col-lg-5">&nbsp;</div>
     </div>
 
+    <%--<table>
+                <tr>
+                    <td ></td>
+                    <td>
+                        บัตรประชาชน
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_CTZNO" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                       <asp:Button ID="btn_search" runat="server" Text="ค้นหา" /> 
+                    </td>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td>&nbsp;
+                        ๔.๑ กรณีผู้ประกอบวิชาชีพ/ผู้ประกอบโรคศิลปะ ชื่อ
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_NAME" runat="server"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:DropDownList ID="ddl_phr_type"  runat="server"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td ></td>
+                      <td>
+                        ใบอนุญาตประกออนบการวิชาชีพ/โรคศิลปะเลขที่
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_TEXT_NUM" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        หรือ
+                    </td>
+                </tr>
+                <tr>
+                    <td ></td>
+                      <td>
+                        กรณีที่ไม่ไช้ผู้ประกอบวิชาชีพหรือผู้ปรกอบโรคคิลปะ ให้ระบุคุณวุฒิ
+                    </td>
+                    <td>
+                         <asp:TextBox ID="txt_STUDY_LEVEL" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td ></td>
+                      <td>
+                        สาขา
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_VETERINARY_FIELD" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td ></td>
+                      <td colspan="3">&nbsp;
+                            ๔.๒  ผ่านการอบรมหลักสูตรจากสำนักงานคณะกรรมการอาหารและยา โปรดระบุชื่อหลักสูตร
+                    </td>                  
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td>
+                        <asp:TextBox ID="txt_NAME_SIMINAR" runat="server"></asp:TextBox>
+                    </td>
+                      <td>
+                        วันที่อบรม
+                    </td>
+                    <td>
+                        <telerik:RadDatePicker ID="rdp_SIMINAR_DATE" Runat="server"> </telerik:RadDatePicker>
+                    </td>
+                </tr>
+                <tr>
+                    <td ></td>
+                      <td>
+                        เวลาทำการ
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_PHR_TEXT_WORK_TIME" runat="server"></asp:TextBox>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>--%>
      <div class="row">
          <div class="col-lg-1"></div>
         <div class="col-lg-2">
@@ -139,11 +225,26 @@
          <div class="col-lg-3">แห่ง พ.ร.บ.ผลิตภัณฆ์สมุนไพร พ.ศ.๒๕๖๒</div>
         <div class="col-lg-3"></div>
     </div>
-
+   <%-- <table>
+        <tr>
+            <td class="auto-style2"></td>
+            <td>เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม
+            </td>
+            <td>
+                 <asp:RadioButtonList ID="rdl_mastra" runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="1">มาตรา ๓๑</asp:ListItem>
+                    <asp:ListItem Value="2">มาตรา ๓๒</asp:ListItem>
+                    <asp:ListItem Value="3">มาตรา ๓๓</asp:ListItem>
+                </asp:RadioButtonList>
+            </td>
+            <td>แห่ง พ.ร.บ.ผลิตภัณฆ์สมุนไพร พ.ศ.๒๕๖๒
+            </td>
+        </tr>
+    </table>--%>
      <div class="row">
          <div class="col-lg-1"></div>
         <div class="col-lg-3">
-            <asp:Button ID="btn_save" runat="server" Text="เพิ่มผุ้มีหน้าที่ปฎิบัติการ" />
+            <%--<asp:Button ID="btn_save" runat="server" Text="เพิ่มผุ้มีหน้าที่ปฎิบัติการ" />--%>
             <asp:Button ID="btn_edit" runat="server" Text="ยืนยันการแก้ไข"/>
         </div>       
         <div class="col-lg-8"></div>

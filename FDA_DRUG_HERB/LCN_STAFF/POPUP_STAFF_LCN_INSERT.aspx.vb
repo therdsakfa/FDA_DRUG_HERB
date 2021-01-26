@@ -1,4 +1,4 @@
-﻿Public Class POPUP_STAFF_LCN_EDIT
+﻿Public Class FRM_STAFF_LCN_INSERT
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION
     Private _ProcessID As String
@@ -6,7 +6,6 @@
     Private _YEARS As String
     Private _type_id As String
     Private _IDA As String
-    Private PHR_IDA As String
 
     Sub RunQuery()
         Try
@@ -16,7 +15,6 @@
             _ProcessID = Request.QueryString("process")
             _IDA = Request.QueryString("ida")
             _ProcessID = Request.QueryString("process")
-            PHR_IDA = Request.QueryString("PHR_IDA")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")
         End Try
@@ -35,12 +33,17 @@
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-            dao.GetDataby_IDA(PHR_IDA)
-            UC_LCN_HERBB_PHESAJ_EDIT.bind_lcn_type()
-            UC_LCN_HERBB_PHESAJ_EDIT.bind_ddl_prefix()
-            UC_LCN_HERBB_PHESAJ_EDIT.bind_ddl_phr_type()
-            UC_LCN_HERBB_PHESAJ_EDIT.Get_data(dao)
+
+            UC_LCN_HERB_PHESAJ.bind_lcn_type()
+            UC_LCN_HERB_PHESAJ.bind_ddl_prefix()
+            UC_LCN_HERB_PHESAJ.bind_ddl_phr_type()
+            'If Request.QueryString("phr_ida") <> "" Then
+            '    Panel2.Style.Add("display", "none")
+            'Else
+            '    Panel2.Style.Add("display", "block")
+            'End If
+
         End If
     End Sub
+
 End Class

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75.5, 114.25" name="Linq_DRUG">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 75.5, 115" name="Linq_DRUG">
   <DataContextMoniker Name="/Linq_DRUGDataContext" />
   <nestedChildShapes>
     <classShape Id="a478b3b7-1139-4770-921d-532ae1e62b1d" absoluteBounds="0.75, 0.75, 2, 3.5016097005208326">
@@ -2114,10 +2114,16 @@
         <elementListCompartment Id="d1080859-439a-4b8a-b6c9-2479cd07535d" absoluteBounds="73.265, 45.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b17d007f-58dd-44d6-8db5-d8aa74b260c1" absoluteBounds="66.875, 56.125, 2, 57.9229150390625">
+    <classShape Id="a99ea57b-d3bf-4bc1-8f72-9be3515da14d" absoluteBounds="66.875, 56.875, 2, 57.9229150390625">
       <DataClassMoniker Name="/Linq_DRUGDataContext/dalcn" />
       <nestedChildShapes>
-        <elementListCompartment Id="bf42c54b-4280-46b6-a84a-622c6f27733a" absoluteBounds="66.89, 56.585, 1.9700000000000002, 57.3629150390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e8927f91-bd14-4280-b9ee-cceb7ff853ec" absoluteBounds="66.89, 57.335, 1.9700000000000002, 57.3629150390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94a1a77c-1906-4df2-ba5f-4cf725de9b8e" absoluteBounds="69.75, 72.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Linq_DRUGDataContext/LOG_LOCATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2715c7d1-69c7-4476-91fd-9d2e4ac60e89" absoluteBounds="69.765, 73.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

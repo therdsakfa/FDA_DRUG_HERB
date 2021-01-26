@@ -127,19 +127,19 @@ Public Class FRM_STAFF_LCN_ADD
                 Else
                     System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups3('" & "../LCN/POPUP_LCN_PRODUCTION_DRUG_GROUP_HEAD.aspx?ida=" & tr_id & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
                 End If
-                'ElseIf e.CommandName = "add" Then
-                '    'Dim dao As New DAO_DRUG.ClsDBdalcn
-                '    dao.GetDataby_IDA(IDA)
-                '    Dim tr_id As String = 0
-                '    Try
-                '        tr_id = dao.fields.TR_ID
-                '    Catch ex As Exception
+            ElseIf e.CommandName = "add" Then
+                'Dim dao As New DAO_DRUG.ClsDBdalcn
+                dao.GetDataby_IDA(IDA)
+                Dim tr_id As String = 0
+                Try
+                    tr_id = dao.fields.TR_ID
+                Catch ex As Exception
 
-                '    End Try
+                End Try
 
-                '    Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
-                '    dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
-                '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_STAFF_LCN_EDIT.aspx?ida=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "&lct_ida=" & dao.fields.FK_IDA & "');", True)
+                Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+                dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "POPUP_STAFF_LCN_INSERT.aspx?ida=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "&lct_ida=" & dao.fields.FK_IDA & "');", True)
             End If
 
         End If
@@ -182,46 +182,46 @@ Public Class FRM_STAFF_LCN_ADD
         End Try
     End Sub
     Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
-        If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
-            Dim item As GridDataItem
-            item = e.Item
-            Dim IDA As String = item("IDA").Text
-            ' Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
-            Dim btn_add As LinkButton = DirectCast(item("btn_add").Controls(0), LinkButton)
-            Dim dao As New DAO_DRUG.ClsDBdalcn
-            Dim tr_id As String = 0
-            dao.GetDataby_IDA(IDA)
-            'btn_edit.Style.Add("display", "none")
-            'Try
-            '    If dao.fields.STATUS_ID = 6 Then
-            '        btn_edit.Style.Add("display", "block")
-            '    End If
-            'Catch ex As Exception
+        'If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
+        '    Dim item As GridDataItem
+        '    item = e.Item
+        '    Dim IDA As String = item("IDA").Text
+        '    ' Dim btn_edit As LinkButton = DirectCast(item("btn_edit").Controls(0), LinkButton)
+        '    Dim btn_add As LinkButton = DirectCast(item("btn_add").Controls(0), LinkButton)
+        '    Dim dao As New DAO_DRUG.ClsDBdalcn
+        '    Dim tr_id As String = 0
+        '    dao.GetDataby_IDA(IDA)
+        'btn_edit.Style.Add("display", "none")
+        'Try
+        '    If dao.fields.STATUS_ID = 6 Then
+        '        btn_edit.Style.Add("display", "block")
+        '    End If
+        'Catch ex As Exception
 
-            'End Try
-            'Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
-            'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+        'End Try
+        'Dim url As String = "../LCN_STAFF/FRM_STAFF_LCN_CONSIDER_UPDATE.aspx?IDA=" & IDA
+        'btn_edit.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
 
-            'dao.GetDataby_IDA(IDA)
-            'btn_edit.Style.Add("display", "none")
-            Try
-                If dao.fields.STATUS_ID = 6 And dao.fields.STATUS_ID = 8 Then
-                    btn_add.Style.Add("display", "block")
+        'dao.GetDataby_IDA(IDA)
+        'btn_edit.Style.Add("display", "none")
+        'Try
+        '    If dao.fields.STATUS_ID = 6 And dao.fields.STATUS_ID = 8 Then
+        '        btn_add.Style.Add("display", "block")
 
-                    Try
-                        tr_id = dao.fields.TR_ID
-                    Catch ex As Exception
+        '        Try
+        '            tr_id = dao.fields.TR_ID
+        '        Catch ex As Exception
 
-                    End Try
-                End If
-            Catch ex As Exception
+        '        End Try
+        '    End If
+        'Catch ex As Exception
 
-            End Try
-            Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
-            Dim url As String = "../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?ida=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "&lct_ida=" & dao.fields.FK_IDA
-            btn_add.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
-        End If
+        'End Try
+        'Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
+        'dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
+        'Dim url As String = "../LCN_STAFF/POPUP_STAFF_LCN_INSERT.aspx?ida=" & IDA & "&TR_ID=" & tr_id & "&process=" & dao_pro.fields.PROCESS_ID & "&lct_ida=" & dao.fields.FK_IDA
+        'btn_add.Attributes.Add("OnClick", "Popups3('" & url & "'); return false;")
+        'End If
     End Sub
 
     Private Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource

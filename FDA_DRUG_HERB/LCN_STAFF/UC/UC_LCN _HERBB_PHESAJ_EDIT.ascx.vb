@@ -1,12 +1,14 @@
 ﻿Imports Telerik.Web.UI
-Public Class UC_LCN_HERB_PHESAJ
+Public Class UC_LCN__HERBB_PHESAJ_EDIT
     Inherits System.Web.UI.UserControl
     Private _CLS As New CLS_SESSION
     Private _ProcessID As Integer
     Public PHR_NAME As String = ""
+    Public PHR_IDA As String = ""
     Public IDA As String = ""
     Sub RunSession()
         _ProcessID = Request.QueryString("process")
+        PHR_IDA = Request.QueryString("PHR_IDA")
         IDA = Request.QueryString("IDA")
         Try
             If Session("CLS") Is Nothing Then
@@ -29,9 +31,11 @@ Public Class UC_LCN_HERB_PHESAJ
             ElseIf _ProcessID = "120" Then
                 rdl_mastra.SelectedValue = "3"
             End If
-            btn_edit.Style.Add("display", "none")
 
         End If
+        'Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        'dao.GetDataby_IDA(Request.QueryString("PHR_IDA"))
+        'Get_data(dao)
         'If Request.QueryString("phr_ida") <> "" Then
         '    Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
         '    dao.GetDataby_IDA(Request.QueryString("phr_ida"))
@@ -99,21 +103,6 @@ Public Class UC_LCN_HERB_PHESAJ
             'End Try
         End If
     End Sub
-
-    Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-        If txt_PHR_TEXT_WORK_TIME.Text <> "" And txt_PHR_TEXT_NUM.Text <> "" Or txt_STUDY_LEVEL.Text <> "" Then
-            set_data(dao)
-            dao.fields.FK_IDA = Request.QueryString("ida")
-            dao.insert()
-            Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
-            rgphr.Rebind()
-            CLEAR_DATA()
-        Else
-            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script> ")
-        End If
-    End Sub
-
     Public Sub set_data(ByRef dao As DAO_DRUG.ClsDBDALCN_PHR)
         With dao.fields
             .PHR_NAME = txt_PHR_NAME.Text
@@ -280,12 +269,9 @@ Public Class UC_LCN_HERB_PHESAJ
 
                 KEEP_LOGS_EDIT(Request.QueryString("ida"), "ลบผู้มีหน้าที่ปฏิบัติการ " & name_del, _CLS.CITIZEN_ID)
             ElseIf e.CommandName = "edt" Then
-                Response.Redirect("../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?IDA=" & IDA & "&PHR_IDA=" & _ida & "&process" & _ProcessID)
-                'url = "../LCN_STAFF/POPUP_STAFF_LCN_EDIT.aspx?IDA=" & IDA
-                'Response.Redirect(url)
-                'Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&phr_ida=" & _ida)
-                'dao.GetDataby_IDA(_ida)
-                'Get_data(dao)
+                ' Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&phr_ida=" & _ida)
+                dao.GetDataby_IDA(_ida)
+                Get_data(dao)
                 'Set_Hide()
             End If
         End If
@@ -306,29 +292,23 @@ Public Class UC_LCN_HERB_PHESAJ
         ddl_phr_type.SelectedValue = Nothing
 
     End Sub
-    'Public Sub Set_Show()
-    '    btn_save.Style.Add("display", "block")
-    '    btn_edit.Style.Add("display", "none")
-    'End Sub
-    'Public Sub Set_Hide()
-    '    btn_save.Style.Add("display", "none")
-    '    btn_edit.Style.Add("display", "block")
-    'End Sub
 
-    'Protected Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-    '    Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
-    '    If txt_PHR_TEXT_WORK_TIME.Text <> "" And txt_PHR_TEXT_NUM.Text <> "" Or txt_STUDY_LEVEL.Text <> "" Then
-    '        dao.GetDataby_IDA(Request.QueryString("phr_ida"))
-    '        set_data(dao)
-    '        dao.update()
-    '        Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
-    '        rgphr.Rebind()
-    '        CLEAR_DATA()
+    Protected Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        Dim dao As New DAO_DRUG.ClsDBDALCN_PHR
+        dao.GetDataby_IDA(PHR_IDA)
+        set_data(dao)
+        If txt_PHR_TEXT_WORK_TIME.Text <> "" And txt_PHR_TEXT_NUM.Text <> "" Or txt_STUDY_LEVEL.Text <> "" Then
+            set_data(dao)
+            dao.update()
+            Response.Write("<script type='text/javascript'>alert('บันทึกเรียบร้อย');</script> ")
+            rgphr.Rebind()
+            'CLEAR_DATA()
 
-    '        KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้ปฏิบัติการจาก " & dao.fields.PHR_NAME & " เป็น " & PHR_NAME, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
-    '    Else
-    '        Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script> ")
-    '    End If
+            KEEP_LOGS_EDIT(Request.QueryString("ida"), "แก้ไขผู้ปฏิบัติการจาก " & dao.fields.PHR_NAME & " เป็น " & PHR_NAME, _CLS.CITIZEN_ID, url:=HttpContext.Current.Request.Url.AbsoluteUri)
+            Response.Redirect("../LCN_STAFF/POPUP_STAFF_LCN_INSERT.aspx?IDA=" & IDA & "&process_id=" & _ProcessID)
+        Else
+            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script> ")
+        End If
 
-    'End Sub
+    End Sub
 End Class

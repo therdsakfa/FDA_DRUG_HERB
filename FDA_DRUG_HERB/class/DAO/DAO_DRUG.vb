@@ -4755,7 +4755,42 @@ Namespace DAO_DRUG
             Next
         End Sub
     End Class
+    Public Class TB_LOG_LOCATION
+        Inherits MAINCONTEXT                    'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
 
+        Public fields As New LOG_LOCATION          'ใส่ชื่อ Table   (dh15rqt)
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.LOG_LOCATIONs Where p.IDA = IDA Select p) 'การ Where   table(DH15_DETAIL_MANUFACTUREs)เติม s เพื่อไม่ให้ชื่อซ้ำกับ Table   (P คือ ประกาศตัวแปรเป็น Table)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_FK_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.LOG_LOCATIONs Where p.FK_IDA = IDA Select p) 'การ Where   table(DH15_DETAIL_MANUFACTUREs)เติม s เพื่อไม่ให้ชื่อซ้ำกับ Table   (P คือ ประกาศตัวแปรเป็น Table)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub insert()
+            db.LOG_LOCATIONs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.LOG_LOCATIONs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.LOG_LOCATIONs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
     Public Class TB_DH15_DETAIL_MANUFACTURE
         Inherits MAINCONTEXT                    'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
 
