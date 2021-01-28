@@ -934,6 +934,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
         Dim lcnno_format As String = ""
+        Dim lcnno_format_new As String = ""
         Try
             lcnno_text = dao.fields.LCNNO_MANUAL
         Catch ex As Exception
@@ -1605,6 +1606,9 @@ Public Class FRM_LCN_CONFIRM_DRUG
                     End If
                     'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
                 End If
+
+                lcnno_format_new = dao.fields.LCNNO_DISPLAY_NEW
+
             Else
 
                 Dim _type_da As String = ""
@@ -1715,6 +1719,7 @@ Public Class FRM_LCN_CONFIRM_DRUG
 
         'If MAIN_LCN_IDA = 0 Then
         class_xml.LCNNO_SHOW = NumEng2Thai(lcnno_format)
+        class_xml.LCNNO_SHOW_NEW = NumEng2Thai(lcnno_format_new)
         class_xml.SHOW_LCNNO = NumEng2Thai(lcnno_text)
         Try
             If dao.fields.lcntpcd = "ขสม" Then
