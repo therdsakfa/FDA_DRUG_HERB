@@ -1866,7 +1866,8 @@ Public Class WebForm35
                 End If
 
                 If Not dao.fields.LCNNO_DISPLAY_NEW Is Nothing Then
-                    lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
+                    lcnno_format = dao.fields.LCNNO_DISPLAY_NEW
+                    'lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 Else
                     lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 End If
