@@ -807,14 +807,32 @@
             txt_c_thamu.Text = lbl_BSN_MOO.Text
             txt_c_thasoi.Text = lbl_BSN_SOI.Text
             txt_c_tharoad.Text = lbl_BSN_ROAD.Text
-            load_ddl_chwt()
-            ddl_Province.Items.FindByText(lbl_thachngwtnm.Text).Selected = True
+
+            Try
+                load_ddl_chwt()
+                ddl_Province.Items.FindByText(lbl_thachngwtnm.Text).Selected = True
+            Catch ex As Exception
+                'ddl_Province.Items.Clear()
+            End Try
+            'ddl_Province.Items.FindByText(lbl_thachngwtnm.Text).Selected = True
             'ddl_Province.SelectedItem.Text = lbl_thachngwtnm.Text
-            load_ddl_amp()
-            ddl_amphor.Items.FindByText(lbl_BSN_AMPHR_NAME.Text).Selected = True
+
+            Try
+                load_ddl_amp()
+                ddl_amphor.Items.FindByText(lbl_BSN_AMPHR_NAME.Text).Selected = True
+            Catch ex As Exception
+                'ddl_amphor.Items.Clear()
+            End Try
+            'ddl_amphor.Items.FindByText(lbl_BSN_AMPHR_NAME.Text).Selected = True
             'ddl_amphor.SelectedItem.Text = lbl_BSN_AMPHR_NAME.Text
-            load_ddl_thambol()
-            ddl_tambol.Items.FindByText(lbl_BSN_THMBL_NAME.Text).Selected = True
+
+            Try
+                load_ddl_thambol()
+                ddl_tambol.Items.FindByText(lbl_BSN_THMBL_NAME.Text).Selected = True
+            Catch ex As Exception
+                'ddl_tambol.Items.Clear()
+            End Try
+            'ddl_tambol.Items.FindByText(lbl_BSN_THMBL_NAME.Text).Selected = True
             'ddl_tambol.SelectedItem.Text = lbl_BSN_THMBL_NAME.Text
 
             txt_c_zipcode.Text = lbl_BSN_ZIPCODE.Text
