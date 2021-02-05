@@ -144,7 +144,7 @@ Namespace BAO
             dao_pack.GetDataby_FKIDA(FK_IDA)
             For Each dao_pack.fields In dao_pack.datas
                 Dim dao_rgt_pack As New DAO_DRUG.TB_DRRGT_PACKAGE_DETAIL
-
+                dao_rgt_pack.GetDataby_FKIDA(FK_IDA)
                 With dao_rgt_pack.fields
                     .PACKAGE_NAME = dao_pack.fields.PACKAGE_NAME
                     .SUM = dao_pack.fields.SUM
@@ -162,7 +162,7 @@ Namespace BAO
                     .SMALL_AMOUNT = dao_pack.fields.SMALL_AMOUNT
                     .SMALL_UNIT = dao_pack.fields.SMALL_UNIT
                 End With
-                dao_rgt_pack.insert()
+                dao_rgt_pack.update()
             Next
 
 

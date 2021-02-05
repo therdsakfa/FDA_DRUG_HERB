@@ -10,6 +10,10 @@
         Dim _IDA As Integer
         _IDA = TextBox1.Text
         bao_insert.insert_tabean_sub_packet_detail(_IDA)
-        MsgBox("Complete")
+        alert("Complete")
+    End Sub
+
+    Private Sub alert(ByVal text As String)
+        Response.Write("<script type='text/javascript'>alert('" + text + "');parent.close_modal();</script> ")
     End Sub
 End Class
