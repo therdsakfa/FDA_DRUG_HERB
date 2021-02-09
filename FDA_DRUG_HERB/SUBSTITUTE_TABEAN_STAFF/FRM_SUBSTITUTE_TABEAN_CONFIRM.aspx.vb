@@ -322,8 +322,9 @@
             End Try
 
             dao_date.fields.STATUS_GROUP = 2 'ใบอนุญาต ขย ต่างๆ
-            dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
-            dao_date.fields.DATE_NOW = Date.Now
+        'dao_date.fields.STATUS_ID = ddl_cnsdcd.SelectedValue
+        dao_date.fields.STATUS_ID = 4
+        dao_date.fields.DATE_NOW = Date.Now
             dao_date.fields.PROCESS_ID = PROCESS_ID
         dao_date.insert()
 

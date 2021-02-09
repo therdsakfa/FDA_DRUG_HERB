@@ -173,6 +173,7 @@
         Dim grptpcd As Integer = 0
         Dim subtpcd As Integer = 0
         Dim fk_lcn_ida As Integer = 0
+        Dim sorm As Integer = 0
         Try
             fk_lcn_ida = dao_rqt.fields.FK_LCN_IDA
         Catch ex As Exception
@@ -201,6 +202,20 @@
         Else
             sql_where &= " and subtpcd <> 3"
         End If
+
+        'If lcntpcd.Contains("บ") Or lcntpcd.Contains("สม") Then
+        '    grptpcd = 2
+        'Else
+        '    grptpcd = 1
+        'End If
+        'If lcntpcd.Contains("นย") Or lcntpcd.Contains("นส") Then
+        '    sorm = 2
+        'End If
+        'If sorm = 2 Then
+        '    sql_where &= " and subtpcd = 3"
+        'Else
+        '    sql_where &= " and subtpcd <> 3"
+        'End If
 
         sql &= sql_where
         Dim bao As New BAO.ClsDBSqlcommand
