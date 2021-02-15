@@ -734,6 +734,14 @@
     <None Include="Linq\LINQ_FDA_XML_DRUG_ESUB.dbml.layout">
       <DependentUpon>LINQ_FDA_XML_DRUG_ESUB.dbml</DependentUpon>
     </None>
+    <Content Include="Linq\LINQ_FDA_XML_DRUG_HERB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_FDA_XML_DRUG_HERB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_FDA_XML_DRUG_HERB.dbml.layout">
+      <DependentUpon>LINQ_FDA_XML_DRUG_HERB.dbml</DependentUpon>
+    </None>
     <None Include="Linq\LINQ_FEE.dbml.layout">
       <DependentUpon>LINQ_FEE.dbml</DependentUpon>
     </None>
@@ -5152,6 +5160,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_FDA_XML_DRUG_ESUB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\LINQ_FDA_XML_DRUG_HERB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_FDA_XML_DRUG_HERB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Linq\LINQ_FEE.designer.vb">
       <AutoGen>True</AutoGen>
