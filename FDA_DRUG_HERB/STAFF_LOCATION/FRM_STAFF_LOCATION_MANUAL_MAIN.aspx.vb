@@ -146,7 +146,7 @@ Public Class FRM_STAFF_LOCATION_MANUAL_MAIN
 
             Dim dt2 As New DataTable
             dt2 = bao.SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDEN_V2(2, _CLS.CITIZEN_ID_AUTHORIZE)
-            RadGrid2.DataSource = dt
+            RadGrid2.DataSource = dt2
 
             RadGrid2.Rebind()
 
