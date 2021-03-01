@@ -142,6 +142,9 @@
                        <telerik:GridBoundColumn DataField="RCVNO_MANUAL" FilterControlAltText="Filter RCVNO_MANUAL column"
                            HeaderText="เลขรับที่" SortExpression="RCVNO_MANUAL" UniqueName="RCVNO_MANUAL">
                        </telerik:GridBoundColumn>
+                        <telerik:GridBoundColumn DataField="RCV_SORNORBOR" FilterControlAltText="Filter RCV_SORNORBOR column"
+                           HeaderText="เลขรับ OSSC" SortExpression="RCV_SORNORBOR" UniqueName="RCV_SORNORBOR">
+                       </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="RGTNO_DISPLAY" FilterControlAltText="Filter RGTNO_DISPLAY column"
                            HeaderText="เลขทะเบียน" SortExpression="RGTNO_DISPLAY" UniqueName="RGTNO_DISPLAY">
                        </telerik:GridBoundColumn>
