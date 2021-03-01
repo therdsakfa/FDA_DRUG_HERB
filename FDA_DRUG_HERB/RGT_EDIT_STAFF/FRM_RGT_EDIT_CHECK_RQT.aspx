@@ -75,12 +75,13 @@
                         <br />
                         <asp:Label ID="lbl_staff_name" runat="server" Text="-"></asp:Label>
                         </td></tr>
-                   <tr ><td><asp:Label ID="Label1" runat="server" Text="รูปแบบเอกสาร" style="display:none;"></asp:Label>
-                       </td><td>
+                   <tr ><td><asp:Label ID="txt_rcvno_smb" runat="server" Text="รูปแบบเอกสาร" style="display:none;"></asp:Label>
+                       เลขรับ (สำหรับเจ้าหน้าที่ สนบ)</td><td>
                         <asp:DropDownList ID="ddl_template" runat="server" Width="80%" style="display:none;">
                             <asp:ListItem Value="1">แบบปกติ</asp:ListItem>
                             <asp:ListItem Value="2">แบบที่ 1</asp:ListItem>
                         </asp:DropDownList>
+                           <asp:TextBox ID="rcv_sornorbor" runat="server" Height="45px" Width="186px"></asp:TextBox>
                         </td></tr>
                 </table>
             </div>

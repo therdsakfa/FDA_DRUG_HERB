@@ -169,6 +169,18 @@
         Catch ex As Exception
 
         End Try
+        Try
+            dao_rqt.fields.RCV_SORNORBOR = rcv_sornorbor.Text
+        Catch ex As Exception
+
+        End Try
+        Try
+            If rcv_sornorbor.Text <> "" Then
+                dao_rqt.fields.RCV_SORNORBOR_COUNT = 1
+            End If
+        Catch ex As Exception
+
+        End Try
         Dim years As String = ""
         Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
         dao_tr.GetDataby_IDA(dao_rqt.fields.TR_ID)

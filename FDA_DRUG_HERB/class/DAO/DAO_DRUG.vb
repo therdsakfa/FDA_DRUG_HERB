@@ -1413,6 +1413,12 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_TR_ID_Process(ByVal tr_id As String, ByVal process_id As String)
+
+            datas = (From p In db.TRANSACTION_UPLOADs Where p.DESCRIPTION = tr_id And p.PROCESS_ID_STR = process_id Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
 
     Public Class ClsDBTYPE

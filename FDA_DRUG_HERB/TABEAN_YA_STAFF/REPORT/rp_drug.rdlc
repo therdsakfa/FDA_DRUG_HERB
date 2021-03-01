@@ -99,6 +99,10 @@
           <DataField>TR_ID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+<Field Name="RCV_SORNORBOR">
+          <DataField>RCV_SORNORBOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>FDA_PAGE_CENTER</rd:DataSetName>
@@ -2480,7 +2484,7 @@
             <DataSetName>rp_drug_general</DataSetName>
             <Top>1.16271cm</Top>
             <Left>0.68616cm</Left>
-            <Height>11.69851cm</Height>
+            <Height>11.6985cm</Height>
             <Width>17.6822cm</Width>
             <Style>
               <Border>
@@ -5757,7 +5761,10 @@
                   <Width>2.18247cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.22382cm</Width>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.34464cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.08341cm</Width>
@@ -5769,7 +5776,7 @@
                   <Width>2.78246cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.54201cm</Width>
+                  <Width>2.89618cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -5808,9 +5815,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>6</ColSpan>
+                        <ColSpan>7</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -5842,6 +5850,40 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox68</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox59">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>เลขรับ OSSC</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox59</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -6065,6 +6107,39 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox63">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!RCV_SORNORBOR.Value</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox63</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="rcvdate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -6242,6 +6317,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -6261,7 +6337,7 @@
             <Top>31.56194cm</Top>
             <Left>0.62833cm</Left>
             <Height>1.93229cm</Height>
-            <Width>17.31417cm</Width>
+            <Width>17.28916cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>

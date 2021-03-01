@@ -21,6 +21,10 @@
           <DataField>iowanm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="RCV_SORNORBOR">
+          <DataField>RCV_SORNORBOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="aori">
           <DataField>aori</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -89,6 +93,10 @@
         </Field>
         <Field Name="EDIT_DESCRIPTION">
           <DataField>EDIT_DESCRIPTION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+<Field Name="RCV_SORNORBOR">
+          <DataField>RCV_SORNORBOR</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -5396,6 +5404,9 @@
                   <Width>2.18247cm</Width>
                 </TablixColumn>
                 <TablixColumn>
+                  <Width>2.35226cm</Width>
+                </TablixColumn>
+                <TablixColumn>
                   <Width>2.22382cm</Width>
                 </TablixColumn>
                 <TablixColumn>
@@ -5408,7 +5419,7 @@
                   <Width>2.78246cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.54201cm</Width>
+                  <Width>3.18975cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -5447,9 +5458,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <ColSpan>6</ColSpan>
+                        <ColSpan>7</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -5481,6 +5493,40 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox68</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>เลขรับ OSSC</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>
@@ -5704,6 +5750,39 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!RCV_SORNORBOR.Value</Value>
+                                  <Style>
+                                    <FontFamily>TH SarabunPSK</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="rcvdate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -5873,6 +5952,7 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
