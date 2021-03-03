@@ -5,6 +5,8 @@
     Private _CLS As New CLS_SESSION
     Private _ProcessID As String
     Private _YEARS As String
+    Private _newcode As String
+
 
     Sub RunQuery()
         _YEARS = con_year(Date.Now.Year)
@@ -17,6 +19,11 @@
         Try
             _IDA = Request.QueryString("IDA")
 
+        Catch ex As Exception
+
+        End Try
+        Try
+            _newcode = Request.QueryString("newcode")
         Catch ex As Exception
 
         End Try
@@ -107,23 +114,7 @@
         Dim cls As New CLASS_GEN_XML.DRRGT_SUB(_CLS.CITIZEN_ID, _CLS.LCNSID, "1", _CLS.PVCODE) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
         Dim cls_xml As New CLASS_DRRGT_SUB                                                                 ' ประกาศตัวแปรจาก CLASS_DALCN 
         'cls_xml = cls.gen_xml()
-
-
-
-        Dim dao_sub As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
-        Try
-            dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
-        Catch ex As Exception
-
-        End Try
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-        dao_drrgt.GetDataby_IDA(dao_sub.fields.FK_IDA)
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        Try
-            dao.GetDataby_IDA(dao_sub.fields.FK_LCN_IDA)
-        Catch ex As Exception
-
-        End Try
+        Dim lcntpcd As String = ""
         Dim rcvno_format As String = ""
         Dim LCN_TYPE As String = ""
         Dim LCNNO_FORMAT As String = ""
@@ -139,6 +130,34 @@
         Dim rcvno_auto As String = ""
         Dim lcnno As String = ""
         Dim lcnsid As String = ""
+        Dim FK_LCN_IDA As Integer = 0
+
+        Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        dao_e.GetDataby_u1_frn_no(_newcode)
+
+        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        Try
+            dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
+            lcntpcd = dao_lcn.fields.lcntpcd
+            pvnabbr = dao_lcn.fields.pvnabbr
+        Catch ex As Exception
+
+        End Try
+        Dim dao_sub As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
+        Try
+            dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
+        Catch ex As Exception
+
+        End Try
+        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+        dao_drrgt.GetDataby_IDA(dao_sub.fields.FK_IDA)
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        Try
+            dao.GetDataby_IDA(dao_sub.fields.FK_LCN_IDA)
+        Catch ex As Exception
+
+        End Try
+
         Try
             rcvno_auto = dao_sub.fields.rcvno
         Catch ex As Exception
@@ -179,6 +198,12 @@
         Catch ex As Exception
 
         End Try
+        Dim pvnabbr2 As String = ""
+        Try
+            pvnabbr2 = dao_e.fields.pvnabbr2
+        Catch ex As Exception
+
+        End Try
         Try
             drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
         Catch ex As Exception
@@ -213,7 +238,8 @@
 
         End Try
         Try
-            LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/25" & Left(dao.fields.lcnno, 2)
+            LCNNO_FORMAT = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2)
+            ' LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/25" & Left(dao.fields.lcnno, 2)
         Catch ex As Exception
 
         End Try
@@ -261,17 +287,32 @@
 
         '------------------SHOW
         'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-        If Request.QueryString("identify") <> "" Then
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
-        Else
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_sub.fields.IDENTIFY, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
-        End If
+        Try
+            Dim dt_thanm As DataTable = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_e.fields.Identify, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+            For Each dr As DataRow In dt_thanm.Rows
+                dr("thanm") = dao_e.fields.licen_loca
+            Next
+            'Dim dt_thanm2 As DataTable
+            'dt_thanm2 = dt_thanm.Clone
+            'Dim dr_nm As DataRow = dt_thanm2.NewRow()
+            'dr_nm("thanm") = dao_e.fields.licen_loca
+            'dt_thanm2.Rows.Add(dr_nm)
+            cls_xml.DT_SHOW.DT17 = dt_thanm
+        Catch ex As Exception
+
+        End Try
+        'If Request.QueryString("identify") <> "" Then
+        '    cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        'Else
+        '    cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_sub.fields.IDENTIFY, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        'End If
         Try
             cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao.fields.IDA) 'ผู้ดำเนิน
         Catch ex As Exception
 
         End Try
-        cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
+        cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_NEWCODE_SAI(_newcode)
+        'cls_xml.DT_SHOW.DT18 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn)
         cls_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
         cls_xml.DRRGT_SUBSTITUTEs = dao_sub.fields
         p_DRRGT_SUBSTITUTE = cls_xml

@@ -1081,6 +1081,7 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         End Try
 
         Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_DRUG_LCN_HERB
         Try
             dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
             lcntpcd = dao_lcn.fields.lcntpcd
@@ -1470,7 +1471,8 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
         dao_sub.fields.TEMPLATE_ID = ddl_template.SelectedValue
         dao_sub.update()
-        BindData_PDF()
+        'BindData_PDF()
+        BindData_PDF_SAI(Request.QueryString("newcode"))
     End Sub
 
     Private Sub FRM_SUBSTITUTE_TABEAN_PREVIEW_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
