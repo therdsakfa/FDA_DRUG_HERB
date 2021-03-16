@@ -2304,6 +2304,7 @@
     <Compile Include="class\DAO\DAO_PERMISSION.vb" />
     <Compile Include="class\DAO\DAO_SPECIAL_PAYMENT.vb" />
     <Compile Include="class\DAO\DAO_SP_PAYMENT.vb" />
+    <Compile Include="class\DAO\DAO_XML_DRUG_HERB.vb" />
     <Compile Include="class\DAO\DAO_XML_SEARCH_DRUG_LCN_ESUB.vb" />
     <Compile Include="class\GEN_BC\LGT_ANIMAL_CONSUME_DRUGS_TO.vb" />
     <Compile Include="class\GEN_BC\LGT_ANIMAL_DRUGS_TO.vb" />
