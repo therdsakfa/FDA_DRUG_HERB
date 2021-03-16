@@ -5166,6 +5166,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_FDA_XML_DRUG_HERB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\LINQ_FDA_XML_DRUG_HERB.vb">
+      <DependentUpon>LINQ_FDA_XML_DRUG_HERB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\LINQ_FEE.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
