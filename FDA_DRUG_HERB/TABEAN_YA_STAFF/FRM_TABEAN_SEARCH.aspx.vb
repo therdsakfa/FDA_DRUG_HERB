@@ -29,7 +29,7 @@ Public Class FRM_TABEAN_SEARCH
 
             End Try
             Dim dao As New DAO_DRUG.ClsDBdrrgt
-            dao.GetDataby_4key(item("rgtno").Text, item("drgtpcd").Text, item("rgttpcd").Text, item("pvncd").Text)
+            dao.GetDataby_4key(item("rgtno").Text, item("rgttpcd").Text, item("drgtpcd").Text, item("pvncd").Text)
             Try
                 STATUS_ID = dao.fields.STATUS_ID
             Catch ex As Exception
@@ -70,7 +70,7 @@ Public Class FRM_TABEAN_SEARCH
 
             ElseIf e.CommandName = "report" Then
                 lbl_titlename.Text = "แบบฟอร์มทะเบียน"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/FRM_REPORT_TABEAN.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&STATUS_ID=" & STATUS_ID & "&NEWCODE=" & item("Newcode_U").Text & "&status=" & STATUS_ID & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../TABEAN_YA_STAFF/FRM_REPORT_TABEAN.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&STATUS_ID=" & STATUS_ID & "&NEWCODE=" & item("Newcode_U").Text & "');", True)
 
             ElseIf e.CommandName = "_trid" Then
                 Dim TR_ID1 As String = ""
