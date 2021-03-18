@@ -274,9 +274,11 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Dim bao As New BAO.AppSettings
         bao.RunAppSettings()
 
-        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB 'DAO_DRUG.ClsDBdalcn
+        'Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB      เก่า  'DAO_DRUG.ClsDBdalcn
+        Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB 'DAO_DRUG.ClsDBdalcn
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-        Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB 'DAO_DRUG.ClsDBdrrgt
+        'Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า  'DAO_DRUG.ClsDBdrrgt
+        Dim dao_drrgt As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB  'DAO_DRUG.ClsDBdrrgt
 
 
         dao.GetDatabyIDA(_IDA)
@@ -584,7 +586,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         Dim dao As New DAO_DRUG.TB_DRRGT_EDIT_REQUEST
-        Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        ' Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB        เก่า
+        Dim dao_drrgt As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
 
 
         dao.GetDatabyIDA(_IDA)
@@ -809,7 +812,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
             'result = "APPROVE"
             'ws_drug.Timeout = 8000
             Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
-            Dim dao_rg2 As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            'Dim dao_rg2 As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า
+            Dim dao_rg2 As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
             dao_rg2.GetDataby_NEWCODE(Request.QueryString("Newcode"))
             'result = ws_drug.XML_DRUG_MERGE_UPDATE(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, _CLS.CITIZEN_ID)
 

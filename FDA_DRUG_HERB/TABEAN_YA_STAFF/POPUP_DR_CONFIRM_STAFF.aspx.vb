@@ -55,8 +55,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
             set_hide(_IDA)
             show_btn(_IDA)
 
-            Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
-
+            'Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB      เก่า
+            Dim dao_copy As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
 
             'Try
             '    dao_copy.GetDataby_IDA_drrgt(_IDA)
@@ -2007,7 +2007,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
         Dim tamrap_id As Integer = 0
         Dim class_xml As New CLASS_DR
 
-        Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB     เก่า
+        Dim dao_e As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
         dao_e.GetDataby_u1_frn_no(newcode)
         Dim dao As New DAO_DRUG.ClsDBdrrgt
         ' dao.GetDataby_IDA(_IDA)
@@ -2026,7 +2027,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Try
-            Dim dao_color As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+            'Dim dao_color As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR        เก่า
+            Dim dao_color As New DAO_XML_DRUG_HERB.TB_XML_DRUG_COLOR_HERB
             dao_color.GetDataby_Newcode(newcode)
             class_xml.DRUG_PROPERTIES_AND_DETAIL = dao_color.fields.drgchrtha
         Catch ex As Exception
@@ -2163,7 +2165,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
 
-        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB        เก่า
+        Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
         Try
             dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
             lcntpcd = dao_lcn.fields.lcntpcd
@@ -2398,7 +2401,8 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
 
-        Dim dao_det_prop As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+        'Dim dao_det_prop As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR     เก่า
+        Dim dao_det_prop As New DAO_XML_DRUG_HERB.TB_XML_DRUG_COLOR_HERB
         dao_det_prop.GetDataby_Newcode(newcode)
         Try
             class_xml.DRUG_PROPERTIES_AND_DETAIL = dao_det_prop.fields.drgchrtha

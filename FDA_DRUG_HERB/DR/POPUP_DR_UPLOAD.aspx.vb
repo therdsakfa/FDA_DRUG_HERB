@@ -1018,7 +1018,8 @@ Public Class POPUP_DR_UPLOAD
             Else
                 '----------------------------------------------------------------------------------------------------
                 Dim dao_rgt1 As New DAO_DRUG.ClsDBdrrgt
-                Dim dao_rgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                'Dim dao_rgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า
+                Dim dao_rgt As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
                 Try
                     dao_rgt1.GetDataby_IDA(Trim(p2.TRANSFER))
                 Catch ex As Exception
@@ -2172,7 +2173,8 @@ Public Class POPUP_DR_UPLOAD
 
     End Sub
     Sub insert_tabean2(ByVal FK_IDA As Integer, ByVal fk_transfer As Integer)
-        Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'Dim dao_copy As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า
+        Dim dao_copy As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
 
         Dim newcode As String = ""
         Try
@@ -2184,7 +2186,8 @@ Public Class POPUP_DR_UPLOAD
         Dim IDA_rgt As Integer = FK_IDA 'dao_drrgt.fields.IDA
         If newcode <> "" Then
             Try
-                Dim dao_atc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_RECIPE_GROUP
+                'Dim dao_atc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_RECIPE_GROUP       เก่า
+                Dim dao_atc As New DAO_XML_DRUG_HERB.TB_XML_DRUG_RECIPE_GROUP_HERB
                 dao_atc.GetDataby_Newcode(newcode)
                 For Each dao_atc.fields In dao_atc.datas
                     Dim dao_rgt_atc As New DAO_DRUG.TB_DRRQT_ATC_DETAIL
@@ -2206,7 +2209,8 @@ Public Class POPUP_DR_UPLOAD
             End Try
 
             Try
-                Dim dao_cas As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW
+                'Dim dao_cas As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW        เก่า
+                Dim dao_cas As New DAO_XML_DRUG_HERB.TB_XML_DRUG_IOW_HERB
                 dao_cas.GetDataby_Newcode_U(newcode)
                 For Each dao_cas.fields In dao_cas.datas
                     Dim dao_rgt_cas As New DAO_DRUG.TB_DRRQT_DETAIL_CAS
@@ -2235,7 +2239,8 @@ Public Class POPUP_DR_UPLOAD
                     End With
                     dao_rgt_cas.insert()
 
-                    Dim dao_eq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW_EQ
+                    'Dim dao_eq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_IOW_EQ      เก่า
+                    Dim dao_eq As New DAO_XML_DRUG_HERB.TB_XML_DRUG_IOW_EQ_HERB
                     dao_eq.GetDataby_Newcode_rid_flineno(dao_cas.fields.Newcode_rid, dao_cas.fields.flineno)
                     For Each dao_eq.fields In dao_eq.datas
                         Dim dao_eq_rgt As New DAO_DRUG.TB_DRRQT_EQTO
@@ -2255,8 +2260,9 @@ Public Class POPUP_DR_UPLOAD
 
             End Try
 
-            Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN
-                dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
+            'Dim dao_XML_DRUG_FRGN As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_FRGN         เก่า
+            Dim dao_XML_DRUG_FRGN As New DAO_XML_DRUG_HERB.TB_XML_DRUG_FRGN_HERB
+            dao_XML_DRUG_FRGN.GetDataby_u1(newcode)
                 If dao_XML_DRUG_FRGN.fields.engcntnm = "ไทย" Then
                     For Each dao_XML_DRUG_FRGN.fields In dao_XML_DRUG_FRGN.datas
                     Dim dao_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
@@ -2406,7 +2412,8 @@ Public Class POPUP_DR_UPLOAD
             'Next
 
             Try
-                Dim dao_prop_det As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+                'Dim dao_prop_det As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_COLOR
+                Dim dao_prop_det As New DAO_XML_DRUG_HERB.TB_XML_DRUG_COLOR_HERB
                 dao_prop_det.GetDataby_Newcode(newcode)
                 For Each dao_prop_det.fields In dao_prop_det.datas
                     Dim dao_rgt_pd As New DAO_DRUG.TB_DRRQT_PROPERTIES_AND_DETAIL
@@ -2444,7 +2451,8 @@ Public Class POPUP_DR_UPLOAD
 
             ''
             Try
-                Dim dao_keep As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_STOWAGR
+                'Dim dao_keep As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_STOWAGR       เก่า
+                Dim dao_keep As New DAO_XML_DRUG_HERB.TB_XML_DRUG_STOWAGR_HERB
                 dao_keep.GetDataby_Newcode(newcode)
                 For Each dao_keep.fields In dao_keep.datas
                     Dim dao_keep_rgt As New DAO_DRUG.TB_DRRQT_KEEP_DRUG
@@ -2470,7 +2478,8 @@ Public Class POPUP_DR_UPLOAD
 
             End Try
             ''DRRGT_DTL_TEXT
-            Dim dao_dtl As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            'Dim dao_dtl As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า
+            Dim dao_dtl As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
             dao_dtl.GetDataby_u1_frn_no(newcode)
             For Each dao_dtl.fields In dao_dtl.datas
                 Dim dao_dtl_rqt As New DAO_DRUG.TB_DRRQT_DTL_TEXT
@@ -2481,7 +2490,8 @@ Public Class POPUP_DR_UPLOAD
                     .engdrgtpnm = dao_dtl.fields.engdrgtpnm
                     '.keepdesc = dao_dtl.fields.keepdesc
                     Try
-                        Dim dao_contain As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_CONTAIN
+                        'Dim dao_contain As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_CONTAIN        เก่า
+                        Dim dao_contain As New DAO_XML_DRUG_HERB.TB_XML_DRUG_CONTAIN_HERB
                         dao_contain.GetDataby_Newcode(newcode)
                         .pcksize = dao_contain.fields.SUBTITLE_SIZE_DRUG
                     Catch ex As Exception
@@ -2530,7 +2540,8 @@ Public Class POPUP_DR_UPLOAD
         '    End With
         '    dao_dtb_rqt.insert()
         'Next
-        Dim dao_ani_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL
+        'Dim dao_ani_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL          เก่า
+        Dim dao_ani_rq As New DAO_XML_DRUG_HERB.TB_XML_DRUG_ANIMAL_HERB
         dao_ani_rq.GetDataby_Newcode(newcode)
         For Each dao_ani_rq.fields In dao_ani_rq.datas
             Dim dao_anih_ins As New DAO_DRUG.ClsDBdramldrg
@@ -2585,7 +2596,8 @@ Public Class POPUP_DR_UPLOAD
 
         Next
 
-        Dim dao_aniuse_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL_CONSUME
+        'Dim dao_aniuse_rq As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_DRUG_ANIMAL_CONSUME'
+        Dim dao_aniuse_rq As New DAO_XML_DRUG_HERB.TB_XML_DRUG_ANIMAL_CONSUME_HERB
         dao_aniuse_rq.GetDataby_Newcode(newcode)
         For Each dao_aniuse_rq.fields In dao_aniuse_rq.datas
             Dim dao_ani_ins As New DAO_DRUG.ClsDBdramluse
