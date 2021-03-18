@@ -4367,7 +4367,7 @@ Namespace BAO
         '
         Public Sub SP_DRRGT_FOR_SEARCH_FROM_SAI(ByVal txt As String)
 
-            strSQL = "SP_TEST_DRRGT_FOR_SEARCH_FROM_SAI"
+            strSQL = "SP_DRRGT_FOR_SEARCH_FROM_SAI"
             SqlCmd = New SqlCommand(strSQL, conn)
             If (conn.State = ConnectionState.Open) Then
                 conn.Close()
