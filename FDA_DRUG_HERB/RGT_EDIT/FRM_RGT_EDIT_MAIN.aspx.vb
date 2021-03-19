@@ -46,11 +46,12 @@ Public Class FRM_RGT_EDIT_MAIN
             Try
                 'dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
                 'lbl_rgtno.Text = dt(0)("rgtno_display")
-                Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                '  Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       ของเดิม 
+                Dim dao_e As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB 
                 dao_e.GetDataby_NEWCODE(Request.QueryString("newcode"))
                 lbl_rgtno.Text = dao_e.fields.register
-
-                Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+                '     Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB       ของเดิม 
+                Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
                 dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
                 Bind_ddl_phr(dao_lcn.fields.IDA_dalcn)
             Catch ex As Exception
@@ -159,9 +160,11 @@ Public Class FRM_RGT_EDIT_MAIN
         'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
         'dao_drrgt.GetDataby_IDA(_rgt_ida)
 
-        Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB        เก่า
+        Dim dao_sc As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
         dao_sc.GetDataby_NEWCODE(Request.QueryString("newcode"))
-        Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB          เก่า
+        Dim dao_lcn_e As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
         Try
             dao_lcn_e.GetDataby_u1(dao_sc.fields.Newcode_not)
         Catch ex As Exception

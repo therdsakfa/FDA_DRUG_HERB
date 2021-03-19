@@ -132,10 +132,12 @@
         Dim lcnsid As String = ""
         Dim FK_LCN_IDA As Integer = 0
 
-        Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB     เก่า
+        Dim dao_e As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
         dao_e.GetDataby_u1_frn_no(_newcode)
 
-        Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB        เก่า
+        Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
         Try
             dao_lcn.GetDataby_u1(dao_e.fields.Newcode_not)
             lcntpcd = dao_lcn.fields.lcntpcd

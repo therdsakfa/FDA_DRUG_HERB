@@ -211,10 +211,12 @@ Public Class FRM_RGT_EDIT_CONFIRM
         'dao_lcn.GetDataby_IDA(dao.fields.LCN_IDA)
         'dao_drrgt.GetDataby_IDA(dao.fields.FK_IDA)
 
-        Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+        'Dim dao_sc As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB        เก่า
+        Dim dao_sc As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
         ' dao_sc.GetDataby_IDA_drrgt(dao.fields.FK_IDA)
         dao_sc.GetDataby_NEWCODE(Request.QueryString("newcode"))
-        Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB
+        'Dim dao_lcn_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB         เก่า
+        Dim dao_lcn_e As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
         Try
             dao_lcn_e.GetDataby_u1(dao_sc.fields.Newcode_not)
         Catch ex As Exception

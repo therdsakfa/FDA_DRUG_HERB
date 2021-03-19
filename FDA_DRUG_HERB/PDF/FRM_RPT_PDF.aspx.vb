@@ -53,7 +53,8 @@ Public Class FRM_RPT_PDF
         Dim newcode As String = Request.QueryString("NEWCODE")
         Dim IDA As Integer = 0
         Try
-            Dim dao_xml As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+            'Dim dao_xml As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB        เก่า
+            Dim dao_xml As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
             dao_xml.GetDataby_u1(newcode)
             IDA = dao_xml.fields.IDA_drrgt
         Catch ex As Exception

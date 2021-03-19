@@ -114,7 +114,8 @@ Public Class FRM_SEARCH_REGIST
                 Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
                 dao_rg.GetDataby_IDA(rcb_search.SelectedValue)
 
-                Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                'Dim dao_drrgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB
+                Dim dao_drrgt As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
                 Try
                     dao_drrgt.GetDataby_4Key(dao_rg.fields.rgtno, dao_rg.fields.rgttpcd, dao_rg.fields.drgtpcd, dao_rg.fields.pvncd)
                     newcode = dao_drrgt.fields.Newcode_U
