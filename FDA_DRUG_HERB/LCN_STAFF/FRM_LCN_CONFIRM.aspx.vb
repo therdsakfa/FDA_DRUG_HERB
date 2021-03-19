@@ -1842,7 +1842,7 @@ Public Class WebForm35
                 If Len(lcnno_auto) > 0 Then
 
                     If Right(Left(lcnno_auto, 3), 1) = "5" Then
-                        lcnno_format = "จ. " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                        lcnno_format = " " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
                         'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                     Else
                         'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
@@ -1871,7 +1871,7 @@ Public Class WebForm35
                 Else
                     lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 End If
-
+                lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
             End If
 
         Catch ex As Exception
@@ -1886,7 +1886,7 @@ Public Class WebForm35
                 'class_xml.HEAD_LCNNO = CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
 
                 If Right(Left(dao_main2.fields.lcnno, 3), 1) = "5" Then
-                    class_xml.HEAD_LCNNO = "จ. " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
+                    class_xml.HEAD_LCNNO = " " & CStr(CInt(Right(dao_main2.fields.lcnno, 4))) & "/25" & Left(dao_main2.fields.lcnno, 2)
                 Else
                     class_xml.HEAD_LCNNO = dao_main2.fields.pvnabbr & " " & CStr(CInt(Right(dao_main2.fields.lcnno, 5))) & "/25" & Left(dao_main2.fields.lcnno, 2)
                 End If
