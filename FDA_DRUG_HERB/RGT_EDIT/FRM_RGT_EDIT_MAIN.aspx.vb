@@ -47,7 +47,7 @@ Public Class FRM_RGT_EDIT_MAIN
                 'dt = bao.SP_DRRGT_BY_IDA(Request.QueryString("rgt_ida"))
                 'lbl_rgtno.Text = dt(0)("rgtno_display")
                 '  Dim dao_e As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       ของเดิม 
-                Dim dao_e As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB 
+                Dim dao_e As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
                 dao_e.GetDataby_NEWCODE(Request.QueryString("newcode"))
                 lbl_rgtno.Text = dao_e.fields.register
                 '     Dim dao_lcn As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_DRUG_LCN_ESUB       ของเดิม 
