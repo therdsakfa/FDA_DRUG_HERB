@@ -248,6 +248,25 @@
                 _LCNNO_SHOW_NEW = value
             End Set
         End Property
+        Private _LCNNO_SHOW_NUMTHAI As String
+        Public Property LCNNO_SHOW_NUMTHAI() As String
+            Get
+                Return _LCNNO_SHOW_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _LCNNO_SHOW_NUMTHAI = value
+            End Set
+        End Property
+
+        Private _LCNNO_SHOW_NEW_NUMTHAI As String
+        Public Property LCNNO_SHOW_NEW_NUMTHAI() As String
+            Get
+                Return _LCNNO_SHOW_NEW_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _LCNNO_SHOW_NEW_NUMTHAI = value
+            End Set
+        End Property
 
         Private _RCVDAY As String
         Public Property RCVDAY() As String
@@ -276,6 +295,95 @@
             End Get
             Set(ByVal value As String)
                 _RCVYEAR = value
+            End Set
+        End Property
+
+        Private _RCVDAY_NUMTHAI As String
+        Public Property RCVDAY_NUMTHAI() As String
+            Get
+                Return _RCVDAY_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _RCVDAY_NUMTHAI = value
+            End Set
+        End Property
+
+        Private _RCVMONTH_NUMTHAI As String
+        Public Property RCVMONTH_NUMTHAI() As String
+            Get
+                Return _RCVMONTH_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _RCVMONTH_NUMTHAI = value
+            End Set
+        End Property
+
+        Private _RCVYEAR_NUMTHAI As String
+        Public Property RCVYEAR_NUMTHAI() As String
+            Get
+                Return _RCVYEAR_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _RCVYEAR_NUMTHAI = value
+            End Set
+        End Property
+        Private _RCVDAY_NEW As String
+        Public Property RCVDAY_NEW() As String
+            Get
+                Return _RCVDAY_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVDAY_NEW = value
+            End Set
+        End Property
+
+        Private _RCVMONTH_NEW As String
+        Public Property RCVMONTH_NEW() As String
+            Get
+                Return _RCVMONTH_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVMONTH_NEW = value
+            End Set
+        End Property
+
+        Private _RCVYEAR_NEW As String
+        Public Property RCVYEAR_NEW() As String
+            Get
+                Return _RCVYEAR_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVYEAR_NEW = value
+            End Set
+        End Property
+
+        Private _RCVDAY_NUMTHAI_NEW As String
+        Public Property RCVDAY_NUMTHAI_NEW() As String
+            Get
+                Return _RCVDAY_NUMTHAI_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVDAY_NUMTHAI_NEW = value
+            End Set
+        End Property
+
+        Private _RCVMONTH_NUMTHAI_NEW As String
+        Public Property RCVMONTH_NUMTHAI_NEW() As String
+            Get
+                Return _RCVMONTH_NUMTHAI_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVMONTH_NUMTHAI_NEW = value
+            End Set
+        End Property
+
+        Private _RCVYEAR_NUMTHAI_NEW As String
+        Public Property RCVYEAR_NUMTHAI_NEW() As String
+            Get
+                Return _RCVYEAR_NUMTHAI_NEW
+            End Get
+            Set(ByVal value As String)
+                _RCVYEAR_NUMTHAI_NEW = value
             End Set
         End Property
 
@@ -463,6 +571,24 @@
             End Get
             Set(ByVal value As String)
                 _MASTRA_NO = value
+            End Set
+        End Property
+        Private _MASTRA_NUMTHAI As String
+        Public Property MASTRA_NUMTHAI() As String
+            Get
+                Return _MASTRA_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _MASTRA_NUMTHAI = value
+            End Set
+        End Property
+        Private _MASTRA_NO_NUMTHAI As String
+        Public Property MASTRA_NO_NUMTHAI() As String
+            Get
+                Return _MASTRA_NO_NUMTHAI
+            End Get
+            Set(ByVal value As String)
+                _MASTRA_NO_NUMTHAI = value
             End Set
         End Property
 

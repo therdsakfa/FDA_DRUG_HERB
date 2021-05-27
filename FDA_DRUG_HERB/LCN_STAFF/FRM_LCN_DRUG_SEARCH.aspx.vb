@@ -40,9 +40,9 @@ Public Class FRM_LCN_DRUG_SEARCH
         'str_where = "CITIZEN_ID_AUTHORIZE='" & txt_CITIZEN_AUTHORIZE.Text & "'"
         If txt_lcnno_no.Text <> "" Then
             If str_where <> "" Then
-                str_where &= " and lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+                str_where &= " and LCNNO_DISPLAY_NEW like '%" & txt_lcnno_no.Text & "%'  or lcnno_no like '%" & txt_lcnno_no.Text & "%'"
             Else
-                str_where &= " lcnno_no like '%" & txt_lcnno_no.Text & "%'"
+                str_where &= " LCNNO_DISPLAY_NEW like '%" & txt_lcnno_no.Text & "%' or lcnno_no like '%" & txt_lcnno_no.Text & "%'"
             End If
 
         ElseIf txt_tr_id.Text <> "" Then

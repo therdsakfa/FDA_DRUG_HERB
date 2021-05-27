@@ -150,6 +150,15 @@
             _SHOW_LCNNO = value
         End Set
     End Property
+    Private _SHOW_LCNNO_NUMTHAI As String
+    Public Property SHOW_LCNNO_NUMTHAI() As String
+        Get
+            Return _SHOW_LCNNO_NUMTHAI
+        End Get
+        Set(ByVal value As String)
+            _SHOW_LCNNO_NUMTHAI = value
+        End Set
+    End Property
 
     Private _HEAD_LCNNO As String
     Public Property HEAD_LCNNO() As String
@@ -340,6 +349,35 @@
         End Get
         Set(ByVal value As String)
             _SHOW_EXPDATE_YEAR = value
+        End Set
+    End Property
+    Private _SHOW_EXPDATE_DAY_NUMTHAI As String
+    Public Property SHOW_EXPDATE_DAY_NUMTHAI() As String
+        Get
+            Return _SHOW_EXPDATE_DAY_NUMTHAI
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_DAY_NUMTHAI = value
+        End Set
+    End Property
+
+    Private _SHOW_EXPDATE_MONTH_NUMTHAI As String
+    Public Property SHOW_EXPDATE_MONTH_NUMTHAI() As String
+        Get
+            Return _SHOW_EXPDATE_MONTH_NUMTHAI
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_MONTH_NUMTHAI = value
+        End Set
+    End Property
+
+    Private _SHOW_EXPDATE_YEAR_NUMTHAI As String
+    Public Property SHOW_EXPDATE_YEAR_NUMTHAI() As String
+        Get
+            Return _SHOW_EXPDATE_YEAR_NUMTHAI
+        End Get
+        Set(ByVal value As String)
+            _SHOW_EXPDATE_YEAR_NUMTHAI = value
         End Set
     End Property
 

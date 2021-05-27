@@ -11,34 +11,25 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FRM_STAFF_LCN_CONSIDER
+Partial Public Class WebForm13
 
     '''<summary>
-    '''Txt_Remark control.
+    '''lbl_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Txt_Remark As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbl_app_date As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ddl_staff_offer control.
+    '''txt_app_date control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddl_staff_offer As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''TextBox1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_app_date As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Button1 control.

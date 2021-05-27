@@ -62,7 +62,7 @@
                         (เช่น 1/62)</td></tr>
                    <tr ><td>วันที่ตรวจคำขอ</td><td>
                         <asp:TextBox ID="txt_rcvdate" runat="server" CssClass="input-lg"></asp:TextBox>
-                        </td></tr>
+                        (วัน/เดือน/ปี พ.ศ. =&gt; 1/10/2563)</td></tr>
 
                  <%--  <tr ><td>ผู้รับคำขอ</td><td>
                         <asp:DropDownList ID="ddl_receiver" runat="server"  Width="70%">

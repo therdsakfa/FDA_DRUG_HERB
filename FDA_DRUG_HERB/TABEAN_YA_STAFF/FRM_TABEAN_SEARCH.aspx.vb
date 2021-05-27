@@ -15,6 +15,7 @@ Public Class FRM_TABEAN_SEARCH
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'SP_DRRGT_FOR_SEARCH
         RunSession()
+        ' Search_FN()
 
     End Sub
 

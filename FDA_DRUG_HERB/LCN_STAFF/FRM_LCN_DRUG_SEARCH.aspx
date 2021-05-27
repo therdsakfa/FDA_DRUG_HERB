@@ -109,10 +109,10 @@
                 </td>
             </tr>--%>
             <tr>
-                <td>เเลขที่ใบอนุญาตสถานที่</td>
+                <td>เลขที่ใบอนุญาตสถานที่</td>
                 <td Width="70%">
                                 <asp:TextBox ID="txt_lcnno_no" runat="server" CssClass="input-lg" Width="70%"></asp:TextBox>
-                &nbsp;(ตัวอย่าง กท 1/2555)</td>
+                &nbsp;(ตัวอย่าง HB 10-1-55-1)</td>
             </tr>
 
             <tr>
@@ -165,8 +165,8 @@
                        <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="lcnno_no" FilterControlAltText="Filter lcnno_no column"
-                           HeaderText="เลขที่ใบอนุญาต" SortExpression="lcnno_no" UniqueName="lcnno_no">
+                       <telerik:GridBoundColumn DataField="LCNNO_DISPLAY_NEW" FilterControlAltText="Filter LCNNO_DISPLAY_NEW column"
+                           HeaderText="เลขที่ใบอนุญาต" SortExpression="LCNNO_DISPLAY_NEW" UniqueName="LCNNO_DISPLAY_NEW">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="lcntpcd" FilterControlAltText="Filter lcntpcd column"
                            HeaderText="ประเภท" SortExpression="lcntpcd" UniqueName="lcntpcd">

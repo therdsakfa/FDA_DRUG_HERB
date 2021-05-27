@@ -634,6 +634,7 @@
     <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
     <Content Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx" />
+    <Content Include="LCN_STAFF\POPUP_STAFF_LCN_APPDATE.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_INSERT.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_PAY_NOTE.aspx" />
@@ -964,6 +965,7 @@
     <Content Include="WebForm34.aspx" />
     <Content Include="WebForm36.aspx" />
     <Content Include="WebForm37.aspx" />
+    <Content Include="WebForm38.aspx" />
     <Content Include="WS_ACCEPT_RGT_AUTO.asmx" />
     <Content Include="WS_DRUG_XML.asmx" />
     <Content Include="WS_EDIT_DALCN.asmx" />
@@ -5008,6 +5010,13 @@
       <DependentUpon>FRM_STAFF_LCN_CONSIDER_UPDATE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_STAFF\POPUP_STAFF_LCN_APPDATE.aspx.designer.vb">
+      <DependentUpon>POPUP_STAFF_LCN_APPDATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\POPUP_STAFF_LCN_APPDATE.aspx.vb">
+      <DependentUpon>POPUP_STAFF_LCN_APPDATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx.designer.vb">
       <DependentUpon>POPUP_STAFF_LCN_EDIT.aspx</DependentUpon>
     </Compile>
@@ -7182,6 +7191,13 @@
     <Compile Include="WebForm37.aspx.vb">
       <DependentUpon>WebForm37.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm38.aspx.designer.vb">
+      <DependentUpon>WebForm38.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm38.aspx.vb">
+      <DependentUpon>WebForm38.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WS_ACCEPT_RGT_AUTO.asmx.vb">
       <DependentUpon>WS_ACCEPT_RGT_AUTO.asmx</DependentUpon>

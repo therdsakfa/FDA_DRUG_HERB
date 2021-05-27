@@ -256,6 +256,19 @@
                 RCVNO = GET_FORMAT_RCVNO(Txt_rcvno_no.Text)
                 dao_rqt.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
 
+                'Dim rcv_date As String
+                'Try
+                '    rcv_date = Year(txt_rcvdate.Text)
+                '    If rcv_date <> 0 Then
+                '        If rcv_date < 2500 Then
+                '            rcv_date += 543
+                '        End If
+                '        dao_rqt.fields.rcvdate = rcv_date 'Date.Now 'CDate(txt_app_date.Text)
+                '    End If
+                '    ' dao_rqt.fields.rcvdate = CDate(txt_rcvdate.Text) 'Date.Now 'CDate(txt_app_date.Text)
+                'Catch ex As Exception
+
+                'End Try
                 Try
                     dao_rqt.fields.rcvdate = CDate(txt_rcvdate.Text) 'Date.Now 'CDate(txt_app_date.Text)
                 Catch ex As Exception

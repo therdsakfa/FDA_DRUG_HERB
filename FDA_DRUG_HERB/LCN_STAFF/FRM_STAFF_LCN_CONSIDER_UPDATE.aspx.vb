@@ -20,7 +20,7 @@
         runQuery()
         If Not IsPostBack Then
             TextBox1.Text = Date.Now.ToShortDateString()
-            txt_app_date.Text = Date.Now.ToShortDateString()
+            'txt_app_date.Text = Date.Now.ToShortDateString()
             Bind_ddl_staff_offer()
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(_IDA)
@@ -39,11 +39,11 @@
 
         End Try
 
-        Try
-            txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
-        Catch ex As Exception
-            txt_app_date.Text = Date.Now.ToShortDateString()
-        End Try
+        'Try
+        '    txt_app_date.Text = CDate(dao.fields.appdate).ToShortDateString()
+        'Catch ex As Exception
+        '    txt_app_date.Text = Date.Now.ToShortDateString()
+        'End Try
         Txt_Remark.Text = dao.fields.remark
     End Sub
     Public Sub set_data(ByRef dao As DAO_DRUG.ClsDBdalcn)
@@ -54,27 +54,27 @@
             dao.fields.CONSIDER_DATE = Nothing
         End Try
         dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue
-        Try
-            dao.fields.appdate = CDate(txt_app_date.Text)
+        'Try
+        '    dao.fields.appdate = CDate(txt_app_date.Text)
 
-            If IsNothing(dao.fields.appdate) = False Then
-                Dim appdate As Date = CDate(dao.fields.appdate)
-                Dim expyear As Integer = 0
-                Try
-                    expyear = Year(appdate)
-                    If expyear <> 0 Then
-                        If expyear < 2500 Then
-                            expyear += 543
-                        End If
-                        dao.fields.expyear = expyear
-                    End If
-                Catch ex As Exception
+        '    If IsNothing(dao.fields.appdate) = False Then
+        '        Dim appdate As Date = CDate(dao.fields.appdate)
+        '        Dim expyear As Integer = 0
+        '        Try
+        '            expyear = Year(appdate)
+        '            If expyear <> 0 Then
+        '                If expyear < 2500 Then
+        '                    expyear += 543
+        '                End If
+        '                dao.fields.expyear = expyear
+        '            End If
+        '        Catch ex As Exception
 
-                End Try
-            End If
-        Catch ex As Exception
-            dao.fields.appdate = Nothing
-        End Try
+        '        End Try
+        '    End If
+        'Catch ex As Exception
+        '    dao.fields.appdate = Nothing
+        'End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

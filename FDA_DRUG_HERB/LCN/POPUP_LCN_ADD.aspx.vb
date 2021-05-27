@@ -68,6 +68,7 @@
             dao_dal.fields.REVOCATION = "999"
             dao_dal.fields.lcnno = 0
             dao_dal.fields.rcvno = 0
+            dao_dal.fields.CREATE_DATE = Date.Now
             Try
                 dao_dal.fields.lcnsid = _CLS.LCNSID_CUSTOMER
             Catch ex As Exception

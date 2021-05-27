@@ -22,7 +22,7 @@
         runQuery()
         If Not IsPostBack Then
             TextBox1.Text = Date.Now.ToShortDateString()
-            txt_app_date.Text = Date.Now.ToShortDateString()
+            'txt_app_date.Text = Date.Now.ToShortDateString()
             default_Remark()
             Bind_ddl_staff_offer()
         End If
@@ -110,7 +110,7 @@
             Catch ex As Exception
 
             End Try
-            dao.fields.LCNNO_DISPLAY_NEW = "HB" & _CLS.PVCODE & "-" & _type_da & "-" & con_year(Date.Now.Year).Substring(2, 2) & "-" & LCNNO
+            dao.fields.LCNNO_DISPLAY_NEW = "HB " & _CLS.PVCODE & "-" & _type_da & "-" & con_year(Date.Now.Year).Substring(2, 2) & "-" & LCNNO
             '---------------------------------------
 
             dao.fields.remark = Txt_Remark.Text
@@ -118,35 +118,35 @@
             dao.fields.CONSIDER_DATE = CONSIDER_DATE
 
             dao.fields.FK_STAFF_OFFER_IDA = ddl_staff_offer.SelectedValue
-            Try
-                dao.fields.appdate = CDate(txt_app_date.Text)
-            Catch ex As Exception
+            'Try
+            '    dao.fields.appdate = CDate(txt_app_date.Text)
+            'Catch ex As Exception
 
-            End Try
-            If IsNothing(dao.fields.appdate) = False Then
-                Dim appdate As Date = CDate(dao.fields.appdate)
-                Dim expyear As Integer = 0
-                Try
-                    expyear = Year(appdate)
-                    If expyear <> 0 Then
-                        If expyear < 2500 Then
-                            expyear += 543
-                        End If
-                        dao.fields.expyear = expyear
-                    End If
-                Catch ex As Exception
+            'End Try
+            'If IsNothing(dao.fields.appdate) = False Then
+            '    Dim appdate As Date = CDate(dao.fields.appdate)
+            '    Dim expyear As Integer = 0
+            '    Try
+            '        expyear = Year(appdate)
+            '        If expyear <> 0 Then
+            '            If expyear < 2500 Then
+            '                expyear += 543
+            '            End If
+            '            dao.fields.expyear = expyear
+            '        End If
+            '    Catch ex As Exception
 
-                End Try
+            '    End Try
 
-                Try
-                    If dao.fields.PROCESS_ID = "120" Or dao.fields.PROCESS_ID = "121" Or dao.fields.PROCESS_ID = "122" Then
-                        dao.fields.expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, appdate))
-                    End If
+            '    Try
+            '        If dao.fields.PROCESS_ID = "120" Or dao.fields.PROCESS_ID = "121" Or dao.fields.PROCESS_ID = "122" Then
+            '            dao.fields.expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, appdate))
+            '        End If
 
-                Catch ex As Exception
+            '    Catch ex As Exception
 
-                End Try
-            End If
+            '    End Try
+            'End If
 
             'Try
             '    send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "คำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " อยู่ระหว่างดำเนินการพิจารณา")

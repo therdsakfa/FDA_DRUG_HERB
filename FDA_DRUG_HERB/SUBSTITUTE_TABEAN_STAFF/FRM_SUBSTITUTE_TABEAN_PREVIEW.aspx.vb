@@ -1306,8 +1306,12 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         class_xml.TABEAN_TYPE2 = TABEAN_TYPE2
 
         Dim bao_show As New BAO_SHOW
-        class_xml.DT_SHOW.DT6 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn) 'ข้อมูลสถานที่จำลอง
-
+        'class_xml.DT_SHOW.DT6 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn) 'ข้อมูลสถานที่จำลอง
+        Try
+            class_xml.DT_SHOW.DT6 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn) 'ข้อมูลสถานที่จำลอง
+        Catch ex As Exception
+            Response.Write("<script type='text/javascript'>alert('" + "ไม่เจอ NEWCODE หรือ NEWCODE ไม่ตรงกัน" + "'); parent.close_modal();</script> ")
+        End Try
         Try
             Dim dt_thanm As DataTable = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_e.fields.Identify, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
             For Each dr As DataRow In dt_thanm.Rows

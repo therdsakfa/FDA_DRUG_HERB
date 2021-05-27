@@ -34,11 +34,11 @@
                         </td>
                     </tr>
 
-                    <tr>
+                   <%-- <tr>
                         <td>วันที่คาดว่าจะอนุมัติ</td>
                         <td>
                             <asp:TextBox ID="txt_app_date" runat="server" CssClass="input-lg"></asp:TextBox></td>
-                    </tr>
+                    </tr>--%>
 
                 </table>
             </div>

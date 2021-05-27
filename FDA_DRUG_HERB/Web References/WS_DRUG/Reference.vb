@@ -24,7 +24,7 @@ Imports System.Xml.Serialization
 Namespace WS_DRUG
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="WS_DRUGSoap", [Namespace]:="http://tempuri.org/")>  _
@@ -37,7 +37,7 @@ Namespace WS_DRUG
         
         Private HERB_INSERT_DR15OperationCompleted As System.Threading.SendOrPostCallback
         
-        Private DRUG_UPDATE_DH15OperationCompleted As System.Threading.SendOrPostCallback
+        Private HERB_UPDATE_DH15OperationCompleted As System.Threading.SendOrPostCallback
         
         Private HERB_INSERT_DR15_DEMOOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -111,7 +111,7 @@ Namespace WS_DRUG
         Public Event HERB_INSERT_DR15Completed As HERB_INSERT_DR15CompletedEventHandler
         
         '''<remarks/>
-        Public Event DRUG_UPDATE_DH15Completed As DRUG_UPDATE_DH15CompletedEventHandler
+        Public Event HERB_UPDATE_DH15Completed As HERB_UPDATE_DH15CompletedEventHandler
         
         '''<remarks/>
         Public Event HERB_INSERT_DR15_DEMOCompleted As HERB_INSERT_DR15_DEMOCompletedEventHandler
@@ -231,29 +231,29 @@ Namespace WS_DRUG
         End Sub
         
         '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DRUG_UPDATE_DH15", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function DRUG_UPDATE_DH15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String) As String
-            Dim results() As Object = Me.Invoke("DRUG_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT})
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HERB_UPDATE_DH15", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function HERB_UPDATE_DH15(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String) As String
+            Dim results() As Object = Me.Invoke("HERB_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT})
             Return CType(results(0),String)
         End Function
         
         '''<remarks/>
-        Public Overloads Sub DRUG_UPDATE_DH15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
-            Me.DRUG_UPDATE_DH15Async(IDA_DH15, IDENTIFY_EDIT, Nothing)
+        Public Overloads Sub HERB_UPDATE_DH15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String)
+            Me.HERB_UPDATE_DH15Async(IDA_DH15, IDENTIFY_EDIT, Nothing)
         End Sub
         
         '''<remarks/>
-        Public Overloads Sub DRUG_UPDATE_DH15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String, ByVal userState As Object)
-            If (Me.DRUG_UPDATE_DH15OperationCompleted Is Nothing) Then
-                Me.DRUG_UPDATE_DH15OperationCompleted = AddressOf Me.OnDRUG_UPDATE_DH15OperationCompleted
+        Public Overloads Sub HERB_UPDATE_DH15Async(ByVal IDA_DH15 As Integer, ByVal IDENTIFY_EDIT As String, ByVal userState As Object)
+            If (Me.HERB_UPDATE_DH15OperationCompleted Is Nothing) Then
+                Me.HERB_UPDATE_DH15OperationCompleted = AddressOf Me.OnHERB_UPDATE_DH15OperationCompleted
             End If
-            Me.InvokeAsync("DRUG_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT}, Me.DRUG_UPDATE_DH15OperationCompleted, userState)
+            Me.InvokeAsync("HERB_UPDATE_DH15", New Object() {IDA_DH15, IDENTIFY_EDIT}, Me.HERB_UPDATE_DH15OperationCompleted, userState)
         End Sub
         
-        Private Sub OnDRUG_UPDATE_DH15OperationCompleted(ByVal arg As Object)
-            If (Not (Me.DRUG_UPDATE_DH15CompletedEvent) Is Nothing) Then
+        Private Sub OnHERB_UPDATE_DH15OperationCompleted(ByVal arg As Object)
+            If (Not (Me.HERB_UPDATE_DH15CompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent DRUG_UPDATE_DH15Completed(Me, New DRUG_UPDATE_DH15CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+                RaiseEvent HERB_UPDATE_DH15Completed(Me, New HERB_UPDATE_DH15CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -600,11 +600,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_INSERT_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_INSERT_LICENCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_INSERT_LICENCompletedEventArgs
@@ -627,11 +627,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_UPDATE_LICENCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_UPDATE_LICENCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_UPDATE_LICENCompletedEventArgs
@@ -654,11 +654,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_INSERT_DR15CompletedEventHandler(ByVal sender As Object, ByVal e As HERB_INSERT_DR15CompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_INSERT_DR15CompletedEventArgs
@@ -681,14 +681,14 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
-    Public Delegate Sub DRUG_UPDATE_DH15CompletedEventHandler(ByVal sender As Object, ByVal e As DRUG_UPDATE_DH15CompletedEventArgs)
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
+    Public Delegate Sub HERB_UPDATE_DH15CompletedEventHandler(ByVal sender As Object, ByVal e As HERB_UPDATE_DH15CompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class DRUG_UPDATE_DH15CompletedEventArgs
+    Partial Public Class HERB_UPDATE_DH15CompletedEventArgs
         Inherits System.ComponentModel.AsyncCompletedEventArgs
         
         Private results() As Object
@@ -708,11 +708,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_INSERT_DR15_DEMOCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_INSERT_DR15_DEMOCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_INSERT_DR15_DEMOCompletedEventArgs
@@ -735,11 +735,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub UPDATE_TRANFERS_DRCompletedEventHandler(ByVal sender As Object, ByVal e As UPDATE_TRANFERS_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class UPDATE_TRANFERS_DRCompletedEventArgs
@@ -762,11 +762,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub UPDATE_SMP_DRCompletedEventHandler(ByVal sender As Object, ByVal e As UPDATE_SMP_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class UPDATE_SMP_DRCompletedEventArgs
@@ -789,11 +789,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_INSERT_DRCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_INSERT_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_INSERT_DRCompletedEventArgs
@@ -816,11 +816,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_UPDATE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_UPDATE_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_UPDATE_DRCompletedEventArgs
@@ -843,11 +843,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub HERB_DELETE_DRCompletedEventHandler(ByVal sender As Object, ByVal e As HERB_DELETE_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class HERB_DELETE_DRCompletedEventArgs
@@ -870,15 +870,15 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_DRUG_BC_UPDATE_TBCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_DRUG_FORMULACompletedEventHandler(ByVal sender As Object, ByVal e As XML_DRUG_FORMULACompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XML_DRUG_FORMULACompletedEventArgs
@@ -901,11 +901,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_DRUG_LICENSECompletedEventHandler(ByVal sender As Object, ByVal e As XML_DRUG_LICENSECompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XML_DRUG_LICENSECompletedEventArgs
@@ -928,11 +928,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_GET_SEARCH_DRUG_DR_IOW_ESUBCompletedEventHandler(ByVal sender As Object, ByVal e As XML_GET_SEARCH_DRUG_DR_IOW_ESUBCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XML_GET_SEARCH_DRUG_DR_IOW_ESUBCompletedEventArgs
@@ -955,11 +955,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_GET_SEARCH_DRUG_DRCompletedEventHandler(ByVal sender As Object, ByVal e As XML_GET_SEARCH_DRUG_DRCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XML_GET_SEARCH_DRUG_DRCompletedEventArgs
@@ -982,11 +982,11 @@ Namespace WS_DRUG
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")>  _
     Public Delegate Sub XML_GET_SEARCH_DRUG_LCNCompletedEventHandler(ByVal sender As Object, ByVal e As XML_GET_SEARCH_DRUG_LCNCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class XML_GET_SEARCH_DRUG_LCNCompletedEventArgs
