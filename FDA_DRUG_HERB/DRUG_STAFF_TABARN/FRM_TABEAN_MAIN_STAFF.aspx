@@ -298,7 +298,7 @@
         </div>
    <div class=" modal fade" id="myModal">              
                <div class="panel panel-info" style="width:100%;">
-                   <div class="panel-heading  text-center"><h1>รายละเอียด ยาตัวอย่าง </h1></div>
+                   <div class="panel-heading  text-center"><h1>รายละเอียด ผลิตภัณฑ์ตัวอย่าง </h1></div>
                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">ปิดหน้านี้</button>
                    <div class="panel-body">
                              <iframe id="f1"  style="width:100%; height:550px;" ></iframe>

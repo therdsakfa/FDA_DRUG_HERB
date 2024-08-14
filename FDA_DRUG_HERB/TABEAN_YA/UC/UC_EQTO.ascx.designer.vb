@@ -149,15 +149,6 @@ Partial Public Class UC_EQTO
     Protected WithEvents rg_chem As Global.Telerik.Web.UI.RadGrid
 
     '''<summary>
-    '''btn_back control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_back As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btn_rows_save control.
     '''</summary>
     '''<remarks>

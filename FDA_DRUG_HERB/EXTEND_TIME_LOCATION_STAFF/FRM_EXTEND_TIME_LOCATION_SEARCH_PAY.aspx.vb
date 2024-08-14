@@ -24,11 +24,16 @@ Public Class FRM_EXTEND_TIME_LOCATION_SEARCH_PAY
     Protected Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         Dim dao As New DAO_XML_DRUG_LCN.TB_XML_SEARCH_DRUG_LCN
         Dim urls As String = ""
-
+        Dim dao_who As New DAO_WHO.TB_WHO_DALCN
 
         If txt_CITIZEN_AUTHORIZE.Text <> "" Then
             Try
                 dao.GetDataby_identify(txt_CITIZEN_AUTHORIZE.Text)
+                Try
+                    dao_who.GetdatabyID_IDEN(txt_CITIZEN_AUTHORIZE.Text)
+                Catch ex As Exception
+
+                End Try
                 If dao.fields.IDA <> 0 Then
                     _CLS.CITIZEN_ID_AUTHORIZE = txt_CITIZEN_AUTHORIZE.Text
                     urls = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & txt_CITIZEN_AUTHORIZE.Text
@@ -38,6 +43,11 @@ Public Class FRM_EXTEND_TIME_LOCATION_SEARCH_PAY
                     Dim dao2 As New DAO_DRUG.ClsDBdalcn
                     dao2.GetDataby_IDEN(txt_CITIZEN_AUTHORIZE.Text)
                     If dao2.fields.IDA <> 0 Then
+                        _CLS.CITIZEN_ID_AUTHORIZE = txt_CITIZEN_AUTHORIZE.Text
+                        urls = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & txt_CITIZEN_AUTHORIZE.Text
+                        Session("CLS") = _CLS
+                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('" & urls & "'); ", True)
+                    ElseIf dao_who.fields.IDA <> 0 Then
                         _CLS.CITIZEN_ID_AUTHORIZE = txt_CITIZEN_AUTHORIZE.Text
                         urls = "https://platba.fda.moph.go.th/FDA_FEE/MAIN/check_token.aspx?Token=" & _CLS.TOKEN & "&system=staffherb&identify=" & txt_CITIZEN_AUTHORIZE.Text
                         Session("CLS") = _CLS

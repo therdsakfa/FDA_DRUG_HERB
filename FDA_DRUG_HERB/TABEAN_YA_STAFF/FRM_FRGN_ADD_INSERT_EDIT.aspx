@@ -92,7 +92,7 @@
             <td>
             
                 <telerik:RadComboBox ID="rcb_national" Runat="server" Filter="Contains">
-                </telerik:RadComboBox> 
+                </telerik:RadComboBox> <asp:Label ID="Label1" ForeColor="Red" Visible="false" runat="server" Text="*กรุณาเลือกข้อมูล"></asp:Label>
             
             </td>
         </tr>

@@ -84,7 +84,7 @@
 					</li>--%>
 					<li>
                         <%--<asp:HyperLink ID="HyperLink1" runat="server">หน้าแรก<span></span></asp:HyperLink>--%>
-							<a href="../LOCATION/FRM_LCN_LCT.aspx"><i class="fa fa-search"></i> หน้าแรก<span></span></a>
+							<a href="../MAIN/MAIN_PRODUCTS.aspx"><i class="fa fa-search"></i> หน้าแรก<span></span></a>
 					</li>
 					<li>
 						<a href="http://privus.fda.moph.go.th/"><i class="fa fa-power-off"></i> ออกจากระบบ<span></span></a>

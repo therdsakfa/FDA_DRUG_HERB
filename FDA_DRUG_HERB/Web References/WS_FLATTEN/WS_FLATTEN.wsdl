@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="FlattenPDF">
@@ -27,6 +27,59 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="FlattenPDF_DIGITALResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TEMPLATE_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlattenPDF_DIGITAL_V2Result" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TEMPLATE_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlattenPDF_DIGITAL_V3Result" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcePdfPath" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TEMPLATE_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FlattenPDF_DIGITAL_V4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FlattenPDF_DIGITAL_V4Result" type="s:base64Binary" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -80,6 +133,24 @@
   <wsdl:message name="FlattenPDF_DIGITALSoapOut">
     <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITALResponse" />
   </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V2SoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V2" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V2SoapOut">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V2Response" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V3SoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V3" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V3SoapOut">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V3Response" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V4SoapIn">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V4" />
+  </wsdl:message>
+  <wsdl:message name="FlattenPDF_DIGITAL_V4SoapOut">
+    <wsdl:part name="parameters" element="tns:FlattenPDF_DIGITAL_V4Response" />
+  </wsdl:message>
   <wsdl:message name="PDF_DIGITAL_SIGNSoapIn">
     <wsdl:part name="parameters" element="tns:PDF_DIGITAL_SIGN" />
   </wsdl:message>
@@ -103,6 +174,18 @@
     <wsdl:operation name="FlattenPDF_DIGITAL">
       <wsdl:input message="tns:FlattenPDF_DIGITALSoapIn" />
       <wsdl:output message="tns:FlattenPDF_DIGITALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V2">
+      <wsdl:input message="tns:FlattenPDF_DIGITAL_V2SoapIn" />
+      <wsdl:output message="tns:FlattenPDF_DIGITAL_V2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V3">
+      <wsdl:input message="tns:FlattenPDF_DIGITAL_V3SoapIn" />
+      <wsdl:output message="tns:FlattenPDF_DIGITAL_V3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V4">
+      <wsdl:input message="tns:FlattenPDF_DIGITAL_V4SoapIn" />
+      <wsdl:output message="tns:FlattenPDF_DIGITAL_V4SoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PDF_DIGITAL_SIGN">
       <wsdl:input message="tns:PDF_DIGITAL_SIGNSoapIn" />
@@ -129,6 +212,33 @@
     </wsdl:operation>
     <wsdl:operation name="FlattenPDF_DIGITAL">
       <soap:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V2">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V3">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V4">
+      <soap:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V4" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -181,6 +291,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V2">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V3">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FlattenPDF_DIGITAL_V4">
+      <soap12:operation soapAction="http://tempuri.org/FlattenPDF_DIGITAL_V4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PDF_DIGITAL_SIGN">
       <soap12:operation soapAction="http://tempuri.org/PDF_DIGITAL_SIGN" style="document" />
       <wsdl:input>
@@ -208,10 +345,10 @@
   </wsdl:binding>
   <wsdl:service name="WS_FLATTEN">
     <wsdl:port name="WS_FLATTENSoap" binding="tns:WS_FLATTENSoap">
-      <soap:address location="http://164.115.28.123/TEST_FLATEN/WS_FLATTEN.asmx" />
+      <soap:address location="http://164.115.28.137/TEST_FLATEN/WS_FLATTEN.asmx" />
     </wsdl:port>
     <wsdl:port name="WS_FLATTENSoap12" binding="tns:WS_FLATTENSoap12">
-      <soap12:address location="http://164.115.28.123/TEST_FLATEN/WS_FLATTEN.asmx" />
+      <soap12:address location="http://164.115.28.137/TEST_FLATEN/WS_FLATTEN.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

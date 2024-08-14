@@ -239,8 +239,11 @@ Public Class POPUP_DR_TRANSFER_DL
         cls_xml.TABEAN_TYPE1 = TABEAN_TYPE1
         cls_xml.TABEAN_TYPE2 = TABEAN_TYPE2
         cls_xml.DRUG_STRENGTH = dao_re.fields.DRUG_STRENGTH
+        Dim TRANSFER_ID As String = ""
+        TRANSFER_ID = ida_transfer
         Try
             cls_xml.TRANSFER = ida_transfer
+            cls_xml.drrqts.FK_TRANSFER = TRANSFER_ID
         Catch ex As Exception
 
         End Try
@@ -281,6 +284,19 @@ Public Class POPUP_DR_TRANSFER_DL
             cls_xml.DT_SHOW.DT15 = bao_show.SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE(ida_transfer, 3, LCNTPCD_GROUP)
             cls_xml.DT_SHOW.DT15.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_4NO"
         End If
+
+        'cls_xml.DT_SHOW.DT13 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_V2(ida_transfer, 1)
+        'cls_xml.DT_SHOW.DT13.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_2NO"
+        'cls_xml.DT_SHOW.DT14 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_V2(ida_transfer, 2)
+        'cls_xml.DT_SHOW.DT14.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_3NO"
+        'cls_xml.DT_SHOW.DT16 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_V2(ida_transfer, 10)
+        'cls_xml.DT_SHOW.DT16.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_3_2NO"
+        'cls_xml.DT_SHOW.DT15 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_ANDTYPE_V2(ida_transfer, 3)
+        'cls_xml.DT_SHOW.DT15.TableName = "SP_DRUG_REGISTRATION_PRODUCER_BY_FK_IDA_AND_TYPE_4NO"
+
+        'cls_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(ida_transfer, 9, LCNTPCD_GROUP)
+        'cls_xml.DT_SHOW.DT21.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER"
+
         cls_xml.DT_SHOW.DT16 = bao_show.SP_DRUG_REGISTRATION_MASTER(_main_ida)
         cls_xml.DT_SHOW.DT16.TableName = "SP_DRUG_REGISTRATION_MASTER"
 

@@ -33,7 +33,7 @@
             End Try
 
         End If
-        UC_NODE_AUTO.group = 6
+        'UC_NODE_AUTO.group = 6
     End Sub
 
 End Class

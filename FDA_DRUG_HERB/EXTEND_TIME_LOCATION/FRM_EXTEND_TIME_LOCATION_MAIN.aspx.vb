@@ -555,7 +555,7 @@ Public Class FRM_EXTEND_TIME_LOCATION_MAIN1
         Else
             newyear = year_present + 1
         End If
-        cls_xml.EXP_NEWYEAR = newyear 'ต่ออายุใบอนุญาติ
+        cls_xml.EXP_NEWYEAR = newyear 'ต่ออายุใบอนุญาต
         cls_xml.dalcns_new = dao_lcn.fields
         'cls_xml.DT_SHOW.DT8 = bao_show.SP_GETDATA_EXTENDPDF_by_IDA(_lcn_ida)
         cls_xml.DT_SHOW.DT9 = bao_show.SP_DOWNDATA_EXTENDPDF_by_IDA(_lcn_ida) 'ข้อมูลสถานที่จำลอง

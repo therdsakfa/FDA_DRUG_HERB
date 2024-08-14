@@ -960,22 +960,24 @@ Public Class WebForm35
         dao_date.insert()
 
 
+        'If STATUS_ID = 3 Then
         If STATUS_ID = 3 Then
             dao.fields.STATUS_ID = STATUS_ID
-            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
-            dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
+            'RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), _CLS.PVCODE, PROCESS_ID, _IDA)
+            'dao.fields.rcvno = RCVNO 'bao.FORMAT_NUMBER_FULL(con_year(Date.Now.Year()), RCVNO)
 
 
-            dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
+            'dao.fields.RCVNO_DISPLAY = bao.FORMAT_NUMBER_MINI(con_year(Date.Now.Year()), RCVNO)
             Try
                 dao.fields.rcvdate = Date.Now 'CDate(txt_app_date.Text)
             Catch ex As Exception
 
             End Try
-            dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
-            dao.fields.frtappdate = Date.Now
+            'dao.fields.RCVDATE_DISPLAY = Date.Now.ToShortDateString()
+            'dao.fields.frtappdate = Date.Now
             dao.update()
 
+            'AddLogStatus(STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
             'Dim cls_sop As New CLS_SOP
             'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 2, "รับคำขอ", "SOP-DRUG-10-" & PROCESS_ID & "-2", "เสนอลงนาม", "รอเจ้าหน้าที่เสนอลงนาม", "STAFF", _TR_ID, SOP_STATUS:="รับคำขอ")
 
@@ -988,7 +990,7 @@ Public Class WebForm35
         ElseIf STATUS_ID = 6 Then
             Response.Redirect("FRM_STAFF_LCN_CONSIDER.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
         ElseIf STATUS_ID = 8 Then
-            
+
             dao.fields.STATUS_ID = STATUS_ID
 
             'Dim r_no As String = ""
@@ -1094,9 +1096,12 @@ Public Class WebForm35
 
             'alert("ดำเนินการอนุมัติเรียบร้อยแล้ว")
             ''alert_reload("ดำเนินการอนุมัติเรียบร้อยแล้ว")
-        ElseIf STATUS_ID = 7 Then
-            Response.Redirect("FRM_STAFF_LCN_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
-            AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+        ElseIf STATUS_ID = 78 Or STATUS_ID = 75 Or STATUS_ID = 7 Or STATUS_ID = 9 Then
+            Response.Redirect("FRM_LCN_STAFF_HERB_CANCEL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & _ProcessID & "&STATUS_ID=" & STATUS_ID)
+            'ElseIf STATUS_ID = 7 Then
+            'ElseIf STATUS_ID = 7 Then
+            '        Response.Redirect("FRM_STAFF_LCN_REMARK.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID)
+            '    AddLogStatus(STATUS_ID, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             'AddLogStatus(7, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
             '_TR_ID = Request.QueryString("TR_ID")
             '_IDA = Request.QueryString("IDA")
@@ -1245,6 +1250,7 @@ Public Class WebForm35
         Dim lcnno_text As String = ""
         Dim lcnno_auto As String = ""
         Dim lcnno_format As String = ""
+        Dim lcnno_format_OLD As String = ""
         Dim lcnno_format_NEW As String = ""
         Dim pvncd As String = ""
         Try
@@ -1858,7 +1864,7 @@ Public Class WebForm35
                 If Len(lcnno_auto) > 0 Then
 
                     If Right(Left(lcnno_auto, 3), 1) = "5" Then
-                        lcnno_format = " " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
+                        lcnno_format = "จ " & CStr(CInt(Right(lcnno_auto, 4))) & "/25" & Left(lcnno_auto, 2)
                         'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                     Else
                         'lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
@@ -1867,6 +1873,7 @@ Public Class WebForm35
                     'lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
 
                 End If
+                'lcnno_format = dao.fields.pvnabbr & " " & lcnno_format
                 'lcnno_format_NEW = "HB " & dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
 
@@ -1883,9 +1890,18 @@ Public Class WebForm35
 
                 If Not dao.fields.LCNNO_DISPLAY_NEW Is Nothing Then
                     lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
-                    lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                    'If dao.fields.STATUS_ID = 8 And dao.fields.lcnno < 1000000 Then
+                    If dao.fields.lcnno < 1000000 Then
+                        lcnno_format = dao.fields.LCNNO_DISPLAY_NEW
+                    Else
+                        'lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                        lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                    End If
+                    'lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                    'lcnno_format_OLD = "HB " & dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 Else
-                    lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+                    lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+                    'lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                     lcnno_format_NEW = dao.fields.LCNNO_DISPLAY_NEW
                     'lcnno_format_NEW = "HB " & dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
                 End If
@@ -1895,6 +1911,17 @@ Public Class WebForm35
         Catch ex As Exception
 
         End Try
+        Dim lcnnno_year As String = ""
+        Try
+            lcnnno_year = Left(lcnno_auto, 2)
+        Catch ex As Exception
+            lcnnno_year = 0
+        End Try
+        If lcnnno_year >= 65 Then
+            class_xml.LCNNO_TYPE = "NEW"
+        Else
+            class_xml.LCNNO_TYPE = "OLD"
+        End If
         Try
             Dim dao_main2 As New DAO_DRUG.ClsDBdalcn
             dao_main2.GetDataby_IDA(MAIN_LCN_IDA)
@@ -1993,7 +2020,6 @@ Public Class WebForm35
                     class_xml.RCVDAY_NEW = appdate.Day.ToString()
                     class_xml.RCVMONTH_NEW = appdate.ToString("MMMM")
                     class_xml.RCVYEAR_NEW = con_year(appdate.Year)
-
 
                 End If
                 class_xml.RCVDAY_NUMTHAI = NumEng2Thai(appdate.Day.ToString())
@@ -2331,7 +2357,11 @@ Public Class WebForm35
         End If
 
         Dim paths As String = bao._PATH_DEFAULT
-        Dim PDF_TEMPLATE As String = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+        Dim PDF_TEMPLATE As String = ""
+        'If dao.fields.pvncd = 19 Then
+        '    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(PROCESS_ID, "สมพ2", statusId, HiddenField2.Value, _group:=1)
+        'End If
+        PDF_TEMPLATE = paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
         Dim filename As String = paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
         Dim Path_XML As String = paths & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("DA", PROCESS_ID, YEAR, _TR_ID)
 
@@ -2476,4 +2506,22 @@ Public Class WebForm35
         End Try
         Return imgBin
     End Function
+
+    Protected Sub btn_dbd_Click(sender As Object, e As EventArgs) Handles btn_dbd.Click
+        Dim dao As New DAO_DRUG.ClsDBdalcn
+        dao.GetDataby_IDA(_IDA)
+        Dim IDENTIFY As String = _CLS.CITIZEN_ID
+        Dim COMPANY_INDENTIFY As String = dao.fields.CITIZEN_ID_AUTHORIZE
+        Dim TOKEN As String = _CLS.TOKEN
+        Dim TR_ID As String = "" 'รอพี่บิ๊กกำหนดชื่อตัวแปรอีกที
+        Dim ORG As String = "HERB"
+        Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        dao_up.GetDataby_IDA(dao.fields.TR_ID)
+        Dim YEAR As String = dao_up.fields.YEAR
+        TR_ID = "HB-" & _ProcessID & "-" & YEAR & "-" & _TR_ID
+        Dim URL As String = DBD_LINK(IDENTIFY, COMPANY_INDENTIFY, TR_ID, TOKEN)
+        'Response.Redirect(URL)
+        Response.Write("<script language='javascript'>window.open('" & URL & "','_blank','');")
+        Response.Write("</script>")
+    End Sub
 End Class

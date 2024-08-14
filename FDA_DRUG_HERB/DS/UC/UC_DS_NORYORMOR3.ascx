@@ -161,7 +161,7 @@
         </tr>
         <tr>
             <td align="right" class="auto-style3">
-                คำขออนุญาตินำหรือสั่งยาฯ ณ สถานที่ชื่อ :</td>
+                คำขออนุญาตนำหรือสั่งยาฯ ณ สถานที่ชื่อ :</td>
             <td>
                 <asp:Label ID="lbl_place_name" runat="server" Text="-"></asp:Label>
             </td>

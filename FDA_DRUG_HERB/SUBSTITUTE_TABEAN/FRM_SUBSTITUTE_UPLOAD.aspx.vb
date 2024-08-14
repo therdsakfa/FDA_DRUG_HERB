@@ -166,7 +166,7 @@ Public Class FRM_SUBSTITUTE_UPLOAD
             End Try
             dao.fields.FK_IDA = _rgt_ida
             dao.fields.PROCESS_ID = _ProcessID
-            dao.fields.IDENTIFY = dao_rg.fields.IDENTIFY '_CLS.CITIZEN_ID_AUTHORIZE
+            dao.fields.IDENTIFY = _CLS.CITIZEN_ID_AUTHORIZE 'dao_rg.fields.IDENTIFY '
             dao.fields.CTZNO = _CLS.CITIZEN_ID
 
             dao.insert()

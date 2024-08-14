@@ -1,10 +1,10 @@
 ﻿Public Class LGT_IOW_E
-    Private _XML_SEARCH_PRODUCT_GROUP As New XML_SEARCH_PRODUCT_GROUP_ESUB
-    Public Property XML_SEARCH_DRUG_DR() As XML_SEARCH_PRODUCT_GROUP_ESUB
+    Private _XML_SEARCH_PRODUCT_GROUP As New XML_DRUG_PRODUCT_HERB
+    Public Property XML_SEARCH_DRUG_DR() As XML_DRUG_PRODUCT_HERB
         Get
             Return _XML_SEARCH_PRODUCT_GROUP
         End Get
-        Set(ByVal value As XML_SEARCH_PRODUCT_GROUP_ESUB)
+        Set(ByVal value As XML_DRUG_PRODUCT_HERB)
             _XML_SEARCH_PRODUCT_GROUP = value
         End Set
     End Property

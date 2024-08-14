@@ -47,7 +47,7 @@
     <![endif]-->
 
 	<div class="wrapper two">
-		<header class="header"  style="background: #8CB343">
+		<header class="header"  style="background: #63320e">
 			<div class="inner">
 				<a href="" class="logo">
 					<img src="../imgs/logo@2x.png" alt="Logo" />
@@ -58,7 +58,7 @@
 						<img src="../imgs/logo@2x.png" alt="Logo" />
 					</a>
 					<!-- For Mobile -->
-					<span class="circle"  style="background: #8CB343"></span>
+					<span class="circle"  style="background: #63320e"></span>
 					<div class="media-body">
 						<h1>สมุนไพร&nbsp;</h1>
 						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>
@@ -86,7 +86,7 @@
 					</li>--%>
 					<li>
                        <%-- <asp:HyperLink ID="HyperLink1" runat="server">หน้าแรก<span></span></asp:HyperLink>--%>
-						<a href="../MAIN/MAIN_PRODUCTS.aspx"><i class="fa fa-search"></i> หน้าแรก<span></span></a>
+						<a href="../MAIN/FRM_HERB_PRODUCT_MAIN.aspx"><i class="fa fa-search"></i> หน้าแรก<span></span></a>
 					</li>
 					<li>
 						<a href="http://privus.fda.moph.go.th/"><i class="fa fa-power-off"></i> ออกจากระบบ<span></span></a>

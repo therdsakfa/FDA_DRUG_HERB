@@ -2326,7 +2326,11 @@ Public Class POPUP_DR_CONFIRM_STAFF
 
         End Try
         Try
-
+            If lcntpcd.Contains("สม") Then
+                lcnno_format = dao_lcn.fields.lcnno_display_new
+            Else
+                lcnno_format = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            End If
             'If dao_e.fields.lcntpcd.Contains("ผย1") Then
             '    If dao_e.fields.pvnabbr = "กท" Then
             '        lcnno_format = CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
@@ -2335,7 +2339,7 @@ Public Class POPUP_DR_CONFIRM_STAFF
             '    End If
 
             'Else
-            lcnno_format = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            'lcnno_format = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
             'End If
 
 
@@ -2433,8 +2437,16 @@ Public Class POPUP_DR_CONFIRM_STAFF
         class_xml.DT_SHOW.DT18.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
         class_xml.DT_SHOW.DT23 = bao_show.SP_drrgt_cas(_IDA)
         class_xml.DT_SHOW.DT23.TableName = "SP_regis"
-        class_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(dao.fields.IDA, 9, LCNTPCD_GROUP)
-        class_xml.DT_SHOW.DT21.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER"
+        Try
+            If dao.fields.PROCESS_ID.Contains(1400001) = True Then
+                class_xml.DT_SHOW.DT21 = bao_show.SP_DRRGT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER(dao.fields.IDA, 9, LCNTPCD_GROUP)
+                class_xml.DT_SHOW.DT21.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE_OTHER"
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
         class_xml.DT_SHOW.DT23 = bao_show.SP_DRRGT_CAS_EQTO(_IDA)
         class_xml.DT_SHOW.DT23.TableName = "SP_regis"
 

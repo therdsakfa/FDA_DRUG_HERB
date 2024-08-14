@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG" Class="linq_whoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.168;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.WHO_DALCN" Member="WHO_DALCNs">
+    <Type Name="WHO_DALCN">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_LCT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_LCN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCN_TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="IDENTIFY" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PREFIXCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PREFIXNM" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="THANM_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADDRESSPERSON" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOTE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MENU_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPEPERSON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_ORIGIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CITIZEN_ID_AUTHORIZE_ORIGIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaaddr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoom" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thamu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thafloor" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thasoi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thabuilding" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tharoad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="zip_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thathmblnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCATION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LCNSID_WHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WHO_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

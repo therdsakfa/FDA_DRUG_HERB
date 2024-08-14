@@ -44,6 +44,7 @@ Namespace BAO
         Public con_str As String = System.Configuration.ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString
         Dim conn_CPN As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("LGTCPNConnectionString1").ConnectionString)
         Dim con_124 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_XML_DRUGConnectionString1").ConnectionString)
+        Dim conherb_124 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_XML_DRUG_HERBConnectionString").ConnectionString)
         Dim con_m44 As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_SPECIAL_PAYMENTConnectionString").ConnectionString)
         Dim con_fee As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_FEEConnectionString").ConnectionString)
         Dim con_book As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("FDA_BOOKINGConnectionString").ConnectionString)
@@ -89,6 +90,63 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+
+        Public Function SP_XML_TABEAN_DRRQT_BY_RGTNO(ByVal RGTNO As String) As DataTable
+
+            Dim sql As String = "exec SP_XML_TABEAN_DRRQT_BY_RGTNO @RGTNO= '" & RGTNO & "' "
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_WHO_CUSTOMER_LCN_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_WHO_CUSTOMER_LCN_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_CUSTOMER_LCN_BY_IDENTIFY_NO120(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_CUSTOMER_LCN_BY_IDENTIFY_NO120 @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+
+        Public Function SP_XML_HERB_EDIT_IOW_BY_IDA(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_XML_HERB_EDIT_IOW_BY_IDA @ida=" & IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+
+        Public Function SP_XML_HERB_EDIT_IOW_BY_IDA_FK_SET(ByVal IDA As Integer, ByVal fk_set As Integer) As DataTable
+            Dim sql As String = "exec SP_XML_HERB_EDIT_IOW_BY_IDA_FK_SET @ida=" & IDA & ", @fk_set=" & fk_set
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+
+        Public Function SP_XML_HERB_IOW_EQ_BY_FK_IDA_FK_SET(ByVal IDA As Integer, ByVal fk_set As Integer) As DataTable
+            Dim sql As String = "exec SP_XML_HERB_IOW_EQ_BY_FK_IDA_FK_SET @ida=" & IDA & ", @fk_set=" & fk_set
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_SEARCH_ID_BY_PROCESS_AND_TR_ID(ByVal TR_ID As Integer, ByVal PROCESS_ID As Integer) As DataTable
+            Dim sql As String = "exec SP_SEARCH_ID_BY_PROCESS_AND_TR_ID @TR_ID=" & TR_ID & ", @process_id=" & PROCESS_ID
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_TABEAN_HERB_EDIT_REQUEST_TEMPOLARY(ByVal IDENTITY As String, ByVal IDA_LCN As Integer) As DataTable
+
+            Dim sql As String = "exec SP_TABEAN_HERB_EDIT_REQUEST_TEMPOLARY @identify= '" & IDENTITY & "' ,@FK_LCN=" & IDA_LCN
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         '
         Public Function SP_CUSTOMER_LCN_DH_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
@@ -97,10 +155,98 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
-        '
+        Public Function SP_DALCN_RENEW(ByVal IDENTITY As String, ByVal FK_LCN As Integer) As DataTable
+
+            Dim sql As String = "exec SP_DALCN_RENEW @IDEN= '" & IDENTITY & "' ,@FK_LCN=" & FK_LCN
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_TRANSFER_CUSTOMER(ByVal IDENTITY As String, ByVal FK_LCN As Integer) As DataTable
+
+            Dim sql As String = "exec SP_DALCN_TRANSFER_CUSTOMER @IDEN= '" & IDENTITY & "' ,@FK_LCN=" & FK_LCN
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_LCN_CONSIDER_TRANSLATION(ByVal IDENTITY As String, ByVal IDA_LCN As Integer) As DataTable
+
+            Dim sql As String = "exec SP_LCN_CONSIDER_TRANSLATION @identify= '" & IDENTITY & "' ,@FK_LCN=" & IDA_LCN
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_PROCESS_AND_TYPE(ByVal TR_ID As String, ByVal PROCESS As String, ByVal TYPE As String) As DataTable
+
+            Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_PROCESS_AND_TYPE @TR_ID= '" & TR_ID & "' ,@PROCESS= '" & PROCESS & "',@TYPE=" & TYPE
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_RENEW_STAFF() As DataTable
+
+            Dim sql As String = "exec SP_DALCN_RENEW_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SP_CUSTOMER_LCN_DR_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
             Dim sql As String = "exec SP_CUSTOMER_LCN_DR_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_CUSTOMER_LCN_DR_BY_IDENTIFY_BY_TYPE(ByVal IDENTITY As String, ByVal TYPE_ID As Integer) As DataTable
+
+            Dim sql As String = "exec SP_CUSTOMER_LCN_DR_BY_IDENTIFY_BY_TYPE @iden= '" & IDENTITY & "'" & ",@TYPE_ID=" & TYPE_ID
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_TABEAN_HERB_EDIT_REQUEST_TEMPOLARY_STAFF() As DataTable
+            Dim sql As String = "exec SP_TABEAN_HERB_EDIT_REQUEST_TEMPOLARY_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_HERB_EDIT_REQUEST_TEMPOLARY_STAFF"
+            Return dta
+        End Function
+
+        Public Function SP_HERB_TABEAN_BY_IDEN_AND_FK_IDA(ByVal IDENTITY As String, ByVal FK_IDA_LCN As Integer, ByVal PRO_ID As Integer) As DataTable
+
+            Dim sql As String = "exec SP_HERB_TABEAN_BY_IDEN_AND_FK_IDA @iden= '" & IDENTITY & "' ,@FK_LCN_IDA= " & FK_IDA_LCN & ",@PRO_ID=" & PRO_ID
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_TRANSFER_STAFF() As DataTable
+
+            Dim sql As String = "exec SP_DALCN_TRANSFER_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_XML_TABEAN_EDIT_FORMULA(ByVal FK_IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_XML_TABEAN_EDIT_FORMULA @FK_IDA=" & FK_IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_XML_TABEAN_EDIT_FORMULA"
+            Return dta
+        End Function
+        Public Function SP_XML_TABEAN_HERB_BY_IDEN(ByVal IDENTITY As String, ByVal FK_IDA_LCN As Integer) As DataTable
+
+            Dim sql As String = "exec SP_XML_TABEAN_HERB_BY_IDEN @IDENTIFY= '" & IDENTITY & "' ,@LCN_IDA= " & FK_IDA_LCN
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_XML_TABEAN_HERB_BY_IDEN_AND_RGTNO(ByVal IDENTITY As String, ByVal RGTNO As String) As DataTable
+
+            Dim sql As String = "exec SP_XML_TABEAN_HERB_BY_IDEN_AND_RGTNO @IDENTIFY= '" & IDENTITY & "' ,@RGTNO='" & RGTNO & "'"
+
             Dim dta As New DataTable
             dta = Queryds(sql)
             Return dta
@@ -176,6 +322,481 @@ Namespace BAO
             'Catch ex As Exception
 
             'End Try
+
+        End Sub
+        Public Sub Insert_Tabean_Sub_New(ByVal FK_IDA As Integer)
+            Dim dao As New DAO_DRUG.ClsDBdrrqt
+            dao.GetDataby_IDA(FK_IDA)
+
+            Dim dao_tabean As New DAO_TABEAN_HERB.TB_TABEAN_HERB
+            dao_tabean.GetdatabyID_FK_IDA_DQ(FK_IDA)
+            Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+            With dao_drrgt.fields
+                .pvncd = dao.fields.pvncd
+                .drgtpcd = dao.fields.drgtpcd
+                .rgttpcd = dao.fields.rgttpcd
+                .rcvno = dao.fields.rcvno
+                .rgtno = dao.fields.rgtno
+                .pvnabbr = dao.fields.pvnabbr
+                .lcnsid = dao.fields.lcnsid
+                .lcnno = dao.fields.lcnno
+                .lcntpcd = dao.fields.lcntpcd
+                .thadrgnm = dao.fields.thadrgnm
+                .engdrgnm = dao.fields.engdrgnm
+                .lpvncd = dao.fields.lpvncd
+                .TR_ID = dao.fields.TR_ID
+                .CTZNO = dao.fields.CTZNO
+                .IDENTIFY = dao.fields.IDENTIFY
+                .PROCESS_ID = dao.fields.PROCESS_ID
+                .FK_LCN_IDA = dao.fields.FK_LCN_IDA
+                .STATUS_ID = dao.fields.STATUS_ID
+                Try
+                    If dao.fields.RCVNO_NEW = "" Then
+                        .RCVNO_NEW = dao.fields.RCVNO_OLD
+                    Else
+                        .RCVNO_NEW = dao.fields.RCVNO_NEW
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_IDA = dao.fields.FK_IDA
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_DRRQT = dao.fields.IDA
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .frtappdate = dao.fields.FIRST_APP_DATE
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .appdate = dao.fields.appdate
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .TRANSFER_TYPE = dao.fields.TRANSFER_TYPE
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_TRANSFER = dao.fields.FK_TRANSFER
+                Catch ex As Exception
+
+                End Try
+
+                Try
+                    .rcptpayst = dao.fields.dvcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If dao.fields.rgttpcd <> "G" And dao.fields.rgttpcd <> "H" And dao.fields.rgttpcd <> "K" Then
+                        If CDate(dao.fields.appdate).ToString("yyyy/MM/dd") >= "2562/01/01" And CDate(dao.fields.appdate).ToString("yyyy/MM/dd") <= "2562/10/12" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 9, CDate(dao.fields.appdate)))
+                        ElseIf CDate(dao.fields.appdate).ToString("yyyy/MM/dd") > "2562/10/12" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 7, CDate(dao.fields.appdate)))
+                        End If
+
+                    Else
+                        If CDate(dao.fields.appdate) >= "2562/01/01" And CDate(dao.fields.appdate).ToString("yyyy/MM/dd") <= "2562/06/28" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 9, CDate(dao.fields.appdate)))
+                        ElseIf CDate(dao.fields.appdate).ToString("yyyy/MM/dd") > "2562/06/28" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, CDate(dao.fields.appdate)))
+                        End If
+                    End If
+                    Try
+                        .rcvdate = dao.fields.rcvdate
+                    Catch ex As Exception
+
+                    End Try
+
+                    Try
+                        .FIRST_APP_DATE = dao.fields.FIRST_APP_DATE
+                        .FK_DOSAGE_FORM = dao.fields.FK_DOSAGE_FORM
+                    Catch ex As Exception
+
+                    End Try
+                Catch ex As Exception
+
+                End Try
+
+            End With
+            dao_drrgt.insert()
+            Dim IDA_rgt As Integer = dao_drrgt.fields.IDA
+
+            Dim bao_insert_addr As New BAO.ClsDBSqlcommand
+            Dim dt As New DataTable
+            Try
+                dt = bao_insert_addr.SP_DRRGT_ADDR_INSERT(IDA_rgt)
+            Catch ex As Exception
+
+            End Try
+
+            Dim dao_cas As New DAO_DRUG.TB_DRRQT_DETAIL_CAS
+            dao_cas.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_cas.fields In dao_cas.datas
+                Dim dao_rgt_cas As New DAO_DRUG.TB_DRRGT_DETAIL_CAS
+                With dao_rgt_cas.fields
+                    .AORI = dao_cas.fields.AORI
+                    .BASE_FORM = dao_cas.fields.BASE_FORM
+                    .EQTO_IOWA = dao_cas.fields.EQTO_IOWA
+                    .EQTO_QTY = dao_cas.fields.EQTO_QTY
+                    .EQTO_SUNITCD = dao_cas.fields.EQTO_SUNITCD
+                    .FK_IDA = IDA_rgt
+                    .FK_SET = dao_cas.fields.FK_SET
+                    .IOWA = dao_cas.fields.IOWA
+                    .QTY = dao_cas.fields.QTY
+                    .ROWS = dao_cas.fields.ROWS
+                    .SUNITCD = dao_cas.fields.SUNITCD
+                    .REMARK = dao_cas.fields.REMARK
+                    .REF = dao_cas.fields.REF
+                    .CAS_TYPE = dao_cas.fields.CAS_TYPE
+                    .CONDITION = dao_cas.fields.CONDITION
+                    .ebioqty = dao_cas.fields.ebioqty
+                    .ebiosqno = dao_cas.fields.ebiosqno
+                    .ebiounitcd = dao_cas.fields.ebiounitcd
+                    .mltplr = dao_cas.fields.mltplr
+                    .QTY2 = dao_cas.fields.QTY2
+                    .sbioqty = dao_cas.fields.sbioqty
+                    .sbiosqno = dao_cas.fields.sbiosqno
+                    .sbiounitcd = dao_cas.fields.sbiounitcd
+                End With
+                dao_rgt_cas.insert()
+
+                Dim dao_eq As New DAO_DRUG.TB_DRRQT_EQTO
+                dao_eq.GetDataby_FK_IDA(dao_cas.fields.IDA)
+                For Each dao_eq.fields In dao_eq.datas
+                    Dim dao_eq_rgt As New DAO_DRUG.TB_DRRGT_EQTO
+                    With dao_eq_rgt.fields
+                        .FK_IDA = dao_rgt_cas.fields.IDA
+                        .IOWA = dao_eq.fields.IOWA
+                        .MULTIPLY = dao_eq.fields.MULTIPLY
+                        .QTY = dao_eq.fields.QTY
+                        .ROWS = dao_eq.fields.ROWS
+                        .STR_VALUE = dao_eq.fields.STR_VALUE
+                        .SUNITCD = dao_eq.fields.SUNITCD
+                        .FK_SET = dao_eq.fields.FK_SET
+                        .FK_DRRQT_IDA = IDA_rgt
+                        .REMARK = dao_eq.fields.REMARK
+                        .REF = dao_eq.fields.REF
+                        .aori = dao_eq.fields.aori
+                        .CONDITION = dao_eq.fields.CONDITION
+                        '.ebioqty = dao_eq.fields.ebioqty
+                        '.ebiosqno = dao_eq.fields.ebiosqno
+                        '.ebiounitcd = dao_eq.fields.ebiounitcd
+                        '.mltplr = dao_eq.fields.mltplr
+                        '.QTY2 = dao_eq.fields.QTY2
+                        '.sbioqty = dao_eq.fields.sbioqty
+                        '.sbiosqno = dao_eq.fields.sbiosqno
+                        '.sbiounitcd = dao_eq.fields.sbiounitcd
+                    End With
+                    dao_eq_rgt.insert()
+                Next
+            Next
+
+            Dim bao_addr As New BAO_SHOW
+            Dim dt22 As New DataTable
+            dt22 = bao_addr.SP_DRRGT_ADDR_INSERT_V2(IDA_rgt)
+
+            Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+            dao_pro.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_pro.fields In dao_pro.datas
+                Dim dao_rgt_pro As New DAO_DRUG.TB_DRRGT_PRODUCER
+                With dao_rgt_pro.fields
+                    .addr_ida = dao_pro.fields.addr_ida
+                    .drgtpcd = dao_pro.fields.drgtpcd
+                    .FK_IDA = IDA_rgt
+                    .FK_PRODUCER = dao_pro.fields.FK_PRODUCER
+                    .frgncd = dao_pro.fields.frgncd
+                    .frgnlctcd = dao_pro.fields.frgnlctcd
+                    .funccd = dao_pro.fields.funccd
+                    .lcnno = dao_pro.fields.lcnno
+                    .lcntpcd = dao_pro.fields.lcntpcd
+                    .PRODUCER_WORK_TYPE = dao_pro.fields.PRODUCER_WORK_TYPE
+                    .pvncd = dao_pro.fields.pvncd
+                    .rcvno = dao_pro.fields.rcvno
+                    .REFERENCE_GMP = dao_pro.fields.REFERENCE_GMP
+                    .rgtno = dao_pro.fields.rgtno
+                    .rgttpcd = dao_pro.fields.rgttpcd
+                    .TR_ID = dao_pro.fields.TR_ID
+                End With
+                dao_rgt_pro.insert()
+            Next
+
+            Dim dao_conq As New DAO_DRUG.TB_DRRQT_CONDITION
+            dao_conq.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_conq.fields In dao_conq.datas
+                Dim dao_cong As New DAO_DRUG.TB_DRRGT_CONDITION
+                With dao_cong.fields
+                    .CONDITION1 = dao_conq.fields.CONDITION1
+                    .CONDITION2 = dao_conq.fields.CONDITION2
+                    .FK_IDA = IDA_rgt
+
+                End With
+                dao_cong.insert()
+            Next
+
+
+            Dim dao_pro_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
+            dao_pro_in.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_pro_in.fields In dao_pro_in.datas
+                Dim dao_rgt_pro_in As New DAO_DRUG.TB_DRRGT_PRODUCER_IN
+                With dao_rgt_pro_in.fields
+                    .drgtpcd = dao_pro_in.fields.drgtpcd
+                    .FK_IDA = IDA_rgt
+                    .funccd = dao_pro_in.fields.funccd
+                    .lcnno = dao_pro_in.fields.lcnno
+                    .lcntpcd = dao_pro_in.fields.lcntpcd
+                    .rgtno = dao_pro_in.fields.rgtno
+                    .rgttpcd = dao_pro_in.fields.rgttpcd
+                    .FK_LCN_IDA = dao_pro_in.fields.FK_LCN_IDA
+                    .rgtno = dao_pro_in.fields.rgtno
+                    .rgttpcd = dao_pro_in.fields.rgttpcd
+                    .lctcd = dao_pro_in.fields.lctcd
+                    .lcnsid = dao_pro_in.fields.lcnsid
+                End With
+                dao_rgt_pro_in.insert()
+            Next
+
+
+        End Sub
+
+        Public Sub Update_Tabean_Sub_New(ByVal FK_IDA As Integer)
+            Dim dao As New DAO_DRUG.ClsDBdrrqt
+            dao.GetDataby_IDA(FK_IDA)
+
+            Dim dao_tabean As New DAO_TABEAN_HERB.TB_TABEAN_HERB
+            dao_tabean.GetdatabyID_FK_IDA_DQ(FK_IDA)
+            Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+            With dao_drrgt.fields
+                .pvncd = dao.fields.pvncd
+                .drgtpcd = dao.fields.drgtpcd
+                .rgttpcd = dao.fields.rgttpcd
+                .rcvno = dao.fields.rcvno
+                .rgtno = dao.fields.rgtno
+                .pvnabbr = dao.fields.pvnabbr
+                .lcnsid = dao.fields.lcnsid
+                .lcnno = dao.fields.lcnno
+                .lcntpcd = dao.fields.lcntpcd
+                .thadrgnm = dao.fields.thadrgnm
+                .engdrgnm = dao.fields.engdrgnm
+                .lpvncd = dao.fields.lpvncd
+                .TR_ID = dao.fields.TR_ID
+                .CTZNO = dao.fields.CTZNO
+                .IDENTIFY = dao.fields.IDENTIFY
+                .PROCESS_ID = dao.fields.PROCESS_ID
+                .FK_LCN_IDA = dao.fields.FK_LCN_IDA
+                Try
+                    .FK_IDA = dao.fields.FK_IDA
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_DRRQT = dao.fields.IDA
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .frtappdate = dao.fields.FIRST_APP_DATE
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .appdate = dao.fields.appdate
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .TRANSFER_TYPE = dao.fields.TRANSFER_TYPE
+                Catch ex As Exception
+
+                End Try
+                Try
+                    .FK_TRANSFER = dao.fields.FK_TRANSFER
+                Catch ex As Exception
+
+                End Try
+
+                Try
+                    .rcptpayst = dao.fields.dvcd
+                Catch ex As Exception
+
+                End Try
+                Try
+                    If dao.fields.rgttpcd <> "G" And dao.fields.rgttpcd <> "H" And dao.fields.rgttpcd <> "K" Then
+                        If CDate(dao.fields.appdate).ToString("yyyy/MM/dd") >= "2562/01/01" And CDate(dao.fields.appdate).ToString("yyyy/MM/dd") <= "2562/10/12" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 9, CDate(dao.fields.appdate)))
+                        ElseIf CDate(dao.fields.appdate).ToString("yyyy/MM/dd") > "2562/10/12" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 7, CDate(dao.fields.appdate)))
+                        End If
+
+                    Else
+                        If CDate(dao.fields.appdate) >= "2562/01/01" And CDate(dao.fields.appdate).ToString("yyyy/MM/dd") <= "2562/06/28" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 9, CDate(dao.fields.appdate)))
+                        ElseIf CDate(dao.fields.appdate).ToString("yyyy/MM/dd") > "2562/06/28" Then
+                            .expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, CDate(dao.fields.appdate)))
+                        End If
+                    End If
+                    Try
+                        .rcvdate = dao.fields.rcvdate
+                    Catch ex As Exception
+
+                    End Try
+
+                    Try
+                        .FIRST_APP_DATE = dao.fields.FIRST_APP_DATE
+                        .FK_DOSAGE_FORM = dao.fields.FK_DOSAGE_FORM
+                    Catch ex As Exception
+
+                    End Try
+                Catch ex As Exception
+
+                End Try
+
+            End With
+            dao_drrgt.update()
+            Dim IDA_rgt As Integer = dao_drrgt.fields.IDA
+
+            'Dim bao_insert_addr As New BAO.ClsDBSqlcommand
+            'Dim dt As New DataTable
+            'Try
+            '    dt = bao_insert_addr.SP_DRRGT_ADDR_INSERT(IDA_rgt)
+            'Catch ex As Exception
+
+            'End Try
+
+            Dim dao_cas As New DAO_DRUG.TB_DRRQT_DETAIL_CAS
+            dao_cas.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_cas.fields In dao_cas.datas
+                Dim dao_rgt_cas As New DAO_DRUG.TB_DRRGT_DETAIL_CAS
+                With dao_rgt_cas.fields
+                    .AORI = dao_cas.fields.AORI
+                    .BASE_FORM = dao_cas.fields.BASE_FORM
+                    .EQTO_IOWA = dao_cas.fields.EQTO_IOWA
+                    .EQTO_QTY = dao_cas.fields.EQTO_QTY
+                    .EQTO_SUNITCD = dao_cas.fields.EQTO_SUNITCD
+                    .FK_IDA = IDA_rgt
+                    .FK_SET = dao_cas.fields.FK_SET
+                    .IOWA = dao_cas.fields.IOWA
+                    .QTY = dao_cas.fields.QTY
+                    .ROWS = dao_cas.fields.ROWS
+                    .SUNITCD = dao_cas.fields.SUNITCD
+                    .REMARK = dao_cas.fields.REMARK
+                    .REF = dao_cas.fields.REF
+                    .CAS_TYPE = dao_cas.fields.CAS_TYPE
+                    .CONDITION = dao_cas.fields.CONDITION
+                    .ebioqty = dao_cas.fields.ebioqty
+                    .ebiosqno = dao_cas.fields.ebiosqno
+                    .ebiounitcd = dao_cas.fields.ebiounitcd
+                    .mltplr = dao_cas.fields.mltplr
+                    .QTY2 = dao_cas.fields.QTY2
+                    .sbioqty = dao_cas.fields.sbioqty
+                    .sbiosqno = dao_cas.fields.sbiosqno
+                    .sbiounitcd = dao_cas.fields.sbiounitcd
+                End With
+                dao_rgt_cas.update()
+
+                Dim dao_eq As New DAO_DRUG.TB_DRRQT_EQTO
+                dao_eq.GetDataby_FK_IDA(dao_cas.fields.IDA)
+                For Each dao_eq.fields In dao_eq.datas
+                    Dim dao_eq_rgt As New DAO_DRUG.TB_DRRGT_EQTO
+                    With dao_eq_rgt.fields
+                        .FK_IDA = dao_rgt_cas.fields.IDA
+                        .IOWA = dao_eq.fields.IOWA
+                        .MULTIPLY = dao_eq.fields.MULTIPLY
+                        .QTY = dao_eq.fields.QTY
+                        .ROWS = dao_eq.fields.ROWS
+                        .STR_VALUE = dao_eq.fields.STR_VALUE
+                        .SUNITCD = dao_eq.fields.SUNITCD
+                        .FK_SET = dao_eq.fields.FK_SET
+                        .FK_DRRQT_IDA = IDA_rgt
+                        .REMARK = dao_eq.fields.REMARK
+                        .REF = dao_eq.fields.REF
+                        .aori = dao_eq.fields.aori
+                        .CONDITION = dao_eq.fields.CONDITION
+                        '.ebioqty = dao_eq.fields.ebioqty
+                        '.ebiosqno = dao_eq.fields.ebiosqno
+                        '.ebiounitcd = dao_eq.fields.ebiounitcd
+                        '.mltplr = dao_eq.fields.mltplr
+                        '.QTY2 = dao_eq.fields.QTY2
+                        '.sbioqty = dao_eq.fields.sbioqty
+                        '.sbiosqno = dao_eq.fields.sbiosqno
+                        '.sbiounitcd = dao_eq.fields.sbiounitcd
+                    End With
+                    dao_eq_rgt.update()
+                Next
+            Next
+
+            Dim bao_addr As New BAO_SHOW
+            Dim dt22 As New DataTable
+            dt22 = bao_addr.SP_DRRGT_ADDR_INSERT_V2(IDA_rgt)
+
+            Dim dao_pro As New DAO_DRUG.TB_DRRQT_PRODUCER
+            dao_pro.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_pro.fields In dao_pro.datas
+                Dim dao_rgt_pro As New DAO_DRUG.TB_DRRGT_PRODUCER
+                With dao_rgt_pro.fields
+                    .addr_ida = dao_pro.fields.addr_ida
+                    .drgtpcd = dao_pro.fields.drgtpcd
+                    .FK_IDA = IDA_rgt
+                    .FK_PRODUCER = dao_pro.fields.FK_PRODUCER
+                    .frgncd = dao_pro.fields.frgncd
+                    .frgnlctcd = dao_pro.fields.frgnlctcd
+                    .funccd = dao_pro.fields.funccd
+                    .lcnno = dao_pro.fields.lcnno
+                    .lcntpcd = dao_pro.fields.lcntpcd
+                    .PRODUCER_WORK_TYPE = dao_pro.fields.PRODUCER_WORK_TYPE
+                    .pvncd = dao_pro.fields.pvncd
+                    .rcvno = dao_pro.fields.rcvno
+                    .REFERENCE_GMP = dao_pro.fields.REFERENCE_GMP
+                    .rgtno = dao_pro.fields.rgtno
+                    .rgttpcd = dao_pro.fields.rgttpcd
+                    .TR_ID = dao_pro.fields.TR_ID
+                End With
+                dao_rgt_pro.update()
+            Next
+
+            Dim dao_conq As New DAO_DRUG.TB_DRRQT_CONDITION
+            dao_conq.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_conq.fields In dao_conq.datas
+                Dim dao_cong As New DAO_DRUG.TB_DRRGT_CONDITION
+                With dao_cong.fields
+                    .CONDITION1 = dao_conq.fields.CONDITION1
+                    .CONDITION2 = dao_conq.fields.CONDITION2
+                    .FK_IDA = IDA_rgt
+
+                End With
+                dao_cong.update()
+            Next
+
+
+            Dim dao_pro_in As New DAO_DRUG.TB_DRRQT_PRODUCER_IN
+            dao_pro_in.GetDataby_FK_IDA(FK_IDA)
+            For Each dao_pro_in.fields In dao_pro_in.datas
+                Dim dao_rgt_pro_in As New DAO_DRUG.TB_DRRGT_PRODUCER_IN
+                With dao_rgt_pro_in.fields
+                    .drgtpcd = dao_pro_in.fields.drgtpcd
+                    .FK_IDA = IDA_rgt
+                    .funccd = dao_pro_in.fields.funccd
+                    .lcnno = dao_pro_in.fields.lcnno
+                    .lcntpcd = dao_pro_in.fields.lcntpcd
+                    .rgtno = dao_pro_in.fields.rgtno
+                    .rgttpcd = dao_pro_in.fields.rgttpcd
+                    .FK_LCN_IDA = dao_pro_in.fields.FK_LCN_IDA
+                    .rgtno = dao_pro_in.fields.rgtno
+                    .rgttpcd = dao_pro_in.fields.rgttpcd
+                    .lctcd = dao_pro_in.fields.lctcd
+                    .lcnsid = dao_pro_in.fields.lcnsid
+                End With
+                dao_rgt_pro_in.update()
+            Next
+
 
         End Sub
         Public Sub insert_tabean_sub(ByVal FK_IDA As Integer)
@@ -868,7 +1489,25 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+        Public Function SP_GET_DATA_DRUG_HERB_BY_NEWCODE_NOT(ByVal Newcode_Not As String) As DataTable
+            Dim sql As String = "exec SP_GET_DATA_DRUG_HERB_BY_NEWCODE_NOT @Newcode_Not=" & Newcode_Not
+            Dim dta As New DataTable
+            dta = Queryd_Herb124(sql)
+            Return dta
+        End Function
+        Public Function SP_SEARCH_CENTER_DRUG_HERB(ByVal msg As String) As DataTable
+            Dim sql As String = "exec [dbo].[SP_SEARCH_CENTER_DRUG_HERB] @msg = '" & msg & "'"
+            Dim dta As New DataTable
+            dta = Queryd_Herb124(sql)
+            Return dta
+        End Function
         '
+        Public Function SP_GETDATA_HERB_TO_124() As DataTable
+            Dim sql As String = "exec SP_GETDATA_HERB_TO_124"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         Public Function SP_XML_DRUG_CONTAIN_BY_IDA(ByVal IDA As Integer) As DataTable
             Dim sql As String = "exec SP_XML_DRUG_CONTAIN_BY_IDA @IDA=" & IDA
             Dim dta As New DataTable
@@ -1067,6 +1706,14 @@ Namespace BAO
             MyConnection.Close()
             Return dt
         End Function
+        Public Function Queryd_Herb124(ByVal Commands As String) As DataTable
+            Dim dt As New DataTable
+            Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_XML_DRUG_HERBConnectionString").ConnectionString)
+            Dim mySqlDataAdapter As SqlDataAdapter = New SqlDataAdapter(Commands, MyConnection)
+            mySqlDataAdapter.Fill(dt)
+            MyConnection.Close()
+            Return dt
+        End Function
         Public Function Queryd_m44(ByVal Commands As String) As DataTable
             Dim dt As New DataTable
             Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("FDA_SPECIAL_PAYMENTConnectionString").ConnectionString)
@@ -1123,7 +1770,27 @@ Namespace BAO
             dta.TableName = "SP_MAS_PRE4_TEMPLATE"
             Return dta
         End Function
-        '
+        Public Function SP_TABEAN_ANALYZE_STAFF() As DataTable
+            Dim sql As String = "exec SP_TABEAN_ANALYZE_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_ANALYZE_STAFF"
+            Return dta
+        End Function
+        Public Function SP_TABEAN_DONATE_STAFF() As DataTable
+            Dim sql As String = "exec SP_TABEAN_DONATE_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_DONATE_STAFF"
+            Return dta
+        End Function
+        Public Function SP_TABEAN_EXHIBITION_STAFF() As DataTable
+            Dim sql As String = "exec SP_TABEAN_EXHIBITION_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_EXHIBITION_STAFF"
+            Return dta
+        End Function
         Public Function SP_drug_general(ByVal IDA As Integer) As DataTable
             Dim sql As String = "exec SP_drug_general @ida=" & IDA
             Dim dta As New DataTable
@@ -1147,6 +1814,20 @@ Namespace BAO
             dta.TableName = "SP_drug_general_sai"
             Return dta
         End Function
+        Public Function SP_TABEAN_EDIT_REQUEST_STAFF() As DataTable
+            Dim sql As String = "exec SP_TABEAN_EDIT_REQUEST_STAFF"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_EDIT_REQUEST_STAFF"
+            Return dta
+        End Function
+        Public Function SP_drug_general_sai_v2_NEW(ByVal newcode As String) As DataTable
+            Dim sql As String = "exec SP_drug_general_sai_v2_new @newcode='" & newcode & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_drug_general_sai_V2_"
+            Return dta
+        End Function
         Public Function SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE(ByVal newcode As String) As DataTable
             Dim sql As String = "exec SP_DRRGT_NAME_DRUG_EXPORT_BY_NEWCODE @newcode='" & newcode & "'"
             Dim dta As New DataTable
@@ -1168,6 +1849,13 @@ Namespace BAO
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_drug_general_rq"
+            Return dta
+        End Function
+        Public Function SP_drug_general_rq_new(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_drug_general_rq_new @ida=" & IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_drug_general_rq_new"
             Return dta
         End Function
         '
@@ -1230,7 +1918,13 @@ Namespace BAO
             dta.TableName = "SP_drug_formula_rq"
             Return dta
         End Function
-        '
+        Public Function SP_DALCN_SUBSTITUTE_STAFF() As DataTable
+            Dim sql As String = "exec SP_DALCN_SUBSTITUTE_STAFF "
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_SUBSTITUTE_STAFF"
+            Return dta
+        End Function
         Public Function SP_drug_formula_REGIST(ByVal FK_IDA As Integer) As DataTable
             Dim sql As String = "exec SP_drug_formula_REGIST @FK_IDA=" & FK_IDA
             Dim dta As New DataTable
@@ -1245,7 +1939,27 @@ Namespace BAO
             dta.TableName = "SP_drug_formula_rg"
             Return dta
         End Function
-        '
+        Public Function SP_TABEAN_JJ_NO_UP() As DataTable
+            Dim sql As String = "exec SP_TABEAN_JJ_NO_UP"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_JJ_NO_UP"
+            Return dta
+        End Function
+        Public Function SP_DRUG_HERB_PRODUCT_JJHERB(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_DRUG_HERB_PRODUCT_JJHERB @IDA_JJ=" & IDA
+            Dim dta As New DataTable
+            dta = Queryd_Herb124(sql)
+            dta.TableName = "SP_DRUG_HERB_PRODUCT_JJHERB"
+            Return dta
+        End Function
+        Public Function SP_UPDATE_LOCATION_NAME_PRODUCT_HERB(ByVal PVNCD As String, ByVal RGTTPCD As String, ByVal DRGTPCD As String, ByVal RGTNO As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_UPDATE_LOCATION_NAME_PRODUCT_HERB @PVNCD= '" & PVNCD & "',@rgttpcd='" & RGTTPCD & "',@DRGTPCD='" & DRGTPCD & "'',@RGTNO='" & RGTNO & "'"
+            Dim dta As New DataTable
+            dta = Queryd_Herb124(sql)
+            Return dta
+        End Function
         Public Function SP_GET_EACH_FROM_SAI(ByVal newcode As String) As DataTable
             Dim sql As String = "exec SP_GET_EACH_FROM_SAI @newcode='" & newcode & "'"
             Dim dta As New DataTable
@@ -1344,6 +2058,34 @@ Namespace BAO
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_DRRGT_SUBSTITUTE_BY_FK_IDA"
+            Return dta
+        End Function
+        Public Function SP_DRRGT_SUBSTITUTE_BY_IDA(ByVal IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_DRRGT_SUBSTITUTE_BY_IDA @IDA=" & IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DRRGT_SUBSTITUTE_BY_IDA"
+            Return dta
+        End Function
+        Public Function SP_TABEAN_EXHIBITION_CUSTOMER(ByVal FK_LCN As String, ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_TABEAN_EXHIBITION_CUSTOMER @FK_LCN='" & FK_LCN & "' ,@IDENTIFY='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DDL_LCN_SUBSTITUTE_by_PROCESS_ID"
+            Return dta
+        End Function
+        Public Function SP_TABEAN_DONATE_CUSTOMER(ByVal FK_LCN As String, ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_TABEAN_DONATE_CUSTOMER @FK_LCN='" & FK_LCN & "' ,@IDENTIFY='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_DONATE_CUSTOMER"
+            Return dta
+        End Function
+        Public Function SP_TABEAN_ANALYZE_CUSTOMER(ByVal FK_LCN As String, ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_TABEAN_ANALYZE_CUSTOMER @FK_LCN='" & FK_LCN & "' ,@IDENTIFY='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_TABEAN_ANALYZE_CUSTOMER"
             Return dta
         End Function
         '
@@ -1478,6 +2220,13 @@ Namespace BAO
             dta.TableName = "SP_DRUG_REGISTRATION_DETAIL_CAS_FK_IDA"
             Return dta
         End Function
+        Public Function SP_DDL_LCN_SUBSTITUTE_by_PROCESS_ID(ByVal process As String, ByVal iden As String) As DataTable
+            Dim sql As String = "exec SP_DDL_LCN_SUBSTITUTE_by_PROCESS_ID @PROCESS_ID='" & process & "' ,@iden='" & iden & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DDL_LCN_SUBSTITUTE_by_PROCESS_ID"
+            Return dta
+        End Function
         '
         Public Function SP_PRE4_ALLOW_ALL(ByVal startdate As Date, ByVal enddate As Date, ByVal sub_stat As Integer, ByVal group_id As Integer) As DataTable
             Dim dayBegin As Integer = convertDateToInteger(startdate)
@@ -1486,6 +2235,13 @@ Namespace BAO
             Dim dta As New DataTable
             dta = Queryds(sql)
             dta.TableName = "SP_MAS_PRE4_TEMPLATE"
+            Return dta
+        End Function
+        Public Function SP_DALCN_SUBSTITUTE_BY_FK_IDA(ByVal FK_IDA As Integer) As DataTable
+            Dim sql As String = "exec SP_DALCN_SUBSTITUTE_BY_FK_IDA @FK_IDA=" & FK_IDA
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            dta.TableName = "SP_DALCN_SUBSTITUTE_BY_FK_IDA"
             Return dta
         End Function
         '
@@ -2001,6 +2757,30 @@ Namespace BAO
 
             Return dta
         End Function
+        Public Function SP_CUSTOMER_LOCATION_ADDRESS_MOCK_by_LOCATION_TYPE_ID_and_IDEN(ByVal LOCATION_TYPE_CD As Integer, ByVal iden As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_CUSTOMER_LOCATION_ADDRESS_MOCK_by_LOCATION_TYPE_ID_and_IDEN @iden='" & iden & "' ,@LOCATION_TYPE_CD=" & LOCATION_TYPE_CD
+            Dim dta As New DataTable
+            Try
+                dta = clsds.dsQueryselect(sql, conn.ConnectionString).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+            Return dta
+        End Function
+        Public Function SP_CUSTOMER_LOCATION_ADDRESS_MOCK_by_LOCATION_TYPE_ID_and_IDEN_V2(ByVal LOCATION_TYPE_CD As Integer, ByVal iden As String) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_CUSTOMER_LOCATION_ADDRESS_MOCK_by_LOCATION_TYPE_ID_and_IDEN_V2 @iden='" & iden & "' ,@LOCATION_TYPE_CD=" & LOCATION_TYPE_CD
+            Dim dta As New DataTable
+            Try
+                dta = clsds.dsQueryselect(sql, conn.ConnectionString).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+            Return dta
+        End Function
         '
         Public Function SP_STAFF_DALCN_BY_IDENTIFY(ByVal iden As String) As DataTable
             Dim clsds As New ClassDataset
@@ -2337,8 +3117,18 @@ Namespace BAO
             conn.Close()
 
         End Sub
+        Public Function SP_DRRQT_PRODUCER_IN_BY_FK_IDA_V2(ByVal fk_ida As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DRRQT_PRODUCER_IN_BY_FK_IDA_V2 @FK_IDA=" & fk_ida
+            Dim dta As New DataTable
+            Try
+                dta = clsds.dsQueryselect(sql, conn.ConnectionString).Tables(0)
+            Catch ex As Exception
 
+            End Try
 
+            Return dta
+        End Function
         Public Sub SP_LCN_STAFF_EDIT(ByVal FK_IDA As Integer)
 
             strSQL = "SP_LCN_STAFF_EDIT"
@@ -4873,6 +5663,32 @@ Namespace BAO
 
             Return dt
         End Function
+        Public Function SP_DALCN_SUBSTITUTE_STAFF_BY_PVNCD(ByVal pvncd As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DALCN_SUBSTITUTE_STAFF_BY_PVNCD @pvncd=" & pvncd
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
+        Public Function SP_DALCN_TRANSFER_STAFF_BY_PVNCD(ByVal pvncd As Integer) As DataTable
+            Dim clsds As New ClassDataset
+            Dim sql As String = "exec SP_DALCN_TRANSFER_STAFF_BY_PVNCD @pvncd=" & pvncd
+            Dim dt As New DataTable
+            Try
+                dt = clsds.dsQueryselect(sql, con_str).Tables(0)
+            Catch ex As Exception
+
+            End Try
+
+
+            Return dt
+        End Function
         Public Function SP_STAFF_NYM() As DataTable
             Dim clsds As New ClassDataset
             Dim sql As String = "exec SP_STAFF_NYM"
@@ -5352,6 +6168,15 @@ Namespace BAO
 
             Return dta
         End Function
+
+        Public Function SP_XML_TABEAN_HERB_BY_REGISTER(ByVal REGISTER As String) As DataTable
+
+            Dim sql As String = "exec SP_XML_TABEAN_HERB_BY_REGISTER @REGISTER= '" & REGISTER & "' "
+
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         '
         Public Function SP_E_TRACKING_REPORT_PROCESS_ALL() As DataTable
             Dim clsds As New ClassDataset
@@ -5790,6 +6615,20 @@ Namespace BAO
         Public _PATH_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")              'ที่อยู่ Path
         Public _PATH_SUBS As String = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")
         Public _RDLC As String = System.Configuration.ConfigurationManager.AppSettings("RDLC")
+        Public _PATH_IMG As String = System.Configuration.ConfigurationManager.AppSettings("PATH_IMG")
+        Public _PATH_XML_PDF_TABEAN_JJ As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_JJ")
+        Public _PATH_XML_PDF_TABEAN_TB As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_TB")
+        Public _PATH_XML_PDF_TABEAN_TBN As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_TBN")
+        Public _PATH_XML_PDF_TABEAN_JJ_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_JJ_EDIT")
+        Public _PATH_XML_PDF_TABEAN_EX As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EX")
+        Public _PATH_XML_PDF_TABEAN_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EDIT")
+        Public _PATH_XML_PDF_LCN_RENREW As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_RENREW")
+        Public _PATH_XML_PDF_LCN_TRANSFER As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_TRANSFER")
+        Public _PATH_XML_PDF_TABEAN_ANALYZE As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_ANALYZE")
+        Public _PATH_XML_PDF_TABEAN_DONATE As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_DONATE")
+        Public _PATH_XML_PDF_TABEAN_EXHIBITION As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EXHIBITION")
+        Public _PATH_XML_PDF_TABEAN_INFORM As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_INFORM")
+
         Sub RunAppSettings()
             _PATH_PDF_TEMPLATE = System.Configuration.ConfigurationManager.AppSettings("PATH_PDF_TEMPLATE")                 'ที่อยู่ Path
             _PATH_XML_CLASS = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_CLASS")                       'ที่อยู่ Path
@@ -5798,6 +6637,20 @@ Namespace BAO
             _PATH_XML_TRADER = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_TRADER")                     'ที่อยู่ Path
             _PATH_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_EDIT")              'ที่อยู่ Path
             _RDLC = System.Configuration.ConfigurationManager.AppSettings("RDLC")
+            _PATH_IMG = System.Configuration.ConfigurationManager.AppSettings("PATH_IMG")
+            _PATH_XML_PDF_LCN_RENREW = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_RENREW")
+            _PATH_XML_PDF_LCN_TRANSFER = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_TRANSFER")
+            _PATH_XML_PDF_TABEAN_JJ = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_JJ")
+            _PATH_XML_PDF_TABEAN_TB = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_TB")
+            _PATH_XML_PDF_TABEAN_TBN = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_TBN")
+            _PATH_XML_PDF_TABEAN_JJ_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_JJ_EDIT")
+            _PATH_XML_PDF_TABEAN_EX = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EX")
+            _PATH_XML_PDF_TABEAN_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EDIT")
+            _PATH_XML_PDF_TABEAN_ANALYZE = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_ANALYZE")
+            _PATH_XML_PDF_TABEAN_DONATE = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_DONATE")
+            _PATH_XML_PDF_TABEAN_EXHIBITION = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EXHIBITION")
+            _PATH_XML_PDF_TABEAN_INFORM = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_INFORM")
+
         End Sub
     End Class
 
@@ -5852,7 +6705,8 @@ Namespace BAO
             dao_syslcnsid.GetDataby_identify(CITIZEN_ID_AUTHORIZE)
 
             Dim dao_sysnmperson As New DAO_CPN.clsDBsyslcnsnm
-            dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+            'dao_sysnmperson.GetDataby_lcnsid(dao_syslcnsid.fields.lcnsid)
+            dao_sysnmperson.GetDataby_identify(CITIZEN_ID_AUTHORIZE)
 
             _CLS.LCNSID_CUSTOMER = dao_syslcnsid.fields.lcnsid
 
@@ -5921,7 +6775,36 @@ Namespace BAO
 
             Return rcvno
         End Function
+        Function GEN_NO_JJ_EDIT(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal REF_IDA As String, ByVal IDA_LCNNO As String)
+            Dim int_no As Integer
+            Dim dao As New DAO_TABEAN_HERB.TB_GEN_NO_JJ_EDIT
+            'dao.GetDataby_GEN(YEAR, PVCODE, TYPE, REF_IDA, IDA_LCNNO)
+            dao.GetDataby_GEN_NOPV(YEAR, TYPE, REF_IDA, IDA_LCNNO)
+            If IsNothing(dao.fields.GENNO) = True Then
+                int_no = 0
+            Else
+                int_no = dao.fields.GENNO
+            End If
 
+            int_no = int_no + 1
+            Dim str_no As String = int_no.ToString()
+            'str_no = String.Format("{0:00000}", int_no.ToString("00000"))
+            'str_no = YEAR.Substring(2, 2) & str_no
+
+            Dim dao2 As New DAO_TABEAN_HERB.TB_GEN_NO_JJ_EDIT
+            dao2.fields.YEAR = YEAR
+            dao2.fields.PVCODE = PVCODE
+            dao2.fields.TYPE = TYPE
+            dao2.fields.LCNNO = IDA_LCNNO
+            dao2.fields.FORMAT = 1
+            dao2.fields.GROUP_NO = 1
+            dao2.fields.REF_IDA = REF_IDA
+            dao2.fields.DESCRIPTION = str_no
+            dao2.fields.GENNO = int_no
+            dao2.insert()
+
+            Return str_no
+        End Function
         ''' <summary>
         ''' Function Genrcvno ในตาราง falcn
         ''' </summary>
@@ -5998,6 +6881,67 @@ Namespace BAO
             dao.fields.DESCRIPTION = str_no
             dao.fields.GENNO = int_no
             dao.insert()
+            Return str_no
+        End Function
+        Function GEN_NO_JJ(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal REF_IDA As String, ByVal IDA_LCNNO As String)
+            Dim int_no As Integer
+            Dim dao As New DAO_TABEAN_HERB.TB_GEN_NO_JJ
+            'dao.GetDataby_GEN_NOPV(YEAR, TYPE, REF_IDA, IDA_LCNNO)
+            dao.GetDataby_GEN_NO()
+            If IsNothing(dao.fields.GENNO) = True Then
+                int_no = 0
+            Else
+                int_no = dao.fields.GENNO
+            End If
+
+            int_no = int_no + 1
+            Dim str_no As String = int_no.ToString()
+            'str_no = String.Format("{0:00000}", int_no.ToString("00000"))
+            'str_no = YEAR.Substring(2, 2) & str_no
+
+            Dim dao2 As New DAO_TABEAN_HERB.TB_GEN_NO_JJ
+            dao2.fields.YEAR = YEAR
+            dao2.fields.PVCODE = PVCODE
+            dao2.fields.TYPE = TYPE
+            dao2.fields.LCNNO = IDA_LCNNO
+            dao2.fields.FORMAT = 1
+            dao2.fields.GROUP_NO = 1
+            dao2.fields.REF_IDA = REF_IDA
+            dao2.fields.DESCRIPTION = str_no
+            dao2.fields.GENNO = int_no
+            dao2.insert()
+
+            Return str_no
+        End Function
+
+
+        Function GEN_NO_TBN(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal REF_IDA As String, ByVal IDA_LCNNO As String)
+            Dim int_no As Integer
+            Dim dao As New DAO_TABEAN_HERB.TB_GEN_NO_TBN
+            dao.GetDataby_GEN_NOPV(YEAR, TYPE, REF_IDA, IDA_LCNNO)
+            If IsNothing(dao.fields.GENNO) = True Then
+                int_no = 0
+            Else
+                int_no = dao.fields.GENNO
+            End If
+
+            int_no = int_no + 1
+            Dim str_no As String = int_no.ToString()
+            'str_no = String.Format("{0:00000}", int_no.ToString("00000"))
+            'str_no = YEAR.Substring(2, 2) & str_no
+
+            Dim dao2 As New DAO_TABEAN_HERB.TB_GEN_NO_TBN
+            dao2.fields.YEAR = YEAR
+            dao2.fields.PVCODE = PVCODE
+            dao2.fields.TYPE = TYPE
+            dao2.fields.LCNNO = IDA_LCNNO
+            dao2.fields.FORMAT = 1
+            dao2.fields.GROUP_NO = 1
+            dao2.fields.REF_IDA = REF_IDA
+            dao2.fields.DESCRIPTION = str_no
+            dao2.fields.GENNO = int_no
+            dao2.insert()
+
             Return str_no
         End Function
         Function GEN_CER_NO_V2(ByVal YEAR As String, ByVal PVCODE As String, ByVal TYPE As String, ByVal LCNNO As String,
@@ -6570,7 +7514,20 @@ Namespace BAO
             dao.insert()
             Return str_no
         End Function
+        Public Function GEN_RCVNO_NO_NEW(ByVal YEAR As String, ByVal PVNCD As String, ByVal PROCESS_ID As String, ByVal FK_IDA As Integer) As String
+            Dim int_no As Integer
+            Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO
+            dao.GetDataby_Year_PVNCD_PROCESS_ID_MAX(PVNCD, YEAR, PROCESS_ID)
+            If IsNothing(dao.fields.GEN_RCV) = True Then
+                int_no = 0
+            Else
+                int_no = dao.fields.GEN_RCV
+            End If
+            'int_no = int_no + 1
 
+            Dim str_no As String = int_no.ToString()
+            Return str_no
+        End Function
         Public Function GEN_RCVNO_NO_50k(ByVal YEAR As String, ByVal PVNCD As String, ByVal PROCESS_ID As String, ByVal FK_IDA As Integer) As String
             Dim int_no As Integer
             Dim dao As New DAO_DRUG.ClsDBGEN_RCVNO

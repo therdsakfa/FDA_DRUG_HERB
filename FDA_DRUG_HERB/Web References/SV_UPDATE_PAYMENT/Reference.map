@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Results>
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.115.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_UPDATE_PAYMENT.asmx?wsdl" filename="SV_UPDATE_PAYMENT.wsdl" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://164.115.28.133/SPECIAL_PAYMENT_TXC_BSN/WEBSERVICE/SV_UPDATE_PAYMENT.asmx?disco" filename="SV_UPDATE_PAYMENT.disco" />

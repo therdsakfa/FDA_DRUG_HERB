@@ -814,50 +814,54 @@ Public Class FRM_LCN_CONFIRM_DRUG
         Return rcvno
     End Function
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        Dim bao As New BAO.ClsDBSqlcommand
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        If Request.QueryString("staff") <> "" Then
-            dao.fields.STATUS_ID = 11
-        Else
-            dao.fields.STATUS_ID = 2
-        End If
-        dao.update()
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+        'Dim bao As New BAO.ClsDBSqlcommand
+        'dao.GetDataby_IDA(Integer.Parse(_IDA))
+        'If Request.QueryString("staff") <> "" Then
+        '    dao.fields.STATUS_ID = 11
+        'Else
+        '    dao.fields.STATUS_ID = 2
+        'End If
+        'dao.update()
 
-        If b64 = Nothing Then
-            b64 = Session("b64")
-        End If
-        Dim years As String = ""
-        Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
-        dao_tr.GetDataby_IDA(dao.fields.TR_ID)
-        Try
-            years = dao_tr.fields.YEAR
+        'If b64 = Nothing Then
+        '    b64 = Session("b64")
+        'End If
+        'Dim years As String = ""
+        'Dim dao_tr As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+        'dao_tr.GetDataby_IDA(dao.fields.TR_ID)
+        'Try
+        '    years = dao_tr.fields.YEAR
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Dim tr_id As String = ""
-        tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
+        'End Try
+        'Dim tr_id As String = ""
+        'tr_id = "DA-" & _ProcessID & "-" & years & "-" & _TR_ID
 
-        Dim cls_sop As New CLS_SOP
-        cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _ProcessID, "2", "ยื่นคำขอ", tr_id, b64)
-        cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _ProcessID, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _ProcessID & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
+        'Dim cls_sop As New CLS_SOP
+        'cls_sop.BLOCK_SOP(_CLS.CITIZEN_ID, _ProcessID, "2", "ยื่นคำขอ", tr_id, b64)
+        'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "USER", _ProcessID, _CLS.PVCODE, 2, "ส่งเรื่องและรอพิจารณา", "SOP-DRUG-10-" & _ProcessID & "-1", "รับคำขอ", "รอเจ้าหน้าที่รับคำขอ", "STAFF", tr_id, SOP_STATUS:="ยื่นคำขอ")
 
-        AddLogStatus(2, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        'AddLogStatus(2, _ProcessID, _CLS.CITIZEN_ID, _IDA)
 
-        Session("b64") = Nothing
-        alert("ยื่นเรื่องเรียบร้อยแล้ว")
+        'Session("b64") = Nothing
+        'alert("ยื่นเรื่องเรียบร้อยแล้ว")
+        Response.Redirect("FRM_LCN_CONFIRM_DETAIL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & _ProcessID)
 
     End Sub
     Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.parent.alert('" + text + "');parent.close_modal();</script> ")
     End Sub
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        dao.GetDataby_IDA(Integer.Parse(_IDA))
-        dao.fields.STATUS_ID = 7
-        dao.update()
-        AddLogStatus(7, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
+        'dao.GetDataby_IDA(Integer.Parse(_IDA))
+        'dao.fields.STATUS_ID = 78
+        'dao.update()
+        'AddLogStatus(78, _ProcessID, _CLS.CITIZEN_ID, _IDA)
+        Dim Status_ID As String = 78
+        Response.Redirect("FRM_LCN_DRUG_HERB_CANCEL.aspx?IDA=" & _IDA & "&TR_ID=" & _TR_ID & "&PROCESS_ID=" & _ProcessID & "&STATUS_ID=" & Status_ID)
+
     End Sub
 
     Protected Sub btn_load_Click(sender As Object, e As EventArgs) Handles btn_load.Click

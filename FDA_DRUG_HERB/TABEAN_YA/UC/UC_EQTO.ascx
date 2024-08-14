@@ -167,7 +167,7 @@
     </tr>
     <tr>
         <td align="center">
-            <asp:Button ID="btn_back" runat="server" Text="ย้อนกลับ" />
+          <%--  <asp:Button ID="btn_back" runat="server" Text="ย้อนกลับ" />--%>
           <asp:Button ID="btn_rows_save" runat="server" Text="บันทึกลำดับ" />
         </td>
     </tr>

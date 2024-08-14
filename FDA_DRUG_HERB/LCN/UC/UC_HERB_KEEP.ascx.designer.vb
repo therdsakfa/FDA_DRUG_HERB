@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class UC_HERB_KEEP
 
     '''<summary>
-    '''ddl_placename control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_placename As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''cb_location control.
     '''</summary>
     '''<remarks>
@@ -32,6 +23,15 @@ Partial Public Class UC_HERB_KEEP
     Protected WithEvents cb_location As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''ddl_placename control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_placename As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''lbl_location_new control.
     '''</summary>
     '''<remarks>
@@ -39,6 +39,15 @@ Partial Public Class UC_HERB_KEEP
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbl_location_new As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''hf_place control.

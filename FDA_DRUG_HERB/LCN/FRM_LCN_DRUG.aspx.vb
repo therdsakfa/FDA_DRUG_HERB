@@ -188,6 +188,8 @@ Public Class FRM_LCN_DRUG
             Dim btn_lcn As Button = DirectCast(e.Row.FindControl("btn_lcn"), Button)
             Dim btn_leaves As Button = DirectCast(e.Row.FindControl("btn_leaves"), Button)
             Dim btn_sell As Button = DirectCast(e.Row.FindControl("btn_sell"), Button)
+            Dim btn_apm As Button = DirectCast(e.Row.FindControl("btn_apm"), Button)
+
             Dim id As String = GV_lcnno.DataKeys.Item(e.Row.RowIndex).Value.ToString()
             'btn_Select.Style.Add("display", "none")
             btn_lcn.Style.Add("display", "none")
@@ -283,6 +285,12 @@ Public Class FRM_LCN_DRUG
             dao.GetDataby_IDA(id)
 
             'ไม่ให้แสดงคำว่า เลือกข้อมูล ถ้าสถานะไม่ใช่อนุมัติ
+            'If dao.fields.STATUS_ID = 3 Then
+            If dao.fields.STATUS_ID = 11 Or dao.fields.STATUS_ID = 3 Or dao.fields.STATUS_ID = 6 Or dao.fields.STATUS_ID = 8 Then
+                btn_apm.Style.Add("display", "block")
+            Else
+                btn_apm.Style.Add("display", "none")
+            End If
             If dao.fields.STATUS_ID <> 8 Then
                 btn_lcn.Visible = False
             End If
@@ -354,6 +362,15 @@ Public Class FRM_LCN_DRUG
 
             End Try
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups4('" & "POPUP_LCN_SELL_TYPE.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
+        ElseIf e.CommandName = "drug_amp" Then
+            dao.GetDataby_IDA(str_ID)
+            Dim tr_id As String = 0
+            Try
+                tr_id = dao.fields.TR_ID
+            Catch ex As Exception
+
+            End Try
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups4('" & "FRM_LCN_DRUG_APPOIMENT.aspx?ida=" & str_ID & "&TR_ID=" & tr_id & "&process=" & _process & "');", True)
         End If
     End Sub
 

@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-3" style="text-align:right">
-                สถานที่เก็บรักษาผลิตภัณฆ์สมุนไพร (ถ้ามี) ชื่อ
+                สถานที่เก็บรักษาผลิตภัณฑ์สมุนไพร (ถ้ามี) ชื่อ
             </div>
             <div class="col-lg-3">
                     <asp:DropDownList ID="ddl_placename" runat="server" Width="300px" AutoPostBack="True"> </asp:DropDownList>     

@@ -277,6 +277,15 @@ Public Class CLASS_DR
             _LCNNO_FORMAT = value
         End Set
     End Property
+    Private _thanm As String
+    Public Property THANM_NAME() As String
+        Get
+            Return _thanm
+        End Get
+        Set(ByVal value As String)
+            _thanm = value
+        End Set
+    End Property
 
     Private _RCVNO_FORMAT As String
     Public Property RCVNO_FORMAT() As String

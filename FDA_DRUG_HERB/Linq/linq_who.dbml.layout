@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.875" name="linq_who">
+  <DataContextMoniker Name="/linq_whoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9097f542-c20f-4330-b5be-8940dc3c93f9" absoluteBounds="1.5, 0.875, 2, 8.6937483723958326">
+      <DataClassMoniker Name="/linq_whoDataContext/WHO_DALCN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fc4d63c-193a-48e6-b74a-a0ff2d919cc7" absoluteBounds="1.5149999999999997, 1.335, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

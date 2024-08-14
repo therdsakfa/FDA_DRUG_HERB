@@ -49,13 +49,16 @@
         dao.GetDataby_IDA(_IDA)
 
         Try
+            'dao.fields.appdate = CDate(txt_app_date.Text)
             dao.fields.appdate = CDate(txt_app_date.Text)
+            dao.fields.frtappdate = CDate(txt_app_date.Text)
         Catch ex As Exception
 
         End Try
         If IsNothing(dao.fields.appdate) = False Then
             Dim appdate As Date = CDate(dao.fields.appdate)
             Dim expyear As Integer = 0
+            Dim date_exp As Date
             Try
                 expyear = Year(appdate)
                 If expyear <> 0 Then
@@ -71,19 +74,22 @@
             Try
                 If dao.fields.PROCESS_ID = "120" Or dao.fields.PROCESS_ID = "121" Or dao.fields.PROCESS_ID = "122" Then
                     dao.fields.expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, appdate))
+
+                    date_exp = dao.fields.expdate
+                    expyear = con_year(date_exp.year())
+                    dao.fields.expyear = expyear
                 End If
 
             Catch ex As Exception
 
             End Try
             dao.fields.STATUS_ID = 8
-            dao.fields.appdate = CDate(txt_app_date.Text)
             dao.update()
         End If
         'End If
         'alert("บันทึกข้อมูลเรียบร้อย")
         Dim ws_update As New WS_DRUG.WS_DRUG
-        ws_update.HERB_INSERT_LICEN(Request.QueryString("ida"), _CLS.CITIZEN_ID)
+        ws_update.HERB_INSERT_LICEN(_IDA, _CLS.CITIZEN_ID)
         AddLogStatus(8, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
         'dao.update()
 

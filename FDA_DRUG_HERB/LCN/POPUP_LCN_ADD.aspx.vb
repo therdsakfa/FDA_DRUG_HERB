@@ -34,28 +34,37 @@
             UC_HERB.load_ddl_thambol()
             UC_HERB_PHESAJ.bind_ddl_prefix()
             UC_HERB_PHESAJ.bind_ddl_phr_type()
-
-            If Request.QueryString("ida") <> "" Then
-                Panel1.Style.Add("display", "block")
-                Panel2.Style.Add("display", "block")
-                btn_save.Style.Add("display", "none")
-            Else
-                Panel1.Style.Add("display", "none")
-                Panel2.Style.Add("display", "none")
-                btn_save.Style.Add("display", "block")
-            End If
-
+        End If
+        If Request.QueryString("ida") <> "" Then
+            Panel1.Style.Add("display", "block")
+            UC_HERB.Visible = False
+            Panel2.Style.Add("display", "block")
+            btn_save.Style.Add("display", "none")
+        Else
+            Panel1.Style.Add("display", "none")
+            Panel2.Style.Add("display", "none")
+            btn_save.Style.Add("display", "block")
         End If
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        If Request.QueryString("ida") = "" Then
+        If Not UC_HERB.check_infor() Then
+            UC_HERB.Chek_information()
+        ElseIf Request.QueryString("ida") = "" Then
             Dim IDA As Integer = 0
             Dim bao As New BAO.AppSettings
             bao.RunAppSettings()
 
-
             Dim TR_ID As String = ""
+            Dim PROESS As String = Request.QueryString("process")
+            Dim PROESS_NEW As String = ""
+            If PROESS = 120 Then
+                PROESS_new = 10102
+            ElseIf PROESS = 121 Then
+                PROESS_new = 10103
+            ElseIf PROESS = 122 Then
+                PROESS_new = 10101
+            End If
             Dim bao_tran As New BAO_TRANSECTION
             bao_tran.CITIZEN_ID = _CLS.CITIZEN_ID
             bao_tran.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
@@ -65,6 +74,7 @@
             UC_HERB.setdata(dao_dal, TR_ID)
             dao_dal.fields.STATUS_ID = 1
             dao_dal.fields.PROCESS_ID = Request.QueryString("process")
+            dao_dal.fields.PROCESS_NEW = PROESS_new
             dao_dal.fields.REVOCATION = "999"
             dao_dal.fields.lcnno = 0
             dao_dal.fields.rcvno = 0
@@ -74,6 +84,10 @@
             Catch ex As Exception
                 dao_dal.fields.lcnsid = 0
             End Try
+            If Request.QueryString("staff") <> "" Then
+                dao_dal.fields.STAFF_OFFER_ID = 1
+                dao_dal.fields.STAFF_OFFER_IDEN = _CLS.CITIZEN_ID
+            End If
 
             dao_dal.insert()
             IDA = dao_dal.fields.IDA
@@ -88,10 +102,7 @@
             dao_curent.fields.FK_IDA = dao_dal.fields.IDA
             dao_curent.insert()
 
-
             UC_HERB.insert_bsn(IDA)
-
-
             'Response.Write("<script type='text/javascript'>window.parent.alert('บันทึกเรียบร้อย');</script> ")
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri & "&ida=" & IDA)
         End If

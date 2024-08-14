@@ -455,7 +455,7 @@ Public Class UC_DS_NORYORBOR8
                 save.fields.CHK_PERMISSION_ASK = 2 'นำหรือสั่งยาแผนโบราณเข้ามาในราชอาณาจักรเพื่อขอขึ้นทะเบียน
                 save.fields.CHK_PERMISSION_DESCRIPTION = 2 'ยาที่นำนำหรือสั่งเข้ามาในราชอาณาจักร
             Else
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกคำขออนุญาติ');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกคำขออนุญาต');", True)
             End If
 
             'เก็บข้อมูลในตาราง drsamp

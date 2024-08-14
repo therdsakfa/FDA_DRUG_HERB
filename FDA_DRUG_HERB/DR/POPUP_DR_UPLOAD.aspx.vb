@@ -761,7 +761,14 @@ Public Class POPUP_DR_UPLOAD
             Dim dao As New DAO_DRUG.ClsDBdrrqt
             Dim dao_rg As New DAO_DRUG.ClsDBDRUG_REGISTRATION
             dao_rg.GetDataby_IDA(_IDA)
-            If Trim(p2.TRANSFER) = "" Then
+            Dim TRANSRFER_ID As String = ""
+            Try
+                TRANSRFER_ID = p2.drrqts.FK_TRANSFER
+            Catch ex As Exception
+
+            End Try
+
+            If Trim(p2.drrqts.FK_TRANSFER) = "" Then
                 dao.fields = p2.drrqts
                 Try
                     dao.fields.IDENTIFY = dao_lcn.fields.CITIZEN_ID_AUTHORIZE
@@ -999,7 +1006,7 @@ Public Class POPUP_DR_UPLOAD
                 dao.fields.cscd = Nothing
                 Try
                     'If Trim(p2.TRANSFER) <> "" Then
-                    dao.fields.FK_TRANSFER = p2.TRANSFER
+                    dao.fields.FK_TRANSFER = p2.drrqts.FK_TRANSFER
                     'End If
                 Catch ex As Exception
 
@@ -1021,12 +1028,12 @@ Public Class POPUP_DR_UPLOAD
                 'Dim dao_rgt As New DAO_XML_SEARCH_DRUG_LCN_ESUB.TB_XML_SEARCH_PRODUCT_GROUP_ESUB       เก่า
                 Dim dao_rgt As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
                 Try
-                    dao_rgt1.GetDataby_IDA(Trim(p2.TRANSFER))
+                    dao_rgt1.GetDataby_IDA(Trim(p2.drrqts.FK_TRANSFER))
                 Catch ex As Exception
 
                 End Try
                 Try
-                    dao_rgt.GetDataby_IDA_drrgt(Trim(p2.TRANSFER))
+                    dao_rgt.GetDataby_IDA_drrgt(Trim(p2.drrqts.FK_TRANSFER))
                 Catch ex As Exception
 
                 End Try
@@ -1146,7 +1153,7 @@ Public Class POPUP_DR_UPLOAD
 
                 End Try
                 Try
-                    dao.fields.FK_TRANSFER = p2.TRANSFER
+                    dao.fields.FK_TRANSFER = p2.drrqts.FK_TRANSFER
                 Catch ex As Exception
 
                 End Try
@@ -1268,7 +1275,7 @@ Public Class POPUP_DR_UPLOAD
                 dao.insert()
             End If
 
-            If Trim(p2.TRANSFER) = "" Then
+            If Trim(p2.drrqts.FK_TRANSFER) = "" Then
                 Dim dao_atc As New DAO_DRUG.TB_DRRQT_ATC_DETAIL
                 For Each dao_atc.fields In p2.DRRQT_ATC_DETAIL
                     Dim dao_atc2 As New DAO_DRUG.TB_DRRQT_ATC_DETAIL
@@ -1763,7 +1770,7 @@ Public Class POPUP_DR_UPLOAD
                 dao_up.update()
 
             Else
-                insert_tabean2(dao.fields.IDA, p2.TRANSFER)
+                insert_tabean2(dao.fields.IDA, p2.drrqts.FK_TRANSFER)
             End If
 
         Catch ex As Exception

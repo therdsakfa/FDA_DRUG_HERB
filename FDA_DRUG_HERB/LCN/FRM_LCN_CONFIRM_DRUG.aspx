@@ -143,14 +143,14 @@
 
                             <div class="row">
                                 <div class="col-md-12" style="text-align: center;">
-                                    <h1>คำขอรับใบอนูญาต
+                                    <h1>คำขอรับใบอนุญาต
                                     </h1>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12" style="text-align: center;">
                                     <label>
-                                        ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร                     
+                                        ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร                     
                                     </label>
                                 </div>
 
@@ -168,9 +168,9 @@
                                 <div class="col-md-12" style="text-align: left">
                                     <center>
                    <asp:RadioButtonList ID="rdl_lcn_type" runat="server" Enabled="False">
-                    <asp:ListItem Value="1">ผลิตผลิตภัณฆ์สมุนไพร</asp:ListItem>
-                    <asp:ListItem Value="2">นำเข้าผลิตภัณฆ์สมุนไพร</asp:ListItem>
-                    <asp:ListItem Value="3">ขายผลิตภัณฆ์สมุนไพร</asp:ListItem>
+                    <asp:ListItem Value="1">ผลิตผลิตภัณฑ์สมุนไพร</asp:ListItem>
+                    <asp:ListItem Value="2">นำเข้าผลิตภัณฑ์สมุนไพร</asp:ListItem>
+                    <asp:ListItem Value="3">ขายผลิตภัณฑ์สมุนไพร</asp:ListItem>
                 </asp:RadioButtonList></center>
                                 </div>
 
@@ -656,7 +656,7 @@
                             </div>
                             <div>
                                 <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
-               ๒. &ensp;ข้อมูลผู้ได้รับมอบหมายหรือแต่งตั้งให้ดำเนินการหรือดำเนินกิจการหรือดำเนนินกิจการเกี่ยวกับใบอนุญาต</h4>
+               ๒. &ensp;ข้อมูลผู้ได้รับมอบหมายหรือแต่งตั้งให้ดำเนินการหรือดำเนินกิจการเกี่ยวกับใบอนุญาต</h4>
                                 <table>
                                     <tr>
                                         <td class="auto-style3"></td>
@@ -990,7 +990,7 @@
                             </div>
                             <div>
                                 <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
-               ๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฆ์สมุนไพร</h4>
+               ๓. &ensp;ข้อมูลสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร</h4>
                                 &ensp;
 
            <table>
@@ -1086,7 +1086,7 @@
            </table>
                                 <div>
                                     <h4>&ensp;&ensp;&ensp;&ensp;&ensp;
-                ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฎิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร
+                ๔. &ensp;ข้อมูลผุ้มีหน้าที่ปฏิบัติการในสถานที่ผลิต นำเข้า หรือขายผลิตภัณฑ์สมุนไพร
                                     </h4>
 
                                     <table>
@@ -1173,7 +1173,7 @@
                                     <table>
                                         <tr>
                                             <td class="auto-style2"></td>
-                                            <td>เป็นผู้ที่มีหน้าที่ปฎิยบัติการตาม
+                                            <td>เป็นผู้ที่มีหน้าที่ปฏิบัติการตาม
                                             </td>
                                             <td>
                                                 <asp:RadioButtonList ID="rdl_mastra" runat="server" RepeatDirection="Horizontal" Enabled="False">
@@ -1182,7 +1182,7 @@
                                                     <asp:ListItem Value="3">มาตรา ๓๓</asp:ListItem>
                                                 </asp:RadioButtonList>
                                             </td>
-                                            <td>แห่ง พ.ร.บ.ผลิตภัณฆ์สมุนไพร พ.ศ.๒๕๖๒
+                                            <td>แห่ง พ.ร.บ.ผลิตภัณฑ์สมุนไพร พ.ศ.๒๕๖๒
                                             </td>
                                         </tr>
                                     </table>

@@ -378,7 +378,7 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         Dim head_type As String = ""
         Try
             head_type = ""
-            If lcntpcd.Contains("บ") Then
+            If lcntpcd.Contains("สม") Then
                 head_type = "โบราณ"
             Else
                 head_type = "ปัจจุบัน"
@@ -916,6 +916,8 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         Dim LCNTPCD_GROUP As String = ""
         Dim FK_LCN_IDA As Integer = 0
         Dim wong_lep As String = ""
+        Dim thanm_name As String = ""
+        Dim _COUNTRY As String = ""
         Try
             STATUS_ID = 8 'Request.QueryString("STATUS_ID") 'Get_drrqt_Status(_IDA)
         Catch ex As Exception
@@ -1137,7 +1139,7 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         Dim head_type As String = ""
         Try
             head_type = ""
-            If lcntpcd.Contains("บ") Then
+            If lcntpcd.Contains("สม") Then
                 head_type = "โบราณ"
             Else
                 head_type = "ปัจจุบัน"
@@ -1257,7 +1259,15 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
             '    End If
 
             'Else
-            lcnno_format = pvnabbr2 & " " & CStr(CInt(Right(dao_e.fields.lcnno, 4))) & "/25" & Left(dao_e.fields.lcnno, 2) 'dao_e.fields.lcnno_no
+            If dao_lcn.fields.lcnno_display_new Is Nothing Then
+                lcnno_format = dao.fields.pvnabbr & " " & CStr(CInt(Right(lcnno_auto, 5))) & "/25" & Left(lcnno_auto, 2)
+            Else
+                lcnno_format = dao_lcn.fields.lcnno_display_new
+            End If
+
+
+            'lcnno_format = dao.fields.pvncd & "-" & _type_da & "-" & Left(lcnno_auto, 2) & "-" & Right(lcnno_auto, Len(lcnno_auto) - 2)
+
             'End If
 
 
@@ -1269,7 +1279,7 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         'Try
         rcvno_format = dao_e.fields.register_rcvno 'rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2) & " " & aa2
         'Catch ex As Exception
-
+        thanm_name = dao_e.fields.thanm
         'End Try
 
         If (Trim(drug_name_th) = "-" Or Trim(drug_name_th) = "") And Trim(drug_name_eng) <> "" Then
@@ -1290,6 +1300,15 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         'Catch ex As Exception
 
         'End Try
+        Dim dao_frgn As New DAO_XML_DRUG_HERB.TB_XML_DRUG_FRGN_HERB
+        dao_frgn.GetDataby_u1_and_funcd(newcode, 3)
+        If dao_e.fields.rgttpcd = "G" Then
+            _COUNTRY = "ไทย"
+        Else
+            If dao_frgn.fields.funccd = 3 Then
+                _COUNTRY = dao_frgn.fields.engcntnm
+            End If
+        End If
 
 
         class_xml.LCNNO_FORMAT = lcnno_format
@@ -1298,12 +1317,13 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
         class_xml.LCN_TYPE = lcn_long_type 'ยานี้
         class_xml.TABEAN_FORMAT = rgtno_format
         class_xml.DRUG_NAME = drug_name
-        class_xml.COUNTRY = "ไทย"
+        class_xml.COUNTRY = _COUNTRY
         class_xml.CHK_LCN_SUBTYPE1 = CHK_LCN_SUBTYPE1
         class_xml.CHK_LCN_SUBTYPE2 = CHK_LCN_SUBTYPE2
         class_xml.CHK_LCN_SUBTYPE3 = CHK_LCN_SUBTYPE3
         class_xml.TABEAN_TYPE1 = TABEAN_TYPE1
         class_xml.TABEAN_TYPE2 = TABEAN_TYPE2
+        class_xml.THANM_NAME = thanm_name
 
         Dim bao_show As New BAO_SHOW
         'class_xml.DT_SHOW.DT6 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao_lcn.fields.IDA_dalcn) 'ข้อมูลสถานที่จำลอง
@@ -1412,10 +1432,10 @@ Public Class FRM_SUBSTITUTE_TABEAN_PREVIEW
             If E_VALUE <> "(E)" Then
                 'dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUPV2("1400001", "1400001", 8, ddl_template.SelectedValue, _group:=1)
                 'NAME_TEMPLATE = dao_pdftemplate.fields.PDF_TEMPLATE
-                NAME_TEMPLATE = "DATAN_YOR_2_NCIENT_READONLY.pdf"
+                NAME_TEMPLATE = "DATAN_TORYOR5_NCIENT_READONLY.pdf"
             Else
                 'If Request.QueryString("status") = "8" Or Request.QueryString("status") = "14" Then
-                NAME_TEMPLATE = "DATAN_YOR_2_NCIENT_READONLY_E.pdf"
+                NAME_TEMPLATE = "DATAN_TORYOR5_NCIENT_READONLY.pdf"
                 'Else
                 '    NAME_TEMPLATE = dao_pdftemplate.fields.PDF_TEMPLATE
                 'End If

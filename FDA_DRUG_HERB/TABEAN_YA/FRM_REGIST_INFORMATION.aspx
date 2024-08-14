@@ -200,11 +200,11 @@
         </td>
     </tr>
     </table>
-    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="0" MultiPageID="RadMultiPage1" Orientation="VerticalLeft">
+    <telerik:RadTabStrip ID="RadTabStrip1" runat="server" SelectedIndex="1" MultiPageID="RadMultiPage1" Orientation="VerticalLeft">
         <Tabs>
-            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป" Selected="true">
+            <telerik:RadTab runat="server" Text="1.ข้อมูลทั่วไป">
             </telerik:RadTab>
-            <telerik:RadTab runat="server" Text="2.ข้อมูลผู้ผลิต/ชื่อผู้รับอนุญาต">
+            <telerik:RadTab runat="server" Text="2.ข้อมูลผู้ผลิต/ชื่อผู้รับอนุญาต" Selected="True">
             </telerik:RadTab>
             <telerik:RadTab runat="server" Text="3.สูตรสาร">
             </telerik:RadTab>
@@ -244,7 +244,7 @@
 
 
     </telerik:RadTabStrip>
-    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="0" CssClass="fa left">
+    <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="1" CssClass="fa left">
         <telerik:RadPageView ID="RadPageView1" runat="server" TabIndex="1"><uc1:UC_general runat="server" ID="UC_general" /> <br />
             <asp:Button ID="btn_update_gen" runat="server" Text="แก้ไขข้อมูล" CssClass="input-lg"/>
             <br />

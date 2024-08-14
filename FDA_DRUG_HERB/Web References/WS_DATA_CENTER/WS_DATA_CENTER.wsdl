@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FDA_HOUSE_NO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HOUSE_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_HOUSE_NOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_HOUSE_NOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_IDENTIFY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_IDENTIFYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_IDENTIFYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_IDENTIFY_DT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FDA_IDENTIFY_DTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FDA_IDENTIFY_DTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DATA_IDENTIFYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFY_DS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFY_DSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DATA_IDENTIFY_DSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFY_DT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDENTIFY_DTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DATA_IDENTIFY_DTResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDEM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CTZNO_CALL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="USERNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PASSWORD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_IDEMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DATA_IDEMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FDA_HOUSE_NOSoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_HOUSE_NO" />
+  </wsdl:message>
+  <wsdl:message name="FDA_HOUSE_NOSoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_HOUSE_NOResponse" />
+  </wsdl:message>
+  <wsdl:message name="FDA_IDENTIFYSoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_IDENTIFY" />
+  </wsdl:message>
+  <wsdl:message name="FDA_IDENTIFYSoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_IDENTIFYResponse" />
+  </wsdl:message>
+  <wsdl:message name="FDA_IDENTIFY_DTSoapIn">
+    <wsdl:part name="parameters" element="tns:FDA_IDENTIFY_DT" />
+  </wsdl:message>
+  <wsdl:message name="FDA_IDENTIFY_DTSoapOut">
+    <wsdl:part name="parameters" element="tns:FDA_IDENTIFY_DTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFYSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFY" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFYSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFYResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFY_DSSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFY_DS" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFY_DSSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFY_DSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFY_DTSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFY_DT" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDENTIFY_DTSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDENTIFY_DTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDEMSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDEM" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_IDEMSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DATA_IDEMResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_DATA_CENTERSoap">
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <wsdl:input message="tns:FDA_HOUSE_NOSoapIn" />
+      <wsdl:output message="tns:FDA_HOUSE_NOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY">
+      <wsdl:input message="tns:FDA_IDENTIFYSoapIn" />
+      <wsdl:output message="tns:FDA_IDENTIFYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY_DT">
+      <wsdl:input message="tns:FDA_IDENTIFY_DTSoapIn" />
+      <wsdl:output message="tns:FDA_IDENTIFY_DTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY">
+      <wsdl:input message="tns:GET_DATA_IDENTIFYSoapIn" />
+      <wsdl:output message="tns:GET_DATA_IDENTIFYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DS">
+      <wsdl:input message="tns:GET_DATA_IDENTIFY_DSSoapIn" />
+      <wsdl:output message="tns:GET_DATA_IDENTIFY_DSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DT">
+      <wsdl:input message="tns:GET_DATA_IDENTIFY_DTSoapIn" />
+      <wsdl:output message="tns:GET_DATA_IDENTIFY_DTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDEM">
+      <wsdl:input message="tns:GET_DATA_IDEMSoapIn" />
+      <wsdl:output message="tns:GET_DATA_IDEMSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_DATA_CENTERSoap" type="tns:WS_DATA_CENTERSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <soap:operation soapAction="http://tempuri.org/FDA_HOUSE_NO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY">
+      <soap:operation soapAction="http://tempuri.org/FDA_IDENTIFY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY_DT">
+      <soap:operation soapAction="http://tempuri.org/FDA_IDENTIFY_DT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY">
+      <soap:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DS">
+      <soap:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY_DS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DT">
+      <soap:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY_DT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDEM">
+      <soap:operation soapAction="http://tempuri.org/GET_DATA_IDEM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_DATA_CENTERSoap12" type="tns:WS_DATA_CENTERSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FDA_HOUSE_NO">
+      <soap12:operation soapAction="http://tempuri.org/FDA_HOUSE_NO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY">
+      <soap12:operation soapAction="http://tempuri.org/FDA_IDENTIFY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FDA_IDENTIFY_DT">
+      <soap12:operation soapAction="http://tempuri.org/FDA_IDENTIFY_DT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY">
+      <soap12:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DS">
+      <soap12:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY_DS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDENTIFY_DT">
+      <soap12:operation soapAction="http://tempuri.org/GET_DATA_IDENTIFY_DT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_IDEM">
+      <soap12:operation soapAction="http://tempuri.org/GET_DATA_IDEM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_DATA_CENTER">
+    <wsdl:port name="WS_DATA_CENTERSoap" binding="tns:WS_DATA_CENTERSoap">
+      <soap:address location="http://10.111.28.104/WS_CENTER_CPN/WS_DATA_CENTER.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_DATA_CENTERSoap12" binding="tns:WS_DATA_CENTERSoap12">
+      <soap12:address location="http://10.111.28.104/WS_CENTER_CPN/WS_DATA_CENTER.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

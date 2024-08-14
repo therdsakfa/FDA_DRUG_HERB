@@ -395,15 +395,15 @@ Public Class UC_EQTO
         rg_search_iowa.Rebind()
     End Sub
 
-    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
-        Dim url As String = ""
-        If Request.QueryString("e") <> "" Then
-            url = "../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & Request.QueryString("idr") & "&type=" & Request.QueryString("type") & "&tr_id=" & Request.QueryString("tr_id") & "&tab=5&e=1&STATUS_ID=" & Request.QueryString("STATUS_ID") & "&ida_e=" & Request.QueryString("ida_e")
-        Else
-            url = "../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & Request.QueryString("idr") & "&type=" & Request.QueryString("type") & "&tr_id=" & Request.QueryString("tr_id") & "&tab=5&STATUS_ID=" & Request.QueryString("STATUS_ID")
-        End If
-        Response.Redirect(url)
-    End Sub
+    'Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+    '    Dim url As String = ""
+    '    If Request.QueryString("e") <> "" Then
+    '        url = "../TABEAN_YA/FRM_RQT_EDIT.aspx?IDA=" & Request.QueryString("idr") & "&type=" & Request.QueryString("type") & "&tr_id=" & Request.QueryString("tr_id") & "&tab=5&e=1&STATUS_ID=" & Request.QueryString("STATUS_ID") & "&ida_e=" & Request.QueryString("ida_e")
+    '    Else
+    '        url = "../TABEAN_YA/FRM_RQT_REGIST_INFORMATION.aspx?IDA=" & Request.QueryString("idr") & "&type=" & Request.QueryString("type") & "&tr_id=" & Request.QueryString("tr_id") & "&tab=5&STATUS_ID=" & Request.QueryString("STATUS_ID")
+    '    End If
+    '    Response.Redirect(url)
+    'End Sub
 
     Private Sub btn_rows_save_Click(sender As Object, e As EventArgs) Handles btn_rows_save.Click
         If STATUS_ID = 8 Then

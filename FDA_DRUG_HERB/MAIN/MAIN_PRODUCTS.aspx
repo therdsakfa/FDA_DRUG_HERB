@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/Main_Product.Master" CodeBehind="MAIN_PRODUCTS.aspx.vb" Inherits="FDA_DRUG_HERB.MAIN_PRODUCTS" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/Main.Master" CodeBehind="MAIN_PRODUCTS.aspx.vb" Inherits="FDA_DRUG_HERB.MAIN_PRODUCTS" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

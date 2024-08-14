@@ -23,7 +23,12 @@
             db.XML_SEARCH_DRUG_LCN_HERBs.DeleteOnSubmit(fields)
             db.SubmitChanges()
         End Sub
+        Public Sub GetDataby_LCN_IDA(ByVal IDA As Integer)
 
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.IDA_dalcn = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_IDA(ByVal IDA As Integer)
 
             datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.IDA = IDA Select p)
@@ -56,9 +61,21 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_pvnlcncd(ByVal pvncd As Integer, ByVal lcntpcd As String, ByVal lcnno As Integer)
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.pvncd = pvncd And p.lcntpcd = lcntpcd And p.lcnno = lcnno Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
         Public Sub GetDataby_lcnno_no(ByVal lcnno_no As String)
 
             datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.lcnno_no = lcnno_no Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_lcnno_no_New(ByVal lcnno_no As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.lcnno_display_new = lcnno_no Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -104,6 +121,11 @@
         Public Sub GetDataby_NEWCODE(ByVal u1 As String)
 
             datas = (From p In db.XML_DRUG_PRODUCT_HERBs Where p.Newcode_U = u1 And p.frn_no = "1" Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetData_by_NEWCODE(ByVal NewCode As String)
+            datas = (From p In db.XML_DRUG_PRODUCT_HERBs Where p.Newcode = NewCode Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -167,6 +189,11 @@
         End Sub
         Public Sub GetDataby_u1(ByVal u1 As String)
             datas = (From p In db.XML_DRUG_FRGN_HERBs Where p.Newcode_U = u1 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_u1_and_funcd(ByVal u1 As String, ByVal funccd As String)
+            datas = (From p In db.XML_DRUG_FRGN_HERBs Where p.Newcode_U = u1 And p.funccd = funccd Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -275,6 +302,81 @@
         '    Next
         'End Sub
     End Class
+    Public Class TB_XML_SEARCH_DRUG_LCN_LICEN_HERB
+        Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
+
+        Public fields As New XML_SEARCH_DRUG_LCN_LICEN_HERB
+
+        Public Sub insert()
+            db.XML_SEARCH_DRUG_LCN_LICEN_HERBs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.XML_SEARCH_DRUG_LCN_LICEN_HERBs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataby_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.IDA = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_LCN_IDA(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.IDA_dalcn = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        '
+        Public Sub GetDataby_identify(ByVal iden As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.CITIZEN_AUTHORIZE = iden Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        '
+        Public Sub GetDataby_lcnsid(ByVal lcnsid As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.lcnsid = lcnsid Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataALL()
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_u1(ByVal u1 As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.Newcode_not = u1 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_lcnno_no(ByVal lcnno_no As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.lcnno_no = lcnno_no Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_lcnno_no_New(ByVal lcnno_no As String)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.lcnno_display_new = lcnno_no Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_pvnlcncd(ByVal pvncd As Integer, ByVal lcntpcd As String, ByVal lcnno As String)
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_LICEN_HERBs Where p.pvncd = pvncd And p.lcntpcd = lcntpcd And p.lcnno = lcnno Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
     Public Class TB_XML_DRUG_IOW_EQ_HERB
         Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน
 
@@ -323,6 +425,13 @@
         Public Sub GetDataby_Newcode_rid_flineno(ByVal newcode_rid As String, ByVal flineno As String)
 
             datas = (From p In db.XML_DRUG_IOW_EQ_HERBs Where p.Newcode_rid = newcode_rid Select p)
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetDataby_Newcode(ByVal newcode As String)
+
+            datas = (From p In db.XML_DRUG_IOW_EQ_HERBs Where p.Newcode = newcode Select p)
             For Each Me.fields In datas
 
             Next
@@ -561,7 +670,7 @@
 
             datas = (From p In db.XML_DRUG_CONTAIN_HERBs Where p.Newcode = newcode Select p)
             For Each Me.fields In datas
-
+                AddDetails()
             Next
         End Sub
     End Class

@@ -5,6 +5,7 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
     Private _CLS As New CLS_SESSION
     Private _lctida As String = ""
     Private _MENU_GROUP As String = ""
+    Private _WHO_IDA As String = ""
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
         If Not IsPostBack Then
@@ -23,6 +24,18 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
         TreeView1 = DirectCast(rcb_Process.Items(0).FindControl("rtv_Process"), RadTreeView)
         Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO2
         dao.GetDataby_HEAD_ID2(0, _MENU_GROUP, sel_type)
+        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        Dim process_lcn As String = ""
+        Try
+            dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+        Catch ex As Exception
+
+        End Try
+        Try
+            _WHO_IDA = Request.QueryString("WHO_IDA")
+        Catch ex As Exception
+
+        End Try
         For Each dao.fields In dao.datas
             Dim t_node As New RadTreeNode
             t_node.Value = dao.fields.IDA
@@ -35,24 +48,35 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
             If dao.fields.URL = "#" Or dao.fields.URL = "" Then
                 t_node.NavigateUrl = HttpContext.Current.Request.Url.AbsoluteUri & "#"
             Else
-                If Request.QueryString("lct_ida") <> "" Then
-                    t_node.NavigateUrl = dao.fields.URL & "&lct_ida=" & Request.QueryString("lct_ida")
-                    If Request.QueryString("lcn_ida") <> "" Then
-                        t_node.NavigateUrl = t_node.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
+                If dao.fields.URL.Contains("HERB_TABEAN") Then
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node.NavigateUrl = dao.fields.URL & "&IDA_LCT=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            process_lcn = dao_dal.fields.PROCESS_ID
+                            t_node.NavigateUrl = t_node.NavigateUrl & "&IDA_LCN=" & Request.QueryString("lcn_ida") & "&PROCESS_ID_LCN=" & process_lcn & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node.NavigateUrl = dao.fields.URL
                     End If
                 Else
-                    t_node.NavigateUrl = dao.fields.URL
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            t_node.NavigateUrl = t_node.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida") & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node.NavigateUrl = dao.fields.URL
+                    End If
                 End If
             End If
 
             Try
-                t_node.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
-            Catch ex As Exception
-
-            End Try
-            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
-            Try
-                dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+                't_node.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
+                If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                    t_node.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN & "&staff=1&citizen_authen=" & _CLS.CITIZEN_ID_AUTHORIZE & "&IDA_LCN=" & Request.QueryString("lcn_ida") & "&PROCESS_ID=" & dao.fields.PROCESS_ID & "&IDA_LCT=" & _lctida
+                Else
+                    t_node.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
+                End If
             Catch ex As Exception
 
             End Try
@@ -94,6 +118,13 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
         End If
         Dim dao As New DAO_DRUG.ClsDBMAS_MENU_AUTO2
         dao.GetDataby_HEAD_ID2(ParentID, _MENU_GROUP, sel_type)
+        Dim dao_dal As New DAO_DRUG.ClsDBdalcn
+        Dim process_lcn As String = ""
+        Try
+            dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+        Catch ex As Exception
+
+        End Try
         For Each dao.fields In dao.datas
             Dim t_node2 As New RadTreeNode
             t_node2.Value = dao.fields.IDA
@@ -104,35 +135,55 @@ Public Class FRM_REPLACEMENT_LICENSE_LOCATION_MENU2
 
             End Try
             If dao.fields.URL <> "#" Then
-                If Request.QueryString("lct_ida") <> "" Then
-                    t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
-                    If Request.QueryString("lcn_ida") <> "" Then
-                        t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
+                If dao.fields.URL.Contains("HERB_TABEAN") Then
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node2.NavigateUrl = dao.fields.URL & "&IDA_LCT=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            process_lcn = dao_dal.fields.PROCESS_ID
+                            t_node2.NavigateUrl = t_node2.NavigateUrl & "&IDA_LCN=" & Request.QueryString("lcn_ida") & "&PROCESS_ID_LCN=" & process_lcn & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
                     End If
                 Else
-                    t_node2.NavigateUrl = dao.fields.URL
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida") & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
+                    End If
                 End If
             Else
-                If Request.QueryString("lct_ida") <> "" Then
-                    t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
-                    If Request.QueryString("lcn_ida") <> "" Then
-                        t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida")
+                If dao.fields.URL.Contains("HERB_TABEAN") Then
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node2.NavigateUrl = dao.fields.URL & "&IDA_LCT=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            t_node2.NavigateUrl = t_node2.NavigateUrl & "&IDA_LCN=" & Request.QueryString("lcn_ida") & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
                     End If
                 Else
-                    t_node2.NavigateUrl = dao.fields.URL
+                    If Request.QueryString("lct_ida") <> "" Then
+                        t_node2.NavigateUrl = dao.fields.URL & "&lct_ida=" & _lctida
+                        If Request.QueryString("lcn_ida") <> "" Then
+                            t_node2.NavigateUrl = t_node2.NavigateUrl & "&lcn_ida=" & Request.QueryString("lcn_ida") & "&SID=" & Request.QueryString("SID") & "&WHO_IDA=" & _WHO_IDA
+                        End If
+                    Else
+                        t_node2.NavigateUrl = dao.fields.URL
+                    End If
                 End If
             End If
 
             Try
-                t_node2.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
-            Catch ex As Exception
-
-            End Try
-
-
-            Dim dao_dal As New DAO_DRUG.ClsDBdalcn
-            Try
-                dao_dal.GetDataby_IDA(Request.QueryString("lcn_ida"))
+                't_node2.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
+                If dao.fields.URL.Contains("TOKEN") Or dao.fields.URL.Contains("AUTHEN") Then
+                    t_node2.NavigateUrl = dao.fields.URL & "?Token=" & _CLS.TOKEN & "&staff=1&citizen_authen=" & _CLS.CITIZEN_ID_AUTHORIZE & "&IDA_LCN=" & Request.QueryString("lcn_ida") & "&PROCESS_ID=" & dao.fields.PROCESS_ID & "&IDA_LCT=" & _lctida
+                Else
+                    t_node2.NavigateUrl &= "&staff=1&identify=" & _CLS.CITIZEN_ID_AUTHORIZE
+                End If
             Catch ex As Exception
 
             End Try

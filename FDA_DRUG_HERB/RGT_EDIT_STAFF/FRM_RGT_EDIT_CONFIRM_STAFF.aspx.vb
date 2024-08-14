@@ -826,6 +826,12 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
 
 
             AddLogStatus(8, Request.QueryString("process"), _CLS.CITIZEN_ID, _IDA)
+            Dim ws_log As New WS_DRUG.WS_DRUG
+            Try
+                'ws_log.LOG_EDIT_TABEAN_HERB(Request.QueryString("Newcode"))
+            Catch ex As Exception
+
+            End Try
             'update_rgt()
             alert("อนุมัติคำขอเรียบร้อยแล้ว")
         ElseIf ddl_status.SelectedValue = 15 Then
@@ -1820,7 +1826,8 @@ Public Class FRM_RGT_EDIT_CONFIRM_STAFF
         Try
             ' Response.Redirect("https://medicina.fda.moph.go.th/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY)
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('http://164.115.28.167/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY & "'); ", True)
+            'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('http://164.115.28.167/FDA_DRUG_AN/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY & "'); ", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "window.open('https://meshlog.fda.moph.go.th/FDA_DRUG_AN_HERB/AUTHEN/AUTHEN_GATEWAY?Token=" & _CLS.TOKEN & "&trid=" & dao.fields.TR_ID & "&Newcode=" & Request.QueryString("Newcode") & "&citizen_authen=" & dao_rg.fields.IDENTIFY & "'); ", True)
         Catch ex As Exception
 
         End Try

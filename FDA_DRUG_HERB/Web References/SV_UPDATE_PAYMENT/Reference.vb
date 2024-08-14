@@ -24,7 +24,7 @@ Imports System.Xml.Serialization
 Namespace SV_UPDATE_PAYMENT
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="SV_UPDATE_PAYMENTSoap", [Namespace]:="http://tempuri.org/")>  _
@@ -121,11 +121,11 @@ Namespace SV_UPDATE_PAYMENT
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub STAMP_STATUS_PAYMENTCompletedEventHandler(ByVal sender As Object, ByVal e As STAMP_STATUS_PAYMENTCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class STAMP_STATUS_PAYMENTCompletedEventArgs

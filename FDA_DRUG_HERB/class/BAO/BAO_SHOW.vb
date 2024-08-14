@@ -37,6 +37,30 @@ Public Class BAO_SHOW
         dt.Rows.Add(dr)
         Return dt
     End Function
+    Function AddDatatable2(ByVal dt As DataTable) As DataTable
+        Dim dr As DataRow = dt.NewRow
+        For Each c As DataColumn In dt.Columns
+            If c.DataType.Name.ToString() = "String" Then
+                dr(c.ColumnName) = "-"
+            ElseIf c.DataType.Name.ToString() = "Int32" Then
+                dr(c.ColumnName) = 0
+            ElseIf c.DataType.Name.ToString() = "DateTime" Then
+                dr(c.ColumnName) = Date.Now 'Nothing 'Date.Now
+            Else
+                Try
+                    dr(c.ColumnName) = Nothing
+                Catch ex As Exception
+                    dr(c.ColumnName) = 0
+                End Try
+
+
+            End If
+
+        Next
+
+        dt.Rows.Add(dr)
+        Return dt
+    End Function
     Public Function Queryds(ByVal Commands As String) As DataTable
         Dim dt As New DataTable
         Dim MyConnection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("LGT_DRUGConnectionString").ConnectionString)
@@ -119,6 +143,14 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRUG_GROUP_BY_LCN_IDA2"
         Return dta
     End Function
+
+    Public Function SP_TABEAN_EDIT_DETAIL_CAS_BY_FK_IDA(ByVal fk_ida As Integer, ByVal _set As Integer) As DataTable
+        Dim sql As String = "exec SP_TABEAN_EDIT_DETAIL_CAS_BY_FK_IDA @FK_IDA=" & fk_ida & " ,@set= " & _set
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_TABEAN_EDIT_DETAIL_CAS_BY_FK_IDA"
+        Return dta
+    End Function
     Public Function SP_DRUG_GROUP_LCN_HERB(ByVal lcn_ida As Integer, ByVal type_lcn As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB @lcn_ida= " & lcn_ida & " ,@type_lcn=" & type_lcn
@@ -137,9 +169,87 @@ Public Class BAO_SHOW
         dt.TableName = "SP_DRUG_GROUP_LCN_HERB"
         Return dt
     End Function
+    Public Function SP_UPDATE_LOCATION_NAME_PRODUCT_HERB(ByVal PVNCD As String, ByVal RGTTPCD As String, ByVal DRGTPCD As String, ByVal RGTNO As String) As DataTable
+
+        Dim sql As String = "exec SP_UPDATE_LOCATION_NAME_PRODUCT_HERB @PVNCD= '" & PVNCD & "',@rgttpcd='" & RGTTPCD & "',@DRGTPCD='" & DRGTPCD & "'',@RGTNO='" & RGTNO & "'"
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_UPDATE_LOCATION_NAME_PRODUCT_HERB"
+        Return dta
+    End Function
+    Public Function SP_Lisense_Name_and_Addr(ByVal IDENTITY As String) As DataTable
+
+        Dim sql As String = "exec SP_Lisense_Name_and_Addr @identify= '" & IDENTITY & "'"
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DRUG_GROUP_BY_LCN_IDA"
+        Return dta
+    End Function
+    Public Function SP_DALCN_CURRENT_ADDRESS(ByVal FK_IDA As Integer) As DataTable
+
+        Dim sql As String = "exec SP_DALCN_CURRENT_ADDRESS @FK_IDA=" & FK_IDA
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_CURRENT_ADDRESS"
+        Return dta
+    End Function
     Public Function SP_DRUG_GROUP_LCN_HERB2(ByVal lcn_ida As Integer, ByVal type_lcn As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB2 @lcn_ida= " & lcn_ida & " ,@type_lcn=" & type_lcn
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_DRUG_GROUP_LCN_HERB"
+        Return dt
+    End Function
+    Public Function SP_DRUG_GROUP_LCN_HERB_SMP1(ByVal LCN_IDA As Integer, ByVal type_lcn As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB_SMP1 @lcn_ida= " & LCN_IDA & " ,@type_lcn= '" & type_lcn & "'"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_DRUG_GROUP_LCN_HERB_SMP1"
+        Return dt
+    End Function
+    Public Function SP_DRUG_GROUP_LCN_HERB_SMP1_V2(ByVal LCN_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB_SMP1_V2 @LCN_IDA= '" & LCN_IDA & "'"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_DRUG_GROUP_LCN_HERB_SMP1_V2"
+        Return dt
+    End Function
+    Public Function SP_DRUG_GROUP_LCN_HERB_V3(ByVal lcn_ida As Integer, ByVal type_lcn As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRUG_GROUP_LCN_HERB_V3 @lcn_ida= " & lcn_ida & " ,@type_lcn=" & type_lcn
         Dim dt As New DataTable
         Try
             dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
@@ -386,6 +496,27 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRRQT_DTB_BY_FK_IDA"
         Return dta
     End Function
+    Public Function SP_TABEAN_JJ_EQTO_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_TABEAN_JJ_EQTO_BY_FK_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_TABEAN_JJ_EQTO_BY_FK_IDA"
+        Return dta
+    End Function
+    Public Function SP_MAS_TABEAN_JJ_EQTO_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_MAS_TABEAN_JJ_EQTO_BY_FK_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_MAS_TABEAN_JJ_EQTO_BY_FK_IDA"
+        Return dta
+    End Function
+    Public Function SP_TABEAN_EDIT_EQTO_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_TABEAN_EDIT_EQTO_BY_FK_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_TABEAN_EDIT_EQTO_BY_FK_IDA"
+        Return dta
+    End Function
     '
     Public Function SP_dramldrg_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_dramldrg_BY_FK_IDA @FK_IDA=" & fk_ida
@@ -497,6 +628,20 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRRGT_EDIT_REQUEST_HISTORY"
         Return dta
     End Function
+    Public Function SP_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA(ByVal fk_ida As Integer, ByVal _set As Integer) As DataTable
+        Dim sql As String = "exec SP_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA @FK_IDA=" & fk_ida & " ,@set= " & _set
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA"
+        Return dta
+    End Function
+    Public Function SP_MAS_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA(ByVal fk_ida As Integer, ByVal _set As Integer) As DataTable
+        Dim sql As String = "exec SP_MAS_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA @FK_IDA=" & fk_ida & " ,@set= " & _set
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_MAS_TABEAN_JJ_DETAIL_CAS_BY_FK_IDA"
+        Return dta
+    End Function
     Public Function SP_DRRGT_SPC_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_SPC_BY_FK_IDA @FK_IDA=" & fk_ida
         Dim dta As New DataTable
@@ -548,7 +693,13 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRRQT_EQTO_BY_FK_IDA"
         Return dta
     End Function
-    '
+    Public Function SP_MAS_TABEAN_EXH_EQTO_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_MAS_TABEAN_EXH_EQTO_BY_FK_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_MAS_TABEAN_EXH_EQTO_BY_FK_IDA"
+        Return dta
+    End Function
     Public Function SP_DRRGT_NAME_DRUG_EXPORT_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_NAME_DRUG_EXPORT_BY_FK_IDA @FK_IDA=" & fk_ida
         Dim dta As New DataTable
@@ -576,6 +727,13 @@ Public Class BAO_SHOW
         Dim dta As New DataTable
         dta = Queryds(sql)
         dta.TableName = "SP_DRRQT_DETAIL_CAS_BY_FK_IDAV2"
+        Return dta
+    End Function
+    Public Function SP_TABEAN_EXH_DETAIL_CAS_BY_FK_IDA(ByVal fk_ida As Integer, ByVal _set As Integer) As DataTable
+        Dim sql As String = "exec SP_TABEAN_EXH_DETAIL_CAS_BY_FK_IDA @FK_IDA=" & fk_ida & " ,@set= " & _set
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_TABEAN_EXH_DETAIL_CAS_BY_FK_IDA"
         Return dta
     End Function
     '
@@ -636,7 +794,7 @@ Public Class BAO_SHOW
         Dim sql As String = "exec SP_DRRGT_ATC_DETAIL_BY_Newcode @newcode='" & newcode & "'"
         Dim dta As New DataTable
         dta = Queryds(sql)
-        dta.TableName = "SP_DRRGT_ATC_DETAIL_BY_FK_IDA"
+        dta.TableName = "SP_DRRGT_ATC_DETAIL_BY_Newcode"
         Return dta
     End Function
     Public Function SP_DRRGT_EACH_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
@@ -958,11 +1116,28 @@ Public Class BAO_SHOW
         Return dta
     End Function
     Public Function SP_DRRQT_CAS_EQTO(ByVal ida As Integer) As DataTable
-        Dim sql As String = "exec SP_DRRQT_CAS_EQTO @IDA=" & ida
-        Dim dta As New DataTable
-        dta = Queryds(sql)
+        'Dim sql As String = "exec SP_DRRQT_CAS_EQTO @IDA=" & ida
+        'Dim dt As New DataTable
+        'dt = Queryds(sql)
         'dta.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_AND_TYPE_AND_LCN_TYPE"
-        Return dta
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRRQT_CAS_EQTO @IDA=" & ida
+        Dim dt As New DataTable
+        Try
+            dt = Queryds(sql)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable2(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable2(dt)
+        End If
+
+        dt.TableName = "SP_DRRQT_CAS_EQTO"
+        Return dt
     End Function
     Public Function SP_DRUG_REGISTRATION(ByVal ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRUG_REGISTRATION @IDA=" & ida
@@ -1141,7 +1316,14 @@ Public Class BAO_SHOW
         dt.TableName = "SP_MAINCOMPANY"
         Return dt
     End Function
+    Public Function SP_MAS_DALCN_PHR_TRAINING() As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_MAS_DALCN_PHR_TRAINING"
+        Dim dt As New DataTable
+        dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
 
+        Return dt
+    End Function
 
 
     ''' <summary>
@@ -1316,6 +1498,20 @@ Public Class BAO_SHOW
         dt.TableName = "SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY"
         Return dt
     End Function
+    Public Function SP_LOCATION_ADDRESS_BY_FK_IDA(ByVal IDA As String) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_BY_FK_IDA  @IDA= '" & IDA & "'"
+        ' Dim sql As String = "exec SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY @lcnsid=" & "0" & " ,@identify=" & "0"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+        Catch ex As Exception
+
+        End Try
+
+        dt.TableName = "SP_LOCATION_ADDRESS_BY_FK_IDA"
+        Return dt
+    End Function
     Public Function SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2(ByVal identify As String, ByVal LCNSID As String) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFYV2 @lcnsid='" & LCNSID & "' ,@identify= '" & identify & "'"
@@ -1369,7 +1565,66 @@ Public Class BAO_SHOW
         dt.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA"
         Return dt
     End Function
-    '
+    ''' <summary>
+    ''' สถานที่จำลอง
+    ''' </summary>
+    ''' <param name="LOCATION_ADDRESS_IDA"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_AND_LCN_IDA(ByVal LOCATION_ADDRESS_IDA As Integer, ByVal LCN_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_AND_LCN_IDA @LOCATION_ADDRESS_IDA = " & LOCATION_ADDRESS_IDA & ",@IDA_LCN=" & LCN_IDA
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_AND_LCN_IDA"
+        Return dt
+    End Function
+    Public Function SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA(ByVal LCN_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA @FK_IDA = " & LCN_IDA
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_BY_IDA"
+        Return dt
+    End Function
+    Public Function SP_DRUG_GROUP_HERB_NO3(ByVal LCN_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DRUG_GROUP_HERB_NO3 @LCN_IDA= '" & LCN_IDA & "'"
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_DRUG_GROUP_HERB_NO3"
+        Return dt
+    End Function
     Public Function SP_DRRGT_ADDR_BY_IDA(ByVal LOCATION_ADDRESS_IDA As Integer) As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_DRRGT_ADDR_BY_IDA @LOCATION_ADDRESS_IDA = " & LOCATION_ADDRESS_IDA

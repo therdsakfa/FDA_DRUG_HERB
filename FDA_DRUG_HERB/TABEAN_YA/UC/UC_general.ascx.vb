@@ -42,6 +42,7 @@ Public Class UC_general
             'show_data_rqt(Request.QueryString("IDA"))
             'bind_label()
         End If
+        'bind_label()
     End Sub
     Sub show_data(ByVal IDA As Integer)
         RunQuery()

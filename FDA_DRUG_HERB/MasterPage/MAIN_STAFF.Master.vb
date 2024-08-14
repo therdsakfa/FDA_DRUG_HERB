@@ -35,6 +35,9 @@
     End Sub
     Public Sub run_nav_new()
         Dim dao_h As New DAO_DRUG.TB_MAS_ADMIN_GROUP_BUTTON
+        'Dim dao_ma As New DAO_TABEAN_HERB.Mas_ASEA
+        'dao_ma.GetAll()
+        Dim SystemEdit As String = ""
         Dim gg As String = ""
         Try
             gg = _CLS.GROUPS
@@ -96,7 +99,11 @@
                             str_all &= "<li class='active'>"
                         End If
                         If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
-                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            If IsNothing(dao_g.fields.Process_ID) = True Then
+                                str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            Else
+                                str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "&PROCESS_ID=" & dao_g.fields.Process_ID & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            End If
                         Else
                             str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
                         End If
@@ -151,8 +158,16 @@
                         Else
                             str_all &= "<li class='active'>"
                         End If
-                        If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
-                            str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                        If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Or dao_g.fields.BTN_URL.Contains("WEBFORM") Then
+                            'str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "&PROCESS_ID=" & dao_g.fields.Process_ID & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            If IsNothing(dao_g.fields.Process_ID) = True Then
+                                'For Each dao_ma.fields In dao_ma.datas
+                                '    If _CLS.CITIZEN_ID = dao_ma.fields.identify Then SystemEdit = True
+                                'Next
+                                str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            Else
+                                str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "&PROCESS_ID=" & dao_g.fields.Process_ID & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                            End If
                         Else
                             str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
                         End If

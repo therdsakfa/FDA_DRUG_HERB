@@ -1,5 +1,4 @@
 ﻿Imports Telerik.Web.UI
-
 Public Class FRM_TABEAN_SEARCH
     Inherits System.Web.UI.Page
     Private _CLS As New CLS_SESSION

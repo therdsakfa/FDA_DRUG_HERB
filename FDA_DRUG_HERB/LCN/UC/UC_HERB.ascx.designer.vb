@@ -200,7 +200,7 @@ Partial Public Class UC_HERB
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbl_lcn_email As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbl_lcn_email As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txt_da_opentime control.
@@ -210,6 +210,15 @@ Partial Public Class UC_HERB
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_da_opentime As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lbl_da_opentime control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_da_opentime As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''TB_Personal control.

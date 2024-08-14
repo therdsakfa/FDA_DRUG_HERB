@@ -96,7 +96,7 @@
     </div>
     <div>
         <div class="panel-heading panel-title" style="padding-left: 5%;">
-            <h2>ค้นหาใบอนุญาตสถานที่ด้านยา</h2>
+            <h2>ค้นหาใบอนุญาตสถานที่ด้านผลิตภัณฑ์สมุนไพร</h2>
 
         </div>
 

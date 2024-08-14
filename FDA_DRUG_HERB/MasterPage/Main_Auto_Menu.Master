@@ -65,7 +65,7 @@
      <link href="../css/Custom.css" rel="stylesheet" />
 
 	<div class="wrapper two">
-		<header class="header"  style="background: #8CB343">
+		<header class="header"  style="background: #63320e">
 			<div class="inner">
 				<a href="" class="logo">
 					<img src="../imgs/logo@2x.png" alt="Logo" />
@@ -76,7 +76,7 @@
 						<img src="../imgs/logo@2x.png" alt="Logo" />
 					</a>
 					<!-- For Mobile -->
-					<span class="circle"  style="background: #8CB343"></span>
+					<span class="circle"  style="background: #63320e"></span>
 					<div class="media-body">
 						<h1>สมุนไพร&nbsp;</h1>
 						<p>สำนักงานคณะกรรมการอาหารและยา กระทรวงสาธารณสุข</p>

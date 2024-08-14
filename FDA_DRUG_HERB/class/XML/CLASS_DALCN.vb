@@ -257,7 +257,15 @@
                 _LCNNO_SHOW_NUMTHAI = value
             End Set
         End Property
-
+        Private _LCNNO_TYPE As String
+        Public Property LCNNO_TYPE() As String
+            Get
+                Return _LCNNO_TYPE
+            End Get
+            Set(ByVal value As String)
+                _LCNNO_TYPE = value
+            End Set
+        End Property
         Private _LCNNO_SHOW_NEW_NUMTHAI As String
         Public Property LCNNO_SHOW_NEW_NUMTHAI() As String
             Get
@@ -277,7 +285,15 @@
                 _RCVDAY = value
             End Set
         End Property
-
+        Private _PROCESS_ID As String
+        Public Property PROCESS_ID() As String
+            Get
+                Return _PROCESS_ID
+            End Get
+            Set(ByVal value As String)
+                _PROCESS_ID = value
+            End Set
+        End Property
         Private _RCVMONTH As String
         Public Property RCVMONTH() As String
             Get
@@ -641,10 +657,617 @@
                 _EXPYEAR = value
             End Set
         End Property
-
-
+        Private _RCVNO_FORMAT As String
+        Public Property RCVNO_FORMAT() As String
+            Get
+                Return _RCVNO_FORMAT
+            End Get
+            Set(ByVal value As String)
+                _RCVNO_FORMAT = value
+            End Set
+        End Property
+        Private _RCVDATE_DISPLAY As String
+        Public Property RCVDATE_DISPLAY() As String
+            Get
+                Return _RCVDATE_DISPLAY
+            End Get
+            Set(ByVal value As String)
+                _RCVDATE_DISPLAY = value
+            End Set
+        End Property
+        Private _OPEN_TIME As String
+        Public Property OPEN_TIME() As String
+            Get
+                Return _OPEN_TIME
+            End Get
+            Set(ByVal value As String)
+                _OPEN_TIME = value
+            End Set
+        End Property
+        Private _TRANSFER_NAME As String
+        Public Property TRANSFER_NAME() As String
+            Get
+                Return _TRANSFER_NAME
+            End Get
+            Set(ByVal value As String)
+                _TRANSFER_NAME = value
+            End Set
+        End Property
+        Private _TRANSFER_NAME_NEW As String
+        Public Property TRANSFER_NAME_NEW() As String
+            Get
+                Return _TRANSFER_NAME_NEW
+            End Get
+            Set(ByVal value As String)
+                _TRANSFER_NAME_NEW = value
+            End Set
+        End Property
+        Private _TRANSFER_DATE As String
+        Public Property TRANSFER_DATE() As String
+            Get
+                Return _TRANSFER_DATE
+            End Get
+            Set(ByVal value As String)
+                _TRANSFER_DATE = value
+            End Set
+        End Property
+        Private _LCNNO_OLD As String
+        Public Property LCNNO_DISPAY_OLD() As String
+            Get
+                Return _LCNNO_OLD
+            End Get
+            Set(ByVal value As String)
+                _LCNNO_OLD = value
+            End Set
+        End Property
 #End Region
 
+#Region "chk_smp"
+        Private _chk_smp1 As String
+        Public Property chk_smp1() As String
+            Get
+                Return _chk_smp1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1 = value
+            End Set
+        End Property
+        Private _chk_smp1_1 As String
+        Public Property chk_smp1_1() As String
+            Get
+                Return _chk_smp1_1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_1 = value
+            End Set
+        End Property
+        Private _chk_smp1_2 As String
+        Public Property chk_smp1_2() As String
+            Get
+                Return _chk_smp1_2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_2 = value
+            End Set
+        End Property
+        Private _chk_smp1_3 As String
+        Public Property chk_smp1_3() As String
+            Get
+                Return _chk_smp1_3
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_3 = value
+            End Set
+        End Property
+        Private _chk_smp1_4 As String
+        Public Property chk_smp1_4() As String
+            Get
+                Return _chk_smp1_4
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_4 = value
+            End Set
+        End Property
+        Private _chk_smp1_5 As String
+        Public Property chk_smp1_5() As String
+            Get
+                Return _chk_smp1_5
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_5 = value
+            End Set
+        End Property
+        Private _chk_smp1_6 As String
+        Public Property chk_smp1_6() As String
+            Get
+                Return _chk_smp1_6
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_6 = value
+            End Set
+        End Property
+        Private _chk_smp1_7 As String
+        Public Property chk_smp1_7() As String
+            Get
+                Return _chk_smp1_7
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_7 = value
+            End Set
+        End Property
+        Private _chk_smp1_8 As String
+        Public Property chk_smp1_8() As String
+            Get
+                Return _chk_smp1_8
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_8 = value
+            End Set
+        End Property
+        Private _chk_smp1_9 As String
+        Public Property chk_smp1_9() As String
+            Get
+                Return _chk_smp1_9
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_9 = value
+            End Set
+
+        End Property
+        Private _chk_smp1_10 As String
+        Public Property chk_smp1_10() As String
+            Get
+                Return _chk_smp1_10
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_10 = value
+            End Set
+
+        End Property
+        Private _chk_smp1_11 As String
+        Public Property chk_smp1_11() As String
+            Get
+                Return _chk_smp1_11
+            End Get
+            Set(ByVal value As String)
+                _chk_smp1_11 = value
+            End Set
+
+        End Property
+        Private _chk_smp2 As String
+        Public Property chk_smp2() As String
+            Get
+                Return _chk_smp2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2 = value
+            End Set
+        End Property
+        Private _chk_smp2_1 As String
+        Public Property chk_smp2_1() As String
+            Get
+                Return _chk_smp2_1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_1 = value
+            End Set
+        End Property
+        Private _chk_smp2_2 As String
+        Public Property chk_smp2_2() As String
+            Get
+                Return _chk_smp2_2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_2 = value
+            End Set
+        End Property
+        Private _chk_smp2_3 As String
+        Public Property chk_smp2_3() As String
+            Get
+                Return _chk_smp2_3
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_3 = value
+            End Set
+        End Property
+        Private _chk_smp2_4 As String
+        Public Property chk_smp2_4() As String
+            Get
+                Return _chk_smp2_4
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_4 = value
+            End Set
+        End Property
+        Private _chk_smp2_5 As String
+        Public Property chk_smp2_5() As String
+            Get
+                Return _chk_smp2_5
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_5 = value
+            End Set
+        End Property
+        Private _chk_smp2_6 As String
+        Public Property chk_smp2_6() As String
+            Get
+                Return _chk_smp2_6
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_6 = value
+            End Set
+        End Property
+        Private _chk_smp2_7 As String
+        Public Property chk_smp2_7() As String
+            Get
+                Return _chk_smp2_7
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_7 = value
+            End Set
+        End Property
+        Private _chk_smp2_8 As String
+        Public Property chk_smp2_8() As String
+            Get
+                Return _chk_smp2_8
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_8 = value
+            End Set
+        End Property
+        Private _chk_smp2_9 As String
+        Public Property chk_smp2_9() As String
+            Get
+                Return _chk_smp2_9
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_9 = value
+            End Set
+        End Property
+        Private _chk_smp2_10 As String
+        Public Property chk_smp2_10() As String
+            Get
+                Return _chk_smp2_10
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_10 = value
+            End Set
+        End Property
+        Private _chk_smp2_11 As String
+        Public Property chk_smp2_11() As String
+            Get
+                Return _chk_smp2_11
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_11 = value
+            End Set
+        End Property
+        Private _chk_smp2_12 As String
+        Public Property chk_smp2_12() As String
+            Get
+                Return _chk_smp2_12
+            End Get
+            Set(ByVal value As String)
+                _chk_smp2_12 = value
+            End Set
+        End Property
+        Private _chk_smp3 As String
+        Public Property chk_smp3() As String
+            Get
+                Return _chk_smp3
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3 = value
+            End Set
+        End Property
+        Private _chk_smp3_1 As String
+        Public Property chk_smp3_1() As String
+            Get
+                Return _chk_smp3_1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_1 = value
+            End Set
+        End Property
+        Private _chk_smp3_2 As String
+        Public Property chk_smp3_2() As String
+            Get
+                Return _chk_smp3_2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_2 = value
+            End Set
+        End Property
+        Private _chk_smp3_3 As String
+        Public Property chk_smp3_3() As String
+            Get
+                Return _chk_smp3_3
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_3 = value
+            End Set
+        End Property
+        Private _chk_smp3_4 As String
+        Public Property chk_smp3_4() As String
+            Get
+                Return _chk_smp3_4
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_4 = value
+            End Set
+        End Property
+        Private _chk_smp3_5 As String
+        Public Property chk_smp3_5() As String
+            Get
+                Return _chk_smp3_5
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_5 = value
+            End Set
+        End Property
+        Private _chk_smp3_6 As String
+        Public Property chk_smp3_6() As String
+            Get
+                Return _chk_smp3_6
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_6 = value
+            End Set
+        End Property
+        Private _chk_smp3_7 As String
+        Public Property chk_smp3_7() As String
+            Get
+                Return _chk_smp3_7
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_7 = value
+            End Set
+        End Property
+        Private _chk_smp3_8 As String
+        Public Property chk_smp3_8() As String
+            Get
+                Return _chk_smp3_8
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_8 = value
+            End Set
+        End Property
+        Private _chk_smp3_9 As String
+        Public Property chk_smp3_9() As String
+            Get
+                Return _chk_smp3_9
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_9 = value
+            End Set
+        End Property
+        Private _chk_smp3_10 As String
+        Public Property chk_smp3_10() As String
+            Get
+                Return _chk_smp3_10
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_10 = value
+            End Set
+        End Property
+        Private _chk_smp3_11 As String
+        Public Property chk_smp3_11() As String
+            Get
+                Return _chk_smp3_11
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_11 = value
+            End Set
+        End Property
+        Private _chk_smp3_12 As String
+        Public Property chk_smp3_12() As String
+            Get
+                Return _chk_smp3_12
+            End Get
+            Set(ByVal value As String)
+                _chk_smp3_12 = value
+            End Set
+        End Property
+        Private _chk_smp4 As String
+        Public Property chk_smp4() As String
+            Get
+                Return _chk_smp4
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4 = value
+            End Set
+        End Property
+        Private _chk_smp4_1 As String
+        Public Property chk_smp4_1() As String
+            Get
+                Return _chk_smp4_1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4_1 = value
+            End Set
+        End Property
+        Private _chk_smp4_1_1 As String
+        Public Property chk_smp4_1_1() As String
+            Get
+                Return _chk_smp4_1_1
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4_1_1 = value
+            End Set
+        End Property
+        Private _chk_smp4_1_2 As String
+        Public Property chk_smp4_1_2() As String
+            Get
+                Return _chk_smp4_1_2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4_1_2 = value
+            End Set
+        End Property
+        Private _chk_smp4_2 As String
+        Public Property chk_smp4_2() As String
+            Get
+                Return _chk_smp4_2
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4_2 = value
+            End Set
+        End Property
+        Private _chk_smp4_3 As String
+        Public Property chk_smp4_3() As String
+            Get
+                Return _chk_smp4_3
+            End Get
+            Set(ByVal value As String)
+                _chk_smp4_3 = value
+            End Set
+        End Property
+        Private _CHK_SMP1_SELL_1 As String
+        Public Property CHK_SMP1_SELL_1() As String
+            Get
+                Return _CHK_SMP1_SELL_1
+            End Get
+            Set(ByVal value As String)
+                _CHK_SMP1_SELL_1 = value
+            End Set
+        End Property
+        Private _CHK_SMP1_SELL_2 As String
+        Public Property CHK_SMP1_SELL_2() As String
+            Get
+                Return _CHK_SMP1_SELL_2
+            End Get
+            Set(ByVal value As String)
+                _CHK_SMP1_SELL_2 = value
+            End Set
+        End Property
+        Private _CHK_SMP1_SELL_3 As String
+        Public Property CHK_SMP1_SELL_3() As String
+            Get
+                Return _CHK_SMP1_SELL_3
+            End Get
+            Set(ByVal value As String)
+                _CHK_SMP1_SELL_3 = value
+            End Set
+        End Property
+        Private _CHK_SMP1_SELL_4 As String
+        Public Property CHK_SMP1_SELL_4() As String
+            Get
+                Return _CHK_SMP1_SELL_4
+            End Get
+            Set(ByVal value As String)
+                _CHK_SMP1_SELL_4 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_1 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_1() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_1
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_1 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_2 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_2() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_2
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_2 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_3 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_3() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_3
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_3 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_4 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_4() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_4
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_4 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_5 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_5() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_5
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_5 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_6 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_6() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_6
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_6 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_7 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_7() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_7
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_7 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_8 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_8() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_8
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_8 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_9 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_9() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_9
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_9 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_10 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_10() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_10
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_10 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_11 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_11() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_11
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_11 = value
+            End Set
+        End Property
+        Private _DDL_MENU_DRUG_GROUP_3_12 As String
+        Public Property DDL_MENU_DRUG_GROUP_3_12() As String
+            Get
+                Return _DDL_MENU_DRUG_GROUP_3_12
+            End Get
+            Set(ByVal value As String)
+                _DDL_MENU_DRUG_GROUP_3_12 = value
+            End Set
+        End Property
+
+#End Region
     End Class
 End Namespace
 

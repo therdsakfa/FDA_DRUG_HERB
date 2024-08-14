@@ -93,6 +93,28 @@ Public Class CLS_SESSION
             _LCNSID = value
         End Set
     End Property
+    Private _SID_ID As Integer
+    Public Property SID_ID() As Integer
+        Get
+            Return _SID_ID
+        End Get
+        Set(ByVal value As Integer)
+            _SID_ID = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' GROUPS ที่ได้จาก TOKEN
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private _BTN_GROUPS As String
+    Public Property BTN_GROUPS() As String
+        Get
+            Return _BTN_GROUPS
+        End Get
+        Set(ByVal value As String)
+            _BTN_GROUPS = value
+        End Set
+    End Property
     ''' <summary>
     ''' THANM ผู้คนlogin   ที่ได้จาก CITIZEN_ID
     ''' </summary>

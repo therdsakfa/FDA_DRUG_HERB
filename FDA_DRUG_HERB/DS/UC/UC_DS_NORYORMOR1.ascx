@@ -61,7 +61,7 @@
         </tr>
           <tr>
             <td align="right" class="auto-style3">
-                คำขออนุญาตินำหรือสั่งยา :</td>
+                คำขออนุญาตนำหรือสั่งยา :</td>
             <td>
                 <asp:RadioButton  ID="chk_for1" runat="server" GroupName="for" Text="แผนปัจจุบัน เข้ามาในราชอาณาจักรเพื่อการวิเคราะห์"></asp:RadioButton>
                 <br />
@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <td align="right" class="auto-style3">
-                คำขออนุญาตินำหรือสั่งยาฯ ณ สถานที่ชื่อ : :</td>
+                คำขออนุญาตนำหรือสั่งยาฯ ณ สถานที่ชื่อ : :</td>
             <td>
                 <asp:Label ID="lbl_place_name" runat="server" Text="-"></asp:Label>
             </td>

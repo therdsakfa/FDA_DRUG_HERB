@@ -82,7 +82,7 @@
             _CLS.ID_MENU = 8734002
             Session("CLS") = _CLS
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('ระบบกำลังปรับปรุง');", True)
-            'Response.Redirect("../MAIN/FRM_MAIN_PAGE_PRODUCT.aspx")
+            'Response.Redirect("../HERB_TABEAN/FRM_HERB_TABEAN_MAIN_MEMU.aspx")
             'Response.Redirect("https://medicina.fda.moph.go.th/FDA_DRUG/MAIN/FRM_MAIN_PAGE_PRODUCT.aspx")
             '
         Else

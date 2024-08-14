@@ -331,6 +331,11 @@
 
             End Try
             Try
+                .Email = lbl_lcn_email.Text
+            Catch ex As Exception
+
+            End Try
+            Try
                 .opentime = txt_da_opentime.Text
             Catch ex As Exception
 
@@ -368,6 +373,7 @@
         dao.fields.thanm = dao_syslcnsnm.fields.thanm
         dao.fields.syslcnsnm_ID = dao_syslcnsnm.fields.ID
         dao.fields.syslcnsnm_identify = dao_syslcnsnm.fields.identify
+        dao.fields.IDENTIFY = dao_syslcnsnm.fields.identify
         dao.fields.syslcnsnm_lcnsid = dao_syslcnsnm.fields.lcnsid
         dao.fields.syslcnsnm_lcnscd = dao_syslcnsnm.fields.lcnscd
         dao.fields.syslcnsnm_prefixcd = dao_syslcnsnm.fields.prefixcd
@@ -450,6 +456,7 @@
         dao.fields.LOCATION_ADDRESS_engchngwtnm = dao_location_address.fields.engchngwtnm
         dao.fields.LOCATION_ADDRESS_IDENTIFY = dao_location_address.fields.IDENTIFY
         dao.fields.LOCATION_ADDRESS_REMARK = dao_location_address.fields.REMARK
+        dao.fields.mock_location = dao_location_address.fields.mock_id
 
     End Sub
     Sub setdata_frgn_data(ByRef dao As DAO_DRUG.TB_DALCN_FRGN_DATA)
@@ -888,4 +895,18 @@
 
         End If
     End Sub
+    Function check_infor() As Boolean
+        If txt_da_opentime.Text = "" Then
+            Response.Write("<script type='text/javascript'>window.parent.alert('กรุณากรอกข้อมูลเวลาทำการของร้าน');</script> ")
+            Return False
+        End If
+        Return True
+    End Function
+    Sub Chek_information()
+        If txt_da_opentime.Text = "" Then
+            lbl_da_opentime.Style.Add("display", "initial")
+        Else lbl_da_opentime.Style.Add("display", "none")
+        End If
+    End Sub
+
 End Class

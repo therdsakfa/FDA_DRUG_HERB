@@ -11,26 +11,24 @@
         </td>
     </tr>--%>
     <tr>
-        <td>
-            ระบุปริมาณที่ใช้เป็น 1 หน่วย</td>
+        <td>ระบุปริมาณที่ใช้เป็น 1 หน่วย</td>
     </tr>
 
     <tr>
         <td>
-          <table>
-              <tr>
-                  <td>
-                      Each
-                  </td>
-                  <td>
-                      <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
-                  </td>
-                  <td>
-                      <asp:DropDownList ID="ddl_unit_each" runat="server"></asp:DropDownList>
-                  </td>
-                  <td>Contains;</td>
-                  <td>ของสูตรที่</td>
-                  <td>
+            <table>
+                <tr>
+                    <td>Each
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txt_each" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddl_unit_each" runat="server"></asp:DropDownList>
+                    </td>
+                    <td>Contains;</td>
+                    <td>ของสูตรที่</td>
+                    <td>
                         <asp:DropDownList ID="ddl_set_each" runat="server" AutoPostBack="True" Width="90px">
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -44,29 +42,24 @@
                             <asp:ListItem>10</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                  <td>
-                      <asp:Button ID="btn_save" runat="server" Text="บันทึก" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      &nbsp;</td>
-                  <td>
-                      <asp:TextBox ID="txt_each_txt" runat="server"></asp:TextBox>
-                  </td>
-                  <td>
-                      (คำบรรยาย)</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>
-                        &nbsp;</td>
-                  <td>
-                      &nbsp;</td>
-              </tr>
-          </table>
+                    <td>
+                        <asp:Button ID="btn_save" runat="server" Text="บันทึก" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <asp:TextBox ID="txt_each_txt" runat="server"></asp:TextBox>
+                    </td>
+                    <td>(คำบรรยาย)</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
         </td>
     </tr>
-
     <tr>
         <td>
             <%--ปริมาณต่อหน่วย(ในแต่ละ) &nbsp;<asp:TextBox ID="txt_drg_perunit" runat="server"></asp:TextBox>
@@ -75,12 +68,10 @@
         </td>
     </tr>
     <tr>
-        <td>
-            &nbsp;</td>
+        <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>
-            &nbsp;</td>
+        <td>&nbsp;</td>
     </tr>
     <tr>
         <td>
@@ -90,7 +81,7 @@
     <tr>
         <td>
             <telerik:RadGrid ID="rg_search_iowa" runat="server" AllowPaging="true" PageSize="10">
-                <MasterTableView autogeneratecolumns="False" >
+                <MasterTableView AutoGenerateColumns="False">
                     <Columns>
                         <telerik:GridClientSelectColumn UniqueName="chk" HeaderText="เลือก">
                         </telerik:GridClientSelectColumn>
@@ -98,18 +89,17 @@
                         </telerik:GridBoundColumn>
                         <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column" HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm">
                         </telerik:GridBoundColumn>
-<%--                        <telerik:GridBoundColumn DataField="aori" FilterControlAltText="Filter aori column" HeaderText="aori" SortExpression="aori" UniqueName="aori">
+                        <%--                        <telerik:GridBoundColumn DataField="aori" FilterControlAltText="Filter aori column" HeaderText="aori" SortExpression="aori" UniqueName="aori">
                         </telerik:GridBoundColumn>--%>
                     </Columns>
                 </MasterTableView>
-                <ClientSettings EnableRowHoverStyle="true" >
-        <Selecting AllowRowSelect="true" />
-    </ClientSettings>
+                <ClientSettings EnableRowHoverStyle="true">
+                    <Selecting AllowRowSelect="true" />
+                </ClientSettings>
             </telerik:RadGrid>
 
         </td>
     </tr>
-
     <tr>
         <td align="center">
             <table width="800px">
@@ -128,10 +118,7 @@
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                    
-                    
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>เงื่อนไข</td>
@@ -165,24 +152,17 @@
                     <td>
                         <asp:DropDownList ID="ddl_unit4" runat="server"></asp:DropDownList>
                     </td>
-                    
-                    
                 </tr>
-                
                 <tr>
                     <td>&nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>ปริมาณชีววัตถุ</td>
-                    <td>
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -190,8 +170,7 @@
                     <td>
                         <asp:TextBox ID="txt_sbioqty" runat="server" Width="100px"></asp:TextBox>
                     </td>
-                    <td>
-                        หน่วยตั้งต้น :</td>
+                    <td>หน่วยตั้งต้น :</td>
                     <td>
                         <asp:DropDownList ID="ddl_unit2" runat="server"></asp:DropDownList>
                     </td>
@@ -201,8 +180,7 @@
                     <td>
                         <asp:TextBox ID="txt_sbiosqno" runat="server" Width="100px"></asp:TextBox>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -210,8 +188,7 @@
                     <td>
                         <asp:TextBox ID="txt_ebioqty" runat="server" Width="100px"></asp:TextBox>
                     </td>
-                    <td>
-                        หน่วยสุดท้าย :</td>
+                    <td>หน่วยสุดท้าย :</td>
                     <td>
                         <asp:DropDownList ID="ddl_unit3" runat="server"></asp:DropDownList>
                     </td>
@@ -221,29 +198,26 @@
                     <td>
                         <asp:TextBox ID="txt_ebiosqno" runat="server" Width="100px"></asp:TextBox>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>เอกสารอ้างอิง</td>
                     <td align="left" colspan="3">
                         <asp:TextBox ID="txt_ref" runat="server" Width="100%"></asp:TextBox>
-                        </td>
+                    </td>
                 </tr>
                 <tr>
-                    <td >หมายเหตุ</td>
-                    <td align="left"  colspan="3">
+                    <td>หมายเหตุ</td>
+                    <td align="left" colspan="3">
                         <asp:TextBox ID="txt_remark" runat="server" Width="100%"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td >&nbsp;</td>
-                    <td >
-                        &nbsp;</td>
-                    <td >
-                        &nbsp;</td>
-                    <td >&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td>ประเภทสาร A/I :
@@ -254,8 +228,7 @@
                             <asp:ListItem>I</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -274,8 +247,7 @@
                             <asp:ListItem>10</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td>
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -284,60 +256,56 @@
                         <asp:TextBox ID="txt_ROWS" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" CssClass="input-lg"/>
+                        <asp:Button ID="btn_select" runat="server" Text="เพิ่มสาร" CssClass="input-lg" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
-
-            
-
         </td>
     </tr>
     <tr>
         <%--<td  bgcolor="Lavender" width="197px" height="28px">สารสำคัญ : </td>--%>
         <td colspan="4">
             <asp:Label ID="lbl_each" runat="server" Text="-"></asp:Label>
-            </td>
-        </tr>
+        </td>
+    </tr>
     <tr>
         <%--<td  bgcolor="Lavender" width="197px" height="28px">สารสำคัญ : </td>--%>
         <td colspan="4">
             <table>
                 <tr>
                     <td>
-                        <asp:Button ID="btn_up" runat="server" Text="ขึ้น" style="display:none;"  />
+                        <asp:Button ID="btn_up" runat="server" Text="ขึ้น" Style="display: none;" />
                     </td>
                     <td>
-                        <asp:Button ID="btn_down" runat="server" Text="ลง" style="display:none;" />
-                       <%-- <asp:Button ID="btn_reset_order" runat="server" Text="Reset ลำดับ" />--%>
+                        <asp:Button ID="btn_down" runat="server" Text="ลง" Style="display: none;" />
+                        <%-- <asp:Button ID="btn_reset_order" runat="server" Text="Reset ลำดับ" />--%>
                     </td>
                     <td>
-                        <asp:Button ID="btn_reset" runat="server" Text="รีเซ็ตลำดับ" style="display:none;" />
+                        <asp:Button ID="btn_reset" runat="server" Text="รีเซ็ตลำดับ" Style="display: none;" />
                     </td>
                 </tr>
             </table>
-
             <telerik:RadGrid ID="rg_chem" runat="server" Width="100%">
                 <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA" NoMasterRecordsText="ไม่พบข้อมูล">
                     <Columns>
-                         <telerik:GridClientSelectColumn UniqueName="chk" HeaderText="เลือก">
+                        <telerik:GridClientSelectColumn UniqueName="chk" HeaderText="เลือก">
                         </telerik:GridClientSelectColumn>
                         <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                             SortExpression="IDA" UniqueName="IDA" Display="false">
                         </telerik:GridBoundColumn>
                         <telerik:GridBoundColumn DataField="FK_SET" FilterControlAltText="Filter FK_SET column" HeaderText="สูตรที่"
-                            SortExpression="FK_SET" UniqueName="FK_SET" >
+                            SortExpression="FK_SET" UniqueName="FK_SET">
                         </telerik:GridBoundColumn>
                         <%--<telerik:GridBoundColumn DataField="ROWS" FilterControlAltText="Filter ROWS column" HeaderText="ลำดับ"
                             SortExpression="ROWS" UniqueName="ROWS" >
                         </telerik:GridBoundColumn>--%>
-                          <telerik:GridTemplateColumn UniqueName="ROWS" HeaderText="ลำดับ">
-                                    <ItemTemplate>
-                                        <asp:TextBox ID="txt_rows" runat="server" Width="20px"></asp:TextBox>
-                                        <asp:Label ID="lbl_rows" runat="server" Text="" style="display:none;"></asp:Label>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn UniqueName="ROWS" HeaderText="ลำดับ">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txt_rows" runat="server" Width="20px"></asp:TextBox>
+                                <asp:Label ID="lbl_rows" runat="server" Text="" Style="display: none;"></asp:Label>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
 
                         <telerik:GridBoundColumn DataField="iowanm" FilterControlAltText="Filter iowanm column"
                             HeaderText="ชื่อสาร" SortExpression="iowanm" UniqueName="iowanm">
@@ -352,27 +320,25 @@
                         </telerik:GridBoundColumn>
                         <telerik:GridBoundColumn DataField="REMARK" FilterControlAltText="Filter REMARK column" HeaderText="หมายเหตุ" SortExpression="REMARK" UniqueName="REMARK">
                         </telerik:GridBoundColumn>
-                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="_eqto" HeaderText="EQTO" 
+                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="_eqto" HeaderText="EQTO"
                             CommandName="_eqto" Text="EQTO">
                             <HeaderStyle Width="70px" />
                         </telerik:GridButtonColumn>
-                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="_del" HeaderText="ลบรายการ"  ConfirmText="ต้องการลบหรือไม่?"
+                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="_del" HeaderText="ลบรายการ" ConfirmText="ต้องการลบหรือไม่?"
                             CommandName="_del" Text="ลบ">
                             <HeaderStyle Width="70px" />
                         </telerik:GridButtonColumn>
                     </Columns>
                 </MasterTableView>
-                <ClientSettings EnableRowHoverStyle="true" >
-        <Selecting AllowRowSelect="true" />
-    </ClientSettings>
+                <ClientSettings EnableRowHoverStyle="true">
+                    <Selecting AllowRowSelect="true" />
+                </ClientSettings>
             </telerik:RadGrid>
         </td>
     </tr>
     <tr>
         <td colspan="4" align="center">
-
             <asp:Button ID="btn_rows_save" runat="server" Text="บันทึกลำดับ" />
-
         </td>
     </tr>
     <%-- <tr>

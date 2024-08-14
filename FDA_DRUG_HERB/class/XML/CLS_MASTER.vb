@@ -362,4 +362,31 @@
             _DT37 = value
         End Set
     End Property
+    Private _DT38 As DataTable
+    Public Property DT38() As DataTable
+        Get
+            Return _DT38
+        End Get
+        Set(ByVal value As DataTable)
+            _DT38 = value
+        End Set
+    End Property
+    Private _DT39 As DataTable
+    Public Property DT39() As DataTable
+        Get
+            Return _DT39
+        End Get
+        Set(ByVal value As DataTable)
+            _DT39 = value
+        End Set
+    End Property
+    Private _DT40 As DataTable
+    Public Property DT40() As DataTable
+        Get
+            Return _DT40
+        End Get
+        Set(ByVal value As DataTable)
+            _DT40 = value
+        End Set
+    End Property
 End Class

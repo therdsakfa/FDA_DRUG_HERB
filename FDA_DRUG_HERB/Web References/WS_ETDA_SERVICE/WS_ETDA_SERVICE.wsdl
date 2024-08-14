@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CONNECT_PDF_ECTD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="B64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FILENAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ORG_CODE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONNECT_PDF_ECTDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CONNECT_PDF_ECTDResult" type="tns:CLS_RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLS_RESULT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FILENAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CHECK_RESULT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CHECK_RESULT_MSG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TEST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PATH_FILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FILENAME" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TESTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TESTResult" type="tns:CLS_RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_TRAN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_TRANResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_TRANResult" type="tns:CLS_RESULT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CONNECT_PDF_ECTDSoapIn">
+    <wsdl:part name="parameters" element="tns:CONNECT_PDF_ECTD" />
+  </wsdl:message>
+  <wsdl:message name="CONNECT_PDF_ECTDSoapOut">
+    <wsdl:part name="parameters" element="tns:CONNECT_PDF_ECTDResponse" />
+  </wsdl:message>
+  <wsdl:message name="TESTSoapIn">
+    <wsdl:part name="parameters" element="tns:TEST" />
+  </wsdl:message>
+  <wsdl:message name="TESTSoapOut">
+    <wsdl:part name="parameters" element="tns:TESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_TRANSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_TRAN" />
+  </wsdl:message>
+  <wsdl:message name="GET_TRANSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_TRANResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_ETDA_SERVICESoap">
+    <wsdl:operation name="CONNECT_PDF_ECTD">
+      <wsdl:input message="tns:CONNECT_PDF_ECTDSoapIn" />
+      <wsdl:output message="tns:CONNECT_PDF_ECTDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <wsdl:input message="tns:TESTSoapIn" />
+      <wsdl:output message="tns:TESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_TRAN">
+      <wsdl:input message="tns:GET_TRANSoapIn" />
+      <wsdl:output message="tns:GET_TRANSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_ETDA_SERVICESoap" type="tns:WS_ETDA_SERVICESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CONNECT_PDF_ECTD">
+      <soap:operation soapAction="http://tempuri.org/CONNECT_PDF_ECTD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <soap:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_TRAN">
+      <soap:operation soapAction="http://tempuri.org/GET_TRAN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_ETDA_SERVICESoap12" type="tns:WS_ETDA_SERVICESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CONNECT_PDF_ECTD">
+      <soap12:operation soapAction="http://tempuri.org/CONNECT_PDF_ECTD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <soap12:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_TRAN">
+      <soap12:operation soapAction="http://tempuri.org/GET_TRAN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_ETDA_SERVICE">
+    <wsdl:port name="WS_ETDA_SERVICESoap" binding="tns:WS_ETDA_SERVICESoap">
+      <soap:address location="http://164.115.28.108/PDF_ECTDV2/WS_ETDA_SERVICE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_ETDA_SERVICESoap12" binding="tns:WS_ETDA_SERVICESoap12">
+      <soap12:address location="http://164.115.28.108/PDF_ECTDV2/WS_ETDA_SERVICE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

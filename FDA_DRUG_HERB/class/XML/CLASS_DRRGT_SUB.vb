@@ -64,6 +64,24 @@
             _RGTNO_FORMAT = value
         End Set
     End Property
+    Private _RCVDATE_THAI As String
+    Public Property RCVDATE_THAI() As String
+        Get
+            Return _RCVDATE_THAI
+        End Get
+        Set(ByVal value As String)
+            _RCVDATE_THAI = value
+        End Set
+    End Property
+    Private _RCVFULLNAME As String
+    Public Property RCVFULLNAME() As String
+        Get
+            Return _RCVFULLNAME
+        End Get
+        Set(ByVal value As String)
+            _RCVFULLNAME = value
+        End Set
+    End Property
     Private _DRUG_NAME As String
     Public Property DRUG_NAME() As String
         Get

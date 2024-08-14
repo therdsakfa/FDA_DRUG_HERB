@@ -13,6 +13,7 @@ Imports QRCoder
 Imports System.Drawing
 Imports System.Xml.Serialization
 Imports System.Xml
+Imports System.Web.Script.Serialization
 
 Public Module UTILITY_CLS
     Function ConvermXmlstr_TO_CLASS(Of T As Class)(ByRef str As String) As T
@@ -24,6 +25,21 @@ Public Module UTILITY_CLS
         Catch ex As Exception
             'MsgBox(ex.ToString)
         End Try
+        Return c
+
+    End Function
+    Function ConvertFromXml(Of T As Class)(ByRef str As String) As T
+
+
+        Dim serializer As XmlSerializer = New XmlSerializer(GetType(T))
+
+
+        Dim reader As StringReader = New StringReader(str)
+
+
+        Dim c As T = TryCast(serializer.Deserialize(reader), T)
+
+
         Return c
 
     End Function
@@ -117,13 +133,37 @@ Public Module UTILITY_CLS
         Return aa
     End Function
     '
-    <System.Runtime.CompilerServices.Extension()> _
+    <System.Runtime.CompilerServices.Extension()>
     Public Function Get_drrqt_Status(ByVal FK_IDA As Integer)
         Dim dao_rq As New DAO_DRUG.ClsDBdrrqt
         dao_rq.GetDataby_IDA(FK_IDA)
         Dim stattus_id As Integer = 0
         Try
             stattus_id = dao_rq.fields.STATUS_ID
+        Catch ex As Exception
+
+        End Try
+        Return stattus_id
+    End Function
+    <System.Runtime.CompilerServices.Extension()>
+    Public Function Get_TabeanJJ_Status_by_trid(ByVal tr_id As Integer)
+        Dim dao_jj As New DAO_TABEAN_HERB.TB_TABEAN_JJ
+        dao_jj.GetdatabyID_TR_ID(tr_id)
+        Dim stattus_id As Integer = 0
+        Try
+            stattus_id = dao_jj.fields.STATUS_ID
+        Catch ex As Exception
+
+        End Try
+        Return stattus_id
+    End Function
+    <System.Runtime.CompilerServices.Extension()>
+    Public Function Get_TabeanEXH_Status_by_trid(ByVal tr_id As Integer)
+        Dim dao As New DAO_TABEAN_HERB.TB_TABEAN_EXHIBITION
+        dao.GetdatabyID_TR_ID(tr_id)
+        Dim stattus_id As Integer = 0
+        Try
+            stattus_id = dao.fields.STATUS_ID
         Catch ex As Exception
 
         End Try
@@ -141,11 +181,15 @@ Public Module UTILITY_CLS
         Dim dao_rq As New DAO_DRUG.ClsDBdrrqt
         dao_rq.GetDataby_TR_ID(tr_id)
         Dim stattus_id As Integer = 0
-        Try
-            stattus_id = dao_rq.fields.STATUS_ID
-        Catch ex As Exception
+        If tr_id = 0 Then
+            stattus_id = 1
+        Else
+            Try
+                stattus_id = dao_rq.fields.STATUS_ID
+            Catch ex As Exception
 
-        End Try
+            End Try
+        End If
         Return stattus_id
     End Function
     <System.Runtime.CompilerServices.Extension()>
@@ -183,9 +227,9 @@ Public Module UTILITY_CLS
         dao.fields.URL = url
         dao.insert()
     End Sub
-    <System.Runtime.CompilerServices.Extension()> _
-    Public Sub KEEP_LOGS_TABEAN_BC(ByVal pvncd As Integer, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As Integer, ByVal IDA_drrgt As Integer, _
-                                   ByVal IDENTIFY_EDIT As String, ByVal NEW_DETAIL_EDIT As String, ByVal Newcode_U As String, ByVal PREVIOUS_DETAIL_EDIT As String, _
+    <System.Runtime.CompilerServices.Extension()>
+    Public Sub KEEP_LOGS_TABEAN_BC(ByVal pvncd As Integer, ByVal rgttpcd As String, ByVal drgtpcd As String, ByVal rgtno As Integer, ByVal IDA_drrgt As Integer,
+                                   ByVal IDENTIFY_EDIT As String, ByVal NEW_DETAIL_EDIT As String, ByVal Newcode_U As String, ByVal PREVIOUS_DETAIL_EDIT As String,
                                    ByVal STATUS As String, ByVal URL As String, ByVal USER_ID_EDIT As String)
         Dim dao As New DAO_DRUG.TB_LOG_EDIT_PRODUCT_ESUB_BC
         With dao.fields
@@ -205,6 +249,23 @@ Public Module UTILITY_CLS
             .USER_ID_EDIT = USER_ID_EDIT
         End With
         dao.insert()
+    End Sub
+    <System.Runtime.CompilerServices.Extension>
+    Public Sub AddLogStatus_lcn(ByVal status_id As Integer, ByVal process_id As String, ByVal iden As String, Optional FK_IDA As Integer = 0, Optional ddl_id As Integer = 0, Optional ddl_name As String = "")
+        Try
+            Dim dao As New DAO_DRUG.TB_LOG_STATUS_LCN
+            dao.fields.IDENTIFY = iden
+            dao.fields.PROCESS_ID = process_id
+            dao.fields.STATUS_DATE = Date.Now
+            dao.fields.STATUS_ID = status_id
+            dao.fields.FK_IDA = FK_IDA
+            dao.fields.STAFF_ID = ddl_id
+            dao.fields.STAFF_NAME = ddl_name
+            dao.insert()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Public Sub SEND_XML_DR(ByVal model As LGT_IOW_E, ByVal Newcode As String, ByVal IDENTIFY_EDIT As String)
 
@@ -302,7 +363,7 @@ Public Module UTILITY_CLS
 
         Return province_id
     End Function
-    <System.Runtime.CompilerServices.Extension()> _
+    <System.Runtime.CompilerServices.Extension()>
     Public Function Personal_Province_NEW(ByVal iden As String, tax_iden As String, ByVal IDgroup As String) As Integer
         Dim province_id As Integer = 0
         Dim ws As New WS_PVNCD.WebService1
@@ -331,6 +392,25 @@ Public Module UTILITY_CLS
 
 
         Return province_id
+    End Function
+    <System.Runtime.CompilerServices.Extension>
+    Public Function Test(ByVal IDgroup As String) As Integer
+        Dim f As New FileUpload
+        Dim fs As System.IO.Stream = f.PostedFile.InputStream
+        Dim br As New System.IO.BinaryReader(f.PostedFile.InputStream)
+        Dim bytes As Byte() = br.ReadBytes(CType(fs.Length, Integer))
+        Dim b64 As String = Convert.ToBase64String(bytes, 0, bytes.Length)
+        Dim ws_etda As New WS_ETDA_SERVICE.WS_ETDA_SERVICE
+        Dim result = ws_etda.CONNECT_PDF_ECTD(b64, f.FileName, "HERB")
+
+        Dim dao_f As DAO_TABEAN_HERB.TB_TABEAN_HERB_UPLOAD_FILE_JJ
+        'If result.CHECK_RESULT = "YES" Then
+        '    dao_f.fields.FILE_VALIDATE = 1
+        'Else
+        '    dao_f.fields.FILE_VALIDATE = 0
+        'End If
+        'dao_f.fields.REF_ID = result.REF_ID
+        Return b64
     End Function
     <System.Runtime.CompilerServices.Extension> _
     Public Sub AddLogStatus(ByVal status_id As Integer, ByVal process_id As String, ByVal iden As String, Optional FK_IDA As Integer = 0)
@@ -461,7 +541,7 @@ Public Module UTILITY_CLS
         Dropdown.Items.Insert(0, New ListItem(Text, Value))
         Dropdown.SelectedIndex = 0
     End Sub
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Function NumEng2Thai(strEng As String) As String
         Dim strThai As String = ""
         Dim strTemp As Byte
@@ -479,13 +559,73 @@ Public Module UTILITY_CLS
         NumEng2Thai = strThai
     End Function
 
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Sub Run_Service_LCN(ByVal IDA As Integer, ByVal citizen_id As String)
         Dim ws_update As New WS_DRUG.WS_DRUG
         ws_update.HERB_UPDATE_LICEN(IDA, citizen_id)
     End Sub
 
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
+    Function GetNameByIdentify(ByVal IDentify As String)
+        Dim citizen_id As String = IDentify
+        Dim THAIFULLNAME As String = ""
+        Dim ws_center As New WS_DATA_CENTER.WS_DATA_CENTER
+        Dim obj As New XML_DATA
+        'Dim cls As New CLS_COMMON.convert
+        Dim result As String = ""
+        'result = ws_center.GET_DATA_IDEM(citizen_id, citizen_id, "IDEM", "DPIS")
+        result = ws_center.GET_DATA_IDENTIFY(citizen_id, citizen_id, "FUSION", "P@ssw0rdfusion440")
+        obj = ConvertFromXml(Of XML_DATA)(result)
+        Try
+            If obj.SYSLCNSIDs.type Is Nothing Then
+                THAIFULLNAME = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+            Else
+                Dim TYPE_PERSON As Integer = obj.SYSLCNSIDs.type
+                If TYPE_PERSON = 1 Then
+                    THAIFULLNAME = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                ElseIf TYPE_PERSON = 99 Then
+                    THAIFULLNAME = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                Else
+                    If obj.SYSLCNSNMs.thalnm IsNot Nothing Then
+                        THAIFULLNAME = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                    Else
+                        THAIFULLNAME = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            THAIFULLNAME = ""
+        End Try
+        Return THAIFULLNAME
+    End Function
+
+    <System.Runtime.CompilerServices.Extension>
+    Public Function date_to_thai(ByVal _date As Date)
+        Dim dateD_TH As String = ""
+        Dim dateM_TH As String = ""
+        Dim dateY_TH As String = ""
+        Dim dateD As Date
+        Dim dateM As Date
+        Dim dateY As Date
+        Dim date_FULL As String = ""
+        Try
+            _date = _date
+            _date = CDate(_date).ToString("dd/MM/yyy")
+            dateD = _date
+            dateM = _date
+            dateY = _date
+
+            dateD_TH = dateD.Day.ToString()
+            dateM_TH = dateM.ToString("MMMM")
+            dateY_TH = con_year(dateY.Year)
+            date_FULL = dateD_TH & " " & dateM_TH & " " & dateY_TH
+        Catch ex As Exception
+
+        End Try
+
+        Return date_FULL
+    End Function
+    <System.Runtime.CompilerServices.Extension>
     Sub insert_tabean_auto(ByVal FK_IDA As Integer)
         Dim dao As New DAO_DRUG.ClsDBdrrqt
         dao.GetDataby_IDA(FK_IDA)
@@ -925,4 +1065,28 @@ Public Module UTILITY_CLS
             dao_aniuse_rg.insert()
         Next
     End Sub
+    Class url_json
+        Public Property CTZNO_PERSON_CALL As String
+        Public Property ENTREPRENEUR_IDENTIFY As String
+        Public Property TOKEN As String
+        Public Property REF_CODE As String 'รอพี่บิ๊กกำหนดชื่อตัวแปรอีกที    
+        Public Property ORG As String
+    End Class
+    <System.Runtime.CompilerServices.Extension>
+    Public Function DBD_LINK(ByVal IDENTIFY As String, ByVal COMPANY_INDENTIFY As String, ByVal TR_ID As String, ByVal TOKEN As String)
+        Dim DBD As New url_json
+        DBD.REF_CODE = TR_ID
+        DBD.CTZNO_PERSON_CALL = IDENTIFY
+        DBD.ENTREPRENEUR_IDENTIFY = COMPANY_INDENTIFY
+        DBD.TOKEN = TOKEN
+        DBD.ORG = "HERB"
+
+        Dim jss As New JavaScriptSerializer
+        Dim js_str As String = jss.Serialize(DBD)
+        Dim byt As Byte() = System.Text.Encoding.UTF8.GetBytes(js_str)
+        Dim b64 = Convert.ToBase64String(byt)
+        Dim URL = "https://help.fda.moph.go.th/FDA_DBD/HOME/DBD_DATA?B64=" & b64
+
+        Return URL
+    End Function
 End Module

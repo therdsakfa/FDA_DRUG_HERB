@@ -78,9 +78,20 @@ Public Class FRM_REPORT_RDLC
             'dt_animal = bao_show.SP_dramldrg_BY_FK_IDA(Request.QueryString("IDA")) 'SP_dramldrg_BY_newcode
             'dt_tp_stock = bao_show.SP_DRRGT_KEEP_DRUG_BY_FK_IDA(Request.QueryString("IDA")) 'SP_DRRGT_KEEP_DRUG_BY_newcode
             'dt_edit_history = bao_show.SP_DRRGT_EDIT_REQUEST_HISTORY(Request.QueryString("IDA"))
+            Dim dao_rgtno As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
+            dao_rgtno.GetDataby_u1(newcode)
+            Dim lcntpcd As String = dao_rgtno.fields.lcntpcd
+            Try
+                If lcntpcd.Contains("สม") Then
+                    dt_drug_general = bao_master_2.SP_drug_general_sai_v2_NEW(Request.QueryString("NEWCODE"))
+                Else
+                    dt_drug_general = bao_master_2.SP_drug_general_sai_v2(Request.QueryString("NEWCODE"))
+                End If
+            Catch ex As Exception
+                dt_drug_general = bao_master_2.SP_drug_general_sai_v2(Request.QueryString("NEWCODE"))
+            End Try
 
-
-            dt_drug_general = bao_master_2.SP_drug_general_sai_v2(Request.QueryString("NEWCODE")) '
+            'dt_drug_general = bao_master_2.SP_drug_general_sai_v2(Request.QueryString("NEWCODE")) '
             dt_formula = bao_master_2.SP_drug_formula_rg_by_Newcode(Request.QueryString("NEWCODE")) '
             dt_frgn = bao_show.SP_DRRGT_PRODUCER_ALL_BY_NEWCODE(Request.QueryString("NEWCODE")) '
             dt_drug_recipe = bao_show.SP_DRRGT_ATC_DETAIL_BY_Newcode(Request.QueryString("NEWCODE")) '
@@ -99,7 +110,17 @@ Public Class FRM_REPORT_RDLC
                 tr_id = dao_rgt.fields.IDA
             End Try
 
-            dt_drug_general = bao_master_2.SP_drug_general_rq(Request.QueryString("IDA"))
+            Dim lcntpcd As String
+            Dim dao_rgtno As New DAO_DRUG.ClsDBdrrqt
+            dao_rgtno.GetDataby_IDA(Request.QueryString("IDA"))
+            lcntpcd = dao_rgtno.fields.lcntpcd
+
+            If lcntpcd = "ผสม" Or lcntpcd = "นสม" Or lcntpcd = "ขสม" Then
+                dt_drug_general = bao_master_2.SP_drug_general_rq_new(Request.QueryString("IDA"))
+            Else
+                dt_drug_general = bao_master_2.SP_drug_general_rq(Request.QueryString("IDA"))
+            End If
+            'dt_drug_general = bao_master_2.SP_drug_general_rq(Request.QueryString("IDA"))
             dt_formula = bao_master_2.SP_drug_formula_rq(Request.QueryString("IDA"))
             dt_frgn = bao_show.SP_DRRQT_PRODUCER_ALL_BY_FK_IDA(Request.QueryString("IDA"))
             dt_drug_recipe = bao_show.SP_DRRQT_ATC_DETAIL_BY_FK_IDA(Request.QueryString("IDA"))

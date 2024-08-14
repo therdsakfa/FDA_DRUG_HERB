@@ -133,7 +133,7 @@ Public Class FRM_SEARCH_REGIST
                     url = "../RGT_EDIT/FRM_RGT_EDIT_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process") & "&newcode=" & newcode
 
                 ElseIf _process = "130098" Then
-                    url = "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process") '& "&newcode=" & newcode
+                    url = "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_MAIN.aspx?rgt_ida=" & str_ID & "&lcn_ida=" & dao_rg.fields.FK_LCN_IDA & "&lct_ida=" & dao_da.fields.FK_IDA & "&process=" & Request.QueryString("process") & "&newcode=" & newcode
                 End If
                 If Request.QueryString("staff") <> "" Then
                     url &= "&staff=1&identify=" & Request.QueryString("identify")

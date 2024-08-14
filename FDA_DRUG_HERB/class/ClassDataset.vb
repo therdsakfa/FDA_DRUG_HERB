@@ -57,6 +57,17 @@ Imports System.Security.Cryptography
         End Try
     End Function
 
+    Public Function MergeDatatable(ByVal ds As DataTable, ByVal ds2 As DataTable) As DataTable
+        ds.Merge(ds2, True, MissingSchemaAction.Add)
+        Dim errRows() As DataRow = ds.GetErrors()
+        Dim errRow As DataRow
+        For Each errRow In errRows
+            errRow.RejectChanges()
+            errRow.RowError = Nothing
+        Next
+        ds.AcceptChanges()
+        Return ds
+    End Function
     Public Function SqlCommandExecuteNonQuery(ByVal SqlCommand As String, ByVal ConnectionString As String) As Boolean
         Dim MyConnection As SqlConnection = New SqlConnection(ConnectionString)
         MyConnection.Open()

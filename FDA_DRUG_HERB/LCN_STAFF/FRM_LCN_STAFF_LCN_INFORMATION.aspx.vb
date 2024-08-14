@@ -274,7 +274,8 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
             Dim dao As New DAO_DRUG.ClsDBdalcn
             dao.GetDataby_IDA(Request.QueryString("IDA"))
             If dao.fields.FK_IDA <> 0 Then
-                dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
+                'dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA(dao.fields.FK_IDA)
+                dt = bao.SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_AND_LCN_IDA(dao.fields.FK_IDA, Request.QueryString("IDA"))
             End If
 
         Catch ex As Exception
@@ -752,6 +753,7 @@ Public Class FRM_LCN_STAFF_LCN_INFORMATION
             Else
                 dao.fields.cnccscd = ddl_stat.SelectedValue
                 dao.fields.cnccd = 2
+                dao.fields.cncdate = Date.Now
                 dao.update()
             End If
         Catch ex As Exception

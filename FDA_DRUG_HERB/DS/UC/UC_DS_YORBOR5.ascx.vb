@@ -236,7 +236,7 @@ Public Class US_DS_YORBOR5
             save.fields.CHK_PERMISSION_ASK = rdb_direct_registers.Text 'นำหรือสั่งยาแผนโบราณเข้ามาในราชอาณาจักรเพื่อขอขึ้นทะเบียน
             save.fields.CHK_PERMISSION_DESCRIPTION = rdb_direct.Text 'ยาที่นำนำหรือสั่งเข้ามาในราชอาณาจักร
         Else
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกคำขออนุญาติ');", True)
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกคำขออนุญาต');", True)
         End If
         'เก็บข้อมูลในตาราง drsamp
         save.fields.lcntpcd = "ยบ5" 'เก็บประเภทของใบอนุญาต

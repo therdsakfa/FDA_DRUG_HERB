@@ -380,6 +380,15 @@
             _SHOW_EXPDATE_YEAR_NUMTHAI = value
         End Set
     End Property
+    Private _THANM_THAIFULLNAME As String
+    Public Property THANM_THAIFULLNAME() As String
+        Get
+            Return _THANM_THAIFULLNAME
+        End Get
+        Set(ByVal value As String)
+            _THANM_THAIFULLNAME = value
+        End Set
+    End Property
 
 
 End Class

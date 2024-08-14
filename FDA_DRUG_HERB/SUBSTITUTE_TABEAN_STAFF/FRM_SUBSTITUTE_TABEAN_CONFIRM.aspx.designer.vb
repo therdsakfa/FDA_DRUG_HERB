@@ -68,6 +68,24 @@ Partial Public Class FRM_SUBSTITUTE_TABEAN_CONFIRM
     Protected WithEvents txt_appdate As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Label4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DD_OFF_REQ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DD_OFF_REQ As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''btn_confirm control.
     '''</summary>
     '''<remarks>

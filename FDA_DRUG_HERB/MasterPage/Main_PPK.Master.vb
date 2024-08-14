@@ -3,7 +3,7 @@
     Private _CLS As New CLS_SESSION
     Sub RunSession()
         Try
-            '_CLS = Session("CLS")
+            _CLS = Session("CLS")
             '_thanm_customer = Session("thanm_customer")
             '    _thanm = Session("thanm")
         Catch ex As Exception
@@ -12,66 +12,198 @@
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
-        If Request.QueryString("staff") <> "" Then
-            HyperLink1.Style.Add("display", "block")
-        End If
+
+        Try
+            If Request.QueryString("FK_IDA") <> "" Then
+                'HyperLink1.NavigateUrl = "../LOCATION/FRM_LCN_LCT.aspx?FK_IDA=" & Request.QueryString("FK_IDA")
+            Else
+                'HyperLink1.NavigateUrl = "../LOCATION/FRM_LCN_LCT.aspx"
+            End If
+        Catch ex As Exception
+
+        End Try
+
         If Not IsPostBack Then
- Try
-                'lbl_name_user.Text = "ชื่อผู้ใช้" & " " & _CLS.THANM 'รับค่า ชื่อผู้ใช้
-                'lbl_organization.Text = "ชื่อผู้ได้รับอนุญาต" & " " & _CLS.THANM_CUSTOMER 'รับค่า ชื่อผู้ได้รับอนุญาต
+            run_nav_new()
+            Try
+                hl_name.Text = "ชื่อผู้ใช้" & " " & _CLS.THANM 'รับค่า ชื่อผู้ใช้
+                hl_organization.Text = "ชื่อผู้ได้รับอนุญาต" & " " & _CLS.THANM_CUSTOMER 'รับค่า ชื่อผู้ได้รับอนุญาต
             Catch ex As Exception
 
             End Try
+
+        End If
+        'UC_NODE_AUTO.group = 6
+    End Sub
+
+    Public Sub run_nav_new()
+        Dim dao_h As New DAO_DRUG.TB_MAS_ADMIN_GROUP_BUTTON
+        Dim gg As String = ""
+        Try
+            gg = _CLS.SYSTEM_ID
+        Catch ex As Exception
+
+        End Try
+        If gg <> "" Then
+            Try
+                dao_h.GetData_By_Group_Order_By_Seq(gg)
+            Catch ex As Exception
+
+            End Try
+
+            Dim str_all As String = ""
+            'For Each dao_h.fields In dao_h.datas
+            If str_all = "" Then
+                If _CLS.BTN_GROUPS = 1 Then
+                    str_all = "<h4 class='text-center'><strong>" & "ระบบสร้างคำขอทะเบียน" & "</strong></h4>"
+
+                Else
+                    str_all = "<h4 class='text-center'><strong>" & "คำขออื่นๆ" & "</strong></h4>"
+
+                End If
+                Dim p_name As String = ""
+                Try
+                    p_name = get_page_name()
+                Catch ex As Exception
+
+                End Try
+                Dim aa As Integer = 0
+
+                Try
+                    aa = _CLS.GROUPS
+                Catch ex As Exception
+
+                End Try
+                Dim _group As Integer = 0
+                If aa = 9819 Then
+                    _CLS.BTN_GROUPS = 1
+                ElseIf _CLS.SYSTEM_ID = "11251" Then
+                    _group = 3
+                Else
+                    '_CLS.BTN_GROUPS = 2
+                    _group = 2
+                End If
+                '_group = 2
+                Dim sm As Integer = 0
+                Try
+                    sm = _CLS.SYSTEM_ID
+                Catch ex As Exception
+
+                End Try
+                If sm = 10986 Then
+                    sm = 10986
+                End If
+                Dim dao_g As New DAO_TABEAN_HERB.TB_MAS_CUSTOMER_BUTTON
+                'dao_g.GetDataby_Btn_Group_and_IdGroup(_CLS.BTN_GROUPS, sm)
+                dao_g.GetDataby_Btn_Group_and_IdGroup(_group, _CLS.SYSTEM_ID)
+
+                str_all &= "<ul class='nav nav-pills nav-stacked'>"
+                For Each dao_g.fields In dao_g.datas
+                    Dim dao_u As New DAO_TABEAN_HERB.TB_MAS_CUSTOMER_BUTTON
+                    Dim i As Integer = 0
+                    If p_name <> "" Then
+                        'i = dao_u.Check_Page(p_name, _CLS.Groups)
+                        Try
+                            If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
+                                i += 1
+                            End If
+                        Catch ex As Exception
+
+                        End Try
+
+                    End If
+                    If i = 0 Then
+                        str_all &= "<li>"
+                    Else
+                        str_all &= "<li class='active'>"
+                    End If
+                    If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
+                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                    Else
+                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
+                    End If
+
+                    str_all &= "</li>"
+                    'i += 1
+                Next
+                str_all &= "</ul><br/>"
+
+            Else
+                str_all &= "<h4 class='text-center'><strong>" & dao_h.fields.GROUP_NAME & "</strong></h4>"
+                Dim p_name As String = ""
+                Try
+                    p_name = get_page_name()
+                Catch ex As Exception
+
+                End Try
+                Dim aa As Integer = 0
+
+                Try
+                    aa = _CLS.GROUPS
+                Catch ex As Exception
+
+                End Try
+                Dim _group As Integer = 0
+                If aa = 9819 Then
+                    _group = 1
+                ElseIf _CLS.SYSTEM_ID = "11251" Then
+                    _group = 3
+                Else
+                    _group = 2
+                End If
+                '_group = 2
+                Dim sm As Integer = 0
+                Try
+                    sm = _CLS.SYSTEM_ID
+                Catch ex As Exception
+
+                End Try
+                If sm = 9819 Or sm = 10986 Then
+                    sm = 10986
+                End If
+                Dim dao_g As New DAO_TABEAN_HERB.TB_MAS_CUSTOMER_BUTTON
+                'dao_g.GetDataby_Btn_Group_and_IdGroup(_CLS.BTN_GROUPS, sm)
+                dao_g.GetDataby_Btn_Group_and_IdGroup(_group, _CLS.SYSTEM_ID)
+
+                str_all &= "<ul class='nav nav-pills nav-stacked'>"
+                For Each dao_g.fields In dao_g.datas
+                    Dim dao_u As New DAO_TABEAN_HERB.TB_MAS_CUSTOMER_BUTTON
+                    Dim i As Integer = 0
+                    If p_name <> "" Then
+                        'i = dao_u.Check_Page(p_name, _CLS.Groups)
+                        Try
+                            If CStr(dao_g.fields.BTN_URL).Contains(p_name) Then
+                                i += 1
+                            End If
+                        Catch ex As Exception
+
+                        End Try
+
+                    End If
+                    If i = 0 Then
+                        str_all &= "<li>"
+                    Else
+                        str_all &= "<li class='active'>"
+                    End If
+                    If dao_g.fields.BTN_URL.Contains("TOKEN") Or dao_g.fields.BTN_URL.Contains("AUTHEN") Then
+                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "?Token=" & _CLS.TOKEN & "' target='_blank'>" & dao_g.fields.BTN_NAME & "</a>"
+                    Else
+                        str_all &= "<a href='" & dao_g.fields.BTN_URL & "' target='" & dao_g.fields.TARGET & "'>" & dao_g.fields.BTN_NAME & "</a>"
+                    End If
+
+                    str_all &= "</li>"
+                    'i += 1
+                Next
+                str_all &= "</ul><br/>"
+            End If
+            Literal1.Text = str_all
+            'Next
         End If
 
-        
-        Dim txt As String = ""
-        
-        UC_NODE_AUTO.group = 1
-        'Literal1.Text = gen_menu()
     End Sub
-    Function gen_menu() As String
-        Dim txt As String = ""
-        Dim all_txt As String = ""
-        Dim dao As New DAO_DRUG.ClsDBMAS_MENU
-        dao.GetDataby_HEAD_ID(0, 1)
-        'txt &= "<a Class='tab-content-item active' href='../MODULE01/MAIN_PAGE.aspx?dept=" & Request.QueryString("dept") & "'><i class='h-icon icon-active fas fa-bookmark'></i><i class='h-icon icon-off far fa-bookmark'></i>Dashboard</a>"
-        'txt &= "<a class='tab-content-item'><i class='h-icon icon-active fas fa-bookmark'></i><i class='h-icon icon-off far fa-bookmark'></i>รายงาน</a>"
-
-        For Each dao.fields In dao.datas
-            txt = " <div Class='wrap-tab-content-item-list'>"
-            txt &= " <a Class='tab-content-item' href='" & Replace(dao.fields.URL, "~", "..") & "'><i Class='h-icon icon-active fas fa-bookmark'></i><i Class='h-icon icon-off far fa-bookmark'></i>" & dao.fields.NAME & "</a>"
-            txt &= "    <div Class='tab-content-item-list'>"
-
-            'txt &= "        <div data-target='p1' Class='tcil-item'>"
-            'txt &= "            <a href ='../MODULE01/POPUP_CREATE_IDT1.aspx'> Template ตัวชี้วัด : หน่วยวัด ร้อยละ</a>"
-            'txt &= "        </div>"
-            'txt &= "        <div data-target='p2' Class='tcil-item'>"
-            'txt &= "            <a href ='../MODULE01/POPUP_CREATE_IDT2.aspx'> Template ตัวชี้วัด : หน่วยวัดหมวดและระดับ</a>"
-            'txt &= "        </div>"
-            txt &= gen_child_node(dao.fields.IDA)
-            txt &= " <div class='clearfix'></div>"
-            txt &= "    </div>"
-            txt &= " </div>"
-            all_txt &= txt
-        Next
-
-        Return all_txt
-    End Function
-
-    Public Function gen_child_node(Optional ByVal ParentID As Integer = 0) As String
-        Dim dao As New DAO_DRUG.ClsDBMAS_MENU
-        dao.GetDataby_HEAD_ID(ParentID, 1)
-        Dim txt As String = ""
-        Dim all_txt As String = ""
-        Dim i As Integer = 1
-        For Each dao.fields In dao.datas
-            'txt &= "        <div data-target='p" & i & "' Class='tcil-item'>"
-            txt &= "            <a Class='tcil-item' href ='" & Replace(dao.fields.URL, "~", "..") & "'>" & dao.fields.NAME & "</a>"
-            'txt &= "        </div>"
-            i += 1
-            all_txt &= txt
-        Next
-        Return all_txt
+    Public Function get_page_name()
+        Dim p_name As String = ""
+        p_name = System.IO.Path.GetFileName(Request.Url.AbsolutePath)
+        Return p_name
     End Function
 End Class

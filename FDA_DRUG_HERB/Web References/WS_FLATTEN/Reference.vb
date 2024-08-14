@@ -24,7 +24,7 @@ Imports System.Xml.Serialization
 Namespace WS_FLATTEN
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="WS_FLATTENSoap", [Namespace]:="http://tempuri.org/")>  _
@@ -34,6 +34,12 @@ Namespace WS_FLATTEN
         Private FlattenPDFOperationCompleted As System.Threading.SendOrPostCallback
         
         Private FlattenPDF_DIGITALOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private FlattenPDF_DIGITAL_V2OperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private FlattenPDF_DIGITAL_V3OperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private FlattenPDF_DIGITAL_V4OperationCompleted As System.Threading.SendOrPostCallback
         
         Private PDF_DIGITAL_SIGNOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -84,6 +90,15 @@ Namespace WS_FLATTEN
         
         '''<remarks/>
         Public Event FlattenPDF_DIGITALCompleted As FlattenPDF_DIGITALCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event FlattenPDF_DIGITAL_V2Completed As FlattenPDF_DIGITAL_V2CompletedEventHandler
+        
+        '''<remarks/>
+        Public Event FlattenPDF_DIGITAL_V3Completed As FlattenPDF_DIGITAL_V3CompletedEventHandler
+        
+        '''<remarks/>
+        Public Event FlattenPDF_DIGITAL_V4Completed As FlattenPDF_DIGITAL_V4CompletedEventHandler
         
         '''<remarks/>
         Public Event PDF_DIGITAL_SIGNCompleted As PDF_DIGITAL_SIGNCompletedEventHandler
@@ -145,6 +160,87 @@ Namespace WS_FLATTEN
             If (Not (Me.FlattenPDF_DIGITALCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent FlattenPDF_DIGITALCompleted(Me, New FlattenPDF_DIGITALCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FlattenPDF_DIGITAL_V2", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function FlattenPDF_DIGITAL_V2(<System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String) As <System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> Byte()
+            Dim results() As Object = Me.Invoke("FlattenPDF_DIGITAL_V2", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO})
+            Return CType(results(0),Byte())
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V2Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String)
+            Me.FlattenPDF_DIGITAL_V2Async(sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V2Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String, ByVal userState As Object)
+            If (Me.FlattenPDF_DIGITAL_V2OperationCompleted Is Nothing) Then
+                Me.FlattenPDF_DIGITAL_V2OperationCompleted = AddressOf Me.OnFlattenPDF_DIGITAL_V2OperationCompleted
+            End If
+            Me.InvokeAsync("FlattenPDF_DIGITAL_V2", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO}, Me.FlattenPDF_DIGITAL_V2OperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnFlattenPDF_DIGITAL_V2OperationCompleted(ByVal arg As Object)
+            If (Not (Me.FlattenPDF_DIGITAL_V2CompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent FlattenPDF_DIGITAL_V2Completed(Me, New FlattenPDF_DIGITAL_V2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FlattenPDF_DIGITAL_V3", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function FlattenPDF_DIGITAL_V3(<System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String) As <System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> Byte()
+            Dim results() As Object = Me.Invoke("FlattenPDF_DIGITAL_V3", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO})
+            Return CType(results(0),Byte())
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V3Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String)
+            Me.FlattenPDF_DIGITAL_V3Async(sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V3Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String, ByVal userState As Object)
+            If (Me.FlattenPDF_DIGITAL_V3OperationCompleted Is Nothing) Then
+                Me.FlattenPDF_DIGITAL_V3OperationCompleted = AddressOf Me.OnFlattenPDF_DIGITAL_V3OperationCompleted
+            End If
+            Me.InvokeAsync("FlattenPDF_DIGITAL_V3", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO}, Me.FlattenPDF_DIGITAL_V3OperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnFlattenPDF_DIGITAL_V3OperationCompleted(ByVal arg As Object)
+            If (Not (Me.FlattenPDF_DIGITAL_V3CompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent FlattenPDF_DIGITAL_V3Completed(Me, New FlattenPDF_DIGITAL_V3CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FlattenPDF_DIGITAL_V4", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function FlattenPDF_DIGITAL_V4(<System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String, ByVal Link As String, ByVal Ver As String) As <System.Xml.Serialization.XmlElementAttribute(DataType:="base64Binary")> Byte()
+            Dim results() As Object = Me.Invoke("FlattenPDF_DIGITAL_V4", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO, Link, Ver})
+            Return CType(results(0),Byte())
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V4Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String, ByVal Link As String, ByVal Ver As String)
+            Me.FlattenPDF_DIGITAL_V4Async(sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO, Link, Ver, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub FlattenPDF_DIGITAL_V4Async(ByVal sourcePdfPath() As Byte, ByVal TR_ID As String, ByVal TEMPLATE_ID As String, ByVal CTZNO As String, ByVal Link As String, ByVal Ver As String, ByVal userState As Object)
+            If (Me.FlattenPDF_DIGITAL_V4OperationCompleted Is Nothing) Then
+                Me.FlattenPDF_DIGITAL_V4OperationCompleted = AddressOf Me.OnFlattenPDF_DIGITAL_V4OperationCompleted
+            End If
+            Me.InvokeAsync("FlattenPDF_DIGITAL_V4", New Object() {sourcePdfPath, TR_ID, TEMPLATE_ID, CTZNO, Link, Ver}, Me.FlattenPDF_DIGITAL_V4OperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnFlattenPDF_DIGITAL_V4OperationCompleted(ByVal arg As Object)
+            If (Not (Me.FlattenPDF_DIGITAL_V4CompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent FlattenPDF_DIGITAL_V4Completed(Me, New FlattenPDF_DIGITAL_V4CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -248,11 +344,11 @@ Namespace WS_FLATTEN
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub FlattenPDFCompletedEventHandler(ByVal sender As Object, ByVal e As FlattenPDFCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class FlattenPDFCompletedEventArgs
@@ -275,11 +371,11 @@ Namespace WS_FLATTEN
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub FlattenPDF_DIGITALCompletedEventHandler(ByVal sender As Object, ByVal e As FlattenPDF_DIGITALCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class FlattenPDF_DIGITALCompletedEventArgs
@@ -302,11 +398,92 @@ Namespace WS_FLATTEN
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
+    Public Delegate Sub FlattenPDF_DIGITAL_V2CompletedEventHandler(ByVal sender As Object, ByVal e As FlattenPDF_DIGITAL_V2CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FlattenPDF_DIGITAL_V2CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As Byte()
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),Byte())
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
+    Public Delegate Sub FlattenPDF_DIGITAL_V3CompletedEventHandler(ByVal sender As Object, ByVal e As FlattenPDF_DIGITAL_V3CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FlattenPDF_DIGITAL_V3CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As Byte()
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),Byte())
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
+    Public Delegate Sub FlattenPDF_DIGITAL_V4CompletedEventHandler(ByVal sender As Object, ByVal e As FlattenPDF_DIGITAL_V4CompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class FlattenPDF_DIGITAL_V4CompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As Byte()
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),Byte())
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub PDF_DIGITAL_SIGNCompletedEventHandler(ByVal sender As Object, ByVal e As PDF_DIGITAL_SIGNCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class PDF_DIGITAL_SIGNCompletedEventArgs
@@ -329,15 +506,15 @@ Namespace WS_FLATTEN
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub FlattenPDF_fileCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")>  _
     Public Delegate Sub Get_FILEsCompletedEventHandler(ByVal sender As Object, ByVal e As Get_FILEsCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class Get_FILEsCompletedEventArgs

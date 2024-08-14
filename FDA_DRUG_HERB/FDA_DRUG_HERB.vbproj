@@ -74,6 +74,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="QRCoder, Version=1.2.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\QRCoder.dll</HintPath>
@@ -123,7 +125,7 @@
     </Reference>
     <Reference Include="Telerik.Web.UI, Version=2013.2.717.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Telerik.Web.UI.dll</HintPath>
+      <HintPath>D:\FA System\bin\Telerik.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Web.UI.Skins, Version=2013.2.717.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -144,6 +146,7 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\..\bin\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\bin\zxing.dll</HintPath>
@@ -627,13 +630,272 @@
     <Content Include="FRM_MAKE_REVIEW_CHEM.aspx" />
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_XML_BC.aspx" />
+    <Content Include="HERB_SEARCH_TABEAN\FRM_TABEAN_SEARCH_MAIN.aspx" />
+    <Content Include="HERB_SEARCH_TABEAN\POPUP_SEARCH_TABEAN_DETAIL.aspx" />
+    <Content Include="HERB_SEARCH_TABEAN\POPUP_TABEAN_LOG_EDIT_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CENCEL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EQTO.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ1.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_RECIPE_PRODUCT_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN_MEMU.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW_WHO.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_OTHER.aspx" />
+    <Content Include="HERB_TABEAN\FRM_HERB_TABEAN_SELECT_SID.aspx" />
+    <Content Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_MAIN.aspx" />
+    <Content Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_OTHER.aspx" />
+    <Content Include="HERB_TABEAN\TEST.aspx" />
+    <Content Include="HERB_TABEAN\UC\UC_TABEAN_JJ_DETAIL_CAS.ascx" />
+    <Content Include="HERB_TABEAN\UC\UC_TABEAN_JJ_EQTO.ascx" />
+    <Content Include="HERB_TABEAN\WebFormCornfirm.ascx" />
+    <Content Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_ADD.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_COMFIRM.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE\UC\UC_ANALYZE_DETAIL.ascx" />
+    <Content Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_SATFF.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_STAFF_PREVIEWaspx.aspx" />
+    <Content Include="HERB_TABEAN_ANALYZE_STAFF\POPUP_TABEAN_HERB_ANALYZE_CONFIRM_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_PREVIEWaspx.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_ADD.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_DONATE\UC\UC_DONATE_DETAIL.ascx" />
+    <Content Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF_PREVIEWaspx.aspx" />
+    <Content Include="HERB_TABEAN_DONATE_STAFF\POPUP_TABEAN_HERB_DONATE_CONFIRM_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_PREVIEWaspx.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_ADD.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\UC\UC_EXHIBITION_DETAIL.ascx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_DETAIL_CAS.ascx" />
+    <Content Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_EQTO.ascx" />
+    <Content Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF_PREVIEWaspx.aspx" />
+    <Content Include="HERB_TABEAN_EXHIBITION_STAFF\POPUP_TABEAN_HERB_EXHIBITION_STAFF_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_ADD.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT_RQT.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_LCN.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_UPLOAD_FILE.aspx" />
+    <Content Include="HERB_TABEAN_EX\UC\UC_TABEAN_EDIT_EX1.ascx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INAPPROVE.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INOFFER.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INTAKE.aspx" />
+    <Content Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_ADD.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT_REQUEST.aspx" />
+    <Content Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_PREVIEW_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_STAFF_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_ADD.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_FILE_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_REQUEST.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\UC\UC_ADDRESS_PRODUTION_SITE.ascx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\UC\UC_EDIT_NAME_PRODUCT.ascx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\UC\UC_LABELS_AND DUCQUMENT.ascx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT\UC\UC_PACKING_SIZE.ascx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_CON.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_CHKACC.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_UPLOAD_FILE.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CANCEL.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_COMTACT_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_2.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_REQUEST.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_POPUP_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN2.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_RECIPE_PRODUCT_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_TBN_PREVIEW_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN_NEW\UC\UC_TABEAN_EDIT_TB1.ascx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_NEW_TABEAN_EDIT_EQTO.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_SELECT_LCN.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_ADD_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_SELECT_LIST.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_ADD.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT.ascx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL.ascx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL_CAS.ascx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_EQTO.ascx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_SELECT_LIST.ascx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_NAME.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_PREVIEW_FILE.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_CONSIDER.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_ESTIMATE.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_ADD_DATA.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE.aspx" />
+    <Content Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INAPPROVE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER_PLAY.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INTAKE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ1.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ2.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_VALIDATE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_ADD_CONTAINS.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_CHECK_RQT.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_APPROVE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT2.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INAPPROVE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_KEEP_PAY.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_MAIN.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN1.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN2.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\FRM_TABEAN_STAFF_DETAIL.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\POPUP_HERB_TABEAN_STAFF_CANCEL.aspx" />
+    <Content Include="HERB_TABEAN_STAFF_NEW\POPUP_TABEAN_STAFF_ADD_CONTAINS.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_APPOINMENT.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_PREVIEW.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_STAFF.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_ADD.aspx" />
+    <Content Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_CONFIRM.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_MAIN_WHO.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO_ADD.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO_ADD_DETAIT.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD.aspx" />
+    <Content Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD_DETAIL.aspx" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\correct.png" />
+    <Content Include="LCN\FRM_LCN_CONFIRM_DETAIL.aspx" />
+    <Content Include="LCN\FRM_LCN_DRUG_APPOIMENT.aspx" />
+    <Content Include="LCN\FRM_LCN_DRUG_HERB_CANCEL.aspx" />
     <Content Include="LCN\POPUP_LCN_ADD.aspx" />
     <Content Include="LCN\POPUP_LCN_DRUG_GROUP_HERB.aspx" />
     <Content Include="LCN\UC\UC_HERB.ascx" />
     <Content Include="LCN\UC\UC_HERB_KEEP.ascx" />
     <Content Include="LCN\UC\UC_HERB_PHESAJ.ascx" />
     <Content Include="LCN\UC\UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
+    <Content Include="LCN_EDIT\FRM_LCN_EDIT.aspx" />
+    <Content Include="LCN_EDIT\FRM_LCN_EDIT_APPOINMENNT.aspx" />
+    <Content Include="LCN_EDIT\FRM_LCN_EDIT_PREVIEW_FILE.aspx" />
+    <Content Include="LCN_EDIT\POPUP_LCN_EDIT.aspx" />
+    <Content Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM.aspx" />
+    <Content Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx" />
+    <Content Include="LCN_EDIT\POPUP_LCN_EDIT_UPLOAD.aspx" />
+    <Content Include="LCN_EDIT\UC\UC_LCN_EDIT.ascx" />
+    <Content Include="LCN_EDIT\UC\UC_LCN_EDIT_TABLE_DRUG_GROUP_CHANGE_HERB.ascx" />
+    <Content Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_1.ascx" />
+    <Content Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_2.ascx" />
+    <Content Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_3.ascx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_APPROVE.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_CHEAK_PAPER.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_EDIT.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INDEX.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INTAKE.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_MAIN.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx" />
+    <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SIGN.aspx" />
+    <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW.aspx" />
+    <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_ADD.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_UPLOAD_FILE.aspx" />
+    <Content Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_STAFF.aspx" />
+    <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx" />
+    <Content Include="LCN_STAFF\FRM_LCN_STAFF_HERB_CANCEL.aspx" />
+    <Content Include="LCN_STAFF\FRM_LCN_UPDATE_STATUS.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx" />
+    <Content Include="LCN_STAFF\FRM_STAFF_LCN_SEARCH_2.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_APPDATE.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_EDIT.aspx" />
     <Content Include="LCN_STAFF\POPUP_STAFF_LCN_INSERT.aspx" />
@@ -641,8 +903,39 @@
     <Content Include="LCN_STAFF\UC\UC_LCN _HERBB_PHESAJ_EDIT.ascx" />
     <Content Include="LCN_STAFF\UC\UC_LCN_HERB.ascx" />
     <Content Include="LCN_STAFF\UC\UC_LCN_HERB_PHESAJ.ascx" />
+    <Content Include="LCN_SUBSTITUTE\FRM_LCN_SEACH_SUBTITUTE.aspx" />
+    <Content Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_APPOINMENT.aspx" />
+    <Content Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_MAIN.aspx" />
+    <Content Include="LCN_SUBSTITUTE\FRM_LCN_SUBTITUTE_UPLOAD.aspx" />
+    <Content Include="LCN_SUBSTITUTE\POPUP_LCN_SUBSTITUTE_ADD.aspx" />
+    <Content Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM.aspx" />
+    <Content Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM_DETAIL.aspx" />
+    <Content Include="LCN_SUBSTITUTE\UC\UC_LCN_SUB.ascx" />
+    <Content Include="LCN_SUBSTITUTE\UC\UC_UPLOAD_SUBTITUTE.ascx" />
+    <Content Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_CONFIRM.aspx" />
+    <Content Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_MAIN.aspx" />
+    <Content Include="LCN_SUBSTITUTE_STAFF\FRM_SUBTITUBE_REMARK_CANCEL.aspx" />
+    <Content Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_APP_DATE.aspx" />
+    <Content Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_CONSIDER.aspx" />
+    <Content Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER.aspx" />
+    <Content Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER_SEARCH.aspx" />
+    <Content Include="LCN_TRANSFER\POPUP_LCN_TRANSFER.aspx" />
+    <Content Include="LCN_TRANSFER\POPUP_LCN_TRANSFER_APPOINMENT.aspx" />
+    <Content Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM.aspx" />
+    <Content Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM_DETAIL.aspx" />
+    <Content Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx" />
+    <Content Include="LCN_TRANSFER_STAFF\FRM_LCN_STAFF_DRUG_TRANSFER.aspx" />
+    <Content Include="LCN_TRANSFER_STAFF\POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx" />
+    <Content Include="MAIN_STAFF\FRM_AUTHEN_STAFF_INSTEAD.aspx" />
+    <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_PANEL.aspx" />
+    <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx" />
+    <Content Include="ONEPLATFORM_HERB\HERB_ONEPLATFORM.aspx" />
     <Content Include="PDF.aspx" />
     <Content Include="PULL_Q_TO_G%28PACKET DETAIL%29\PULL_PACKET_DETAIL.aspx" />
+    <Content Include="STAFF_LOCATION_MOCK\FRM_STAFF_LCN_MOCK.aspx" />
+    <Content Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_INSERT.aspx" />
+    <Content Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_MAIN.aspx" />
+    <Content Include="STAFF_LOCATION_MOCK\POPUP_STAFF_LOCATION_MOCK_INSERT.aspx" />
     <Content Include="SV_REQUEST_NO.asmx" />
     <Content Include="TERM_TO_USE\FRM_TERM_TO_USE_MAIN.aspx" />
     <Content Include="TERM_TO_USE\POPUP_TERM_TO_USE.aspx" />
@@ -654,6 +947,7 @@
     <Content Include="UC\UC_ATTACH.ascx" />
     <Content Include="UC\UC_ATTACH_CUS.ascx" />
     <Content Include="UC\UC_ATTACH_DRUG.ascx" />
+    <Content Include="UC\UC_ATTACH_LCN.ascx" />
     <Content Include="UC\UC_CHEMECAL_SUB_TYPE.ascx" />
     <Content Include="UC\UC_CONFIRM.ascx" />
     <Content Include="UC\UC_DRUG_SEARCH.ascx" />
@@ -746,6 +1040,14 @@
     <None Include="Linq\LINQ_FEE.dbml.layout">
       <DependentUpon>LINQ_FEE.dbml</DependentUpon>
     </None>
+    <Content Include="Linq\LINQ_LCN.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_LCN.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_LCN.dbml.layout">
+      <DependentUpon>LINQ_LCN.dbml</DependentUpon>
+    </None>
     <None Include="Linq\Linq_NCT.dbml.layout">
       <DependentUpon>Linq_NCT.dbml</DependentUpon>
     </None>
@@ -755,6 +1057,23 @@
     <None Include="Linq\LINQ_SP_PAYMENT.dbml.layout">
       <DependentUpon>LINQ_SP_PAYMENT.dbml</DependentUpon>
     </None>
+    <Content Include="Linq\LINQ_TABEAN_HERB_JJ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LINQ_TABEAN_HERB_JJ.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\LINQ_TABEAN_HERB_JJ.dbml.layout">
+      <DependentUpon>LINQ_TABEAN_HERB_JJ.dbml</DependentUpon>
+    </None>
+    <Content Include="MasterPage\Main_Product_New.Master" />
+    <Content Include="Linq\linq_who.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linq_who.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Linq\linq_who.dbml.layout">
+      <DependentUpon>linq_who.dbml</DependentUpon>
+    </None>
     <None Include="Web References\AUTHENTICATION_104\Authentication.disco" />
     <None Include="Web References\Authentication_66\Authentication.disco" />
     <None Include="Web References\FDA_MAIL\FDA_MAIL.disco" />
@@ -763,12 +1082,18 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\SV_CHK_PAYMENT\SV_CHECK_PAYMENT.disco" />
-    <Content Include="Web References\SV_UPDATE_PAYMENT\Reference.map">
+    <None Include="Web References\SV_UPDATE_PAYMENT\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\SV_UPDATE_PAYMENT\SV_UPDATE_PAYMENT.disco" />
+    <None Include="Web References\SW_HERB_PAYMENT\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SW_HERB_PAYMENT\SW_HERB_PAYMENT.wsdl" />
     <None Include="Web References\WS_AUTHENTICATION\Authentication.disco" />
+    <None Include="Web References\SW_HERB_PAYMENT\SW_HERB_PAYMENT.disco" />
     <Content Include="Web References\WS_BLOCKCHAIN\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -814,11 +1139,17 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\WS_CREATE_XML\WS_INSERT_XML_DRUG.disco" />
+    <None Include="Web References\WS_DATA_CENTER\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_DATA_CENTER\WS_DATA_CENTER.wsdl" />
     <None Include="Web References\WS_DRUG\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\WS_DRUG\WS_DRUG.disco" />
+    <None Include="Web References\WS_DATA_CENTER\WS_DATA_CENTER.disco" />
     <Content Include="Web References\WS_DRUG_126\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -835,6 +1166,14 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\WS_ERROR_CENTERS\WS_ERROR_CENTER.disco" />
+    <Content Include="Web References\WS_ETDA_SERVICE\CLS_RESULT.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WS_ETDA_SERVICE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_ETDA_SERVICE\WS_ETDA_SERVICE.disco" />
     <Content Include="Web References\WS_FDA_CITIZEN\HOUSE.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -845,11 +1184,12 @@
     <Content Include="Web References\WS_FDA_CITIZEN\root.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\WS_ETDA_SERVICE\WS_ETDA_SERVICE.wsdl" />
     <None Include="Web References\WS_FDA_CITIZEN\WS_FDA_CITIZEN.disco" />
-    <Content Include="Web References\WS_FLATTEN\Reference.map">
+    <None Include="Web References\WS_FLATTEN\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\WS_FLATTEN\WS_FLATTEN.disco" />
     <None Include="Web References\WS_GETDATE_WORKING\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -966,6 +1306,8 @@
     <Content Include="WebForm36.aspx" />
     <Content Include="WebForm37.aspx" />
     <Content Include="WebForm38.aspx" />
+    <Content Include="WebForm39.aspx" />
+    <Content Include="WebForm40.aspx" />
     <Content Include="WS_ACCEPT_RGT_AUTO.asmx" />
     <Content Include="WS_DRUG_XML.asmx" />
     <Content Include="WS_EDIT_DALCN.asmx" />
@@ -2278,9 +2620,12 @@
     <Compile Include="class\BAO\BAO.vb" />
     <Compile Include="class\BAO\BAO_COMMON.vb" />
     <Compile Include="class\BAO\BAO_FDA_CFS_CENTER.vb" />
+    <Compile Include="class\BAO\BAO_LCN.vb" />
     <Compile Include="class\BAO\BAO_MASTER.vb" />
     <Compile Include="class\BAO\BAO_SHOW.vb" />
+    <Compile Include="class\BAO\BAO_TABEAN_HERB.vb" />
     <Compile Include="class\BAO\BAO_TRANSECTION.vb" />
+    <Compile Include="class\BAO\BAO_WHO.vb" />
     <Compile Include="class\BAO\CLS_COMMOND.vb" />
     <Compile Include="class\Chart3d_Series.vb" />
     <Compile Include="class\Chart3D_Single.vb" />
@@ -2294,6 +2639,7 @@
     <Compile Include="class\CLS_QR.vb" />
     <Compile Include="class\CLS_SESSION.vb" />
     <Compile Include="class\CLS_SOP.vb" />
+    <Compile Include="class\CLS_TABEAN_HERB_JJ.vb" />
     <Compile Include="class\Cls_untility.vb" />
     <Compile Include="class\cls_utility.vb" />
     <Compile Include="class\Cls_XML.vb" />
@@ -2302,10 +2648,13 @@
     <Compile Include="class\DAO\DAO_DRUG.vb" />
     <Compile Include="class\DAO\DAO_FDA_XML_DRUG.vb" />
     <Compile Include="class\DAO\DAO_FEE.vb" />
+    <Compile Include="class\DAO\DAO_LCN.vb" />
     <Compile Include="class\DAO\DAO_NCT.vb" />
     <Compile Include="class\DAO\DAO_PERMISSION.vb" />
     <Compile Include="class\DAO\DAO_SPECIAL_PAYMENT.vb" />
     <Compile Include="class\DAO\DAO_SP_PAYMENT.vb" />
+    <Compile Include="class\DAO\DAO_TABEAN_HERB.vb" />
+    <Compile Include="class\DAO\DAO_WHO.vb" />
     <Compile Include="class\DAO\DAO_XML_DRUG_HERB.vb" />
     <Compile Include="class\DAO\DAO_XML_SEARCH_DRUG_LCN_ESUB.vb" />
     <Compile Include="class\GEN_BC\LGT_ANIMAL_CONSUME_DRUGS_TO.vb" />
@@ -2341,13 +2690,18 @@
     <Compile Include="class\TEDA_CLASS\TEDA_PDF.vb" />
     <Compile Include="class\Untility_aspose.vb" />
     <Compile Include="class\UTILITY_CLS.vb" />
+    <Compile Include="class\XML\CLASS_APPOINTMENT.vb" />
     <Compile Include="class\XML\CLASS_CENTER.vb" />
     <Compile Include="class\XML\CLASS_CER.vb" />
     <Compile Include="class\XML\CLASS_CER_FOREIGN.vb" />
     <Compile Include="class\XML\CLASS_CHEMICAL_REQUEST.vb" />
     <Compile Include="class\XML\CLASS_DALCN.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_AUDIT.vb" />
     <Compile Include="class\XML\CLASS_DALCN_EDIT_REQUEST.vb" />
     <Compile Include="class\XML\CLASS_DALCN_NCT_SUBSTITUTE.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_RENEW.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_SUBTITUTE.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_TRANSFER.vb" />
     <Compile Include="class\XML\CLASS_DH.vb" />
     <Compile Include="class\XML\CLASS_DI.vb" />
     <Compile Include="class\XML\CLASS_DP.vb" />
@@ -2356,9 +2710,15 @@
     <Compile Include="class\XML\CLASS_DRRGT_PIL.vb" />
     <Compile Include="class\XML\CLASS_DRRGT_SPC.vb" />
     <Compile Include="class\XML\CLASS_DRRGT_SUB.vb" />
+    <Compile Include="class\XML\CLASS_DRRQT.vb" />
     <Compile Include="class\XML\CLASS_DRRTG_ORIGINAL.vb" />
     <Compile Include="class\XML\CLASS_DRSAMP.vb" />
     <Compile Include="class\XML\CLASS_DRUG_PROJECT.vb" />
+    <Compile Include="class\XML\CLASS_DR_ANALYZE.vb" />
+    <Compile Include="class\XML\CLASS_DR_DONATE.vb" />
+    <Compile Include="class\XML\CLASS_DR_EDIT.vb" />
+    <Compile Include="class\XML\CLASS_DR_EXHIBITION.vb" />
+    <Compile Include="class\XML\CLASS_DR_INFORM.vb" />
     <Compile Include="class\XML\CLASS_DS.vb" />
     <Compile Include="class\XML\CLASS_EDIT_DRRGT.vb" />
     <Compile Include="class\XML\CLASS_EDIT_LCN.vb" />
@@ -2372,14 +2732,18 @@
     <Compile Include="class\XML\CLASS_PROJECT_NYM1.vb" />
     <Compile Include="class\XML\CLASS_PROJECT_SUM.vb" />
     <Compile Include="class\XML\CLASS_REGISTRATION.vb" />
+    <Compile Include="class\XML\CLASS_TABEAN_EX.vb" />
+    <Compile Include="class\XML\CLASS_TABEAN_JJ_EDIT.vb" />
     <Compile Include="class\XML\CLASS_TEMP_NCT_DALCN.vb" />
     <Compile Include="class\XML\CLS_DALCN_LOCATION.vb" />
     <Compile Include="class\XML\CLS_IMAGE_DATA.vb" />
+    <Compile Include="class\XML\CLS_LCN_EDIT_SMP3.vb" />
     <Compile Include="class\XML\CLS_LOCATION.vb" />
     <Compile Include="class\XML\CLS_MASTER.vb" />
     <Compile Include="class\XML\CLS_SHOW.vb" />
     <Compile Include="class\XML\PDF_XML.vb" />
     <Compile Include="class\XML\XML_CONSIDER_REQUESTS.vb" />
+    <Compile Include="class\XML\XML_DATA.vb" />
     <Compile Include="class\XML\XML_DRUG.vb" />
     <Compile Include="class\XML\XML_TRANFER_LOCATION.vb" />
     <Compile Include="class\XML_PDF\NCT_LCT.vb" />
@@ -4695,6 +5059,1581 @@
       <DependentUpon>GEN_XML_BC.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\FRM_TABEAN_SEARCH_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_SEARCH_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\FRM_TABEAN_SEARCH_MAIN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_SEARCH_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\POPUP_SEARCH_TABEAN_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_SEARCH_TABEAN_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\POPUP_SEARCH_TABEAN_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_SEARCH_TABEAN_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\POPUP_TABEAN_LOG_EDIT_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_LOG_EDIT_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_SEARCH_TABEAN\POPUP_TABEAN_LOG_EDIT_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_LOG_EDIT_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CENCEL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CENCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CENCEL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CENCEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_DETAIL_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EQTO.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EQTO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_EQTO.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EQTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_APPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ1.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ1.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2_UPLOAD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ2_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_PREVIEW_JJ2_UPLOAD.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_PREVIEW_JJ2_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_RECIPE_PRODUCT_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_RECIPE_PRODUCT_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_JJ_RECIPE_PRODUCT_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_RECIPE_PRODUCT_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN_MEMU.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MAIN_MEMU.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_MAIN_MEMU.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MAIN_MEMU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW_WHO.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_WHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_NEW_WHO.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_WHO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_OTHER.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_OTHER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_OTHER.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_OTHER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_SELECT_SID.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_SELECT_SID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_HERB_TABEAN_SELECT_SID.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_SELECT_SID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_SELECT_LCN_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_MAIN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_SELECT_LCN_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_OTHER.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_SELECT_LCN_OTHER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\FRM_TABEAN_HERB_SELECT_LCN_OTHER.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_SELECT_LCN_OTHER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\TEST.aspx.designer.vb">
+      <DependentUpon>TEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\TEST.aspx.vb">
+      <DependentUpon>TEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\UC\UC_TABEAN_JJ_DETAIL_CAS.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_JJ_DETAIL_CAS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\UC\UC_TABEAN_JJ_DETAIL_CAS.ascx.vb">
+      <DependentUpon>UC_TABEAN_JJ_DETAIL_CAS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\UC\UC_TABEAN_JJ_EQTO.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_JJ_EQTO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\UC\UC_TABEAN_JJ_EQTO.ascx.vb">
+      <DependentUpon>UC_TABEAN_JJ_EQTO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN\WebFormCornfirm.ascx.designer.vb">
+      <DependentUpon>WebFormCornfirm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN\WebFormCornfirm.ascx.vb">
+      <DependentUpon>WebFormCornfirm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\FRM_TABEAN_HERB_ANALYZE_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_ADD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_COMFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_COMFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_COMFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_COMFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_EDIT.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\POPUP_TABEAN_HERB_ANALYZE_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\UC\UC_ANALYZE_DETAIL.ascx.designer.vb">
+      <DependentUpon>UC_ANALYZE_DETAIL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE\UC\UC_ANALYZE_DETAIL.ascx.vb">
+      <DependentUpon>UC_ANALYZE_DETAIL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_SATFF.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_SATFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_SATFF.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_SATFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_STAFF_PREVIEWaspx.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_STAFF_PREVIEWaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\FRM_TABEAN_HERB_ANALYZE_STAFF_PREVIEWaspx.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_ANALYZE_STAFF_PREVIEWaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\POPUP_TABEAN_HERB_ANALYZE_CONFIRM_STAFF.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_CONFIRM_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_ANALYZE_STAFF\POPUP_TABEAN_HERB_ANALYZE_CONFIRM_STAFF.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_ANALYZE_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_MAIN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_PREVIEWaspx.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_PREVIEWaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_PREVIEWaspx.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_PREVIEWaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\FRM_TABEAN_HERB_DONATE_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_ADD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_EDIT.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\POPUP_TABEAN_HERB_DONATE_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\UC\UC_DONATE_DETAIL.ascx.designer.vb">
+      <DependentUpon>UC_DONATE_DETAIL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE\UC\UC_DONATE_DETAIL.ascx.vb">
+      <DependentUpon>UC_DONATE_DETAIL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF_PREVIEWaspx.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_STAFF_PREVIEWaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\FRM_TABEAN_HERB_DONATE_STAFF_PREVIEWaspx.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_DONATE_STAFF_PREVIEWaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\POPUP_TABEAN_HERB_DONATE_CONFIRM_STAFF.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_CONFIRM_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_DONATE_STAFF\POPUP_TABEAN_HERB_DONATE_CONFIRM_STAFF.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_DONATE_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_MAIN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_PREVIEWaspx.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_PREVIEWaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_PREVIEWaspx.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_PREVIEWaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\FRM_TABEAN_HERB_EXHIBITION_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_ADD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_EDIT.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\POPUP_TABEAN_HERB_EXHIBITION_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXHIBITION_DETAIL.ascx.designer.vb">
+      <DependentUpon>UC_EXHIBITION_DETAIL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXHIBITION_DETAIL.ascx.vb">
+      <DependentUpon>UC_EXHIBITION_DETAIL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_DETAIL_CAS.ascx.designer.vb">
+      <DependentUpon>UC_EXH_DETAIL_CAS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_DETAIL_CAS.ascx.vb">
+      <DependentUpon>UC_EXH_DETAIL_CAS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_EQTO.ascx.designer.vb">
+      <DependentUpon>UC_EXH_EQTO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION\UC\UC_EXH_EQTO.ascx.vb">
+      <DependentUpon>UC_EXH_EQTO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF_PREVIEWaspx.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_STAFF_PREVIEWaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\FRM_TABEAN_HERB_EXHIBITION_STAFF_PREVIEWaspx.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_EXHIBITION_STAFF_PREVIEWaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\POPUP_TABEAN_HERB_EXHIBITION_STAFF_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_STAFF_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EXHIBITION_STAFF\POPUP_TABEAN_HERB_EXHIBITION_STAFF_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_EXHIBITION_STAFF_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_ADD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_ADD.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT_RQT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_EDIT_RQT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_EDIT_RQT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_EDIT_RQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_LCN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_UPLOAD_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_UPLOAD_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\FRM_HERB_TABEAN_EX_UPLOAD_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_UPLOAD_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\UC\UC_TABEAN_EDIT_EX1.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_EX1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX\UC\UC_TABEAN_EDIT_EX1.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_EX1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_DETAIL_PREVIEW_FILE_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_APPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INAPPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INAPPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INAPPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INAPPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INOFFER.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INOFFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INOFFER.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INOFFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INTAKE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_INTAKE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_EX_STAFF\FRM_HERB_TABEAN_EX_STAFF_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EX_STAFF_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\FRM_HERB_TABEAN_INFORM_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_ADD.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_EDIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM\POPUP_HERB_TABEAN_INFORM_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_PREVIEW_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_PREVIEW_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_PREVIEW_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_PREVIEW_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\FRM_HERB_TABEAN_INFORM_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_INFORM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_INFORM_STAFF\POPUP_HERB_TABEAN_INFORM_STAFF_EDIT.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_INFORM_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_ADD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_ADD.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_COMFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_COMFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_COMFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_COMFIRM_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_COMFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_FILE_UPLOAD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_FILE_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_FILE_UPLOAD.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_FILE_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_UPLOAD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\FRM_HERB_TABEAN_JJ_EDIT_UPLOAD.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_JJ_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_JJ_EDIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_JJ_EDIT_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\POPUP_TABEAN_JJ_EDIT_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_JJ_EDIT_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_ADDRESS_PRODUTION_SITE.ascx.designer.vb">
+      <DependentUpon>UC_ADDRESS_PRODUTION_SITE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_ADDRESS_PRODUTION_SITE.ascx.vb">
+      <DependentUpon>UC_ADDRESS_PRODUTION_SITE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_EDIT_NAME_PRODUCT.ascx.designer.vb">
+      <DependentUpon>UC_EDIT_NAME_PRODUCT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_EDIT_NAME_PRODUCT.ascx.vb">
+      <DependentUpon>UC_EDIT_NAME_PRODUCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_LABELS_AND DUCQUMENT.ascx.designer.vb">
+      <DependentUpon>UC_LABELS_AND DUCQUMENT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_LABELS_AND DUCQUMENT.ascx.vb">
+      <DependentUpon>UC_LABELS_AND DUCQUMENT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_PACKING_SIZE.ascx.designer.vb">
+      <DependentUpon>UC_PACKING_SIZE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT\UC\UC_PACKING_SIZE.ascx.vb">
+      <DependentUpon>UC_PACKING_SIZE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_JJ_EDIT_STAFF\FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_CON.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_CON.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_CON.aspx.vb">
+      <DependentUpon>FRM_HERB_CON.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_CHKACC.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL_CHKACC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_CHKACC.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL_CHKACC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_UPLOAD_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL_UPLOAD_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_ADD_DETAIL_UPLOAD_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_ADD_DETAIL_UPLOAD_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CANCEL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CANCEL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_CANCEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_COMTACT_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_COMTACT_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_COMTACT_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_COMTACT_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_DETAIL_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_DETAIL_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_EDIT_REQUEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_POPUP_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_POPUP_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_POPUP_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_POPUP_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_PREVIEW_TABEAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_PREVIEW_TABEAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_PREVIEW_TABEAN2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_PREVIEW_TABEAN2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_PREVIEW_TABEAN2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_RECIPE_PRODUCT_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_RECIPE_PRODUCT_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_RECIPE_PRODUCT_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_RECIPE_PRODUCT_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_TBN_PREVIEW_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_TBN_PREVIEW_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\FRM_HERB_TABEAN_TBN_PREVIEW_APPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_TBN_PREVIEW_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\UC\UC_TABEAN_EDIT_TB1.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_TB1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW\UC\UC_TABEAN_EDIT_TB1.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_TB1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_NEW_TABEAN_EDIT_EQTO.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_NEW_TABEAN_EDIT_EQTO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_NEW_TABEAN_EDIT_EQTO.aspx.vb">
+      <DependentUpon>FRM_HERB_NEW_TABEAN_EDIT_EQTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_SELECT_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_SELECT_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\FRM_HERB_TABEAN_NEW_EDIT_SELECT_LCN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_SELECT_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_ADD_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_ADD_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_ADD_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_ADD_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_SELECT_LIST.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_SELECT_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_EDIT_SELECT_LIST.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_EDIT_SELECT_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_ADD.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_DETAIL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_DETAIL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL_CAS.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_DETAIL_CAS.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_DETAIL_CAS.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_DETAIL_CAS.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_EQTO.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_EQTO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_EQTO.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_EQTO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_SELECT_LIST.ascx.designer.vb">
+      <DependentUpon>UC_TABEAN_EDIT_SELECT_LIST.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT\UC\UC_TABEAN_EDIT_SELECT_LIST.ascx.vb">
+      <DependentUpon>UC_TABEAN_EDIT_SELECT_LIST.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_NAME.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ_NAME.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_JJ_NAME.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_JJ_NAME.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_MASTER_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_MASTER_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_STAFF_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\FRM_HERB_TABEAN_NEW_EDIT_STAFF_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_NEW_EDIT_STAFF_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD_STAFF.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD_STAFF.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_NEW_EDIT_UPLOAD_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_CONSIDER.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_CONSIDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_CONSIDER.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_CONSIDER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_ESTIMATE.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_ESTIMATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_ESTIMATE.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_ESTIMATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_ADD_DATA.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_ADD_DATA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_ADD_DATA.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_ADD_DATA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_EDIT.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_NEW_EDIT_STAFF\POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE_EDIT.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_APPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INAPPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INAPPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INAPPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INAPPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INOFFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INOFFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER_PLAY.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INOFFER_PLAY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INOFFER_PLAY.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INOFFER_PLAY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INTAKE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_INTAKE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ1.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ1.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_PREVIEW_JJ2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_VALIDATE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_VALIDATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_JJ_VALIDATE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_JJ_VALIDATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF\FRM_HERB_TABEAN_STAFF_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_ADD_CONTAINS.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_ADD_CONTAINS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_ADD_CONTAINS.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_ADD_CONTAINS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_CHECK_RQT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_CHECK_RQT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_CHECK_RQT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_CHECK_RQT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_APPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_EDIT2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_EDIT2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_EDIT2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INAPPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INAPPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INAPPROVE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INAPPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_KEEP_PAY.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_KEEP_PAY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_KEEP_PAY.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_KEEP_PAY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_MAIN.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN1.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN1.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN2.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN2.aspx.vb">
+      <DependentUpon>FRM_HERB_TABEAN_STAFF_TABEAN_PREVIEW_TABEAN2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_TABEAN_STAFF_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_STAFF_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\FRM_TABEAN_STAFF_DETAIL.aspx.vb">
+      <DependentUpon>FRM_TABEAN_STAFF_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\POPUP_HERB_TABEAN_STAFF_CANCEL.aspx.designer.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_STAFF_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\POPUP_HERB_TABEAN_STAFF_CANCEL.aspx.vb">
+      <DependentUpon>POPUP_HERB_TABEAN_STAFF_CANCEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\POPUP_TABEAN_STAFF_ADD_CONTAINS.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_STAFF_ADD_CONTAINS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_STAFF_NEW\POPUP_TABEAN_STAFF_ADD_CONTAINS.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_STAFF_ADD_CONTAINS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\FRM_TABEAN_HERB_TEMPOLARY_STAFF.aspx.vb">
+      <DependentUpon>FRM_TABEAN_HERB_TEMPOLARY_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_TEMPOLARY_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_ADD.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_TEMPOLARY_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_TEMPOLARY_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_TABEAN_TEMPOLARY\POPUP_TABEAN_HERB_TEMPOLARY_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_TABEAN_HERB_TEMPOLARY_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_MAIN_WHO.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_MAIN_WHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_MAIN_WHO.aspx.vb">
+      <DependentUpon>FRM_HERB_MAIN_WHO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_ADD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_ADD.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_ADD_DETAIT.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO_ADD_DETAIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_ADD_DETAIT.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO_ADD_DETAIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF_ADD_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HERB_WHOEVER\FRM_HERB_WHO_STAFF_ADD_DETAIL.aspx.vb">
+      <DependentUpon>FRM_HERB_WHO_STAFF_ADD_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>FRM_LCN_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN\FRM_LCN_CONFIRM_DRUG.aspx.designer.vb">
       <DependentUpon>FRM_LCN_CONFIRM_DRUG.aspx</DependentUpon>
     </Compile>
@@ -4714,6 +6653,20 @@
     </Compile>
     <Compile Include="LCN\FRM_LCN_DRUG.aspx.vb">
       <DependentUpon>FRM_LCN_DRUG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_APPOIMENT.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_DRUG_APPOIMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_APPOIMENT.aspx.vb">
+      <DependentUpon>FRM_LCN_DRUG_APPOIMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_HERB_CANCEL.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_DRUG_HERB_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN\FRM_LCN_DRUG_HERB_CANCEL.aspx.vb">
+      <DependentUpon>FRM_LCN_DRUG_HERB_CANCEL.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN\FRM_LCN_NCT.aspx.designer.vb">
@@ -4856,6 +6809,146 @@
       <DependentUpon>UC_TABLE_DRUG_GROUP_CHANGE_HERB.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT_APPOINMENNT.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_APPOINMENNT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT_APPOINMENNT.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_APPOINMENNT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT_PREVIEW_FILE.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_PREVIEW_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\FRM_LCN_EDIT_PREVIEW_FILE.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_PREVIEW_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT.aspx.vb">
+      <DependentUpon>POPUP_LCN_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_EDIT_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_LCN_EDIT_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_EDIT_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\POPUP_LCN_EDIT_UPLOAD.aspx.vb">
+      <DependentUpon>POPUP_LCN_EDIT_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT.ascx.designer.vb">
+      <DependentUpon>UC_LCN_EDIT.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT.ascx.vb">
+      <DependentUpon>UC_LCN_EDIT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TABLE_DRUG_GROUP_CHANGE_HERB.ascx.designer.vb">
+      <DependentUpon>UC_LCN_EDIT_TABLE_DRUG_GROUP_CHANGE_HERB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TABLE_DRUG_GROUP_CHANGE_HERB.ascx.vb">
+      <DependentUpon>UC_LCN_EDIT_TABLE_DRUG_GROUP_CHANGE_HERB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_1.ascx.designer.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_1.ascx.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_2.ascx.designer.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_2.ascx.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_3.ascx.designer.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_3.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT\UC\UC_LCN_EDIT_TOPIC_3.ascx.vb">
+      <DependentUpon>UC_LCN_EDIT_TOPIC_3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_APPROVE.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_APPROVE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_APPROVE.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_APPROVE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_CHEAK_PAPER.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_CHEAK_PAPER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_CHEAK_PAPER.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_CHEAK_PAPER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_EDIT.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INDEX.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_INDEX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INDEX.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_INDEX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INTAKE.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_INTAKE.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_INTAKE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_MAIN.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SIGN.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_SIGN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SIGN.aspx.vb">
+      <DependentUpon>FRM_LCN_EDIT_STAFF_SIGN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_IMPORT\FRM_LCN_IMPORT_CONFIRM_DRUG.aspx.designer.vb">
       <DependentUpon>FRM_LCN_IMPORT_CONFIRM_DRUG.aspx</DependentUpon>
     </Compile>
@@ -4896,6 +6989,55 @@
     </Compile>
     <Compile Include="LCN_IMPORT_STAFF\FRM_LCN_STAFF_IMPORT_CONFIRM.aspx.vb">
       <DependentUpon>FRM_LCN_STAFF_IMPORT_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_ADD.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_ADD.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_UPLOAD_FILE.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_UPLOAD_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_UPLOAD_FILE.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_UPLOAD_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_ATTACH_PAGE.aspx.designer.vb">
@@ -4940,11 +7082,25 @@
       <DependentUpon>FRM_LCN_PREVIEW.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_STAFF\FRM_LCN_STAFF_HERB_CANCEL.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_STAFF_HERB_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_LCN_STAFF_HERB_CANCEL.aspx.vb">
+      <DependentUpon>FRM_LCN_STAFF_HERB_CANCEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_STAFF\FRM_LCN_STAFF_LCN_INFORMATION.aspx.designer.vb">
       <DependentUpon>FRM_LCN_STAFF_LCN_INFORMATION.aspx</DependentUpon>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_LCN_STAFF_LCN_INFORMATION.aspx.vb">
       <DependentUpon>FRM_LCN_STAFF_LCN_INFORMATION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_LCN_UPDATE_STATUS.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_UPDATE_STATUS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_LCN_UPDATE_STATUS.aspx.vb">
+      <DependentUpon>FRM_LCN_UPDATE_STATUS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_SEARCH_ATTACH.aspx.designer.vb">
@@ -5008,6 +7164,13 @@
     </Compile>
     <Compile Include="LCN_STAFF\FRM_STAFF_LCN_CONSIDER_UPDATE.aspx.vb">
       <DependentUpon>FRM_STAFF_LCN_CONSIDER_UPDATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_SEARCH_2.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_SEARCH_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_STAFF\FRM_STAFF_LCN_SEARCH_2.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_SEARCH_2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\POPUP_STAFF_LCN_APPDATE.aspx.designer.vb">
@@ -5143,6 +7306,167 @@
       <DependentUpon>UC_LCN_HERB_PHESAJ.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SEACH_SUBTITUTE.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_SEACH_SUBTITUTE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SEACH_SUBTITUTE.aspx.vb">
+      <DependentUpon>FRM_LCN_SEACH_SUBTITUTE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_SUBSTITUTE_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_APPOINMENT.aspx.vb">
+      <DependentUpon>FRM_LCN_SUBSTITUTE_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_SUBSTITUTE_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBSTITUTE_MAIN.aspx.vb">
+      <DependentUpon>FRM_LCN_SUBSTITUTE_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBTITUTE_UPLOAD.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_SUBTITUTE_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\FRM_LCN_SUBTITUTE_UPLOAD.aspx.vb">
+      <DependentUpon>FRM_LCN_SUBTITUTE_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_LCN_SUBSTITUTE_ADD.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_SUBSTITUTE_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_LCN_SUBSTITUTE_ADD.aspx.vb">
+      <DependentUpon>POPUP_LCN_SUBSTITUTE_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM.aspx.designer.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM.aspx.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_CONFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\POPUP_SUBSTITUTE_CONFIRM_DETAIL.aspx.vb">
+      <DependentUpon>POPUP_SUBSTITUTE_CONFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\UC\UC_LCN_SUB.ascx.designer.vb">
+      <DependentUpon>UC_LCN_SUB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\UC\UC_LCN_SUB.ascx.vb">
+      <DependentUpon>UC_LCN_SUB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\UC\UC_UPLOAD_SUBTITUTE.ascx.designer.vb">
+      <DependentUpon>UC_UPLOAD_SUBTITUTE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE\UC\UC_UPLOAD_SUBTITUTE.ascx.vb">
+      <DependentUpon>UC_UPLOAD_SUBTITUTE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_CONFIRM.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_SUBSTITUTE_CONFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_CONFIRM.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_SUBSTITUTE_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_SUBSTITUTE_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_STAFF_LCN_SUBSTITUTE_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_SUBSTITUTE_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_SUBTITUBE_REMARK_CANCEL.aspx.designer.vb">
+      <DependentUpon>FRM_SUBTITUBE_REMARK_CANCEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\FRM_SUBTITUBE_REMARK_CANCEL.aspx.vb">
+      <DependentUpon>FRM_SUBTITUBE_REMARK_CANCEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_APP_DATE.aspx.designer.vb">
+      <DependentUpon>POPUP_STAFF_LCN_SUBTITUTE_APP_DATE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_APP_DATE.aspx.vb">
+      <DependentUpon>POPUP_STAFF_LCN_SUBTITUTE_APP_DATE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_CONSIDER.aspx.designer.vb">
+      <DependentUpon>POPUP_STAFF_LCN_SUBTITUTE_CONSIDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_SUBSTITUTE_STAFF\POPUP_STAFF_LCN_SUBTITUTE_CONSIDER.aspx.vb">
+      <DependentUpon>POPUP_STAFF_LCN_SUBTITUTE_CONSIDER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_DRUG_TRANSFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER.aspx.vb">
+      <DependentUpon>FRM_LCN_DRUG_TRANSFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER_SEARCH.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_DRUG_TRANSFER_SEARCH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\FRM_LCN_DRUG_TRANSFER_SEARCH.aspx.vb">
+      <DependentUpon>FRM_LCN_DRUG_TRANSFER_SEARCH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POPUP_LCN_TRANSFER.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_TRANSFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POPUP_LCN_TRANSFER.aspx.vb">
+      <DependentUpon>POPUP_LCN_TRANSFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POPUP_LCN_TRANSFER_APPOINMENT.aspx.designer.vb">
+      <DependentUpon>POPUP_LCN_TRANSFER_APPOINMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POPUP_LCN_TRANSFER_APPOINMENT.aspx.vb">
+      <DependentUpon>POPUP_LCN_TRANSFER_APPOINMENT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_COMFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM.aspx.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_COMFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM_DETAIL.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_COMFIRM_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_COMFIRM_DETAIL.aspx.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_COMFIRM_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx.vb">
+      <DependentUpon>POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER_STAFF\FRM_LCN_STAFF_DRUG_TRANSFER.aspx.designer.vb">
+      <DependentUpon>FRM_LCN_STAFF_DRUG_TRANSFER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER_STAFF\FRM_LCN_STAFF_DRUG_TRANSFER.aspx.vb">
+      <DependentUpon>FRM_LCN_STAFF_DRUG_TRANSFER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_TRANSFER_STAFF\POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_TRANSFER_STAFF\POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx.vb">
+      <DependentUpon>POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Linq\LINQ_BOOKING.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -5184,6 +7508,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_FEE.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Linq\LINQ_LCN.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_LCN.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Linq\Linq_NCT.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -5198,6 +7527,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LINQ_SP_PAYMENT.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\LINQ_TABEAN_HERB_JJ.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LINQ_TABEAN_HERB_JJ.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\LINQ_TABEAN_HERB_JJ.vb">
+      <DependentUpon>LINQ_TABEAN_HERB_JJ.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\linq_who.designer.vb">
+      <DependentUpon>linq_who.dbml</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Linq\linq_who.vb">
+      <DependentUpon>linq_who.dbml</DependentUpon>
     </Compile>
     <Compile Include="LOCATION\FRM_LCN_LCT.aspx.designer.vb">
       <DependentUpon>FRM_LCN_LCT.aspx</DependentUpon>
@@ -5409,6 +7754,13 @@
       <DependentUpon>FRM_AUTHEN_STAFF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="MAIN_STAFF\FRM_AUTHEN_STAFF_INSTEAD.aspx.designer.vb">
+      <DependentUpon>FRM_AUTHEN_STAFF_INSTEAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_AUTHEN_STAFF_INSTEAD.aspx.vb">
+      <DependentUpon>FRM_AUTHEN_STAFF_INSTEAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="MAIN_STAFF\FRM_CLOSE.aspx.designer.vb">
       <DependentUpon>FRM_CLOSE.aspx</DependentUpon>
     </Compile>
@@ -5478,6 +7830,20 @@
     <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx.vb">
       <DependentUpon>FRM_STAFF_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_PANEL.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_PANEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_PANEL.aspx.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_PANEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx.vb">
+      <DependentUpon>FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MAIN_STAFF\POPUP_CHECK_TYPE.aspx.designer.vb">
       <DependentUpon>POPUP_CHECK_TYPE.aspx</DependentUpon>
@@ -5584,6 +7950,13 @@
       <DependentUpon>MAIN_PRODUCT_ID.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="MasterPage\Main_Product_New.Master.designer.vb">
+      <DependentUpon>Main_Product_New.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Main_Product_New.Master.vb">
+      <DependentUpon>Main_Product_New.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="MasterPage\MAIN_PRODUCT_NORYORMOR.Master.designer.vb">
       <DependentUpon>MAIN_PRODUCT_NORYORMOR.Master</DependentUpon>
     </Compile>
@@ -5672,6 +8045,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ONEPLATFORM_HERB\HERB_ONEPLATFORM.aspx.designer.vb">
+      <DependentUpon>HERB_ONEPLATFORM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ONEPLATFORM_HERB\HERB_ONEPLATFORM.aspx.vb">
+      <DependentUpon>HERB_ONEPLATFORM.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PDF.aspx.designer.vb">
       <DependentUpon>PDF.aspx</DependentUpon>
@@ -6196,6 +8576,34 @@
     </Compile>
     <Compile Include="STAFF_LOCATION\FRM_STAFF_LOCATION_REMARK.aspx.vb">
       <DependentUpon>FRM_STAFF_LOCATION_REMARK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LCN_MOCK.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LCN_MOCK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LCN_MOCK.aspx.vb">
+      <DependentUpon>FRM_STAFF_LCN_MOCK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_INSERT.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LOCATION_MOCK_MANUAL_INSERT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_INSERT.aspx.vb">
+      <DependentUpon>FRM_STAFF_LOCATION_MOCK_MANUAL_INSERT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_STAFF_LOCATION_MOCK_MANUAL_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\FRM_STAFF_LOCATION_MOCK_MANUAL_MAIN.aspx.vb">
+      <DependentUpon>FRM_STAFF_LOCATION_MOCK_MANUAL_MAIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\POPUP_STAFF_LOCATION_MOCK_INSERT.aspx.designer.vb">
+      <DependentUpon>POPUP_STAFF_LOCATION_MOCK_INSERT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STAFF_LOCATION_MOCK\POPUP_STAFF_LOCATION_MOCK_INSERT.aspx.vb">
+      <DependentUpon>POPUP_STAFF_LOCATION_MOCK_INSERT.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="STAFF_LOCATION_TO\FRM_LOCATION_STAFF_TO.aspx.designer.vb">
@@ -6862,6 +9270,13 @@
       <DependentUpon>UC_ATTACH_DRUG.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UC\UC_ATTACH_LCN.ascx.designer.vb">
+      <DependentUpon>UC_ATTACH_LCN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_ATTACH_LCN.ascx.vb">
+      <DependentUpon>UC_ATTACH_LCN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="UC\UC_CHEMECAL_SUB_TYPE.ascx.designer.vb">
       <DependentUpon>UC_CHEMECAL_SUB_TYPE.ascx</DependentUpon>
     </Compile>
@@ -7048,6 +9463,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\SW_HERB_PAYMENT\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_AUTHENTICATION\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7068,6 +9488,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_DATA_CENTER\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_DRUG\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7084,6 +9509,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\WS_ERROR_CENTERS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ETDA_SERVICE\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -7199,6 +9629,20 @@
       <DependentUpon>WebForm38.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="WebForm39.aspx.designer.vb">
+      <DependentUpon>WebForm39.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm39.aspx.vb">
+      <DependentUpon>WebForm39.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm40.aspx.designer.vb">
+      <DependentUpon>WebForm40.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm40.aspx.vb">
+      <DependentUpon>WebForm40.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="WS_ACCEPT_RGT_AUTO.asmx.vb">
       <DependentUpon>WS_ACCEPT_RGT_AUTO.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -7265,10 +9709,10 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\Authentication_66\Authentication.wsdl" />
-    <Content Include="Web References\Authentication_66\Reference.map">
+    <None Include="Web References\Authentication_66\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\FDA_MAIL\FDA_MAIL.wsdl" />
     <Content Include="Web References\FDA_MAIL\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -7338,6 +9782,39 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://10.111.28.104/WS_CENTER_CPN/WS_DATA_CENTER.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_DATA_CENTER\</RelPath>
+      <UpdateFromURL>http://10.111.28.104/WS_CENTER_CPN/WS_DATA_CENTER.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_WS_DATA_CENTER_WS_DATA_CENTER</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.115.28.108/PDF_ECTDV2/WS_ETDA_SERVICE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ETDA_SERVICE\</RelPath>
+      <UpdateFromURL>http://164.115.28.108/PDF_ECTDV2/WS_ETDA_SERVICE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_WS_ETDA_SERVICE_WS_ETDA_SERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://meshlog.fda.moph.go.th/FDA_HERB_SW/SW_HERB_PAYMENT.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SW_HERB_PAYMENT\</RelPath>
+      <UpdateFromURL>https://meshlog.fda.moph.go.th/FDA_HERB_SW/SW_HERB_PAYMENT.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_SW_HERB_PAYMENT_SW_LCN_EDIT_PAYMENT</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.115.28.104/WS_AUTHEN4/Authentication.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\AUTHENTICATION_104\</RelPath>
@@ -7393,10 +9870,10 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_DRUG_LOG_DR_WS_DRUG</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://10.111.28.167/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx">
+    <WebReferenceUrl Include="https://meshlog.fda.moph.go.th/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_DRUG\</RelPath>
-      <UpdateFromURL>http://10.111.28.167/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
+      <UpdateFromURL>https://meshlog.fda.moph.go.th/WS_DRUG_UPDATE_LCN_HERB/WS_DRUG_LCN/WS_DRUG.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -7503,10 +9980,10 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_TRADERS_WS_TRADER</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://164.115.28.123/TEST_FLATEN/WS_FLATTEN.asmx">
+    <WebReferenceUrl Include="http://164.115.28.137/TEST_FLATEN/WS_FLATTEN.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_FLATTEN\</RelPath>
-      <UpdateFromURL>http://164.115.28.123/TEST_FLATEN/WS_FLATTEN.asmx</UpdateFromURL>
+      <UpdateFromURL>http://164.115.28.137/TEST_FLATEN/WS_FLATTEN.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

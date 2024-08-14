@@ -165,8 +165,8 @@
                        <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column" HeaderText="IDA"
                            SortExpression="IDA" UniqueName="IDA" Display="false" AllowFiltering="true">
                        </telerik:GridBoundColumn>
-                        <telerik:GridBoundColumn DataField="fulladdr2" FilterControlAltText="Filter fulladdr2 column"
-                           HeaderText="ที่อยู่" SortExpression="fulladdr2" UniqueName="fulladdr2">
+                        <telerik:GridBoundColumn DataField="fulladdr4" FilterControlAltText="Filter fulladdr4 column"
+                           HeaderText="ที่อยู่" SortExpression="fulladdr4" UniqueName="fulladdr4">
                        </telerik:GridBoundColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_edit"
                            CommandName="_edit" Text="แก้ไข">

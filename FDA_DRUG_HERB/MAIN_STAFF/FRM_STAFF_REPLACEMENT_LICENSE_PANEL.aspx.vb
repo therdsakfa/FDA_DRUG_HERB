@@ -28,9 +28,11 @@
     End Sub
 
     Private Sub btn_dr_Click(sender As Object, e As EventArgs) Handles btn_dr.Click
-        Response.Redirect("FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx?MENU_GROUP=3&ttt=2")
+        'Response.Redirect("FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx?MENU_GROUP=3&ttt=2")
+        Response.Redirect("FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx?MENU_GROUP=3")
     End Sub
     Private Sub btn_dh_Click(sender As Object, e As EventArgs) Handles btn_dh.Click
         Response.Redirect("FRM_STAFF_REPLACEMENT_LICENSE_MAIN_V2.aspx?MENU_GROUP=2&ttt=2")
+
     End Sub
 End Class

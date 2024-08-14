@@ -35,33 +35,37 @@
     End Sub
 
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        If Request.QueryString("act") <> "edit" Then
-            Dim dao_MAX As New DAO_DRUG.ClsDBdrfrgnaddr
-            Dim max_id As Integer = 0
-            Try
-                dao_MAX.GET_MAX_frgnlctcd(Request.QueryString("frgncd"))
-                max_id = dao_MAX.fields.frgnlctcd
-            Catch ex As Exception
-
-            End Try
-            Dim dao_addr As New DAO_DRUG.ClsDBdrfrgnaddr
-            Setdata(dao_addr)
-            dao_addr.fields.frgnlctcd = max_id + 1
-            dao_addr.fields.frgncd = Request.QueryString("frgncd")
-            dao_addr.fields.lmdfdate = Date.Now
-            dao_addr.insert()
-
-            alert("บันทึกเรียบร้อยแล้ว")
+        If rcb_national.SelectedValue = "000" Then
+            Label1.Visible = True
+            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุนาเลือก Country ก่อนกดบันทึก');", True)
         Else
-            Dim dao_addr As New DAO_DRUG.ClsDBdrfrgnaddr
-            dao_addr.GetDataByIDA(Request.QueryString("IDA"))
-            Setdata(dao_addr)
-            dao_addr.fields.lmdfdate = Date.Now
-            dao_addr.update()
-            alert("แก้ไขเรียบร้อยแล้ว")
+            Label1.Visible = False
+            If Request.QueryString("act") <> "edit" Then
+                Dim dao_MAX As New DAO_DRUG.ClsDBdrfrgnaddr
+                Dim max_id As Integer = 0
+                Try
+                    dao_MAX.GET_MAX_frgnlctcd(Request.QueryString("frgncd"))
+                    max_id = dao_MAX.fields.frgnlctcd
+                Catch ex As Exception
+
+                End Try
+                Dim dao_addr As New DAO_DRUG.ClsDBdrfrgnaddr
+                Setdata(dao_addr)
+                dao_addr.fields.frgnlctcd = max_id + 1
+                dao_addr.fields.frgncd = Request.QueryString("frgncd")
+                dao_addr.fields.lmdfdate = Date.Now
+                dao_addr.insert()
+
+                alert("บันทึกเรียบร้อยแล้ว")
+            Else
+                Dim dao_addr As New DAO_DRUG.ClsDBdrfrgnaddr
+                dao_addr.GetDataByIDA(Request.QueryString("IDA"))
+                Setdata(dao_addr)
+                dao_addr.fields.lmdfdate = Date.Now
+                dao_addr.update()
+                alert("แก้ไขเรียบร้อยแล้ว")
+            End If
         End If
-
-
     End Sub
     Sub Getdata(ByRef dao As DAO_DRUG.ClsDBdrfrgnaddr)
         txt_addr.Text = dao.fields.addr

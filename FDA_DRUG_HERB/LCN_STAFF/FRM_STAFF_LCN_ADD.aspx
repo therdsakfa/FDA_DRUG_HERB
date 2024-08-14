@@ -191,7 +191,7 @@
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                         <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_add"
-                           CommandName="add" Text="เพิ่มข้อมูลที่เก็บ/ผู้มีหน้าที่ปฎิบัติการ">
+                           CommandName="add" Text="เพิ่มข้อมูลที่เก็บ/ผู้มีหน้าที่ปฏิบัติการ">
                            <HeaderStyle Width="70px" />
                        </telerik:GridButtonColumn>
                        <telerik:GridButtonColumn ButtonType="LinkButton" UniqueName="btn_drug_group"

@@ -669,23 +669,29 @@ Public Class FRM_RQT_REGIST_INFORMATION
     Protected Sub btn_update_gen_Click(sender As Object, e As EventArgs) Handles btn_update_gen.Click
         'Dim STATUS_ID As Integer = 0
         'STATUS_ID = Get_drrqt_Status_by_trid(Request.QueryString("TR_ID"))
-        If Request.QueryString("STATUS_ID") <> 8 Then
-            UC_general.update_data_rqt(_IDA)
-            Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
-            dao_rg.GetDataby_IDA(_IDA)
-            dao_rg.fields.lmdfdate = Date.Now
-            dao_rg.update()
-        Else
-            UC_general.update_data(_IDA)
-            Dim dao_rg As New DAO_DRUG.ClsDBdrrqt
-            dao_rg.GetDataby_IDA(_IDA)
-            dao_rg.fields.lmdfdate = Date.Now
-            dao_rg.update()
+        Try
+            If Request.QueryString("STATUS_ID") <> 8 Then
+                UC_general.update_data_rqt(_IDA)
+                Dim dao_rg As New DAO_DRUG.ClsDBdrrgt
+                dao_rg.GetDataby_IDA(_IDA)
+                dao_rg.fields.lmdfdate = Date.Now
+                dao_rg.update()
+            Else
+                UC_general.update_data(_IDA)
+                Dim dao_rg As New DAO_DRUG.ClsDBdrrqt
+                dao_rg.GetDataby_IDA(_IDA)
+                dao_rg.fields.lmdfdate = Date.Now
+                dao_rg.update()
 
-            KEEP_LOGS_TABEAN_EDIT(Request.QueryString("IDA"), "แก้ไขรายละเอียดทะเบียน", _CLS.CITIZEN_ID)
-        End If
+                KEEP_LOGS_TABEAN_EDIT(Request.QueryString("IDA"), "แก้ไขรายละเอียดทะเบียน", _CLS.CITIZEN_ID)
+            End If
+        Catch ex As Exception
+
+        End Try
+
 
         alert("แก้ไขเรียบร้อยแล้ว")
+        'Page_Load(sender, e)
     End Sub
     Public Sub alert(ByVal text As String)
         Response.Write("<script type='text/javascript'>window.alert('" + text + "');</script> ")

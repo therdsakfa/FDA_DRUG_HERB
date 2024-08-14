@@ -450,7 +450,30 @@
         End If
         Return dt
     End Function
+    Public Function SP_PHR_BY_FK_IDA_SUB(ByVal FK_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_PHR_BY_FK_IDA_SUB @FK_IDA =  " & FK_IDA
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+        Catch ex As Exception
 
+        End Try
+
+        dt.TableName = "SP_PHR_BY_FK_IDA_SUB"
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        Return dt
+    End Function
 
     ''' <summary>
     ''' 
@@ -770,7 +793,26 @@
 
         Return dt
     End Function
-    '
+    Public Function SP_DALCN_FRGN_DATA(ByVal IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_DALCN_FRGN_DATA @IDA =  " & IDA
+        Dim dt As New DataTable
+        dt.TableName = "SP_DALCN_FRGN_DATA"
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+                'dt.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+            'dt.Clear()
+        End If
+        Return dt
+    End Function
     Public Function SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_DUMMY() As DataTable
         Dim clsds As New ClassDataset
         Dim sql As String = "exec SP_MASTER_DALCN_DETAIL_LOCATION_KEEP_DUMMY"
@@ -926,6 +968,31 @@
         Dim sql As String = "exec SP_DALCN_PHR_BY_FK_IDA_2 @IDA =  " & IDA
         Dim dt As New DataTable
         dt.TableName = "SP_DALCN_PHR_BY_FK_IDA_2"
+        Try
+            dt = clsds.dsQueryselect(sql, conn).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+                'dt.Clear()
+            End If
+        Catch ex As Exception
+
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+            'dt.Clear()
+        End If
+        Return dt
+    End Function
+    ''' <summary>
+    ''' ข้อมูลใบอนุญาตหลักเอาไปใส่ย่อย
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function SP_LCN_EDIT_PHR_BY_FK_IDA(ByVal IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LCN_EDIT_PHR_BY_FK_IDA @IDA =  " & IDA
+        Dim dt As New DataTable
+        dt.TableName = "SP_LCN_EDIT_PHR_BY_FK_IDA"
         Try
             dt = clsds.dsQueryselect(sql, conn).Tables(0)
             If dt.Rows.Count() = 0 Then

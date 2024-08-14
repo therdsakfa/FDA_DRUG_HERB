@@ -130,10 +130,17 @@ Public Class FRM_STAFF_REPLACEMENT_LICENSE_MAIN
             _CLS = bao_infor.load_lcnsid_customer(_CLS)
             _CLS = bao_infor.load_name(_CLS)
             Session("CLS") = _CLS
-
             'RadGrid1.DataSource = BAO.SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDEN(1, _CLS.LCNSID_CUSTOMER) 'เรียกใช้เพื่อดึงข้อมูลสถานที่ตั้ง
             RadGrid1.DataSource = bao.SP_CUSTOMER_LOCATION_ADDRESS_by_LOCATION_TYPE_ID_and_IDEN(1, _CLS.CITIZEN_ID_AUTHORIZE)
-
+            RadGrid1.Rebind()
+        ElseIf e.CommandName = "sel2" Then
+            Dim item As GridDataItem
+            item = e.Item
+            _CLS.CITIZEN_ID_AUTHORIZE = item("IDENTIFY").Text
+            _CLS = bao_infor.load_lcnsid_customer(_CLS)
+            _CLS = bao_infor.load_name(_CLS)
+            Session("CLS") = _CLS
+            RadGrid1.DataSource = bao.SP_CUSTOMER_LOCATION_ADDRESS_MOCK_by_LOCATION_TYPE_ID_and_IDEN(1, _CLS.CITIZEN_ID_AUTHORIZE)
             RadGrid1.Rebind()
         End If
     End Sub

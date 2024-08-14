@@ -1,4 +1,5 @@
-﻿Public Class FRM_STAFF_LCN_CONSIDER
+﻿Imports Telerik.Web.UI
+Public Class FRM_STAFF_LCN_CONSIDER
     Inherits System.Web.UI.Page
 
     Private _TR_ID As Integer
@@ -49,8 +50,16 @@
         Dim dt As New DataTable
         bao.SP_STAFF_OFFER_DDL()
 
+
         ddl_staff_offer.DataSource = bao.dt
+        ddl_staff_offer.DataValueField = "IDA"
+        ddl_staff_offer.DataTextField = "STAFF_OFFER_NAME"
         ddl_staff_offer.DataBind()
+
+        Dim item As New RadComboBoxItem
+        item.Text = "-- กรุณาเลือก --"
+        item.Value = "0"
+        ddl_staff_offer.Items.Insert(0, item)
     End Sub
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -61,12 +70,12 @@
             dao.GetDataby_IDA(_IDA)
             dao_up.GetDataby_IDA(dao.fields.TR_ID)
 
-            AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+            'AddLogStatus(6, dao_up.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
 
             Dim PROCESS_ID As Integer = dao_up.fields.PROCESS_ID
 
             Dim dao_p As New DAO_DRUG.ClsDBPROCESS_NAME
-            dao_p.GetDataby_PROCESS_ID(PROCESS_ID)
+            dao_p.GetDataby_Process_ID(PROCESS_ID)
             Dim GROUP_NUMBER As Integer = dao_p.fields.PROCESS_ID
 
             Dim CONSIDER_DATE As Date = CDate(TextBox1.Text)
@@ -101,15 +110,15 @@
             LCNNO_V2 = con_year(Date.Now.Year).Substring(2, 2) & LCNNO
             'Convert.ToInt32(LCNNO_V2)
             dao.fields.lcnno = LCNNO_V2
-            Try
-                If chw <> "" Then
-                    dao.fields.LCNNO_DISPLAY = _CLS.PVCODE & "-" & _type_da & "-" & Left(LCNNO, 2) & "-" & Right(LCNNO, Len(LCNNO) - 2)  'chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
-                Else
-                    dao.fields.LCNNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
-                End If
-            Catch ex As Exception
+            'Try
+            '    If chw <> "" Then
+            '        dao.fields.LCNNO_DISPLAY = _CLS.PVCODE & "-" & _type_da & "-" & Left(LCNNO, 2) & "-" & Right(LCNNO, Len(LCNNO) - 2)  'chw & " " & bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            '    Else
+            '        dao.fields.LCNNO_DISPLAY = bao.FORMAT_NUMBER_YEAR_FULL(con_year(Date.Now.Year), LCNNO) ' & " (ขย." & GROUP_NUMBER & ")"
+            '    End If
+            'Catch ex As Exception
 
-            End Try
+            'End Try
             dao.fields.LCNNO_DISPLAY_NEW = "HB " & _CLS.PVCODE & "-" & _type_da & "-" & con_year(Date.Now.Year).Substring(2, 2) & "-" & LCNNO
             '---------------------------------------
 
@@ -159,7 +168,7 @@
             'Dim cls_sop As New CLS_SOP
             'cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", PROCESS_ID, _CLS.PVCODE, 6, "เสนอลงนาม", "SOP-DRUG-10-" & PROCESS_ID & "-3", "อนุมัติ", "รอเจ้าหน้าที่อนุมัติคำขอ", "STAFF", _TR_ID, SOP_STATUS:="เสนอลงนาม")
 
-
+            AddLogStatus(6, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
             alert("บันทึกข้อมูลเรียบร้อย")
         Catch ex As Exception
             Response.Write("<script type='text/javascript'>alert('ตรวจสอบการใส่วันที่');</script> ")

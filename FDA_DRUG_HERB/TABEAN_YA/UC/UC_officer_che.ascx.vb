@@ -16,6 +16,11 @@ Public Class UC_officer_che
             Else
                 STATUS_ID = Get_drrqt_Status_by_trid(Request.QueryString("tr_id"))
             End If
+            If Request.QueryString("IDA") <> "" Then
+                _IDA = Request.QueryString("IDA")
+            Else
+                _IDA = Request.QueryString("IDA_DQ")
+            End If
         Catch ex As Exception
 
         End Try
@@ -199,7 +204,8 @@ Public Class UC_officer_che
                 If Request.QueryString("e") <> "" Then
                     url &= "&e=1"
                 End If
-                Response.Redirect(url)
+                'Response.Redirect(url)
+                Response.Write("<script>window.open('" & url & "','_blank')</script>")
             End If
 
             End If
@@ -865,7 +871,7 @@ Public Class UC_officer_che
                 End Try
                 Dim url As String = HttpContext.Current.Request.Url.AbsoluteUri
 
-                KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA, _
+                KEEP_LOGS_TABEAN_BC(dao_rg2.fields.pvncd, dao_rg2.fields.rgttpcd, dao_rg2.fields.drgtpcd, dao_rg2.fields.rgtno, dao_rg2.fields.IDA,
                                     dao_rg2.fields.IDENTIFY, new_data, "", old_data, result, url, _CLS.CITIZEN_ID)
 
             End If
@@ -893,7 +899,6 @@ Public Class UC_officer_che
                 dao.update()
             End If
         End If
-
         alert("บันทึกเรียบร้อย")
         bind_lbl()
     End Sub

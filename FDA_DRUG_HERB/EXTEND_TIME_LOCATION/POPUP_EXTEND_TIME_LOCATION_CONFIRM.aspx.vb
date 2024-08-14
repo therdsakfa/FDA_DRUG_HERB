@@ -520,7 +520,7 @@ Public Class POPUP_EXTEND_TIME_LOCATION_CONFIRM
         'Else
         '    newyear = year_present + 1
         'End If
-        class_xml.EXP_NEWYEAR = dao_lcnre.fields.extend_year 'ต่ออายุใบอนุญาติ
+        class_xml.EXP_NEWYEAR = dao_lcnre.fields.extend_year 'ต่ออายุใบอนุญาต
         class_xml.DT_SHOW.DT9 = bao_show.SP_GETDATA_EXTENDPDF_by_IDA(_IDA)
 
         class_xml.DT_SHOW.DT11 = bao_show.SP_LOCATION_ADDRESS_by_LOCATION_TYPE_CD_and_LCNSIDV2(1, dao_lcn.fields.CITIZEN_ID_AUTHORIZE) 'ข้อมูลที่ตั้งหลัก

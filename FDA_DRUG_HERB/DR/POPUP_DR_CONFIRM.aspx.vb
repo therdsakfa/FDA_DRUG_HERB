@@ -158,7 +158,8 @@ Public Class POPUP_DR_CONFIRM
 
                 '
                 'If tamrap_id <> 0 Then
-                dao.fields.STATUS_ID = 2
+                'dao.fields.STATUS_ID = 2
+                dao.fields.STATUS_ID = 3
                 'dao.fields.rgttpcd = "G"
                 'dao.fields.drgtpcd = "2"
                 'dao.fields.rgtdrgtpcd = "2"
@@ -720,6 +721,9 @@ Public Class POPUP_DR_CONFIRM
         Catch ex As Exception
 
         End Try
+        If lcnsid Is Nothing Or lcnsid = "" Then
+            lcnsid = 0
+        End If
 
         Dim cls As New CLASS_GEN_XML.DR(_CLS.CITIZEN_ID, lcnsid, dao_lcn.fields.lcnno, pvncd, dao_lcn.fields.IDA)
         Try

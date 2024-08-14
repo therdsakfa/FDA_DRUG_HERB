@@ -115,8 +115,8 @@
                        <telerik:GridBoundColumn DataField="fulladdr" FilterControlAltText="Filter fulladdr column"
                            HeaderText="ที่อยู่" SortExpression="fulladdr" UniqueName="fulladdr">
                        </telerik:GridBoundColumn>
-                       <telerik:GridBoundColumn DataField="lcnsid" FilterControlAltText="Filter lcnsid column"
-                           HeaderText="รหัสผู้ประกอบการ" SortExpression="lcnsid" UniqueName="lcnsid">
+                       <telerik:GridBoundColumn DataField="CITIZEN_ID_AUTHORIZE" FilterControlAltText="Filter CITIZEN_ID_AUTHORIZE column"
+                           HeaderText="เลขนิติ/เลขบัตรประชาชน" SortExpression="CITIZEN_ID_AUTHORIZE" UniqueName="CITIZEN_ID_AUTHORIZE">
                        </telerik:GridBoundColumn>
                        <telerik:GridBoundColumn DataField="house_no" FilterControlAltText="Filter house_no column"
                            HeaderText="เลขสถานที่" SortExpression="house_no" UniqueName="house_no">

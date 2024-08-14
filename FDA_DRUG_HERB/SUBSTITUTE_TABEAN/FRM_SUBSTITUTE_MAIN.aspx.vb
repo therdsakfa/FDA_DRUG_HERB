@@ -11,6 +11,7 @@ Public Class FRM_SUBSTITUTE_MAIN
     Private _type As String
     Private _process_for As String
     Private _pvncd As Integer
+    Private _Newcode As Integer
     Sub RunSession()
         Try
             _rgt_ida = Request.QueryString("rgt_ida")
@@ -23,6 +24,7 @@ Public Class FRM_SUBSTITUTE_MAIN
             _lct_ida = Request.QueryString("lct_ida")
             _type = Request.QueryString("type")
             _process_for = Request.QueryString("process_for")
+            _Newcode = Request.QueryString("_Newcode")
         Catch ex As Exception
             Response.Redirect("http://privus.fda.moph.go.th/")  'เกิด  ERROR  จะเกิดกลับมาหน้า privus
         End Try
@@ -97,178 +99,253 @@ Public Class FRM_SUBSTITUTE_MAIN
     End Sub
 
     Private Sub convert_Database_To_XML(ByVal path As String)
-        Dim bao_show As New BAO_SHOW
-        Dim bao_mas As New BAO_MASTER
-        Dim cls As New CLASS_GEN_XML.DRRGT_SUB(_CLS.CITIZEN_ID, _CLS.LCNSID, "1", _CLS.PVCODE) 'ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
-        Dim cls_xml As New CLASS_DRRGT_SUB                                                                 ' ประกาศตัวแปรจาก CLASS_DALCN 
-        cls_xml = cls.gen_xml()
 
+        Dim cls As New CLASS_GEN_XML.DRRGT_SUB(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID, "1", _CLS.PVCODE)
+        Dim XML As New CLASS_GEN_XML.DRRGT_SUBSTITUBE
+        DRRGT_SUB = XML.Gen_XML_DRRGT_SUBSTITUTE(Request.QueryString("rgt_ida"), _Newcode, Request.QueryString("identify"))
 
+        'Dim bao_show As New BAO_SHOW
+        'Dim bao_mas As New BAO_MASTER
+        ''ประกาศตัวแปร cls จาก CLASS_GEN_XML.DALCN
+        'Dim cls_xml As New CLASS_DRRGT_SUB                                                                 ' ประกาศตัวแปรจาก CLASS_DALCN 
+        'cls_xml = cls.gen_xml()
 
-        Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
-        dao_drrgt.GetDataby_IDA(Request.QueryString("rgt_ida"))
-        Dim dao As New DAO_DRUG.ClsDBdalcn
-        Try
-            dao.GetDataby_IDA(dao_drrgt.fields.FK_LCN_IDA)
-        Catch ex As Exception
+        'Dim dao_drrgt As New DAO_DRUG.ClsDBdrrgt
+        'dao_drrgt.GetDataby_IDA(Request.QueryString("rgt_ida"))
+        'Dim dao_dph As New DAO_XML_DRUG_HERB.TB_XML_DRUG_PRODUCT_HERB
+        'dao_dph.GetDataby_4Key(dao_drrgt.fields.rgtno, dao_drrgt.fields.rgttpcd, dao_drrgt.fields.drgtpcd, dao_drrgt.fields.pvncd)
+        'If dao_dph.fields.IDA = 0 Then
+        '    dao_dph.GetDataby_IDA_drrgt(dao_drrgt.fields.IDA)
+        'End If
+        'Dim dao_lcn As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_HERB
+        'dao_lcn.GetDataby_u1(dao_dph.fields.Newcode_not)
+        'Dim dao_licen As New DAO_XML_DRUG_HERB.TB_XML_SEARCH_DRUG_LCN_LICEN_HERB
+        'dao_licen.GetDataby_u1(dao_dph.fields.Newcode_not)
 
-        End Try
-
-        'Dim dao_sub As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
+        'Dim dao As New DAO_DRUG.ClsDBdalcn
         'Try
-        '    dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
+        '    dao.GetDataby_IDA(dao_lcn.fields.IDA_dalcn)
         'Catch ex As Exception
 
         'End Try
 
-        Dim rcvno_format As String = ""
-        Dim LCN_TYPE As String = ""
-        Dim LCNNO_FORMAT As String = ""
-        Dim TABEAN_FORMAT As String = ""
-        Dim LCNTPCD_GROUP As String = ""
-        Dim drug_name As String = ""
-        Dim rgtno_format As String = ""
-        Dim rgtno_auto As String = ""
-        Dim rgttpcd As String = ""
-        Dim rgtno As String = ""
-        Dim pvnabbr As String = ""
-        Dim rcvno As String = ""
-        Dim rcvno_auto As String = ""
-        Dim lcnno As String = ""
-        Dim lcnsid As String = ""
-        Try
-            rcvno_auto = "" 'dao_sub.fields.rcvno
-        Catch ex As Exception
+        ''Dim dao_sub As New DAO_DRUG.TB_DRRGT_SUBSTITUTE
+        ''Try
+        ''    dao_sub.GetDatabyIDA(Request.QueryString("IDA"))
+        ''Catch ex As Exception
 
-        End Try
-        Try
-            rgttpcd = dao_drrgt.fields.rgttpcd
-        Catch ex As Exception
+        ''End Try
 
-        End Try
-        Try
-            rcvno = "" 'dao_sub.fields.rcvno
-        Catch ex As Exception
+        'Dim rcvno_format As String = ""
+        'Dim LCN_TYPE As String = ""
+        'Dim LCNNO_FORMAT As String = ""
+        'Dim TABEAN_FORMAT As String = ""
+        'Dim LCNTPCD_GROUP As String = ""
+        'Dim drug_name As String = ""
+        'Dim rgtno_format As String = ""
+        'Dim rgtno_auto As String = ""
+        'Dim rgttpcd As String = ""
+        'Dim rgtno As String = ""
+        'Dim pvnabbr As String = ""
+        'Dim rcvno As String = ""
+        'Dim rcvno_auto As String = ""
+        'Dim lcnno As String = ""
+        'Dim lcnsid As String = ""
+        'Dim lcntpcd As String = ""
+        'Try
+        '    rcvno_auto = "" 'dao_sub.fields.rcvno
+        'Catch ex As Exception
 
-        End Try
-        Try
-            lcnno = dao_drrgt.fields.lcnno
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'rgttpcd = dao_drrgt.fields.rgttpcd
+        '    rgttpcd = dao_dph.fields.rgttpcd
+        'Catch ex As Exception
 
-        End Try
-        Try
-            lcnsid = dao_drrgt.fields.lcnsid
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    rcvno = "" 'dao_sub.fields.rcvno
+        'Catch ex As Exception
 
-        End Try
-        Try
-            rgtno = dao_drrgt.fields.rgtno
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'lcnno = dao_drrgt.fields.lcnno
+        '    lcnno = dao_dph.fields.lcnno
+        'Catch ex As Exception
 
-        End Try
-        Try
-            rgtno_auto = rgtno
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'lcnsid = dao_drrgt.fields.lcnsid
+        '    lcnsid = dao_dph.fields.lcnsid
+        'Catch ex As Exception
 
-        End Try
-        Try
-            pvnabbr = dao_drrgt.fields.pvnabbr
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'rgtno = dao_drrgt.fields.rgtno
+        '    rgtno = dao_dph.fields.rgtno
+        'Catch ex As Exception
 
-        End Try
-        Try
-            drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    rgtno_auto = rgtno
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If dao_drrgt.fields.lcntpcd.Contains("ผยบ") Or dao_drrgt.fields.lcntpcd.Contains("นยบ") Then
-                LCN_TYPE = "2"
-            Else
-                LCN_TYPE = "1"
-            End If
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'pvnabbr = dao_drrgt.fields.pvnabbr
+        '    pvnabbr = dao_dph.fields.pvnabbr
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If dao_drrgt.fields.lcntpcd.Contains("ผย") Then
-                LCNTPCD_GROUP = "2"
-            Else
-                LCNTPCD_GROUP = "1"
-            End If
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'drug_name = dao_drrgt.fields.thadrgnm & " / " & dao_drrgt.fields.engdrgnm
+        '    drug_name = dao_dph.fields.thadrgnm & " / " & dao_dph.fields.engdrgnm
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If Len(rcvno_auto) > 0 Then
-                rcvno_format = rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2)
-            End If
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'If dao_drrgt.fields.lcntpcd.Contains("ผยบ") Or dao_drrgt.fields.lcntpcd.Contains("นยบ") Then
+        '    'If dao_dph.fields.lcntpcd.Contains("ผยบ") Or dao_dph.fields.lcntpcd.Contains("นยบ") Then
+        '    LCN_TYPE = "2"
+        '    'Else
+        '    '    LCN_TYPE = "1"
+        '    'End If
+        'Catch ex As Exception
 
-        End Try
-        Try
-            LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/25" & Left(dao.fields.lcnno, 2)
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'If dao_drrgt.fields.lcntpcd.Contains("ผย") Then
+        '    'If dao_dph.fields.lcntpcd.Contains("ผย") Then
+        '    LCNTPCD_GROUP = "2"
+        '    'Else
+        '    '    LCNTPCD_GROUP = "1"
+        '    'End If
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If Len(rgtno_auto) > 0 Then
-                rgtno_format = pvnabbr & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/25" & Left(rgtno_auto, 2)
-            End If
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    If Len(rcvno_auto) > 0 Then
+        '        rcvno_format = rgttpcd & " " & CStr(CInt(Right(rcvno_auto, 5))) & "/" & Left(rcvno_auto, 2)
+        '    End If
+        'Catch ex As Exception
 
-        End Try
+        'End Try
+        'Try
+        '    'LCNNO_FORMAT = dao.fields.lcntpcd & " " & CStr(CInt(Right(dao.fields.lcnno, 5))) & "/25" & Left(dao.fields.lcnno, 2)
+        '    If dao_lcn.fields.lcnno_display_new Is Nothing Then
+        '        LCNNO_FORMAT = dao_lcn.fields.lcnno_noo
+        '    Else
+        '        LCNNO_FORMAT = dao_lcn.fields.lcnno_display_new
+        '    End If
 
-        Try
-            If Len(rgtno_auto) > 0 Then
-                rgtno_format = rgttpcd & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/" & Left(rgtno_auto, 2)
-            End If
-        Catch ex As Exception
+        'Catch ex As Exception
 
-        End Try
-        Try
-            If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Then
-                cls_xml.TABEAN_TYPE1 = "2"
-                'cls_xml.TABEAN_TYPE2 = "2"
-            Else
-                cls_xml.TABEAN_TYPE1 = "1"
-                'cls_xml.TABEAN_TYPE2 = "0"
-            End If
-        Catch ex As Exception
+        'End Try
+        'Try
+        '    'If Len(rgtno_auto) > 0 Then
+        '    '    rgtno_format = pvnabbr & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/25" & Left(rgtno_auto, 2)
+        '    'End If
+        '    rgtno_format = dao_dph.fields.register
+        'Catch ex As Exception
 
-        End Try
+        'End Try
 
-        Try
-            Dim dao_dg As New DAO_DRUG.TB_DRRGT_DRUG_GROUP
-            dao_dg.GetDataby_rgttpcd(dao_drrgt.fields.rgttpcd)
-            cls_xml.CHK_LCN_SUBTYPE = dao_dg.fields.subtpcd
-        Catch ex As Exception
+        'Try
+        '    'If Len(rgtno_auto) > 0 Then
+        '    '    rgtno_format = rgttpcd & " " & CStr(CInt(Right(rgtno_auto, 5))) & "/" & Left(rgtno_auto, 2)
+        '    'End If
+        '    rgtno_format = dao_dph.fields.register
+        'Catch ex As Exception
 
-        End Try
-        cls_xml.LCNNO_FORMAT = LCNNO_FORMAT
-        cls_xml.RCVNO_FORMAT = rcvno_format
-        cls_xml.RGTNO_FORMAT = rgtno_format
-        'cls_xml.TABEAN_TYPE1 = LCN_TYPE
+        'End Try
+        'Try
+        '    'If dao.fields.lcntpcd.Contains("ผยบ") Or dao.fields.lcntpcd.Contains("นยบ") Then
+        '    '    If dao_dph.fields.lcntpcd.Contains("ผยบ") Or dao_dph.fields.lcntpcd.Contains("นยบ") Then
+        '    cls_xml.TABEAN_TYPE1 = "2"
+        '    'cls_xml.TABEAN_TYPE2 = "2"
+        '    '     Else
+        '    '         cls_xml.TABEAN_TYPE1 = "1"
+        '    'cls_xml.TABEAN_TYPE2 = "0"
+        '    'End If
+        'Catch ex As Exception
+
+        'End Try
+
+        'Try
+        '    Dim dao_dg As New DAO_DRUG.TB_DRRGT_DRUG_GROUP
+        '    dao_dg.GetDataby_rgttpcd(dao_drrgt.fields.rgttpcd)
+        '    cls_xml.CHK_LCN_SUBTYPE = dao_dg.fields.subtpcd
+        'Catch ex As Exception
+
+        'End Try
+        'cls_xml.LCNNO_FORMAT = LCNNO_FORMAT
+        'cls_xml.RCVNO_FORMAT = rcvno_format
+        'cls_xml.RGTNO_FORMAT = rgtno_format
+        ''cls_xml.TABEAN_TYPE1 = LCN_TYPE
 
 
-        cls_xml.DRUG_NAME = drug_name        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
+        'cls_xml.DRUG_NAME = drug_name        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
 
-        '------------------SHOW
-        'cls_xml ให้เท่ากับ Class ของ cls.gen_xml
-        If Request.QueryString("identify") <> "" Then
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
-        Else
-            cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
-        End If
-        Try
-            cls_xml.DT_SHOW.DT14 = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_drrgt.fields.FK_LCN_IDA) 'ผู้ดำเนิน
-        Catch ex As Exception
+        ''------------------SHOW
+        ''cls_xml ให้เท่ากับ Class ของ cls.gen_xml
 
-        End Try
+        'Try
+        '    dao_lcn.GetDataby_u1(dao_dph.fields.Newcode_not)
+        '    dao_licen.GetDataby_u1(dao_dph.fields.Newcode_not)
+        '    lcntpcd = dao_lcn.fields.lcntpcd
+        '    pvnabbr = dao_lcn.fields.pvnabbr
+        'Catch ex As Exception
+
+        'End Try
+        'Try
+        '    Dim DT_THANM As New DataTable
+        '    If Request.QueryString("identify") <> "" Then
+        '        'cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(Request.QueryString("identify"), _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        '        DT_THANM = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(dao_dph.fields.CITIZEN_AUTHORIZE, dao_dph.fields.lcnsid) 'ข้อมูลบริษัท
+        '    Else
+        '        'cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        '        cls_xml.DT_SHOW.DT17 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        '    End If
+        '    DT_THANM.Columns.Add("thanameplace")
+        '    For Each dr As DataRow In DT_THANM.Rows
+        '        'dr("thanm") = dao_e.fields.licen_loca
+        '        dr("thanm") = dao_licen.fields.licen
+        '        dr("thanameplace") = dao_licen.fields.licen
+        '    Next
+        '    DT_THANM.TableName = "SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY"
+        '    cls_xml.DT_SHOW.DT17 = DT_THANM
+        '    Dim DT_THANM2 As New DataTable
+        '    Try
+        '        DT_THANM2 = bao_show.SP_SYSLCNSNM_BY_LCNSID_AND_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE, _CLS.LCNSID_CUSTOMER) 'ข้อมูลบริษัท
+        '        DT_THANM2.Columns.Add("thanameplace")
+        '        For Each dr As DataRow In DT_THANM2.Rows
+        '            'dr("thanm") = dao_e.fields.licen_loca
+        '            dr("thanameplace") = dao_licen.fields.licen
+        '        Next
+        '    Catch ex As Exception
+
+        '    End Try
+        '    DT_THANM2.TableName = "SP_LOCATION_ADDRESS_by_LOCATION_ADDRESS_IDA_FULLADDR"
+        '    cls_xml.DT_SHOW.DT18 = DT_THANM2
+        'Catch ex As Exception
+
+        'End Try
+
+        'Try
+        '    Dim DT_BSN As New DataTable
+        '    DT_BSN = bao_show.SP_LOCATION_BSN_BY_LCN_IDA(dao_lcn.fields.IDA_dalcn) 'ผู้ดำเนิน
+        '    For Each dr As DataRow In DT_BSN.Rows
+        '        dr("BSN_THAIFULLNAME") = dao_lcn.fields.grannm_lo
+        '        dr("THAIFULLNAME") = dao_lcn.fields.grannm_lo
+        '    Next
+        '    cls_xml.DT_SHOW.DT14 = DT_BSN
+        'Catch ex As Exception
+
+        'End Try
 
         Dim objStreamWriter As New StreamWriter(path)                                                   'ประกาศตัวแปร
-        Dim x As New XmlSerializer(cls_xml.GetType)                                                     'ประกาศ
-        x.Serialize(objStreamWriter, cls_xml)
+        Dim x As New XmlSerializer(DRRGT_SUB.GetType)                                                     'ประกาศ
+        x.Serialize(objStreamWriter, DRRGT_SUB)
         objStreamWriter.Close()
 
     End Sub
@@ -320,7 +397,7 @@ Public Class FRM_SUBSTITUTE_MAIN
                 Dim dao_pro As New DAO_DRUG.ClsDBPROCESS_NAME
                 dao_pro.GetDataby_Process_Name(dao.fields.lcntpcd)
                 'lbl_titlename.Text = "พิจารณาคำขอขึ้นทะเบียนตำรับ"
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "');", True)
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & "../SUBSTITUTE_TABEAN/FRM_SUBSTITUTE_CONFIRM.aspx?IDA=" & IDA & "&TR_ID=" & tr_id & "&Process=" & _process_id & "&newcode=" & Request.QueryString("newcode") & "');", True)
 
             End If
 

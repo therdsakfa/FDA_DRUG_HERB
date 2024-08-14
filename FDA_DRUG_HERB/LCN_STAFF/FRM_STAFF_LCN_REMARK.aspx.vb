@@ -33,6 +33,7 @@
         dao.fields.remark = TextBox1.Text
         dao.update()
 
+        AddLogStatus(7, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
         Dim cls_sop As New CLS_SOP
         cls_sop.BLOCK_STAFF(_CLS.CITIZEN_ID, "STAFF", dao.fields.PROCESS_ID, _CLS.PVCODE, 8, "คืนคำขอ", "SOP-DRUG-10-" & dao.fields.PROCESS_ID & "-3", "คืนคำขอ", "เจ้าหน้าที่คืนคำขอ", "STAFF", _TR_ID, SOP_STATUS:="คืนคำขอ")
 

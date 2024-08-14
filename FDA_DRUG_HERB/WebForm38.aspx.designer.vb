@@ -228,4 +228,85 @@ Partial Public Class WebForm38
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents update_LCN As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TextBox1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btn_gen_xml_pro control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_gen_xml_pro As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''TXT_IDEN_ISTTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TXT_IDEN_ISTTB As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TXT_REMARK_ISTTB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TXT_REMARK_ISTTB As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BTN_CONFIRM_IST control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_CONFIRM_IST As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Identify_txt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Identify_txt As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btn_insert_tabean124 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_insert_tabean124 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''IDENTIFY_GEN control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents IDENTIFY_GEN As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BTN_GEN_TRANSACTION control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_GEN_TRANSACTION As Global.System.Web.UI.WebControls.Button
 End Class
