@@ -3,8 +3,8 @@
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   <%-- <link href="../css/css_radgrid.css" rel="stylesheet" />--%>
-     <link href="../css/css_rg_herb.css" rel="stylesheet" />
+    <%-- <link href="../css/css_radgrid.css" rel="stylesheet" />--%>
+    <link href="../css/css_rg_herb.css" rel="stylesheet" />
     <script src="../Scripts/jquery.searchabledropdown-1.0.7.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -55,77 +55,89 @@
         <div class="row">
             <div class="col-lg-12">
                 <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" AllowFilteringByColumn="True" PageSize="15">
-            <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA">
-                <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+                    <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA">
+                        <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+                        <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
+                            <HeaderStyle Width="20px"></HeaderStyle>
+                        </RowIndicatorColumn>
+                        <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
+                            <HeaderStyle Width="20px"></HeaderStyle>
+                        </ExpandCollapseColumn>
+                        <Columns>
+                            <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column"
+                                HeaderText="IDA" ReadOnly="True" SortExpression="IDA" UniqueName="IDA" Display="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="FK_IDA" DataType="System.Int32" FilterControlAltText="Filter FK_IDA column"
+                                HeaderText="FK_IDA" ReadOnly="True" SortExpression="FK_IDA" UniqueName="FK_IDA" Display="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="FK_LCN" DataType="System.Int32" FilterControlAltText="Filter FK_LCN column"
+                                HeaderText="FK_LCN" ReadOnly="True" SortExpression="FK_LCN" UniqueName="FK_LCN" Display="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
+                                HeaderText="STATUS_ID" ReadOnly="True" SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="PROCESS_ID" FilterControlAltText="Filter PROCESS_ID column"
+                                HeaderText="PROCESS_ID" ReadOnly="True" SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="RENREW_NAME" FilterControlAltText="Filter RENREW_NAME column"
+                                HeaderText="ผู้รับอนุญาต" ReadOnly="True" SortExpression="RENREW_NAME" UniqueName="RENREW_NAME">
+                            </telerik:GridBoundColumn>
+                            <%--                            <telerik:GridBoundColumn DataField="PHR_NAME" FilterControlAltText="Filter PHR_NAME column"
+                                HeaderText="ชื่อผู้มีหน้าที่ปฏิบัติการ" ReadOnly="True" SortExpression="PHR_NAME" UniqueName="PHR_NAME">
+                            </telerik:GridBoundColumn>--%>
+                            <telerik:GridBoundColumn DataField="RCVNO_NEW" FilterControlAltText="Filter RCVNO_NEW column"
+                                HeaderText="เลขรับที่" ReadOnly="True" SortExpression="RCVNO_NEW" UniqueName="RCVNO_NEW">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column"
+                                HeaderText="เลขดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID" AllowFiltering="true">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="LCNNO_NEW_DISPLAY" FilterControlAltText="Filter LCNNO_NEW_DISPLAY column"
+                                HeaderText="เลขใบอนุญาต" ReadOnly="True" SortExpression="LCNNO_NEW_DISPLAY" UniqueName="LCNNO_NEW_DISPLAY">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="BUSINESS_PLACE_NAME" FilterControlAltText="Filter BUSINESS_PLACE_NAME column"
+                                HeaderText="ชื่อสถานที่ประกอบธุรกิจ" ReadOnly="True" SortExpression="BUSINESS_PLACE_NAME" UniqueName="BUSINESS_PLACE_NAME">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="Changwat" FilterControlAltText="Filter Changwat column"
+                                HeaderText="จังหวัด" ReadOnly="True" SortExpression="Changwat" UniqueName="Changwat">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="ORIGINAL_EXPIRE_DATE" FilterControlAltText="Filter ORIGINAL_EXPIRE_DATE column"
+                                HeaderText="วันที่สิ้นอายุ" ReadOnly="True" SortExpression="ORIGINAL_EXPIRE_DATE" UniqueName="ORIGINAL_EXPIRE_DATE">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="CREATE_DATE" FilterControlAltText="Filter CREATE_DATE column"
+                                HeaderText="วันที่สร้างคำขอ" ReadOnly="True" SortExpression="CREATE_DATE" UniqueName="CREATE_DATE">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="PAY_DATE" FilterControlAltText="Filter PAY_DATE column"
+                                HeaderText="วันที่ยื่นคำขอ" ReadOnly="True" SortExpression="PAY_DATE" UniqueName="PAY_DATE">
+                            </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="STATUS_NAME_STAFF" FilterControlAltText="Filter STATUS_NAME_STAFF column"
+                                HeaderText="สถานะคำขอ" ReadOnly="True" SortExpression="STATUS_NAME_STAFF" UniqueName="STATUS_NAME_STAFF">
+                            </telerik:GridBoundColumn>
+                            <%--                            <telerik:GridBoundColumn DataField="STATUS_DATE" FilterControlAltText="Filter STATUS_DATE column"
+                                HeaderText="วันที่ปรับปรุงสถานะ" ReadOnly="True" SortExpression="STATUS_DATE" UniqueName="STATUS_DATE">
+                            </telerik:GridBoundColumn>--%>
 
-                <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                    <HeaderStyle Width="20px"></HeaderStyle>
-                </RowIndicatorColumn>
-
-                <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                    <HeaderStyle Width="20px"></HeaderStyle>
-                </ExpandCollapseColumn>
-
-                <Columns>
-                    <telerik:GridBoundColumn DataField="IDA" DataType="System.Int32" FilterControlAltText="Filter IDA column"
-                        HeaderText="IDA" ReadOnly="True" SortExpression="IDA" UniqueName="IDA" Display="false">
-                    </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="FK_IDA" DataType="System.Int32" FilterControlAltText="Filter FK_IDA column"
-                        HeaderText="FK_IDA" ReadOnly="True" SortExpression="FK_IDA" UniqueName="FK_IDA" Display="false">
-                    </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="STATUS_ID" FilterControlAltText="Filter STATUS_ID column"
-                        HeaderText="STATUS_ID" ReadOnly="True" SortExpression="STATUS_ID" UniqueName="STATUS_ID" Display="false">
-                    </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="PROCESS_ID" FilterControlAltText="Filter PROCESS_ID column"
-                        HeaderText="PROCESS_ID" ReadOnly="True" SortExpression="PROCESS_ID" UniqueName="PROCESS_ID" Display="false">
-                    </telerik:GridBoundColumn>
-                     <telerik:GridBoundColumn DataField="RENREW_NAME" FilterControlAltText="Filter RENREW_NAME column"
-                        HeaderText="ผู้รับอนุญาต" ReadOnly="True" SortExpression="RENREW_NAME" UniqueName="RENREW_NAME">
-                    </telerik:GridBoundColumn>
-                      <telerik:GridBoundColumn DataField="PHR_NAME" FilterControlAltText="Filter PHR_NAME column"
-                        HeaderText="ชื่อผู้มีหน้าที่ปฏิบัติการ" ReadOnly="True" SortExpression="PHR_NAME" UniqueName="PHR_NAME">
-                    </telerik:GridBoundColumn>
-                     <telerik:GridBoundColumn DataField="RCVNO_NEW" FilterControlAltText="Filter RCVNO_NEW column"
-                        HeaderText="เลขรับที่" ReadOnly="True" SortExpression="RCVNO_NEW" UniqueName="RCVNO_NEW">
-                    </telerik:GridBoundColumn>
-                     <telerik:GridBoundColumn DataField="TR_ID" FilterControlAltText="Filter TR_ID column"
-                           HeaderText="เลขดำเนินการ" SortExpression="TR_ID" UniqueName="TR_ID" AllowFiltering="true">
-                       </telerik:GridBoundColumn>
-                    <telerik:GridBoundColumn DataField="LCNNO_NEW_DISPLAY" FilterControlAltText="Filter LCNNO_NEW_DISPLAY column"
-                        HeaderText="เลขใบอนุญาต" ReadOnly="True" SortExpression="LCNNO_NEW_DISPLAY" UniqueName="LCNNO_NEW_DISPLAY" >
-                    </telerik:GridBoundColumn>
-                     <telerik:GridBoundColumn DataField="BUSINESS_PLACE_NAME" FilterControlAltText="Filter BUSINESS_PLACE_NAME column"
-                        HeaderText="ชื่อสถานที่ประกอบธุรกิจ" ReadOnly="True" SortExpression="BUSINESS_PLACE_NAME" UniqueName="BUSINESS_PLACE_NAME" >
-                    </telerik:GridBoundColumn>
-                    <%--  <telerik:GridBoundColumn DataField="OPENTIME" FilterControlAltText="Filter OPENTIME column"
-                        HeaderText="เวลาทำการ" ReadOnly="True" SortExpression="OPENTIME" UniqueName="OPENTIME" >
-                    </telerik:GridBoundColumn>--%> 
-                    <telerik:GridBoundColumn DataField="STATUS_NAME_STAFF" FilterControlAltText="Filter STATUS_NAME_STAFF column"
-                        HeaderText="สถานะ" ReadOnly="True" SortExpression="STATUS_NAME_STAFF" UniqueName="STATUS_NAME_STAFF" >
-                    </telerik:GridBoundColumn>
-                  
-                    <%--   <telerik:GridBoundColumn DataField="" FilterControlAltText="Filter STATUS_NAME column"
+                            <%--   <telerik:GridBoundColumn DataField="" FilterControlAltText="Filter STATUS_NAME column"
                         HeaderText="สถานนะ" SortExpression="" UniqueName="">
                     </telerik:GridBoundColumn>--%>
-                      <telerik:GridButtonColumn ButtonType="LinkButton" Text="ดูข้อมูล"
+                            <telerik:GridButtonColumn ButtonType="LinkButton" Text="ดูข้อมูล"
                                 CommandName="HL_SELECT" UniqueName="HL_SELECT">
                             </telerik:GridButtonColumn>
-                </Columns>
+                        </Columns>
 
-                <EditFormSettings>
-                    <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
-                </EditFormSettings>
+                        <EditFormSettings>
+                            <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
+                        </EditFormSettings>
 
-                <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-            </MasterTableView>
+                        <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
+                    </MasterTableView>
 
-            <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
+                    <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
 
-            <FilterMenu EnableImageSprites="False"></FilterMenu>
-        </telerik:RadGrid>
+                    <FilterMenu EnableImageSprites="False"></FilterMenu>
+                </telerik:RadGrid>
             </div>
         </div>
-        
+
 
     </div>
 

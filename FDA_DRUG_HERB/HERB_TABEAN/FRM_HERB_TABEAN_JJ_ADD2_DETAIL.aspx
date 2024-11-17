@@ -43,31 +43,55 @@
         </div>
         <div class="col-lg-1"></div>
     </div>
-    <div class="row" id="data_show3" runat="server" visible="false">
+   <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-2">
-            <label>ผู้แทนนิติบุคคล:</label>
+            <label>ผู้ขอจดแจ้ง:</label>
         </div>
-        <div class="col-lg-4" style="border-bottom: #999999 1px dotted; text-align: center">
-            <asp:TextBox ID="txt_agent99" runat="server" Width="90%" BorderStyle="None"></asp:TextBox>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
+            <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
+        </div>
+        <div class="col-lg-2">
+            <label>ชื่อสถานที่:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
+            <asp:TextBox ID="TextBox2" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
         <div class="col-lg-1"></div>
+    </div>
+     <div class="row" id="data_show3" runat="server" visible="false">
+        <div class="col-lg-1"></div>
+           <div class="col-lg-2">
+            <label>ผู้แทนนิติบุคคล:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted; text-align: center">
+            <asp:TextBox ID="txt_agent99" runat="server" Width="100%" BorderStyle="None"></asp:TextBox>
+        </div>
+        <div class="col-lg-2">
+            <label>เลขบัตรผู้แทนนิติบุคคล:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted; text-align: center">
+            <asp:TextBox ID="txt_agent99_id" runat="server" Width="100%"></asp:TextBox>
+        </div>
+        <div class="col-lg-1">
+            <asp:Button ID="BTN_SEARCH_AG99" runat="server" Text="ค้นหา" />
+        </div>
     </div>
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-2" style="text-align: left">
             <label>อายุ:</label>
         </div>
-        <div class="col-lg-1" style="border-bottom: #999999 1px dotted;">
+        <div class="col-lg-2" style="border-bottom: #999999 1px dotted;">
             <asp:TextBox ID="txt_person_age" runat="server" TextMode="Number" Width="100%"></asp:TextBox>
         </div>
         <div class="col-lg-1" style="text-align: center">
             <label>ปี</label>
         </div>
-        <div class="col-lg-1" style="text-align: center">
+        <div class="col-lg-2" style="text-align: left">
             <label>สัญชาติ:</label>
         </div>
-        <div class="col-lg-2" style="border-bottom: #999999 1px dotted">
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
             <asp:DropDownList ID="DDL_NATION" runat="server" BackColor="White" Height="25px" Width="100%" SkinID="bootstrap" AutoPostBack="true">
                 <asp:ListItem Value="0">-- กรุณาเลือก --</asp:ListItem>
                 <asp:ListItem Value="1">ไทย</asp:ListItem>
@@ -88,7 +112,7 @@
             <label>ชนิด:</label>
         </div>
         <div class="col-lg-2">
-            <asp:DropDownList ID="DD_TYPE_NAME" runat="server" BackColor="White" Height="25px" Width="100%" SkinID="bootstrap" Enabled="false">
+            <asp:DropDownList ID="DD_TYPE_NAME" runat="server" BackColor="White" Height="25px" Width="100%" SkinID="bootstrap">
                 <asp:ListItem Value="0">-- กรุณาเลือก --</asp:ListItem>
                 <asp:ListItem Value="1">ยาจากสมุนไพร</asp:ListItem>
                 <asp:ListItem Value="2">ยาจากสมุนไพรเพื่อสุขภาพ</asp:ListItem>
@@ -258,15 +282,23 @@
             <label>ชื่อภาษาไทย:</label>
         </div>
         <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="NAME_THAI" runat="server" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="NAME_THAI" runat="server" Width="100%" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
+        <div class="col-lg-2"> <asp:Label ID="Label1" runat="server" Text="*เพิ่มเติมเครื่องหมายการค้า (ถ้ามี)" ForeColor="Red"></asp:Label></div>
+        <div class="col-lg-3">
+            <asp:TextBox ID="NAME_THAI_R" runat="server" Width="100%" ></asp:TextBox>
+           
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
         <div class="col-lg-2">
             <label>ชื่อภาษาอังกฤษ(ถ้ามี):</label>
         </div>
         <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="NAME_ENG" runat="server" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="NAME_ENG" runat="server" Width="100%" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
-        <div class="col-lg-1"></div>
     </div>
     <div class="row">
         <div class="col-lg-1"></div>
@@ -274,13 +306,13 @@
             <label>ชื่อภาษาต่างประเทศอื่น(ถ้ามี):</label>
         </div>
         <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="NAME_OTHER" runat="server" Width="100%"></asp:TextBox>
+            <asp:TextBox ID="NAME_OTHER" runat="server" Width="100%" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
         <div class="col-lg-2">
             <label>รูปแบบ:</label>
         </div>
         <div class="col-lg-2">
-            <asp:DropDownList ID="DD_STYPE_ID" runat="server" DataValueField="STYPE_ID" DataTextField="STYPE_NAME" BackColor="White" Height="25px" Width="200px" SkinID="bootstrap" >
+            <asp:DropDownList ID="DD_STYPE_ID" runat="server" DataValueField="STYPE_ID" DataTextField="STYPE_NAME" BackColor="White" Height="25px" Width="200px" SkinID="bootstrap" Enabled="false">
                 <%--<asp:ListItem Value="0">-- กรุณาเลือก --</asp:ListItem>
                 <asp:ListItem Value="1">แคปซูลแข็ง (hard capsule)</asp:ListItem>
                 <asp:ListItem Value="2">ผง (powder)</asp:ListItem>--%>

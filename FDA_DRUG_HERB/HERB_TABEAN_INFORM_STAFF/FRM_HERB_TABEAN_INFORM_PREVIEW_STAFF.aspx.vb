@@ -41,15 +41,15 @@
         Dim IDA_LCN As String = dao.fields.FK_LCN
 
         Dim XML As New CLASS_GEN_XML.TABEAN_INFORM
-        TBN_INFORM = XML.GEN_XML_INFORM(_IDA, IDA_LCN)
+        TBN_INFORM = XML.GEN_XML_INFORM_JR2(_IDA, IDA_LCN)
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         dao_pdftemplate.GETDATA_TABEAN_HERB_JJ_TEMPLAETE1(PROCESS_ID, dao.fields.STATUS_ID, "จร2", 0)
 
         Dim _PATH_FILE As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_INFORM") 'path
         Dim PATH_PDF_TEMPLATE As String = _PATH_FILE & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
-        Dim PATH_PDF_OUTPUT As String = _PATH_FILE & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("HB_PDF", PROCESS_ID, Date.Now.Year, _IDA)
-        Dim Path_XML As String = _PATH_FILE & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("HB_XML", PROCESS_ID, Date.Now.Year, _IDA)
+        Dim PATH_PDF_OUTPUT As String = _PATH_FILE & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("HB_PDF_JR2", PROCESS_ID, Date.Now.Year, _IDA)
+        Dim Path_XML As String = _PATH_FILE & dao_pdftemplate.fields.XML_PATH & "\" & NAME_XML("HB_XML_JR2", PROCESS_ID, Date.Now.Year, _IDA)
 
         LOAD_XML_PDF(Path_XML, PATH_PDF_TEMPLATE, PROCESS_ID, PATH_PDF_OUTPUT)
         lr_preview.Text = "<iframe id='iframe1'  style='height:9500px;width:100%;' src='../PDF/FRM_PDF.aspx?fileName=" & PATH_PDF_OUTPUT & "' ></iframe>"

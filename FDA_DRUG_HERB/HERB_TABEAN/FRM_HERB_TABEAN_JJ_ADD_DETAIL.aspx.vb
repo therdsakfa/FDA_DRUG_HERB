@@ -13,7 +13,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
     Private _PROCESS_JJ As String = ""
     Private _IDA As String = ""
     Private _PROCESS_ID_LCN As String = ""
-
+    Private _SID As String = ""
     Sub RunSession()
         Try
             If Session("CLS") Is Nothing Then
@@ -32,6 +32,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
         _DD_HERB_NAME_ID = Request.QueryString("DD_HERB_NAME_ID")
         _PROCESS_JJ = Request.QueryString("PROCESS_JJ")
         _PROCESS_ID_LCN = Request.QueryString("PROCESS_ID_LCN")
+        _SID = Request.QueryString("SID")
         Try
             _IDA = Request.QueryString("IDA")
         Catch ex As Exception
@@ -299,7 +300,8 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
         'Dim thanm As String = dao_lcn.fields.thanm
         Dim CATEGORY_ID As String = dao_lcn.fields.PROCESS_ID
         Dim locationaddress As String = dao_lcn.fields.LOCATION_ADDRESS_thanameplace
-
+        Dim dao_lo As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
+        dao_lo.GetDataby_IDA(dao_lcn.fields.IDA)
         Dim dao As New DAO_TABEAN_HERB.TB_MAS_TABEAN_HERB_NAME_DETAIL_JJ
 
         dao.GetdatabyID_DD_HERB_NAME_ID(_DD_HERB_NAME_ID, _PROCESS_JJ)
@@ -324,8 +326,12 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
         '    NAME_JJ.Text = _CLS.THANM_CUSTOMER
         'End If
         'NAME_JJ.Text = _CLS.THANM
+        If Request.QueryString("SID") = "2" Then
+            THANM = GET_NAME_BY_IDENTIFY(_CLS.CITIZEN_ID_AUTHORIZE)
+            locationaddress = dao_lo.fields.thanameplace
+        End If
         NAME_JJ.Text = THANM
-        NAME_PLACE_JJ.Text = locationaddress
+            NAME_PLACE_JJ.Text = locationaddress
 
         Dim tb_location As New DAO_DRUG.TB_DALCN_LOCATION_BSN
         Try
@@ -429,7 +435,11 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
         End If
         DD_SALE_CHANNEL.SelectedValue = dao.fields.SALE_CHANNEL_ID
         NOTE.Text = dao.fields.NOTE
-
+        If Request.QueryString("staff") = 1 Then
+            BTN_SEARCH_AG99.Visible = True
+        Else
+            BTN_SEARCH_AG99.Visible = False
+        End If
     End Sub
 
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
@@ -639,11 +649,11 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
                         dao.fields.CREATE_DATE = Date.Now
                         'dao.fields.CREATE_BY = _CLS.THANM
                         dao.fields.CREATE_BY = _CLS.THANM
-                            If _CLS.THANM = Nothing Then
-                                dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
-                            End If
+                        If _CLS.THANM = Nothing Then
+                            dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
+                        End If
 
-                            dao.fields.MENU_GROUP = _MENU_GROUP
+                        dao.fields.MENU_GROUP = _MENU_GROUP
                         Try
                             dao.fields.IDA_LCT = _IDA_LCT
                         Catch ex As Exception
@@ -797,10 +807,10 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
                         'dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
                         dao.fields.CREATE_DATE = Date.Now
                         dao.fields.CREATE_BY = _CLS.THANM
-                            If _CLS.THANM = Nothing Then
-                                dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
-                            End If
-                            dao.fields.MENU_GROUP = _MENU_GROUP
+                        If _CLS.THANM = Nothing Then
+                            dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
+                        End If
+                        dao.fields.MENU_GROUP = _MENU_GROUP
                         Try
                             dao.fields.IDA_LCT = _IDA_LCT
                         Catch ex As Exception
@@ -825,12 +835,33 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
                             dao.fields.INOFFICE_STAFF_ID = 1
                             dao.fields.INOFFICE_STAFF_CITIZEN_ID = _CLS.CITIZEN_ID
                         End If
+                        If Request.QueryString("SID") = "2" Then
+                            Dim dao_who As New DAO_WHO.TB_WHO_DALCN
+                            dao_who.GetdatabyID_FK_LCN_IDEN(_IDA_LCN, _CLS.CITIZEN_ID_AUTHORIZE)
+                            dao.fields.WHO_ID = 1
+                            dao.fields.WHO_IDENTIFY = dao_who.fields.CITIZEN_ID_AUTHORIZE
+                            dao.fields.WHO_ADDR = dao_who.fields.ADDRESSPERSON
+                            dao.fields.WHO_LCN_ID = dao_who.fields.FK_LCN
+                            dao.fields.WHO_NAME = dao_who.fields.LOCATION_NAME
+                        End If
                         dao.Update()
-
                     End If
-
                     dao.GetdatabyID_IDA(_IDA)
-
+                    dao.fields.WHO_ID = 0
+                    dao.fields.AGENT_99_IDEN = txt_agent99_id.Text
+                    If Request.QueryString("SID") = "2" Then
+                        Dim dao_who As New DAO_WHO.TB_WHO_DALCN
+                        dao_who.GetdatabyID_FK_LCN_IDEN(_IDA_LCN, _CLS.CITIZEN_ID_AUTHORIZE)
+                        dao.fields.WHO_ID = 1
+                        dao.fields.WHO_IDENTIFY = dao_who.fields.CITIZEN_ID_AUTHORIZE
+                        dao.fields.WHO_ADDR = dao_who.fields.ADDRESSPERSON
+                        dao.fields.WHO_LCN_ID = dao_who.fields.FK_LCN
+                        dao.fields.WHO_NAME = dao_who.fields.LOCATION_NAME
+                        dao.fields.LCN_NAME = dao_who.fields.LOCATION_NAME
+                        Dim dao_lo As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
+                        dao_lo.GetDataby_IDA(dao_lcn.fields.FK_IDA)
+                        dao.fields.LCN_THANAMEPLACE = dao_lo.fields.thanameplace
+                    End If
                     ''เก็บสะถานนะทั้ง ระบบไว้
                     Dim TR_ID As String = ""
                     Dim bao_tran As New BAO_TRANSECTION
@@ -869,7 +900,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
     End Sub
 
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
-        Response.Redirect("FRM_HERB_TABEAN_JJ.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN)
+        Response.Redirect("FRM_HERB_TABEAN_JJ.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID)
     End Sub
     Protected Sub R_EATING_CONDITION_SelectedIndexChanged(sender As Object, e As EventArgs) Handles R_EATING_CONDITION.SelectedIndexChanged
         If R_EATING_CONDITION.SelectedValue = 1 Then
@@ -921,7 +952,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
 
     Sub alert_summit(ByVal text As String, ByVal ida_jj As Integer)
         Dim url As String = ""
-        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx?IDA_LCT=" & _IDA_LCT & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & ida_jj & "&staff=" & Request.QueryString("staff") & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN
+        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_CHKACC.aspx?IDA_LCT=" & _IDA_LCT & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & ida_jj & "&staff=" & Request.QueryString("staff") & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID
         Response.Write("<script type='text/javascript'>alert('" + text + "');window.location='" & url & "';</script> ")
     End Sub
 
@@ -958,6 +989,41 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
         Else
             data_show1.Visible = True
             data_show2.Visible = True
+        End If
+    End Sub
+    Protected Sub BTN_SEARCH_TN_Click(sender As Object, e As EventArgs) Handles BTN_SEARCH_AG99.Click
+        Dim dao As New DAO_CPN.TB_syslcnsnm
+        If Request.QueryString("staff") = 1 Then
+            If txt_agent99_id.Text IsNot Nothing Then
+                Dim citizen_id As String = txt_agent99_id.Text
+                Dim ws_center As New WS_DATA_CENTER.WS_DATA_CENTER
+                Dim obj As New XML_DATA
+                'Dim cls As New CLS_COMMON.convert
+                Dim result As String = ""
+                'result = ws_center.GET_DATA_IDEM(citizen_id, citizen_id, "IDEM", "DPIS")
+                result = ws_center.GET_DATA_IDENTIFY(citizen_id, citizen_id, "FUSION", "P@ssw0rdfusion440")
+                obj = ConvertFromXml(Of XML_DATA)(result)
+                Try
+                    Dim TYPE_PERSON As Integer = obj.SYSLCNSIDs.type
+                    If TYPE_PERSON = 1 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                    ElseIf TYPE_PERSON = 99 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                    Else
+                        If obj.SYSLCNSNMs.thalnm IsNot Nothing Then
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                        Else
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                        End If
+                    End If
+                Catch ex As Exception
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
+                End Try
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเลขบัตรประชาชน หรือเลขนิติ');", True)
+            End If
+        Else
+            alert_nature("สิทธ์ของท่านไม่สามารถค้นหาข้อมูลได้")
         End If
     End Sub
 End Class

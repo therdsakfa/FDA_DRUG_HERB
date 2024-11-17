@@ -194,6 +194,15 @@ Partial Public Class FRM_HERB_TABEAN_JJ_EDIT_STAFF_INTAKE
     Protected WithEvents NOTE_CANCLE As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''RDP_CANCEL_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDP_CANCEL_DATE As Global.Telerik.Web.UI.RadDatePicker
+
+    '''<summary>
     '''div_upload control.
     '''</summary>
     '''<remarks>

@@ -335,23 +335,26 @@ Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
 
         Dim TYPE_PERSON As Integer = dao_cpn.fields.type
         Dim NATION As String = dao_lcn.fields.NATION
-        If _SID = 2 Then
-            data_show3.Visible = False
-        Else
-            If TYPE_PERSON = 1 Then
+        'If _SID = 2 Then
+        '    data_show3.Visible = False
+        'Else
+        If TYPE_PERSON = 1 Then
                 data_show3.Visible = False
             ElseIf TYPE_PERSON = 99 Then
                 data_show3.Visible = True
                 txt_agent99.Text = BSN_THAIFULLNAME
             End If
-        End If
+        'End If
 
         NAME_THAI.Text = dao.fields.NAME_THAI
         NAME_ENG.Text = dao.fields.NAME_ENG
         NAME_OTHER.Text = dao.fields.NAME_OTHER
         'RECIPE_NAME.Text = dao.fields.RECIPE_NAME
-
-
+        If Request.QueryString("staff") = 1 Then
+            BTN_SEARCH_AG99.Visible = True
+        Else
+            BTN_SEARCH_AG99.Visible = False
+        End If
     End Sub
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Dim dao As New DAO_TABEAN_HERB.TB_TABEAN_JJ
@@ -468,9 +471,12 @@ Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
 
                         End Try
 
-                        dao.fields.NAME_THAI = NAME_THAI.Text
+                        'dao.fields.NAME_THAI = NAME_THAI.Text
                         dao.fields.NAME_ENG = NAME_ENG.Text
                         dao.fields.NAME_OTHER = NAME_OTHER.Text
+                        dao.fields.NAME_THAI = NAME_THAI.Text
+                        dao.fields.NAME_THAI_R = NAME_THAI_R.Text
+                        dao.fields.NAME_THAIFULL = NAME_THAI.Text & " " & NAME_THAI_R.Text
                         Try
                             dao.fields.STYPE_ID = DD_STYPE_ID.SelectedValue
                             dao.fields.STYPE_NAME = DD_STYPE_ID.SelectedItem.Text
@@ -692,9 +698,12 @@ Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
 
                         End Try
 
-                        dao.fields.NAME_THAI = NAME_THAI.Text
+                        'dao.fields.NAME_THAI = NAME_THAI.Text
                         dao.fields.NAME_ENG = NAME_ENG.Text
                         dao.fields.NAME_OTHER = NAME_OTHER.Text
+                        dao.fields.NAME_THAI = NAME_THAI.Text
+                        dao.fields.NAME_THAI_R = NAME_THAI_R.Text
+                        dao.fields.NAME_THAIFULL = NAME_THAI.Text & " " & NAME_THAI_R.Text
                         Try
                             dao.fields.STYPE_ID = DD_STYPE_ID.SelectedValue
                             dao.fields.STYPE_NAME = DD_STYPE_ID.SelectedItem.Text
@@ -888,7 +897,21 @@ Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
 
                     End Try
                     dao.GetdatabyID_IDA(_IDA)
-
+                    dao.fields.WHO_ID = 0
+                    dao.fields.AGENT_99_IDEN = txt_agent99_id.Text
+                    If Request.QueryString("SID") = 2 Then
+                        'Dim dao_who As New DAO_WHO.TB_WHO_DALCN
+                        dao_who.GetdatabyID_FK_LCN_IDEN(_IDA_LCN, _CLS.CITIZEN_ID_AUTHORIZE)
+                        dao.fields.WHO_ID = 1
+                        dao.fields.WHO_IDENTIFY = dao_who.fields.CITIZEN_ID_AUTHORIZE
+                        dao.fields.WHO_ADDR = dao_who.fields.ADDRESSPERSON
+                        dao.fields.WHO_LCN_ID = dao_who.fields.FK_LCN
+                        dao.fields.WHO_NAME = dao_who.fields.LOCATION_NAME
+                        'dao.fields.LCN_NAME = dao_who.fields.LOCATION_NAME
+                        'Dim dao_lo As New DAO_DRUG.TB_DALCN_LOCATION_ADDRESS
+                        'dao_lo.GetDataby_IDA(dao_lcn.fields.FK_IDA)
+                        'dao.fields.LCN_THANAMEPLACE = dao_lo.fields.thanameplace
+                    End If
                     ''เก็บสะถานนะทั้ง ระบบไว้
                     Dim TR_ID As String = ""
                     Dim bao_tran As New BAO_TRANSECTION
@@ -1044,6 +1067,41 @@ Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
         Else
             data_show1.Visible = True
             data_show2.Visible = True
+        End If
+    End Sub
+    Protected Sub BTN_SEARCH_TN_Click(sender As Object, e As EventArgs) Handles BTN_SEARCH_AG99.Click
+        Dim dao As New DAO_CPN.TB_syslcnsnm
+        If Request.QueryString("staff") = 1 Then
+            If txt_agent99_id.Text IsNot Nothing Then
+                Dim citizen_id As String = txt_agent99_id.Text
+                Dim ws_center As New WS_DATA_CENTER.WS_DATA_CENTER
+                Dim obj As New XML_DATA
+                'Dim cls As New CLS_COMMON.convert
+                Dim result As String = ""
+                'result = ws_center.GET_DATA_IDEM(citizen_id, citizen_id, "IDEM", "DPIS")
+                result = ws_center.GET_DATA_IDENTIFY(citizen_id, citizen_id, "FUSION", "P@ssw0rdfusion440")
+                obj = ConvertFromXml(Of XML_DATA)(result)
+                Try
+                    Dim TYPE_PERSON As Integer = obj.SYSLCNSIDs.type
+                    If TYPE_PERSON = 1 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                    ElseIf TYPE_PERSON = 99 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                    Else
+                        If obj.SYSLCNSNMs.thalnm IsNot Nothing Then
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                        Else
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                        End If
+                    End If
+                Catch ex As Exception
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
+                End Try
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเลขบัตรประชาชน หรือเลขนิติ');", True)
+            End If
+        Else
+            alert_nature("สิทธ์ของท่านไม่สามารถค้นหาข้อมูลได้")
         End If
     End Sub
 End Class

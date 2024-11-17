@@ -82,7 +82,56 @@
         End Sub
     End Class
 
+    Public Class TB_DALCN_RENEW_PRE
+        Inherits MAINCONTEXT
 
+        Public fields As New DALCN_RENEW_PRE
+
+
+        Public Sub insert()
+            db.DALCN_RENEW_PREs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_RENEW_PREs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_RENEW_PREs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PREs Where p.IDA = ida And p.ACTIVEFACT = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
+
+            datas = (From p In db.DALCN_RENEW_PREs Where p.FK_LCN = ida And p.ACTIVEFACT = active Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN_AND_SS(ByVal ida As Integer, ByVal active As Boolean)
+
+            datas = (From p In db.DALCN_RENEW_PREs Where p.FK_LCN = ida And p.ACTIVEFACT = active And p.STATUS_ID = 8 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN_AP(ByVal ida As Integer, ByVal active As Boolean)
+
+            datas = (From p In db.DALCN_RENEW_PREs Where p.FK_LCN = ida And p.STATUS_ID = 8 And p.ACTIVEFACT = active Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
 
     Public Class TB_LCN_APPROVE_EDIT_TRANSACTION_RQ_NUMBER
         Inherits MAINCONTEXT
@@ -343,13 +392,247 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GET_DATA_BY_FK_LCN_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEWs Where p.FK_LCN = ida And p.ACTIVEFACT = 1 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
 
-            datas = (From p In db.DALCN_RENEWs Where p.FK_LCN = ida And p.ACTIVEFACT = active Select p)
+            datas = (From p In db.DALCN_RENEWs Where p.FK_LCN = ida And p.ACTIVEFACT = 1 Select p)
             For Each Me.fields In datas
             Next
         End Sub
 
+    End Class
+    Public Class TB_MAS_DALCN_FEE_DISCOUNT
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_FEE_DISCOUNT_DALCN_HERB
+
+
+        Public Sub insert()
+            db.MAS_FEE_DISCOUNT_DALCN_HERBs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.MAS_FEE_DISCOUNT_DALCN_HERBs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.MAS_FEE_DISCOUNT_DALCN_HERBs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataAll_IsUse()
+
+            datas = (From p In db.MAS_FEE_DISCOUNT_DALCN_HERBs Where p.IS_USE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.MAS_FEE_DISCOUNT_DALCN_HERBs Where p.IDA = ida Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_ID(ByVal id As Integer)
+
+            datas = (From p In db.MAS_FEE_DISCOUNT_DALCN_HERBs Where p.ID = id Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_DALCN_RENEW_PRE_E_BSN
+        Inherits MAINCONTEXT
+        Public fields As New DALCN_RENEW_PRE_E_BSN
+        Public Sub insert()
+            db.DALCN_RENEW_PRE_E_BSNs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_RENEW_PRE_E_BSNs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_RENEWs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_BSNs Where p.IDA = ida Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_BSNs Where p.FK_IDA_RENEW = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_PRE_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_BSNs Where p.FK_IDA_RENEW_PRE = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
+            datas = (From p In db.DALCN_RENEW_PRE_E_BSNs Where p.FK_IDA_LCN = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_DALCN_RENEW_PRE_E_DETAIL
+        Inherits MAINCONTEXT
+        Public fields As New DALCN_RENEW_PRE_E_DETAIL
+        Public Sub insert()
+            db.DALCN_RENEW_PRE_E_DETAILs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_RENEW_PRE_E_DETAILs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_DETAILs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_DETAILs Where p.IDA = ida Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_DETAILs Where p.FK_IDA_RENEW = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_PRE_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_DETAILs Where p.FK_IDA_RENEW_PRE = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
+            datas = (From p In db.DALCN_RENEW_PRE_E_DETAILs Where p.FK_IDA_LCN = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_DALCN_RENEW_PRE_E_KEEP_ADDR
+        Inherits MAINCONTEXT
+        Public fields As New DALCN_RENEW_PRE_E_KEEP_ADDR
+        Public Sub insert()
+            db.DALCN_RENEW_PRE_E_KEEP_ADDRs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_RENEW_PRE_E_KEEP_ADDRs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_KEEP_ADDRs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_KEEP_ADDRs Where p.IDA = ida Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_KEEP_ADDRs Where p.FK_IDA_RENEW = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_PRE_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_KEEP_ADDRs Where p.FK_IDA_RENEW_PRE = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
+            datas = (From p In db.DALCN_RENEW_PRE_E_KEEP_ADDRs Where p.FK_IDA_LCN = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+    Public Class TB_DALCN_RENEW_PRE_E_PHR
+        Inherits MAINCONTEXT
+        Public fields As New DALCN_RENEW_PRE_E_PHR
+        Public Sub insert()
+            db.DALCN_RENEW_PRE_E_PHRs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+        Public Sub update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub delete()
+            db.DALCN_RENEW_PRE_E_PHRs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetDataAll()
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_PHRs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_IDA(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_PHRs Where p.IDA = ida Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_PHRs Where p.FK_IDA_RENEW = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_RENEW_PRE_ACTICE(ByVal ida As Integer)
+
+            datas = (From p In db.DALCN_RENEW_PRE_E_PHRs Where p.FK_IDA_RENEW_PRE = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GET_DATA_BY_FK_LCN(ByVal ida As Integer, ByVal active As Boolean)
+            datas = (From p In db.DALCN_RENEW_PRE_E_PHRs Where p.FK_IDA_LCN = ida And p.ACTIVE = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
     Public Class TB_LOG_RENEW_HERB
         Inherits MAINCONTEXT

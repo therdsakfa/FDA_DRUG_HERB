@@ -34,6 +34,7 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INOFFER
             bind_dd_discount()
             bind_mas_cancel()
 
+            Run_Pdf_Tabean_Herb_6_2()
             UC_ATTACH1.NAME = "เอกสารแนบ"
             UC_ATTACH1.BindData("เอกสารแนบ", 1, "pdf", "0", "77")
         End If
@@ -91,9 +92,8 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INOFFER
         dao_st.Getdataby_STATUS_ID_GROUP(dao.fields.STATUS_ID, 2)
         'NAME_ST.Text = dao_st.fields.STATUS_NAME
         STAFF_NAME.Text = dao_tr.fields.STAFF_NAME
-
         txt_edit_staff.Text = dao.fields.NOTE_EDIT
-
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
     End Sub
 
     Public Sub bind_mas_ml()
@@ -281,11 +281,10 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INOFFER
             dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
             dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
             dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+            dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
             dao.Update()
 
             bao_tran.insert_transection_jj(_ProcessID, dao.fields.IDA, DD_STATUS.SelectedValue)
-
-
             Run_Pdf_Tabean_Herb_6()
             UC_ATTACH1.insert_JJ2(_TR_ID, _ProcessID, dao.fields.IDA, 77)
             System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
@@ -319,12 +318,9 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INOFFER
                 dao.fields.ML_SUM = TXT_SUM.Text
                 dao.fields.ML_KEY_NAME = _CLS.THANM
                 dao.fields.ML_KEY_DATE = Date.Now
-
                 dao.Update()
 
-
                 bao_tran.insert_transection_jj(_ProcessID, dao.fields.IDA, DD_STATUS.SelectedValue)
-
                 Run_Pdf_Tabean_Herb_6()
                 Run_Pdf_Tabean_Herb_6_2()
                 Run_Pdf_Tabean_Herb_6_2_LONG()
@@ -336,11 +332,10 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INOFFER
                 dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                 dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                 dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                 dao.Update()
 
                 bao_tran.insert_transection_jj(_ProcessID, dao.fields.IDA, DD_STATUS.SelectedValue)
-
-
                 Run_Pdf_Tabean_Herb_6()
                 UC_ATTACH1.insert_JJ2(_TR_ID, _ProcessID, dao.fields.IDA, 77)
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)

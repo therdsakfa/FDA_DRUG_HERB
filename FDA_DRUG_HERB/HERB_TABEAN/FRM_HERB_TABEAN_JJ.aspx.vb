@@ -8,6 +8,7 @@ Public Class FRM_HERB_TABEAN_JJ
     Private _IDA_LCN As String = ""
     Private _LCNNO_DISPLAY As String = ""
     Private _PROCESS_ID_LCN As String = ""
+    Private _SID As String = ""
 
     Sub RunSession()
         Try
@@ -26,7 +27,7 @@ Public Class FRM_HERB_TABEAN_JJ
         _IDA_LCN = Request.QueryString("IDA_LCN")
         _LCNNO_DISPLAY = Request.QueryString("LCNNO_DISPLAY")
         _PROCESS_ID_LCN = Request.QueryString("PROCESS_ID_LCN")
-
+        _SID = Request.QueryString("SID")
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
@@ -92,7 +93,11 @@ Public Class FRM_HERB_TABEAN_JJ
 
         DD_HERB_NAME_PRODUCT_HEALTH.DataSource = dt
         DD_HERB_NAME_PRODUCT_HEALTH.DataBind()
-        DD_HERB_NAME_PRODUCT_HEALTH.Items.Insert(0, "-- กรุณาเลือก --")
+        'DD_HERB_NAME_PRODUCT_HEALTH.Items.Insert(0, "-- กรุณาเลือก --")
+        Dim item As New RadComboBoxItem
+        item.Text = "---กรุณาเลือก---"
+        item.Value = "0"
+        DD_HERB_NAME_PRODUCT.Items.Insert(0, item)
     End Sub
     Public Sub bind_dd(ByVal dd_herb As Integer)
         Dim dt As DataTable
@@ -102,7 +107,12 @@ Public Class FRM_HERB_TABEAN_JJ
 
         DD_HERB_NAME_PRODUCT.DataSource = dt
         DD_HERB_NAME_PRODUCT.DataBind()
-        DD_HERB_NAME_PRODUCT.Items.Insert(0, "-- กรุณาเลือก --")
+        'DD_HERB_NAME_PRODUCT.Items.Insert(0, "-- กรุณาเลือก --")
+
+        Dim item As New RadComboBoxItem
+        item.Text = "---กรุณาเลือก---"
+        item.Value = "0"
+        DD_HERB_NAME_PRODUCT.Items.Insert(0, item)
     End Sub
     Protected Sub btn_jj_herb_Click(sender As Object, e As EventArgs) Handles btn_jj_herb.Click
         Dim DD_HERB_NAME_PRODUCT_1 As Integer = 0
@@ -116,7 +126,7 @@ Public Class FRM_HERB_TABEAN_JJ
                 If DD_HERB_NAME_PRODUCT.SelectedValue <> 0 Then
                     DD_HERB_NAME_PRODUCT_1 = DD_HERB_NAME_PRODUCT.SelectedValue
 
-                    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff"))
+                    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff") & "&SID=" & _SID)
                     'ElseIf DD_HERB_NAME_PRODUCT_HEALTH.SelectedValue <> 0 Then
                     '    DD_HERB_NAME_PRODUCT_HEALTH_2 = DD_HERB_NAME_PRODUCT_HEALTH.SelectedValue
                     '    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_HEALTH_2 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff"))
@@ -127,7 +137,7 @@ Public Class FRM_HERB_TABEAN_JJ
             Else
                 If DD_HERB_NAME_PRODUCT.SelectedValue <> 0 Then
                     DD_HERB_NAME_PRODUCT_1 = DD_HERB_NAME_PRODUCT.SelectedValue
-                    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN)
+                    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID)
                     'ElseIf DD_HERB_NAME_PRODUCT_HEALTH.SelectedValue <> 0 Then
                     '    DD_HERB_NAME_PRODUCT_HEALTH_2 = DD_HERB_NAME_PRODUCT_HEALTH.SelectedValue
                     '    Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_HEALTH_2 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff"))
@@ -237,7 +247,7 @@ Public Class FRM_HERB_TABEAN_JJ
                 'Next
 
                 'alert_summit("กรุณาแนบไฟล์", dao.fields.IDA, PROCESS_JJ, dao.fields.DD_HERB_NAME_ID)
-                Response.Redirect("FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx?IDA=" & IDA & "&IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff") & "&identify=" & Request.QueryString("identify"))
+                Response.Redirect("FRM_HERB_TABEAN_JJ_ADD2_DETAIL.aspx?IDA=" & IDA & "&IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_PRODUCT_1 & "&PROCESS_JJ=" & PROCESS_JJ & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&staff=" & Request.QueryString("staff") & "&identify=" & Request.QueryString("identify") & "&SID=" & _SID)
             Else
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือกข้อมูล');", True)
             End If
@@ -263,7 +273,7 @@ Public Class FRM_HERB_TABEAN_JJ
     End Sub
     Sub alert_summit(ByVal text As String, ByVal ida_jj As Integer, ByVal process_jj As Integer, ByVal DD_HERB_NAME_ID As Integer)
         Dim url As String = ""
-        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_ID & "&PROCESS_JJ=" & process_jj & "&IDA=" & ida_jj & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN
+        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & DD_HERB_NAME_ID & "&PROCESS_JJ=" & process_jj & "&IDA=" & ida_jj & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID
         Response.Write("<script type='text/javascript'>alert('" + text + "');window.location='" & url & "';</script> ")
     End Sub
 
@@ -272,8 +282,11 @@ Public Class FRM_HERB_TABEAN_JJ
         Dim bao As New BAO_TABEAN_HERB.tb_main
         'Dim C_ID As String = _CLS.CITIZEN_ID_AUTHORIZE
         'dt = bao.SP_TABEAN_JJ(C_ID)       
-        dt = bao.SP_TABEAN_JJ(_IDA_LCN)
-
+        If Request.QueryString("SID") = "2" Then
+            dt = bao.SP_TABEAN_JJ_BY_IDEN_WHO(_IDA_LCN, _CLS.CITIZEN_ID_AUTHORIZE)
+        Else
+            dt = bao.SP_TABEAN_JJ(_IDA_LCN)
+        End If
         Return dt
     End Function
 

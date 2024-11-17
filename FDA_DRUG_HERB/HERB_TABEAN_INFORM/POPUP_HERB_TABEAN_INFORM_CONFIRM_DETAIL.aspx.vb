@@ -95,14 +95,14 @@ Public Class POPUP_HERB_TABEAN_INFORM_CONFIRM_DETAIL
             Dim ML_Request As Integer = dao.fields.ML_REQUEST
             Dim bao As New BAO.GenNumber
             Dim RCVNO As String = ""
+            Dim PVNCD As Integer = 10
             Dim RCVNO_HERB_NEW As String = ""
             'Dim pvncd As String = dao.fields.pvncd
-            Dim pvncd As String = dao.fields.pvncd
             If dao.fields.RCVNO_NEW = "" Then
                 RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), pvncd, _ProcessID, _IDA)
                 Dim TR_ID As String = dao.fields.TR_ID
                 Dim DATE_YEAR As String = con_year(Date.Now().Year()).Substring(2, 2)
-                RCVNO_HERB_NEW = bao.GEN_RCVNO_NO_NEW(con_year(Date.Now.Year()), _CLS.PVCODE, _ProcessID, _IDA)
+                RCVNO_HERB_NEW = bao.GEN_RCVNO_NO_NEW(con_year(Date.Now.Year()), 10, _ProcessID, _IDA)
                 Dim RCVNO_FULL As String = "HB" & " " & pvncd & "-" & _ProcessID & "-" & DATE_YEAR & "-" & RCVNO_HERB_NEW
                 dao.fields.RCVNO_NEW = RCVNO_FULL
                 dao.fields.rcvno = RCVNO

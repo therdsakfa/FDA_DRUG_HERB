@@ -72,6 +72,15 @@
             _THANM_THAIFULLNAME = value
         End Set
     End Property
+    Private _THANM As String
+    Public Property THANM_FULL() As String
+        Get
+            Return _THANM
+        End Get
+        Set(ByVal value As String)
+            _THANM = value
+        End Set
+    End Property
     Private _DATE_APP_DAY As String
     Public Property DATE_APP_DAY() As String
         Get

@@ -5,7 +5,7 @@ Imports FDA_DRUG_HERB.XML_CENTER
 
 Module BAO_COMMON
     Public _PATH_FILE_DRUG As String = System.Configuration.ConfigurationManager.AppSettings("PATH_FILE_DRUG")
-    <System.Runtime.CompilerServices.Extension()> _
+    <System.Runtime.CompilerServices.Extension()>
     Public Sub DropDownSelectData(ByRef Dropdown As DropDownList, ByVal Value As String)
         '   Dropdown.DataBind()
         For Each LT As ListItem In Dropdown.Items
@@ -16,7 +16,7 @@ Module BAO_COMMON
             End If
         Next
     End Sub
-    <System.Runtime.CompilerServices.Extension()> _
+    <System.Runtime.CompilerServices.Extension()>
     Public Sub DropDownSelectText(ByRef Dropdown As DropDownList, ByVal Value As String)
         '   Dropdown.DataBind()
         For Each LT As ListItem In Dropdown.Items
@@ -198,7 +198,15 @@ Module BAO_COMMON
             _p_lcn = value
         End Set
     End Property
-
+    Private _DALCN_PHR As CLASS_DALCN_PHR
+    Public Property LCN_PHR() As CLASS_DALCN_PHR
+        Get
+            Return _DALCN_PHR
+        End Get
+        Set(ByVal value As CLASS_DALCN_PHR)
+            _DALCN_PHR = value
+        End Set
+    End Property
     Private _p_dr As New CLASS_DR
     Public Property p_dr() As CLASS_DR
         Get
@@ -727,6 +735,9 @@ Module BAO_COMMON
                 ElseIf PROSESS_ID = "10401" Then
                     Dim cls_xml As New CLASS_GEN_XML.DALCN_SUB
                     cls_xml.GEN_XML_DALCN_SUBTITUTE(PATH_XML, p_dalcn_subtitute)
+                ElseIf PROSESS_ID = "10901" Or PROSESS_ID = "10902" Or PROSESS_ID = "10903" Then
+                    Dim cls_xml As New CLASS_GEN_XML.DALCN_RENEW
+                    cls_xml.GEN_XML_DALCN_RENEW(PATH_XML, LCN_RENEW)
                 ElseIf PROSESS_ID = "20910" Then
                     Dim cls_xml As New CLASS_GEN_XML.TABEAN_ANALYZE
                     cls_xml.GEN_XML_TABEAN_ANALYZE(PATH_XML, TBN_ANALYZE)
@@ -948,6 +959,28 @@ Module BAO_COMMON
                 Dim cls_xml As New CLASS_GEN_XML.LCN_EDIT_SMP3
                 cls_xml.GEN_XML_TABEAN_SMP3(PATH_XML, _TB_SMP3)
 
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+
+                    End Using
+                End Using
+            ElseIf PROSESS_ID = "10901" Or PROSESS_ID = "10902" Or PROSESS_ID = "10903" Then
+                Dim cls_xml As New CLASS_GEN_XML.DALCN_RENEW
+                cls_xml.GEN_XML_DALCN_RENEW(PATH_XML, LCN_RENEW)
+                Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
+                    Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
+                        Using stamper = New iTextSharp.text.pdf.PdfStamper(pdfReader__1, outputStream, ControlChars.NullChar, True)
+                            stamper.AcroFields.Xfa.FillXfaForm(PATH_XML)
+                        End Using
+                    End Using
+                End Using
+            ElseIf PROSESS_ID = "20201" Or PROSESS_ID = "20203" Or PROSESS_ID = "20204" Or PROSESS_ID = "20205" Then
+                Dim cls_xml As New CLASS_GEN_XML.TABEAN_INFORM
+                cls_xml.GEN_XML_TABEAN_INFORM(PATH_XML, _TBN_INFORM)
                 Using pdfReader__1 = New PdfReader(PATH_PDF_TEMPLATE) 'C:\path\PDF_TEMPLATE\
                     Using outputStream = New FileStream(PATH_PDF_OUTPUT, FileMode.Create, FileAccess.Write) '"C:\path\PDF_XML_CLASS\"
 

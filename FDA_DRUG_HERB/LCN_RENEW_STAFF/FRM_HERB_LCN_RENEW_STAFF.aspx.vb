@@ -4,6 +4,7 @@ Public Class FRM_HERB_LCN_RENEW_STAFF
     Private _CLS As New CLS_SESSION
     Private _IDA_LCN As Integer = 0
     Private _SID As String = ""
+    Private _pvncd As Integer
     Sub RunSession()
         Try
             If Session("CLS") Is Nothing Then
@@ -18,12 +19,23 @@ Public Class FRM_HERB_LCN_RENEW_STAFF
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         RunSession()
+        get_pvncd()
         If Not IsPostBack Then
             'bind_dd()
             ' RadGrid1.Rebind()
         End If
     End Sub
-
+    Sub get_pvncd()
+        '  _pvncd = Personal_Province(_CLS.CITIZEN_ID, _CLS.Groups)
+        Try
+            _pvncd = Personal_Province_NEW(_CLS.CITIZEN_ID, _CLS.CITIZEN_ID_AUTHORIZE, _CLS.GROUPS)
+            If _pvncd = 0 Then
+                _pvncd = _CLS.PVCODE
+            End If
+        Catch ex As Exception
+            _pvncd = 10
+        End Try
+    End Sub
     Function bind_data()
         Dim dt As DataTable
         Dim bao As New BAO.ClsDBSqlcommand
@@ -32,7 +44,13 @@ Public Class FRM_HERB_LCN_RENEW_STAFF
         If IDEN = "" Then
             IDEN = _CLS.CITIZEN_ID_AUTHORIZE
         End If
-        dt = bao.SP_DALCN_RENEW_STAFF()
+        If _pvncd = 10 Then
+            dt = bao.SP_DALCN_RENEW_STAFF()
+            'DIV_PVNCD.Visible = True
+        Else
+            dt = bao.SP_DALCN_RENEW_STAFF_BY_PVNCD(_pvncd)
+        End If
+
         Return dt
     End Function
 
@@ -56,14 +74,18 @@ Public Class FRM_HERB_LCN_RENEW_STAFF
             Dim IDA As Integer = item("IDA").Text
             Dim STATUS_ID As Integer = item("STATUS_ID").Text
             Dim _PROCESS_ID As Integer = item("PROCESS_ID").Text
+            Dim TR_ID As Integer = item("TR_ID").Text
+            Dim IDA_LCN As Integer = item("FK_LCN").Text
 
             If e.CommandName = "HL_SELECT" Then
-                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & " POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx?IDA=" & IDA & "&PROCESS_ID=" & _PROCESS_ID & "');", True)
-
-                'If STATUS_ID <> 0 Then
-                '    lbl_head1.Text = "แก้ไขข้อมูลและอัพโหลเอกสาร"
-                '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & " POP_UP_LCN_CONSIDER_TRANSLATION_CONFIRM.aspx?IDA=" & IDA & "');", True)
-                'End If
+                If STATUS_ID = 31 Or STATUS_ID = 3 Or STATUS_ID = 12 Then
+                    lbl_head1.Text = "แก้ไขข้อมูลและอัพโหลเอกสาร"
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & " POP_UP_LCN_RENEW_STAFF_EDIT.aspx?IDA=" & IDA & "&PROCESS_ID=" & _PROCESS_ID & "&TR_ID=" & TR_ID & "&IDA_LCN=" & IDA_LCN & "');", True)
+                Else
+                    lbl_head1.Text = "รายละเอียดคำขอ"
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & " POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx?IDA=" & IDA & "&PROCESS_ID=" & _PROCESS_ID & "&IDA_LCN=" & IDA_LCN & "');", True)
+                End If
+                'System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "Popups2('" & " POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx?IDA=" & IDA & "&PROCESS_ID=" & _PROCESS_ID & "');", True)
             End If
 
         End If

@@ -415,10 +415,10 @@ Public Class POPUP_TABEAN_HERB_TEMPOLARY_ADD
 
             End If
 
-            'Dim bao_tn As New BAO_TABEAN_HERB.tb_dd
-            'bao_tn.SP_INSERT_DRUG_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, _IDA, dao.fields.PROCESS_ID)
-            Dim SW As New SW_HERB_PAYMENT.SW_LCN_EDIT_PAYMENT
-            SW.INSERT_HERB_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, _IDA, _ProcessID)
+            Dim bao_tn As New BAO_TABEAN_HERB.tb_dd
+            bao_tn.SP_INSERT_DRUG_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, _IDA, dao.fields.PROCESS_ID)
+            'Dim SW As New SW_HERB_PAYMENT.SW_LCN_EDIT_PAYMENT
+            'SW.INSERT_HERB_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, _IDA, _ProcessID)
             alert("บันทึกเรียบร้อยแล้ว กรุณาออกใบสั่งชำระค่าคำขอ")
         End If
     End Sub

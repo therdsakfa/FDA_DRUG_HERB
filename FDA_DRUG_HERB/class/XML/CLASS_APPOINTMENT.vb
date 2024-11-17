@@ -98,6 +98,15 @@
             _name_contact = value
         End Set
     End Property
+    Private _COMPLICATE_NAME As String
+    Public Property COMPLICATE_NAME() As String
+        Get
+            Return _COMPLICATE_NAME
+        End Get
+        Set(ByVal value As String)
+            _COMPLICATE_NAME = value
+        End Set
+    End Property
 
     Private _tel_callback As String
     Public Property tel_callback() As String

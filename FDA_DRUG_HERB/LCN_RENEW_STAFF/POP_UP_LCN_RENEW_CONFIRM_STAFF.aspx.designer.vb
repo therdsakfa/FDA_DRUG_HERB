@@ -95,6 +95,123 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents lbl_create_date As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Label4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_emc_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_emc_name As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_emc_tel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_emc_tel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbl_emc_email control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbl_emc_email As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label10 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''rdl_enterprise control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_enterprise As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''Label11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''rdl_CerSD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_CerSD As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''Div_Sub_Cer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Div_Sub_Cer As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''chk_rad1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents chk_rad1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''rdl_cer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_cer As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
     '''status_update control.
     '''</summary>
     '''<remarks>
@@ -104,13 +221,40 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents status_update As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''KEEP_PAY control.
+    '''DIV_FEE_DISCOUNT control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents KEEP_PAY As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents DIV_FEE_DISCOUNT As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''ddl_fee_discount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_fee_discount As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txt_price_fee control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_price_fee As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_Fee_discount_Note control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_Fee_discount_Note As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''P12 control.
@@ -122,6 +266,15 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents P12 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''DIV_STATUS_DDL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DIV_STATUS_DDL As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''DD_STATUS control.
     '''</summary>
     '''<remarks>
@@ -131,13 +284,13 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents DD_STATUS As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''DATE_REQ control.
+    '''RDP_DATE_REQ control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DATE_REQ As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents RDP_DATE_REQ As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''DD_OFF_REQ control.
@@ -147,6 +300,33 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DD_OFF_REQ As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''panel_file_upload control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents panel_file_upload As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''uc_upload1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents uc_upload1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''UC_ATTACH2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UC_ATTACH2 As Global.FDA_DRUG_HERB.UC_ATTACH
 
     '''<summary>
     '''p2 control.
@@ -185,6 +365,24 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents UC_ATTACH1 As Global.FDA_DRUG_HERB.UC_ATTACH
 
     '''<summary>
+    '''panel_file_att control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents panel_file_att As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''RadGrid4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RadGrid4 As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
     '''btn_sumit control.
     '''</summary>
     '''<remarks>
@@ -201,6 +399,24 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_cancel As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_lcn_edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_lcn_edit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btn_drug_group_edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btn_drug_group_edit As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''btn_preview control.
@@ -221,13 +437,22 @@ Partial Public Class POP_UP_LCN_RENEW_CONFIRM_STAFF
     Protected WithEvents AT_FILE As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''RadGrid1 control.
+    '''rgat control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadGrid1 As Global.Telerik.Web.UI.RadGrid
+    Protected WithEvents rgat As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
+    '''rgat_edit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rgat_edit As Global.Telerik.Web.UI.RadGrid
 
     '''<summary>
     '''lbl_head1 control.

@@ -901,10 +901,10 @@ Public Class POPUP_HERB_TABEAN_INFORM_ADD
         dao.GetdatabyID_IDA(_IDA)
         Dim dao_tabean As New DAO_TABEAN_HERB.TB_TABEAN_INFORM_DETAIL
         dao_tabean.GetdatabyID_FK_IDA(_IDA)
-        save_data()
+        data_set()
 
     End Sub
-    Sub save_data()
+    Sub data_set()
         Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
         dao_lcn.GetDataby_IDA(_IDA_LCN)
         Dim dao_inform As New DAO_TABEAN_HERB.TB_TABEAN_INFORM
@@ -948,22 +948,21 @@ Public Class POPUP_HERB_TABEAN_INFORM_ADD
         Dim locnnodisplay As String = dao_lcn.fields.LCNNO_DISPLAY_NEW
         Dim thanameplace As String = dao_lcn.fields.thanameplace
         Dim CATEGORY_ID As String = dao_lcn.fields.PROCESS_ID
-        Dim PVNCD As Integer = dao_lcn.fields.pvncd
+        Dim PVNCD As Integer = 10
+        Dim LPVNCD As Integer = dao_lcn.fields.pvncd
         Dim PVNABBR As String = dao_lcn.fields.pvnabbr
         Dim lcnsid As String = dao_lcn.fields.lcnsid
         Dim locationaddress As String = dao_lcn.fields.LOCATION_ADDRESS_thanameplace
-
         Dim TR_ID As String = ""
         Dim bao_tran As New BAO_TRANSECTION
         TR_ID = bao_tran.insert_transection(_PROCESS_ID)
-
         dao_inform.fields.FK_LCN = _IDA_LCN
         dao_inform.fields.TR_ID = TR_ID
         dao_inform.fields.lcnsid = lcnsid
         dao_inform.fields.pvncd = PVNCD
+        dao_inform.fields.lpvncd = LPVNCD
         'dao_inform.fields.pvnabbr = PVNABBR
         dao_inform.fields.PROCESS_ID = _PROCESS_ID
-
         dao_inform.fields.thadrgnm = NAME_THAI.Text
         dao_inform.fields.engdrgnm = NAME_ENG.Text
         Try

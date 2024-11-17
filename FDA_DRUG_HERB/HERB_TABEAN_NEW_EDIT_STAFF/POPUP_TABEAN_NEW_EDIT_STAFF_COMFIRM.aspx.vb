@@ -109,6 +109,7 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM
         DATE_REQ.Text = Date.Now.ToString("dd/MM/yyyy")
         lbl_create_by.Text = dao.fields.CREATE_BY
         txt_remark_edit.Text = dao.fields.Reason_Staff
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
         Try
             lbl_create_date.Text = dao.fields.CREATE_DATE
         Catch ex As Exception
@@ -219,6 +220,8 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM
             Try
                 dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                 dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
+                dao.fields.cancel_iden = _CLS.CITIZEN_ID
             Catch ex As Exception
 
             End Try
@@ -318,10 +321,8 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_COMFIRM
         dao.GetdatabyID_IDA(_IDA)
         If dao.fields.STATUS_ID = 12 Then
             dao.fields.STATUS_ID = 23
-
         Else
             dao.fields.STATUS_ID = 13
-
         End If
         dao.Update()
 

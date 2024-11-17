@@ -143,7 +143,7 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDataby_CZTNO(ByVal CZTNO As Integer)
+        Public Sub GetDataby_CZTNO(ByVal CZTNO As String)
 
             datas = (From p In db.MAS_STAFF_NAME_HERBs Where p.CITIZEN_ID = CZTNO Select p)
             For Each Me.fields In datas
@@ -2009,6 +2009,11 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_IDA_APP(ByVal IDA As String)
+            datas = (From p In db.dalcns Where p.IDA = IDA And p.STATUS_ID = 8 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_TRANSECTION_ID_UPLOAD(ByVal TRANSECTION_ID_UPLOAD As Integer)
 
             datas = (From p In db.dalcns Where p.TRANSECTION_ID_UPLOAD = TRANSECTION_ID_UPLOAD Select p)
@@ -3620,6 +3625,12 @@ Namespace DAO_DRUG
         Public Sub GetDataAll_BYGROUP()
 
             datas = (From p In db.MAS_STATUS Where p.STATUS_GROUP = 1 Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataBy_StatusGroupAndStatusID(ByVal STGroup As Integer, ByVal STID As Integer)
+
+            datas = (From p In db.MAS_STATUS Where p.STATUS_GROUP = STGroup And p.STATUS_ID = STID Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -14557,9 +14568,42 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_FK_IDA_AND_TR_ID(ByVal FK_IDA As Integer, ByVal TR_ID As Integer)
+
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.FK_IDA = FK_IDA And p.TR_ID = TR_ID And p.Active = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDaTaby_FK_TR_PROCECSS_And_TYPE_ID(ByVal IDA As Integer, ByVal TR_ID As Integer, ByVal PROCESS_ID As String, ByVal TYPE As String)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE And p.FK_IDA = IDA And p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDaTaby_FK_TR_PROCECSS_And_HEAD_ID(ByVal IDA As Integer, ByVal TR_ID As Integer, ByVal PROCESS_ID As String, ByVal HEAD_ID As String)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.Head_ID = HEAD_ID And p.FK_IDA = IDA And p.PROCESS_ID = PROCESS_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_TR_ID(ByVal TR_ID As Integer)
 
             datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID_AND_PROCESS_AND_DOC(ByVal TR_ID As Integer, ByVal PROCESS As Integer, ByVal DOCUMENT_NAME As String)
+
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.PROCESS_ID = PROCESS And p.DOCUMENT_NAME = DOCUMENT_NAME Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDataby_TR_ID_TYPE(ByVal TR_ID As Integer, ByVal TYPE As Integer)
+
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDaTaby_TR_ID_PROCECSS_TYPE_And_HEAD_ID(ByVal TR_ID As Integer, ByVal PROCESS_ID As String, ByVal TYPE As String, ByVal Head_ID As Integer)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE And p.PROCESS_ID = PROCESS_ID And p.Head_ID = Head_ID Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -14569,15 +14613,21 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_FK_IDA_AND_TR_ID_AND_PROCESS(ByVal FK_IDA As Integer, ByVal TR_ID As Integer, ByVal PROCESS As Integer)
+
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.FK_IDA = FK_IDA And p.TR_ID = TR_ID And p.PROCESS_ID = PROCESS And p.Active = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
         Public Sub GetDataby_TR_ID_AND_PROCESS_AND_TYPE(ByVal TR_ID As Integer, ByVal PROCESS As Integer, ByVal type As Integer)
 
-            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.PROCESS_ID = PROCESS And p.TYPE = type Select p)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.PROCESS_ID = PROCESS And p.TYPE = type And p.Active = True Select p)
             For Each Me.fields In datas
             Next
         End Sub
         Public Sub GetDataby_FK_IDA_AND_TR_ID_AND_TYPE(ByVal FK_IDA As Integer, ByVal TR_ID As Integer, ByVal type As Integer)
 
-            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.FK_IDA = FK_IDA And p.TR_ID = TR_ID And p.TYPE = type Select p)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.FK_IDA = FK_IDA And p.TR_ID = TR_ID And p.TYPE = type And p.Active = True Select p)
             For Each Me.fields In datas
             Next
         End Sub
@@ -14593,8 +14643,18 @@ Namespace DAO_DRUG
             For Each Me.fields In datas
             Next
         End Sub
-        Public Sub GetDaTaby_TR_ID_And_TYPE_AND_FK_IDA(ByVal TR_ID As Integer, ByVal TYPE As String, ByVal IDA As Integer)
+        Public Sub GetDaTaby_TR_ID_And_TYPE_AND_FK_IDA_TAKE1(ByVal TR_ID As Integer, ByVal TYPE As String, ByVal IDA As Integer)
             datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE And p.FK_IDA = IDA Select p).Take(1)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDaTaby_TR_ID_And_TYPE_AND_FK_IDA(ByVal TR_ID As Integer, ByVal TYPE As String, ByVal IDA As Integer)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE And p.FK_IDA = IDA And p.Active = True Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        Public Sub GetDaTaby_FK_TR_PROCECSS_And_TYPE_ID_AND_DOC_ID2(ByVal IDA As Integer, ByVal TR_ID As Integer, ByVal PROCESS_ID As String, ByVal TYPE As String, ByVal DocID As String, ByVal DocID2 As String)
+            datas = (From p In db.DALCN_UPLOAD_FILEs Where p.TR_ID = TR_ID And p.TYPE = TYPE And p.FK_IDA = IDA And p.PROCESS_ID = PROCESS_ID And (p.DocID = DocID Or p.DocID = DocID2) Select p)
             For Each Me.fields In datas
             Next
         End Sub

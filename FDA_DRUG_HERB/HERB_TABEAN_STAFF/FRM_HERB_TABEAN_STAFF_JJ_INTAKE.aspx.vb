@@ -161,18 +161,15 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INTAKE
             ROVNO_FULL.Text = dao.fields.RCVNO_FULL
         End If
         DD_OFF_REQ.Text = _CLS.NAME
-
         DATE_REQ.Text = Date.Now.ToString("dd/MM/yyyy")
-
         Dim dao_tr As New DAO_TABEAN_HERB.TB_TABEAN_TRANSACTION_JJ
         dao_tr.GetdatabyID_FK_IDA_JJ(_IDA)
         Dim dao_st As New DAO_TABEAN_HERB.TB_MAS_TABEAN_HERB_STATUS_JJ
         dao_st.Getdataby_STATUS_ID_GROUP(dao.fields.STATUS_ID, 2)
         'NAME_ST.Text = dao_st.fields.STATUS_NAME
         STAFF_NAME.Text = dao_tr.fields.STAFF_NAME
-
         txt_edit_staff.Text = dao.fields.NOTE_EDIT
-
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
     End Sub
 
     Public Sub bind_dd()
@@ -372,9 +369,8 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INTAKE
                 dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                 dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                 dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                 dao.Update()
-
-
 
                 bao_tran.insert_transection_jj(_ProcessID, dao.fields.IDA, DD_STATUS.SelectedValue)
                 dao.fields.STATUS_ID = DD_STATUS.SelectedValue
@@ -390,6 +386,7 @@ Public Class FRM_HERB_TABEAN_STAFF_JJ_INTAKE
                     dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                     dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                     dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                    dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                     dao.Update()
 
                     'Dim bao_tran As New BAO_TRANSECTION

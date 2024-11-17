@@ -1,9 +1,16 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MasterPage/MAIN.Master" MaintainScrollPositionOnPostback="true" CodeBehind="FRM_HERB_TABEAN_JJ.aspx.vb" Inherits="FDA_DRUG_HERB.FRM_HERB_TABEAN_JJ" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/css_rg_herb.css" rel="stylesheet" />
     <script src="../Scripts/jquery.searchabledropdown-1.0.7.min.js"></script>
+    <link href="../css/css_rg_herb.css" rel="stylesheet" />
+    <link href="../css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+    <link href="../css/smoothness/jquery2.custom.css" rel="stylesheet" />
+    <script src="../Jsdate/ui.datepicker-th.js"></script>
+    <script src="../Jsdate/ui.datepicker.js"></script>
+    <script src="../Jsdate/jsdatemain_mol3.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#ContentPlaceHolder1_DD_HERB_1").searchable();
@@ -39,7 +46,6 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="row" style="text-align: center">
         <div class="col-lg-1"></div>
         <div class="col-lg-2" style="width: 20%; text-align: right">เลือกประเภท</div>
@@ -61,8 +67,11 @@
             <label id="herb_ya" runat="server" visible="false">เลือกชื่อยา</label>
         </div>
         <div class="col-lg-6" style="width: 40%; text-align: center">
-            <asp:DropDownList ID="DD_HERB_NAME_PRODUCT" runat="server" DataValueField="HERB_ID" DataTextField="HERB_NAME_DD" Visible="false"></asp:DropDownList>
-            <asp:DropDownList ID="DD_HERB_NAME_PRODUCT_HEALTH" runat="server" DataValueField="ID" DataTextField="PRODUCT_NAME" Visible="false"></asp:DropDownList>
+            <%--<asp:DropDownList ID="DD_HERB_NAME_PRODUCT" runat="server"  DataValueField="HERB_ID" DataTextField="HERB_NAME_DD" Visible="false"></asp:DropDownList>--%>
+             <telerik:RadComboBox ID="DD_HERB_NAME_PRODUCT" Runat="server" DataValueField="HERB_ID" DataTextField="HERB_NAME_DD" Width="80%" Filter="Contains"  Visible="false"></telerik:RadComboBox>
+            <%--<asp:DropDownList ID="DD_HERB_NAME_PRODUCT_HEALTH" runat="server" DataValueField="ID" DataTextField="PRODUCT_NAME" Visible="false"></asp:DropDownList>--%>
+             <telerik:RadComboBox ID="DD_HERB_NAME_PRODUCT_HEALTH" Runat="server" DataValueField="ID" DataTextField="PRODUCT_NAME" Width="80%" Filter="Contains"  Visible="false"></telerik:RadComboBox>
+            <%--<telerik:RadComboBox ID="rcb_search" Runat="server" Width="80%" Filter="Contains"></telerik:RadComboBox>--%>
         </div>
         <div class="col-lg-2" style="width: 20%; text-align: left">
             <asp:Button ID="btn_jj_herb" runat="server" Text="เพิ่มคำขอจดแจ้ง" Visible="false" />

@@ -18,14 +18,61 @@
         <div class="col-lg-2">
             <label>ผู้ขอจดแจ้ง:</label>
         </div>
-        <div class="col-lg-2" style="border-bottom: #999999 1px dotted">
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
             <asp:TextBox ID="NAME_JJ" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
         <div class="col-lg-2">
             <label>ชื่อสถานที่:</label>
         </div>
-        <div class="col-lg-2" style="border-bottom: #999999 1px dotted">
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
             <asp:TextBox ID="NAME_PLACE_JJ" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+     <div class="row" id="data_show3" runat="server" visible="false">
+        <div class="col-lg-1"></div>
+           <div class="col-lg-2">
+            <label>ผู้แทนนิติบุคคล:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted; text-align: center">
+            <asp:TextBox ID="txt_agent99" runat="server" Width="100%"></asp:TextBox>
+        </div>
+        <div class="col-lg-2">
+            <label>เลขบัตรผู้แทนนิติบุคคล:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted; text-align: center">
+            <asp:TextBox ID="txt_agent99_id" runat="server" Width="100%"></asp:TextBox>
+        </div>
+        <div class="col-lg-1">
+            <asp:Button ID="BTN_SEARCH_AG99" runat="server" Text="ค้นหา" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2" style="text-align: left">
+            <label>อายุ:</label>
+        </div>
+        <div class="col-lg-2" style="border-bottom: #999999 1px dotted;">
+            <asp:TextBox ID="txt_person_age" runat="server" TextMode="Number" Width="100%"></asp:TextBox>
+        </div>
+        <div class="col-lg-1" style="text-align: center">
+            <label>ปี</label>
+        </div>
+        <div class="col-lg-2" style="text-align: left">
+            <label>สัญชาติ:</label>
+        </div>
+        <div class="col-lg-3" style="border-bottom: #999999 1px dotted">
+            <asp:DropDownList ID="DDL_NATION" runat="server" BackColor="White" Height="25px" Width="100%" SkinID="bootstrap" AutoPostBack="true">
+                <asp:ListItem Value="0">-- กรุณาเลือก --</asp:ListItem>
+                <asp:ListItem Value="1">ไทย</asp:ListItem>
+                <asp:ListItem Value="2">อื่นๆ</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="col-lg-1" style="text-align: center" runat="server" visible="false" id="data_show1">
+            <label>กรุณาระบุ:</label>
+        </div>
+        <div class="col-lg-2" style="border-bottom: #999999 1px dotted" id="data_show2" runat="server" visible="false">
+            <asp:TextBox ID="txt_nation_person" runat="server"></asp:TextBox>
         </div>
         <div class="col-lg-1"></div>
     </div>
@@ -241,7 +288,7 @@
             <label>ขื่อตำรับ:</label>
         </div>
         <div class="col-lg-6" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="RECIPE_NAME" runat="server" Width="600px" BorderStyle="None" ReadOnly="true"></asp:TextBox>
+            <asp:TextBox ID="RECIPE_NAME" runat="server" Width="100%" BorderStyle="None" ReadOnly="true"></asp:TextBox>
         </div>
         <div class="col-lg-1"></div>
     </div>
@@ -251,13 +298,13 @@
             <label>ตามบัญชี:</label>
         </div>
         <div class="col-lg-2" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="ACCOUNT_NO" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
+            <asp:TextBox ID="ACCOUNT_NO" runat="server" BorderStyle="None" ReadOnly="true"  Width="100%"></asp:TextBox>
         </div>
         <div class="col-lg-1" style="text-align: right;">
             <label>ข้อ:</label>
         </div>
         <div class="col-lg-2" style="border-bottom: #999999 1px dotted">
-            <asp:TextBox ID="ARTICLE_NO" runat="server" BorderStyle="None" ReadOnly="true"></asp:TextBox>
+            <asp:TextBox ID="ARTICLE_NO" runat="server" BorderStyle="None" ReadOnly="true"  Width="100%"></asp:TextBox>
         </div>
         <div class="col-lg-1"></div>
     </div>

@@ -95,6 +95,15 @@ Partial Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
     Protected WithEvents P15 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''DDL_COMPLEX control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DDL_COMPLEX As Global.Telerik.Web.UI.RadComboBox
+
+    '''<summary>
     '''ddl_rgttpcd control.
     '''</summary>
     '''<remarks>
@@ -237,6 +246,15 @@ Partial Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents NOTE_CANCLE As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''RDP_CANCEL_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDP_CANCEL_DATE As Global.Telerik.Web.UI.RadDatePicker
 
     '''<summary>
     '''UC_ATTACH1 control.

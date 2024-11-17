@@ -64,10 +64,10 @@
         Dim days_start As Integer = 0
         Dim days_end As Integer = 5
         Dim days_est_start As Integer = 0
-        Dim days_est_end As Integer = 30
+        Dim days_est_end As Integer = 40
 
         Dim days_est_logStart As Integer = 0
-        Dim days_est_longEnd As Integer = 186
+        Dim days_est_longEnd As Integer = 136
         Dim date_result_est_longStart As Date
         Dim date_result_est_longEnd As Date
         Dim number_day_est_longStart As String = ""
@@ -111,8 +111,14 @@
         'number_day_start = date_result_start.ToLongDateString()
         'number_day_end = date_result_end.ToLongDateString()
         Dim STATUS_ID As String = 0
-        Dim date_pay As Date = Date.Now
+        Dim date_pay As Date
+
         If _APP_TYPE = 1 Then
+            Try
+                date_pay = dao.fields.DATE_CONFIRM
+            Catch ex As Exception
+                date_pay = dao.fields.DATE_CONFIRM
+            End Try
             STATUS_ID = 4
             dao_pdftemplate.GETDATA_TABEAN_HERB_APPOINTMENT(_ProcessID, STATUS_ID, "APPROVE_JR_1", 0)
 
@@ -131,6 +137,11 @@
             cls.DISCOUNT_DETAIL = dao.fields.Discount_RequestName
 
         ElseIf _APP_TYPE = 2 Then
+            Try
+                date_pay = dao.fields.Estimate_Date_PAY
+            Catch ex As Exception
+                date_pay = dao.fields.DATE_CONFIRM
+            End Try
             STATUS_ID = 11 Or STATUS_ID = 12
             dao_pdftemplate.GETDATA_TABEAN_HERB_APPOINTMENT(_ProcessID, STATUS_ID, "APPROVE_JR_2", 0)
 

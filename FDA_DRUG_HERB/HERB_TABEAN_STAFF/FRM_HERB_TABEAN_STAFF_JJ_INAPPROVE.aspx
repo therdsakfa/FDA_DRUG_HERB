@@ -14,7 +14,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             showdate($("#ContentPlaceHolder1_DATE_APP"));
-             $("#ContentPlaceHolder1_DD_OFF_APP").searchable();
+            $("#ContentPlaceHolder1_DD_OFF_APP").searchable();
         });
 
     </script>
@@ -28,12 +28,12 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
-                     <asp:Label ID="Label3" runat="server" Text="สร้างคำขอโดย:" Font-Size="Large"></asp:Label>
-                     <asp:Label ID="lbl_create_by" runat="server" Text="" Font-Size="Large"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="สร้างคำขอโดย:" Font-Size="Large"></asp:Label>
+                    <asp:Label ID="lbl_create_by" runat="server" Text="" Font-Size="Large"></asp:Label>
                 </div>
-                  <div class="col-lg-4">
-                     <asp:Label ID="Label2" runat="server" Text="สร้างคำขอเมื่อ:" Font-Size="Large"></asp:Label>
-                     <asp:Label ID="lbl_create_date" runat="server" Text="" Font-Size="Large"></asp:Label>
+                <div class="col-lg-4">
+                    <asp:Label ID="Label2" runat="server" Text="สร้างคำขอเมื่อ:" Font-Size="Large"></asp:Label>
+                    <asp:Label ID="lbl_create_date" runat="server" Text="" Font-Size="Large"></asp:Label>
                 </div>
                 <div class="col-lg-1"></div>
             </div>
@@ -91,7 +91,7 @@
                 </div>
 
             </div>
-             <div class="row" runat="server" id="p2" visible="false">
+            <div class="row" runat="server" id="p2" visible="false">
                 <div class="row" runat="server">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4">เนื่องจาก</div>
@@ -99,20 +99,29 @@
                         <asp:DropDownList ID="DDL_CANCLE_REMARK" runat="server" AutoPostBack="true" DataTextField="STATUS_CAUSE" DataValueField="ID"></asp:DropDownList>
                     </div>
                     <div class="col-lg-1"></div>
-                </div>         
-              <div class="row" runat="server">
+                </div>
+                 <div class="row" runat="server">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-4">วันที่ดำเนินการ</div>
+                    <div class="col-lg-6">
+                        <%--<asp:TextBox ID="CANCEL_DATE" runat="server" Style="width: 90%"></asp:TextBox>--%>
+                        <telerik:RadDatePicker ID="RDP_CANCEL_DATE" runat="server"></telerik:RadDatePicker>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+                <div class="row" runat="server">
                     <div class="col-lg-1"></div>
                     <div class="col-lg-4">รายละเอียดการยกเลิก</div>
                     <div class="col-lg-6">
                         <asp:TextBox ID="NOTE_CANCLE" TextMode="MultiLine" runat="server" Style="height: 20%; width: 100%"></asp:TextBox>
                     </div>
                     <div class="col-lg-1"></div>
-                </div> 
-                  <div class="row">
-                      <div class="col-lg-12" style="text-align: center">
-                          <uc1:uc_attach id="UC_ATTACH1" runat="server" />
-                      </div>
-                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: center">
+                        <uc1:UC_ATTACH ID="UC_ATTACH1" runat="server" />
+                    </div>
+                </div>
             </div>
             <div class="row" style="text-align: center">
                 <div class="col-lg-1"></div>
@@ -130,12 +139,12 @@
                                 <asp:ListItem Value="2">แบบยาว</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                    </div>    
+                    </div>
                     <asp:Button ID="btn_download_jj2" runat="server" Text="Preview จจ.2" CssClass="btn-lg" Width="80%" />
                 </div>
                 <div class="col-lg-1"></div>
             </div>
-             <hr />
+            <hr />
             <div class="row">
                 <div class="col-lg-12" style="text-align: center">
                     <h3>เอกสารแนบคำขอจดแจ้ง</h3>
@@ -191,7 +200,7 @@
             <hr />
             <div class="row">
                 <div class="col-lg-12" style="text-align: center">
-                     <h3>เอกสารแนบเจ้าหน้าที่สั่งแก้ไข</h3>
+                    <h3>เอกสารแนบเจ้าหน้าที่สั่งแก้ไข</h3>
                 </div>
             </div>
             <div class="row">
@@ -302,7 +311,7 @@
                     <asp:Label ID="Label1" runat="server" Text="เจ้าหน้าที่ส่งเรื่องแก้ไข:" Font-Size="small"></asp:Label>
                 </div>
                 <div class="col-lg-6">
-                    <asp:TextBox ID="STAFF_NAME" text="-" TextMode="SingleLine" runat="server" Style="height: 20%; width: 100%" ReadOnly="true" BorderStyle="None"></asp:TextBox>
+                    <asp:TextBox ID="STAFF_NAME" Text="-" TextMode="SingleLine" runat="server" Style="height: 20%; width: 100%" ReadOnly="true" BorderStyle="None"></asp:TextBox>
                 </div>
                 <div class="col-lg-1"></div>
             </div>

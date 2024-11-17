@@ -104,7 +104,6 @@ Public Class POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL
             Else
                 dao.fields.STATUS_ID = 2
             End If
-
             'dao_deeqt.fields.STATUS_ID = 3
             'dao_deeqt.fields.STATUS_ID = 2
             dao.Update()
@@ -113,7 +112,6 @@ Public Class POPUP_HERB_TABEAN_NEW_EDIT_CONFIRM_DETAIL
             bao_tn.SP_INSERT_DRUG_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, dao.fields.IDA, dao.fields.PROCESS_ID)
             alert("ยื่นคำขอแล้ว กรุณาชำระค่าคำขอ")
         End If
-
     End Sub
     Function SUM_Discount(ByVal Process_ID As Integer)
         Dim dao_ml As New DAO_TABEAN_HERB.TB_MAS_PRICE_REQUEST_HERB

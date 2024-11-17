@@ -32,6 +32,24 @@ Partial Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
     Protected WithEvents NAME_PLACE_JJ As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''TextBox1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''TextBox2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''data_show3 control.
     '''</summary>
     '''<remarks>
@@ -48,6 +66,24 @@ Partial Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_agent99 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_agent99_id control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_agent99_id As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BTN_SEARCH_AG99 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_SEARCH_AG99 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''txt_person_age control.
@@ -210,6 +246,24 @@ Partial Public Class FRM_HERB_TABEAN_JJ_ADD2_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents NAME_THAI As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''NAME_THAI_R control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents NAME_THAI_R As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''NAME_ENG control.

@@ -238,7 +238,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT
 
     Sub alert_normal(ByVal text As String)
         Dim url As String = ""
-        url = "FRM_HERB_TABEAN_JJ.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID & "&identify=" & Request.QueryString("identify")
+        url = "FRM_HERB_TABEAN_JJ.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID & "&identify=" & Request.QueryString("identify") & "&SID=" & Request.QueryString("SID")
         Response.Write("<script type='text/javascript'>alert('" + text + "');window.location='" & url & "';parent.close_modal();</script> ")
     End Sub
 
@@ -250,7 +250,7 @@ Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT
 
     Sub alert_file_error(ByVal text As String)
         Dim url As String = ""
-        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID & "&identify=" & Request.QueryString("identify")
+        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _PROCESS_JJ & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & _SID & "&identify=" & Request.QueryString("identify") & "&SID=" & Request.QueryString("SID")
         Response.Write("<script type='text/javascript'>alert('" + text + "');window.location='" & url & "';</script> ")
     End Sub
 

@@ -66,7 +66,7 @@ Namespace BAO
         '
         Public Function SP_Lisense_Name_and_Addr(ByVal IDENTITY As String) As DataTable
 
-            Dim sql As String = "exec SP_Lisense_Name_and_Addr @identify= '" & IDENTITY & "'"
+            Dim sql As String = "exec SP_Lisense_Name_and_Addr  @identify= '" & IDENTITY & "'"
             Dim dta As New DataTable
             dta = Queryds(sql)
             Return dta
@@ -102,6 +102,27 @@ Namespace BAO
         Public Function SP_WHO_CUSTOMER_LCN_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
             Dim sql As String = "exec SP_WHO_CUSTOMER_LCN_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_STAFF_LCN_RNP() As DataTable
+
+            Dim sql As String = "exec SP_STAFF_LCN_RNP"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_STAFF_LCN_RNP_BY_PVNCD(ByVal PVNCD As String) As DataTable
+
+            Dim sql As String = "exec SP_STAFF_LCN_RNP_BY_PVNCD @PVNCD= '" & PVNCD & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_RENEW_STAFF_BY_PVNCD(ByVal PVNCD As String) As DataTable
+
+            Dim sql As String = "exec SP_DALCN_RENEW_STAFF_BY_PVNCD @PVNCD= '" & PVNCD & "'"
             Dim dta As New DataTable
             dta = Queryds(sql)
             Return dta
@@ -147,6 +168,13 @@ Namespace BAO
             dta = Queryds(sql)
             Return dta
         End Function
+        Public Function SP_CUSTOMER_LCN_RNP_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
+
+            Dim sql As String = "exec SP_CUSTOMER_LCN_RNP_BY_IDENTIFY @iden= '" & IDENTITY & "'"
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
         '
         Public Function SP_CUSTOMER_LCN_DH_BY_IDENTIFY(ByVal IDENTITY As String) As DataTable
 
@@ -180,6 +208,13 @@ Namespace BAO
 
             Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_PROCESS_AND_TYPE @TR_ID= '" & TR_ID & "' ,@PROCESS= '" & PROCESS & "',@TYPE=" & TYPE
 
+            Dim dta As New DataTable
+            dta = Queryds(sql)
+            Return dta
+        End Function
+        Public Function SP_DALCN_UPLOAD_FILE_EDIT_BY_TR_ID_PROCESS_AND_TYPE(ByVal TR_ID As String, ByVal PROCESS As String, ByVal TYPE As String) As DataTable
+
+            Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_EDIT_BY_TR_ID_PROCESS_AND_TYPE @TR_ID= '" & TR_ID & "' ,@PROCESS= '" & PROCESS & "',@TYPE=" & TYPE
             Dim dta As New DataTable
             dta = Queryds(sql)
             Return dta
@@ -4822,6 +4857,24 @@ Namespace BAO
             conn.Close()
 
         End Sub
+        Public Sub SP_MAS_STATUS_STAFF_BY_GROUP_DDL_V2(ByVal _stat_group As Integer, ByVal _group As Integer, ByVal _status_id As Integer, ByVal _status_id2 As Integer)
+
+            strSQL = "SP_MAS_STATUS_STAFF_BY_GROUP_DDL_V2"
+            SqlCmd = New SqlCommand(strSQL, conn)
+            If (conn.State = ConnectionState.Open) Then
+                conn.Close()
+            End If
+            conn.Open()
+            SqlCmd.CommandType = CommandType.StoredProcedure
+            SqlCmd.Parameters.Add("@stat_group", SqlDbType.Int).Value = _stat_group
+            SqlCmd.Parameters.Add("@group1", SqlDbType.Int).Value = _group
+            SqlCmd.Parameters.Add("@group2", SqlDbType.Int).Value = _status_id
+            'SqlCmd.Parameters.Add("@group3", SqlDbType.Int).Value = _status_id2
+            dtAdapter = New SqlDataAdapter(SqlCmd)
+            dtAdapter.Fill(dt)
+            conn.Close()
+
+        End Sub
         Public Sub SP_MAS_STATUS_STAFF_BY_GROUP_DDL8(ByVal _stat_group As Integer, ByVal _group As Integer)
 
             strSQL = "SP_MAS_STATUS_STAFF_BY_GROUP_DDL8"
@@ -6623,6 +6676,7 @@ Namespace BAO
         Public _PATH_XML_PDF_TABEAN_EX As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EX")
         Public _PATH_XML_PDF_TABEAN_EDIT As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EDIT")
         Public _PATH_XML_PDF_LCN_RENREW As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_RENREW")
+        Public _PATH_XML_PDF_PHR As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_PHR")
         Public _PATH_XML_PDF_LCN_TRANSFER As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_TRANSFER")
         Public _PATH_XML_PDF_TABEAN_ANALYZE As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_ANALYZE")
         Public _PATH_XML_PDF_TABEAN_DONATE As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_DONATE")
@@ -6645,6 +6699,7 @@ Namespace BAO
             _PATH_XML_PDF_TABEAN_TBN = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_TBN")
             _PATH_XML_PDF_TABEAN_JJ_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_JJ_EDIT")
             _PATH_XML_PDF_TABEAN_EX = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EX")
+            _PATH_XML_PDF_PHR = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_PHR")
             _PATH_XML_PDF_TABEAN_EDIT = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_EDIT")
             _PATH_XML_PDF_TABEAN_ANALYZE = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_ANALYZE")
             _PATH_XML_PDF_TABEAN_DONATE = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_TABEAN_DONATE")

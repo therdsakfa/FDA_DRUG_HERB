@@ -59,7 +59,7 @@
         Dim tel As String = dao_lcn.fields.tel
         Dim NAME_JJ As String = dao.fields.NAME_CONFIRM
         Dim RCVNO_FULL As String = dao.fields.RCVNO_NEW
-        Dim NAME_THAI_NAME_PLACE As String = dao_gt.fields.thadrgnm
+        Dim NAME_THAI_NAME_PLACE As String = dao.fields.thadrgnm
         'If dao_124.fields.IDA = 0 Then
         '    NAME_THAI_NAME_PLACE = dao_gt.fields.thadrgnm
         'Else
@@ -141,11 +141,11 @@
         ElseIf STATUS_ID = 23 Or STATUS_ID = 14 Or STATUS_ID = 6 Then
             status_id = 23
             If _ProcessID = 20411 Then
-                days_est_end = 85
-                days_est_longEnd = 189
+                days_est_end = 40
+                days_est_longEnd = 181
             ElseIf _ProcessID = 20412 Then
-                days_est_end = 85
-                days_est_longEnd = 175
+                days_est_end = 10
+                days_est_longEnd = 131
             End If
             Try
                 date_pay = dao.fields.Estimate_Date_PAY

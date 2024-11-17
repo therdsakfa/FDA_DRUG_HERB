@@ -59,9 +59,9 @@
             Dim PROESS As String = Request.QueryString("process")
             Dim PROESS_NEW As String = ""
             If PROESS = 120 Then
-                PROESS_new = 10102
+                PROESS_NEW = 10103
             ElseIf PROESS = 121 Then
-                PROESS_new = 10103
+                PROESS_NEW = 10102
             ElseIf PROESS = 122 Then
                 PROESS_new = 10101
             End If

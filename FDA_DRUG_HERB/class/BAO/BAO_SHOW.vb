@@ -69,7 +69,30 @@ Public Class BAO_SHOW
         MyConnection.Close()
         Return dt
     End Function
+    ''' <summary>
+    ''' สถานที่จำลอง
+    ''' </summary>
+    ''' <param name="LOCATION_ADDRESS_DALCN_IDA"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function SP_LOCATION_ADDRESS_by_DALCN_IDA(ByVal LCN_IDA As Integer) As DataTable
+        Dim clsds As New ClassDataset
+        Dim sql As String = "exec SP_LOCATION_ADDRESS_by_DALCN_IDA @LCN_IDA = " & LCN_IDA
+        Dim dt As New DataTable
+        Try
+            dt = clsds.dsQueryselect(sql, conn_DRUG).Tables(0)
+            If dt.Rows.Count() = 0 Then
+                dt = AddDatatable(dt)
+            End If
+        Catch ex As Exception
 
+        End Try
+        If dt.Rows.Count() = 0 Then
+            dt = AddDatatable(dt)
+        End If
+        dt.TableName = "SP_LOCATION_ADDRESS_by_DALCN_IDA"
+        Return dt
+    End Function
 
     ''' <summary>
     ''' ดึงข้อมูล จังหวัด
@@ -127,6 +150,41 @@ Public Class BAO_SHOW
         Dim dta As New DataTable
         dta = Queryds(sql)
         dta.TableName = "SP_GET_PHR_LOCATION_BY_PHR_CTZNO"
+        Return dta
+    End Function
+    Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID(ByVal TR_ID As String) As DataTable
+        Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID @TR_ID='" & TR_ID & "'" '& ",@DocID=" & DocID
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID"
+        Return dta
+    End Function
+    Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID_ED(ByVal TR_ID As String) As DataTable
+        Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID_ED @TR_ID='" & TR_ID & "'" '& ",@DocID=" & DocID
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_UPLOAD_FILE_BY_TR_ID_AND_DOCID_ED"
+        Return dta
+    End Function
+    Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_V2(ByVal TR_ID As String) As DataTable
+        Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_V2 @TR_ID='" & TR_ID & "'"
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_UPLOAD_FILE_BY_TR_ID_V2"
+        Return dta
+    End Function
+    Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_V3(ByVal TR_ID As String, ByVal type_id As Integer) As DataTable
+        Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_V3 @TR_ID='" & TR_ID & "'" & " ,@TYPE_ID=" & type_id
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_UPLOAD_FILE_BY_TR_ID_V3"
+        Return dta
+    End Function
+    Public Function SP_DALCN_UPLOAD_FILE_BY_TR_ID_ED(ByVal TR_ID As String, ByVal type_id As Integer) As DataTable
+        Dim sql As String = "exec SP_DALCN_UPLOAD_FILE_BY_TR_ID_ED @TR_ID='" & TR_ID & "'" & " ,@TYPE_ID=" & type_id
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_DALCN_UPLOAD_FILE_BY_TR_ID_ED"
         Return dta
     End Function
     Public Function SP_DRUG_GROUP_BY_LCN_IDA(ByVal lcn_ida As Integer) As DataTable
@@ -932,6 +990,13 @@ Public Class BAO_SHOW
         dta.TableName = "SP_DRRQT_PRODUCER_BY_FK_IDA_ANDTYPE"
         Return dta
     End Function
+    Public Function SP_SMP_BY_FK_LCN_IDA(ByVal fk_ida As Integer) As DataTable
+        Dim sql As String = "exec SP_SMP_BY_FK_LCN_IDA @FK_IDA=" & fk_ida
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_SMP_BY_FK_LCN_IDA"
+        Return dta
+    End Function
     Public Function SP_DRRGT_PRODUCER_OTHER_BY_FK_IDA(ByVal fk_ida As Integer) As DataTable
         Dim sql As String = "exec SP_DRRGT_PRODUCER_OTHER_BY_FK_IDA @FK_IDA=" & fk_ida
         Dim dta As New DataTable
@@ -1005,6 +1070,13 @@ Public Class BAO_SHOW
         Dim dta As New DataTable
         dta = Queryds(sql)
         dta.TableName = "SP_DRUG_REGISTRATION_DETAIL_CAS_BY_FK_IDA_V3"
+        Return dta
+    End Function
+    Public Function SP_LOG_PAYMENT_HERB_BY_STATUS(ByVal FK_IDA As Integer, ByVal Process_ID As Integer, ByVal Status_ID As Integer) As DataTable
+        Dim sql As String = "exec SP_LOG_PAYMENT_HERB_BY_STATUS @FK_IDA=" & FK_IDA & ",@PROCESS_ID=" & Process_ID & ",@STATUS_ID=" & Status_ID
+        Dim dta As New DataTable
+        dta = Queryds(sql)
+        dta.TableName = "SP_LOG_PAYMENT_HERB_BY_STATUS"
         Return dta
     End Function
     '

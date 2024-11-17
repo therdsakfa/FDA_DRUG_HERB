@@ -112,7 +112,7 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM
             STAFF_NAME.Text = dao.fields.EDIT_RQ_NAME
             txt_edit_date.Text = date_to_thai(dao.fields.EDIT_RQ_DATE)
         End If
-
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
         DATE_REQ.Text = Date.Now.ToString("dd/MM/yyyy")
         If dao.fields.FOREIGN_TO_STAFF <> "" Then
             ADDR_FOREIGN_CHK.Visible = True
@@ -327,6 +327,9 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM
         If dao.fields.STATUS_ID = 9 Then
             dao.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
             dao.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+            dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
+            dao.fields.cancel_by = _CLS.THANM
+            dao.fields.cancel_iden = _CLS.CITIZEN_ID
             dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
             dao.Update()
             UC_ATTACH1.insert_JJ_EDIT(_TR_ID, _ProcessID, dao.fields.IDA, 77)
@@ -341,6 +344,9 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM
                 dao.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                 dao.fields.CANCEL_STAFF_ID = DD_OFF_REQ.SelectedValue
                 dao.fields.CANCEL_STAFF_NM = DD_OFF_REQ.SelectedItem.Text
+                dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
+                dao.fields.cancel_by = _CLS.THANM
+                dao.fields.cancel_iden = _CLS.CITIZEN_ID
                 dao.fields.cncdate = DATE_REQ.Text
                 dao.Update()
             End If
@@ -461,11 +467,8 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_STAFF_CONFIRM
             End If
         End If
         ' dao.Update()
-
-
         AddLogStatus(dao.fields.STATUS_ID, _ProcessID, _CLS.CITIZEN_ID, _IDA)
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('บันทึกเรียบร้อย');parent.close_modal();", True)
-
     End Sub
     Sub Update_data_jj()
         Dim dao_c As New DAO_TABEAN_HERB.TB_TABEAN_JJ_EDIT_REQUEST_CHECK_EDIT

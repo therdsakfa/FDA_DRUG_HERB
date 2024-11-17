@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TEST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TESTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TESTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHORTEN_CREATE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FIELDS" type="tns:REQ_DATA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="REQ_DATA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LOGIN_ENABLE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_APP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YEARs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REF_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SESSION_DATA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SEND_SHORT_CODE" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SHORTEN_CREATEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SHORTEN_CREATEResult" type="tns:RESPONSE_DATA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RESPONSE_DATA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CODE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SHORTEN_CREATE_MANUAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FIELDS" type="tns:REQ_DATA" />
+            <s:element minOccurs="0" maxOccurs="1" name="REF_CODE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LINK_TYPE" type="tns:LINK_TYPE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="LINK_TYPE">
+        <s:restriction base="s:string">
+          <s:enumeration value="THFDA" />
+          <s:enumeration value="DRUG_LINK" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SHORTEN_CREATE_MANUALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SHORTEN_CREATE_MANUALResult" type="tns:RESPONSE_DATA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TESTSoapIn">
+    <wsdl:part name="parameters" element="tns:TEST" />
+  </wsdl:message>
+  <wsdl:message name="TESTSoapOut">
+    <wsdl:part name="parameters" element="tns:TESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="SHORTEN_CREATESoapIn">
+    <wsdl:part name="parameters" element="tns:SHORTEN_CREATE" />
+  </wsdl:message>
+  <wsdl:message name="SHORTEN_CREATESoapOut">
+    <wsdl:part name="parameters" element="tns:SHORTEN_CREATEResponse" />
+  </wsdl:message>
+  <wsdl:message name="SHORTEN_CREATE_MANUALSoapIn">
+    <wsdl:part name="parameters" element="tns:SHORTEN_CREATE_MANUAL" />
+  </wsdl:message>
+  <wsdl:message name="SHORTEN_CREATE_MANUALSoapOut">
+    <wsdl:part name="parameters" element="tns:SHORTEN_CREATE_MANUALResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_SHORTENSoap">
+    <wsdl:operation name="TEST">
+      <wsdl:input message="tns:TESTSoapIn" />
+      <wsdl:output message="tns:TESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE">
+      <wsdl:input message="tns:SHORTEN_CREATESoapIn" />
+      <wsdl:output message="tns:SHORTEN_CREATESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE_MANUAL">
+      <wsdl:input message="tns:SHORTEN_CREATE_MANUALSoapIn" />
+      <wsdl:output message="tns:SHORTEN_CREATE_MANUALSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_SHORTENSoap" type="tns:WS_SHORTENSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TEST">
+      <soap:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE">
+      <soap:operation soapAction="http://tempuri.org/SHORTEN_CREATE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE_MANUAL">
+      <soap:operation soapAction="http://tempuri.org/SHORTEN_CREATE_MANUAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_SHORTENSoap12" type="tns:WS_SHORTENSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TEST">
+      <soap12:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE">
+      <soap12:operation soapAction="http://tempuri.org/SHORTEN_CREATE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHORTEN_CREATE_MANUAL">
+      <soap12:operation soapAction="http://tempuri.org/SHORTEN_CREATE_MANUAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_SHORTEN">
+    <wsdl:port name="WS_SHORTENSoap" binding="tns:WS_SHORTENSoap">
+      <soap:address location="http://thfda.cc/WS_SHORTEN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_SHORTENSoap12" binding="tns:WS_SHORTENSoap12">
+      <soap12:address location="http://thfda.cc/WS_SHORTEN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

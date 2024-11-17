@@ -128,6 +128,7 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE1
         'RCVNO_FULL.Text = dao.fields.rcvno
         DD_OFF_OFFER.Text = _CLS.NAME
         DATE_OFFER.Text = Date.Now.ToString("dd/MM/yyyy")
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
     End Sub
 
     Public Sub bind_dd()
@@ -328,6 +329,9 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE1
                 Catch ex As Exception
 
                 End Try
+                dao_tabean_herb.fields.cancel_by = _CLS.THANM
+                dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
+                dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                 dao_tabean_herb.fields.STATUS_ID = DD_STATUS.SelectedValue
                 dao_tabean_herb.Update()
 
@@ -347,7 +351,8 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_ESTIMATE1
 
                     dao_tabean_herb.fields.STATUS_ID = DD_STATUS.SelectedValue
                     dao_tabean_herb.fields.cancel_by = _CLS.THANM
-                    dao_tabean_herb.fields.cancel_date = Date.Now
+                    'dao_tabean_herb.fields.cancel_date = Date.Now
+                    dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                     dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
                     dao_tabean_herb.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                     dao_tabean_herb.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text

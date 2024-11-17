@@ -57,6 +57,7 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
             bind_dd_menufactrue_detail()
             bind_dd_how_use_detail()
             'TREATMENT_AGE_YEAR.SelectedValue = 1
+            Get_Data_By_Process()
             bind_rg()
 
             If _PROCESS_ID_LCN = 121 Then
@@ -100,6 +101,56 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
     '    DD_SYNDROME_ID.Items.Insert(0, "-- กรุณาเลือก --")
 
     'End Sub
+    Sub Get_Data_By_Process()
+        If _PROCESS_JJ = 20304 Then
+            NAME_THAI.ReadOnly = False
+            NAME_THAI.BorderStyle = BorderStyle.NotSet
+            NAME_ENG.ReadOnly = False
+            NAME_ENG.BorderStyle = BorderStyle.NotSet
+            NAME_OTHER.ReadOnly = False
+            NAME_OTHER.BorderStyle = BorderStyle.NotSet
+            RECIPE_NAME.ReadOnly = False
+            RECIPE_NAME.BorderStyle = BorderStyle.NotSet
+            ACCOUNT_NO.ReadOnly = False
+            ACCOUNT_NO.BorderStyle = BorderStyle.NotSet
+            ARTICLE_NO.ReadOnly = False
+            ARTICLE_NO.BorderStyle = BorderStyle.NotSet
+            PRODUCT_JJ.ReadOnly = False
+            PRODUCT_JJ.BorderStyle = BorderStyle.NotSet
+            SIZE_PACK.ReadOnly = False
+            SIZE_PACK.BorderStyle = BorderStyle.NotSet
+            TXT_SYNDROME_DETAIL.ReadOnly = False
+            TXT_SYNDROME_DETAIL.BorderStyle = BorderStyle.NotSet
+            PROPERTIES.ReadOnly = False
+            PROPERTIES.BorderStyle = BorderStyle.NotSet
+            SIZE_USE.ReadOnly = False
+            SIZE_USE.BorderStyle = BorderStyle.NotSet
+            HOW_USE.ReadOnly = False
+            HOW_USE.BorderStyle = BorderStyle.NotSet
+            NOTE.ReadOnly = False
+            NOTE.BorderStyle = BorderStyle.NotSet
+            ADV_REACTIVETION_NAME.ReadOnly = False
+            ADV_REACTIVETION_NAME.BorderStyle = BorderStyle.NotSet
+            CONTRAINDICATION_NAME.ReadOnly = False
+            CONTRAINDICATION_NAME.BorderStyle = BorderStyle.NotSet
+            CAUTION_NAME.ReadOnly = False
+            CAUTION_NAME.BorderStyle = BorderStyle.NotSet
+            WARNING_NAME.ReadOnly = False
+            WARNING_NAME.BorderStyle = BorderStyle.NotSet
+
+            DD_TYPE_NAME.Enabled = True
+            DD_STYPE_ID.Enabled = True
+            DD_EATTING_ID.Enabled = True
+            DD_SALE_CHANNEL.Enabled = True
+            DD_STORAGE_ID.Enabled = True
+            R_EATING_CONDITION.Enabled = True
+            R_CONTRAINDICATION.Enabled = True
+            R_WARNING.Enabled = True
+            R_CAUTION.Enabled = True
+            R_ADV_REACTIVETION.Enabled = True
+            'R_ADV_REACTIVETION.Enabled = True
+        End If
+    End Sub
 
     Public Sub bind_dd_syndrome_detail()
         Dim dt As DataTable
@@ -287,84 +338,194 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
         Dim dao As New DAO_TABEAN_HERB.TB_MAS_TABEAN_HERB_NAME_DETAIL_JJ
 
         dao.GetdatabyID_DD_HERB_NAME_ID(_DD_HERB_NAME_ID, _PROCESS_JJ)
+        If dao_jj.fields.ACTIVEFACT Then
+            NAME_JJ.Text = dao_jj.fields.NAME_JJ
+            NAME_PLACE_JJ.Text = locationaddress
+            txt_agent99.Text = dao_jj.fields.AGENT_99
+            txt_agent99_id.Text = dao_jj.fields.AGENT_99_IDEN
+            txt_person_age.Text = dao_jj.fields.PERSON_AGE
+            If dao_jj.fields.NATIONALITY_PERSON_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.NATIONALITY_PERSON_ID) Then
+                DDL_NATION.SelectedValue = dao_jj.fields.NATIONALITY_PERSON_ID
+                txt_nation_person.Text = dao_jj.fields.NATIONALITY_PERSON_OTHER
+            End If
+            If dao_jj.fields.TYPE_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TYPE_ID) Then DD_TYPE_NAME.SelectedValue = dao_jj.fields.TYPE_ID
+            If dao_jj.fields.TYPE_SUB_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TYPE_SUB_ID) Then DD_TYPE_SUB_ID.SelectedValue = dao_jj.fields.TYPE_SUB_ID
+            DD_CATEGORY_ID.SelectedValue = CATEGORY_ID
+            NAME_THAI.Text = dao_jj.fields.NAME_THAI
+            NAME_ENG.Text = dao_jj.fields.NAME_ENG
+            NAME_OTHER.Text = dao_jj.fields.NAME_OTHER
+            If dao_jj.fields.STYPE_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.STYPE_ID) Then DD_STYPE_ID.SelectedValue = dao_jj.fields.STYPE_ID
+            RECIPE_NAME.Text = dao_jj.fields.RECIPE_NAME
+            If dao_jj.fields.ACCOUNT_NO IsNot Nothing AndAlso IsNumeric(dao_jj.fields.ACCOUNT_NO) Then ACCOUNT_NO.Text = dao_jj.fields.ACCOUNT_NO
+            If dao_jj.fields.ARTICLE_NO IsNot Nothing AndAlso IsNumeric(dao_jj.fields.ARTICLE_NO) Then ARTICLE_NO.Text = dao_jj.fields.ARTICLE_NO
+            PRODUCT_JJ.Text = dao_jj.fields.PRODUCT_JJ
+            NATURE.Text = dao_jj.fields.NATURE
+            'PRODUCT_PROCESS.Text = dao.fields.PRODUCT_PROCESS
+            'DD_MANUFAC_ID.SelectedValue = dao.fields.MANUFAC_ID
 
-        NAME_JJ.Text = dao_jj.fields.NAME_JJ
-        NAME_PLACE_JJ.Text = locationaddress
+            Try
+                'WEIGHT_TABLE_CAP.Text = dao.fields.WEIGHT_TABLE_CAP
+                'DD_WEIGHT_TABLE_CAP_UNIT_ID.SelectedValue = dao.fields.WEIGHT_TABLE_CAP_UNIT_ID
+                SIZE_PACK.Text = dao_jj.fields.SIZE_PACK
+            Catch ex As Exception
 
-        DD_TYPE_NAME.SelectedValue = dao.fields.TYPE_ID
-        DD_TYPE_SUB_ID.SelectedValue = dao.fields.TYPE_SUB_ID
-        DD_CATEGORY_ID.SelectedValue = CATEGORY_ID
-        NAME_THAI.Text = dao.fields.NAME_THAI
-        NAME_ENG.Text = dao.fields.NAME_ENG
-        NAME_OTHER.Text = dao.fields.NAME_OTHER
-        DD_STYPE_ID.SelectedValue = dao.fields.STYPE_ID
-        RECIPE_NAME.Text = dao.fields.RECIPE_NAME
-        ACCOUNT_NO.Text = dao.fields.ACCOUNT_NO
-        ARTICLE_NO.Text = dao.fields.ARTICLE_NO
-        PRODUCT_JJ.Text = dao.fields.PRODUCT_JJ
-        NATURE.Text = dao.fields.NATURE
-        'PRODUCT_PROCESS.Text = dao.fields.PRODUCT_PROCESS
-        'DD_MANUFAC_ID.SelectedValue = dao.fields.MANUFAC_ID
+            End Try
 
-        Try
-            'WEIGHT_TABLE_CAP.Text = dao.fields.WEIGHT_TABLE_CAP
-            'DD_WEIGHT_TABLE_CAP_UNIT_ID.SelectedValue = dao.fields.WEIGHT_TABLE_CAP_UNIT_ID
-            SIZE_PACK.Text = dao.fields.SIZE_PACK
-        Catch ex As Exception
+            Try
+                'DD_PRO_AGE.SelectedValue = 1
+            Catch ex As Exception
 
-        End Try
+            End Try
 
-        Try
-            'DD_PRO_AGE.SelectedValue = 1
-        Catch ex As Exception
-
-        End Try
-
-        'DD_SYNDROME_ID.SelectedValue = dao.fields.SYNDROME_ID
-        PROPERTIES.Text = dao.fields.PROPERTIES
-        SIZE_USE.Text = dao.fields.SIZE_USE
-        'HOW_USE.Text = dao.fields.HOW_USE
-        DD_EATTING_ID.SelectedValue = dao.fields.EATTING_ID
-        R_EATING_CONDITION.SelectedValue = dao.fields.EATING_CONDITION_ID
-        If dao.fields.EATING_CONDITION_ID = 1 Then
-            EATING_CONDITION_NAME.Text = dao.fields.EATING_CONDITION_NAME
-            R_EATING_CONDITION_TEXT.Visible = True
-        End If
-
-        DD_STORAGE_ID.SelectedValue = dao.fields.STORAGE_ID
-
-        'TREATMENT.Text = dao.fields.TREATMENT
-        If dao_jj.fields.TREATMENT_AGE = 3 Then
-            TREATMENT_AGE_MONTH_SUB.Enabled = False
+            'DD_SYNDROME_ID.SelectedValue = dao.fields.SYNDROME_ID
+            PROPERTIES.Text = dao_jj.fields.PROPERTIES
+            SIZE_USE.Text = dao_jj.fields.SIZE_USE
+            'HOW_USE.Text = dao.fields.HOW_USE
+            If dao_jj.fields.EATTING_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.EATTING_ID) Then DD_EATTING_ID.SelectedValue = dao_jj.fields.EATTING_ID
+            If dao_jj.fields.EATING_CONDITION_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.EATING_CONDITION_ID) Then R_EATING_CONDITION.SelectedValue = dao_jj.fields.EATING_CONDITION_ID
+            If dao_jj.fields.EATING_CONDITION_ID = 1 Then
+                EATING_CONDITION_NAME.Text = dao.fields.EATING_CONDITION_NAME
+                R_EATING_CONDITION_TEXT.Visible = True
+            End If
+            If dao_jj.fields.STORAGE_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.STORAGE_ID) Then DD_STORAGE_ID.SelectedValue = dao_jj.fields.STORAGE_ID
+            'TREATMENT.Text = dao.fields.TREATMENT
+            If dao_jj.fields.TREATMENT_AGE IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TREATMENT_AGE) Then
+                If dao_jj.fields.TREATMENT_AGE = 3 Then
+                    TREATMENT_AGE_MONTH_SUB.Enabled = False
+                Else
+                    TREATMENT_AGE_MONTH_SUB.Enabled = True
+                End If
+            End If
+            If dao_jj.fields.TREATMENT_AGE_MONTH IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TREATMENT_AGE_MONTH) Then TREATMENT_AGE_MONTH_SUB.SelectedValue = dao_jj.fields.TREATMENT_AGE_MONTH
+            If dao_jj.fields.TREATMENT_AGE IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TREATMENT_AGE) Then TREATMENT_AGE_YEAR.SelectedValue = dao_jj.fields.TREATMENT_AGE
+            NATURE.Text = dao_jj.fields.NATURE
+            If dao_jj.fields.CONTRAINDICATION_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.CONTRAINDICATION_ID) Then
+                R_CONTRAINDICATION.SelectedValue = dao_jj.fields.CONTRAINDICATION_ID
+                If dao_jj.fields.CONTRAINDICATION_ID = 1 Then
+                    CONTRAINDICATION_NAME.Text = dao_jj.fields.CONTRAINDICATION_NAME
+                    R_CONTRAINDICATION_TEXT.Visible = True
+                End If
+            End If
+            If dao_jj.fields.WARNING_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.WARNING_ID) Then
+                R_WARNING.SelectedValue = dao_jj.fields.WARNING_ID
+                If dao_jj.fields.WARNING_ID = 1 Then
+                    WARNING_NAME.Text = dao.fields.WARNING_NAME
+                    R_WARNING_TEXT.Visible = True
+                End If
+            End If
+            If dao_jj.fields.CAUTION_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.CAUTION_ID) Then
+                R_CAUTION.SelectedValue = dao_jj.fields.CAUTION_ID
+                If dao_jj.fields.CAUTION_ID = 1 Then
+                    CAUTION_NAME.Text = dao_jj.fields.CAUTION_NAME
+                    R_CAUTION_TEXT.Visible = True
+                End If
+            End If
+            If dao_jj.fields.ADV_REACTIVETION_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.ADV_REACTIVETION_ID) Then
+                R_ADV_REACTIVETION.SelectedValue = dao_jj.fields.ADV_REACTIVETION_ID
+                If dao_jj.fields.ADV_REACTIVETION_ID = 1 Then
+                    ADV_REACTIVETION_NAME.Text = dao_jj.fields.ADV_REACTIVETION_NAME
+                    R_ADV_REACTIVETION_TEXT.Visible = True
+                End If
+            End If
+            If dao_jj.fields.SALE_CHANNEL_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.SALE_CHANNEL_ID) Then DD_SALE_CHANNEL.SelectedValue = dao_jj.fields.SALE_CHANNEL_ID
+            NOTE.Text = dao.fields.NOTE
         Else
-            TREATMENT_AGE_MONTH_SUB.Enabled = True
-        End If
-        TREATMENT_AGE_MONTH_SUB.SelectedValue = dao_jj.fields.TREATMENT_AGE_MONTH
-        TREATMENT_AGE_YEAR.SelectedValue = dao_jj.fields.TREATMENT_AGE
-        NATURE.Text = dao_jj.fields.NATURE
-        R_CONTRAINDICATION.SelectedValue = dao.fields.CONTRAINDICATION_ID
-        If dao.fields.CONTRAINDICATION_ID = 1 Then
-            CONTRAINDICATION_NAME.Text = dao.fields.CONTRAINDICATION_NAME
-            R_CONTRAINDICATION_TEXT.Visible = True
-        End If
-        R_WARNING.SelectedValue = dao.fields.WARNING_ID
-        If dao.fields.WARNING_ID = 1 Then
-            WARNING_NAME.Text = dao.fields.WARNING_NAME
-            R_WARNING_TEXT.Visible = True
-        End If
-        R_CAUTION.SelectedValue = dao.fields.CAUTION_ID
-        If dao.fields.CAUTION_ID = 1 Then
-            CAUTION_NAME.Text = dao.fields.CAUTION_NAME
-            R_CAUTION_TEXT.Visible = True
-        End If
-        R_ADV_REACTIVETION.SelectedValue = dao.fields.ADV_REACTIVETION_ID
-        If dao.fields.ADV_REACTIVETION_ID = 1 Then
-            ADV_REACTIVETION_NAME.Text = dao.fields.ADV_REACTIVETION_NAME
-            R_ADV_REACTIVETION_TEXT.Visible = True
-        End If
-        DD_SALE_CHANNEL.SelectedValue = dao.fields.SALE_CHANNEL_ID
-        NOTE.Text = dao.fields.NOTE
+            NAME_JJ.Text = dao_jj.fields.NAME_JJ
+            NAME_PLACE_JJ.Text = locationaddress
+            txt_agent99.Text = dao_jj.fields.AGENT_99
+            txt_agent99_id.Text = dao_jj.fields.AGENT_99_IDEN
+            txt_person_age.Text = dao_jj.fields.PERSON_AGE
+            If dao_jj.fields.NATIONALITY_PERSON_ID IsNot Nothing AndAlso IsNumeric(dao_jj.fields.NATIONALITY_PERSON_ID) Then
+                DDL_NATION.SelectedValue = dao_jj.fields.NATIONALITY_PERSON_ID
+                txt_nation_person.Text = dao_jj.fields.NATIONALITY_PERSON_OTHER
+            End If
+            If dao.fields.TYPE_ID IsNot Nothing AndAlso IsNumeric(dao.fields.TYPE_ID) Then DD_TYPE_NAME.SelectedValue = dao.fields.TYPE_ID
+            If dao.fields.TYPE_SUB_ID IsNot Nothing AndAlso IsNumeric(dao.fields.TYPE_SUB_ID) Then DD_TYPE_SUB_ID.SelectedValue = dao.fields.TYPE_SUB_ID
+            DD_CATEGORY_ID.SelectedValue = CATEGORY_ID
+            NAME_THAI.Text = dao.fields.NAME_THAI
+            NAME_ENG.Text = dao.fields.NAME_ENG
+            NAME_OTHER.Text = dao.fields.NAME_OTHER
+            If dao.fields.STYPE_ID IsNot Nothing AndAlso IsNumeric(dao.fields.STYPE_ID) Then DD_STYPE_ID.SelectedValue = dao.fields.STYPE_ID
+            RECIPE_NAME.Text = dao.fields.RECIPE_NAME
+            If dao.fields.ACCOUNT_NO IsNot Nothing AndAlso IsNumeric(dao.fields.ACCOUNT_NO) Then ACCOUNT_NO.Text = dao.fields.ACCOUNT_NO
+            If dao.fields.ARTICLE_NO IsNot Nothing AndAlso IsNumeric(dao.fields.ARTICLE_NO) Then ARTICLE_NO.Text = dao.fields.ARTICLE_NO
+            PRODUCT_JJ.Text = dao_jj.fields.PRODUCT_JJ
+            NATURE.Text = dao_jj.fields.NATURE
+            'PRODUCT_PROCESS.Text = dao.fields.PRODUCT_PROCESS
+            'DD_MANUFAC_ID.SelectedValue = dao.fields.MANUFAC_ID
 
+            Try
+                'WEIGHT_TABLE_CAP.Text = dao.fields.WEIGHT_TABLE_CAP
+                'DD_WEIGHT_TABLE_CAP_UNIT_ID.SelectedValue = dao.fields.WEIGHT_TABLE_CAP_UNIT_ID
+                SIZE_PACK.Text = dao_jj.fields.SIZE_PACK
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                'DD_PRO_AGE.SelectedValue = 1
+            Catch ex As Exception
+
+            End Try
+
+            'DD_SYNDROME_ID.SelectedValue = dao.fields.SYNDROME_ID
+            PROPERTIES.Text = dao.fields.PROPERTIES
+            SIZE_USE.Text = dao.fields.SIZE_USE
+            'HOW_USE.Text = dao.fields.HOW_USE
+            If dao.fields.EATTING_ID IsNot Nothing AndAlso IsNumeric(dao.fields.EATTING_ID) Then DD_EATTING_ID.SelectedValue = dao.fields.EATTING_ID
+            If dao.fields.EATING_CONDITION_ID IsNot Nothing AndAlso IsNumeric(dao.fields.EATING_CONDITION_ID) Then R_EATING_CONDITION.SelectedValue = dao.fields.EATING_CONDITION_ID
+            If dao.fields.EATING_CONDITION_ID = 1 Then
+                EATING_CONDITION_NAME.Text = dao.fields.EATING_CONDITION_NAME
+                R_EATING_CONDITION_TEXT.Visible = True
+            End If
+            If dao.fields.STORAGE_ID IsNot Nothing AndAlso IsNumeric(dao.fields.STORAGE_ID) Then DD_STORAGE_ID.SelectedValue = dao.fields.STORAGE_ID
+            'TREATMENT.Text = dao.fields.TREATMENT
+            If dao.fields.TREATMENT_AGE IsNot Nothing AndAlso IsNumeric(dao.fields.TREATMENT_AGE) Then
+                If dao_jj.fields.TREATMENT_AGE = 3 Then
+                    TREATMENT_AGE_MONTH_SUB.Enabled = False
+                Else
+                    TREATMENT_AGE_MONTH_SUB.Enabled = True
+                End If
+            End If
+            If dao_jj.fields.TREATMENT_AGE_MONTH IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TREATMENT_AGE_MONTH) Then TREATMENT_AGE_MONTH_SUB.SelectedValue = dao_jj.fields.TREATMENT_AGE_MONTH
+            If dao_jj.fields.TREATMENT_AGE IsNot Nothing AndAlso IsNumeric(dao_jj.fields.TREATMENT_AGE) Then TREATMENT_AGE_YEAR.SelectedValue = dao_jj.fields.TREATMENT_AGE
+            NATURE.Text = dao_jj.fields.NATURE
+            If dao.fields.CONTRAINDICATION_ID IsNot Nothing AndAlso IsNumeric(dao.fields.CONTRAINDICATION_ID) Then
+                R_CONTRAINDICATION.SelectedValue = dao.fields.CONTRAINDICATION_ID
+                If dao.fields.CONTRAINDICATION_ID = 1 Then
+                    CONTRAINDICATION_NAME.Text = dao.fields.CONTRAINDICATION_NAME
+                    R_CONTRAINDICATION_TEXT.Visible = True
+                End If
+            End If
+            If dao.fields.WARNING_ID IsNot Nothing AndAlso IsNumeric(dao.fields.ARTICLE_NO) Then
+                R_WARNING.SelectedValue = dao.fields.WARNING_ID
+                If dao.fields.WARNING_ID = 1 Then
+                    WARNING_NAME.Text = dao.fields.WARNING_NAME
+                    R_WARNING_TEXT.Visible = True
+                End If
+            End If
+            If dao.fields.CAUTION_ID IsNot Nothing AndAlso IsNumeric(dao.fields.ARTICLE_NO) Then
+                R_CAUTION.SelectedValue = dao.fields.CAUTION_ID
+                If dao.fields.CAUTION_ID = 1 Then
+                    CAUTION_NAME.Text = dao.fields.CAUTION_NAME
+                    R_CAUTION_TEXT.Visible = True
+                End If
+            End If
+            If dao.fields.ADV_REACTIVETION_ID IsNot Nothing AndAlso IsNumeric(dao.fields.ADV_REACTIVETION_ID) Then
+                R_ADV_REACTIVETION.SelectedValue = dao.fields.ADV_REACTIVETION_ID
+                If dao.fields.ADV_REACTIVETION_ID = 1 Then
+                    ADV_REACTIVETION_NAME.Text = dao.fields.ADV_REACTIVETION_NAME
+                    R_ADV_REACTIVETION_TEXT.Visible = True
+                End If
+            End If
+            If dao.fields.SALE_CHANNEL_ID IsNot Nothing AndAlso IsNumeric(dao.fields.SALE_CHANNEL_ID) Then DD_SALE_CHANNEL.SelectedValue = dao.fields.SALE_CHANNEL_ID
+            NOTE.Text = dao.fields.NOTE
+        End If
+        If Request.QueryString("staff") = 1 Then
+            BTN_SEARCH_AG99.Visible = True
+        Else
+            BTN_SEARCH_AG99.Visible = False
+        End If
     End Sub
 
     Protected Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
@@ -560,11 +721,22 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                 dao.fields.NAME_THAI = NAME_THAI.Text
                 dao.fields.NAME_ENG = NAME_ENG.Text
                 dao.fields.NAME_OTHER = NAME_OTHER.Text
-                dao.fields.STYPE_ID = DD_STYPE_ID.SelectedValue
+                If Not String.IsNullOrEmpty(DD_STYPE_ID.SelectedValue) AndAlso DD_STYPE_ID.SelectedValue <> "-- กรุณาเลือก --" Then
+                    dao.fields.STYPE_ID = Convert.ToInt32(DD_STYPE_ID.SelectedValue)
+                End If
                 dao.fields.STYPE_NAME = DD_STYPE_ID.SelectedItem.Text
                 dao.fields.RECIPE_NAME = RECIPE_NAME.Text
-                dao.fields.ACCOUNT_NO = ACCOUNT_NO.Text
-                dao.fields.ARTICLE_NO = ARTICLE_NO.Text
+                Try
+                    dao.fields.ACCOUNT_NO = ACCOUNT_NO.Text
+
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.ARTICLE_NO = ARTICLE_NO.Text
+                Catch ex As Exception
+
+                End Try
                 dao.fields.PRODUCT_JJ = PRODUCT_JJ.Text
                 dao.fields.NATURE = NATURE.Text
 
@@ -585,19 +757,29 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                 dao.fields.PROPERTIES = PROPERTIES.Text
                 dao.fields.SIZE_USE = SIZE_USE.Text
                 dao.fields.HOW_USE = HOW_USE.Text
-                dao.fields.EATTING_ID = DD_EATTING_ID.SelectedValue
-                dao.fields.EATTING_NAME = DD_EATTING_ID.SelectedItem.Text
+                Try
+                    dao.fields.EATTING_ID = DD_EATTING_ID.SelectedValue
+                    dao.fields.EATTING_NAME = DD_EATTING_ID.SelectedItem.Text
+                Catch ex As Exception
 
-                dao.fields.EATING_CONDITION_ID = R_EATING_CONDITION.SelectedValue
-                If R_EATING_CONDITION.SelectedValue = 1 Then
-                    dao.fields.EATING_CONDITION_NAME = EATING_CONDITION_NAME.Text
-                    R_EATING_CONDITION_TEXT.Visible = True
-                Else
-                    dao.fields.EATING_CONDITION_NAME = "ไม่มี"
-                End If
+                End Try
+                Try
+                    dao.fields.EATING_CONDITION_ID = R_EATING_CONDITION.SelectedValue
+                    If R_EATING_CONDITION.SelectedValue = 1 Then
+                        dao.fields.EATING_CONDITION_NAME = EATING_CONDITION_NAME.Text
+                        R_EATING_CONDITION_TEXT.Visible = True
+                    Else
+                        dao.fields.EATING_CONDITION_NAME = "ไม่มี"
+                    End If
+                Catch ex As Exception
 
-                dao.fields.STORAGE_ID = DD_STORAGE_ID.SelectedValue
-                dao.fields.STORAGE_NAME = DD_STORAGE_ID.SelectedItem.Text
+                End Try
+                Try
+                    dao.fields.STORAGE_ID = DD_STORAGE_ID.SelectedValue
+                    dao.fields.STORAGE_NAME = DD_STORAGE_ID.SelectedItem.Text
+                Catch ex As Exception
+
+                End Try
                 'dao.fields.TREATMENT = TREATMENT.Text
                 'dao.fields.TREATMENT_AGE = TREATMENT_AGE_YEAR.SelectedValue
                 'dao.fields.TREATMENT_AGE_MONth = TREATMENT_AGE_MONTH.SelectedValue
@@ -613,39 +795,59 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                     dao.fields.TREATMENT_AGE = 0
                     dao.fields.TREATMENT_AGE_MONTH = TREATMENT_AGE_MONTH_SUB.SelectedValue
                 End Try
+                Try
+                    dao.fields.CONTRAINDICATION_ID = R_CONTRAINDICATION.SelectedValue
+                    If R_CONTRAINDICATION.SelectedValue = 1 Then
+                        dao.fields.CONTRAINDICATION_NAME = CONTRAINDICATION_NAME.Text
+                        R_CONTRAINDICATION_TEXT.Visible = True
+                    Else
+                        dao.fields.CONTRAINDICATION_NAME = "ไม่มี"
+                    End If
+                Catch ex As Exception
 
-                dao.fields.CONTRAINDICATION_ID = R_CONTRAINDICATION.SelectedValue
-                If R_CONTRAINDICATION.SelectedValue = 1 Then
-                    dao.fields.CONTRAINDICATION_NAME = CONTRAINDICATION_NAME.Text
-                    R_CONTRAINDICATION_TEXT.Visible = True
-                Else
-                    dao.fields.CONTRAINDICATION_NAME = "ไม่มี"
-                End If
-                dao.fields.WARNING_ID = R_WARNING.SelectedValue
-                If R_WARNING.SelectedValue = 1 Then
-                    dao.fields.WARNING_NAME = WARNING_NAME.Text
-                    R_WARNING_TEXT.Visible = True
-                Else
-                    dao.fields.WARNING_NAME = "ไม่มี"
-                End If
-                dao.fields.CAUTION_ID = R_CAUTION.SelectedValue
-                If R_CAUTION.SelectedValue = 1 Then
-                    dao.fields.CAUTION_NAME = CAUTION_NAME.Text
+                End Try
+                Try
+                    dao.fields.WARNING_ID = R_WARNING.SelectedValue
+                    If R_WARNING.SelectedValue = 1 Then
+                        dao.fields.WARNING_NAME = WARNING_NAME.Text
+                        R_WARNING_TEXT.Visible = True
+                    Else
+                        dao.fields.WARNING_NAME = "ไม่มี"
+                    End If
+                Catch ex As Exception
 
-                Else
-                    dao.fields.CAUTION_NAME = "ไม่มี"
-                    R_CAUTION_TEXT.Visible = True
+                End Try
+                Try
+                    dao.fields.CAUTION_ID = R_CAUTION.SelectedValue
+                    If R_CAUTION.SelectedValue = 1 Then
+                        dao.fields.CAUTION_NAME = CAUTION_NAME.Text
 
-                End If
-                dao.fields.ADV_REACTIVETION_ID = R_ADV_REACTIVETION.SelectedValue
-                If R_ADV_REACTIVETION.SelectedValue = 1 Then
-                    dao.fields.ADV_REACTIVETION_NAME = ADV_REACTIVETION_NAME.Text
-                    R_ADV_REACTIVETION_TEXT.Visible = True
-                Else
-                    dao.fields.ADV_REACTIVETION_NAME = "ไม่มี"
-                End If
-                dao.fields.SALE_CHANNEL_ID = DD_SALE_CHANNEL.SelectedValue
-                dao.fields.SALE_CHANNEL_NAME = DD_SALE_CHANNEL.SelectedItem.Text
+                    Else
+                        dao.fields.CAUTION_NAME = "ไม่มี"
+                        R_CAUTION_TEXT.Visible = True
+
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.ADV_REACTIVETION_ID = R_ADV_REACTIVETION.SelectedValue
+                    If R_ADV_REACTIVETION.SelectedValue = 1 Then
+                        dao.fields.ADV_REACTIVETION_NAME = ADV_REACTIVETION_NAME.Text
+                        R_ADV_REACTIVETION_TEXT.Visible = True
+                    Else
+                        dao.fields.ADV_REACTIVETION_NAME = "ไม่มี"
+                    End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dao.fields.SALE_CHANNEL_ID = DD_SALE_CHANNEL.SelectedValue
+                    dao.fields.SALE_CHANNEL_NAME = DD_SALE_CHANNEL.SelectedItem.Text
+                Catch ex As Exception
+
+                End Try
+
                 dao.fields.NOTE = NOTE.Text
 
                 'dao.fields.STATUS_ID = 5
@@ -654,8 +856,9 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                 dao.fields.CITIZEN_ID_AUTHORIZE = _CLS.CITIZEN_ID_AUTHORIZE
                 dao.fields.CREATE_BY = _CLS.AUTHORIZE_NAME
                 dao.fields.CREATE_DATE = Date.Now
-
-                dao.fields.MENU_GROUP = _MENU_GROUP
+                If _MENU_GROUP <> "" Then
+                    dao.fields.MENU_GROUP = _MENU_GROUP
+                End If
                 Try
                     dao.fields.IDA_LCT = _IDA_LCT
                 Catch ex As Exception
@@ -669,7 +872,20 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                 dao.fields.IDA_LCN = _IDA_LCN
                 dao.fields.DD_HERB_NAME_ID = _DD_HERB_NAME_ID
                 dao.fields.DDHERB = _PROCESS_JJ
+                dao.fields.AGENT_99_IDEN = txt_agent99_id.Text
+                dao.fields.AGENT_99 = txt_agent99.Text
+                Try
+                    dao.fields.NATIONALITY_PERSON_ID = DDL_NATION.SelectedValue
+                    dao.fields.NATIONALITY_PERSON = DDL_NATION.SelectedItem.Text
+                    dao.fields.NATIONALITY_PERSON_OTHER = DDL_NATION.SelectedItem.Text
+                Catch ex As Exception
 
+                End Try
+                Try
+                    dao.fields.PERSON_AGE = txt_person_age.Text
+                Catch ex As Exception
+
+                End Try
                 Dim staff_idsid As String = ""
                 Try
                     staff_idsid = Request.QueryString("staff")
@@ -681,9 +897,7 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
                     dao.fields.INOFFICE_STAFF_CITIZEN_ID = _CLS.CITIZEN_ID
                 End If
                 dao.Update()
-
             End If
-
             gen_xml_jj1()
             alert("บันทึกข้อมูลคำข้อแล้ว")
         Else
@@ -785,5 +999,40 @@ Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
         _CLS.PDFNAME = PATH_PDF_OUTPUT
         _CLS.FILENAME_XML = Path_XML
 
+    End Sub
+    Protected Sub BTN_SEARCH_TN_Click(sender As Object, e As EventArgs) Handles BTN_SEARCH_AG99.Click
+        Dim dao As New DAO_CPN.TB_syslcnsnm
+        If Request.QueryString("staff") = 1 Then
+            If txt_agent99_id.Text IsNot Nothing Then
+                Dim citizen_id As String = txt_agent99_id.Text
+                Dim ws_center As New WS_DATA_CENTER.WS_DATA_CENTER
+                Dim obj As New XML_DATA
+                'Dim cls As New CLS_COMMON.convert
+                Dim result As String = ""
+                'result = ws_center.GET_DATA_IDEM(citizen_id, citizen_id, "IDEM", "DPIS")
+                result = ws_center.GET_DATA_IDENTIFY(citizen_id, citizen_id, "FUSION", "P@ssw0rdfusion440")
+                obj = ConvertFromXml(Of XML_DATA)(result)
+                Try
+                    Dim TYPE_PERSON As Integer = obj.SYSLCNSIDs.type
+                    If TYPE_PERSON = 1 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                    ElseIf TYPE_PERSON = 99 Then
+                        txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                    Else
+                        If obj.SYSLCNSNMs.thalnm IsNot Nothing Then
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                        Else
+                            txt_agent99.Text = obj.SYSLCNSNMs.prefixnm & " " & obj.SYSLCNSNMs.thanm
+                        End If
+                    End If
+                Catch ex As Exception
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
+                End Try
+            Else
+                System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณากรอกเลขบัตรประชาชน หรือเลขนิติ');", True)
+            End If
+        Else
+            alert_nature("สิทธ์ของท่านไม่สามารถค้นหาข้อมูลได้")
+        End If
     End Sub
 End Class

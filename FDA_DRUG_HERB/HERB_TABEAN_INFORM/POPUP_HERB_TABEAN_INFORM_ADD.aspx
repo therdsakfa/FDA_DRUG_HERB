@@ -979,11 +979,9 @@
                     <%--<asp:TextBox ID="txt_duty_cas" runat="server" Width="100%"></asp:TextBox>--%>
                     <asp:DropDownList ID="ddl_duty_cas" runat="server" BackColor="White" Height="25px" Width="100%" SkinID="bootstrap">
                         <asp:ListItem Value="0">-- กรุณาเลือก --</asp:ListItem>
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                        <asp:ListItem Value="2">2</asp:ListItem>
-                        <asp:ListItem Value="3">3</asp:ListItem>
-                        <asp:ListItem Value="4">4</asp:ListItem>
-                        <asp:ListItem Value="5">5</asp:ListItem>
+                        <asp:ListItem Value="1">lubricant</asp:ListItem>
+                        <asp:ListItem Value="2">Anti-adherent</asp:ListItem>
+                        <asp:ListItem Value="3">Solubilizing agent</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>

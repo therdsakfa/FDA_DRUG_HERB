@@ -184,6 +184,15 @@
             _TYPE_PERSON_99 = value
         End Set
     End Property
+    Private _BSN_THAINAME As String
+    Public Property BSN_THAINAME() As String
+        Get
+            Return _BSN_THAINAME
+        End Get
+        Set(ByVal value As String)
+            _BSN_THAINAME = value
+        End Set
+    End Property
 
     Private _PROCESS_NAME As String
     Public Property PROCESS_NAME() As String

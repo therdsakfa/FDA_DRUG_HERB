@@ -89,6 +89,7 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE
         DATE_REQ.SelectedDate = Date.Now.ToString("dd/MM/yyyy")
         lbl_create_by.Text = dao.fields.CREATE_BY
         txt_remark_edit.Text = dao.fields.Reason_Staff
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
         Try
             lbl_create_date.Text = dao.fields.CREATE_DATE
         Catch ex As Exception
@@ -318,7 +319,8 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_APPROVE
             Catch ex As Exception
 
             End Try
-            dao.fields.cancel_date = Date.Now
+            'dao.fields.cancel_date = Date.Now
+            dao.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
             dao.fields.cancel_by = _CLS.THANM
             dao.fields.cancel_iden = _CLS.CITIZEN_ID
             UC_ATTACH1.insert_TBN_EDIT(_TR_ID, _Process_ID, dao.fields.IDA, 77)

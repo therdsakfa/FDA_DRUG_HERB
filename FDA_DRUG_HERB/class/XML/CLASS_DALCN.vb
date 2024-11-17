@@ -352,6 +352,15 @@
                 _RCVDAY_NEW = value
             End Set
         End Property
+        Private _APPDAY_NEW As String
+        Public Property APPDAY_NEW() As String
+            Get
+                Return _APPDAY_NEW
+            End Get
+            Set(ByVal value As String)
+                _APPDAY_NEW = value
+            End Set
+        End Property
 
         Private _RCVMONTH_NEW As String
         Public Property RCVMONTH_NEW() As String
@@ -362,6 +371,15 @@
                 _RCVMONTH_NEW = value
             End Set
         End Property
+        Private _APPMONTH_NEW As String
+        Public Property APPMONTH_NEW() As String
+            Get
+                Return _APPMONTH_NEW
+            End Get
+            Set(ByVal value As String)
+                _APPMONTH_NEW = value
+            End Set
+        End Property
 
         Private _RCVYEAR_NEW As String
         Public Property RCVYEAR_NEW() As String
@@ -370,6 +388,15 @@
             End Get
             Set(ByVal value As String)
                 _RCVYEAR_NEW = value
+            End Set
+        End Property
+        Private _APPYEAR_NEW As String
+        Public Property APPYEAR_NEW() As String
+            Get
+                Return _APPYEAR_NEW
+            End Get
+            Set(ByVal value As String)
+                _APPYEAR_NEW = value
             End Set
         End Property
 
@@ -475,6 +502,15 @@
             End Get
             Set(ByVal value As String)
                 _QR_CODE = value
+            End Set
+        End Property
+        Private _SHORT_CODE As String
+        Public Property SHORT_CODE() As String
+            Get
+                Return _SHORT_CODE
+            End Get
+            Set(ByVal value As String)
+                _SHORT_CODE = value
             End Set
         End Property
         Private _EMAIL As String
@@ -627,7 +663,6 @@
                 _LCN_TYPE_ID = value
             End Set
         End Property
-
         Private _EXPDAY As String
         Public Property EXPDAY() As String
             Get
@@ -635,6 +670,15 @@
             End Get
             Set(ByVal value As String)
                 _EXPDAY = value
+            End Set
+        End Property
+        Private _EXPDAY_NEW As String
+        Public Property EXPDAY_NEW() As String
+            Get
+                Return _EXPDAY_NEW
+            End Get
+            Set(ByVal value As String)
+                _EXPDAY_NEW = value
             End Set
         End Property
 
@@ -647,7 +691,24 @@
                 _EXPMONTH = value
             End Set
         End Property
-
+        Private _EXPMONTH_NEW As String
+        Public Property EXPMONTH_NEW() As String
+            Get
+                Return _EXPMONTH_NEW
+            End Get
+            Set(ByVal value As String)
+                _EXPMONTH_NEW = value
+            End Set
+        End Property
+        Private _EXPYEAR_NEW As String
+        Public Property EXPYEAR_NEW() As String
+            Get
+                Return _EXPYEAR_NEW
+            End Get
+            Set(ByVal value As String)
+                _EXPYEAR_NEW = value
+            End Set
+        End Property
         Private _EXPYEAR As String
         Public Property EXPYEAR() As String
             Get
@@ -655,6 +716,24 @@
             End Get
             Set(ByVal value As String)
                 _EXPYEAR = value
+            End Set
+        End Property
+        Private _EXPDATE_FULLTH As String
+        Public Property EXPDATE_FULL() As String
+            Get
+                Return _EXPDATE_FULLTH
+            End Get
+            Set(ByVal value As String)
+                _EXPDATE_FULLTH = value
+            End Set
+        End Property
+        Private _EXPDATE_FULL_NEW As String
+        Public Property EXPDATE_FULL_NEW() As String
+            Get
+                Return _EXPDATE_FULL_NEW
+            End Get
+            Set(ByVal value As String)
+                _EXPDATE_FULL_NEW = value
             End Set
         End Property
         Private _RCVNO_FORMAT As String
@@ -720,6 +799,34 @@
                 _LCNNO_OLD = value
             End Set
         End Property
+        Private _POSITION_NAME As String
+        Public Property POSITION_NAME() As String
+            Get
+                Return _POSITION_NAME
+            End Get
+            Set(ByVal value As String)
+                _POSITION_NAME = value
+            End Set
+        End Property
+        Private _SIGNATURE_NAME As String
+        Public Property SIGNATURE_NAME() As String
+            Get
+                Return _SIGNATURE_NAME
+            End Get
+            Set(ByVal value As String)
+                _SIGNATURE_NAME = value
+            End Set
+        End Property
+        Private _SIGNATURE_PROVINCE As String
+        Public Property SIGNATURE_PROVINCE() As String
+            Get
+                Return _SIGNATURE_PROVINCE
+            End Get
+            Set(ByVal value As String)
+                _SIGNATURE_PROVINCE = value
+            End Set
+        End Property
+
 #End Region
 
 #Region "chk_smp"

@@ -176,6 +176,32 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub Getdata_by_fk_id_process_id_and_ssid(ByVal IDA As Integer, ByVal process_id As Integer, ByVal status_id As Integer)
+            datas = From p In DB.feedtls Where p.fk_id = IDA And p.dvcd = 9 And p.process_id = process_id And p.fk_refstatus = status_id Select p
+            For Each Me.fields In datas
+
+            Next
+        End Sub
     End Class
-    
+    Public Class TB_feetype
+        Inherits MainContext
+        Public fields As New feetype
+        Public Sub insert()
+            DB.feetypes.InsertOnSubmit(fields)
+            DB.SubmitChanges()
+        End Sub
+        Public Sub update()
+            DB.SubmitChanges()
+        End Sub
+        Public Sub delete()
+            DB.feetypes.DeleteOnSubmit(fields)
+            DB.SubmitChanges()
+        End Sub
+        Public Sub GetDataby_PROCESS_ID_AND_STATUS_ID(ByVal PROCESS_ID As Integer, ByVal Status_ID As Integer)
+            datas = (From p In DB.feetypes Where p.process_id = PROCESS_ID And p.dvcd = 9 And p.fda_status = Status_ID Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+    End Class
+
 End Namespace

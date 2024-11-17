@@ -4,14 +4,11 @@
     Dim clsDBSqlCommand As New BAO.ClsDBSqlcommand
     Dim clsDBSyslcnsid As New DAO_CPN.clsDBsyslcnsid
     Dim clsDBSyslcnsnm As New DAO_CPN.clsDBsyslcnsnm
-
     Private _CLS As New CLS_SESSION
-
-
     Private _TOKEN As String
     Private Sub RunQuery()
         _TOKEN = Request("Token").ToString()
-        '_TOKEN = "L9vNfwnzmCeEVR7G7/1/zwUU"
+        '_TOKEN = "pToNIN9yqyn5x0qUQ6rP7AUU"
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -24,7 +21,6 @@
         'Session.Abandon()
         Session.Clear()
     End Sub
-
     Sub token()
         Dim token As String = _TOKEN
         Dim urls As String = ""

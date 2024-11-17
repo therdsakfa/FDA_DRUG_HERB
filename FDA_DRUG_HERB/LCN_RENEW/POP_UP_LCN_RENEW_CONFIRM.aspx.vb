@@ -27,58 +27,68 @@ Public Class POP_UP_LCN_RENEW_CONFIRM
     Sub set_btn()
         Dim dao As New DAO_LCN.TB_DALCN_RENEW
         dao.GET_DATA_BY_IDA(_IDA)
-        If dao.fields.STATUS_ID = 1 Then
-            btn_cancel.Visible = False
-        Else
-            btn_cancel.Visible = True
-        End If
-
-        If dao.fields.STATUS_ID = 77 Or dao.fields.STATUS_ID = 78 Or dao.fields.STATUS_ID = 79 Or dao.fields.STATUS_ID = 7 _
-            Or dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Or dao.fields.STATUS_ID = 14 Or dao.fields.STATUS_ID = 17 _
-            Or dao.fields.STATUS_ID = 75 Then
+        Dim SSID As Integer = dao.fields.STATUS_ID
+        If SSID = 77 Or SSID = 78 Or SSID = 79 Or SSID = 7 _
+            Or SSID = 9 Or SSID = 10 Or SSID = 14 Or SSID = 17 _
+            Or SSID = 75 Then
             btn_cancel.Enabled = False
             btn_cancel.CssClass = "btn-danger btn-lg"
         End If
-
-        If dao.fields.STATUS_ID <> 1 Then
+        If SSID > 1 Then
             btn_confirm.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
-            'btn_edit.Enabled = False
-            'btn_edit.CssClass = "btn-danger btn-lg"
-            'btn_editUpload.CssClass = "btn-danger btn-lg"
-        ElseIf dao.fields.STATUS_ID = 8 Then
+        End If
+        If SSID = 8 Then
             'btn_editUpload.Enabled = False
             btn_cancel.Enabled = False
             btn_cancel.CssClass = "btn-danger btn-lg"
+            btn_Download.Visible = True
+            btn_cancel.Enabled = False
+            btn_cancel.CssClass = "btn-danger btn-lg"
+            btn_Download.Visible = True
+            If dao.fields.DOWNLOAD_TYPE = 0 Or dao.fields.DOWNLOAD_TYPE = 2 Then
+                btn_Download.Enabled = False
+                btn_Download.CssClass = "btn-danger btn-lg"
+            End If
         End If
+        lbl_create_by.Text = dao.fields.CREATE_BY
+        lbl_create_date.Text = dao.fields.CREATE_DATE
     End Sub
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
+        Dim bao As New BAO.GenNumber
+        Dim RCVNO As String = ""
+        Dim RCVNO_HERB_NEW As String = ""
         Dim dao As New DAO_LCN.TB_DALCN_RENEW
         dao.GET_DATA_BY_IDA(_IDA)
-
+        RCVNO = dao.fields.RCVNO
+        If RCVNO = "" Then
+            RCVNO = bao.GEN_RCVNO_NO(con_year(Date.Now.Year()), dao.fields.pvncd, _ProcessID, _IDA)
+            Dim TR_ID As String = dao.fields.TR_ID
+            Dim DATE_YEAR As String = con_year(Date.Now().Year()).Substring(2, 2)
+            RCVNO_HERB_NEW = bao.GEN_RCVNO_NO_NEW(con_year(Date.Now.Year()), dao.fields.pvncd, _ProcessID, _IDA)
+            Dim RCVNO_FULL As String = "HB" & " " & dao.fields.pvncd & "-" & _ProcessID & "-" & DATE_YEAR & "-" & RCVNO_HERB_NEW
+            dao.fields.RCVNO_NEW = RCVNO_FULL
+            dao.fields.RCVNO = RCVNO
+        End If
         dao.fields.STATUS_ID = 2
         dao.fields.DATE_CONFIRM = Date.Now
+        dao.fields.UPDATE_DATE = DateTime.Now
         dao.update()
-        alert("ยื่นคำขอแล้ว")
+        AddLogStatus(dao.fields.STATUS_ID, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
+        Dim bao2 As New BAO_TABEAN_HERB.tb_dd
+        bao2.SP_INSERT_DRUG_PAYMENT_CENTER_L44(_CLS.CITIZEN_ID_AUTHORIZE, _IDA, dao.fields.PROCESS_ID)
+        alert("ยื่นคำขอแล้ว กรุณาชำระค่าคำขอ")
     End Sub
 
     Protected Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Dim dao As New DAO_LCN.TB_DALCN_RENEW
         dao.GET_DATA_BY_IDA(_IDA)
 
-        dao.fields.STATUS_ID = 78
+        dao.fields.STATUS_ID = 77
         dao.update()
+        AddLogStatus(dao.fields.STATUS_ID, dao.fields.PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
         alert("ยกเลิกคำขอแล้ว")
     End Sub
-
-    'Protected Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-    '    'Response.Redirect("FRM_PHR_HERB_EDIT.aspx?IDA=" & _IDA)
-    'End Sub
-
-    'Protected Sub btn_editUpload_Click(sender As Object, e As EventArgs) Handles btn_editUpload.Click
-    '    'Response.Redirect("FRM_PHR_HERB_EDIT.aspx?IDA=" & _IDA)
-    'End Sub
-
     Protected Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Response.Write("<script type='text/javascript'>parent.close_modal();</script> ")
     End Sub
@@ -129,22 +139,91 @@ Public Class POP_UP_LCN_RENEW_CONFIRM
         Return dt
     End Function
 
-    Private Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles RadGrid1.NeedDataSource
-        RadGrid1.DataSource = bind_data_uploadfile()
+    Private Sub RadGrid1_NeedDataSource(sender As Object, e As GridNeedDataSourceEventArgs) Handles rgat.NeedDataSource
+        rgat.DataSource = bind_data_uploadfile()
     End Sub
 
-    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles RadGrid1.ItemDataBound
+    Private Sub RadGrid1_ItemDataBound(sender As Object, e As GridItemEventArgs) Handles rgat.ItemDataBound
         If e.Item.ItemType = GridItemType.AlternatingItem Or e.Item.ItemType = GridItemType.Item Then
             Dim item As GridDataItem
             item = e.Item
             Dim IDA As Integer = item("IDA").Text
+            Dim ANNOTATION As String = item("ANNOTATION").Text
 
             Dim H As HyperLink = e.Item.FindControl("PV_SELECT")
-            H.Target = "_blank"
-            H.NavigateUrl = "FRM_HERB_LCN_RENEW_PREVIEW.aspx?ida=" & IDA
+            'Dim HL_SELECT As LinkButton = DirectCast(item("PV_SELECT").Controls(0), LinkButton)
+            Try
+                If ANNOTATION = 1 Then
+                    H.Style.Add("display", "none")
+                    'HL_SELECT.Style.Add("display", "none")
+                Else
+                    H.Target = "_blank"
+                    H.NavigateUrl = "FRM_HERB_LCN_RENEW_PREVIEW.aspx?ida=" & IDA
+                End If
+            Catch ex As Exception
 
+            End Try
         End If
 
     End Sub
 
+    Protected Sub btn_Download_Click(sender As Object, e As EventArgs) Handles btn_Download.Click
+        Dim dao As New DAO_LCN.TB_DALCN_RENEW
+        dao.GET_DATA_BY_IDA(_IDA)
+        Dim dao_lcn As New DAO_DRUG.ClsDBdalcn
+        dao_lcn.GetDataby_IDA(dao.fields.FK_LCN)
+        Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
+        Dim template_id As Integer = 0
+        Dim PROCESS_ID As String = ""
+        Dim _TR_ID As String = ""
+        If dao.fields.DOWNLOAD_TYPE = 1 Then
+            If _ProcessID = 10901 Or _ProcessID = 10902 Or _ProcessID = 10903 Then
+                If dao.fields.pvncd = 10 Then
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, "สมพ2", dao.fields.STATUS_ID, 1, 0)
+                Else
+                    dao_pdftemplate.GetDataby_TEMPLAETE_BY_GROUP(_ProcessID, "สมพ2", dao.fields.STATUS_ID, 1, 1)
+                End If
+            End If
+
+            'dao.fields.DOWNLOAD_TYPE = 2
+            dao.fields.DOWNLOAD_DATE = DateTime.Now
+            dao.fields.DOWNLOAD_BY = _CLS.CITIZEN_ID
+            dao.update()
+            Dim dao_up As New DAO_DRUG.ClsDBTRANSACTION_UPLOAD
+            dao_up.GetDataby_IDA(dao_lcn.fields.TR_ID)
+            _TR_ID = dao_up.fields.ID
+            PROCESS_ID = dao.fields.process_lcn
+            Dim YEAR As String = dao_up.fields.YEAR
+            Dim Paths As String = System.Configuration.ConfigurationManager.AppSettings("PATH_XML_PDF_LCN_RENREW") 'path
+            Dim PDF_TEMPLATE As String = Paths & "PDF_TEMPLATE\" & dao_pdftemplate.fields.PDF_TEMPLATE
+            Dim filename As String = Paths & dao_pdftemplate.fields.PDF_OUTPUT & "\" & NAME_PDF("DA", PROCESS_ID, YEAR, _TR_ID)
+            'Dim filePath As String = Server.MapPath(filename) ' ระบุที่อยู่ของไฟล์ที่ต้องการให้ดาวน์โหลด
+            'Response.ContentType = "application/pdf"
+            'Response.AppendHeader("Content-Disposition", "attachment; filename=YourFile.pdf")
+            'Response.TransmitFile(filePath)
+            'Response.End()
+            Dim bao As New BAO.AppSettings
+            bao.RunAppSettings()
+            Dim clsds As New ClassDataset
+            Response.Clear()
+            Response.ContentType = "Application/pdf"
+            Response.AddHeader("Content-Disposition", "attachment; filename=" & "ใบอนุญาตต่ออายุ(สพม2)" & ".pdf")
+            Response.BinaryWrite(clsds.UpLoadImageByte(_CLS.FILENAME_PDF)) '"C:\path\PDF_XML_CLASS\"
+            Response.Flush()
+            Response.Close()
+            Response.End()
+        End If
+        btn_Download.Enabled = False
+        btn_Download.CssClass = "btn-danger btn-lg"
+    End Sub
+
+    'Private Sub btn_KeepPay_Click(sender As Object, e As EventArgs) Handles btn_KeepPay.Click
+    '    Dim dao As New DAO_LCN.TB_DALCN_RENEW
+    '    dao.GET_DATA_BY_IDA(_IDA)
+    '    dao.fields.STATUS_ID = 22
+    '    dao.fields.DATE_PAY1 = Date.Now
+    '    dao.fields.DATE_PAY2 = Date.Now
+    '    dao.update()
+    '    alert("ข้ามการชำระเงินแล้ว")
+    'End Sub
 End Class

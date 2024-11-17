@@ -50,6 +50,24 @@ Partial Public Class FRM_HERB_TABEAN_JJ_ADD_DETAIL
     Protected WithEvents txt_agent99 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txt_agent99_id control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_agent99_id As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BTN_SEARCH_AG99 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_SEARCH_AG99 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''txt_person_age control.
     '''</summary>
     '''<remarks>

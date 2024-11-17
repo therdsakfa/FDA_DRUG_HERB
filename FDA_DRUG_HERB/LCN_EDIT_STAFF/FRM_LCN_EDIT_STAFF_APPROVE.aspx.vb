@@ -290,7 +290,6 @@ Public Class FRM_LCN_EDIT_STAFF_APPROVE
     End Sub
     Function GEN_NO_INTAKE(ByVal YEAR As String, ByVal PROCESS_ID As Integer, ByVal LCN_IDA As Integer)
         Dim int_no As Integer
-
         Dim dao1 As New DAO_LCN.TB_LCN_APPROVE_EDIT_TRANSACTION_RQ_NUMBER
         dao1.GetDataby_GEN(YEAR, PROCESS_ID, LCN_IDA)
         If IsNothing(dao1.fields.GEN_NO) = True Then
@@ -310,7 +309,6 @@ Public Class FRM_LCN_EDIT_STAFF_APPROVE
         dao2.fields.UPLOAD_DATE = Date.Now()
         dao2.fields.YEAR = con_year(Date.Now().Year())
         dao2.insert()
-
         Return str_no
     End Function
     Sub Run_Service(ByVal IDA As Integer)

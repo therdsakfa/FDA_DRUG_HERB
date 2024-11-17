@@ -886,12 +886,32 @@
     <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SEE_EDIT_DETAIL.aspx" />
     <Content Include="LCN_EDIT_STAFF\FRM_LCN_EDIT_STAFF_SIGN.aspx" />
     <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW.aspx" />
+    <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW_CHECK.aspx" />
+    <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PHR_PREVIEW.aspx" />
     <Content Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_PREVIEW_SMP4.aspx" />
     <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_ADD.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT_FILE.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_UPLOAD.aspx" />
     <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx" />
+    <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_EDIT_REQUEST.aspx" />
     <Content Include="LCN_RENEW\POP_UP_LCN_RENEW_UPLOAD_FILE.aspx" />
+    <Content Include="LCN_RENEW\UC_RENEW\UC_LCN_DRUG_GROUP.ascx" />
+    <Content Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_CHECK_STAFF.aspx" />
+    <Content Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_PREVIEW_STAFF.aspx" />
     <Content Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_STAFF.aspx" />
+    <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF.aspx" />
+    <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT.aspx" />
+    <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT_FILE.aspx" />
     <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx" />
+    <Content Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_STAFF_EDIT.aspx" />
+    <Content Include="LCN_RENEW_STAFF\UC\UC_HERB_BSN_PRE.ascx" />
+    <Content Include="LCN_RENEW_STAFF\UC\UC_HERB_KEEP_PRE.ascx" />
+    <Content Include="LCN_RENEW_STAFF\UC\UC_HERB_PHESAJ_PRE.ascx" />
+    <Content Include="LCN_RENEW_STAFF\UC\UC_HERB_PRE.ascx" />
+    <Content Include="LCN_RENEW_STAFF\UC\uc_rnp_general_data.ascx" />
     <Content Include="LCN_STAFF\FRM_LCN_STAFF_HERB_CANCEL.aspx" />
     <Content Include="LCN_STAFF\FRM_LCN_UPDATE_STATUS.aspx" />
     <Content Include="LCN_STAFF\FRM_STAFF_LCN_ADD.aspx" />
@@ -926,6 +946,9 @@
     <Content Include="LCN_TRANSFER\POP_UP_LCN_TRANSFER_UPLOAD_FILE.aspx" />
     <Content Include="LCN_TRANSFER_STAFF\FRM_LCN_STAFF_DRUG_TRANSFER.aspx" />
     <Content Include="LCN_TRANSFER_STAFF\POP_UP_LCN_STAFF_TRANSFER_COMFIRM.aspx" />
+    <Content Include="MAIN\FRM_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx" />
+    <Content Include="MAIN\FRM_SELECT_PROCESS_LCN.aspx" />
+    <Content Include="MAIN\FRM_SELECT_PROCESS_LCN_MAIN.aspx" />
     <Content Include="MAIN_STAFF\FRM_AUTHEN_STAFF_INSTEAD.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_PANEL.aspx" />
     <Content Include="MAIN_STAFF\FRM_STAFF_REPLACEMENT_TABEAN_PANEL_CHOOSE.aspx" />
@@ -1191,10 +1214,16 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Web References\WS_FLATTEN\WS_FLATTEN.disco" />
+    <Content Include="Web References\WS_FLATTEN_NEW\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_FLATTEN_NEW\WS_FLATTEN.wsdl" />
     <None Include="Web References\WS_GETDATE_WORKING\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <None Include="Web References\WS_FLATTEN_NEW\WS_FLATTEN.disco" />
     <Content Include="Web References\WS_LGTDRUG\CLC_BSNADDRESS.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -1260,6 +1289,14 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\WS_REQUEST_NO\SV_REQUEST_NO.disco" />
+    <Content Include="Web References\WS_SHORTEN\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\WS_SHORTEN\RESPONSE_DATA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\WS_SHORTEN\WS_SHORTEN.disco" />
     <Content Include="Web References\WS_Taxno_TaxnoAuthorize\Get_Profile.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -1273,6 +1310,7 @@
     <Content Include="Web References\WS_Taxno_TaxnoAuthorize\root.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <None Include="Web References\WS_SHORTEN\WS_SHORTEN.wsdl" />
     <None Include="Web References\WS_Taxno_TaxnoAuthorize\WS_Taxno_TaxnoAuthorize.disco" />
     <Content Include="Web References\WS_TRADERS\JuristicCertificateInfo.datasource">
       <DependentUpon>Reference.map</DependentUpon>
@@ -2699,6 +2737,7 @@
     <Compile Include="class\XML\CLASS_DALCN_AUDIT.vb" />
     <Compile Include="class\XML\CLASS_DALCN_EDIT_REQUEST.vb" />
     <Compile Include="class\XML\CLASS_DALCN_NCT_SUBSTITUTE.vb" />
+    <Compile Include="class\XML\CLASS_DALCN_PHR.vb" />
     <Compile Include="class\XML\CLASS_DALCN_RENEW.vb" />
     <Compile Include="class\XML\CLASS_DALCN_SUBTITUTE.vb" />
     <Compile Include="class\XML\CLASS_DALCN_TRANSFER.vb" />
@@ -6998,11 +7037,32 @@
       <DependentUpon>FRM_HERB_LCN_RENEW.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_CHECK.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_CHECK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_CHECK.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_CHECK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PHR_PREVIEW.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PHR_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PHR_PREVIEW.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PHR_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx.designer.vb">
       <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW.aspx</DependentUpon>
     </Compile>
     <Compile Include="LCN_RENEW\FRM_HERB_LCN_RENEW_PREVIEW.aspx.vb">
       <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_PREVIEW_SMP4.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_PREVIEW_SMP4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_PREVIEW_SMP4.aspx.vb">
+      <DependentUpon>POP_UP_LCN_PREVIEW_SMP4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_ADD.aspx.designer.vb">
@@ -7012,11 +7072,46 @@
       <DependentUpon>POP_UP_LCN_RENEW_ADD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT_FILE.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_EDIT_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_EDIT_FILE.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_EDIT_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_UPLOAD.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_UPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CHECK_UPLOAD.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_UPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx.designer.vb">
       <DependentUpon>POP_UP_LCN_RENEW_CONFIRM.aspx</DependentUpon>
     </Compile>
     <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_CONFIRM.aspx.vb">
       <DependentUpon>POP_UP_LCN_RENEW_CONFIRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_EDIT_REQUEST.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_EDIT_REQUEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_EDIT_REQUEST.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_EDIT_REQUEST.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_RENEW\POP_UP_LCN_RENEW_UPLOAD_FILE.aspx.designer.vb">
@@ -7026,6 +7121,27 @@
       <DependentUpon>POP_UP_LCN_RENEW_UPLOAD_FILE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_RENEW\UC_RENEW\UC_LCN_DRUG_GROUP.ascx.designer.vb">
+      <DependentUpon>UC_LCN_DRUG_GROUP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW\UC_RENEW\UC_LCN_DRUG_GROUP.ascx.vb">
+      <DependentUpon>UC_LCN_DRUG_GROUP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_CHECK_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_CHECK_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_CHECK_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_CHECK_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_PREVIEW_STAFF.aspx.designer.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_PREVIEW_STAFF.aspx.vb">
+      <DependentUpon>FRM_HERB_LCN_RENEW_PREVIEW_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_RENEW_STAFF\FRM_HERB_LCN_RENEW_STAFF.aspx.designer.vb">
       <DependentUpon>FRM_HERB_LCN_RENEW_STAFF.aspx</DependentUpon>
     </Compile>
@@ -7033,11 +7149,74 @@
       <DependentUpon>FRM_HERB_LCN_RENEW_STAFF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT_FILE.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF_EDIT_FILE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CHECK_STAFF_EDIT_FILE.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_CHECK_STAFF_EDIT_FILE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx.designer.vb">
       <DependentUpon>POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx</DependentUpon>
     </Compile>
     <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx.vb">
       <DependentUpon>POP_UP_LCN_RENEW_CONFIRM_STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_STAFF_EDIT.aspx.designer.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_STAFF_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\POP_UP_LCN_RENEW_STAFF_EDIT.aspx.vb">
+      <DependentUpon>POP_UP_LCN_RENEW_STAFF_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_BSN_PRE.ascx.designer.vb">
+      <DependentUpon>UC_HERB_BSN_PRE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_BSN_PRE.ascx.vb">
+      <DependentUpon>UC_HERB_BSN_PRE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_KEEP_PRE.ascx.designer.vb">
+      <DependentUpon>UC_HERB_KEEP_PRE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_KEEP_PRE.ascx.vb">
+      <DependentUpon>UC_HERB_KEEP_PRE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_PHESAJ_PRE.ascx.designer.vb">
+      <DependentUpon>UC_HERB_PHESAJ_PRE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_PHESAJ_PRE.ascx.vb">
+      <DependentUpon>UC_HERB_PHESAJ_PRE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_PRE.ascx.designer.vb">
+      <DependentUpon>UC_HERB_PRE.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\UC_HERB_PRE.ascx.vb">
+      <DependentUpon>UC_HERB_PRE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\uc_rnp_general_data.ascx.designer.vb">
+      <DependentUpon>uc_rnp_general_data.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LCN_RENEW_STAFF\UC\uc_rnp_general_data.ascx.vb">
+      <DependentUpon>uc_rnp_general_data.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LCN_STAFF\FRM_ATTACH_PAGE.aspx.designer.vb">
@@ -7738,6 +7917,27 @@
     </Compile>
     <Compile Include="MAIN\FRM_NEWS.aspx.vb">
       <DependentUpon>FRM_NEWS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN\FRM_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx.designer.vb">
+      <DependentUpon>FRM_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FRM_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx.vb">
+      <DependentUpon>FRM_REPLACEMENT_LICENSE_PANEL_CHOOSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN\FRM_SELECT_PROCESS_LCN.aspx.designer.vb">
+      <DependentUpon>FRM_SELECT_PROCESS_LCN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FRM_SELECT_PROCESS_LCN.aspx.vb">
+      <DependentUpon>FRM_SELECT_PROCESS_LCN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MAIN\FRM_SELECT_PROCESS_LCN_MAIN.aspx.designer.vb">
+      <DependentUpon>FRM_SELECT_PROCESS_LCN_MAIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FRM_SELECT_PROCESS_LCN_MAIN.aspx.vb">
+      <DependentUpon>FRM_SELECT_PROCESS_LCN_MAIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MAIN\MAIN_PRODUCTS.aspx.designer.vb">
@@ -9528,6 +9728,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_FLATTEN_NEW\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_GETDATE_WORKING\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -9549,6 +9754,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\WS_REQUEST_NO\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_SHORTEN\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -9793,6 +10003,17 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_DATA_CENTER_WS_DATA_CENTER</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.111.28.137/PDF_SIGNV3/WS_FLATTEN.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_FLATTEN_NEW\</RelPath>
+      <UpdateFromURL>http://10.111.28.137/PDF_SIGNV3/WS_FLATTEN.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_WS_FLATTEN_NEW_WS_FLATTEN</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.115.28.108/PDF_ECTDV2/WS_ETDA_SERVICE.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_ETDA_SERVICE\</RelPath>
@@ -9803,6 +10024,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_DRUG_HERB_WS_ETDA_SERVICE_WS_ETDA_SERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://thfda.cc/WS_SHORTEN.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_SHORTEN\</RelPath>
+      <UpdateFromURL>http://thfda.cc/WS_SHORTEN.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_DRUG_HERB_WS_SHORTEN_WS_SHORTEN</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="https://meshlog.fda.moph.go.th/FDA_HERB_SW/SW_HERB_PAYMENT.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

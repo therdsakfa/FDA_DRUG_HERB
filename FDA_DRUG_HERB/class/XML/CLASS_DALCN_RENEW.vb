@@ -54,4 +54,22 @@
             _APPDATE_FULL_TH = value
         End Set
     End Property
+    Private _THANM_THAIFULLNAME As String
+    Public Property THANM_THAIFULLNAME() As String
+        Get
+            Return _THANM_THAIFULLNAME
+        End Get
+        Set(ByVal value As String)
+            _THANM_THAIFULLNAME = value
+        End Set
+    End Property
+    Private _BSN_THAIFULLNAME As String
+    Public Property BSN_THAIFULLNAME() As String
+        Get
+            Return _BSN_THAIFULLNAME
+        End Get
+        Set(ByVal value As String)
+            _BSN_THAIFULLNAME = value
+        End Set
+    End Property
 End Class

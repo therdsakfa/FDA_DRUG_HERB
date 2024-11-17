@@ -14,12 +14,15 @@ Public Class WebForm1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         Try
-            If _FileName.Contains("543-0") Then
-                'Response.Write("<script type='text/javascript'>
-                'alert('ขณะนี้ระบบการแสดงข้อมูลผ่าน qr code มีปัญหา ท่านสามารถตรวจสอบข้อมูล ใบอนุญาตผลิตภัณฑ์สมุนไพรได้ที่ https://porta.fda.moph.go.th/fda_search_all/main/search_center_main.aspx การค้นหา เลือกหัวข้อสืบค้นสถานที่สมุนไพร โดยใช้ชื่อ หรือ เลขที่ใบอนุญาต');parent.close_modal();</script> ")
-                'Response.Redirect("https://porta.fda.moph.go.th/fda_search_all/main/search_center_main.aspx")
+            If String.IsNullOrEmpty(_FileName) Then
+                ' ถ้า _FileName เป็นค่าว่าง
+                load_pdf(_FileName)
+            ElseIf _FileName.Contains("543-0") Then
+                ' ถ้า _FileName มี "543-0"
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "Codeblock", "alert('ขณะนี้ระบบการแสดงข้อมูลผ่าน qr code มีปัญหา ท่านสามารถตรวจสอบข้อมูล ใบอนุญาตผลิตภัณฑ์สมุนไพรได้ที่ https://porta.fda.moph.go.th/fda_search_all/main/search_center_main.aspx การค้นหา เลือกหัวข้อสืบค้นสถานที่สมุนไพร โดยใช้ชื่อ หรือ เลขที่ใบอนุญาต');window.location.href = 'https://porta.fda.moph.go.th/fda_search_all/main/search_center_main.aspx';", True)
+
             Else
+                ' ถ้า _FileName ไม่เป็นค่าว่างและไม่มี "543-0"
                 load_pdf(_FileName)
             End If
 
@@ -47,7 +50,16 @@ Public Class WebForm1
         Dim clsds As New ClassDataset
 
         Dim bb As Byte()
-        bb = clsds.UpLoadImageByte(FilePath)
+        Try
+            If String.IsNullOrEmpty(_FileName) Then
+                bb = Session("PDFFile")
+            Else
+                bb = clsds.UpLoadImageByte(FilePath)
+            End If
+
+        Catch ex As Exception
+            bb = Session("PDFFile")
+        End Try
 
         Dim ws_F As New WS_FLATTEN.WS_FLATTEN
         Dim b_o As Byte()

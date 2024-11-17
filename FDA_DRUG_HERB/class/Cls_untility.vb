@@ -108,8 +108,46 @@ Module Cls_untility
         Catch ex As Exception
 
         End Try
-       
+
     End Sub
+
+    Function GET_NAME_BY_IDENTIFY(ByVal identify As String)
+        Dim Name_Contract As String = ""
+        Dim dao As New DAO_CPN.TB_syslcnsnm
+        Dim ws_center As New WS_DATA_CENTER.WS_DATA_CENTER
+        Dim obj As New XML_DATA
+        'Dim cls As New CLS_COMMON.convert
+        Dim result As String = ""
+        'result = ws_center.GET_DATA_IDEM(citizen_id, citizen_id, "IDEM", "DPIS")
+        result = ws_center.GET_DATA_IDENTIFY(identify, identify, "FUSION", "P@ssw0rdfusion440")
+        obj = ConvertFromXml(Of XML_DATA)(result)
+        Try
+            Dim TYPE_PERSON As Integer = obj.SYSLCNSIDs.type
+            If TYPE_PERSON = 1 Then
+                If obj.SYSLCNSNMs.thanm.Contains("ทดสอบ") Then
+                    Name_Contract = obj.SYSLCNSNMs.prefixnm2 & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                Else
+                    Name_Contract = obj.SYSLCNSNMs.prefixnm & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                End If
+
+            ElseIf TYPE_PERSON = 99 Then
+                If obj.SYSLCNSNMs.thanm.Contains("ทดสอบ") Then
+                    Name_Contract = obj.SYSLCNSNMs.prefixnm2 & obj.SYSLCNSNMs.thanm
+                Else
+                    Name_Contract = obj.SYSLCNSNMs.prefixnm & obj.SYSLCNSNMs.thanm
+                End If
+            Else
+                If obj.SYSLCNSNMs.thalnm IsNot Nothing Then
+                    If obj.SYSLCNSNMs.thanm.Contains("ทดสอบ") Then Name_Contract = obj.SYSLCNSNMs.prefixnm2 & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm Else Name_Contract = obj.SYSLCNSNMs.prefixnm & obj.SYSLCNSNMs.thanm & " " & obj.SYSLCNSNMs.thalnm
+                Else
+                    If obj.SYSLCNSNMs.thanm.Contains("ทดสอบ") Then Name_Contract = obj.SYSLCNSNMs.prefixnm2 & obj.SYSLCNSNMs.thanm Else Name_Contract = obj.SYSLCNSNMs.prefixnm & obj.SYSLCNSNMs.thanm
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+        Return Name_Contract
+    End Function
 
 End Module
 

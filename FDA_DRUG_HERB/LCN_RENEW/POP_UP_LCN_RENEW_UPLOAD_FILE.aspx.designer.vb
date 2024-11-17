@@ -48,4 +48,31 @@ Partial Public Class POP_UP_LCN_RENEW_UPLOAD_FILE
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_add_upload As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''RDO_YES control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDO_YES As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''RDO_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDO_NO As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''BTN_SUBMIT control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_SUBMIT As Global.System.Web.UI.WebControls.Button
 End Class

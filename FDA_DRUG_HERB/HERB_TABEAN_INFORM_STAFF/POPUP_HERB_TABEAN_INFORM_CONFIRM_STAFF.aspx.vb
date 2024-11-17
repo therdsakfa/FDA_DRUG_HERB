@@ -136,10 +136,10 @@ Public Class POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF
     Public Function GEN_NO_NEW(ByVal YEAR As String, ByVal PVNCD As String, ByVal TYPE As String, ByVal FK_IDA As Integer, ByVal Process_ID As String) As String
         Dim int_no As Integer
         Dim full_rgtno As String = ""
-        TYPE = "DRJR"
+        TYPE = "G"
         Dim dao As New DAO_TABEAN_HERB.TB_GEN_NO_NEW
-        'dao.GetDataby_TYPE_MAX(YEAR, TYPE, FK_IDA)
-        dao.GetDataby_GROUPNO_MAX(YEAR, Process_ID, FK_IDA)
+        dao.GetDataby_TYPE_MAX(YEAR, TYPE, FK_IDA)
+        'dao.GetDataby_GROUPNO_MAX(YEAR, Process_ID, FK_IDA)
 
         If IsNothing(dao.fields.GENNO) = True Then
             int_no = 0
@@ -189,13 +189,15 @@ Public Class POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF
         dao.GetdatabyID_IDA(_IDA)
 
         Dim XML As New CLASS_GEN_XML.TABEAN_INFORM
-        TBN_INFORM = XML.GEN_XML_INFORM(_IDA, _IDA_LCN)
+
 
         Dim dao_pdftemplate As New DAO_DRUG.ClsDB_MAS_TEMPLATE_PROCESS
         Dim STATUS_ID As String = dao.fields.STATUS_ID
         If STATUS_ID = 8 Or STATUS_ID = 13 Then
+            TBN_INFORM = XML.GEN_XML_INFORM_JR2(_IDA, _IDA_LCN)
             dao_pdftemplate.GETDATA_TABEAN_HERB_JJ_TEMPLAETE1(_Process_ID, dao.fields.STATUS_ID, "จร2", 0)
         Else
+            TBN_INFORM = XML.GEN_XML_INFORM(_IDA, _IDA_LCN)
             dao_pdftemplate.GETDATA_TABEAN_HERB_JJ_TEMPLAETE1(_Process_ID, dao.fields.STATUS_ID, "จร1", 0)
         End If
 
@@ -315,10 +317,14 @@ Public Class POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF
                         dao.fields.STATUS_ID = 15
                     Else
                         dao.fields.STATUS_ID = STATUS_ID
+
+                        Dim bao_tn As New BAO_TABEAN_HERB.tb_dd
+                        bao_tn.SP_INSERT_DRUG_PAYMENT_CENTER_L44(dao.fields.CITIZEN_ID_AUTHORIZE, _IDA, dao.fields.PROCESS_ID)
                     End If
                     dao.Update()
                     AddLogStatus(dao.fields.STATUS_ID, _Process_ID, _CLS.CITIZEN_ID, _IDA)
                     BIND_PDF_TABEAN()
+
                     alert("บันทึกเรียบร้อย")
                 End If
             ElseIf STATUS_ID = 11 Then
@@ -364,6 +370,7 @@ Public Class POPUP_HERB_TABEAN_INFORM_CONFIRM_STAFF
                 dao.fields.appdate = submit_date.SelectedDate
                 Try
                     dao.fields.expdate = DateAdd(DateInterval.Day, -1, DateAdd(DateInterval.Year, 5, CDate(dao.fields.appdate)))
+                    dao.fields.expyear = DateAdd(DateInterval.Year, 5, CDate(dao.fields.appdate))
                 Catch ex As Exception
 
                 End Try

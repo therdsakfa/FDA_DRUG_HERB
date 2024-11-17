@@ -35,6 +35,7 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
             bind_data()
             Bind_PRICE_ESTIMATE_REQUEST()
             Bind_DD_Discount()
+            bind_ddl_complex()
 
             UC_ATTACH1.NAME = "เอกสารแนบ"
             UC_ATTACH1.BindData("เอกสารแนบ", 1, "pdf", "0", "77")
@@ -120,6 +121,21 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
         item.Value = "0"
         DD_DISCOUNT.Items.Insert(0, item)
     End Sub
+    Sub bind_ddl_complex()
+        Dim bao As New BAO_TABEAN_HERB.tb_main
+        Dim dt As New DataTable
+        dt = bao.SP_ComplicateDate_Tabean_New(_ProcessID)
+        DDL_COMPLEX.DataSource = dt
+        DDL_COMPLEX.DataValueField = "ID"
+        DDL_COMPLEX.DataTextField = "NAME_COMPLEX"
+        DDL_COMPLEX.DataBind()
+        'DD_DISCOUNT.Items.Insert(0, "-- กรุณาเลือก --")
+
+        Dim item As New RadComboBoxItem
+        item.Text = "-- กรุณาเลือก --"
+        item.Value = "0"
+        DDL_COMPLEX.Items.Insert(0, item)
+    End Sub
     Public Sub Run_Pdf_Tabean_Herb()
         Dim dao_deeqt As New DAO_DRUG.ClsDBdrrqt
         dao_deeqt.GetDataby_IDA(_IDA)
@@ -186,7 +202,7 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
         DD_OFF_REQ.Text = _CLS.NAME
 
         DATE_REQ.Text = Date.Now.ToString("dd/MM/yyyy")
-
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
         Dim Process_ID As String = dao.fields.PROCESS_ID
         If Process_ID.Contains("2019") Then
             ddl_tabean_group.SelectedValue = 3
@@ -312,6 +328,21 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
 
                         End Try
 
+                        If DDL_COMPLEX.SelectedValue = "-- กรุณาเลือก --" Then
+                            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('กรุณาเลือก เงื่อนความซับซ้อนของคำขอ');", True)
+                        Else
+                            Try
+                                If DDL_COMPLEX.SelectedValue = "-" Or DDL_COMPLEX.SelectedValue = "" Then
+                                    dao_tabean_herb.fields.COMPLEX_CD = DDL_COMPLEX.SelectedValue
+                                Else
+                                    dao_tabean_herb.fields.COMPLEX_CD = DDL_COMPLEX.SelectedValue
+                                    dao_tabean_herb.fields.COMPLEX_NM = DDL_COMPLEX.SelectedItem.Text
+                                End If
+                            Catch ex As Exception
+
+                            End Try
+                        End If
+
                         'Dim RCVNO As Integer
                         'Dim bao_gen As New BAO.GenNumber
                         'RCVNO = bao_gen.GEN_NO_TBN(con_year(Date.Now.Year), dao.fields.pvncd, 1, _IDA, dao.fields.FK_LCN_IDA)
@@ -429,7 +460,8 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
 
                     dao_tabean_herb.fields.STATUS_ID = DD_STATUS.SelectedValue
                     dao_tabean_herb.fields.cancel_by = _CLS.THANM
-                    dao_tabean_herb.fields.cancel_date = Date.Now
+                    'dao_tabean_herb.fields.cancel_date = Date.Now
+                    dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
                     dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
                     dao_tabean_herb.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                     dao_tabean_herb.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
@@ -454,6 +486,8 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
 
                 dao_tabean_herb.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                 dao_tabean_herb.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
+                dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
                 Try
                     dao_tabean_herb.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                 Catch ex As Exception
@@ -477,6 +511,8 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INTAKE
 
                 dao_tabean_herb.fields.NOTE_CANCEL = NOTE_CANCLE.Text
                 dao_tabean_herb.fields.DD_CANCEL_NM = DDL_CANCLE_REMARK.SelectedItem.Text
+                dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
+                dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
                 Try
                     dao_tabean_herb.fields.DD_CANCEL_ID = DDL_CANCLE_REMARK.SelectedValue
                 Catch ex As Exception

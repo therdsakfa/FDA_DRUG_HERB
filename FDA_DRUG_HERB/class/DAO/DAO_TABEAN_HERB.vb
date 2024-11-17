@@ -525,6 +525,44 @@
             Next
         End Sub
     End Class
+    Public Class TB_MAS_TYPE_REQUESTS_HERB
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_TYPE_REQUESTS_HERB
+
+        Public Sub insert()
+            db.MAS_TYPE_REQUESTS_HERBs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub Update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub Delete()
+            db.MAS_TYPE_REQUESTS_HERBs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetAll()
+            datas = (From p In db.MAS_TYPE_REQUESTS_HERBs Select p)
+
+        End Sub
+        Public Sub Getdataby_Process_ID(ByVal Process_ID As Integer)
+            datas = From p In db.MAS_TYPE_REQUESTS_HERBs Where p.ProcessID = Process_ID Select p
+
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+        Public Sub GetdatabyID_IDA(ByVal IDA As Integer)
+            datas = From p In db.MAS_TYPE_REQUESTS_HERBs Where p.ID = IDA Select p
+
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+    End Class
 
     Public Class TB_TABEAN_HERB_EDIT_REQUEST_CHK_LIST
         Inherits MAINCONTEXT
@@ -1734,6 +1772,47 @@
 
     End Class
 
+    Public Class TB_MAS_COMPLEX_DATE_HERB
+        Inherits MAINCONTEXT
+
+        Public fields As New MAS_COMPLEX_DATE_HERB
+
+        Public Sub insert()
+            db.MAS_COMPLEX_DATE_HERBs.InsertOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub Update()
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub Delete()
+            db.MAS_COMPLEX_DATE_HERBs.DeleteOnSubmit(fields)
+            db.SubmitChanges()
+        End Sub
+
+        Public Sub GetAll()
+            datas = (From p In db.MAS_COMPLEX_DATE_HERBs Select p)
+
+        End Sub
+
+        Public Sub GetdatabyID(ByVal ID As Integer)
+            datas = From p In db.MAS_COMPLEX_DATE_HERBs Where p.ID = ID Select p
+
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+
+        Public Sub GetdatabyID_PRCESS_ID(ByVal PROCESS_ID As Integer)
+            datas = From p In db.MAS_COMPLEX_DATE_HERBs Where p.PROCESS_ID = PROCESS_ID Select p
+
+            For Each Me.fields In datas
+
+            Next
+        End Sub
+
+    End Class
     Public Class TB_TABEAN_INFORM
         Inherits MAINCONTEXT
 
@@ -1765,11 +1844,11 @@
 
             Next
         End Sub
-        Public Sub GetdatabyID_FK_IDA(ByVal FK_IDA As Integer)
-            datas = From p In db.TABEAN_JRs Where p.FK_IDA = FK_IDA Select p
-            For Each Me.fields In datas
-            Next
-        End Sub
+        'Public Sub GetdatabyID_FK_IDA(ByVal FK_IDA As Integer)
+        '    datas = From p In db.TABEAN_JRs Where p.FK_IDA = FK_IDA Select p
+        '    For Each Me.fields In datas
+        '    Next
+        'End Sub
 
     End Class
     Public Class TB_TABEAN_HERB_MANUFACTRUE

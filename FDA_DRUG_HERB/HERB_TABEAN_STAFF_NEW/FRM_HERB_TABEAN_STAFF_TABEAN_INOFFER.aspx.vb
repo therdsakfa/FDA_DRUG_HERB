@@ -120,6 +120,7 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER
         End If
         DD_OFF_OFFER.Text = _CLS.NAME
         DATE_OFFER.Text = Date.Now.ToString("dd/MM/yyyy")
+        RDP_CANCEL_DATE.SelectedDate = Date.Now
         Dim dao_t As New DAO_TABEAN_HERB.TB_TABEAN_HERB
         dao_t.GetdatabyID_FK_IDA_DQ(_IDA)
         Try
@@ -702,7 +703,8 @@ Public Class FRM_HERB_TABEAN_STAFF_TABEAN_INOFFER
             Catch ex As Exception
 
             End Try
-            dao_tabean_herb.fields.cancel_date = Date.Now
+            'dao_tabean_herb.fields.cancel_date = Date.Now
+            dao_tabean_herb.fields.cancel_date = RDP_CANCEL_DATE.SelectedDate
             dao_tabean_herb.fields.cancel_by = _CLS.THANM
             dao_tabean_herb.fields.cancel_iden = _CLS.CITIZEN_ID
             dao_tabean_herb.fields.STATUS_ID = DD_STATUS.SelectedValue

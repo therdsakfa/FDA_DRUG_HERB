@@ -270,14 +270,14 @@ Public Class FRM_HERB_TABEAN_INFORM
                 'ElseIf STATUS_ID = 6 Or STATUS_ID = 11 Or STATUS_ID = 12 Or STATUS_ID = 13 Then
             ElseIf STATUS_ID >= 1 Then
                 HL1_SELECT.Style.Add("display", "block")
-
             End If
-            If STATUS_ID = 4 Or STATUS_ID = 15 Or STATUS_ID = 6 Or STATUS_ID = 8 Then
-                'HL3_SELECT.Style.Add("display", "block")
-            ElseIf STATUS_ID = 6 Then
+            'If STATUS_ID = 4 Or STATUS_ID = 15 Or STATUS_ID = 6 Or STATUS_ID = 8 Then
+            'HL3_SELECT.Style.Add("display", "block")
+            If STATUS_ID = 6 Then
                 H.Style.Add("display", "block")
                 'HL4_SELECT.Style.Add("display", "block")
-            ElseIf STATUS_ID = 15 Or STATUS_ID = 6 Or STATUS_ID = 8 Then
+            End If
+            If STATUS_ID = 15 Or STATUS_ID = 6 Or STATUS_ID = 8 Then
                 HL4_SELECT.Style.Add("display", "block")
             End If
         End If

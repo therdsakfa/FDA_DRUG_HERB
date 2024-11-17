@@ -99,7 +99,7 @@
                 <br />
                 <p class="h3">ใบอนุญาต</p>
                 <hr />
-                <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" AllowFilteringByColumn="True" PageSize="200">
+                <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="true" AllowFilteringByColumn="True" PageSize="20">
                     <MasterTableView AutoGenerateColumns="False" DataKeyNames="IDA">
                         <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                         <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
@@ -124,7 +124,9 @@
                             <telerik:GridBoundColumn DataField="TYPEPERSON" FilterControlAltText="Filter TYPEPERSON column"
                                 HeaderText="TYPEPERSON" SortExpression="TYPEPERSON" UniqueName="TYPEPERSON" Display="false">
                             </telerik:GridBoundColumn>
-
+                            <telerik:GridBoundColumn DataField="LCNNO_DISPLAY_NEW" FilterControlAltText="Filter LCNNO_DISPLAY_NEW column"
+                                HeaderText="เลขที่ใบอนุญาตใหม่" SortExpression="LCNNO_DISPLAY_NEW" UniqueName="LCNNO_DISPLAY_NEW">
+                            </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn DataField="LCNNO_DISPLAY" FilterControlAltText="Filter LCNNO_DISPLAY column"
                                 HeaderText="เลขที่ใบอนุญาต" SortExpression="LCNNO_DISPLAY" UniqueName="LCNNO_DISPLAY">
                             </telerik:GridBoundColumn>
@@ -132,16 +134,19 @@
                             </telerik:GridBoundColumn>
                             <telerik:GridBoundColumn DataField="fulladdr" FilterControlAltText="Filter fulladdr column" HeaderText="ที่อยู่" SortExpression="fulladdr" UniqueName="fulladdr">
                             </telerik:GridBoundColumn>
+                            <telerik:GridBoundColumn DataField="expdate_th" FilterControlAltText="Filter expdate_th column"
+                                HeaderText="วันที่สิ้นอายุ" SortExpression="expdate_th" UniqueName="expdate_th">
+                            </telerik:GridBoundColumn>
                             <telerik:GridTemplateColumn>
                                 <ItemTemplate>
                                     <asp:HyperLink ID="HL_SELECT" runat="server">เลือกข้อมูล</asp:HyperLink>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
                         </Columns>
-                        <%--  <EditFormSettings>
+                        <EditFormSettings>
                             <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
                         </EditFormSettings>
-                        <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>--%>
+                        <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
                     </MasterTableView>
                     <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
                     <FilterMenu EnableImageSprites="False"></FilterMenu>

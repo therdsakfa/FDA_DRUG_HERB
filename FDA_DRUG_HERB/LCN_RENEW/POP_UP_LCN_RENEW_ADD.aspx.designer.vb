@@ -95,6 +95,24 @@ Partial Public Class POP_UP_LCN_RENEW_ADD
     Protected WithEvents txt_Building As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''txt_floor control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_floor As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_room control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_room As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''txt_mu control.
     '''</summary>
     '''<remarks>
@@ -183,6 +201,141 @@ Partial Public Class POP_UP_LCN_RENEW_ADD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_Opentime As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_latitude control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_latitude As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_longitude control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_longitude As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''panel_phr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents panel_phr As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''RDO_PHR_YES control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDO_PHR_YES As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''RDO_PHR_NO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDO_PHR_NO As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''rgphr control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rgphr As Global.Telerik.Web.UI.RadGrid
+
+    '''<summary>
+    '''rdl_enterprise control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_enterprise As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''rdl_CerSD control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_CerSD As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''chk_rad1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents chk_rad1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''rdl_cer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rdl_cer As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''ddl_emc_prefix control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddl_emc_prefix As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txt_emc_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_emc_name As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_emc_lname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_emc_lname As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_emc_tel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_emc_tel As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_emc_email control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_emc_email As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''E1 control.

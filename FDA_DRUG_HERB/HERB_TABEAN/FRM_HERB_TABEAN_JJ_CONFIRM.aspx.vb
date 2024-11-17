@@ -50,7 +50,6 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
             btn_cancle_request.Visible = False
             btn_cancel.Visible = True
         End If
-
         If dao.fields.STATUS_ID = 77 Or dao.fields.STATUS_ID = 78 Or dao.fields.STATUS_ID = 79 Or dao.fields.STATUS_ID = 7 _
             Or dao.fields.STATUS_ID = 9 Or dao.fields.STATUS_ID = 10 Or dao.fields.STATUS_ID = 14 Or dao.fields.STATUS_ID = 17 _
             Or dao.fields.STATUS_ID = 75 Then
@@ -59,7 +58,6 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
             btn_cancle_request.Enabled = False
             btn_cancle_request.CssClass = "btn-danger btn-lg"
         End If
-
         If dao.fields.STATUS_ID <> 1 Then
             btn_confirm.Enabled = False
             btn_confirm.CssClass = "btn-danger btn-lg"
@@ -67,7 +65,8 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
             btn_edit.CssClass = "btn-danger btn-lg"
             btn_editUpload.Enabled = False
             btn_editUpload.CssClass = "btn-danger btn-lg"
-        ElseIf dao.fields.STATUS_ID = 8 Then
+        End If
+        If dao.fields.STATUS_ID = 8 Then
             btn_cancel.Enabled = False
             btn_cancel.CssClass = "btn-danger btn-lg"
             'btn_load.CssClass = "btn-danger btn-lg"
@@ -255,7 +254,7 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
             'gen_xml_jj1()
             'Response.Redirect("POPUP_CONFIRM_CLICK.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&IDA=" & _IDA)
             ' alert("ยื่นคำขอแล้ว")
-            Response.Redirect("FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&TR_ID=" & _TR_ID)
+            Response.Redirect("FRM_HERB_TABEAN_JJ_CONFIRM_DETAIL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&TR_ID=" & _TR_ID & "&SID=" & Request.QueryString("SID"))
         End If
 
     End Sub
@@ -301,7 +300,7 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
         Dim status_is As String = 78
         url = "FRM_HERB_TABEAN_JJ_CENCEL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" _
             & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&TR_ID=" _
-            & _TR_ID & "&OPF=" & Request.QueryString("OPF") & "&STATUS_ID=" & status_is
+            & _TR_ID & "&OPF=" & Request.QueryString("OPF") & "&STATUS_ID=" & status_is & "&SID=" & Request.QueryString("SID")
         Response.Redirect(url)
     End Sub
     Private Sub alert(ByVal text As String)
@@ -314,7 +313,12 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
     Protected Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
         'Dim dao As New DAO_TABEAN_HERB.TB_TABEAN_JJ
         'dao.GetdatabyID_IDA(_IDA)
-        Response.Redirect("FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&IDA=" & _IDA)
+        If _ProcessID = 20304 Then
+            Response.Redirect("FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&IDA=" & _IDA & "&SID=" & Request.QueryString("SID"))
+        Else
+            Response.Redirect("FRM_HERB_TABEAN_JJ_EDIT_REQUEST.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&IDA=" & _IDA & "&SID=" & Request.QueryString("SID"))
+
+        End If
     End Sub
 
     'Private Sub btn_edit_uploadfile_Click(sender As Object, e As EventArgs) Handles btn_edit_uploadfile.Click
@@ -342,12 +346,12 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
         Dim status_is As String = 75
         url = "FRM_HERB_TABEAN_JJ_CENCEL.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" _
             & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&TR_ID=" _
-            & _TR_ID & "&OPF=" & Request.QueryString("OPF") & "&STATUS_ID=" & status_is
+            & _TR_ID & "&OPF=" & Request.QueryString("OPF") & "&STATUS_ID=" & status_is & "&SID=" & Request.QueryString("SID")
         Response.Redirect(url)
     End Sub
     Sub alert_EditUp(ByVal text As String)
         Dim url As String = ""
-        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN
+        url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & Request.QueryString("SID")
         Response.Write("<script type='text/javascript'>alert('" + text + "');window.location='" & url & "';</script> ")
     End Sub
 
@@ -359,7 +363,7 @@ Public Class FRM_HERB_TABEAN_JJ_CONFIRM
         'url = "FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN
         'Response.Write("<script type='text/javascript'>alert('" + "ต้องการแก้ไขไฟล์อัพโหลด" + "');parent.close_modal();window.location='" & url & "';</script> ")
 
-        Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN)
+        Response.Redirect("FRM_HERB_TABEAN_JJ_ADD_DETAIL_UPLOAD_FILE_EDIT.aspx?IDA_LCT=" & _IDA_LCT & "&TR_ID_LCN=" & _TR_ID_LCN & "&MENU_GROUP=" & _MENU_GROUP & "&IDA_LCN=" & _IDA_LCN & "&DD_HERB_NAME_ID=" & _DD_HERB_NAME_ID & "&PROCESS_JJ=" & _ProcessID & "&IDA=" & _IDA & "&PROCESS_ID_LCN=" & _PROCESS_ID_LCN & "&SID=" & Request.QueryString("SID"))
     End Sub
     Function bind_data_uploadfile_4()
         Dim dt As DataTable

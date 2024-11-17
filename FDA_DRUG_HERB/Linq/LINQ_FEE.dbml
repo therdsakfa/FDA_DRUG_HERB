@@ -75,4 +75,22 @@
       <Column Name="acctype" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.feetype" Member="feetypes">
+    <Type Name="feetype">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pvncd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dvcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="feetpcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="feetpnm" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="feest" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="value" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="feeabbr" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="feedtl" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="feegpcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="system_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="process_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fda_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fda_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

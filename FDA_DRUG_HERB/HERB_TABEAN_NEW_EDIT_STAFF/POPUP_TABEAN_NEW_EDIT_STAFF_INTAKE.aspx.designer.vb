@@ -239,6 +239,15 @@ Partial Public Class POPUP_TABEAN_NEW_EDIT_STAFF_INTAKE
     Protected WithEvents DDL_CANCLE_REMARK As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''RDP_CANCEL_DATE control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RDP_CANCEL_DATE As Global.Telerik.Web.UI.RadDatePicker
+
+    '''<summary>
     '''NOTE_CANCLE control.
     '''</summary>
     '''<remarks>

@@ -57,7 +57,6 @@ Public Class POPUP_LCN_EDIT_CONFIRM
             End If
     End Sub
     Protected Sub btn_confirm_Click(sender As Object, e As EventArgs) Handles btn_confirm.Click
-
         Response.Redirect("POPUP_LCN_EDIT_CONFIRM_DETAIL.aspx?IDA=" & _IDA & "&PROCESS_ID=" & _PROCESS_ID)
     End Sub
     Public Sub Bind_Pdf()

@@ -751,7 +751,7 @@
             For Each dao_attgroup.fields In dao_attgroup.datas
                 Dim dao_att As New DAO_DRUG.TB_DALCN_UPLOAD_FILE
                 Dim dao_mas As New DAO_DRUG.TB_MAS_DOCUMENT_NAME_UPLOAD_DALCN
-                dao_att.fields.DUCUMENT_NAME = dao_attgroup.fields.DUCUMENT_NAME
+                dao_att.fields.DOCUMENT_NAME = dao_attgroup.fields.DOCUMENT_NAME
                 dao_att.fields.TYPE_PERSON = head_id
                 dao_att.fields.TYPE_LOCAL = id
                 dao_att.fields.TYPE_BSN = id2

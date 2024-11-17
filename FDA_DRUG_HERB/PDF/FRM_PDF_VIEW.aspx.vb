@@ -13,8 +13,12 @@ Public Class FRM_PDF_VIEW
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
         Try
+            Try
+                load_pdf(_FileName)
+            Catch ex As Exception
+                load_pdf2(_FileName)
+            End Try
             'load_pdf(_FileName)
-            load_pdf2(_FileName)
         Catch ex As Exception
             If ex.Message.Contains("another") Then
                 Response.Write("<script type='text/javascript'>alert('ขออภัย ขณะนี้เจ้าหน้าที่กำลังเปิด pdf นี้อยู่'); parent.close_modal();</script> ")
@@ -35,8 +39,12 @@ Public Class FRM_PDF_VIEW
 
         Dim clsds As New ClassDataset
 
-        Dim bb As Byte() = clsds.UpLoadImageByte(FilePath)
-
+        Dim bb As Byte()
+        Try
+            bb = clsds.UpLoadImageByte(FilePath)
+        Catch ex As Exception
+            bb = Session("PDFFile")
+        End Try
         'Dim ws_F As New WS_FLATTEN.WS_FLATTEN
 
         'Dim b_o As Byte() = ws_F.FlattenPDF_DIGITAL(bb)

@@ -43,6 +43,12 @@ Partial Public Class LINQ_FEEDataContext
     End Sub
   Partial Private Sub Deletefeedtl(instance As feedtl)
     End Sub
+  Partial Private Sub Insertfeetype(instance As feetype)
+    End Sub
+  Partial Private Sub Updatefeetype(instance As feetype)
+    End Sub
+  Partial Private Sub Deletefeetype(instance As feetype)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -79,6 +85,12 @@ Partial Public Class LINQ_FEEDataContext
 	Public ReadOnly Property feedtls() As System.Data.Linq.Table(Of feedtl)
 		Get
 			Return Me.GetTable(Of feedtl)
+		End Get
+	End Property
+	
+	Public ReadOnly Property feetypes() As System.Data.Linq.Table(Of feetype)
+		Get
+			Return Me.GetTable(Of feetype)
 		End Get
 	End Property
 End Class
@@ -1614,6 +1626,354 @@ Partial Public Class feedtl
 				Me._acctype = value
 				Me.SendPropertyChanged("acctype")
 				Me.OnacctypeChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.feetype")>  _
+Partial Public Class feetype
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _pvncd As System.Nullable(Of Short)
+	
+	Private _dvcd As System.Nullable(Of Short)
+	
+	Private _feetpcd As System.Nullable(Of Integer)
+	
+	Private _feetpnm As String
+	
+	Private _feest As System.Nullable(Of Short)
+	
+	Private _value As System.Nullable(Of Decimal)
+	
+	Private _feeabbr As String
+	
+	Private _feedtl As String
+	
+	Private _feegpcd As System.Nullable(Of Short)
+	
+	Private _system_name As String
+	
+	Private _process_id As String
+	
+	Private _fda_type As String
+	
+	Private _fda_status As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnpvncdChanging(value As System.Nullable(Of Short))
+    End Sub
+    Partial Private Sub OnpvncdChanged()
+    End Sub
+    Partial Private Sub OndvcdChanging(value As System.Nullable(Of Short))
+    End Sub
+    Partial Private Sub OndvcdChanged()
+    End Sub
+    Partial Private Sub OnfeetpcdChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnfeetpcdChanged()
+    End Sub
+    Partial Private Sub OnfeetpnmChanging(value As String)
+    End Sub
+    Partial Private Sub OnfeetpnmChanged()
+    End Sub
+    Partial Private Sub OnfeestChanging(value As System.Nullable(Of Short))
+    End Sub
+    Partial Private Sub OnfeestChanged()
+    End Sub
+    Partial Private Sub OnvalueChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnvalueChanged()
+    End Sub
+    Partial Private Sub OnfeeabbrChanging(value As String)
+    End Sub
+    Partial Private Sub OnfeeabbrChanged()
+    End Sub
+    Partial Private Sub OnfeedtlChanging(value As String)
+    End Sub
+    Partial Private Sub OnfeedtlChanged()
+    End Sub
+    Partial Private Sub OnfeegpcdChanging(value As System.Nullable(Of Short))
+    End Sub
+    Partial Private Sub OnfeegpcdChanged()
+    End Sub
+    Partial Private Sub Onsystem_nameChanging(value As String)
+    End Sub
+    Partial Private Sub Onsystem_nameChanged()
+    End Sub
+    Partial Private Sub Onprocess_idChanging(value As String)
+    End Sub
+    Partial Private Sub Onprocess_idChanged()
+    End Sub
+    Partial Private Sub Onfda_typeChanging(value As String)
+    End Sub
+    Partial Private Sub Onfda_typeChanged()
+    End Sub
+    Partial Private Sub Onfda_statusChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onfda_statusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_pvncd", DbType:="SmallInt")>  _
+	Public Property pvncd() As System.Nullable(Of Short)
+		Get
+			Return Me._pvncd
+		End Get
+		Set
+			If (Me._pvncd.Equals(value) = false) Then
+				Me.OnpvncdChanging(value)
+				Me.SendPropertyChanging
+				Me._pvncd = value
+				Me.SendPropertyChanged("pvncd")
+				Me.OnpvncdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_dvcd", DbType:="SmallInt")>  _
+	Public Property dvcd() As System.Nullable(Of Short)
+		Get
+			Return Me._dvcd
+		End Get
+		Set
+			If (Me._dvcd.Equals(value) = false) Then
+				Me.OndvcdChanging(value)
+				Me.SendPropertyChanging
+				Me._dvcd = value
+				Me.SendPropertyChanged("dvcd")
+				Me.OndvcdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feetpcd", DbType:="Int")>  _
+	Public Property feetpcd() As System.Nullable(Of Integer)
+		Get
+			Return Me._feetpcd
+		End Get
+		Set
+			If (Me._feetpcd.Equals(value) = false) Then
+				Me.OnfeetpcdChanging(value)
+				Me.SendPropertyChanging
+				Me._feetpcd = value
+				Me.SendPropertyChanged("feetpcd")
+				Me.OnfeetpcdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feetpnm", DbType:="VarChar(200)")>  _
+	Public Property feetpnm() As String
+		Get
+			Return Me._feetpnm
+		End Get
+		Set
+			If (String.Equals(Me._feetpnm, value) = false) Then
+				Me.OnfeetpnmChanging(value)
+				Me.SendPropertyChanging
+				Me._feetpnm = value
+				Me.SendPropertyChanged("feetpnm")
+				Me.OnfeetpnmChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feest", DbType:="SmallInt")>  _
+	Public Property feest() As System.Nullable(Of Short)
+		Get
+			Return Me._feest
+		End Get
+		Set
+			If (Me._feest.Equals(value) = false) Then
+				Me.OnfeestChanging(value)
+				Me.SendPropertyChanging
+				Me._feest = value
+				Me.SendPropertyChanged("feest")
+				Me.OnfeestChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_value", DbType:="Decimal(8,2)")>  _
+	Public Property value() As System.Nullable(Of Decimal)
+		Get
+			Return Me._value
+		End Get
+		Set
+			If (Me._value.Equals(value) = false) Then
+				Me.OnvalueChanging(value)
+				Me.SendPropertyChanging
+				Me._value = value
+				Me.SendPropertyChanged("value")
+				Me.OnvalueChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feeabbr", DbType:="VarChar(4)")>  _
+	Public Property feeabbr() As String
+		Get
+			Return Me._feeabbr
+		End Get
+		Set
+			If (String.Equals(Me._feeabbr, value) = false) Then
+				Me.OnfeeabbrChanging(value)
+				Me.SendPropertyChanging
+				Me._feeabbr = value
+				Me.SendPropertyChanged("feeabbr")
+				Me.OnfeeabbrChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feedtl", DbType:="VarChar(40)")>  _
+	Public Property feedtl() As String
+		Get
+			Return Me._feedtl
+		End Get
+		Set
+			If (String.Equals(Me._feedtl, value) = false) Then
+				Me.OnfeedtlChanging(value)
+				Me.SendPropertyChanging
+				Me._feedtl = value
+				Me.SendPropertyChanged("feedtl")
+				Me.OnfeedtlChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_feegpcd", DbType:="SmallInt")>  _
+	Public Property feegpcd() As System.Nullable(Of Short)
+		Get
+			Return Me._feegpcd
+		End Get
+		Set
+			If (Me._feegpcd.Equals(value) = false) Then
+				Me.OnfeegpcdChanging(value)
+				Me.SendPropertyChanging
+				Me._feegpcd = value
+				Me.SendPropertyChanged("feegpcd")
+				Me.OnfeegpcdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_system_name", DbType:="VarChar(50)")>  _
+	Public Property system_name() As String
+		Get
+			Return Me._system_name
+		End Get
+		Set
+			If (String.Equals(Me._system_name, value) = false) Then
+				Me.Onsystem_nameChanging(value)
+				Me.SendPropertyChanging
+				Me._system_name = value
+				Me.SendPropertyChanged("system_name")
+				Me.Onsystem_nameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_process_id", DbType:="VarChar(50)")>  _
+	Public Property process_id() As String
+		Get
+			Return Me._process_id
+		End Get
+		Set
+			If (String.Equals(Me._process_id, value) = false) Then
+				Me.Onprocess_idChanging(value)
+				Me.SendPropertyChanging
+				Me._process_id = value
+				Me.SendPropertyChanged("process_id")
+				Me.Onprocess_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_fda_type", DbType:="VarChar(50)")>  _
+	Public Property fda_type() As String
+		Get
+			Return Me._fda_type
+		End Get
+		Set
+			If (String.Equals(Me._fda_type, value) = false) Then
+				Me.Onfda_typeChanging(value)
+				Me.SendPropertyChanging
+				Me._fda_type = value
+				Me.SendPropertyChanged("fda_type")
+				Me.Onfda_typeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_fda_status", DbType:="Int")>  _
+	Public Property fda_status() As System.Nullable(Of Integer)
+		Get
+			Return Me._fda_status
+		End Get
+		Set
+			If (Me._fda_status.Equals(value) = false) Then
+				Me.Onfda_statusChanging(value)
+				Me.SendPropertyChanging
+				Me._fda_status = value
+				Me.SendPropertyChanged("fda_status")
+				Me.Onfda_statusChanged
 			End If
 		End Set
 	End Property

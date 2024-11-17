@@ -68,7 +68,7 @@ Public Class POPUP_TABEAN_NEW_EDIT_STAFF_CANCEL
         Else
             dao.fields.STATUS_ID = 78
             dao.fields.cancel_by = _CLS.THANM
-            dao.fields.cancel_date = Date.Now
+            dao.fields.cancel_date = txt_cancel_date.Text
             dao.fields.cancel_iden = _CLS.CITIZEN_ID
             dao.fields.DD_CANCEL_ID = DD_CANCEL.SelectedValue
             dao.fields.DD_CANCEL_NM = DD_CANCEL.SelectedItem.Text

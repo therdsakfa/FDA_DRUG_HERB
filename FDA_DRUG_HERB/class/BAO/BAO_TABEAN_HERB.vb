@@ -126,6 +126,15 @@ Namespace BAO_TABEAN_HERB
 
             Return dt
         End Function
+        Public Function SP_MAS_STAFF_NAME_HERB_BY_PVNCD(ByVal PVNCD As Integer) As DataTable
+            Dim dt As New DataTable
+            Dim qstr As String = ""
+
+            qstr = "exec SP_MAS_STAFF_NAME_HERB_BY_PVNCD @PVNCD=" & PVNCD
+            dt = Queryds(qstr)
+
+            Return dt
+        End Function
         Public Function SP_MAS_TABEAN_HERB_SALE() As DataTable
             Dim dt As New DataTable
             Dim qstr As String = ""
@@ -771,12 +780,29 @@ Namespace BAO_TABEAN_HERB
 
             Return dt
         End Function
+        Public Function SP_DALCN_PHR_CUSTOMER_ADDR(ByVal FK_IDA As String) As DataTable
+            Dim dt As New DataTable
+            Dim qstr As String = ""
 
+            qstr = "exec SP_DALCN_PHR_CUSTOMER_ADDR @FK_IDA='" & FK_IDA & "'"
+            dt = Queryds(qstr)
+
+            Return dt
+        End Function
         Public Function SP_drdrgtype_Tabean_New() As DataTable
             Dim dt As New DataTable
             Dim qstr As String = ""
 
             qstr = "exec SP_drdrgtype_Tabean_New"
+            dt = Queryds(qstr)
+
+            Return dt
+        End Function
+        Public Function SP_ComplicateDate_Tabean_New(ByVal PROCESS_ID As Integer) As DataTable
+            Dim dt As New DataTable
+            Dim qstr As String = ""
+
+            qstr = "exec SP_ComplicateDate_Tabean_New @PROCESS_ID=" & PROCESS_ID
             dt = Queryds(qstr)
 
             Return dt
@@ -815,6 +841,15 @@ Namespace BAO_TABEAN_HERB
             Dim qstr As String = ""
 
             qstr = "exec SP_TABEAN_HERB_WHO @IDA_LCN= '" & IDA_LCN & "' " & ",@CITIZEN_ID='" & CITIEN_ID & "'"
+            dt = Queryds(qstr)
+
+            Return dt
+        End Function
+        Public Function SP_TABEAN_JJ_BY_IDEN_WHO(ByVal IDA_LCN As String, ByVal CITIZEN_ID_AUTHORIZE As String) As DataTable
+            Dim dt As New DataTable
+            Dim qstr As String = ""
+
+            qstr = "exec SP_TABEAN_JJ_BY_IDEN_WHO @IDA_LCN= '" & IDA_LCN & "' " & ",@CITIZEN_ID_AUTHORIZE='" & CITIZEN_ID_AUTHORIZE & "'"
             dt = Queryds(qstr)
 
             Return dt

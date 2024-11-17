@@ -117,7 +117,7 @@
             'dao.fields.
 
             Try
-                send_mail_mini(dao.fields.CITIZEN_ID, "FDATH", "เจ้าหน้าที่ดำเนินการรับคำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " แล้ว")
+                send_mail_mini(dao.fields.CITIZEN_ID, "ระบบสถานที่ผลิตภัณฑ์สมุนไพร", "เจ้าหน้าที่ดำเนินการรับคำขอ เลขดำเนินการที่ " & dao.fields.TR_ID & " แล้ว")
             Catch ex As Exception
 
             End Try

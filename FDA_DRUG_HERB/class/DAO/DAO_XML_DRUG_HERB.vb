@@ -79,6 +79,12 @@
             For Each Me.fields In datas
             Next
         End Sub
+        Public Sub GetDataby_IDA_DALCN(ByVal IDA As Integer)
+
+            datas = (From p In db.XML_SEARCH_DRUG_LCN_HERBs Where p.IDA_dalcn = IDA Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
     End Class
     Public Class TB_XML_DRUG_PRODUCT_HERB
         Inherits MAINCONTEXT2 'เรียก Class แม่มาใช้เพื่อให้รู้จักว่าเป็น Table ไหน

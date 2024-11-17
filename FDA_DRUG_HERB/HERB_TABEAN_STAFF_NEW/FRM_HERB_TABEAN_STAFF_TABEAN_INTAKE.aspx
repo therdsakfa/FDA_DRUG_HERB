@@ -65,15 +65,29 @@
                     </div>
                     <div class="col-lg-1"></div>
                 </div>
-                <div class="row" runat="server" id="P15" visible="false">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-4">ประเภททะเบียน</div>
-                    <div class="col-lg-6">
-                        <asp:DropDownList ID="ddl_rgttpcd" runat="server" Style="width: 100%">
-                        </asp:DropDownList>
 
+
+                <div class="row" runat="server" id="P15" visible="false">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">
+                            เงื่อนไขความซับซ้อนของคำขอ :
+                        <%--<p>วันที่อนุมัติ</p>--%>
+                        </div>
+                        <div class="col-lg-6">
+                            <telerik:RadComboBox ID="DDL_COMPLEX" runat="server" Filter="Contains" Width="100%" AutoPostBack="true"></telerik:RadComboBox>
+                        </div>
+                        <div class="col-lg-1"></div>
                     </div>
-                    <div class="col-lg-1"></div>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">ประเภททะเบียน</div>
+                        <div class="col-lg-6">
+                            <asp:DropDownList ID="ddl_rgttpcd" runat="server" Style="width: 100%">
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
                 </div>
                 <div class="row" runat="server" id="P12" visible="false">
                     <div class="row" runat="server" id="P14" visible="false">
@@ -219,6 +233,15 @@
                         <div class="col-lg-4">รายละเอียดการยกเลิก</div>
                         <div class="col-lg-6">
                             <asp:TextBox ID="NOTE_CANCLE" TextMode="MultiLine" runat="server" Style="height: 20%; width: 100%"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                    <div class="row" runat="server">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">วันที่ดำเนินการ</div>
+                        <div class="col-lg-6">
+                            <%--<asp:TextBox ID="CANCEL_DATE" runat="server" Style="width: 90%"></asp:TextBox>--%>
+                            <telerik:RadDatePicker ID="RDP_CANCEL_DATE" runat="server"></telerik:RadDatePicker>
                         </div>
                         <div class="col-lg-1"></div>
                     </div>

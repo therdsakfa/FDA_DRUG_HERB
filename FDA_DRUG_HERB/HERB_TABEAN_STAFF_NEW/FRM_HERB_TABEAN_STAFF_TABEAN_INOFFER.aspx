@@ -318,6 +318,15 @@
                         </div>
                         <div class="col-lg-1"></div>
                     </div>
+                    <div class="row" runat="server">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4">วันที่ดำเนินการ</div>
+                        <div class="col-lg-6">
+                            <%--<asp:TextBox ID="CANCEL_DATE" runat="server" Style="width: 90%"></asp:TextBox>--%>
+                            <telerik:RadDatePicker ID="RDP_CANCEL_DATE" runat="server"></telerik:RadDatePicker>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12" style="text-align: center">
                             <uc1:UC_ATTACH ID="UC_ATTACH1" runat="server" />

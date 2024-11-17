@@ -120,6 +120,8 @@
         ElseIf dao.fields.STATUS_ID = 23 Then
             days_est_end = 8
             days_est_longEnd = 11
+            'days_est_end = 10
+            'days_est_longEnd = 100
 
             'Dim date_pay As Date
             Try

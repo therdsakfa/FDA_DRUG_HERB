@@ -38,7 +38,7 @@ Partial Public Class FRM_HERB_TABEAN_JJ
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DD_HERB_NAME_PRODUCT As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents DD_HERB_NAME_PRODUCT As Global.Telerik.Web.UI.RadComboBox
 
     '''<summary>
     '''DD_HERB_NAME_PRODUCT_HEALTH control.
@@ -47,7 +47,7 @@ Partial Public Class FRM_HERB_TABEAN_JJ
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DD_HERB_NAME_PRODUCT_HEALTH As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents DD_HERB_NAME_PRODUCT_HEALTH As Global.Telerik.Web.UI.RadComboBox
 
     '''<summary>
     '''btn_jj_herb control.

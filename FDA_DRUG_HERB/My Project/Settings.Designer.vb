@@ -563,6 +563,26 @@ Namespace My
                 Return CType(Me("FDA_DRUG_HERB_WS_ETDA_SERVICE_WS_ETDA_SERVICE"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.137/PDF_SIGNV3/WS_FLATTEN.asmx")>  _
+        Public ReadOnly Property FDA_DRUG_HERB_WS_FLATTEN_NEW_WS_FLATTEN() As String
+            Get
+                Return CType(Me("FDA_DRUG_HERB_WS_FLATTEN_NEW_WS_FLATTEN"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://thfda.cc/WS_SHORTEN.asmx")>  _
+        Public ReadOnly Property FDA_DRUG_HERB_WS_SHORTEN_WS_SHORTEN() As String
+            Get
+                Return CType(Me("FDA_DRUG_HERB_WS_SHORTEN_WS_SHORTEN"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

@@ -41,6 +41,87 @@ Partial Public Class FRM_HERB_TABEAN_JJ_EDIT_REQUEST
     Protected WithEvents NAME_PLACE_JJ As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''data_show3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents data_show3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txt_agent99 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_agent99 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txt_agent99_id control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_agent99_id As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BTN_SEARCH_AG99 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BTN_SEARCH_AG99 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''txt_person_age control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_person_age As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''DDL_NATION control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DDL_NATION As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''data_show1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents data_show1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''data_show2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents data_show2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txt_nation_person control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_nation_person As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''DD_TYPE_NAME control.
     '''</summary>
     '''<remarks>

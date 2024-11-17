@@ -46,6 +46,14 @@
 
         Dim dao_cpn As New DAO_CPN.clsDBsyslcnsid
         dao_cpn.GetDataby_identify(dao.fields.CITIZEN_ID_AUTHORIZE)
+        Dim complex_cd As Integer = 0
+        If dao.fields.COMPLEX_CD IsNot Nothing AndAlso Not IsDBNull(dao.fields.COMPLEX_CD) Then
+            complex_cd = dao.fields.COMPLEX_CD
+        End If
+
+        Dim dao_c As New DAO_TABEAN_HERB.TB_MAS_COMPLEX_DATE_HERB
+        dao_c.GetdatabyID(complex_cd)
+
 
         Dim LCNNO_DISPLAY_NEW As String = dao_lcn.fields.LCNNO_DISPLAY_NEW
         Dim thanm As String = SEARCH_NAME_BY_CITIZEN(dao.fields.CITIZEN_ID_AUTHORIZE)
@@ -64,6 +72,7 @@
         'Dim date_con_year As Date
         Dim date_con_full As String = ""
         Dim date_appo_full As String = ""
+        Dim Conplicate_name As String = ""
 
         'Dim date_est_day As Date
         'Dim date_est_month As Date
@@ -152,25 +161,32 @@
             'ElseIf dao.fields.STATUS_ID = 13 Then
         ElseIf _APP_ID = 2 Then
             STATUS_ID = 23
-            If _ProcessID = 20101 Or _ProcessID = 20102 Or _ProcessID = 20191 Or _ProcessID = 20192 Then
-                'days_est_end = 35
-                'days_est_end = 71
-                days_est_end = 50
-                days_est_longEnd = 210
-                'days_est_longEnd = 150
-            ElseIf _ProcessID = 20103 Or _ProcessID = 20105 _
+            If dao_c.fields.ID = 0 Then
+                If _ProcessID = 20101 Or _ProcessID = 20102 Or _ProcessID = 20191 Or _ProcessID = 20192 Then
+                    'days_est_end = 35
+                    'days_est_end = 71
+                    days_est_end = 50
+                    days_est_longEnd = 210
+                    'days_est_longEnd = 150
+                ElseIf _ProcessID = 20103 Or _ProcessID = 20105 _
                 Or _ProcessID = 20193 Or _ProcessID = 20195 Then
-                'days_est_end = 40
-                'days_est_end = 107
-                days_est_end = 64
-                days_est_longEnd = 235
-                'days_est_longEnd = 170
-            ElseIf _ProcessID = 20104 Or _ProcessID = 20194 Then
-                days_est_end = 64
-                days_est_longEnd = 235
-                'days_est_end = 128
-                'days_est_longEnd = 170
+                    'days_est_end = 40
+                    'days_est_end = 107
+                    days_est_end = 64
+                    days_est_longEnd = 235
+                    'days_est_longEnd = 170
+                ElseIf _ProcessID = 20104 Or _ProcessID = 20194 Then
+                    days_est_end = 64
+                    days_est_longEnd = 235
+                    'days_est_end = 128
+                    'days_est_longEnd = 170
+                End If
+            Else
+                days_est_end = dao_c.fields.ESTIMATE_DATE
+                days_est_longEnd = dao_c.fields.FINISH_DATE
+                Conplicate_name = dao_c.fields.NAME_COMPLEX
             End If
+
             'days_est_end = 47
             Dim date_pay As Date
             Try
@@ -201,6 +217,12 @@
             cls.date_period_estimate_full = number_day_est_longEnd 'ระยะเวลาในการดำเนินการจนแล้วเสร็จ
             cls.appointment_date = date_appo_full 'วันที่นัดรับผลการประเมินเอกสารวิชาการครั้งที่ 1
             cls.date_estimate_full = date_con_full 'วันที่เริ่มประเมินเอกสารวิชาการ
+
+            dao.fields.EXPECTED_DATE = date_result_est_end
+            dao.fields.EXPECTED_DATE2 = date_result_est_end
+            dao.fields.COMPLEX_DATE_MIN = number_day_est_end
+            dao.fields.COMPLEX_DATE_MAX = number_day_est_longEnd
+            dao.Update()
             'date_est_day = dao_deeqt.fields.ESTIMATE_DATE
             'date_est_month = dao_deeqt.fields.ESTIMATE_DATE
             'date_est_year = dao_deeqt.fields.ESTIMATE_DATE

@@ -123,12 +123,7 @@ Public Class POPUP_LCN_EDIT_CONFIRM_DETAIL
             Catch ex As Exception
 
             End Try
-            If dao_p.fields.REQUEST_Fee = 100 Then
-                dao.fields.STATUS_ID = 2
-            Else
-                dao.fields.STATUS_ID = 1
-            End If
-
+            If dao_p.fields.REQUEST_Fee = 100 Then dao.fields.STATUS_ID = 2 Else dao.fields.STATUS_ID = 1
             dao.update()
             AddLogStatus(dao.fields.STATUS_ID, _PROCESS_ID, _CLS.CITIZEN_ID, _IDA)
             ' Run_PDF_TABEAN_HERB_EX()
